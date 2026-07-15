@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Disallow: /login
+
+Sitemap: https://octoprobe.ai/sitemap.xml
+
+# AEO — allow AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /

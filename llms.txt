@@ -1,0 +1,38 @@
+# OctoProbe AI
+
+> Multi-source network intelligence platform for investigators, law firms, OSINT practitioners, and opposition research teams.
+
+OctoProbe AI performs multi-hop entity resolution across identity databases, breach intelligence, open-source data, dark web archives, and proprietary data lakes. Starting from any identifier — name, email, phone, address — OctoProbe maps every connected entity across all integrated sources into a unified investigation graph.
+
+## Key capabilities
+
+- **Multi-hop analysis**: Traverse entity connections 1–3+ hops deep across all integrated data sources simultaneously
+- **Entity resolution**: Deduplicate and confidence-score conflicting records across sources
+- **MCP server**: Exposes investigation tools as callable functions for any MCP-compatible AI client (Claude Desktop, etc.)
+- **REST API**: Full programmatic access for automation and platform integration
+- **Custom data connectors**: Ingest proprietary databases, case files, or internal data lakes
+- **Breach intelligence**: Cross-reference identifiers against credential and breach databases
+- **Social footprint mapping**: Platform presence, alias clustering, username correlation
+- **Dark web archive search**: Index and archive correlation
+- **Public records**: Corporate filings, UCC records, property, aviation, maritime, and more
+- **Audit logging**: Every query, expansion, and export logged to the authenticated user
+- **Court-ready exports**: Timestamped, source-attributed PDF, JSON, and CSV
+
+## Who uses OctoProbe
+
+- Law firms conducting due diligence, asset tracing, and litigation support
+- Licensed private investigators and investigative agencies
+- OSINT practitioners and analysts
+- Opposition research and political intelligence firms
+- Corporate security and intelligence teams
+- Investigative newsrooms
+
+## Integration
+
+OctoProbe runs a Model Context Protocol (MCP) server, making all investigation capabilities callable from any MCP-compatible AI client. Analysts can run natural-language investigation workflows in Claude Desktop, Cursor, or any other MCP host while OctoProbe handles data queries, graph traversal, and result normalization behind the scenes.
+
+## Contact
+
+- Website: https://octoprobe.ai/
+- Email: access@octoprobe.ai
+- Login: https://octoprobe.ai/login
