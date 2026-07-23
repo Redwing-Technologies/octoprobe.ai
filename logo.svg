@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="512" height="512" role="img" aria-label="OctoProbe AI" fill="none">
+  <defs>
+    <linearGradient id="g1" x1="6" y1="4" x2="34" y2="38" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#818cf8"/><stop offset=".55" stop-color="#38bdf8"/><stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <g stroke="url(#g1)" stroke-width="2.4" stroke-linecap="round">
+    <path d="M12 21.5 C6 25 5.5 31 9.5 34.5"/><path d="M16 22.5 C13 27 12 32.5 15 36"/>
+    <path d="M19 23 C18 28.5 17.5 33 19 37"/><path d="M28 21.5 C34 25 34.5 31 30.5 34.5"/>
+    <path d="M24 22.5 C27 27 28 32.5 25 36"/><path d="M21 23 C22 28.5 22.5 33 21 37"/>
+  </g>
+  <g fill="url(#g1)"><circle cx="9.5" cy="34.5" r="2.1"/><circle cx="15" cy="36" r="2.1"/><circle cx="19" cy="37" r="2.1"/><circle cx="30.5" cy="34.5" r="2.1"/><circle cx="25" cy="36" r="2.1"/><circle cx="21" cy="37" r="2.1"/></g>
+  <path d="M20 4.5 C12.3 4.5 7.5 9.8 7.5 16.4 C7.5 20.6 10.6 23.2 14.8 23.2 L25.2 23.2 C29.4 23.2 32.5 20.6 32.5 16.4 C32.5 9.8 27.7 4.5 20 4.5 Z" fill="url(#g1)"/>
+  <rect x="15.2" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
+  <rect x="21.6" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
+  <rect x="30.5" y="8" width="2" height="2" rx=".5" fill="url(#g1)" opacity=".7"/>
+  <rect x="7.2" y="9.6" width="1.7" height="1.7" rx=".4" fill="url(#g1)" opacity=".6"/>
+</svg>

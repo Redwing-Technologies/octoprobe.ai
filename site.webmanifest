@@ -1,0 +1,14 @@
+{
+  "name": "OctoProbe AI",
+  "short_name": "OctoProbe",
+  "description": "AI-native by-hop network intelligence for investigators, law firms, and OSINT teams.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#0284c7",
+  "background_color": "#eef1f6",
+  "icons": [
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any", "purpose": "any" },
+    { "src": "/apple-touch-icon.png", "type": "image/png", "sizes": "180x180", "purpose": "any" },
+    { "src": "/favicon-32x32.png", "type": "image/png", "sizes": "32x32", "purpose": "any" }
+  ]
+}

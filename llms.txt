@@ -11,12 +11,12 @@ OctoProbe AI performs multi-hop entity resolution across identity databases, bre
 - **MCP server**: Exposes investigation tools as callable functions for any MCP-compatible AI client (Claude Desktop, etc.)
 - **REST API**: Full programmatic access for automation and platform integration
 - **Custom data connectors**: Ingest proprietary databases, case files, or internal data lakes
-- **Breach intelligence**: Cross-reference identifiers against credential and breach databases
-- **Social footprint mapping**: Platform presence, alias clustering, username correlation
+- **Breach & credential intelligence**: Cross-reference identifiers via third-party APIs including DeHashed and IntelX
+- **OSINT & social footprint mapping**: Platform presence, alias clustering, username correlation — enriched via OSINT Industries
 - **Dark web archive search**: Index and archive correlation
-- **Public records**: Corporate filings, UCC records, property, aviation, maritime, and more
+- **Public records**: Property records, FEC donations & receipts, criminal & civil records, SEC filings, corporate & UCC filings, aviation, maritime, and more
 - **Audit logging**: Every query, expansion, and export logged to the authenticated user
-- **Court-ready exports**: Timestamped, source-attributed PDF, JSON, and CSV
+- **Source-tracked exports**: Timestamped, source-attributed PDF, JSON, and CSV (SHA-256 hash-verified)
 
 ## Who uses OctoProbe
 
