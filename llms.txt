@@ -1,38 +1,34 @@
 # OctoProbe AI
 
-> Multi-source network intelligence platform for investigators, law firms, OSINT practitioners, and opposition research teams.
+> Every OSINT tool. One investigation graph. OctoProbe AI is an OSINT investigation platform for law firms, licensed investigators, OSINT analysts, and opposition research teams.
 
-OctoProbe AI performs multi-hop entity resolution across identity databases, breach intelligence, open-source data, dark web archives, and proprietary data lakes. Starting from any identifier — name, email, phone, address — OctoProbe maps every connected entity across all integrated sources into a unified investigation graph.
+Start with one clue — an email, phone number, handle, name, domain, or photo. OctoProbe runs it through 20+ premium APIs, public records, and facial recognition at once, then maps every connection on one live investigation graph, with the evidence attached.
 
 ## Key capabilities
 
-- **Multi-hop analysis**: Traverse entity connections 1–3+ hops deep across all integrated data sources simultaneously
-- **Entity resolution**: Deduplicate and confidence-score conflicting records across sources
-- **MCP server**: Exposes investigation tools as callable functions for any MCP-compatible AI client (Claude Desktop, etc.)
-- **REST API**: Full programmatic access for automation and platform integration
-- **Custom data connectors**: Ingest proprietary databases, case files, or internal data lakes
-- **Breach & credential intelligence**: Cross-reference identifiers via third-party APIs including DeHashed and IntelX
-- **OSINT & social footprint mapping**: Platform presence, alias clustering, username correlation — enriched via OSINT Industries
-- **Dark web archive search**: Index and archive correlation
-- **Public records**: Property records, FEC donations & receipts, criminal & civil records, SEC filings, corporate & UCC filings, aviation, maritime, and more
-- **Audit logging**: Every query, expansion, and export logged to the authenticated user
-- **Source-tracked exports**: Timestamped, source-attributed PDF, JSON, and CSV (SHA-256 hash-verified)
+- **Expansion layers**: every identifier opens its own layer of leads, with suggestions for the next lead worth chasing
+- **Premium APIs, built in**: breach intelligence, account discovery, phone intelligence, and digital infrastructure
+- **Public records**: court filings, corporate records, and financial disclosures
+- **Facial recognition**: turn profile photos and uploads into open-web matches, reviewed by an analyst
+- **Live link graph**: watch the network build in real time; click any link to see why it's there
+- **Analyst case file**: matters, tasks, hypotheses, watches, and alerts alongside the graph
+- **Evidence collection**: every finding captured with its source and timestamp; web pages preserved
+- **Reports & sharing**: polished, sourced reports and secure guest sharing
+- **MCP server**: connect any MCP-compatible client to the whole toolkit
 
 ## Who uses OctoProbe
 
-- Law firms conducting due diligence, asset tracing, and litigation support
-- Licensed private investigators and investigative agencies
-- OSINT practitioners and analysts
-- Opposition research and political intelligence firms
-- Corporate security and intelligence teams
-- Investigative newsrooms
+- Law firms: asset discovery, witness and adverse-party backgrounds, skip trace
+- Licensed private investigators: locate, identity intelligence, alias resolution
+- OSINT analysts: account mapping, breach correlation, infrastructure pivots
+- Opposition research and corporate intelligence: donor networks, financial disclosures, corporate ownership
 
-## Integration
+## Notes
 
-OctoProbe runs a Model Context Protocol (MCP) server, making all investigation capabilities callable from any MCP-compatible AI client. Analysts can run natural-language investigation workflows in Claude Desktop, Cursor, or any other MCP host while OctoProbe handles data queries, graph traversal, and result normalization behind the scenes.
+OctoProbe is not a consumer reporting agency; results may not be used for FCRA-covered eligibility decisions.
 
 ## Contact
 
-- Website: https://octoprobe.ai/
-- Email: access@octoprobe.ai
-- Login: https://octoprobe.ai/login
+- Website: https://www.octoprobe.ai/
+- Email: team@octoprobe.ai
+- Login: https://app.octoprobe.ai/

@@ -11,7 +11,7 @@
     </radialGradient>
   </defs>
 
-  <rect width="1200" height="630" fill="#eef1f6"/>
+  <rect width="1200" height="630" fill="#f7fbff"/>
   <rect width="1200" height="630" fill="url(#glow)"/>
 
   <!-- faint octopus watermark, right side -->
@@ -40,13 +40,13 @@
   </g>
 
   <!-- headline -->
-  <text x="80" y="330" font-family="'Space Grotesk',Arial,sans-serif" font-size="66" font-weight="700" letter-spacing="-1.5" fill="#0f1b2d">Dive deep on any profile —</text>
-  <text x="80" y="410" font-family="'Space Grotesk',Arial,sans-serif" font-size="66" font-weight="700" letter-spacing="-1.5" fill="url(#gtext)">surface the entire network.</text>
+  <text x="80" y="330" font-family="'Space Grotesk',Arial,sans-serif" font-size="72" font-weight="700" letter-spacing="-1.5" fill="#0f1b2d">Every OSINT tool.</text>
+  <text x="80" y="414" font-family="'Space Grotesk',Arial,sans-serif" font-size="72" font-weight="700" letter-spacing="-1.5" fill="url(#gtext)">One investigation graph.</text>
 
   <!-- subline -->
-  <text x="82" y="486" font-family="'Inter',Arial,sans-serif" font-size="27" fill="#5b6675">AI-native by-hop network intelligence, sourced &amp; timestamped.</text>
+  <text x="82" y="486" font-family="'Inter',Arial,sans-serif" font-size="27" fill="#5b6675">Premium APIs, public records &amp; facial recognition — with evidence on every link.</text>
 
   <!-- footer keywords -->
-  <text x="82" y="560" font-family="'JetBrains Mono','Courier New',monospace" font-size="21" letter-spacing="1" fill="#0284c7">Law Firms · Investigators · OSINT · MCP-native</text>
+  <text x="82" y="560" font-family="'JetBrains Mono','Courier New',monospace" font-size="21" letter-spacing="1" fill="#0284c7">Law Firms · Investigators · OSINT · OpRes</text>
   <text x="1120" y="560" text-anchor="end" font-family="'JetBrains Mono','Courier New',monospace" font-size="21" fill="#78828f">octoprobe.ai</text>
 </svg>

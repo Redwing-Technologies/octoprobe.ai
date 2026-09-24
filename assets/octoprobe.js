@@ -20,13 +20,17 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 
 // parallax octopus scene — the tall inner layer pans vertically as the page
 // scrolls, so the head sits in the hero and the tentacles reach the lower page
-// (grabbing the pirate ship + treasure chest). It pans slower than the content,
+// (sky + pirate ship → kraken → reef & treasure). It pans slower than the content,
 // which reads as depth. Fades gently in over the first screen.
 (function () {
   const bg = document.getElementById('octoBg');
   const pan = document.getElementById('octoPan');
   if (!bg || !pan) return;
-  if (matchMedia('(prefers-reduced-motion:reduce)').matches) { bg.style.opacity = '.12'; return; }
+  if (matchMedia('(prefers-reduced-motion:reduce)').matches) {
+    const svg = pan.querySelector('svg');
+    if (svg && svg.pauseAnimations) svg.pauseAnimations();   // freeze SMIL (flag, parrots)
+    return;
+  }
   let ticking = false;
   function update() {
     const y = window.scrollY || 0, vh = window.innerHeight || 1;
@@ -35,7 +39,7 @@ document.getElementById('yr').textContent = new Date().getFullYear();
     const panRange = Math.max(0, pan.offsetHeight - vh);     // room the tall scene can pan
     pan.style.transform = 'translateX(-50%) translate3d(0,' + (-prog * panRange).toFixed(1) + 'px,0)';
     const opProg = Math.min(1, y / (vh * 0.7));
-    bg.style.opacity = (0.06 + opProg * 0.11).toFixed(3);    // 0.06 → 0.17
+    bg.style.opacity = (0.34 + opProg * 0.28).toFixed(3);    // 0.34 in the hero → 0.62 below
     ticking = false;
   }
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
