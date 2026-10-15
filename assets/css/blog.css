@@ -395,9 +395,14 @@ footer .legal strong{color:var(--soft)}
   border:1px solid var(--line-2);box-shadow:0 16px 40px rgba(15,23,42,.06);
   font-size:.95rem;font-weight:400;color:var(--soft);
 }
-.prose .callout strong{
+.prose .callout > strong,
+.prose .callout .callout-label{
   display:block;font-family:var(--fd);color:var(--heading);margin-bottom:8px;
   font-size:1.05rem;font-weight:700;letter-spacing:-.015em;
+}
+.prose .callout li strong{
+  display:inline;font-family:inherit;font-size:inherit;font-weight:700;
+  color:var(--heading);margin:0;letter-spacing:inherit;
 }
 .prose .callout.takeaways ul{margin-top:10px}
 .prose .callout.takeaways{margin-top:.6em}

@@ -32,7 +32,7 @@ faq:
 ## Key takeaways
 
 - An **identifier graph** maps entities and identifiers with *evidenced* edges (source + time + confidence)—not a bookmark pile.
-- The loop is **seed → expand → link → collect & report**; OctoProbe compresses the bookkeeping, not the judgment.
+- The loop is **seed → expand → link → collect & report**. OctoProbe compresses the bookkeeping, not the judgment.
 - Start from public clues only: email, phone, handle, name, domain, or photo—same seeds the [platform FAQ](/#faq) describes.
 - Soft correlates get soft edges; facial matches stay analyst-reviewed (**facial recognition OSINT** is suggestion until a human accepts).
 - Teaching examples here use fictional **Mira Calden** / **Northline Example Labs** only—no real passport numbers or invented real people.
