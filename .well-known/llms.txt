@@ -46,5 +46,5 @@ OctoProbe is **not** a consumer reporting agency. Results may not be used for FC
 Methodology notes on identifier graphs, breach correlation, and public OSINT practice. Each post leads with a definitional answer so search and chat engines can cite it.
 
 - Blog index: https://www.octoprobe.ai/blog/ — OSINT investigation platform findings: identifier graphs, expansion layers, evidence discipline
-- From Public Lead to Identifier Graph — https://www.octoprobe.ai/blog/2026-10-15-identifier-graph-methodology/ — How a single public clue expands into a structured identifier graph—seed, expand, link, and evidence—using only open-source and licensed public data.
+- From Public Lead to Identifier Graph — https://www.octoprobe.ai/blog/2026-10-15-identifier-graph-methodology/ — Manual OSINT graphs burn time on review and markup. Automation burns trust with overexpansion. Here is how to keep an identifier graph scoped, evidenced, and usable.
 

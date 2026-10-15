@@ -1,22 +1,24 @@
 ---
 title: "From Public Lead to Identifier Graph"
-description: "How OSINT investigators turn one public clue into a sourced identifier graph—seed, expand, link, evidence—with a fictional Mira Calden walkthrough."
+description: "How OSINT teams turn one public clue into a sourced identifier graph—and how to avoid burning hours on manual markup or drowning in automated false-positive nodes."
 date: 2026-10-15
 date_modified: 2026-10-15
 author: "OctoProbe AI"
 slug: 2026-10-15-identifier-graph-methodology
 tags: [Methodology, OSINT, Identifier Graph]
-keywords: [OSINT investigation platform, identifier graph, breach intelligence, facial recognition OSINT, skip tracing, MCP OSINT, public records OSINT]
+keywords: [OSINT investigation platform, identifier graph, false positive OSINT, analyst review time, breach intelligence, facial recognition OSINT, skip tracing, MCP OSINT]
 canonical: "https://www.octoprobe.ai/blog/2026-10-15-identifier-graph-methodology/"
 og_image: "https://www.octoprobe.ai/assets/blog/identifier-graph-hero.jpg"
 hero: "/assets/blog/identifier-graph-hero.jpg"
 hero_alt: "Identifier graph diagram: seed email expands to person, domain, handle, org, and photo nodes with evidenced edges"
-excerpt: "How a single public clue expands into a structured identifier graph—seed, expand, link, and evidence—using only open-source and licensed public data."
+excerpt: "Manual OSINT graphs burn time on review and markup. Automation burns trust with overexpansion. Here is how to keep an identifier graph scoped, evidenced, and usable."
 faq:
   - q: "What is an identifier graph in OSINT?"
     a: "An identifier graph is a living map of entities (people, orgs, places) and identifiers (email, phone, handle, domain, photo) connected by evidenced edges that answer why two nodes are linked—with source, timestamp, and confidence on every link."
-  - q: "What identifiers can you start an OctoProbe investigation from?"
-    a: "Any public clue works: an email, phone number, handle, name, domain, or photo. Use one seed, or combine several that already co-occur in public view."
+  - q: "Where does manual identifier-graph work actually burn time?"
+    a: "Most hours go to reviewing candidate connections, deciding what belongs on the subject, adding or correcting nodes, and marking up edges with source and confidence—not to the first lookup itself."
+  - q: "What goes wrong when expansion is fully automated?"
+    a: "Without a tight investigative question and confidence gates, automation over-expands: namesakes, role accounts, recycled phone numbers, and lookalike profiles land as false-positive nodes that are not associated with the subject."
   - q: "How does the seed → expand → link → collect loop work?"
     a: "Seed one attributable public clue, expand only the sources that apply to that identifier type, link candidates with provenance (merge duplicates, filter noise, score confidence), then collect evidence and export a report a partner can defend."
   - q: "Is OctoProbe a consumer reporting agency under the FCRA?"
@@ -27,22 +29,55 @@ faq:
 
 # From Public Lead to Identifier Graph
 
-**OctoProbe AI** (from **Redwing Technologies**) is an **OSINT investigation platform** that turns one public clue into a live **identifier graph**—with source and timestamp on every link. This post explains the methodology that graph encodes: how a thin lead becomes a defendable network of emails, phones, handles, domains, and photos without inventing people or skipping provenance.
+**OctoProbe AI** (from **Redwing Technologies**) is an **OSINT investigation platform** that turns one public clue into a live **identifier graph**—with source and timestamp on every link. This post is written for the analyst and the case lead who have to live with the result: how a thin lead becomes a defendable network of emails, phones, handles, domains, and photos—without inventing people, skipping provenance, or shipping a graph nobody trusts.
+
+Two failure modes show up again and again. **Manual** workflows spend most of the clock on reviewing connections and marking up nodes. **Automated** workflows over-expand and leave false-positive nodes that are not associated with the subject. Good methodology is the middle path: expand with discipline, keep a human on the gates that matter, and treat every edge as something you may have to explain.
 
 ## Key takeaways
 
 - An **identifier graph** maps entities and identifiers with *evidenced* edges (source + time + confidence)—not a bookmark pile.
-- The loop is **seed → expand → link → collect & report**. OctoProbe compresses the bookkeeping, not the judgment.
-- Start from public clues only: email, phone, handle, name, domain, or photo—same seeds the [platform FAQ](/#faq) describes.
+- The loop is **seed → expand → link → collect & report**. Tools can compress bookkeeping; they should not replace judgment.
+- **Manual pain:** hours go to reviewing candidate links, adding or correcting nodes, and markup—not to the first search.
+- **Automation pain:** unconstrained expansion creates false-positive nodes (namesakes, role accounts, recycled numbers, lookalikes) outside the investigation’s scope.
 - Soft correlates get soft edges; facial matches stay analyst-reviewed (**facial recognition OSINT** is suggestion until a human accepts).
-- Teaching examples here use fictional **Mira Calden** / **Northline Example Labs** only—no real passport numbers or invented real people.
-- Public OSINT first; OctoProbe is **not** a consumer reporting agency (not for FCRA eligibility).
+- Teaching examples use fictional **Mira Calden** / **Northline Example Labs** only. Public OSINT first; OctoProbe is **not** a consumer reporting agency (not for FCRA eligibility).
 
 ## What problem does an identifier graph solve?
 
 Investigations rarely start with a complete dossier. They start with a thin public clue: an email on a company About page, a phone in a press release, a handle in a conference agenda, or a photo on a speaker bio. The craft is not “find everything.” It is disciplined expansion—turning that seed into a graph of identifiers, each edge backed by a source and a timestamp.
 
-Without a graph, analysts drown in tabs. With a graph and no provenance, they invent confidence. The methodology below is how **breach intelligence**, account discovery, public records, and open-web pivots stay auditable—whether you run them by hand or inside OctoProbe’s live investigation graph and [MCP OSINT](/#integration) toolkit.
+Without a graph, analysts drown in tabs. With a graph and no provenance, they invent confidence. With a graph that expands without a scope, they drown again—this time in nodes that look related and are not. The methodology below is how **breach intelligence**, account discovery, public records, and open-web pivots stay auditable—whether you run them by hand or inside OctoProbe’s live investigation graph and [MCP OSINT](/#integration) toolkit.
+
+## Where investigations actually burn time
+
+Most case leads do not lose the day on “running a search.” They lose it on what happens next.
+
+### If the graph is mostly manual
+
+The expensive steps are human:
+
+1. **Reviewing candidate connections** — Is this email the subject’s, a coworker’s, or a shared mailbox?
+2. **Adding and correcting nodes** — Creating the person/org stubs, merging duplicates, demoting role accounts.
+3. **Markup and provenance** — Attaching source, time, and confidence so a partner can click an edge and see *why*.
+4. **Re-walking the same trail** — Reopening tabs weeks later because the first pass was not captured as a graph.
+
+That review-and-markup loop is real work. A platform that only dumps more results without helping record decisions does not shorten it; it lengthens it.
+
+### If expansion is heavily automated
+
+Automation fails differently. It is fast at proposing nodes and slow at knowing which ones belong on *this* matter:
+
+- **Namesakes and common names** attach to the wrong person.
+- **Role accounts** (`info@`, switchboards, shared support lines) look like subject identifiers.
+- **Recycled phones and shared infrastructure** create edges that are true in the data and false for the hypothesis.
+- **Lookalike face or profile matches** inflate the graph until an analyst rejects them.
+- **Scope creep** — “map this speaker’s public footprint” becomes a neighborhood of weakly related orgs, events, and contacts.
+
+False-positive nodes are not a minor UI annoyance. They burn review time, dilute the report, and—if left unmarked—teach the next reader the wrong story.
+
+### What “good” looks like for the reader of the file
+
+A usable identifier graph is small enough to explain, large enough to answer the question, and strict about provenance. Every node should survive one test: *if I remove this, does the investigative question get harder to answer?* If not, it is clutter.
 
 ## What is an identifier graph?
 
@@ -63,12 +98,13 @@ Edges are not vibes. Each edge should carry:
 2. **Timestamp** — when the observation was captured
 3. **Confidence** — exact match vs. soft correlate
 4. **Direction** — which expansion produced the link
+5. **Status** — accepted, candidate, or rejected (rejected matters; hide noise without deleting the audit trail)
 
 That discipline is what separates a bookmark folder from an investigation workspace—and what answer engines and partners can cite.
 
 ## How does the four-phase loop work?
 
-OctoProbe’s product language maps cleanly onto a classic OSINT loop. You can run it by hand; the platform just compresses the cycle. See also [how it works on the homepage](/#how-it-works) and [capabilities](/#capabilities).
+OctoProbe’s product language maps onto a classic OSINT loop. You can run it by hand; the platform compresses the cycle. See also [how it works on the homepage](/#how-it-works) and [capabilities](/#capabilities).
 
 ### 1. Seed
 
@@ -81,6 +117,9 @@ Ask before you expand:
 - Is this identifier *publicly attributable* to the subject of interest?
 - What is the **investigative question** (locate an org contact, map digital footprint, corroborate a corporate affiliation)?
 - What would *disconfirm* the link?
+- What is explicitly **out of scope** for this matter?
+
+Writing the out-of-scope line first is the cheapest anti-overexpansion control you have.
 
 ### 2. Expand
 
@@ -99,26 +138,31 @@ In the Mira example, expanding the email might surface:
 - A second email on the same domain in a press PDF
 - A profile photo attached to the speaker page
 
-Each hit becomes a **candidate node**, not a conclusion.
+Each hit becomes a **candidate node**, not a conclusion. Automation may propose the candidates; an analyst (or a scoped accept rule) decides what enters the subject graph.
 
 ### 3. Link
 
-Linking is entity resolution with receipts:
+Linking is entity resolution with receipts—and the main place both failure modes show up:
 
 - **Merge** duplicates (`Mira Calden` vs `mira calden`)
 - **Filter** noise (shared corporate switchboards, role accounts like `info@`)
-- **Score** against the subject hypothesis
+- **Score** against the subject hypothesis and the stated scope
 - **Attach evidence** to every edge
+- **Park rejects** so the next reviewer does not re-litigate the same false positive
 
-Soft correlates deserve soft edges. Exact co-occurrence on a controlled page (email + name + photo on the same bio) earns a stronger edge than a handle that merely shares a first name.
+Soft correlates deserve soft edges. Exact co-occurrence on a controlled page (email + name + photo on the same bio) earns a stronger edge than a handle that merely shares a first name. If a node cannot be tied to the subject with evidence that survives the investigative question, leave it off the accepted graph.
 
 ### 4. Collect & report
 
-Preserve pages as you go. Export a report that a partner can defend: claim → edge → source → time. If you cannot click an edge and see *why it exists*, it does not belong on the graph.
+Preserve pages as you go. Export a report that a partner can defend: claim → edge → source → time. If you cannot click an edge and see *why it exists*, it does not belong on the accepted graph.
+
+Budget the collect step as part of the case, not an afterthought. Markup deferred is markup multiplied: the next person on the file pays the review tax again.
 
 ## Worked example (fully fictional)
 
 **Investigative question:** “What public digital footprint is associated with the speaker Mira Calden of Northline Example Labs?”
+
+**Out of scope (examples):** full employee directory mapping; personal relatives; unrelated Northline vendors; any FCRA eligibility use.
 
 **Round 1 — Seed**
 
@@ -133,37 +177,53 @@ Preserve pages as you go. Export a report that a partner can defend: claim → e
 **Round 3 — Expand handle & photo**
 
 - Bio link to `@mira_calden_ex` → Handle node
-- Open-web face search returns two candidate pages; analyst accepts one (same event photo reused), rejects one (different person, similar crop)
+- Open-web face search returns two candidate pages; analyst accepts one (same event photo reused), rejects one (different person, similar crop)—**reject kept as rejected**, not deleted, so it does not bounce back as a “new” lead
 
 **Round 4 — Stabilize**
 
 - Merge two “Mira” person stubs
-- Demote a role-account phone on the company footer to an Org-owned identifier
+- Demote a role-account phone on the company footer to an Org-owned identifier (not a subject phone)
+- Drop a same-last-name conference panelist who never co-occurs with Mira’s email or photo
 - Freeze a report snapshot for counsel review
 
 The result is a small, explainable graph—not a dragnet. Teams doing **skip tracing**, due diligence, or opposition research use the same loop with purpose-bound questions.
+
+## How to keep expansion inside the investigation’s scope
+
+Use these gates whether your day is mostly manual or mostly automated:
+
+1. **One sentence scope** at seed time (question + out-of-scope).
+2. **Candidate vs accepted** — proposals are cheap; acceptance is deliberate.
+3. **Identifier-type rules** — do not run every source on every node.
+4. **Confidence labels** on soft edges; never promote a soft edge silently.
+5. **Reject memory** — record why a node was refused so automation (or a teammate) does not reintroduce it.
+6. **Periodic prune** — if a node does not answer the investigative question, demote or remove it from the accepted view.
+7. **Human gate on identity-sensitive pivots** — especially faces and ambiguous namesakes.
+
+OctoProbe’s job, in that framing, is to compress the bookkeeping around these gates—expansion layers, ranked next steps, evidence on click—not to flood the canvas.
 
 ## What are the limitations?
 
 1. **Public OSINT first.** Prefer pages anyone can fetch; treat licensed APIs as premium *public-record/intel* layers, not backdoors.
 2. **No invented people.** Teaching examples stay obviously fictional; production cases use only observed data. Never publish real passport numbers or unnecessary PII in public posts.
 3. **Analyst in the loop for faces.** Facial matches are suggestions until a human accepts them.
-4. **Edge or delete.** Orphan identifiers without provenance clutter the map and inflate confidence.
+4. **Edge or delete (from the accepted view).** Orphan identifiers without provenance clutter the map and inflate confidence.
 5. **Purpose-bound use.** Map the footprint you were asked to map. Expansion is not an excuse to wander into protected or irrelevant spaces.
 6. **Not for FCRA eligibility.** Credit, employment, insurance, and tenant screening decisions are out of scope for this kind of OSINT workspace.
+7. **No free lunch on review.** Automation can propose faster; someone still owns accept/reject for anything that changes the story of the subject.
 
 ## How does OctoProbe encode the method?
 
 In product terms, the same loop is:
 
-- **Expansion layers** — each node exposes the sources that apply
-- **Ranked next steps** — which lead is worth chasing next
-- **Live investigation graph** — layers you can toggle
-- **Evidence on every link** — source + timestamp on click
-- **Case file** — tasks, hypotheses, watches alongside the graph
-- **MCP server** — connect MCP-compatible clients to the same toolkit
+- **Expansion layers** — each node exposes the sources that apply (so you are not running every tool on every identifier)
+- **Ranked next steps** — which lead is worth chasing next, instead of an unsorted dump
+- **Live investigation graph** — layers you can toggle; candidates can stay visually distinct from accepted nodes
+- **Evidence on every link** — source + timestamp on click, which is where manual markup usually dies
+- **Case file** — tasks, hypotheses, watches alongside the graph so decisions are not stuck in chat
+- **MCP server** — connect MCP-compatible clients to the same toolkit without reinventing provenance
 
-The methodology does not change when the UI does the bookkeeping. The graph is still only as good as the questions and the provenance. Explore [who uses OctoProbe](/#audiences) or [request access](/#access).
+The methodology does not change when the UI does the bookkeeping. The graph is still only as good as the question, the scope, and the provenance. Explore [who uses OctoProbe](/#audiences) or [request access](/#access).
 
 ## FAQ
 
@@ -171,9 +231,13 @@ The methodology does not change when the UI does the bookkeeping. The graph is s
 
 An identifier graph is a living map of entities (people, orgs, places) and identifiers (email, phone, handle, domain, photo) connected by evidenced edges that answer why two nodes are linked—with source, timestamp, and confidence on every link.
 
-### What identifiers can you start an OctoProbe investigation from?
+### Where does manual identifier-graph work actually burn time?
 
-Any public clue works: an email, phone number, handle, name, domain, or photo. Use one seed, or combine several that already co-occur in public view.
+Most hours go to reviewing candidate connections, deciding what belongs on the subject, adding or correcting nodes, and marking up edges with source and confidence—not to the first lookup itself.
+
+### What goes wrong when expansion is fully automated?
+
+Without a tight investigative question and confidence gates, automation over-expands: namesakes, role accounts, recycled phone numbers, and lookalike profiles land as false-positive nodes that are not associated with the subject.
 
 ### How does the seed → expand → link → collect loop work?
 
@@ -189,7 +253,7 @@ Law firms, licensed private investigators, OSINT analysts, and opposition resear
 
 ## Closing
 
-A public lead becomes an identifier graph when you treat expansion as a **repeatable protocol**: seed carefully, expand by applicable source, link with evidence, and report only what the edges support. That is the difference between a pile of tabs and an investigation you can hand to a partner—and the kind of structured answer search and chat engines can cite.
+A public lead becomes an identifier graph when you treat expansion as a **repeatable protocol**: seed carefully, expand by applicable source, link with evidence, reject what is out of scope, and report only what the accepted edges support. Manual teams need that protocol so review and markup do not eat the case. Automated teams need it so speed does not become a false-positive machine. That is the difference between a pile of tabs and an investigation you can hand to a partner—and the kind of structured answer search and chat engines can cite.
 
 ---
 
