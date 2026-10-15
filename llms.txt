@@ -32,3 +32,11 @@ OctoProbe is not a consumer reporting agency; results may not be used for FCRA-c
 - Website: https://www.octoprobe.ai/
 - Email: team@octoprobe.ai
 - Login: https://app.octoprobe.ai/
+
+## Blog / Findings
+
+Methodology notes on identifier graphs and public OSINT practice:
+
+- Blog index: https://www.octoprobe.ai/blog/
+- From Public Lead to Identifier Graph: A Methodology — https://www.octoprobe.ai/blog/2026-10-15-identifier-graph-methodology/
+

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From Public Lead to Identifier Graph: A Methodology · OctoProbe Findings</title>
+<meta name="description" content="How a single public clue expands into a structured identifier graph—seed, expand, link, and evidence—using only open-source and licensed public data. Walkthrough with fictional personas.">
+<link rel="canonical" href="https://www.octoprobe.ai/blog/2026-10-15-identifier-graph-methodology/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="OctoProbe AI">
+<meta property="og:url" content="https://www.octoprobe.ai/blog/2026-10-15-identifier-graph-methodology/">
+<meta property="og:title" content="From Public Lead to Identifier Graph: A Methodology">
+<meta property="og:description" content="How a single public clue expands into a structured identifier graph—seed, expand, link, and evidence—using only open-source and licensed public data. Walkthrough with fictional personas.">
+<meta property="og:image" content="https://www.octoprobe.ai/og-image.png">
+<meta property="article:published_time" content="2026-10-15">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="From Public Lead to Identifier Graph: A Methodology">
+<meta name="twitter:description" content="How a single public clue expands into a structured identifier graph—seed, expand, link, and evidence—using only open-source and licensed public data. Walkthrough with fictional personas.">
+<meta name="twitter:image" content="https://www.octoprobe.ai/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "From Public Lead to Identifier Graph: A Methodology",
+  "datePublished": "2026-10-15",
+  "description": "How a single public clue expands into a structured identifier graph\u2014seed, expand, link, and evidence\u2014using only open-source and licensed public data. Walkthrough with fictional personas.",
+  "author": {
+    "@type": "Organization",
+    "name": "OctoProbe AI"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "OctoProbe AI",
+    "url": "https://www.octoprobe.ai/"
+  },
+  "mainEntityOfPage": "https://www.octoprobe.ai/blog/2026-10-15-identifier-graph-methodology/"
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6T6HW79ZP0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6T6HW79ZP0');
+</script>
+<meta name="theme-color" content="#f7fbff">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/blog.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="top" id="nav" aria-label="Primary">
+  <a class="brand" href="/" aria-label="OctoProbe AI home">
+    <svg class="logo" viewBox="0 0 40 40" role="img" aria-label="OctoProbe AI" fill="none">
+      <defs>
+        <linearGradient id="g1" x1="6" y1="4" x2="34" y2="38" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#818cf8"/><stop offset=".55" stop-color="#38bdf8"/><stop offset="1" stop-color="#22d3ee"/>
+        </linearGradient>
+      </defs>
+      <g stroke="url(#g1)" stroke-width="2.4" stroke-linecap="round">
+        <path d="M12 21.5 C6 25 5.5 31 9.5 34.5"/><path d="M16 22.5 C13 27 12 32.5 15 36"/>
+        <path d="M19 23 C18 28.5 17.5 33 19 37"/><path d="M28 21.5 C34 25 34.5 31 30.5 34.5"/>
+        <path d="M24 22.5 C27 27 28 32.5 25 36"/><path d="M21 23 C22 28.5 22.5 33 21 37"/>
+      </g>
+      <g fill="url(#g1)"><circle cx="9.5" cy="34.5" r="2.1"/><circle cx="15" cy="36" r="2.1"/><circle cx="19" cy="37" r="2.1"/><circle cx="30.5" cy="34.5" r="2.1"/><circle cx="25" cy="36" r="2.1"/><circle cx="21" cy="37" r="2.1"/></g>
+      <path d="M20 4.5 C12.3 4.5 7.5 9.8 7.5 16.4 C7.5 20.6 10.6 23.2 14.8 23.2 L25.2 23.2 C29.4 23.2 32.5 20.6 32.5 16.4 C32.5 9.8 27.7 4.5 20 4.5 Z" fill="url(#g1)"/>
+      <rect x="15.2" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
+      <rect x="21.6" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
+      <rect x="30.5" y="8" width="2" height="2" rx=".5" fill="url(#g1)" opacity=".7"/>
+      <rect x="7.2" y="9.6" width="1.7" height="1.7" rx=".4" fill="url(#g1)" opacity=".6"/>
+    </svg>
+    <span class="bn">OctoProbe AI<small>OSINT Workspace</small></span>
+  </a>
+  <div class="nav-center">
+    <a href="/#capabilities">Capabilities</a>
+    <a href="/#platform">Platform</a>
+    <a href="/#integration">Integrations</a>
+    <a href="/#audiences">Who Uses It</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/blog/" class="active" aria-current="page">Blog</a>
+  </div>
+  <div class="nav-right">
+    <a class="nav-login" href="https://app.octoprobe.ai/">Log In</a>
+    <a class="nav-cta" href="/#access">Get Started →</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+  <a href="/#capabilities">Capabilities</a>
+  <a href="/#platform">Platform</a>
+  <a href="/#integration">Integrations</a>
+  <a href="/#audiences">Who Uses It</a>
+  <a href="/#faq">FAQ</a>
+  <a href="/blog/" class="active" aria-current="page">Blog</a>
+  <a href="https://app.octoprobe.ai/">Log In</a>
+  <a href="/#access">Get Started →</a>
+</div>
+<main id="main">
+  <header class="post-hero">
+    <div class="wrap">
+      <a class="back-link" href="/blog/">← All findings</a>
+      <span class="eyebrow">Findings</span>
+      <h1>From Public Lead to Identifier Graph: A Methodology</h1>
+      <div class="post-meta">
+        <time datetime="2026-10-15">Oct 15, 2026</time>
+        <span class="sep" aria-hidden="true"></span>
+        <div class="tags"><span class="tag">Methodology</span><span class="tag blue">OSINT</span><span class="tag teal">Identifier Graph</span></div>
+      </div>
+    </div>
+  </header>
+  <article class="post-body">
+    <div class="wrap">
+      <div class="prose">
+<p>Investigations rarely start with a complete dossier. They start with a thin public clue: an email on a company “About” page, a phone number in a press release, a handle in a conference agenda, or a photo on a speaker bio. The craft is not “find everything.” It is disciplined expansion—turning that seed into a graph of identifiers, each edge backed by a source and a timestamp.</p>
+<p>This post is a <strong>methodology writeup</strong>, not a case file on a real person. All names, domains, and handles below are <strong>fictional examples</strong> invented for teaching. We do not invent passport numbers, government IDs, or real-world private identifiers.</p>
+<h2>What an identifier graph is</h2>
+<p>An identifier graph is a living map of <strong>entities</strong> (people, orgs, places) and <strong>identifiers</strong> (email, phone, handle, domain, photobucket URL, corporate filing ID) connected by <strong>edges</strong> that answer: <em>why is this linked?</em></p>
+<table style="width:100%;border-collapse:collapse;font-size:.92rem;margin:1.2em 0">
+<tr><th style="text-align:left;font-family:var(--fm);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft-2);padding:8px 10px;border-bottom:1px solid var(--line);font-weight:500">Node type</th><th style="text-align:left;font-family:var(--fm);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft-2);padding:8px 10px;border-bottom:1px solid var(--line);font-weight:500">Examples (fictional)</th></tr>
+<tr><td style="padding:10px;border-bottom:1px solid var(--line);color:var(--text)">Person</td><td style="padding:10px;border-bottom:1px solid var(--line);color:var(--text)">Mira Calden</td></tr>
+<tr><td style="padding:10px;border-bottom:1px solid var(--line);color:var(--text)">Email</td><td style="padding:10px;border-bottom:1px solid var(--line);color:var(--text)">mira.calden@northline-example.com</td></tr>
+<tr><td style="padding:10px;border-bottom:1px solid var(--line);color:var(--text)">Phone</td><td style="padding:10px;border-bottom:1px solid var(--line);color:var(--text)">+1-555-014-2891</td></tr>
+<tr><td style="padding:10px;border-bottom:1px solid var(--line);color:var(--text)">Handle</td><td style="padding:10px;border-bottom:1px solid var(--line);color:var(--text)">@mira_calden_ex</td></tr>
+<tr><td style="padding:10px;border-bottom:1px solid var(--line);color:var(--text)">Domain</td><td style="padding:10px;border-bottom:1px solid var(--line);color:var(--text)">northline-example.com</td></tr>
+<tr><td style="padding:10px;border-bottom:1px solid var(--line);color:var(--text)">Org</td><td style="padding:10px;border-bottom:1px solid var(--line);color:var(--text)">Northline Example Labs</td></tr>
+</table>
+<p>Edges are not vibes. Each edge should carry:</p>
+<ol>
+<li><strong>Source</strong> — page, API response, or filing citation</li>
+<li><strong>Timestamp</strong> — when the observation was captured</li>
+<li><strong>Confidence</strong> — exact match vs. soft correlate</li>
+<li><strong>Direction</strong> — which expansion produced the link</li>
+</ol>
+<p>That discipline is what separates a bookmark folder from an investigation workspace.</p>
+<h2>The four-phase loop</h2>
+<p>OctoProbe’s product language maps cleanly onto a classic OSINT loop. You can run it by hand; the platform just compresses the cycle.</p>
+<h3>1. Seed</h3>
+<p>Drop in <strong>one</strong> public clue—or a small bundle that already co-occurs in public view.</p>
+<p><strong>Example seed:</strong> the email <code>mira.calden@northline-example.com</code> appears on a public speaker page for “Coastal OSINT Con 2026” (fictional event).</p>
+<p>Ask before you expand:</p>
+<ul>
+<li>Is this identifier <em>publicly attributable</em> to the subject of interest?</li>
+<li>What is the <strong>investigative question</strong> (locate an org contact, map digital footprint, corroborate a corporate affiliation)?</li>
+<li>What would <em>disconfirm</em> the link?</li>
+</ul>
+<h3>2. Expand</h3>
+<p>Every identifier opens its own <strong>expansion layer</strong>. Run only the sources that apply:</p>
+<ul>
+<li>Email → account-discovery / breach-intel style lookups (licensed APIs), same-domain mailboxes, WHOIS/history for the domain, public résumés that list the address</li>
+<li>Phone → carrier-adjacent public intel (where licensed), directory pages, signature blocks</li>
+<li>Handle → profile pivots, mutual follows that are public, bio links</li>
+<li>Photo → open-web facial matches the analyst reviews (never auto-assert identity)</li>
+<li>Org / domain → corporate filings, press, infrastructure pivots</li>
+</ul>
+<p>In the Mira example, expanding the email might surface:</p>
+<ul>
+<li>Domain <code>northline-example.com</code> (parsed from the mailbox)</li>
+<li>A public LinkedIn-style bio that repeats the same email (fictional)</li>
+<li>A second email on the same domain in a press PDF</li>
+<li>A profile photo attached to the speaker page</li>
+</ul>
+<p>Each hit becomes a <strong>candidate node</strong>, not a conclusion.</p>
+<h3>3. Link</h3>
+<p>Linking is entity resolution with receipts:</p>
+<ul>
+<li><strong>Merge</strong> duplicates (<code>Mira Calden</code> vs <code>mira calden</code>)</li>
+<li><strong>Filter</strong> noise (shared corporate switchboards, role accounts like <code>info@</code>)</li>
+<li><strong>Score</strong> against the subject hypothesis</li>
+<li><strong>Attach evidence</strong> to every edge</li>
+</ul>
+<p>Soft correlates deserve soft edges. Exact co-occurrence on a controlled page (email + name + photo on the same bio) earns a stronger edge than a handle that merely shares a first name.</p>
+<h3>4. Collect &amp; report</h3>
+<p>Preserve pages as you go. Export a report that a partner can defend: claim → edge → source → time. If you cannot click an edge and see <em>why it exists</em>, it does not belong on the graph.</p>
+<h2>Worked example (fully fictional)</h2>
+<p><strong>Investigative question:</strong> “What public digital footprint is associated with the speaker Mira Calden of Northline Example Labs?”</p>
+<p><strong>Round 1 — Seed</strong></p>
+<ul>
+<li>Email from speaker page → Person node + Email node + strong edge (same page)</li>
+</ul>
+<p><strong>Round 2 — Expand domain &amp; org</strong></p>
+<ul>
+<li>Domain resolves to org site → Org node</li>
+<li>“Team” page lists Mira with the same photo → corroboration</li>
+<li>Corporate registry hit for <em>Northline Example Labs LLC</em> (example jurisdiction) → Org enrichment, not personal PII</li>
+</ul>
+<p><strong>Round 3 — Expand handle &amp; photo</strong></p>
+<ul>
+<li>Bio link to <code>@mira_calden_ex</code> → Handle node</li>
+<li>Open-web face search returns two candidate pages; analyst accepts one (same event photo reused), rejects one (different person, similar crop)</li>
+</ul>
+<p><strong>Round 4 — Stabilize</strong></p>
+<ul>
+<li>Merge two “Mira” person stubs</li>
+<li>Demote a role-account phone on the company footer to an Org-owned identifier</li>
+<li>Freeze a report snapshot for counsel review</li>
+</ul>
+<p>The result is a small, explainable graph—not a dragnet.</p>
+<h2>Practical rules that keep graphs honest</h2>
+<ol>
+<li><strong>Public OSINT first.</strong> Prefer pages anyone can fetch; treat licensed APIs as premium <em>public-record/intel</em> layers, not backdoors.</li>
+<li><strong>No invented people.</strong> Teaching examples stay obviously fictional; production cases use only observed data.</li>
+<li><strong>Analyst in the loop for faces.</strong> Facial matches are suggestions until a human accepts them.</li>
+<li><strong>Edge or delete.</strong> Orphan identifiers without provenance clutter the map and inflate confidence.</li>
+<li><strong>Purpose-bound use.</strong> Map the footprint you were asked to map. Expansion is not an excuse to wander into protected or irrelevant spaces.</li>
+<li><strong>Not for FCRA eligibility.</strong> Credit, employment, insurance, and tenant screening decisions are out of scope for this kind of OSINT workspace.</li>
+</ol>
+<h2>How OctoProbe encodes the method</h2>
+<p>In product terms, the same loop is:</p>
+<ul>
+<li><strong>Expansion layers</strong> — each node exposes the sources that apply</li>
+<li><strong>Ranked next steps</strong> — which lead is worth chasing next</li>
+<li><strong>Live investigation graph</strong> — layers you can toggle</li>
+<li><strong>Evidence on every link</strong> — source + timestamp on click</li>
+<li><strong>Case file</strong> — tasks, hypotheses, watches alongside the graph</li>
+</ul>
+<p>The methodology does not change when the UI does the bookkeeping. The graph is still only as good as the questions and the provenance.</p>
+<h2>Closing</h2>
+<p>A public lead becomes an identifier graph when you treat expansion as a <strong>repeatable protocol</strong>: seed carefully, expand by applicable source, link with evidence, and report only what the edges support. That is the difference between a pile of tabs and an investigation you can hand to a partner.</p>
+<hr>
+<p><strong>Disclaimer:</strong> This article discusses public OSINT methodology using fictional examples. OctoProbe integrates licensed third-party data providers and public-record sources. OctoProbe is <strong>not</strong> a consumer reporting agency; results may not be used for FCRA-covered eligibility decisions (credit, employment, insurance, tenant screening, and similar).</p>
+      </div>
+      <aside class="post-cta reveal">
+        <h2>Run this methodology in OctoProbe</h2>
+        <p>Seed an identifier, expand through premium APIs and public records, and keep evidence on every link—on one live investigation graph.</p>
+        <div class="actions">
+          <a class="btn btn-blue" href="https://www.octoprobe.ai/#access">Get Access →</a>
+          <a class="btn btn-ghost" href="https://www.octoprobe.ai/">Visit homepage</a>
+        </div>
+      </aside>
+      <p class="post-disclaimer">Public OSINT methodology. Examples are fictional. OctoProbe is not a consumer reporting agency; results may not be used for FCRA-covered eligibility decisions.</p>
+    </div>
+  </article>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="frow">
+      <a class="fbrand" href="/" aria-label="OctoProbe AI">
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <defs><linearGradient id="gf" x1="6" y1="4" x2="34" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#818cf8"/><stop offset=".55" stop-color="#38bdf8"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs>
+          <g stroke="url(#gf)" stroke-width="2.4" stroke-linecap="round">
+            <path d="M12 21.5 C6 25 5.5 31 9.5 34.5"/><path d="M16 22.5 C13 27 12 32.5 15 36"/><path d="M19 23 C18 28.5 17.5 33 19 37"/>
+            <path d="M28 21.5 C34 25 34.5 31 30.5 34.5"/><path d="M24 22.5 C27 27 28 32.5 25 36"/><path d="M21 23 C22 28.5 22.5 33 21 37"/>
+          </g>
+          <g fill="url(#gf)"><circle cx="9.5" cy="34.5" r="2.1"/><circle cx="15" cy="36" r="2.1"/><circle cx="19" cy="37" r="2.1"/><circle cx="30.5" cy="34.5" r="2.1"/><circle cx="25" cy="36" r="2.1"/><circle cx="21" cy="37" r="2.1"/></g>
+          <path d="M20 4.5 C12.3 4.5 7.5 9.8 7.5 16.4 C7.5 20.6 10.6 23.2 14.8 23.2 L25.2 23.2 C29.4 23.2 32.5 20.6 32.5 16.4 C32.5 9.8 27.7 4.5 20 4.5 Z" fill="url(#gf)"/>
+          <rect x="15.2" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
+          <rect x="21.6" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
+        </svg>
+        OctoProbe AI
+      </a>
+      <nav class="fnav" aria-label="Footer navigation">
+        <a href="/#capabilities">Capabilities</a>
+        <a href="/#platform">Platform</a>
+        <a href="/#integration">Integrations</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/blog/">Blog</a>
+        <a href="/#access">Get Started</a>
+        <a href="https://app.octoprobe.ai/">Log In</a>
+        <a href="mailto:team@octoprobe.ai">team@octoprobe.ai</a>
+      </nav>
+    </div>
+    <div class="legal">
+      <p>© <span id="yr">2026</span> Redwing Technologies LLC · OctoProbe AI is a service of Redwing Technologies LLC · <a href="mailto:team@octoprobe.ai" style="color:inherit">team@octoprobe.ai</a></p>
+      <p>OctoProbe integrates licensed third-party data providers and public-record sources. Third-party names are trademarks of their respective owners and do not imply endorsement. OctoProbe is not a consumer reporting agency; results may not be used for FCRA-covered eligibility decisions.</p>
+    </div>
+  </div>
+</footer>
+<script>
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 10), { passive: true });
+  const tg = document.getElementById('navToggle'), mm = document.getElementById('mobileMenu');
+  tg.addEventListener('click', () => { const o = mm.classList.toggle('open'); tg.setAttribute('aria-expanded', o); });
+  mm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mm.classList.remove('open'); tg.setAttribute('aria-expanded', 'false'); }));
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
