@@ -475,3 +475,49 @@ main{position:relative;z-index:1;min-height:50vh}
   font-size:1.05rem;line-height:1.55;font-weight:500;color:var(--heading,#0f172a);
   max-width:42em;
 }
+
+/* ── Table of contents (blog-toc.js) ─────────────────────────── */
+.prose h2[id],.prose h3[id]{scroll-margin-top:96px}
+.post-body .wrap.has-toc{position:relative}
+.toc-rail{display:none}
+.toc-mobile{margin:0 0 28px;border:1px solid var(--line);border-radius:12px;background:var(--panel);font-family:var(--fb);font-size:.95rem}
+.toc-mobile summary{cursor:pointer;padding:12px 16px;font-family:var(--fd);font-weight:600;color:var(--heading);list-style:none}
+.toc-mobile summary::-webkit-details-marker{display:none}
+.toc-mobile summary::before{content:'▸';display:inline-block;margin-right:8px;color:var(--blue);transition:transform .2s}
+.toc-mobile[open] summary::before{transform:rotate(90deg)}
+.toc-mobile nav{padding:0 16px 12px}
+.toc-list{list-style:none;margin:0;padding:0}
+.toc-list li{margin:0}
+.toc-list a{display:block;padding:5px 10px;border-left:2px solid transparent;color:var(--soft);text-decoration:none;line-height:1.35;border-radius:0 6px 6px 0}
+.toc-list .toc-h3 a{padding-left:24px;font-size:.92em}
+.toc-list a:hover{color:var(--heading);background:rgba(2,136,209,.06)}
+.toc-list a.active{color:var(--blue-deep);border-left-color:var(--blue);background:rgba(2,136,209,.08);font-weight:600}
+.toc-list a:focus-visible,.toc-mobile summary:focus-visible{outline:2px solid var(--indigo);outline-offset:2px}
+.toc-title{margin:0 0 10px 12px;font-family:var(--fm);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+@media (min-width:1100px){
+  .toc-mobile{display:none}
+  .toc-rail{display:block;position:absolute;top:0;bottom:0;right:calc(100% + 8px);width:230px}
+  .toc{position:sticky;top:96px;max-height:calc(100vh - 120px);overflow:auto;font-family:var(--fb);font-size:.86rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .toc-mobile summary::before{transition:none}
+}
+
+/* ── Mobile overflow fixes ───────────────────────────────────── */
+.prose img,.prose video,.prose iframe,.prose svg{max-width:100%}
+.prose a{overflow-wrap:anywhere}
+.prose pre{max-width:100%;overflow-x:auto}
+.prose code{overflow-wrap:anywhere}
+@media(max-width:960px){
+  /* base rule `nav.top .nav-center{display:flex}` out-specified the old hide */
+  nav.top .nav-center{display:none}
+}
+@media(max-width:720px){
+  .prose table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+}
+@media(max-width:520px){
+  nav.top .nav-login{display:none}
+  nav.top .nav-cta{padding-left:12px;padding-right:12px;font-size:.85rem;white-space:nowrap}
+  nav.top .brand small{display:none}
+}

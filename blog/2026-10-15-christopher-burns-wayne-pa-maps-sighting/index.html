@@ -50,54 +50,6 @@
   "description": "A Google Maps account allegedly attributed to FBI Most Wanted Fraudster Christopher W. Burns shows activity in Wayne and Wynnewood, PA (~2021 and ~2023), after his last known sighting on September 24, 2020."
 }
 </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Is Christopher W. Burns still wanted?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. As of October 15, 2026, he is listed on the FBI Most Wanted Fraudsters page with a reward of up to $150,000."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "When was Christopher W. Burns last seen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "September 24, 2020, when he left his home in Georgia. His vehicle was later found abandoned in Dunwoody, GA."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What activity appears after that date?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A Google Maps contributor account allegedly attributed to Burns shows a review at PrimoHoagies in Wayne, PA (\"5 years ago,\" ~2021) and a rating at Target in Wynnewood, PA (\"3 years ago,\" ~2023), both after September 24, 2020."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why Wayne, Pennsylvania?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Wayne is his FBI-listed place of birth, and the addresses, employer, and Maps activity in his identifier graph all cluster in the Wayne / Main Line area."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What does this indicate?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Activity on the Main Line roughly one and three years after he vanished in Georgia, pointing to a return to his home region. The ~2023 rating is the stronger data point."
-      }
-    }
-  ]
-}
-</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6T6HW79ZP0"></script>
 <script>
@@ -255,13 +207,6 @@
 <h3>Geography</h3>
 <p>Both sites sit on the Lancaster Avenue (Main Line) corridor west of Philadelphia, about 7 miles apart. Wayne is Burns's FBI-listed birthplace, and the graph's two addresses and linked employer are also in the Wayne area. The post-2020 activity lands in the same tight cluster as his pre-flight footprint, not in Georgia.</p>
 <figure><img loading="lazy" alt="Google Maps contributor profile &quot;Chris Burns,&quot; contributions near Wayne and Wynnewood, PA" src="https://www.octoprobe.ai/blog/2026-10-15-christopher-burns-wayne-pa-maps-sighting/assets/google-maps-contrib.png" /><figcaption>Google Maps contributor profile &ldquo;Chris Burns,&rdquo; captured October 15, 2026: Wayne (~2021) and Wynnewood (~2023) contributions, both after the September 24, 2020 last sighting.</figcaption></figure>
-<h3>Next analytic steps</h3>
-<ul>
-<li>Pull exact contribution timestamps and the owner-reply date for the PrimoHoagies review to fix the ~2021 data point precisely.</li>
-<li>Re-check the remaining graph profiles (LinkedIn, Foursquare, Pandora, Myspace) for activity dated after September 2020.</li>
-<li>Monitor the Maps profile for new contributions and map any additions against the Lancaster Avenue cluster.</li>
-<li>Route the Wayne / Wynnewood timeline to the FBI tip line referenced on the wanted page.</li>
-</ul>
 <h2>Method</h2>
 <ul>
 <li><strong>Sources:</strong> The FBI wanted page, the public Google Maps contributor profile, and other public profile pages, correlated into an OctoProbe identifier graph. No non-public or breached data is shown.</li>
@@ -269,17 +214,6 @@
 <li><strong>Timestamps:</strong> Google Maps shows rounded relative dates, so "5 years ago" reads as ~2021 and "3 years ago" as ~2023.</li>
 <li><strong>Graph image:</strong> A direct export from the OctoProbe app with Privacy Mode on.</li>
 </ul>
-<h2>FAQ</h2>
-<p><strong>Is Christopher W. Burns still wanted?</strong>
-Yes. As of October 15, 2026, he is listed on the FBI Most Wanted Fraudsters page with a reward of up to $150,000.</p>
-<p><strong>When was Christopher W. Burns last seen?</strong>
-September 24, 2020, when he left his home in Georgia. His vehicle was later found abandoned in Dunwoody, GA.</p>
-<p><strong>What activity appears after that date?</strong>
-A Google Maps contributor account allegedly attributed to Burns shows a review at PrimoHoagies in Wayne, PA ("5 years ago," ~2021) and a rating at Target in Wynnewood, PA ("3 years ago," ~2023), both after September 24, 2020.</p>
-<p><strong>Why Wayne, Pennsylvania?</strong>
-Wayne is his FBI-listed place of birth, and the addresses, employer, and Maps activity in his identifier graph all cluster in the Wayne / Main Line area.</p>
-<p><strong>What does this indicate?</strong>
-Activity on the Main Line roughly one and three years after he vanished in Georgia, pointing to a return to his home region. The ~2023 rating is the stronger data point.</p>
 <h2>Disclaimer</h2>
 <p>Burns is wanted by the FBI on a federal mail-fraud charge. A criminal complaint or indictment is an accusation, not proof; every defendant is presumed innocent unless and until proven guilty in a court of law. Attribution of the Maps account to him is unconfirmed; tips should go to the FBI.</p>
       </div>
@@ -338,5 +272,6 @@ Activity on the Main Line roughly one and three years after he vanished in Georg
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .1 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
+<script src="/assets/js/blog-toc.js" defer></script>
 </body>
 </html>
