@@ -5,7 +5,7 @@
   'use strict';
   var prose = document.querySelector('.post-body .prose');
   if (!prose || document.querySelector('.toc-rail, .toc-mobile')) return;
-  var heads = Array.prototype.slice.call(prose.querySelectorAll('h2, h3'))
+  var heads = Array.prototype.slice.call(prose.querySelectorAll('h2, h3')).filter(function (h) { return !h.closest('.post-cta'); })
     .filter(function (h) { return h.textContent.trim(); });
   if (heads.filter(function (h) { return h.tagName === 'H2'; }).length < 2) return;
 

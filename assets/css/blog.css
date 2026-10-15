@@ -549,3 +549,23 @@ main{position:relative;z-index:1;min-height:50vh}
 .prose figure.fig-pad{max-width:560px;margin:2.4em auto;padding:28px 28px 12px;background:var(--panel);border:1px solid var(--line);border-radius:14px}
 .prose figure.fig-pad img{width:100%;height:auto}
 @media(max-width:520px){.prose figure.fig-pad{padding:16px 14px 8px}}
+
+/* Post CTA: isolate from .prose link/heading rules (fixes invisible label, underlines, extra gap) */
+.post-body .post-cta{margin:64px 0 24px;padding:36px 40px}
+.post-body .post-cta h2{margin:0;padding:0;border:0;line-height:1.25;font-size:clamp(1.25rem,2.2vw,1.45rem)}
+.post-body .post-cta h2::before,.post-body .post-cta h2::after{content:none}
+.post-body .post-cta p{margin:12px 0 0;max-width:40em}
+.post-body .post-cta .actions{display:flex;flex-wrap:wrap;align-items:stretch;gap:12px;margin-top:24px}
+.post-body .post-cta a.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:12px 22px;
+  font-family:var(--fb);font-size:.95rem;font-weight:600;line-height:1;text-decoration:none;overflow-wrap:normal;white-space:nowrap;border-radius:10px}
+.post-body .post-cta a.btn-blue{background:var(--blue-deep);color:var(--on-accent);border:1.5px solid var(--blue-deep);box-shadow:0 8px 22px rgba(3,105,161,.25)}
+.post-body .post-cta a.btn-blue:hover{background:#075985;border-color:#075985;color:var(--on-accent);transform:translateY(-2px)}
+.post-body .post-cta a.btn-ghost{background:rgba(255,255,255,.75);color:var(--heading);border:1.5px solid var(--line-2)}
+.post-body .post-cta a.btn-ghost:hover{border-color:var(--blue-deep);color:var(--blue-deep);background:#fff;transform:translateY(-2px)}
+.post-body .post-cta a.btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.post-body .post-cta a.btn:active{transform:translateY(0)}
+@media(max-width:520px){
+  .post-body .post-cta{padding:24px 20px;margin:48px 0 16px}
+  .post-body .post-cta .actions{flex-direction:column;align-items:stretch;gap:10px;margin-top:20px}
+  .post-body .post-cta a.btn{width:100%}
+}
