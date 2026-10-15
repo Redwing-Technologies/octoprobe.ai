@@ -503,3 +503,21 @@ main{position:relative;z-index:1;min-height:50vh}
   html{scroll-behavior:auto}
   .toc-mobile summary::before{transition:none}
 }
+
+/* ── Mobile overflow fixes ───────────────────────────────────── */
+.prose img,.prose video,.prose iframe,.prose svg{max-width:100%}
+.prose a{overflow-wrap:anywhere}
+.prose pre{max-width:100%;overflow-x:auto}
+.prose code{overflow-wrap:anywhere}
+@media(max-width:960px){
+  /* base rule `nav.top .nav-center{display:flex}` out-specified the old hide */
+  nav.top .nav-center{display:none}
+}
+@media(max-width:720px){
+  .prose table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+}
+@media(max-width:520px){
+  nav.top .nav-login{display:none}
+  nav.top .nav-cta{padding-left:12px;padding-right:12px;font-size:.85rem;white-space:nowrap}
+  nav.top .brand small{display:none}
+}
