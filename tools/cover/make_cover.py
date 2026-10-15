@@ -5,7 +5,7 @@ Renders a 2400x1260 (2x of 1200x630, OG aspect) PNG with Playwright:
   - real OpenStreetMap tiles (retina) as a dark-tinted map background
   - OctoProbe logo (repo /logo.svg) + wordmark, top-left
   - subject cutout (transparent PNG, e.g. rembg of an official photo), duotone,
-    with a single bright-red silhouette offset behind it
+    with a thin uniform bright-red outline (stroke) around the silhouette (--outline-px, default 8px at 2x)
   - red map pin at a chosen coordinate, title, insight lines, photo credit
 No legal badges by default.
 
@@ -58,26 +58,27 @@ html,body{{margin:0;width:{W}px;height:{H}px;overflow:hidden;background:#0a1226}
 .credit{{position:absolute;left:48px;bottom:26px;font:500 10px/1 'JetBrains Mono',monospace;color:#7f8fab;letter-spacing:.04em}}
 .osm{{position:absolute;right:14px;bottom:10px;font:400 9px 'Inter',sans-serif;color:rgba(200,210,230,.55)}}
 .subject{{position:absolute;right:{a.subject_right}px;bottom:0;height:{a.subject_h}px}}
-.subject img{{height:100%;display:block;filter:url(#duo) contrast(1.05)}}
-.sil{{position:absolute;right:{a.subject_right-14}px;bottom:0;height:{a.subject_h}px;aspect-ratio:var(--ar);background:{RED};
-  -webkit-mask:url({photo}) no-repeat bottom right/contain;mask:url({photo}) no-repeat bottom right/contain;transform:translate(14px,-8px)}}
+.subject img{{height:100%;display:block;filter:url(#duo) contrast(1.05) url(#outline)}}
 .pin{{position:absolute;left:{a.pin_x}px;top:{a.pin_y}px;transform:translate(-50%,-100%);filter:drop-shadow(0 6px 10px rgba(0,0,0,.45))}}
 .ring{{position:absolute;left:{a.pin_x}px;top:{a.pin_y}px;border:2px solid {RED};border-radius:50%;transform:translate(-50%,-50%) scaleY(.38);opacity:.85}}
 </style></head><body>
 <svg width="0" height="0" style="position:absolute"><filter id="duo" color-interpolation-filters="sRGB">
 <feColorMatrix type="matrix" values=".33 .33 .33 0 0  .33 .33 .33 0 0  .33 .33 .33 0 0  0 0 0 1 0"/>
 <feComponentTransfer><feFuncR type="table" tableValues="0.03 0.93"/><feFuncG type="table" tableValues="0.07 0.95"/><feFuncB type="table" tableValues="0.18 0.99"/></feComponentTransfer>
+</filter>
+<filter id="outline" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+<feMorphology in="SourceAlpha" operator="dilate" radius="{a.outline_px/2}" result="d"/>
+<feFlood flood-color="{RED}"/><feComposite in2="d" operator="in" result="ring"/>
+<feMerge><feMergeNode in="ring"/><feMergeNode in="SourceGraphic"/></feMerge>
 </filter></svg>
 <div id="map"></div><div class="shade"></div>
 <div class="ring" style="width:90px;height:90px"></div><div class="ring" style="width:150px;height:150px;opacity:.55"></div><div class="ring" style="width:210px;height:210px;opacity:.3"></div>
 <svg class="pin" width="64" height="90" viewBox="0 0 28 40"><path d="M14 0C6 0 0 6 0 14c0 10 14 26 14 26s14-16 14-26C28 6 22 0 14 0z" fill="{RED}"/><circle cx="14" cy="14" r="5.2" fill="#7a0a12"/></svg>
-<div class="sil" id="sil"></div>
 <div class="subject"><img id="ph" src="{photo}"></div>
 <div class="brand"><img src="{logo}" alt=""><div>OctoProbe AI<small>OSINT CASE STUDY</small></div></div>
 <div class="title">{titles}<div class="rule"></div><div class="insight">{html.escape(smart_quotes(a.insight))}</div><div class="sub">{html.escape(smart_quotes(a.sub or ''))}</div></div>
 <div class="credit">{html.escape(a.credit)} · Map © OpenStreetMap contributors</div>
 <script>
-const ph=document.getElementById('ph');ph.decode().then(()=>{{document.getElementById('sil').style.setProperty('--ar',ph.naturalWidth/ph.naturalHeight);}});
 const m=L.map('map',{{zoomControl:false,attributionControl:false,fadeAnimation:false,zoomAnimation:false}});
 L.tileLayer('https://tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png',{{detectRetina:true,maxZoom:19}}).addTo(m);
 m.setView([{a.lat},{a.lon}],{a.zoom},{{animate:false}});
@@ -99,6 +100,7 @@ def main():
     p.add_argument("--title-size", dest="title_size", type=int, default=68)
     p.add_argument("--subject-h", dest="subject_h", type=int, default=500)
     p.add_argument("--subject-right", dest="subject_right", type=int, default=40)
+    p.add_argument("--outline-px", dest="outline_px", type=float, default=8, help="red silhouette stroke width in output px (2x); 0 = none")
     p.add_argument("--out", required=True)
     a = p.parse_args()
     with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False) as f:
