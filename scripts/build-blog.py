@@ -5,7 +5,7 @@ SEO / AEO / chat-engine aware:
   - Requires title, description, date, tags (warns/fails on gaps)
   - Injects BlogPosting + BreadcrumbList (no FAQPage; posts have no FAQ section)
   - Validates title/description length
-  - Regenerates sitemap.xml blog entries
+  - Regenerates sitemap.xml via scripts/gen-sitemap.py (from all built HTML)
   - Refreshes the Blog section in llms.txt and .well-known/llms.txt
 
 Usage (from landing repo root):
@@ -821,7 +821,9 @@ def main():
     for b in built:
         by_slug[b["slug"]] = b
     corpus = list(by_slug.values())
-    regenerate_sitemap(corpus)
+    # Sitemap comes from the built HTML (covers hand-built posts too); see scripts/gen-sitemap.py
+    import runpy
+    runpy.run_path(str(ROOT / "scripts" / "gen-sitemap.py"), run_name="__main__")
     refresh_llms_blog_section(corpus)
 
 

@@ -1,0 +1,34 @@
+name: Sitemap
+
+# Fails any PR (and any push to main) whose sitemap.xml does not match the
+# published HTML, so every Pages deploy ships a fresh sitemap.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  sitemap-fresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check sitemap.xml is up to date
+        run: python3 scripts/gen-sitemap.py --check
+      - name: Validate sitemap XML and robots.txt reference
+        run: |
+          python3 -c "import xml.dom.minidom as m; m.parse('sitemap.xml'); print('sitemap.xml well-formed')"
+          grep -q '^Sitemap: https://www.octoprobe.ai/sitemap.xml' robots.txt
+      - name: Every blog post is listed
+        run: |
+          for d in blog/*/index.html; do
+            case "$d" in blog/_*) continue;; esac
+            slug=$(basename "$(dirname "$d")")
+            grep -q "/blog/$slug/</loc>" sitemap.xml || { echo "missing $slug"; exit 1; }
+          done
+          echo "all posts listed"
