@@ -28,4 +28,14 @@
       <image:title>From Public Lead to Identifier Graph</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://www.octoprobe.ai/blog/2026-10-15-christopher-burns-wayne-pa-maps-sighting/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/blog/2026-10-15-christopher-burns-wayne-pa-maps-sighting/assets/cover.png</image:loc>
+      <image:title>Christopher W. Burns: Public Google Maps Activity Dated After His Last Sighting</image:title>
+    </image:image>
+  </url>
 </urlset>
