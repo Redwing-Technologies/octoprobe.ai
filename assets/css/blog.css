@@ -405,7 +405,10 @@ footer .legal strong{color:var(--soft)}
   margin:1.4em 0;padding:16px 20px;border-left:3px solid var(--indigo);
   background:linear-gradient(90deg,rgba(99,102,241,.06),transparent 70%);
   border-radius:0 12px 12px 0;color:var(--soft);font-size:1.02rem;font-weight:400;
+  font-family:inherit;font-style:normal;
 }
+.prose blockquote p{margin:0}
+.prose blockquote footer{background:none;border:0;padding:0;box-shadow:none;min-height:0;margin:.5em 0 0;font-size:.82rem;color:var(--soft-2)}
 .prose code{font-family:var(--fm);font-size:.82em;background:rgba(2,136,209,.08);color:var(--blue);border:1px solid rgba(2,136,209,.2);border-radius:5px;padding:1px 6px;font-weight:500}
 .prose pre{background:var(--panel-2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow-x:auto;font-family:var(--fm);font-size:.78rem;line-height:1.65;color:var(--soft)}
 .prose pre code{background:none;border:0;padding:0;color:inherit;font-size:inherit}
