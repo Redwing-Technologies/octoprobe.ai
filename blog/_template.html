@@ -76,14 +76,18 @@
 <main id="main">
   <header class="post-hero">
     <div class="wrap">
-      <a class="back-link" href="/blog/">← All findings</a>
-      <span class="eyebrow">Findings</span>
+      <div class="post-crumb">
+        <a class="back-link" href="/blog/">← All findings</a>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span class="eyebrow">Findings</span>
+      </div>
       <h1>{{TITLE}}</h1>
       <div class="post-meta">
         <time datetime="{{DATE}}">{{DATE_DISPLAY}}</time>
         <span class="sep" aria-hidden="true"></span>
         {{TAGS_HTML}}
       </div>
+      {{HERO_HTML}}
     </div>
   </header>
   <article class="post-body">

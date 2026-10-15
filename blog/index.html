@@ -21,26 +21,117 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/blog.css">
-<title>Findings · OctoProbe AI Blog</title>
-<meta name="description" content="OctoProbe Findings: methodology notes on identifier graphs, expansion layers, and public OSINT investigation practice for law firms, investigators, and analysts.">
+<title>OSINT Investigation Platform Blog · OctoProbe</title>
+<meta name="description" content="OctoProbe Findings: OSINT investigation platform methodology on identifier graphs, breach correlation, facial recognition OSINT, and evidence-backed expansion for investigators.">
+<meta name="keywords" content="OSINT investigation platform, identifier graph, breach intelligence, skip tracing, facial recognition OSINT, MCP OSINT">
 <link rel="canonical" href="https://www.octoprobe.ai/blog/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="OctoProbe AI">
 <meta property="og:url" content="https://www.octoprobe.ai/blog/">
-<meta property="og:title" content="Findings · OctoProbe AI Blog">
+<meta property="og:title" content="OSINT Investigation Platform Blog · OctoProbe">
 <meta property="og:description" content="Methodology notes on identifier graphs, expansion layers, and public OSINT investigation practice.">
-<meta property="og:image" content="https://www.octoprobe.ai/og-image.png">
+<meta property="og:image" content="https://www.octoprobe.ai/assets/blog/identifier-graph-hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Findings · OctoProbe AI Blog">
+<meta name="twitter:site" content="@octoprobeai">
+<meta name="twitter:title" content="OSINT Investigation Platform Blog · OctoProbe">
 <meta name="twitter:description" content="Methodology notes on identifier graphs, expansion layers, and public OSINT investigation practice.">
-<meta name="twitter:image" content="https://www.octoprobe.ai/og-image.png">
+<meta name="twitter:image" content="https://www.octoprobe.ai/assets/blog/identifier-graph-hero.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Blog",
-  "name": "OctoProbe Findings",
-  "url": "https://www.octoprobe.ai/blog/",
-  "publisher": {"@type": "Organization", "name": "OctoProbe AI", "url": "https://www.octoprobe.ai/"}
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.octoprobe.ai/#org",
+      "name": "OctoProbe AI",
+      "url": "https://www.octoprobe.ai/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.octoprobe.ai/icon-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Redwing Technologies LLC"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.octoprobe.ai/#site",
+      "url": "https://www.octoprobe.ai/",
+      "name": "OctoProbe AI",
+      "publisher": {"@id": "https://www.octoprobe.ai/#org"},
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": ["Blog", "CollectionPage"],
+      "@id": "https://www.octoprobe.ai/blog/#blog",
+      "name": "OctoProbe Findings",
+      "url": "https://www.octoprobe.ai/blog/",
+      "description": "OSINT investigation platform findings: identifier graphs, expansion layers, and evidence discipline for law firms, investigators, and analysts.",
+      "publisher": {"@id": "https://www.octoprobe.ai/#org"},
+      "isPartOf": {"@id": "https://www.octoprobe.ai/#site"},
+      "about": [
+        {"@type": "Thing", "name": "OSINT"},
+        {"@type": "Thing", "name": "identifier graph"},
+        {"@type": "Thing", "name": "OSINT investigation platform"}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.octoprobe.ai/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.octoprobe.ai/blog/"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.octoprobe.ai/blog/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is an OSINT investigation platform?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An OSINT investigation platform is a workspace that turns public clues—emails, phones, handles, names, domains, or photos—into a sourced investigation graph using premium APIs, public records, and related intel layers. OctoProbe AI is an OSINT investigation platform from Redwing Technologies LLC with evidence on every link."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does an identifier graph work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An identifier graph maps entities and identifiers connected by evidenced edges. Each edge carries a source, timestamp, and confidence so analysts can explain why two nodes are linked. OctoProbe encodes the seed → expand → link → collect loop on a live graph."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What identifiers can OctoProbe start from?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Any clue works: an email, phone number, handle, name, domain, or photo. Use one, or combine several that already co-occur in public view."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is OctoProbe a consumer reporting agency?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. OctoProbe is not a consumer reporting agency. Results may not be used for FCRA-covered eligibility decisions such as credit, employment, insurance, or tenant screening."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is OctoProbe for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Law firms, licensed private investigators, OSINT analysts, and opposition research or corporate intelligence teams who need sourced digital-footprint maps from public OSINT and licensed public-record/intel layers."
+          }
+        }
+      ]
+    }
+  ]
 }
 </script>
 </head>
@@ -98,27 +189,62 @@
   <header class="blog-hero">
     <div class="wrap">
       <span class="eyebrow">Findings</span>
-      <h1>Investigation notes from the <em>identifier graph</em>.</h1>
-      <p class="lead">Methodology, expansion patterns, and evidence discipline for public OSINT—written for law firms, licensed investigators, analysts, and opposition research teams.</p>
+      <h1>Investigation notes from the <em>identifier graph.</em></h1>
+      <p class="lead"><strong>OctoProbe AI</strong> is an OSINT investigation platform from Redwing Technologies—emails, phones, handles, domains, and photos mapped onto one live graph with evidence on every link. Methodology for law firms, licensed investigators, analysts, and opposition research.</p>
     </div>
   </header>
-  <section class="blog-list">
+  <section class="blog-list" aria-label="Blog posts">
     <div class="wrap">
       <div class="post-grid">
         <a class="post-card reveal" href="/blog/2026-10-15-identifier-graph-methodology/">
-          <div class="meta">
-            <time datetime="2026-10-15">Oct 15, 2026</time>
-            <div class="tags">
-              <span class="tag">Methodology</span>
-              <span class="tag blue">OSINT</span>
-              <span class="tag teal">Identifier Graph</span>
-            </div>
+          <div class="thumb" aria-hidden="true">
+            <img src="/assets/blog/identifier-graph-hero.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async">
           </div>
-          <h2>From Public Lead to Identifier Graph: A Methodology</h2>
-          <p class="excerpt">How a single public clue expands into a structured identifier graph—seed, expand, link, and evidence—using only open-source and licensed public data. Walkthrough with fictional personas.</p>
-          <span class="read-more">Read finding →</span>
+          <div class="card-body">
+            <div class="meta">
+              <time datetime="2026-10-15">Oct 15, 2026</time>
+              <div class="tags">
+                <span class="tag">Methodology</span>
+                <span class="tag blue">OSINT</span>
+                <span class="tag teal">Identifier Graph</span>
+              </div>
+            </div>
+            <h2>From Public Lead to Identifier Graph</h2>
+            <p class="excerpt">How a single public clue expands into a structured identifier graph—seed, expand, link, and evidence—using only open-source and licensed public data. Walkthrough with fictional personas.</p>
+            <span class="read-more">Read finding →</span>
+          </div>
         </a>
       </div>
+    </div>
+  </section>
+  <section class="blog-faq" id="faq" aria-label="Blog FAQ">
+    <div class="wrap">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="sec">Questions answer engines ask about OctoProbe.</h2>
+      <p class="faq-intro">Short, citable answers aligned with our landing claims—useful for Google, Bing, and chat engines covering OSINT platforms and identifier graphs.</p>
+      <div class="faq-list">
+        <details open>
+          <summary>What is an OSINT investigation platform?</summary>
+          <div class="fa">An OSINT investigation platform is a workspace that turns public clues—emails, phones, handles, names, domains, or photos—into a sourced investigation graph using premium APIs, public records, and related intel layers. <strong>OctoProbe AI</strong> is an OSINT investigation platform from <strong>Redwing Technologies</strong> with evidence on every link.</div>
+        </details>
+        <details>
+          <summary>How does an identifier graph work?</summary>
+          <div class="fa">An identifier graph maps entities and identifiers connected by evidenced edges. Each edge carries a source, timestamp, and confidence so analysts can explain why two nodes are linked. OctoProbe encodes the seed → expand → link → collect loop on a live graph.</div>
+        </details>
+        <details>
+          <summary>What identifiers can OctoProbe start from?</summary>
+          <div class="fa">Any clue works: an email, phone number, handle, name, domain, or photo. Use one, or combine several that already co-occur in public view.</div>
+        </details>
+        <details>
+          <summary>Is OctoProbe a consumer reporting agency?</summary>
+          <div class="fa"><strong>No.</strong> OctoProbe is not a consumer reporting agency. Results may not be used for FCRA-covered eligibility decisions such as credit, employment, insurance, or tenant screening.</div>
+        </details>
+        <details>
+          <summary>Who is OctoProbe for?</summary>
+          <div class="fa">Law firms, licensed private investigators, OSINT analysts, and opposition research or corporate intelligence teams who need sourced digital-footprint maps from public OSINT and licensed public-record/intel layers.</div>
+        </details>
+      </div>
+      <p class="post-disclaimer" style="margin-top:36px">Public OSINT methodology. OctoProbe is not a consumer reporting agency; results may not be used for FCRA-covered eligibility decisions. See also the <a href="/#faq">homepage FAQ</a> and <a href="/#access">request access</a>.</p>
     </div>
   </section>
 </main>

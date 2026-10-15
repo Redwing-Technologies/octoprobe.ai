@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Allow: /blog/
 Disallow: /login
 
 Sitemap: https://www.octoprobe.ai/sitemap.xml
@@ -7,24 +8,40 @@ Sitemap: https://www.octoprobe.ai/sitemap.xml
 # AEO — allow search and AI answer-engine crawlers
 User-agent: Googlebot
 Allow: /
+Allow: /blog/
 
 User-agent: Bingbot
 Allow: /
+Allow: /blog/
 
 User-agent: Google-Extended
 Allow: /
+Allow: /blog/
 
 User-agent: GPTBot
 Allow: /
+Allow: /blog/
 
 User-agent: OAI-SearchBot
 Allow: /
+Allow: /blog/
 
 User-agent: ClaudeBot
 Allow: /
+Allow: /blog/
 
 User-agent: Claude-Web
 Allow: /
+Allow: /blog/
 
 User-agent: PerplexityBot
 Allow: /
+Allow: /blog/
+
+User-agent: Applebot
+Allow: /
+Allow: /blog/
+
+User-agent: DuckDuckBot
+Allow: /
+Allow: /blog/
