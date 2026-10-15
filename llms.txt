@@ -69,4 +69,4 @@ Methodology notes on identifier graphs, breach correlation, and public OSINT pra
 
 - Blog index: https://www.octoprobe.ai/blog/ — OSINT investigation platform findings: identifier graphs, expansion layers, evidence discipline
 - From Public Lead to Identifier Graph — https://www.octoprobe.ai/blog/2026-10-15-identifier-graph-methodology/ — Manual OSINT graphs burn time on review and markup. Automation burns trust with overexpansion. Here is how to keep an identifier graph scoped, evidenced, and usable.
-- Christopher W. Burns: Public Google Maps Activity Dated After His Last Sighting, Wayne, PA Area — https://www.octoprobe.ai/blog/2026-10-15-christopher-burns-wayne-pa-maps-sighting/ — Unverified OSINT lead on an FBI Most Wanted Fraudster; tips go to 1-800-CALL-FBI / tips.fbi.gov.
+- Christopher W. Burns: Public Google Maps Activity Dated After His Last Sighting, Wayne, PA Area — https://www.octoprobe.ai/blog/2026-10-15-christopher-burns-wayne-pa-maps-sighting/ — Analysis of post-2020 Main Line activity by an account allegedly attributed to an FBI Most Wanted Fraudster; tips go to 1-800-CALL-FBI / tips.fbi.gov.

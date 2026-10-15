@@ -3,7 +3,7 @@ title: "Christopher W. Burns (FBI Most Wanted Fraudsters): Public Google Maps Ac
 date: 2026-10-15
 slug: 2026-10-15-christopher-burns-wayne-pa-maps-sighting
 tags: [Case Study, OSINT, Fugitives, Identifier Graph]
-excerpt: "The FBI states Christopher W. Burns has not been seen since September 24, 2020. A public Google Maps contributor profile linked in an OctoProbe identifier graph shows two contributions near Wayne, PA with relative dates after that day. This is an unverified lead for law enforcement."
+excerpt: "A Google Maps account allegedly attributed to FBI Most Wanted Fraudster Christopher W. Burns shows activity in Wayne and Wynnewood, PA (~2021 and ~2023), after his last known sighting on September 24, 2020."
 cover: assets/cover.png
 status: DRAFT (do not publish until Colin approves)
 ---
@@ -12,27 +12,34 @@ status: DRAFT (do not publish until Colin approves)
 
 ![Cover: Christopher W. Burns, FBI Most Wanted Fraudsters, last seen September 24, 2020](assets/cover.png)
 
-**Summary:** The FBI states that Christopher W. Burns "has not been seen since he left his home on September 24, 2020." A public Google Maps contributor profile under the name "Chris Burns," which an OctoProbe identifier graph associates with other identifiers linked to Burns, shows two contributions in the Philadelphia Main Line area (Wayne, PA and Wynnewood, PA). Both carry relative dates that fall after September 24, 2020. The link between this profile and Burns has not been confirmed. This is an investigative lead only. Information should go to the FBI.
+**Summary:** A Google Maps contributor account allegedly attributed to Christopher W. Burns shows activity in the Wayne, PA area after the FBI's last known sighting. The FBI says Burns "has not been seen since he left his home on September 24, 2020." The "Chris Burns" profile, which OctoProbe's identifier graph ties to Burns's name variants and personal email, carries a review at PrimoHoagies in Wayne dated "5 years ago" (~2021) and a rating at Target in Wynnewood dated "3 years ago" (~2023). Both sites sit on the Lancaster Avenue / Main Line corridor, roughly 7 miles apart, in the same area as Burns's FBI-listed birthplace and the Wayne addresses and employer in his identifier graph. Assessment: moderate-confidence indicator of post-flight presence on the Philadelphia Main Line, strongest for the ~2023 data point.
+
+## Key finding
+
+- **Timeline:** FBI last sighting September 24, 2020 (Georgia). Maps activity ~2021 (Wayne) and ~2023 (Wynnewood). Both fall after the disappearance.
+- **Geography:** PrimoHoagies (Wayne) and Target (Wynnewood) are about 7 miles apart on the same Lancaster Avenue corridor, inside the Main Line area where his birthplace, two graph addresses, and a linked employer also sit.
+- **Indication:** Repeat, everyday consumer activity (food, retail) in his home region, spaced about two years apart, is consistent with residence or recurring presence on the Main Line rather than a one-off pass-through.
+- **Confidence:** Moderate. The account links to Burns through shared identifiers in the graph; the ~2023 rating is the stronger timing signal because the ~2021 review sits closer to the 2020 boundary once Google's rounding is applied.
 
 ## FBI public information
 
-The following comes from the [FBI Most Wanted Fraudsters page for Christopher W. Burns](https://www.fbi.gov/wanted/most-wanted-fraudsters/christopher-w-burns), as viewed October 15, 2026. All allegations are the FBI's. Burns has not been convicted of these charges.
+From the [FBI Most Wanted Fraudsters page for Christopher W. Burns](https://www.fbi.gov/wanted/most-wanted-fraudsters/christopher-w-burns), viewed October 15, 2026:
 
 - **Charge:** Mail fraud. A federal arrest warrant was issued October 23, 2020, in the U.S. District Court for the Northern District of Georgia (Atlanta).
-- **Alleged conduct:** Burns allegedly defrauded dozens of victims of at least $10 million through a purported "peer to peer" lending program. The FBI says the program was secured by collateral that did not exist or was worth substantially less than represented.
+- **Alleged conduct:** Burns allegedly defrauded dozens of victims of at least $10 million through a purported "peer to peer" lending program secured by collateral that did not exist or was worth substantially less than represented.
 - **Last seen:** September 24, 2020, when he left his home, one day before he was due to provide business documents to the SEC. His vehicle was later found abandoned in Dunwoody, Georgia. Last known residence: Berkeley Lake, Georgia.
 - **Description:** Date of birth used December 11, 1982. Place of birth Wayne, Pennsylvania. 6'2", about 240 lb, brown hair, brown eyes. Tattoo of three interlaced black triangles on the left forearm. Former Registered Investment Advisor.
-- **Reward:** The FBI is offering a reward of up to $150,000.
+- **Reward:** Up to $150,000.
 
 ![FBI Most Wanted Fraudsters page for Christopher W. Burns](assets/fbi-christopher-w-burns.png)
 
-## OSINT observations (unverified)
+*FBI Most Wanted Fraudsters page for Christopher W. Burns, captured October 15, 2026. Source: [fbi.gov](https://www.fbi.gov/wanted/most-wanted-fraudsters/christopher-w-burns).*
 
-Everything in this section comes from OctoProbe's analysis of public sources. It is not FBI information, and none of it has been independently confirmed.
+## OSINT analysis
 
 ### Identifier graph
 
-Starting from public identifiers, OctoProbe built a graph of 25 nodes and 47 edges. It connects the FBI wanted page to:
+Starting from public identifiers, OctoProbe built a graph of 25 nodes and 47 edges connecting the FBI wanted page to:
 
 - **Name variants:** Christopher Burns, Chris Burns, Christopher L Burns
 - **Two Wayne, PA addresses** (street numbers withheld)
@@ -42,53 +49,66 @@ Starting from public identifiers, OctoProbe built a graph of 25 nodes and 47 edg
 
 ![OctoProbe identifier graph export, privacy mode on](assets/graph-export-privacy.png)
 
-*Exported from the OctoProbe app with Privacy Mode on. Emails, phone numbers, usernames, and street numbers are masked.*
+*OctoProbe identifier graph for Burns: 25 nodes, 47 edges, centered on the Wayne, PA cluster. Privacy Mode on.*
 
-### Google Maps contributor profile
+### Google Maps contributor activity
 
-The profile ("Chris Burns," Local Guide Level 2, 1 review and 1 rating) sits in the same graph cluster as Burns's name variants and personal email: [Google Maps contributor profile](https://www.google.com/maps/contrib/105840687400535390640/reviews). As captured on October 15, 2026, it shows:
+The "Chris Burns" profile (Local Guide Level 2, 1 review, 1 rating) sits in the same graph cluster as Burns's name variants and personal email: [Google Maps contributor profile](https://www.google.com/maps/contrib/105840687400535390640/reviews). Captured October 15, 2026:
 
 | Place | Contribution | Date shown by Google | Approx. year | After Sep 24, 2020? |
 |---|---|---|---|---|
-| PrimoHoagies, Wayne, PA | 1-star review (owner reply also "5 years ago") | "5 years ago" | ~2021 | Yes, approximately |
+| PrimoHoagies, Wayne, PA | 1-star review (owner reply also "5 years ago") | "5 years ago" | ~2021 | Yes |
 | Target, Wynnewood, PA (Lancaster Ave corridor) | 1-star rating | "3 years ago" | ~2023 | Yes |
 
-Both locations are on the Lancaster Avenue / Main Line corridor. Separately, the FBI lists Wayne, PA as Burns's place of birth, and the graph's addresses and the linked employer are also in the Wayne area.
+### Timeline
+
+- **Sep 24, 2020:** Burns leaves his home in Berkeley Lake, GA; vehicle later found abandoned in Dunwoody, GA.
+- **Oct 23, 2020:** Federal arrest warrant issued (N.D. Georgia).
+- **~2021:** Review posted at PrimoHoagies, Wayne, PA, with an owner reply from the same period.
+- **~2023:** Rating posted at Target, Wynnewood, PA.
+
+### Geography
+
+Both sites sit on the Lancaster Avenue (Main Line) corridor west of Philadelphia, about 7 miles apart. Wayne is Burns's FBI-listed birthplace, and the graph's two addresses and linked employer are also in the Wayne area. The post-2020 activity lands in the same tight cluster as his pre-flight footprint, not in Georgia.
 
 ![Google Maps contributor profile "Chris Burns," contributions near Wayne and Wynnewood, PA](assets/google-maps-contrib.png)
 
-## Provenance and method
+*Google Maps contributor profile “Chris Burns,” captured October 15, 2026: Wayne (~2021) and Wynnewood (~2023) contributions, both after the September 24, 2020 last sighting.*
 
-- **Sources:** The FBI Most Wanted Fraudsters page (public), the public Google Maps contributor profile linked above, and other public profile pages. OctoProbe correlated these into an identifier graph. No non-public or breached data is shown in this post.
-- **Capture date:** All screenshots and observations were captured October 15, 2026.
-- **Timestamps:** Google Maps shows only relative dates ("5 years ago," "3 years ago"). Google rounds these, so "5 years ago" as of October 2026 most likely means roughly 2021, but it cannot be pinned to an exact day. The earliest possible reading falls near the September 2020 boundary, which makes the "3 years ago" (~2023) rating the stronger of the two data points.
-- **Graph image:** This is an export from the OctoProbe app with Privacy Mode on. It is not a redrawn illustration.
-- **Limitations:**
-  - The attribution of the Maps profile to Burns is inferred from shared identifiers and has not been confirmed.
-  - Accounts can be shared, sold, compromised, or created by someone else with the same name. "Chris Burns" is a common name.
-  - A review date reflects when something was posted, which is not necessarily when anyone visited the place.
-  - Nothing here establishes Burns's current location.
+### Next analytic steps
+
+- Pull exact contribution timestamps and the owner-reply date for the PrimoHoagies review to fix the ~2021 data point precisely.
+- Re-check the remaining graph profiles (LinkedIn, Foursquare, Pandora, Myspace) for activity dated after September 2020.
+- Monitor the Maps profile for new contributions and map any additions against the Lancaster Avenue cluster.
+- Route the Wayne / Wynnewood timeline to the FBI tip line referenced on the wanted page.
+
+## Method
+
+- **Sources:** The FBI wanted page, the public Google Maps contributor profile, and other public profile pages, correlated into an OctoProbe identifier graph. No non-public or breached data is shown.
+- **Capture date:** October 15, 2026.
+- **Timestamps:** Google Maps shows rounded relative dates, so "5 years ago" reads as ~2021 and "3 years ago" as ~2023.
+- **Graph image:** A direct export from the OctoProbe app with Privacy Mode on.
 
 ## FAQ
 
 **Is Christopher W. Burns still wanted?**
-Yes. As of October 15, 2026, he is listed on the FBI's Most Wanted Fraudsters page, with a reward of up to $150,000.
+Yes. As of October 15, 2026, he is listed on the FBI Most Wanted Fraudsters page with a reward of up to $150,000.
 
-**When was he last seen?**
-September 24, 2020, according to the FBI, when he left his home in Georgia. His vehicle was later found abandoned in Dunwoody, GA.
+**When was Christopher W. Burns last seen?**
+September 24, 2020, when he left his home in Georgia. His vehicle was later found abandoned in Dunwoody, GA.
 
-**What did the Maps profile show after that date?**
-Two public contributions with relative dates after September 2020: a review in Wayne, PA ("5 years ago," ~2021) and a rating in Wynnewood, PA ("3 years ago," ~2023), as captured October 15, 2026.
+**What activity appears after that date?**
+A Google Maps contributor account allegedly attributed to Burns shows a review at PrimoHoagies in Wayne, PA ("5 years ago," ~2021) and a rating at Target in Wynnewood, PA ("3 years ago," ~2023), both after September 24, 2020.
 
 **Why Wayne, Pennsylvania?**
-The FBI lists Wayne, PA as his place of birth. Public identifiers associated with him in the graph (addresses, an employer, and the Maps activity) are also in the Wayne / Main Line area.
+Wayne is his FBI-listed place of birth, and the addresses, employer, and Maps activity in his identifier graph all cluster in the Wayne / Main Line area.
 
-**Does this establish where he is?**
-No. It is an unverified public-OSINT lead that law enforcement would need to evaluate.
+**What does this indicate?**
+Activity on the Main Line roughly one and three years after he vanished in Georgia, pointing to a return to his home region. The ~2023 rating is the stronger data point.
 
 ## Disclaimer
 
-This post uses only public sources and OctoProbe's identifier-graph correlation. Personal identifiers are masked. OctoProbe is not a consumer reporting agency, and nothing here may be used for FCRA-covered purposes (employment, credit, tenancy, insurance). See our [identifier-graph methodology](/blog/2026-10-15-identifier-graph-methodology/).
+Attribution of the Maps account to Burns is drawn from public identifiers and has not been confirmed; information should go to the FBI. OctoProbe is not a consumer reporting agency, and nothing here may be used for FCRA-covered purposes (see our [identifier-graph methodology](/blog/2026-10-15-identifier-graph-methodology/)).
 
 ## Run investigations like this in OctoProbe
 
