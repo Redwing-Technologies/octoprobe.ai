@@ -383,7 +383,7 @@ footer .legal strong{color:var(--soft)}
 /* images & figures: generous vertical breathing room by default */
 .prose img{height:auto;border-radius:12px}
 .prose > p:has(> img:only-child),
-.prose > figure{margin-top:2.25em;margin-bottom:2.25em}
+.prose > figure{margin:2.25em 0}
 .prose > p:has(> img:only-child) + *,
 .prose > figure + *{margin-top:0}
 .prose h2 + p:has(> img:only-child),.prose h2 + figure,
