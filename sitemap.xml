@@ -48,4 +48,14 @@
       <image:title>Heather Zhang Case: OSINT Trail From a 2024 Reddit Allegation</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://www.octoprobe.ai/blog/2026-10-15-glizzykingdreko-takion-api-archive-today-donate-link/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/blog/2026-10-15-glizzykingdreko-takion-api-archive-today-donate-link/assets/cover.png</image:loc>
+      <image:title>Whose Coffee? An Anti-Bot Developer’s Handle Turns Up on Archive.today’s Donate Link</image:title>
+    </image:image>
+  </url>
 </urlset>
