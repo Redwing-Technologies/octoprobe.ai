@@ -4,12 +4,12 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.octoprobe.ai/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://www.octoprobe.ai/og-image.png</image:loc>
-      <image:title>OctoProbe AI — Every OSINT tool. One investigation graph.</image:title>
+      <image:title>OctoProbe AI — Every OSINT Tool. One Investigation Graph.</image:title>
     </image:image>
   </url>
   <url>
@@ -17,6 +17,26 @@
     <lastmod>2026-10-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.octoprobe.ai/blog/2026-10-15-christopher-burns-wayne-pa-maps-sighting/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/blog/2026-10-15-christopher-burns-wayne-pa-maps-sighting/assets/cover.png</image:loc>
+      <image:title>Christopher W. Burns (FBI Most Wanted Fraudsters): Public Google Maps Activity Dated After His Last Sighting, Wayne, PA Area</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.octoprobe.ai/blog/2026-10-15-glizzykingdreko-takion-api-archive-today-donate-link/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/blog/2026-10-15-glizzykingdreko-takion-api-archive-today-donate-link/assets/cover.png</image:loc>
+      <image:title>Whose Coffee? An Anti-Bot Developer’s Handle Turns Up on Archive.today’s Donate Link</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.octoprobe.ai/blog/2026-10-15-identifier-graph-methodology/</loc>
@@ -29,16 +49,6 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.octoprobe.ai/blog/2026-10-15-christopher-burns-wayne-pa-maps-sighting/</loc>
-    <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.octoprobe.ai/blog/2026-10-15-christopher-burns-wayne-pa-maps-sighting/assets/cover.png</image:loc>
-      <image:title>Christopher W. Burns: Public Google Maps Activity Dated After His Last Sighting</image:title>
-    </image:image>
-  </url>
-  <url>
     <loc>https://www.octoprobe.ai/blog/2026-10-15-wanying-zhang-reddit-passport-allegation-osint/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -46,16 +56,6 @@
     <image:image>
       <image:loc>https://www.octoprobe.ai/blog/2026-10-15-wanying-zhang-reddit-passport-allegation-osint/assets/cover.png</image:loc>
       <image:title>Heather Zhang Case: OSINT Trail From a 2024 Reddit Allegation</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.octoprobe.ai/blog/2026-10-15-glizzykingdreko-takion-api-archive-today-donate-link/</loc>
-    <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.octoprobe.ai/blog/2026-10-15-glizzykingdreko-takion-api-archive-today-donate-link/assets/cover.png</image:loc>
-      <image:title>Whose Coffee? An Anti-Bot Developer’s Handle Turns Up on Archive.today’s Donate Link</image:title>
     </image:image>
   </url>
 </urlset>

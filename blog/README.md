@@ -17,6 +17,8 @@ Then open:
 
 Do **not** push or open a PR until Colin approves.
 
+**Sitemap:** generated, never hand-edited. Run `python3 scripts/gen-sitemap.py` after adding or changing a post (CI runs `--check` and fails if stale).
+
 ---
 
 ## SEO / AEO / Chat-engine checklist (REQUIRED for every post)
