@@ -2,7 +2,7 @@
 
 `make_cover.py` renders every blog cover the same way: 2400×1260 PNG (2× of 1200×630, OG aspect),
 dark-tinted OpenStreetMap retina tiles, the repo `/logo.svg` + "OctoProbe AI" wordmark top-left,
-duotone subject cutout with a single bright-red (#E11D2E) silhouette offset, a red map pin, title,
+duotone subject cutout with a single bright-red (#E11D2E) thin uniform outline (stroke) around the silhouette (`--outline-px`, default 8px at 2x output; 0 = none), a red map pin, title,
 insight line, sub-line, and photo + OSM credit. No legal badges.
 
 Requires Playwright + Chromium (`/tmp/v/bin/python` on the box) and network access for tiles/fonts.

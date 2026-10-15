@@ -187,17 +187,21 @@ footer .legal strong{color:var(--soft)}
 .post-card:hover{transform:translateY(-3px);border-color:rgba(2,132,199,.32);box-shadow:0 26px 58px rgba(15,23,42,.12)}
 .post-card .thumb{
   display:block;
+  box-sizing:border-box;
   width:100%;
   aspect-ratio:16/9;
-  background:var(--panel-2);
+  padding-left:22px;            /* give the cover's left edge (logo/title) breathing room */
+  background:#0a1226;           /* matches the cover template's navy edge */
   overflow:hidden;
 }
 .post-card .thumb img{
   width:100%;
   height:100%;
   object-fit:cover;
+  object-position:left center;  /* never crop the logo/title side */
   display:block;
 }
+@media(max-width:520px){.post-card .thumb{padding-left:14px}}
 .post-card .card-body{
   padding:28px 30px 30px;
   display:flex;
