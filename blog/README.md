@@ -74,6 +74,6 @@ This writes `blog/<slug>/index.html`, injects BlogPosting + BreadcrumbList (+ FA
 
 - Fictional / example names only in teaching posts.
 - Keep GA `G-6T6HW79ZP0` on blog pages (in the template).
-- Styles: `/assets/blog.css` (Space Grotesk headings, Inter body).
+- Styles: `/assets/css/blog.css` (Space Grotesk headings, Inter body).
 - Chat discoverability: `llms.txt` + `/.well-known/llms.txt`, `robots.txt` allows `/` and `/blog/`.
 - Twitter: `@octoprobeai`.
