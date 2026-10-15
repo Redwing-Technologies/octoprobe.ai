@@ -79,7 +79,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/blog.css">
+<link rel="stylesheet" href="/assets/css/blog.css?v=toc2">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -165,7 +165,7 @@
 <h2>&ldquo;Individual 1&rdquo;: what the press reports</h2>
 <p>The complaint does not name Individual 1. <a href="https://www.cbsnews.com/news/fbi-search-chinese-agent-investigation/">CBS News</a> identifies him as <strong>Fatai Miao</strong>, a Chinese-born California construction entrepreneur. CBS reports that he allegedly rented an SUV and was in the car during the alleged filming, that he took a &ldquo;one-way&rdquo; flight to China about two weeks before an October hearing, and that FBI agents searched his empty Irvine home. CBS also states that <em>the Justice Department has not accused him of any wrongdoing</em>, and it quotes a relative describing him as a &ldquo;follower.&rdquo; The <a href="https://nypost.com/2026/10/09/us-news/socal-businessman-fled-county-after-allegations-he-helped-lover-accused-of-being-chinese-spy/">New York Post</a>, citing sources, describes Miao as Zhang's lover. The <a href="https://www.taipeitimes.com/News/taiwan/archives/2026/10/10/2003865730">Taipei Times</a> carried the CBS identification. Miao is not charged with any crime.</p>
 <h2>Where the trail started: the Reddit passport-scam allegation</h2>
-<p>The investigation's starting lead was a public post: <a href="https://www.reddit.com/r/Scams/comments/19660i3/fake_bahamian_passport_scam/">&ldquo;Fake Bahamian passport scam,&rdquo; r/Scams</a>, posted January 14, 2024 by the user an anonymous r/Scams user. In it, the anonymous poster alleges that a man named &ldquo;FATAI MIAO&rdquo; claimed a relative in Bahamian diplomatic service could obtain a Bahamian passport for US$300,000. The poster says they paid in USDT, that a passport arrived, and that they were detained in Malaysia on June 1, 2023 for traveling on a false document. Commenters in the thread suggested the poster had simply bought a counterfeit. These are one anonymous user's allegations. They have not been verified, and the post does not mention Zhang or the Taiwan case.</p>
+<p>The investigation's starting lead was a public post: <a href="https://www.reddit.com/r/Scams/comments/19660i3/fake_bahamian_passport_scam/">&ldquo;Fake Bahamian passport scam,&rdquo; r/Scams</a>, posted January 14, 2024 by an anonymous user. In it, the anonymous poster alleges that a man named &ldquo;FATAI MIAO&rdquo; claimed a relative in Bahamian diplomatic service could obtain a Bahamian passport for US$300,000. The poster says they paid in USDT, that a passport arrived, and that they were detained in Malaysia on June 1, 2023 for traveling on a false document. Commenters in the thread suggested the poster had simply bought a counterfeit. These are one anonymous user's allegations. They have not been verified, and the post does not mention Zhang or the Taiwan case.</p>
 <p>Reddit blocked automated capture of the post, so the figure below shows the Chinese-language outlet <a href="https://ludepress.com/news/newshighlights/73184/">Ludepress</a>, which summarized the post on October 12, 2026 and itself notes that there is no independent evidence for the claims and no public evidence tying them to the Zhang case.</p>
 <figure><img loading="lazy" alt="Ludepress article summarizing the 2024 Reddit passport-scam allegation" src="assets/reddit-allegation-ludepress.png" /><figcaption>Secondary coverage of the Reddit allegation: <a href="https://ludepress.com/news/newshighlights/73184/">Ludepress, Oct 12, 2026</a>, captured October 15, 2026. Original post: <a href="https://www.reddit.com/r/Scams/comments/19660i3/fake_bahamian_passport_scam/">reddit.com/r/Scams</a>. The claims are unverified, and Miao is not charged.</figcaption></figure>
 <h2>OSINT analysis</h2>
@@ -264,6 +264,6 @@
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .1 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
-<script src="/assets/js/blog-toc.js" defer></script>
+<script src="/assets/js/blog-toc.js?v=toc2" defer></script>
 </body>
 </html>
