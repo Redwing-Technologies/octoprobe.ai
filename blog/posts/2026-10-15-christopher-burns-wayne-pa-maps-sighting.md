@@ -75,36 +75,12 @@ Both sites sit on the Lancaster Avenue (Main Line) corridor west of Philadelphia
 
 *Google Maps contributor profile “Chris Burns,” captured October 15, 2026: Wayne (~2021) and Wynnewood (~2023) contributions, both after the September 24, 2020 last sighting.*
 
-### Next analytic steps
-
-- Pull exact contribution timestamps and the owner-reply date for the PrimoHoagies review to fix the ~2021 data point precisely.
-- Re-check the remaining graph profiles (LinkedIn, Foursquare, Pandora, Myspace) for activity dated after September 2020.
-- Monitor the Maps profile for new contributions and map any additions against the Lancaster Avenue cluster.
-- Route the Wayne / Wynnewood timeline to the FBI tip line referenced on the wanted page.
-
 ## Method
 
 - **Sources:** The FBI wanted page, the public Google Maps contributor profile, and other public profile pages, correlated into an OctoProbe identifier graph. No non-public or breached data is shown.
 - **Capture date:** October 15, 2026.
 - **Timestamps:** Google Maps shows rounded relative dates, so "5 years ago" reads as ~2021 and "3 years ago" as ~2023.
 - **Graph image:** A direct export from the OctoProbe app with Privacy Mode on.
-
-## FAQ
-
-**Is Christopher W. Burns still wanted?**
-Yes. As of October 15, 2026, he is listed on the FBI Most Wanted Fraudsters page with a reward of up to $150,000.
-
-**When was Christopher W. Burns last seen?**
-September 24, 2020, when he left his home in Georgia. His vehicle was later found abandoned in Dunwoody, GA.
-
-**What activity appears after that date?**
-A Google Maps contributor account allegedly attributed to Burns shows a review at PrimoHoagies in Wayne, PA ("5 years ago," ~2021) and a rating at Target in Wynnewood, PA ("3 years ago," ~2023), both after September 24, 2020.
-
-**Why Wayne, Pennsylvania?**
-Wayne is his FBI-listed place of birth, and the addresses, employer, and Maps activity in his identifier graph all cluster in the Wayne / Main Line area.
-
-**What does this indicate?**
-Activity on the Main Line roughly one and three years after he vanished in Georgia, pointing to a return to his home region. The ~2023 rating is the stronger data point.
 
 ## Disclaimer
 

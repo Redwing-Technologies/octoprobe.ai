@@ -29,7 +29,7 @@ Before writing or shipping a post, complete all of the following:
 1. **Primary query + 3 secondary queries** the post should answer (e.g. “what is an identifier graph”, “OSINT investigation platform”, “breach correlation methodology”).
 2. **Definitional opening** — first 2–3 sentences answer “OctoProbe is…” / the core concept before narrative. Answer engines pull this.
 3. **TL;DR / Key takeaways** box near the top (bullets).
-4. **FAQ section** — minimum 3 Q&As at the end; mirror them in front matter `faq:` for JSON-LD.
+4. **No FAQ or "next steps" section** — posts are for end users; no FAQ, FAQPage JSON-LD, or internal analyst to-dos/placeholders.
 5. **Front matter required fields:**
    - `title` (aim ≤ ~60 chars for the primary title)
    - `description` (~150–160 chars)
@@ -40,7 +40,6 @@ Before writing or shipping a post, complete all of the following:
    - `keywords` (list of entities/queries)
    - `og_image` / `hero` (featured image under `/assets/blog/…`)
    - `hero_alt`
-   - `faq:` list of `{q, a}` (min 3)
    - optional: `date_modified`, `author`, `excerpt`
 6. **Entity mentions** (natural, no stuffing): OctoProbe AI, Redwing Technologies, OSINT, identifier graph, breach intelligence, facial recognition OSINT, MCP OSINT as relevant.
 7. **Internal links** to homepage sections (`/#capabilities`, `/#faq`, `/#access`, `/#audiences`, `/#integration`), other posts, and listing FAQ. App login only as gated CTA.
@@ -52,7 +51,7 @@ Before writing or shipping a post, complete all of the following:
 python3 scripts/build-blog.py
 ```
 
-The build **fails** if `title`, `description`, `date`, or `tags` are missing; **warns** on missing `canonical`, short/long description, missing hero, or thin FAQ.
+The build **fails** if `title`, `description`, `date`, or `tags` are missing; **warns** on missing `canonical`, short/long description, missing hero .
 
 ---
 
@@ -68,7 +67,7 @@ python3 scripts/build-blog.py
 python3 scripts/build-blog.py blog/posts/YYYY-MM-DD-slug.md
 ```
 
-This writes `blog/<slug>/index.html`, injects BlogPosting + BreadcrumbList (+ FAQPage), regenerates `sitemap.xml`, and refreshes the Blog section in `llms.txt` and `.well-known/llms.txt`.
+This writes `blog/<slug>/index.html`, injects BlogPosting + BreadcrumbList, regenerates `sitemap.xml`, and refreshes the Blog section in `llms.txt` and `.well-known/llms.txt`.
 
 4. Add a card on `blog/index.html` (thumb, title, date, tags, excerpt, link). Update listing FAQ JSON-LD if you add site-wide questions.
 5. Preview locally. Deploy only after approval.

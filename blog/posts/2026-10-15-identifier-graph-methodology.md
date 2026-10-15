@@ -25,19 +25,6 @@ howto:
       text: "Merge duplicates, filter role accounts and noise, score confidence against the subject hypothesis, and park rejects so they are not reintroduced."
     - name: Collect and report
       text: "Preserve sources as you go and export claim → edge → source → time for the accepted graph only."
-faq:
-  - q: "What is an identifier graph in OSINT?"
-    a: "An identifier graph is a living map of entities (people, orgs, places) and identifiers (email, phone, handle, domain, photo) connected by evidenced edges that answer why two nodes are linked—with source, timestamp, and confidence on every link."
-  - q: "Where does manual identifier-graph work actually burn time?"
-    a: "Most hours go to reviewing candidate connections, deciding what belongs on the subject, adding or correcting nodes, and marking up edges with source and confidence—not to the first lookup itself."
-  - q: "What goes wrong when expansion is fully automated?"
-    a: "Without a tight investigative question and confidence gates, automation over-expands: namesakes, role accounts, recycled phone numbers, and lookalike profiles land as false-positive nodes that are not associated with the subject."
-  - q: "How does the seed → expand → link → collect loop work?"
-    a: "Seed one attributable public clue, expand only the sources that apply to that identifier type, link candidates with provenance (merge duplicates, filter noise, score confidence), then collect evidence and export a report a partner can defend."
-  - q: "Is OctoProbe a consumer reporting agency under the FCRA?"
-    a: "No. OctoProbe is not a consumer reporting agency. Results from this OSINT investigation platform may not be used for FCRA-covered eligibility decisions such as credit, employment, insurance, or tenant screening."
-  - q: "Who is identifier-graph methodology for?"
-    a: "Law firms, licensed private investigators, OSINT analysts, and opposition research or corporate intelligence teams who need sourced digital-footprint maps—not dragnets—built from public OSINT and licensed public-record/intel layers."
 ---
 
 # From Public Lead to Identifier Graph
@@ -237,32 +224,6 @@ In product terms, the same loop is:
 - **MCP server** — connect MCP-compatible clients to the same toolkit without reinventing provenance
 
 The methodology does not change when the UI does the bookkeeping. The graph is still only as good as the question, the scope, and the provenance. Explore [who uses OctoProbe](/#audiences) or [request access](/#access).
-
-## FAQ
-
-### What is an identifier graph in OSINT?
-
-An identifier graph is a living map of entities (people, orgs, places) and identifiers (email, phone, handle, domain, photo) connected by evidenced edges that answer why two nodes are linked—with source, timestamp, and confidence on every link.
-
-### Where does manual identifier-graph work actually burn time?
-
-Most hours go to reviewing candidate connections, deciding what belongs on the subject, adding or correcting nodes, and marking up edges with source and confidence—not to the first lookup itself.
-
-### What goes wrong when expansion is fully automated?
-
-Without a tight investigative question and confidence gates, automation over-expands: namesakes, role accounts, recycled phone numbers, and lookalike profiles land as false-positive nodes that are not associated with the subject.
-
-### How does the seed → expand → link → collect loop work?
-
-Seed one attributable public clue, expand only the sources that apply to that identifier type, link candidates with provenance (merge duplicates, filter noise, score confidence), then collect evidence and export a report a partner can defend.
-
-### Is OctoProbe a consumer reporting agency under the FCRA?
-
-No. OctoProbe is not a consumer reporting agency. Results from this OSINT investigation platform may not be used for FCRA-covered eligibility decisions such as credit, employment, insurance, or tenant screening.
-
-### Who is identifier-graph methodology for?
-
-Law firms, licensed private investigators, OSINT analysts, and opposition research or corporate intelligence teams who need sourced digital-footprint maps—not dragnets—built from public OSINT and licensed public-record/intel layers.
 
 ## Closing
 

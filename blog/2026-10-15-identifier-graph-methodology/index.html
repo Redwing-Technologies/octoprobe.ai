@@ -150,62 +150,6 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is an identifier graph in OSINT?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "An identifier graph is a living map of entities (people, orgs, places) and identifiers (email, phone, handle, domain, photo) connected by evidenced edges that answer why two nodes are linked—with source, timestamp, and confidence on every link."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Where does manual identifier-graph work actually burn time?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most hours go to reviewing candidate connections, deciding what belongs on the subject, adding or correcting nodes, and marking up edges with source and confidence—not to the first lookup itself."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What goes wrong when expansion is fully automated?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Without a tight investigative question and confidence gates, automation over-expands: namesakes, role accounts, recycled phone numbers, and lookalike profiles land as false-positive nodes that are not associated with the subject."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does the seed → expand → link → collect loop work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Seed one attributable public clue, expand only the sources that apply to that identifier type, link candidates with provenance (merge duplicates, filter noise, score confidence), then collect evidence and export a report a partner can defend."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is OctoProbe a consumer reporting agency under the FCRA?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. OctoProbe is not a consumer reporting agency. Results from this OSINT investigation platform may not be used for FCRA-covered eligibility decisions such as credit, employment, insurance, or tenant screening."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Who is identifier-graph methodology for?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Law firms, licensed private investigators, OSINT analysts, and opposition research or corporate intelligence teams who need sourced digital-footprint maps—not dragnets—built from public OSINT and licensed public-record/intel layers."
-      }
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to build an identifier graph from a public lead",
   "description": "How OSINT teams turn one public clue into a sourced identifier graph—and how to avoid burning hours on manual markup or drowning in automated false-positive nodes.",
@@ -487,19 +431,6 @@
 <li><strong>MCP server</strong> — connect MCP-compatible clients to the same toolkit without reinventing provenance</li>
 </ul>
 <p>The methodology does not change when the UI does the bookkeeping. The graph is still only as good as the question, the scope, and the provenance. Explore <a href="/#audiences">who uses OctoProbe</a> or <a href="/#access">request access</a>.</p>
-<h2 id="faq">FAQ</h2>
-<h3>What is an identifier graph in OSINT?</h3>
-<p>An identifier graph is a living map of entities (people, orgs, places) and identifiers (email, phone, handle, domain, photo) connected by evidenced edges that answer why two nodes are linked—with source, timestamp, and confidence on every link.</p>
-<h3>Where does manual identifier-graph work actually burn time?</h3>
-<p>Most hours go to reviewing candidate connections, deciding what belongs on the subject, adding or correcting nodes, and marking up edges with source and confidence—not to the first lookup itself.</p>
-<h3>What goes wrong when expansion is fully automated?</h3>
-<p>Without a tight investigative question and confidence gates, automation over-expands: namesakes, role accounts, recycled phone numbers, and lookalike profiles land as false-positive nodes that are not associated with the subject.</p>
-<h3>How does the seed → expand → link → collect loop work?</h3>
-<p>Seed one attributable public clue, expand only the sources that apply to that identifier type, link candidates with provenance (merge duplicates, filter noise, score confidence), then collect evidence and export a report a partner can defend.</p>
-<h3>Is OctoProbe a consumer reporting agency under the FCRA?</h3>
-<p>No. OctoProbe is not a consumer reporting agency. Results from this OSINT investigation platform may not be used for FCRA-covered eligibility decisions such as credit, employment, insurance, or tenant screening.</p>
-<h3>Who is identifier-graph methodology for?</h3>
-<p>Law firms, licensed private investigators, OSINT analysts, and opposition research or corporate intelligence teams who need sourced digital-footprint maps—not dragnets—built from public OSINT and licensed public-record/intel layers.</p>
 <h2 id="closing">Closing</h2>
 <p>A public lead becomes an identifier graph when you treat expansion as a <strong>repeatable protocol</strong>: seed carefully, expand by applicable source, link with evidence, reject what is out of scope, and report only what the accepted edges support. Manual teams need that protocol so review and markup do not eat the case. Automated teams need it so speed does not become a false-positive machine. That is the difference between a pile of tabs and an investigation you can hand to a partner—and the kind of structured answer search and chat engines can cite.</p>
 <hr>

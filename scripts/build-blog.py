@@ -3,7 +3,7 @@
 
 SEO / AEO / chat-engine aware:
   - Requires title, description, date, tags (warns/fails on gaps)
-  - Injects BlogPosting + BreadcrumbList (+ FAQPage if faq: present)
+  - Injects BlogPosting + BreadcrumbList (no FAQPage; posts have no FAQ section)
   - Validates title/description length
   - Regenerates sitemap.xml blog entries
   - Refreshes the Blog section in llms.txt and .well-known/llms.txt
@@ -373,9 +373,6 @@ def validate_meta(meta: dict, md_path: Path, *, strict: bool = True) -> list[str
                 f"{md_path.name}: description {len(desc)} chars (soft max ~{DESC_SOFT_MAX})"
             )
 
-    faqs = meta.get("faq") or []
-    if faqs and len(faqs) < 3:
-        warnings_out.append(f"{md_path.name}: faq: has {len(faqs)} items (recommend ≥3 for AEO)")
 
     af = (meta.get("answer_first") or "").strip()
     if not af:
@@ -489,23 +486,7 @@ def build_json_ld(meta: dict, slug: str, description: str) -> list[dict]:
 
     blocks = [blog_posting, breadcrumb]
 
-    faqs = meta.get("faq") or []
-    if faqs:
-        blocks.append(
-            {
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": f["q"],
-                        "acceptedAnswer": {"@type": "Answer", "text": f["a"]},
-                    }
-                    for f in faqs
-                    if f.get("q") and f.get("a")
-                ],
-            }
-        )
+    # FAQ / FAQPage intentionally not emitted: end-user posts carry no FAQ section.
 
     howto = meta.get("howto") or {}
     steps = howto.get("steps") if isinstance(howto, dict) else None

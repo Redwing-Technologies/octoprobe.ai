@@ -20,7 +20,7 @@ AEO builds on SEO. Every Findings post uses this scaffold.
 3. **First sentence under each H2 answers that heading** — inverted pyramid.
 4. **TL;DR / Key takeaways** — bulleted, near the top.
 5. **Lists & tables** for comparisons and loops (easy extraction).
-6. **FAQ** — ≥3 Q&As in body + `faq:` front matter → FAQPage JSON-LD.
+6. **No FAQ / next-steps sections** — end-user posts omit FAQ, FAQPage JSON-LD, and analyst to-dos.
 7. **HowTo** (when procedural) — `howto:` front matter → HowTo JSON-LD.
 8. **Entity consistency** — OctoProbe AI, Redwing Technologies LLC, product one-liner matches `llms.txt` / `ai.txt`.
 9. **Internal corroboration** — link homepage FAQ, capabilities, related posts.
@@ -49,4 +49,4 @@ howto:
 python3 scripts/build-blog.py
 ```
 
-Injects BlogPosting (+ speakable), BreadcrumbList, FAQPage, optional HowTo, Organization with `sameAs`, and `<link rel="alternate" href="/llms.txt">`.
+Injects BlogPosting (+ speakable), BreadcrumbList, optional HowTo, Organization with `sameAs`, and `<link rel="alternate" href="/llms.txt">`.
