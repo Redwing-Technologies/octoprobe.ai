@@ -395,7 +395,7 @@ footer .legal strong{color:var(--soft)}
 /* lead cover image (first block in the post): extra room before the summary */
 .prose > p:first-child:has(> img:only-child),
 .prose > figure:first-child{margin-top:0;margin-bottom:2.75em}
-.prose figcaption:not(.sr-only),.prose .caption,.prose .em-caption,figcaption,.caption,.em-caption{margin-top:.7em;font-style:italic;font-size:9pt;color:var(--soft-2);line-height:1.5}
+.prose figcaption:not(.sr-only),.prose .caption,.prose .em-caption,figcaption,.caption,.em-caption{margin-top:calc(.7em + 10px);text-align:center;font-style:italic;font-size:9pt;color:var(--soft-2);line-height:1.5}
 .prose a{color:var(--blue);text-decoration:underline;text-underline-offset:3px;font-weight:500}
 .prose a:hover{color:var(--blue-deep)}
 .prose strong{color:var(--heading);font-weight:650}
