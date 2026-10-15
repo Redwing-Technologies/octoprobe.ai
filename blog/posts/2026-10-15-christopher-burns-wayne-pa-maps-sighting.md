@@ -90,8 +90,8 @@ No. It is an unverified public-OSINT lead that law enforcement would need to eva
 
 This post uses only public sources and OctoProbe's identifier-graph correlation. Personal identifiers are masked. OctoProbe is not a consumer reporting agency, and nothing here may be used for FCRA-covered purposes (employment, credit, tenancy, insurance). See our [identifier-graph methodology](/blog/2026-10-15-identifier-graph-methodology/).
 
-## If you have information
+## Run investigations like this in OctoProbe
 
-**Report tips to the FBI:** call **1-800-CALL-FBI (1-800-225-5324)** or submit at **[tips.fbi.gov](https://tips.fbi.gov)**. Do not approach him. You can also contact your nearest FBI field office or American Embassy/Consulate.
+Seed an identifier, expand through premium APIs and public records, and keep evidence on every link, all on one live investigation graph.
 
-**Law-enforcement and investigative teams** can request OctoProbe access at [https://www.octoprobe.ai/#access](https://www.octoprobe.ai/#access).
+[Get Access →](https://www.octoprobe.ai/#access) · [Visit homepage](https://www.octoprobe.ai/)
