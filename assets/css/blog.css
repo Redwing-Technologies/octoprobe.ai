@@ -545,3 +545,7 @@ main{position:relative;z-index:1;min-height:50vh}
   nav.top .nav-cta{padding-left:12px;padding-right:12px;font-size:.85rem;white-space:nowrap}
   nav.top .brand small{display:none}
 }
+
+.prose figure.fig-pad{max-width:560px;margin:2.4em auto;padding:28px 28px 12px;background:var(--panel);border:1px solid var(--line);border-radius:14px}
+.prose figure.fig-pad img{width:100%;height:auto}
+@media(max-width:520px){.prose figure.fig-pad{padding:16px 14px 8px}}
