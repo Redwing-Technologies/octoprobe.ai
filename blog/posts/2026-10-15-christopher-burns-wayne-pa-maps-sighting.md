@@ -108,7 +108,7 @@ Activity on the Main Line roughly one and three years after he vanished in Georg
 
 ## Disclaimer
 
-Attribution of the Maps account to Burns is drawn from public identifiers and has not been confirmed; information should go to the FBI. OctoProbe is not a consumer reporting agency, and nothing here may be used for FCRA-covered purposes (see our [identifier-graph methodology](/blog/2026-10-15-identifier-graph-methodology/)).
+Burns is wanted by the FBI on a federal mail-fraud charge. A criminal complaint or indictment is an accusation, not proof; every defendant is presumed innocent unless and until proven guilty in a court of law. Attribution of the Maps account to him is unconfirmed; tips should go to the FBI.
 
 ## Run investigations like this in OctoProbe
 
