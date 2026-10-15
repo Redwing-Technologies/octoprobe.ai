@@ -21,8 +21,11 @@ Do **not** push or open a PR until Colin approves.
 
 ## SEO / AEO / Chat-engine checklist (REQUIRED for every post)
 
+Full recurring pattern: see [AEO-STRUCTURE.md](./AEO-STRUCTURE.md) (aligned with answer-engine optimization for ChatGPT, Perplexity, Gemini / AI Overviews).
+
 Before writing or shipping a post, complete all of the following:
 
+0. **`primary_question` + `answer_first` (40–60 words)** — standalone lede a model can cite without the rest of the page.
 1. **Primary query + 3 secondary queries** the post should answer (e.g. “what is an identifier graph”, “OSINT investigation platform”, “breach correlation methodology”).
 2. **Definitional opening** — first 2–3 sentences answer “OctoProbe is…” / the core concept before narrative. Answer engines pull this.
 3. **TL;DR / Key takeaways** box near the top (bullets).
@@ -75,5 +78,6 @@ This writes `blog/<slug>/index.html`, injects BlogPosting + BreadcrumbList (+ FA
 - Fictional / example names only in teaching posts.
 - Keep GA `G-6T6HW79ZP0` on blog pages (in the template).
 - Styles: `/assets/css/blog.css` (Space Grotesk headings, Inter body).
-- Chat discoverability: `llms.txt` + `/.well-known/llms.txt`, `robots.txt` allows `/` and `/blog/`.
+- Chat / answer-engine discoverability: `llms.txt`, `/.well-known/llms.txt`, `ai.txt`; `robots.txt` allows GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, Google-Extended, ClaudeBot, and related agents.
+- Recurring AEO structure: [AEO-STRUCTURE.md](./AEO-STRUCTURE.md).
 - Twitter: `@octoprobeai`.

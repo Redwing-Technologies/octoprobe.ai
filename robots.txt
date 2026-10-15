@@ -1,47 +1,74 @@
 User-agent: *
 Allow: /
 Allow: /blog/
+Allow: /llms.txt
+Allow: /.well-known/llms.txt
+Allow: /ai.txt
 Disallow: /login
 
 Sitemap: https://www.octoprobe.ai/sitemap.xml
 
-# AEO — allow search and AI answer-engine crawlers
+# ── AEO: allow search + AI answer engines (ChatGPT, Gemini, Perplexity, Claude, etc.) ──
+# Ref pattern: answer-first pages + crawler access (Searchable AEO guide).
+
 User-agent: Googlebot
 Allow: /
-Allow: /blog/
-
-User-agent: Bingbot
-Allow: /
-Allow: /blog/
 
 User-agent: Google-Extended
 Allow: /
-Allow: /blog/
 
-User-agent: GPTBot
+User-agent: Bingbot
 Allow: /
-Allow: /blog/
-
-User-agent: OAI-SearchBot
-Allow: /
-Allow: /blog/
-
-User-agent: ClaudeBot
-Allow: /
-Allow: /blog/
-
-User-agent: Claude-Web
-Allow: /
-Allow: /blog/
-
-User-agent: PerplexityBot
-Allow: /
-Allow: /blog/
-
-User-agent: Applebot
-Allow: /
-Allow: /blog/
 
 User-agent: DuckDuckBot
 Allow: /
-Allow: /blog/
+
+User-agent: Applebot
+Allow: /
+
+# OpenAI / ChatGPT
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google Gemini / AI Overviews companions
+User-agent: GoogleOther
+Allow: /
+
+# Anthropic / Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Others commonly used in AI retrieval
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /

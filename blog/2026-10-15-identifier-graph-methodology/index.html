@@ -7,6 +7,9 @@
 <meta name="description" content="How OSINT teams turn one public clue into a sourced identifier graph—and how to avoid burning hours on manual markup or drowning in automated false-positive nodes.">
 <meta name="keywords" content="OSINT investigation platform, identifier graph, false positive OSINT, analyst review time, breach intelligence, facial recognition OSINT, skip tracing, MCP OSINT">
 <meta name="author" content="OctoProbe AI">
+<link rel="alternate" type="text/plain" title="LLM context (llms.txt)" href="/llms.txt">
+<link rel="alternate" type="text/plain" title="AI discovery (ai.txt)" href="/ai.txt">
+<meta name="ai-content-declaration" content="human-authored; product documentation and OSINT methodology">
 <link rel="canonical" href="https://www.octoprobe.ai/blog/2026-10-15-identifier-graph-methodology/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="OctoProbe AI">
@@ -38,6 +41,10 @@
   "publisher": {
     "@type": "Organization",
     "name": "OctoProbe AI",
+    "alternateName": [
+      "OctoProbe",
+      "OctoProbe.ai"
+    ],
     "url": "https://www.octoprobe.ai/",
     "logo": {
       "@type": "ImageObject",
@@ -45,9 +52,17 @@
       "width": 512,
       "height": 512
     },
+    "description": "OctoProbe AI is an OSINT investigation platform from Redwing Technologies LLC that maps identifiers (email, phone, handle, domain, photo) onto a live investigation graph with evidence on every link.",
+    "email": "team@octoprobe.ai",
+    "sameAs": [
+      "https://x.com/octoprobeai",
+      "https://www.octoprobe.ai/",
+      "https://app.octoprobe.ai/"
+    ],
     "parentOrganization": {
       "@type": "Organization",
-      "name": "Redwing Technologies LLC"
+      "name": "Redwing Technologies LLC",
+      "url": "https://rook-intel.com/"
     }
   },
   "image": [
@@ -63,6 +78,14 @@
     "@type": "Blog",
     "name": "OctoProbe Findings",
     "url": "https://www.octoprobe.ai/blog/"
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      ".answer-first",
+      ".callout.takeaways",
+      ".prose h2"
+    ]
   },
   "about": [
     {
@@ -180,6 +203,40 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to build an identifier graph from a public lead",
+  "description": "How OSINT teams turn one public clue into a sourced identifier graph—and how to avoid burning hours on manual markup or drowning in automated false-positive nodes.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Seed",
+      "text": "Start from one publicly attributable clue (or a small co-occurring bundle) and write the investigative question plus what is out of scope."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Expand",
+      "text": "Run only the sources that apply to that identifier type; treat every hit as a candidate node, not a conclusion."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Link",
+      "text": "Merge duplicates, filter role accounts and noise, score confidence against the subject hypothesis, and park rejects so they are not reintroduced."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Collect and report",
+      "text": "Preserve sources as you go and export claim → edge → source → time for the accepted graph only."
+    }
+  ]
+}
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6T6HW79ZP0"></script>
 <script>
@@ -197,6 +254,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="alternate" type="text/plain" title="LLM context (llms.txt)" href="/llms.txt">
+<link rel="alternate" type="text/plain" title="AI discovery (ai.txt)" href="/ai.txt">
 <link rel="stylesheet" href="/assets/css/blog.css">
 </head>
 <body>
@@ -269,7 +328,9 @@
   <article class="post-body">
     <div class="wrap">
       <div class="prose">
-<p><strong>OctoProbe AI</strong> (from <strong>Redwing Technologies</strong>) is an <strong>OSINT investigation platform</strong> that turns one public clue into a live <strong>identifier graph</strong>—with source and timestamp on every link. This post is written for the analyst and the case lead who have to live with the result: how a thin lead becomes a defendable network of emails, phones, handles, domains, and photos—without inventing people, skipping provenance, or shipping a graph nobody trusts.</p>
+<p class="primary-question"><strong>What is an identifier graph in OSINT—and how do you build one without wasting review time or shipping false-positive nodes?</strong></p>
+<p class="answer-first">An identifier graph is a sourced map of people, orgs, and identifiers (email, phone, handle, domain, photo) connected by evidenced edges. Build it with seed → expand → link → collect: keep humans on accept/reject so manual markup does not eat the case and automation does not over-expand into false-positive nodes outside scope.</p>
+<p>This post is for the analyst and case lead who have to live with the graph: how a thin public lead becomes a defendable network of emails, phones, handles, domains, and photos—without inventing people, skipping provenance, or shipping a map nobody trusts. <strong>OctoProbe AI</strong> (from <strong>Redwing Technologies</strong>) encodes the same loop on a live investigation graph; the methodology still stands if you run it by hand.</p>
 <p>Two failure modes show up again and again. <strong>Manual</strong> workflows spend most of the clock on reviewing connections and marking up nodes. <strong>Automated</strong> workflows over-expand and leave false-positive nodes that are not associated with the subject. Good methodology is the middle path: expand with discipline, keep a human on the gates that matter, and treat every edge as something you may have to explain.</p>
 <h2 id="key-takeaways">Key takeaways</h2>
 <div class="callout takeaways"><strong class="callout-label">TL;DR · Key takeaways</strong><ul>

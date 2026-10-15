@@ -56,6 +56,40 @@ def parse_frontmatter(text: str) -> tuple[dict, str]:
             i += 1
             continue
         # faq list block
+        if re.match(r"^howto:\s*$", line):
+            howto: dict = {"name": "", "steps": []}
+            i += 1
+            current_step: dict | None = None
+            while i < len(lines):
+                fl = lines[i]
+                if fl and not fl.startswith(" ") and not fl.startswith("\t"):
+                    break
+                m_name = re.match(r"^\s+name:\s*(.*)$", fl)
+                m_step = re.match(r"^\s+-\s+name:\s*(.*)$", fl)
+                m_text = re.match(r"^\s+text:\s*(.*)$", fl)
+                if m_name and current_step is None and not howto.get("name"):
+                    howto["name"] = _strip_yaml_str(m_name.group(1))
+                elif m_step:
+                    if current_step:
+                        howto["steps"].append(current_step)
+                    current_step = {"name": _strip_yaml_str(m_step.group(1)), "text": ""}
+                elif m_text and current_step is not None:
+                    ans = _strip_yaml_str(m_text.group(1))
+                    i += 1
+                    while i < len(lines):
+                        cont = lines[i]
+                        if re.match(r"^\s{4,}\S", cont) and not re.match(r"^\s+-\s+", cont) and not re.match(r"^\s+name:\s*", cont) and not re.match(r"^\s+text:\s*", cont):
+                            ans += " " + cont.strip()
+                            i += 1
+                        else:
+                            break
+                    current_step["text"] = ans
+                    i -= 1
+                i += 1
+            if current_step:
+                howto["steps"].append(current_step)
+            meta["howto"] = howto
+            continue
         if re.match(r"^faq:\s*$", line):
             faqs = []
             i += 1
@@ -343,6 +377,23 @@ def validate_meta(meta: dict, md_path: Path, *, strict: bool = True) -> list[str
     if faqs and len(faqs) < 3:
         warnings_out.append(f"{md_path.name}: faq: has {len(faqs)} items (recommend ≥3 for AEO)")
 
+    af = (meta.get("answer_first") or "").strip()
+    if not af:
+        warnings_out.append(
+            f"{md_path.name}: missing answer_first: (40–60 word standalone lede for AEO / ChatGPT / Perplexity / Gemini)"
+        )
+    else:
+        wc = len(af.split())
+        if wc < 35 or wc > 75:
+            warnings_out.append(
+                f"{md_path.name}: answer_first is {wc} words (aim ~40–60 for extractability)"
+            )
+
+    if not meta.get("primary_question"):
+        warnings_out.append(
+            f"{md_path.name}: missing primary_question: (the question this page answers)"
+        )
+
     return warnings_out
 
 
@@ -362,6 +413,7 @@ def build_json_ld(meta: dict, slug: str, description: str) -> list[dict]:
     org = {
         "@type": "Organization",
         "name": "OctoProbe AI",
+        "alternateName": ["OctoProbe", "OctoProbe.ai"],
         "url": f"{SITE}/",
         "logo": {
             "@type": "ImageObject",
@@ -369,9 +421,21 @@ def build_json_ld(meta: dict, slug: str, description: str) -> list[dict]:
             "width": 512,
             "height": 512,
         },
+        "description": (
+            "OctoProbe AI is an OSINT investigation platform from Redwing Technologies LLC "
+            "that maps identifiers (email, phone, handle, domain, photo) onto a live "
+            "investigation graph with evidence on every link."
+        ),
+        "email": "team@octoprobe.ai",
+        "sameAs": [
+            "https://x.com/octoprobeai",
+            "https://www.octoprobe.ai/",
+            "https://app.octoprobe.ai/",
+        ],
         "parentOrganization": {
             "@type": "Organization",
             "name": "Redwing Technologies LLC",
+            "url": "https://rook-intel.com/",
         },
     }
 
@@ -395,6 +459,10 @@ def build_json_ld(meta: dict, slug: str, description: str) -> list[dict]:
             "@type": "Blog",
             "name": "OctoProbe Findings",
             "url": f"{SITE}/blog/",
+        },
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".answer-first", ".callout.takeaways", ".prose h2"],
         },
         "about": [
             {"@type": "Thing", "name": "OSINT"},
@@ -438,6 +506,34 @@ def build_json_ld(meta: dict, slug: str, description: str) -> list[dict]:
                 ],
             }
         )
+
+    howto = meta.get("howto") or {}
+    steps = howto.get("steps") if isinstance(howto, dict) else None
+    if isinstance(steps, list) and steps:
+        howto_steps = []
+        for i, step in enumerate(steps, 1):
+            if isinstance(step, dict):
+                name = step.get("name") or f"Step {i}"
+                text = step.get("text") or step.get("text") or ""
+            else:
+                name, text = f"Step {i}", str(step)
+            howto_steps.append(
+                {
+                    "@type": "HowToStep",
+                    "position": i,
+                    "name": name,
+                    "text": text,
+                }
+            )
+        blocks.append(
+            {
+                "@context": "https://schema.org",
+                "@type": "HowTo",
+                "name": howto.get("name") or title,
+                "description": description,
+                "step": howto_steps,
+            }
+        )
     return blocks
 
 
@@ -476,6 +572,25 @@ def build_one(md_path: Path, *, strict: bool = True) -> dict:
     )
 
     body_html = md_to_html(body_md)
+
+    answer_first = (meta.get("answer_first") or "").strip()
+    primary_q = (meta.get("primary_question") or "").strip()
+    if answer_first:
+        # Avoid duplicating if author already pasted the same lede as first paragraph
+        af_plain = re.sub(r"\s+", " ", answer_first).strip().lower()
+        first_p = re.search(r"<p>(.*?)</p>", body_html, flags=re.S)
+        first_plain = re.sub(r"<[^>]+>", "", first_p.group(1) if first_p else "")
+        first_plain = re.sub(r"\s+", " ", first_plain).strip().lower()
+        if af_plain not in first_plain:
+            q_html = (
+                f'<p class="primary-question"><strong>{escape(primary_q)}</strong></p>\n'
+                if primary_q
+                else ""
+            )
+            body_html = (
+                f'{q_html}<p class="answer-first">{escape(answer_first)}</p>\n'
+                + body_html
+            )
 
     hero_src = meta.get("hero") or ""
     # Allow absolute site URL in og_image to imply local hero path
@@ -518,6 +633,9 @@ def build_one(md_path: Path, *, strict: bool = True) -> dict:
 <meta name="description" content="{escape(description)}">
 <meta name="keywords" content="{escape(keywords_str)}">
 <meta name="author" content="{escape(meta.get('author') or 'OctoProbe AI')}">
+<link rel="alternate" type="text/plain" title="LLM context (llms.txt)" href="/llms.txt">
+<link rel="alternate" type="text/plain" title="AI discovery (ai.txt)" href="/ai.txt">
+<meta name="ai-content-declaration" content="human-authored; product documentation and OSINT methodology">
 <link rel="canonical" href="{escape(canonical)}">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="OctoProbe AI">

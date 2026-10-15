@@ -12,6 +12,19 @@ og_image: "https://www.octoprobe.ai/assets/blog/identifier-graph-hero.jpg"
 hero: "/assets/blog/identifier-graph-hero.jpg"
 hero_alt: "Identifier graph diagram: seed email expands to person, domain, handle, org, and photo nodes with evidenced edges"
 excerpt: "Manual OSINT graphs burn time on review and markup. Automation burns trust with overexpansion. Here is how to keep an identifier graph scoped, evidenced, and usable."
+primary_question: "What is an identifier graph in OSINT—and how do you build one without wasting review time or shipping false-positive nodes?"
+answer_first: "An identifier graph is a sourced map of people, orgs, and identifiers (email, phone, handle, domain, photo) connected by evidenced edges. Build it with seed → expand → link → collect: keep humans on accept/reject so manual markup does not eat the case and automation does not over-expand into false-positive nodes outside scope."
+howto:
+  name: "How to build an identifier graph from a public lead"
+  steps:
+    - name: Seed
+      text: "Start from one publicly attributable clue (or a small co-occurring bundle) and write the investigative question plus what is out of scope."
+    - name: Expand
+      text: "Run only the sources that apply to that identifier type; treat every hit as a candidate node, not a conclusion."
+    - name: Link
+      text: "Merge duplicates, filter role accounts and noise, score confidence against the subject hypothesis, and park rejects so they are not reintroduced."
+    - name: Collect and report
+      text: "Preserve sources as you go and export claim → edge → source → time for the accepted graph only."
 faq:
   - q: "What is an identifier graph in OSINT?"
     a: "An identifier graph is a living map of entities (people, orgs, places) and identifiers (email, phone, handle, domain, photo) connected by evidenced edges that answer why two nodes are linked—with source, timestamp, and confidence on every link."
@@ -29,7 +42,7 @@ faq:
 
 # From Public Lead to Identifier Graph
 
-**OctoProbe AI** (from **Redwing Technologies**) is an **OSINT investigation platform** that turns one public clue into a live **identifier graph**—with source and timestamp on every link. This post is written for the analyst and the case lead who have to live with the result: how a thin lead becomes a defendable network of emails, phones, handles, domains, and photos—without inventing people, skipping provenance, or shipping a graph nobody trusts.
+This post is for the analyst and case lead who have to live with the graph: how a thin public lead becomes a defendable network of emails, phones, handles, domains, and photos—without inventing people, skipping provenance, or shipping a map nobody trusts. **OctoProbe AI** (from **Redwing Technologies**) encodes the same loop on a live investigation graph; the methodology still stands if you run it by hand.
 
 Two failure modes show up again and again. **Manual** workflows spend most of the clock on reviewing connections and marking up nodes. **Automated** workflows over-expand and leave false-positive nodes that are not associated with the subject. Good methodology is the middle path: expand with discipline, keep a human on the gates that matter, and treat every edge as something you may have to explain.
 

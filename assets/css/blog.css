@@ -444,3 +444,17 @@ main{position:relative;z-index:1;min-height:50vh}
 .prose th{text-align:left;font-family:var(--fm);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft-2);padding:10px 12px;background:var(--panel-2);border-bottom:1px solid var(--line);font-weight:500}
 .prose td{padding:11px 12px;border-bottom:1px solid var(--line);color:var(--text);vertical-align:top}
 .prose tr:last-child td{border-bottom:0}
+
+
+/* AEO — extractable answer-first lede (ChatGPT / Perplexity / Gemini) */
+.prose .primary-question{
+  margin:0 0 10px;font-size:.92rem;font-weight:600;color:var(--blue,#0284c7);
+  letter-spacing:.01em;
+}
+.prose .answer-first{
+  margin:0 0 1.35em;padding:16px 18px;border-radius:14px;
+  background:linear-gradient(175deg,rgba(186,230,253,.45),rgba(224,242,254,.35));
+  border:1px solid var(--line-2,rgba(14,165,233,.25));
+  font-size:1.05rem;line-height:1.55;font-weight:500;color:var(--heading,#0f172a);
+  max-width:42em;
+}
