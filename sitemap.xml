@@ -68,4 +68,14 @@
       <image:title>Alleged Saudi Spy List Leaked by Houthi-Tied Group, and Their Phones Do the Rest</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://www.octoprobe.ai/blog/2026-10-16-white-house-vetting-press-clips-leak/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/blog/2026-10-16-white-house-vetting-press-clips-leak/assets/cover.png</image:loc>
+      <image:title>25 Pages of Press Clips: Leak Shows How Thin White House Vetting Really Was</image:title>
+    </image:image>
+  </url>
 </urlset>
