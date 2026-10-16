@@ -58,4 +58,14 @@
       <image:title>Whose Coffee? An Anti-Bot Developer’s Handle Turns Up on Archive.today’s Donate Link</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://www.octoprobe.ai/blog/2026-10-16-saudi-gip-spies-digital-footprints/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/blog/2026-10-16-saudi-gip-spies-digital-footprints/assets/cover.png</image:loc>
+      <image:title>Alleged Saudi Spy List Leaked by Houthi-Tied Group, and Their Phones Do the Rest</image:title>
+    </image:image>
+  </url>
 </urlset>
