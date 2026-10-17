@@ -21,12 +21,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/blog.css?v=toc7">
+<link rel="stylesheet" href="/assets/css/blog.css?v=news1">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <nav class="top" id="nav" aria-label="Primary">
-  <a class="brand" href="/" aria-label="OctoProbe AI home">
+  <a class="brand" href="/blog/" aria-label="OctoProbe News home">
     <svg class="logo" viewBox="0 0 40 40" role="img" aria-label="OctoProbe AI" fill="none">
       <defs>
         <linearGradient id="g1" x1="6" y1="4" x2="34" y2="38" gradientUnits="userSpaceOnUse">
@@ -45,41 +45,36 @@
       <rect x="30.5" y="8" width="2" height="2" rx=".5" fill="url(#g1)" opacity=".7"/>
       <rect x="7.2" y="9.6" width="1.7" height="1.7" rx=".4" fill="url(#g1)" opacity=".6"/>
     </svg>
-    <span class="bn">OctoProbe AI<small>OSINT Workspace</small></span>
+    <span class="bn">OctoProbe<small>News</small></span>
   </a>
   <div class="nav-center">
-    <a href="/#capabilities">Capabilities</a>
-    <a href="/#platform">Platform</a>
-    <a href="/#integration">Integrations</a>
-    <a href="/#audiences">Who Uses It</a>
-    <a href="/#faq">FAQ</a>
-    <a href="/blog/" class="active" aria-current="page">Blog</a>
+    <a href="/blog/about/">About</a>
+    <a href="/blog/standards/">Standards</a>
+    <a href="/blog/corrections/">Corrections</a>
+    <a href="/blog/contact/">Contact</a>
   </div>
   <div class="nav-right">
-    <a class="nav-login" href="https://app.octoprobe.ai/">Log In</a>
-    <a class="nav-cta" href="/#access">Get Started →</a>
+    <a href="/blog/" class="nav-cta nav-investigations" aria-current="page">Investigations</a>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
-  <a href="/#capabilities">Capabilities</a>
-  <a href="/#platform">Platform</a>
-  <a href="/#integration">Integrations</a>
-  <a href="/#audiences">Who Uses It</a>
-  <a href="/#faq">FAQ</a>
-  <a href="/blog/" class="active" aria-current="page">Blog</a>
-  <a href="https://app.octoprobe.ai/">Log In</a>
-  <a href="/#access">Get Started →</a>
+  <a href="/blog/" class="active" aria-current="page">Investigations</a>
+  <a href="/blog/about/">About</a>
+  <a href="/blog/standards/">Standards</a>
+  <a href="/blog/corrections/">Corrections</a>
+  <a href="/blog/contact/">Contact</a>
+  <a href="/">OctoProbe platform</a>
 </div>
 <main id="main">
   <header class="post-hero">
     <div class="wrap">
       <div class="post-crumb">
-        <a class="back-link" href="/blog/">← All findings</a>
+        <a class="back-link" href="/blog/">← All investigations</a>
         <span class="crumb-sep" aria-hidden="true">/</span>
-        <span class="eyebrow">Findings</span>
+        <span class="eyebrow">Investigations</span>
       </div>
       <h1>{{TITLE}}</h1>
       <div class="post-meta">
@@ -95,14 +90,6 @@
       <div class="prose">
 {{BODY}}
       </div>
-      <aside class="post-cta reveal">
-        <h2>Run this methodology in OctoProbe</h2>
-        <p>Seed an identifier, expand through premium APIs and public records, and keep evidence on every link—on one live investigation graph.</p>
-        <div class="actions">
-          <a class="btn btn-blue" href="https://www.octoprobe.ai/#access">Get Access →</a>
-          <a class="btn btn-ghost" href="https://www.octoprobe.ai/">Visit homepage</a>
-        </div>
-      </aside>
       <p class="post-disclaimer">Public OSINT methodology. Examples are fictional. OctoProbe is not a consumer reporting agency; results may not be used for FCRA-covered eligibility decisions.</p>
     </div>
   </article>
@@ -122,22 +109,21 @@
           <rect x="15.2" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
           <rect x="21.6" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
         </svg>
-        OctoProbe AI
+        OctoProbe News
       </a>
       <nav class="fnav" aria-label="Footer navigation">
-        <a href="/#capabilities">Capabilities</a>
-        <a href="/#platform">Platform</a>
-        <a href="/#integration">Integrations</a>
-        <a href="/#faq">FAQ</a>
-        <a href="/blog/">Blog</a>
-        <a href="/#access">Get Started</a>
-        <a href="https://app.octoprobe.ai/">Log In</a>
-        <a href="mailto:team@octoprobe.ai">team@octoprobe.ai</a>
+        <a href="/blog/">Investigations</a>
+        <a href="/blog/about/">About</a>
+        <a href="/blog/standards/">Standards</a>
+        <a href="/blog/corrections/">Corrections</a>
+        <a href="/blog/contact/">Contact</a>
+        <a href="mailto:press@octoprobe.ai">press@octoprobe.ai</a>
       </nav>
     </div>
     <div class="legal">
-      <p>© <span id="yr">2026</span> Redwing Technologies LLC · OctoProbe AI is a service of Redwing Technologies LLC · <a href="mailto:team@octoprobe.ai" style="color:inherit">team@octoprobe.ai</a></p>
-      <p>OctoProbe integrates licensed third-party data providers and public-record sources. Third-party names are trademarks of their respective owners and do not imply endorsement. OctoProbe is not a consumer reporting agency; results may not be used for FCRA-covered eligibility decisions.</p>
+      <p>© <span id="yr">2026</span> Redwing Technologies LLC · OctoProbe News · <a href="mailto:press@octoprobe.ai" style="color:inherit">press@octoprobe.ai</a></p>
+      <p><strong>OctoProbe News</strong> is published by Redwing Technologies LLC, which also develops the OctoProbe OSINT investigation platform for law firms, licensed investigators and analysts. The newsroom operates independently of that commercial business; see our <a href="/blog/standards/#independence" style="color:inherit">editorial standards</a>. Platform inquiries: <a href="/" style="color:inherit">octoprobe.ai</a> · <a href="mailto:team@octoprobe.ai" style="color:inherit">team@octoprobe.ai</a>.</p>
+      <p>OctoProbe is not a consumer reporting agency; platform results may not be used for FCRA-covered eligibility decisions.</p>
     </div>
   </div>
 </footer>

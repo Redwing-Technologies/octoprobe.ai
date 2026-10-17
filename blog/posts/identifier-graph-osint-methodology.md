@@ -4,10 +4,10 @@ description: "How OSINT teams turn one public clue into a sourced identifier gra
 date: 2026-10-15
 date_modified: 2026-10-15
 author: "OctoProbe AI"
-slug: 2026-10-15-identifier-graph-methodology
+slug: identifier-graph-osint-methodology
 tags: [Methodology, OSINT, Identifier Graph]
 keywords: [OSINT investigation platform, identifier graph, false positive OSINT, analyst review time, breach intelligence, facial recognition OSINT, skip tracing, MCP OSINT]
-canonical: "https://www.octoprobe.ai/blog/2026-10-15-identifier-graph-methodology/"
+canonical: "https://www.octoprobe.ai/blog/identifier-graph-osint-methodology/"
 og_image: "https://www.octoprobe.ai/assets/blog/identifier-graph-hero.jpg"
 hero: "/assets/blog/identifier-graph-hero.jpg"
 hero_alt: "Identifier graph diagram: seed email expands to person, domain, handle, org, and photo nodes with evidenced edges"

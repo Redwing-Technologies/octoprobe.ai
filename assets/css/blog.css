@@ -569,3 +569,14 @@ main{position:relative;z-index:1;min-height:50vh}
   .post-body .post-cta .actions{flex-direction:column;align-items:stretch;gap:10px;margin-top:20px}
   .post-body .post-cta a.btn{width:100%}
 }
+
+/* OctoProbe News nav: Investigations is the prominent right-side item */
+nav.top .nav-investigations{white-space:nowrap}
+@media(max-width:520px){
+  nav.top .brand{gap:9px}
+  nav.top .brand svg.logo{width:36px;height:36px}
+  nav.top .brand .bn{font-size:1.05rem}
+  nav.top .nav-right{gap:6px}
+  nav.top .nav-investigations{padding:8px 11px;font-size:.8rem}
+}
+@media(max-width:360px){nav.top .brand .bn{display:none}}

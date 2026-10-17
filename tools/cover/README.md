@@ -10,13 +10,13 @@ Cutout: transparent PNG, e.g. `rembg` of the official (FBI/DOJ) photo at its ori
 
 Zhang (live):
     python tools/cover/make_cover.py \
-      --photo blog/2026-10-15-wanying-zhang-reddit-passport-allegation-osint/assets/cover-cutout.png \
+      --photo blog/heather-zhang-prc-agent-case-reddit-allegation/assets/cover-cutout.png \
       --title 'Wanying "Heather"' --title 'Zhang' \
       --insight 'Alleged surveillance trip, Sept 1, 2025' \
       --sub 'Irvine → SNA → Las Vegas → Seattle area · LAX arrest' \
       --credit 'Photo: FBI (via CBS News)' \
       --lat 33.6846 --lon -117.8265 --zoom 11 \
-      --out blog/2026-10-15-wanying-zhang-reddit-passport-allegation-osint/assets/cover.png
+      --out blog/heather-zhang-prc-agent-case-reddit-allegation/assets/cover.png
 
 Burns (preview only):
     python tools/cover/make_cover.py --photo <burns cutout.png> \

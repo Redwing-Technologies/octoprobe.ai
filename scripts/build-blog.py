@@ -10,7 +10,7 @@ SEO / AEO / chat-engine aware:
 
 Usage (from landing repo root):
   python3 scripts/build-blog.py
-  python3 scripts/build-blog.py blog/posts/2026-10-15-identifier-graph-methodology.md
+  python3 scripts/build-blog.py blog/posts/identifier-graph-osint-methodology.md
 
 No remote deploy — write local HTML only. Requires no third-party packages.
 """
@@ -352,8 +352,8 @@ def validate_meta(meta: dict, md_path: Path, *, strict: bool = True) -> list[str
         )
 
     title = meta.get("title") or ""
-    # Title tag will be "{title} · OctoProbe Findings" — warn on long primary title
-    full_title = f"{title} · OctoProbe Findings"
+    # Title tag will be "{title} · OctoProbe News" — warn on long primary title
+    full_title = f"{title} · OctoProbe News"
     if len(full_title) > TITLE_SOFT_MAX + 20:
         warnings_out.append(
             f"{md_path.name}: title tag ~{len(full_title)} chars (aim ≤~{TITLE_SOFT_MAX} for primary title alone; full tag includes brand)"
@@ -405,7 +405,7 @@ def build_json_ld(meta: dict, slug: str, description: str) -> list[dict]:
     if isinstance(keywords, str):
         keywords = [k.strip() for k in keywords.split(",") if k.strip()]
     canonical = meta.get("canonical") or f"{SITE}/blog/{slug}/"
-    author_name = meta.get("author") or "OctoProbe AI"
+    author_name = meta.get("author") or "OctoProbe News"
 
     org = {
         "@type": "Organization",
@@ -438,13 +438,13 @@ def build_json_ld(meta: dict, slug: str, description: str) -> list[dict]:
 
     blog_posting = {
         "@context": "https://schema.org",
-        "@type": "BlogPosting",
+        "@type": "NewsArticle",
         "headline": title,
         "description": description,
         "datePublished": date,
         "dateModified": date_mod,
-        "author": {"@type": "Organization", "name": author_name, "url": f"{SITE}/"},
-        "publisher": org,
+        "author": {"@type": "Organization", "name": author_name, "url": f"{SITE}/blog/"},
+        "publisher": {"@type": "NewsMediaOrganization", "@id": f"{SITE}/blog/#newsroom", "name": "OctoProbe News", "url": f"{SITE}/blog/", "logo": org["logo"], "parentOrganization": org["parentOrganization"]},
         "image": [og_image],
         "keywords": ", ".join(keywords) if isinstance(keywords, list) else str(keywords),
         "mainEntityOfPage": {
@@ -454,7 +454,7 @@ def build_json_ld(meta: dict, slug: str, description: str) -> list[dict]:
         "url": canonical,
         "isPartOf": {
             "@type": "Blog",
-            "name": "OctoProbe Findings",
+            "name": "OctoProbe News",
             "url": f"{SITE}/blog/",
         },
         "speakable": {
@@ -608,18 +608,18 @@ def build_one(md_path: Path, *, strict: bool = True) -> dict:
 
     # Prefer a short browser title; keep brand
     browser_title = title if len(title) <= TITLE_SOFT_MAX else title[: TITLE_SOFT_MAX - 1].rstrip() + "…"
-    page_title = f"{browser_title} · OctoProbe Findings"
+    page_title = f"{browser_title} · OctoProbe News"
 
     head_meta = f"""<title>{escape(page_title)}</title>
 <meta name="description" content="{escape(description)}">
 <meta name="keywords" content="{escape(keywords_str)}">
-<meta name="author" content="{escape(meta.get('author') or 'OctoProbe AI')}">
+<meta name="author" content="{escape(meta.get('author') or 'OctoProbe News')}">
 <link rel="alternate" type="text/plain" title="LLM context (llms.txt)" href="/llms.txt">
 <link rel="alternate" type="text/plain" title="AI discovery (ai.txt)" href="/ai.txt">
 <meta name="ai-content-declaration" content="human-authored; product documentation and OSINT methodology">
 <link rel="canonical" href="{escape(canonical)}">
 <meta property="og:type" content="article">
-<meta property="og:site_name" content="OctoProbe AI">
+<meta property="og:site_name" content="OctoProbe News">
 <meta property="og:url" content="{escape(canonical)}">
 <meta property="og:title" content="{escape(title)}">
 <meta property="og:description" content="{escape(description)}">

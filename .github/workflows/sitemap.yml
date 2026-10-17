@@ -28,6 +28,7 @@ jobs:
         run: |
           for d in blog/*/index.html; do
             case "$d" in blog/_*) continue;; esac
+            grep -q 'http-equiv="refresh"' "$d" && continue  # redirect stub
             slug=$(basename "$(dirname "$d")")
             grep -q "/blog/$slug/</loc>" sitemap.xml || { echo "missing $slug"; exit 1; }
           done

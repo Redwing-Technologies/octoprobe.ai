@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regenerate sitemap.xml from the built site (homepage, /blog/, every blog/<slug>/index.html).
+"""Regenerate sitemap.xml from the built site (homepage, /blog/, every blog/<slug>/index.html except redirect stubs).
 
 The published HTML is the source of truth, so hand-built posts are included too.
 Per page it reads: canonical URL, og:title, og:image (query string stripped) and the
@@ -51,6 +51,8 @@ def build() -> str:
     for p in sorted((ROOT / "blog").glob("*/index.html")):
         if p.parent.name.startswith(("_", ".")):
             continue
+        if 'http-equiv="refresh"' in p.read_text(encoding="utf-8"):
+            continue  # redirect stub for a moved URL; only live URLs go in the sitemap
         d = page(p)
         if not d["lastmod"]:
             raise SystemExit(f"ERROR: {p.relative_to(ROOT)} has no JSON-LD dateModified/datePublished")

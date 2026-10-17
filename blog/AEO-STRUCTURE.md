@@ -1,4 +1,4 @@
-# Recurring AEO structure (OctoProbe Findings)
+# Recurring AEO structure (OctoProbe News)
 
 Aligned with answer-engine optimization practice ([What is AEO](https://www.searchable.com/blog/what-is-aeo)): get **cited inside** ChatGPT, Perplexity, Gemini / AI Overviews—not only ranked in blue links.
 
