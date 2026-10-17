@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://www.octoprobe.ai/blog/</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -59,16 +59,6 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.octoprobe.ai/blog/2026-10-16-myrotvorets-informnapalm-ned-psyops-investigation/</loc>
-    <lastmod>2026-10-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.octoprobe.ai/blog/2026-10-16-myrotvorets-informnapalm-ned-psyops-investigation/assets/cover.png</image:loc>
-      <image:title>Your Taxes, Their Target List: Following NED Money Into Ukraine’s Online Info-Ops Web</image:title>
-    </image:image>
-  </url>
-  <url>
     <loc>https://www.octoprobe.ai/blog/2026-10-16-saudi-gip-spies-digital-footprints/</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -86,6 +76,16 @@
     <image:image>
       <image:loc>https://www.octoprobe.ai/blog/2026-10-16-white-house-vetting-press-clips-leak/assets/cover.png</image:loc>
       <image:title>25 Pages of Press Clips: Leak Shows How Thin White House Vetting Really Was</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.octoprobe.ai/blog/2026-10-16-myrotvorets-informnapalm-ned-psyops-investigation/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/blog/2026-10-16-myrotvorets-informnapalm-ned-psyops-investigation/assets/cover.png</image:loc>
+      <image:title>Your Taxes, Their Target List: Following NED Money Into Ukraine’s Online Info-Ops Web</image:title>
     </image:image>
   </url>
 </urlset>
