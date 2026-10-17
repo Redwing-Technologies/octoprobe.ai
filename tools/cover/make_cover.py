@@ -35,6 +35,26 @@ def smart_quotes(t):
 def data_uri(p, mime):
     return f"data:{mime};base64," + base64.b64encode(pathlib.Path(p).read_bytes()).decode()
 
+def overlay_html(a):
+    """Optional circular logo overlay (red ring = --outline-px) and red connector to the subject."""
+    if not a.logo_overlay:
+        return ""
+    import mimetypes
+    mime = mimetypes.guess_type(a.logo_overlay)[0] or "image/png"
+    ring = a.outline_px / 2  # output px -> CSS px (2x render)
+    d = a.logo_size
+    h = (f'<img id="ovl" src="{data_uri(a.logo_overlay, mime)}" style="position:absolute;left:{a.logo_x - d/2}px;top:{a.logo_y - d/2}px;'
+         f'width:{d}px;height:{d}px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 {ring}px {RED},0 10px 24px rgba(0,0,0,.45)">')
+    if a.connector:
+        w = a.connector_px / 2
+        h += f"""<svg id="conn" width="{W}" height="{H}" style="position:absolute;inset:0;pointer-events:none"></svg>
+<script>addEventListener('load',()=>{{const o=document.getElementById('ovl').getBoundingClientRect(),c=document.getElementById('ph').getBoundingClientRect();
+const ox=o.left+o.width/2,oy=o.top+o.height/2,r=o.width/2+{ring};
+const tx=c.left+c.width*{a.connector_target},ty=c.top+{w}*2;const dx=tx-ox,dy=ty-oy,L=Math.hypot(dx,dy);
+const sx=ox+dx/L*(r+{w}*3),sy=oy+dy/L*(r+{w}*3);
+document.getElementById('conn').innerHTML=`<line x1="${{sx}}" y1="${{sy}}" x2="${{tx}}" y2="${{ty}}" stroke="{RED}" stroke-width="{w}" stroke-linecap="round"/><circle cx="${{sx}}" cy="${{sy}}" r="{w*1.8}" fill="{RED}"/><circle cx="${{tx}}" cy="${{ty}}" r="{w*1.8}" fill="{RED}"/>`;}});</script>"""
+    return h
+
 def build_html(a):
     logo = data_uri(ROOT / "logo.svg", "image/svg+xml")
     photo = data_uri(a.photo, "image/png")
@@ -72,9 +92,10 @@ html,body{{margin:0;width:{W}px;height:{H}px;overflow:hidden;background:#0a1226}
 <feMerge><feMergeNode in="ring"/><feMergeNode in="SourceGraphic"/></feMerge>
 </filter></svg>
 <div id="map"></div><div class="shade"></div>
-<div class="ring" style="width:90px;height:90px"></div><div class="ring" style="width:150px;height:150px;opacity:.55"></div><div class="ring" style="width:210px;height:210px;opacity:.3"></div>
-<svg class="pin" width="64" height="90" viewBox="0 0 28 40"><path d="M14 0C6 0 0 6 0 14c0 10 14 26 14 26s14-16 14-26C28 6 22 0 14 0z" fill="{RED}"/><circle cx="14" cy="14" r="5.2" fill="#7a0a12"/></svg>
+<div class="ring" style="{'display:none;' if a.no_pin else ''}width:90px;height:90px"></div><div class="ring" style="{'display:none;' if a.no_pin else ''}width:150px;height:150px;opacity:.55"></div><div class="ring" style="{'display:none;' if a.no_pin else ''}width:210px;height:210px;opacity:.3"></div>
+<svg class="pin" style="{'display:none' if a.no_pin else ''}" width="64" height="90" viewBox="0 0 28 40"><path d="M14 0C6 0 0 6 0 14c0 10 14 26 14 26s14-16 14-26C28 6 22 0 14 0z" fill="{RED}"/><circle cx="14" cy="14" r="5.2" fill="#7a0a12"/></svg>
 <div class="subject"><img id="ph" src="{photo}"></div>
+{overlay_html(a)}
 <div class="brand"><img src="{logo}" alt=""><div>OctoProbe AI<small>OSINT CASE STUDY</small></div></div>
 <div class="title">{titles}<div class="rule"></div><div class="insight">{html.escape(smart_quotes(a.insight))}</div><div class="sub">{html.escape(smart_quotes(a.sub or ''))}</div></div>
 <div class="credit">{html.escape(a.credit)} · Map © OpenStreetMap contributors</div>
@@ -101,6 +122,14 @@ def main():
     p.add_argument("--subject-h", dest="subject_h", type=int, default=500)
     p.add_argument("--subject-right", dest="subject_right", type=int, default=40)
     p.add_argument("--outline-px", dest="outline_px", type=float, default=8, help="red silhouette stroke width in output px (2x); 0 = none")
+    p.add_argument("--logo-overlay", dest="logo_overlay", default="", help="optional circular logo/seal image placed on the cover with a red ring (--outline-px)")
+    p.add_argument("--logo-x", dest="logo_x", type=int, default=1000, help="overlay center x (CSS px, 1200-wide canvas)")
+    p.add_argument("--logo-y", dest="logo_y", type=int, default=150, help="overlay center y (CSS px)")
+    p.add_argument("--logo-size", dest="logo_size", type=int, default=200, help="overlay diameter (CSS px)")
+    p.add_argument("--connector", action="store_true", help="draw a red graph-edge line (with end dots) from the overlay to the subject image")
+    p.add_argument("--connector-px", dest="connector_px", type=float, default=10, help="connector width in output px (2x)")
+    p.add_argument("--connector-target", dest="connector_target", type=float, default=0.5, help="where on the subject's top edge the line lands (0=left, 1=right)")
+    p.add_argument("--no-pin", dest="no_pin", action="store_true", help="hide the map pin and its rings")
     p.add_argument("--out", required=True)
     a = p.parse_args()
     with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False) as f:
