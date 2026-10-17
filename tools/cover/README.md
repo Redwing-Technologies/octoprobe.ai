@@ -26,3 +26,20 @@ Burns (preview only):
 
 Tuning flags: --pin-x/--pin-y (CSS px in 1200×630 space; map pans so lat/lon sits under the pin),
 --title-size, --title-top, --subject-h, --subject-right.
+
+## Optional logo overlay and connector
+
+For covers that tie an organization's logo or seal to the subject image (e.g. a code card):
+
+- `--logo-overlay PATH`: circular logo or seal (PNG/WebP), with the same red ring width as `--outline-px`
+- `--logo-x/--logo-y`: center of the overlay in CSS px on the 1200×630 canvas. `--logo-size`: its diameter
+- `--connector`: red graph-edge line with end dots from the overlay to the subject's top edge. Set the width with `--connector-px` (output px) and where it lands with `--connector-target` (0 = left, 1 = right)
+- `--no-pin`: hide the map pin and its rings, so the cover keeps one red focal point
+
+Example (Myrotvorets cover v2):
+
+    python3 tools/cover/make_cover.py --photo cutout.png --title 'Your Taxes, Their Target List' \
+      --title "Following NED Money Into Ukraine's Online Info-Ops Web" --insight '…' --sub '…' \
+      --credit 'Code: … · Seal: Myrotvorets' --lat 50.45 --lon 30.52 --title-size 50 --subject-h 230 \
+      --no-pin --logo-overlay seal.webp --logo-x 990 --logo-y 165 --logo-size 210 \
+      --connector --connector-target 0.62 --out cover.png
