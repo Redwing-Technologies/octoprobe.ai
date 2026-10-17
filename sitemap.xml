@@ -19,17 +19,27 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.octoprobe.ai/blog/2026-10-15-christopher-burns-wayne-pa-maps-sighting/</loc>
+    <loc>https://www.octoprobe.ai/blog/christopher-burns-fbi-fugitive-google-maps-wayne-pa/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://www.octoprobe.ai/blog/2026-10-15-christopher-burns-wayne-pa-maps-sighting/assets/cover.png</image:loc>
+      <image:loc>https://www.octoprobe.ai/blog/christopher-burns-fbi-fugitive-google-maps-wayne-pa/assets/cover.png</image:loc>
       <image:title>Christopher W. Burns (FBI Most Wanted Fraudsters): Public Google Maps Activity Dated After His Last Sighting, Wayne, PA Area</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.octoprobe.ai/blog/2026-10-15-identifier-graph-methodology/</loc>
+    <loc>https://www.octoprobe.ai/blog/heather-zhang-prc-agent-case-reddit-allegation/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/blog/heather-zhang-prc-agent-case-reddit-allegation/assets/cover.png</image:loc>
+      <image:title>Heather Zhang Case: OSINT Trail From a 2024 Reddit Allegation</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.octoprobe.ai/blog/identifier-graph-osint-methodology/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -39,53 +49,83 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.octoprobe.ai/blog/2026-10-15-wanying-zhang-reddit-passport-allegation-osint/</loc>
-    <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.octoprobe.ai/blog/2026-10-15-wanying-zhang-reddit-passport-allegation-osint/assets/cover.png</image:loc>
-      <image:title>Heather Zhang Case: OSINT Trail From a 2024 Reddit Allegation</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.octoprobe.ai/blog/2026-10-15-glizzykingdreko-takion-api-archive-today-donate-link/</loc>
+    <loc>https://www.octoprobe.ai/blog/archive-today-donate-link-takion-api-developer/</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://www.octoprobe.ai/blog/2026-10-15-glizzykingdreko-takion-api-archive-today-donate-link/assets/cover.png</image:loc>
+      <image:loc>https://www.octoprobe.ai/blog/archive-today-donate-link-takion-api-developer/assets/cover.png</image:loc>
       <image:title>Whose Coffee? An Anti-Bot Developer’s Handle Turns Up on Archive.today’s Donate Link</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.octoprobe.ai/blog/2026-10-16-saudi-gip-spies-digital-footprints/</loc>
+    <loc>https://www.octoprobe.ai/blog/saudi-intelligence-spy-list-leak-houthi/</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://www.octoprobe.ai/blog/2026-10-16-saudi-gip-spies-digital-footprints/assets/cover.png</image:loc>
+      <image:loc>https://www.octoprobe.ai/blog/saudi-intelligence-spy-list-leak-houthi/assets/cover.png</image:loc>
       <image:title>Alleged Saudi Spy List Leaked by Houthi-Tied Group, and Their Phones Do the Rest</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.octoprobe.ai/blog/2026-10-16-white-house-vetting-press-clips-leak/</loc>
+    <loc>https://www.octoprobe.ai/blog/white-house-vetting-leak-press-clips/</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://www.octoprobe.ai/blog/2026-10-16-white-house-vetting-press-clips-leak/assets/cover.png</image:loc>
+      <image:loc>https://www.octoprobe.ai/blog/white-house-vetting-leak-press-clips/assets/cover.png</image:loc>
       <image:title>25 Pages of Press Clips: Leak Shows How Thin White House Vetting Really Was</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.octoprobe.ai/blog/2026-10-16-myrotvorets-informnapalm-ned-psyops-investigation/</loc>
+    <loc>https://www.octoprobe.ai/blog/myrotvorets-informnapalm-ned-grant/</loc>
     <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://www.octoprobe.ai/blog/2026-10-16-myrotvorets-informnapalm-ned-psyops-investigation/assets/cover.png</image:loc>
+      <image:loc>https://www.octoprobe.ai/blog/myrotvorets-informnapalm-ned-grant/assets/cover.png</image:loc>
       <image:title>Your Taxes, Their Target List: Following NED Money Into Ukraine’s Online Info-Ops Web</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.octoprobe.ai/blog/about/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/og-image.png</image:loc>
+      <image:title>About OctoProbe News: Mission, Masthead and Ownership</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.octoprobe.ai/blog/contact/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/og-image.png</image:loc>
+      <image:title>Contact OctoProbe News: Press, Tips and Corrections</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.octoprobe.ai/blog/corrections/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/og-image.png</image:loc>
+      <image:title>Corrections Policy · OctoProbe News</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.octoprobe.ai/blog/standards/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/og-image.png</image:loc>
+      <image:title>Editorial Standards and Ethics · OctoProbe News</image:title>
     </image:image>
   </url>
 </urlset>

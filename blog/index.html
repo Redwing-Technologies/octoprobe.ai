@@ -20,23 +20,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/blog.css?v=toc7">
-<title>OSINT Investigation Platform Blog · OctoProbe</title>
-<meta name="description" content="OctoProbe Findings: OSINT investigation platform methodology on identifier graphs, breach correlation, facial recognition OSINT, and evidence-backed expansion for investigators.">
-<meta name="keywords" content="OSINT investigation platform, identifier graph, breach intelligence, skip tracing, facial recognition OSINT, MCP OSINT">
+<link rel="stylesheet" href="/assets/css/blog.css?v=news1">
+<title>OctoProbe News: National Security and Influence Operations</title>
+<meta name="description" content="Investigative reporting on national security, intelligence, digital targeting and online influence operations, built from open-source records.">
+<meta name="keywords" content="OctoProbe News, national security, intelligence, digital targeting, influence operations, open-source investigations, OSINT journalism">
 <link rel="alternate" type="text/plain" title="LLM context (llms.txt)" href="/llms.txt">
 <link rel="alternate" type="text/plain" title="AI discovery (ai.txt)" href="/ai.txt">
 <link rel="canonical" href="https://www.octoprobe.ai/blog/">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="OctoProbe AI">
+<meta property="og:site_name" content="OctoProbe News">
 <meta property="og:url" content="https://www.octoprobe.ai/blog/">
-<meta property="og:title" content="OSINT Investigation Platform Blog · OctoProbe">
-<meta property="og:description" content="Methodology notes on identifier graphs, expansion layers, and public OSINT investigation practice.">
+<meta property="og:title" content="OctoProbe News: National Security and Influence Operations">
+<meta property="og:description" content="Investigative reporting on national security, intelligence, digital targeting and online influence operations, built from open-source records.">
 <meta property="og:image" content="https://www.octoprobe.ai/assets/blog/identifier-graph-hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@octoprobeai">
-<meta name="twitter:title" content="OSINT Investigation Platform Blog · OctoProbe">
-<meta name="twitter:description" content="Methodology notes on identifier graphs, expansion layers, and public OSINT investigation practice.">
+<meta name="twitter:title" content="OctoProbe News: National Security and Influence Operations">
+<meta name="twitter:description" content="Investigative reporting on national security, intelligence, digital targeting and online influence operations, built from open-source records.">
 <meta name="twitter:image" content="https://www.octoprobe.ai/assets/blog/identifier-graph-hero.jpg">
 <script type="application/ld+json">
 {
@@ -63,84 +63,131 @@
       "@id": "https://www.octoprobe.ai/#site",
       "url": "https://www.octoprobe.ai/",
       "name": "OctoProbe AI",
-      "publisher": {"@id": "https://www.octoprobe.ai/#org"},
+      "publisher": {
+        "@id": "https://www.octoprobe.ai/#org"
+      },
       "inLanguage": "en-US"
     },
     {
-      "@type": ["Blog", "CollectionPage"],
-      "@id": "https://www.octoprobe.ai/blog/#blog",
-      "name": "OctoProbe Findings",
+      "@type": "NewsMediaOrganization",
+      "@id": "https://www.octoprobe.ai/blog/#newsroom",
+      "name": "OctoProbe News",
       "url": "https://www.octoprobe.ai/blog/",
-      "description": "OSINT investigation platform findings: identifier graphs, expansion layers, and evidence discipline for law firms, investigators, and analysts.",
-      "publisher": {"@id": "https://www.octoprobe.ai/#org"},
-      "isPartOf": {"@id": "https://www.octoprobe.ai/#site"},
+      "description": "Investigative reporting on national security, intelligence, digital targeting and online influence operations, built from open-source records.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.octoprobe.ai/icon-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Redwing Technologies LLC"
+      },
+      "publishingPrinciples": "https://www.octoprobe.ai/blog/standards/",
+      "ethicsPolicy": "https://www.octoprobe.ai/blog/standards/#independence",
+      "correctionsPolicy": "https://www.octoprobe.ai/blog/corrections/",
+      "verificationFactCheckingPolicy": "https://www.octoprobe.ai/blog/standards/#sourcing",
+      "actionableFeedbackPolicy": "https://www.octoprobe.ai/blog/contact/",
+      "noBylinesPolicy": "https://www.octoprobe.ai/blog/standards/#bylines",
+      "ownershipFundingInfo": "https://www.octoprobe.ai/blog/about/#ownership",
+      "masthead": "https://www.octoprobe.ai/blog/about/#masthead",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "press inquiries, tips and corrections",
+          "email": "press@octoprobe.ai",
+          "url": "https://www.octoprobe.ai/blog/contact/"
+        }
+      ],
+      "knowsAbout": [
+        "national security",
+        "intelligence",
+        "digital targeting",
+        "online influence operations",
+        "open-source investigation"
+      ]
+    },
+    {
+      "@type": [
+        "Blog",
+        "CollectionPage"
+      ],
+      "@id": "https://www.octoprobe.ai/blog/#blog",
+      "name": "OctoProbe News",
+      "url": "https://www.octoprobe.ai/blog/",
+      "description": "Investigative reporting on national security, intelligence, digital targeting and online influence operations, built from open-source records.",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@id": "https://www.octoprobe.ai/blog/#newsroom"
+      },
+      "isPartOf": {
+        "@id": "https://www.octoprobe.ai/#site"
+      },
       "about": [
-        {"@type": "Thing", "name": "OSINT"},
-        {"@type": "Thing", "name": "identifier graph"},
-        {"@type": "Thing", "name": "OSINT investigation platform"}
+        {
+          "@type": "Thing",
+          "name": "national security"
+        },
+        {
+          "@type": "Thing",
+          "name": "intelligence"
+        },
+        {
+          "@type": "Thing",
+          "name": "digital targeting"
+        },
+        {
+          "@type": "Thing",
+          "name": "online influence operations"
+        },
+        {
+          "@type": "Thing",
+          "name": "open-source investigation"
+        }
+      ],
+      "publishingPrinciples": "https://www.octoprobe.ai/blog/standards/",
+      "hasPart": [
+        {
+          "@id": "https://www.octoprobe.ai/blog/about/#page"
+        },
+        {
+          "@id": "https://www.octoprobe.ai/blog/standards/#page"
+        },
+        {
+          "@id": "https://www.octoprobe.ai/blog/corrections/#page"
+        },
+        {
+          "@id": "https://www.octoprobe.ai/blog/contact/#page"
+        }
       ]
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.octoprobe.ai/"},
-        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.octoprobe.ai/blog/"}
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.octoprobe.ai/blog/#faq",
-      "mainEntity": [
         {
-          "@type": "Question",
-          "name": "What is an OSINT investigation platform?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "An OSINT investigation platform is a workspace that turns public clues—emails, phones, handles, names, domains, or photos—into a sourced investigation graph using premium APIs, public records, and related intel layers. OctoProbe AI is an OSINT investigation platform from Redwing Technologies LLC with evidence on every link."
-          }
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.octoprobe.ai/"
         },
         {
-          "@type": "Question",
-          "name": "How does an identifier graph work?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "An identifier graph maps entities and identifiers connected by evidenced edges. Each edge carries a source, timestamp, and confidence so analysts can explain why two nodes are linked. OctoProbe encodes the seed → expand → link → collect loop on a live graph."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What identifiers can OctoProbe start from?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Any clue works: an email, phone number, handle, name, domain, or photo. Use one, or combine several that already co-occur in public view."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is OctoProbe a consumer reporting agency?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. OctoProbe is not a consumer reporting agency. Results may not be used for FCRA-covered eligibility decisions such as credit, employment, insurance, or tenant screening."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Who is OctoProbe for?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Law firms, licensed private investigators, OSINT analysts, and opposition research or corporate intelligence teams who need sourced digital-footprint maps from public OSINT and licensed public-record/intel layers."
-          }
+          "@type": "ListItem",
+          "position": 2,
+          "name": "OctoProbe News",
+          "item": "https://www.octoprobe.ai/blog/"
         }
       ]
     }
   ]
 }
 </script>
+<style>.desk-links{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:18px;font-size:.92rem}.desk-links a{color:var(--blue);text-decoration:none;font-weight:500}.desk-links a:hover{text-decoration:underline}.desk-about{padding:8px 0 72px;background:var(--ink)}.desk-about .wrap{max-width:820px}.desk-about h2{margin-top:0}</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <nav class="top" id="nav" aria-label="Primary">
-  <a class="brand" href="/" aria-label="OctoProbe AI home">
+  <a class="brand" href="/blog/" aria-label="OctoProbe News home">
     <svg class="logo" viewBox="0 0 40 40" role="img" aria-label="OctoProbe AI" fill="none">
       <defs>
         <linearGradient id="g1" x1="6" y1="4" x2="34" y2="38" gradientUnits="userSpaceOnUse">
@@ -159,48 +206,44 @@
       <rect x="30.5" y="8" width="2" height="2" rx=".5" fill="url(#g1)" opacity=".7"/>
       <rect x="7.2" y="9.6" width="1.7" height="1.7" rx=".4" fill="url(#g1)" opacity=".6"/>
     </svg>
-    <span class="bn">OctoProbe AI<small>OSINT Workspace</small></span>
+    <span class="bn">OctoProbe<small>News</small></span>
   </a>
   <div class="nav-center">
-    <a href="/#capabilities">Capabilities</a>
-    <a href="/#platform">Platform</a>
-    <a href="/#integration">Integrations</a>
-    <a href="/#audiences">Who Uses It</a>
-    <a href="/#faq">FAQ</a>
-    <a href="/blog/" class="active" aria-current="page">Blog</a>
+    <a href="/blog/about/">About</a>
+    <a href="/blog/standards/">Standards</a>
+    <a href="/blog/corrections/">Corrections</a>
+    <a href="/blog/contact/">Contact</a>
   </div>
   <div class="nav-right">
-    <a class="nav-login" href="https://app.octoprobe.ai/">Log In</a>
-    <a class="nav-cta" href="/#access">Get Started →</a>
+    <a href="/blog/" class="nav-cta nav-investigations" aria-current="page">Investigations</a>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
-  <a href="/#capabilities">Capabilities</a>
-  <a href="/#platform">Platform</a>
-  <a href="/#integration">Integrations</a>
-  <a href="/#audiences">Who Uses It</a>
-  <a href="/#faq">FAQ</a>
-  <a href="/blog/" class="active" aria-current="page">Blog</a>
-  <a href="https://app.octoprobe.ai/">Log In</a>
-  <a href="/#access">Get Started →</a>
+  <a href="/blog/" class="active" aria-current="page">Investigations</a>
+  <a href="/blog/about/">About</a>
+  <a href="/blog/standards/">Standards</a>
+  <a href="/blog/corrections/">Corrections</a>
+  <a href="/blog/contact/">Contact</a>
+  <a href="/">OctoProbe platform</a>
 </div>
 <main id="main">
   <header class="blog-hero">
     <div class="wrap">
-      <span class="eyebrow">Findings</span>
-      <h1>Investigation notes from the <em>identifier graph.</em></h1>
-      <p class="lead"><strong>OctoProbe AI</strong> is an OSINT investigation platform from Redwing Technologies—emails, phones, handles, domains, and photos mapped onto one live graph with evidence on every link. Methodology for law firms, licensed investigators, analysts, and opposition research.</p>
+      <span class="eyebrow">OctoProbe News</span>
+      <h1>National security and <em>influence operations,</em> reported from the open record.</h1>
+      <p class="lead"><strong>OctoProbe News</strong> investigates digital targeting, intelligence leaks and online influence campaigns. Our reporting is built from open-source records: court filings, government documents, leaked files, archived web pages and internet infrastructure data. Every claim links to its source.</p>
+      <nav class="desk-links" aria-label="About this publication"><a href="/blog/about/">About &amp; masthead</a><a href="/blog/standards/">Editorial standards</a><a href="/blog/corrections/">Corrections</a><a href="/blog/contact/">Contact &amp; tips</a></nav>
     </div>
   </header>
-  <section class="blog-list" aria-label="Blog posts">
+  <section class="blog-list" aria-label="Latest investigations">
     <div class="wrap">
       <div class="post-grid">
-        <a class="post-card reveal" href="/blog/2026-10-16-myrotvorets-informnapalm-ned-psyops-investigation/">
+        <a class="post-card reveal" href="/blog/myrotvorets-informnapalm-ned-grant/">
           <div class="thumb" aria-hidden="true">
-            <img src="/blog/2026-10-16-myrotvorets-informnapalm-ned-psyops-investigation/assets/cover.png?v=4" alt="" loading="lazy" decoding="async">
+            <img src="/blog/myrotvorets-informnapalm-ned-grant/assets/cover.png?v=4" alt="" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="meta">
@@ -213,100 +256,100 @@
             </div>
             <h2>Your Taxes, Their Target List: Following NED Money Into Ukraine&rsquo;s Online Info-Ops Web</h2>
             <p class="excerpt">A $100,000 NED grant went to Prometheus in 2016 for investigations published on InformNapalm, not to Myrotvorets. InformNapalm shares mail servers with Myrotvorets, a digital target list that names Americans and runs &ldquo;psyops&rdquo; code.</p>
-            <span class="read-more">Read finding →</span>
+            <span class="read-more">Read the story →</span>
           </div>
         </a>
-        <a class="post-card reveal" href="/blog/2026-10-16-white-house-vetting-press-clips-leak/">
+        <a class="post-card reveal" href="/blog/white-house-vetting-leak-press-clips/">
           <div class="thumb" aria-hidden="true">
-            <img src="/blog/2026-10-16-white-house-vetting-press-clips-leak/assets/cover.png?v=1" alt="" loading="lazy" decoding="async">
+            <img src="/blog/white-house-vetting-leak-press-clips/assets/cover.png?v=1" alt="" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="meta">
               <time datetime="2026-10-16">Oct 16, 2026</time>
               <div class="tags">
-                <span class="tag">Case Study</span>
+                <span class="tag">Investigation</span>
                 <span class="tag blue">OSINT</span>
                 <span class="tag teal">Vetting</span>
               </div>
             </div>
             <h2>25 Pages of Press Clips: Leak Shows How Thin White House Vetting Really Was</h2>
             <p class="excerpt">Leaked 2016 transition files show the White House screened top appointees with newspaper clippings. A 25-page Giuliani dossier shows how thin it was, and what a real background investigation covers.</p>
-            <span class="read-more">Read finding →</span>
+            <span class="read-more">Read the story →</span>
           </div>
         </a>
-        <a class="post-card reveal" href="/blog/2026-10-16-saudi-gip-spies-digital-footprints/">
+        <a class="post-card reveal" href="/blog/saudi-intelligence-spy-list-leak-houthi/">
           <div class="thumb" aria-hidden="true">
-            <img src="/blog/2026-10-16-saudi-gip-spies-digital-footprints/assets/cover.png?v=2" alt="" loading="lazy" decoding="async">
+            <img src="/blog/saudi-intelligence-spy-list-leak-houthi/assets/cover.png?v=2" alt="" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="meta">
               <time datetime="2026-10-16">Oct 16, 2026</time>
               <div class="tags">
-                <span class="tag">Case Study</span>
+                <span class="tag">Investigation</span>
                 <span class="tag blue">OSINT</span>
                 <span class="tag teal">Counterintelligence</span>
               </div>
             </div>
             <h2>Alleged Saudi Spy List Leaked by Houthi-Tied Group, and Their Phones Do the Rest</h2>
             <p class="excerpt">A hacker group allegedly tied to the Houthis dumped what it calls a roster of Saudi intelligence officers and stations. The files may be doctored, but the phone numbers in them lead to homes, cars, and app accounts in minutes.</p>
-            <span class="read-more">Read finding →</span>
+            <span class="read-more">Read the story →</span>
           </div>
         </a>
-        <a class="post-card reveal" href="/blog/2026-10-15-glizzykingdreko-takion-api-archive-today-donate-link/">
+        <a class="post-card reveal" href="/blog/archive-today-donate-link-takion-api-developer/">
           <div class="thumb" aria-hidden="true">
-            <img src="/blog/2026-10-15-glizzykingdreko-takion-api-archive-today-donate-link/assets/cover.png?v=1" alt="" loading="lazy" decoding="async">
+            <img src="/blog/archive-today-donate-link-takion-api-developer/assets/cover.png?v=1" alt="" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="meta">
               <time datetime="2026-10-15">Oct 15, 2026</time>
               <div class="tags">
-                <span class="tag">Case Study</span>
+                <span class="tag">Investigation</span>
                 <span class="tag blue">OSINT</span>
                 <span class="tag teal">Infrastructure</span>
               </div>
             </div>
             <h2>Whose Coffee? An Anti-Bot Developer’s Handle Turns Up on Archive.today’s Donate Link</h2>
             <p class="excerpt">An anti-bot developer known as glizzykingdreko runs Takion API, a commercial bot-check bypass service. His donation page appeared in Archive.today’s donate link from August 2025 to October 2026. He now disclaims any tie.</p>
-            <span class="read-more">Read finding →</span>
+            <span class="read-more">Read the story →</span>
           </div>
         </a>
-        <a class="post-card reveal" href="/blog/2026-10-15-wanying-zhang-reddit-passport-allegation-osint/">
+        <a class="post-card reveal" href="/blog/heather-zhang-prc-agent-case-reddit-allegation/">
           <div class="thumb" aria-hidden="true">
-            <img src="/blog/2026-10-15-wanying-zhang-reddit-passport-allegation-osint/assets/cover.png?v=3" alt="" loading="lazy" decoding="async">
+            <img src="/blog/heather-zhang-prc-agent-case-reddit-allegation/assets/cover.png?v=3" alt="" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="meta">
               <time datetime="2026-10-15">Oct 15, 2026</time>
               <div class="tags">
-                <span class="tag">Case Study</span>
+                <span class="tag">Investigation</span>
                 <span class="tag blue">OSINT</span>
                 <span class="tag teal">Counterintelligence</span>
               </div>
             </div>
             <h2>Heather Zhang Case: OSINT Trail From a 2024 Reddit Allegation</h2>
             <p class="excerpt">Charged, not convicted: Irvine realtor Wanying "Heather" Zhang is accused of acting as an unregistered PRC agent. An OctoProbe investigation began from a January 2024 Reddit allegation naming Fatai Miao, whom CBS News identifies as "Individual 1." DOJ has not accused him of wrongdoing.</p>
-            <span class="read-more">Read finding →</span>
+            <span class="read-more">Read the story →</span>
           </div>
         </a>
-        <a class="post-card reveal" href="/blog/2026-10-15-christopher-burns-wayne-pa-maps-sighting/">
+        <a class="post-card reveal" href="/blog/christopher-burns-fbi-fugitive-google-maps-wayne-pa/">
           <div class="thumb" aria-hidden="true">
-            <img src="/blog/2026-10-15-christopher-burns-wayne-pa-maps-sighting/assets/cover.png?v=3" alt="" loading="lazy" decoding="async">
+            <img src="/blog/christopher-burns-fbi-fugitive-google-maps-wayne-pa/assets/cover.png?v=3" alt="" loading="lazy" decoding="async">
           </div>
           <div class="card-body">
             <div class="meta">
               <time datetime="2026-10-15">Oct 15, 2026</time>
               <div class="tags">
-                <span class="tag">Case Study</span>
+                <span class="tag">Investigation</span>
                 <span class="tag blue">OSINT</span>
                 <span class="tag teal">Fugitives</span>
               </div>
             </div>
             <h2>Christopher W. Burns: Public Google Maps Activity Dated After His Last Sighting, Wayne, PA Area</h2>
             <p class="excerpt">A Maps account allegedly attributed to Burns shows Wayne and Wynnewood, PA activity (~2021, ~2023) after his September 24, 2020 last sighting.</p>
-            <span class="read-more">Read finding →</span>
+            <span class="read-more">Read the story →</span>
           </div>
         </a>
-        <a class="post-card reveal" href="/blog/2026-10-15-identifier-graph-methodology/">
+        <a class="post-card reveal" href="/blog/identifier-graph-osint-methodology/">
           <div class="thumb" aria-hidden="true">
             <img src="/assets/blog/identifier-graph-hero.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async">
           </div>
@@ -321,40 +364,18 @@
             </div>
             <h2>From Public Lead to Identifier Graph</h2>
             <p class="excerpt">Manual graphs burn hours on review and markup. Automation over-expands with false-positive nodes. Here is how to keep an identifier graph scoped, evidenced, and usable.</p>
-            <span class="read-more">Read finding →</span>
+            <span class="read-more">Read the story →</span>
           </div>
         </a>
       </div>
     </div>
   </section>
-  <section class="blog-faq" id="faq" aria-label="Blog FAQ">
+  <section class="desk-about" aria-labelledby="about-desk">
     <div class="wrap">
-      <span class="eyebrow">FAQ</span>
-      <h2 class="sec">Questions answer engines ask about OctoProbe.</h2>
-      <p class="faq-intro">Short, citable answers aligned with our landing claims—useful for Google, Bing, and chat engines covering OSINT platforms and identifier graphs.</p>
-      <div class="faq-list">
-        <details open>
-          <summary>What is an OSINT investigation platform?</summary>
-          <div class="fa">An OSINT investigation platform is a workspace that turns public clues—emails, phones, handles, names, domains, or photos—into a sourced investigation graph using premium APIs, public records, and related intel layers. <strong>OctoProbe AI</strong> is an OSINT investigation platform from <strong>Redwing Technologies</strong> with evidence on every link.</div>
-        </details>
-        <details>
-          <summary>How does an identifier graph work?</summary>
-          <div class="fa">An identifier graph maps entities and identifiers connected by evidenced edges. Each edge carries a source, timestamp, and confidence so analysts can explain why two nodes are linked. OctoProbe encodes the seed → expand → link → collect loop on a live graph.</div>
-        </details>
-        <details>
-          <summary>What identifiers can OctoProbe start from?</summary>
-          <div class="fa">Any clue works: an email, phone number, handle, name, domain, or photo. Use one, or combine several that already co-occur in public view.</div>
-        </details>
-        <details>
-          <summary>Is OctoProbe a consumer reporting agency?</summary>
-          <div class="fa"><strong>No.</strong> OctoProbe is not a consumer reporting agency. Results may not be used for FCRA-covered eligibility decisions such as credit, employment, insurance, or tenant screening.</div>
-        </details>
-        <details>
-          <summary>Who is OctoProbe for?</summary>
-          <div class="fa">Law firms, licensed private investigators, OSINT analysts, and opposition research or corporate intelligence teams who need sourced digital-footprint maps from public OSINT and licensed public-record/intel layers.</div>
-        </details>
+      <div class="prose">
+        <h2 id="about-desk">About OctoProbe News</h2>
+        <p>OctoProbe News is an investigative desk published by Redwing Technologies LLC. We source every claim to the public record, label what is proven and what is not, redact personal data, and correct our errors in public. Read our <a href="/blog/standards/">editorial standards</a>, see the <a href="/blog/about/#masthead">masthead</a>, or send a tip to <a href="mailto:press@octoprobe.ai">press@octoprobe.ai</a>.</p>
       </div>
-      <p class="post-disclaimer" style="margin-top:36px">Public OSINT methodology. OctoProbe is not a consumer reporting agency; results may not be used for FCRA-covered eligibility decisions. See also the <a href="/#faq">homepage FAQ</a> and <a href="/#access">request access</a>.</p>
     </div>
   </section>
 </main>
@@ -373,22 +394,21 @@
           <rect x="15.2" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
           <rect x="21.6" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
         </svg>
-        OctoProbe AI
+        OctoProbe News
       </a>
       <nav class="fnav" aria-label="Footer navigation">
-        <a href="/#capabilities">Capabilities</a>
-        <a href="/#platform">Platform</a>
-        <a href="/#integration">Integrations</a>
-        <a href="/#faq">FAQ</a>
-        <a href="/blog/">Blog</a>
-        <a href="/#access">Get Started</a>
-        <a href="https://app.octoprobe.ai/">Log In</a>
-        <a href="mailto:team@octoprobe.ai">team@octoprobe.ai</a>
+        <a href="/blog/">Investigations</a>
+        <a href="/blog/about/">About</a>
+        <a href="/blog/standards/">Standards</a>
+        <a href="/blog/corrections/">Corrections</a>
+        <a href="/blog/contact/">Contact</a>
+        <a href="mailto:press@octoprobe.ai">press@octoprobe.ai</a>
       </nav>
     </div>
     <div class="legal">
-      <p>© <span id="yr">2026</span> Redwing Technologies LLC · OctoProbe AI is a service of Redwing Technologies LLC · <a href="mailto:team@octoprobe.ai" style="color:inherit">team@octoprobe.ai</a></p>
-      <p>OctoProbe integrates licensed third-party data providers and public-record sources. Third-party names are trademarks of their respective owners and do not imply endorsement. OctoProbe is not a consumer reporting agency; results may not be used for FCRA-covered eligibility decisions.</p>
+      <p>© <span id="yr">2026</span> Redwing Technologies LLC · OctoProbe News · <a href="mailto:press@octoprobe.ai" style="color:inherit">press@octoprobe.ai</a></p>
+      <p><strong>OctoProbe News</strong> is published by Redwing Technologies LLC, which also develops the OctoProbe OSINT investigation platform for law firms, licensed investigators and analysts. The newsroom operates independently of that commercial business; see our <a href="/blog/standards/#independence" style="color:inherit">editorial standards</a>. Platform inquiries: <a href="/" style="color:inherit">octoprobe.ai</a> · <a href="mailto:team@octoprobe.ai" style="color:inherit">team@octoprobe.ai</a>.</p>
+      <p>OctoProbe is not a consumer reporting agency; platform results may not be used for FCRA-covered eligibility decisions.</p>
     </div>
   </div>
 </footer>

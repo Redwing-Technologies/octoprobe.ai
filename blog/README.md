@@ -1,4 +1,4 @@
-# OctoProbe Findings (blog)
+# OctoProbe News (blog)
 
 Local static blog for methodology writeups. Matches the landing design tokens, fonts, glass nav, and footer.
 
@@ -13,7 +13,7 @@ python3 -m http.server 8765
 Then open:
 
 - http://127.0.0.1:8765/blog/
-- http://127.0.0.1:8765/blog/2026-10-15-identifier-graph-methodology/
+- http://127.0.0.1:8765/blog/identifier-graph-osint-methodology/
 
 Do **not** push or open a PR until Colin approves.
 
@@ -59,7 +59,7 @@ The build **fails** if `title`, `description`, `date`, or `tags` are missing; **
 
 ## Add a post
 
-1. Create Markdown in `blog/posts/` with the front matter above (see sample `2026-10-15-identifier-graph-methodology.md`).
+1. Create Markdown in `blog/posts/` with the front matter above (see sample `identifier-graph-osint-methodology.md`).
 2. Add a featured hero under `assets/blog/` (JPG/PNG, ~16:9) and set `hero` + `og_image`.
 3. Build:
 
