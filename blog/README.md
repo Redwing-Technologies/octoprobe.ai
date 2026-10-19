@@ -76,6 +76,17 @@ This writes `blog/<slug>/index.html`, injects BlogPosting + BreadcrumbList, rege
 
 ## Conventions
 
+### Author bio note (op-eds / bylined posts)
+
+For a short author note at the end of a post, use this markup **immediately before** the Related Reading block (no heading):
+
+```html
+<p class="author-note"><a href="https://example.com/author" rel="author">Author Name</a> is a short one-sentence bio.</p>
+```
+
+Styles live in `/assets/css/blog.css` (`.prose .author-note`): italic, ~1rem, thin top rule, soft color, equal spacing above the rule / between rule and text / before Related Reading. If the post uses Person JSON-LD for the author, set `author.description` to the same plain-text bio (without the HTML link markup).
+
+
 - Fictional / example names only in teaching posts.
 - Keep GA `G-6T6HW79ZP0` on blog pages (in the template).
 - Styles: `/assets/css/blog.css` (Space Grotesk headings, Inter body).
