@@ -396,6 +396,32 @@ footer .legal strong{color:var(--soft)}
 .prose > p:first-child:has(> img:only-child),
 .prose > figure:first-child{margin-top:0;margin-bottom:2.75em}
 .prose figcaption:not(.sr-only),.prose .caption,.prose .em-caption,figcaption,.caption,.em-caption{margin-top:calc(.7em + 10px);text-align:center;font-style:italic;font-size:9pt;color:var(--soft-2);line-height:1.5}
+
+/* Author bio note — op-eds and bylined posts. Place <p class="author-note">…</p>
+   immediately before Related Reading; set Person JSON-LD description to the same text. */
+.prose .author-note{
+  margin:1.25rem 0;
+  padding-top:1.25rem;
+  border-top:1px solid var(--line);
+  font-style:italic;
+  font-size:1rem; /* just under --fs-body (1.0625rem); secondary but readable */
+  font-weight:400;
+  color:var(--soft-2);
+  line-height:1.65;
+}
+.prose .author-note a{
+  color:inherit;
+  text-decoration:underline;
+  text-decoration-color:rgba(51,65,85,.35);
+  text-underline-offset:3px;
+}
+.prose .author-note a:hover{color:var(--blue)}
+/* Equal gap into Related Reading: author-note margin-bottom owns the space */
+.prose .author-note + .related-reading,
+.prose .author-note + aside.related-reading{margin-top:0}
+.prose .author-note + .related-reading > h2:first-child,
+.prose .author-note + aside.related-reading > h2:first-child{margin-top:0}
+
 .prose a{color:var(--blue);text-decoration:underline;text-underline-offset:3px;font-weight:500}
 .prose a:hover{color:var(--blue-deep)}
 .prose strong{color:var(--heading);font-weight:650}
