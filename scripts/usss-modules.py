@@ -330,8 +330,8 @@ w("glossary", f'<div class="table-wrap"><table><thead><tr><th>Term</th><th>Meani
 w("related", '''<aside aria-label="Related reading" class="related-reading">
 <h2>Related Reading</h2>
 <ul>
-<li><a href="/blog/dhs-phone-location-data-legal-opinion-foia/">DHS Lawyers Wrote 24 Pages on Buying Your Phone’s Location Data. They Withheld Every Page of the Analysis.</a></li>
 <li><a href="/blog/centcom-war-orders-anvil-chart-foia/">The Only Public Map of CENTCOM’s War Orders Is Dated 2022</a></li>
+<li><a href="/blog/cefc-china-energy-pla-base-311-public-record/">CEFC, PLA Base 311, and the Long Gap from FBI Surveillance to Designation</a></li>
 </ul>
 </aside>
 ''')

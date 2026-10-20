@@ -340,7 +340,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/blog.css?v=news5">
+<link rel="stylesheet" href="/assets/css/blog.css?v=news6">
 <style id="news-frame">.post-dek{max-width:46rem;margin:.6rem 0 0;font-size:1.15rem;line-height:1.5;color:#475569}.post-hero .byline{margin:1rem 0 0;font-weight:600;color:#334155;font-size:.98rem}.post-hero .byline a{color:inherit;text-decoration:underline;text-decoration-color:rgba(51,65,85,.35);text-underline-offset:3px}.post-hero .byline a:hover{color:var(--blue)}.table-wrap{overflow-x:auto}.table-wrap table{border-collapse:collapse;width:100%;font-size:.92rem}.table-wrap th,.table-wrap td{border:1px solid #e2e8f0;padding:.45rem .6rem;vertical-align:top;text-align:left}.related-reading{border-top:1px solid #e2e8f0;margin-top:2rem;padding-top:.5rem}.related-reading h2{margin-top:1rem}.related-reading li{margin:.4rem 0}.prose .faq h3{font-size:1.02rem;margin-top:1.2em}.prose .faq p{margin-top:.35em}</style>
 <link rel="stylesheet" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/assets/usss.css?v=4">
 </head>
@@ -410,6 +410,7 @@
   <article class="post-body">
     <div class="wrap">
       <div class="prose">
+<!-- Closing order (default): … FAQ → Correction (if any) → Disclaimer → author bio note → Related Reading (always LAST, never empty; no entry whose source is already linked in the body; no generic methodology link). See blog/README.md. -->
 <figure><img fetchpriority="high" decoding="async" src="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/assets/cover.png?v=1" width="2400" height="1260" alt="Illustration: bright street map of downtown Washington with a red pin on U.S. Secret Service headquarters at 950 H Street NW, the Secret Service star on the right, and the words Map the tenant. Name the custodian." ><figcaption>U.S. Secret Service headquarters at 950 H St. NW in Washington. Illustration: OctoProbe News; map © OpenStreetMap contributors; Secret Service star: U.S. Secret Service. Use of the star does not imply endorsement.</figcaption></figure>
 <p class="primary-question"><strong>How do you request a federal official’s browser history, SharePoint files or Teams messages under FOIA?</strong></p>
 <p class="answer-first">Find the agency’s real Microsoft 365 systems with public DNS and Microsoft’s sign-in metadata, name a custodian by name and title, and ask for each record type by the system that holds it. Results vary. The Secret Service processed requests for five senior officials’ browser histories and released records in part, but a federal appeals court has held that browsing histories an agency neither keeps nor uses are not agency records.</p>
@@ -799,16 +800,16 @@ curl -s "https://login.microsoftonline.com/unitedstatessecretservice.onmicrosoft
 <h3>How long do agencies keep web and system logs?</h3>
 <p>Many logs are short-lived. The National Archives’ general schedule for system access records, including log-in files and system usage files, allows agencies to destroy them when business use ceases. File requests for logs soon after the period you care about.</p>
 </section>
-<p class="author-note"><a href="https://www.linkedin.com/in/colinaamot/" rel="author">Colin Aamot</a> is a former U.S. Army counterterrorism information operations (CT-IO) planner who deployed with several joint task forces in support of Operations Inherent Resolve and Spartan Shield. He subsequently worked at the Heritage Foundation and in the office of Rep. Darrell Issa, with portfolios spanning foreign policy, technology, and innovation. He holds an MA in Global Security Studies from Johns Hopkins University and an MBA from UNC Kenan-Flagler Business School.<span class="author-links"><a href="https://www.linkedin.com/in/colinaamot/">LinkedIn</a><a href="https://x.com/ColinAamot">X</a><a href="https://www.dailysignal.com/author/colin-aamot/">Daily Signal (previous bylines)</a></span></p>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>This guide relies on FOIA releases, agency records, court opinions, statutes and Microsoft’s public documentation. It is not legal advice.</p>
+<p class="author-note has-avatar"><picture class="author-note-avatar"><source type="image/webp" srcset="/assets/authors/colin-aamot-96.webp 1x, /assets/authors/colin-aamot-192.webp 2x"><img class="author-avatar" src="/assets/authors/colin-aamot-96.jpg" srcset="/assets/authors/colin-aamot-96.jpg 1x, /assets/authors/colin-aamot-192.jpg 2x" width="96" height="96" alt="" loading="lazy" decoding="async"></picture><span class="author-note-text"><a href="https://www.linkedin.com/in/colinaamot/" rel="author">Colin Aamot</a> is a former U.S. Army counterterrorism information operations (CT-IO) planner who deployed with several joint task forces in support of Operations Inherent Resolve and Spartan Shield. He subsequently worked at the Heritage Foundation and in the office of Rep. Darrell Issa, with portfolios spanning foreign policy, technology, and innovation. He holds an MA in Global Security Studies from Johns Hopkins University and an MBA from UNC Kenan-Flagler Business School.<span class="author-links"><a href="https://www.linkedin.com/in/colinaamot/">LinkedIn</a><a href="https://x.com/ColinAamot">X</a><a href="https://www.dailysignal.com/author/colin-aamot/">Daily Signal (previous bylines)</a></span></span></p>
 <aside aria-label="Related reading" class="related-reading">
 <h2>Related Reading</h2>
 <ul>
-<li><a href="/blog/dhs-phone-location-data-legal-opinion-foia/">DHS Lawyers Wrote 24 Pages on Buying Your Phone’s Location Data. They Withheld Every Page of the Analysis.</a></li>
 <li><a href="/blog/centcom-war-orders-anvil-chart-foia/">The Only Public Map of CENTCOM’s War Orders Is Dated 2022</a></li>
+<li><a href="/blog/cefc-china-energy-pla-base-311-public-record/">CEFC, PLA Base 311, and the Long Gap from FBI Surveillance to Designation</a></li>
 </ul>
 </aside>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>This guide relies on FOIA releases, agency records, court opinions, statutes and Microsoft’s public documentation. It is not legal advice.</p>
       </div>
     </div>
   </article>

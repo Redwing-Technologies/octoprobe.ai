@@ -413,7 +413,7 @@ w("related", '''<aside aria-label="Related reading" class="related-reading">
 <h2>Related Reading</h2>
 <ul>
 <li><a href="/blog/centcom-war-orders-anvil-chart-foia/">The Only Public Map of CENTCOM’s War Orders Is Dated 2022</a></li>
-<li><a href="/blog/identifier-graph-osint-methodology/">From Public Lead to Identifier Graph</a></li>
+<li><a href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/">How to FOIA an Official&#x27;s Browser History, SharePoint Files and Teams Messages</a></li>
 </ul>
 </aside>
 ''')

@@ -1,7 +1,7 @@
 """Shared author defaults for OctoProbe News posts (used by build-blog.py and build-adtech-post.py).
 
 Default author for every post is Colin Aamot: top byline with circular headshot, bottom
-.author-note bio with profile-link pills, and a JSON-LD Person (name, url, image,
+.author-note bio box (same headshot, larger, left of the text) with profile-link pills, and a JSON-LD Person (name, url, image,
 description, sameAs). The Organization stays the JSON-LD publisher.
 
 Per-post override (front matter):
@@ -56,15 +56,21 @@ def resolve_author(meta: dict) -> dict | None:
     return a
 
 
-def avatar_html(a: dict) -> str:
+def avatar_html(a: dict, size: int = 44, alt: str | None = None, lazy: bool = False,
+                pic_class: str = "") -> str:
+    """Circular headshot <picture>. Top byline: 44px box, alt = name. Bio box: 96px box,
+    alt="" (the linked name sits right next to it), lazy-loaded."""
     img = a.get("image")
     if not img:
         return ""
     assert re.fullmatch(r"/assets/authors/[a-z0-9-]+-192\.jpg", img), img
     stem = img[: -len("-192.jpg")]
-    return (f'<picture><source type="image/webp" srcset="{stem}-96.webp 1x, {stem}-192.webp 2x">'
+    alt = escape(a["name"]) if alt is None else escape(alt)
+    cls = f' class="{pic_class}"' if pic_class else ""
+    load = ' loading="lazy"' if lazy else ""
+    return (f'<picture{cls}><source type="image/webp" srcset="{stem}-96.webp 1x, {stem}-192.webp 2x">'
             f'<img class="author-avatar" src="{stem}-96.jpg" srcset="{stem}-96.jpg 1x, {stem}-192.jpg 2x" '
-            f'width="44" height="44" alt="{escape(a["name"])}" decoding="async"></picture>')
+            f'width="{size}" height="{size}" alt="{alt}"{load} decoding="async"></picture>')
 
 
 def byline_html(a: dict | None, staff_name: str = "OctoProbe Staff") -> str:
@@ -86,6 +92,11 @@ def author_note_html(a: dict | None) -> str:
     name = f'<a href="{escape(a["url"])}" rel="author">{escape(a["name"])}</a>' if a.get("url") else escape(a["name"])
     links = ('<span class="author-links">' + "".join(f'<a href="{escape(u)}">{escape(l)}</a>' for l, u in a["links"])
              + "</span>") if a.get("links") else ""
+    # Same headshot as the top byline, larger, to the left of the bio text (blog.css .author-note.has-avatar).
+    pic = avatar_html(a, size=96, alt="", lazy=True, pic_class="author-note-avatar")
+    if pic:
+        return (f'<p class="author-note has-avatar">{pic}'
+                f'<span class="author-note-text">{name}{escape(rest)}{links}</span></p>')
     return f'<p class="author-note">{name}{escape(rest)}{links}</p>'
 
 

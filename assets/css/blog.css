@@ -440,6 +440,22 @@ footer .legal strong{color:var(--soft)}
 }
 .prose .author-note .author-links a:hover,
 .prose .author-note .author-links a:focus-visible{color:var(--blue);border-color:rgba(2,136,209,.35);background:rgba(2,136,209,.06)}
+/* Bio box headshot (bylined authors with an image): the same /assets/authors/ crop as the top
+   byline, larger, left of the text. Markup (scripts/authors.py author_note_html):
+   <p class="author-note has-avatar"><picture class="author-note-avatar">…<img class="author-avatar"></picture>
+   <span class="author-note-text"><a rel="author">Name</a> bio…<span class="author-links">…</span></span></p> */
+.prose .author-note.has-avatar{display:flex;align-items:flex-start;gap:1.5rem}
+.prose .author-note.has-avatar .author-note-avatar{display:block;flex:none;line-height:0;padding:.3rem 0 0 .25rem}
+.prose .author-note.has-avatar .author-avatar{display:block;width:92px;height:92px;max-width:none;border-radius:50%;object-fit:cover;background:var(--panel-2);box-shadow:0 0 0 1px var(--line-2)}
+.prose .author-note.has-avatar .author-note-text{display:block;flex:1 1 auto;min-width:0}
+/* Narrow screens: smaller photo, floated so the bio wraps under it instead of a thin column */
+@media(max-width:520px){
+  .prose .author-note.has-avatar{display:block}
+  .prose .author-note.has-avatar .author-note-avatar{float:left;padding:.3rem 0 0;margin:0 1rem .4rem 0}
+  .prose .author-note.has-avatar .author-avatar{width:64px;height:64px}
+  .prose .author-note.has-avatar .author-note-text{display:inline}
+  .prose .author-note.has-avatar .author-links{clear:left}
+}
 /* Equal gap into Related Reading: author-note margin-bottom owns the space */
 .prose .author-note + .related-reading,
 .prose .author-note + aside.related-reading{margin-top:0}

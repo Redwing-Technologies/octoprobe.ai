@@ -91,3 +91,8 @@ Burns is wanted by the FBI on a federal mail-fraud charge. A criminal complaint 
 Seed an identifier, expand through premium APIs and public records, and keep evidence on every link, all on one live investigation graph.
 
 [Get Access →](https://www.octoprobe.ai/#access) · [Visit homepage](https://www.octoprobe.ai/)
+
+## Related Reading
+
+- [Heather Zhang Case: OSINT Trail From a 2024 Reddit Allegation](/blog/heather-zhang-prc-agent-case-reddit-allegation/)
+- [Whose Coffee? An Anti-Bot Developer’s Handle Turns Up on Archive.today’s Donate Link](/blog/archive-today-donate-link-takion-api-developer/)
