@@ -42,7 +42,8 @@ Before writing or shipping a post, complete all of the following:
    - `keywords` (list of entities/queries)
    - `og_image` / `hero` (featured image under `/assets/blog/…`)
    - `hero_alt`
-   - optional: `date_modified`, `author`, `excerpt`
+   - optional: `date_modified`, `author`, `excerpt`, `byline`
+   - **Byline:** the visible byline defaults to **"By OctoProbe Staff"**. Set `byline:` to override (e.g. a staff writer or a guest author such as `byline: Colin Aamot`). The JSON-LD and `<meta name="author">` keep the Organization identity ("OctoProbe"); `byline` only sets the human-readable line under the headline.
 6. **Entity mentions** (natural, no stuffing): OctoProbe AI, Redwing Technologies, OSINT, identifier graph, breach intelligence, facial recognition OSINT, MCP OSINT as relevant.
 7. **Internal links** to homepage sections (`/#capabilities`, `/#faq`, `/#access`, `/#audiences`, `/#integration`), other posts, and listing FAQ. App login only as gated CTA.
 8. **Disclaimer** — public OSINT; not a consumer reporting agency / not FCRA.
