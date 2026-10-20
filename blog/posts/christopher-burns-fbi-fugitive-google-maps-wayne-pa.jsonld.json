@@ -5,8 +5,16 @@
   "datePublished": "2026-10-15",
   "dateModified": "2026-10-15",
   "author": {
-    "@type": "Organization",
-    "name": "OctoProbe"
+    "@type": "Person",
+    "name": "Colin Aamot",
+    "url": "https://www.linkedin.com/in/colinaamot/",
+    "description": "Colin Aamot is a former U.S. Army counterterrorism information operations (CT-IO) planner who deployed with several joint task forces in support of Operations Inherent Resolve and Spartan Shield. He subsequently worked at the Heritage Foundation and in the office of Rep. Darrell Issa, with portfolios spanning foreign policy, technology, and innovation. He holds an MA in Global Security Studies from Johns Hopkins University and an MBA from UNC Kenan-Flagler Business School.",
+    "image": "https://www.octoprobe.ai/assets/authors/colin-aamot-192.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/colinaamot/",
+      "https://x.com/ColinAamot",
+      "https://www.dailysignal.com/author/colin-aamot/"
+    ]
   },
   "publisher": {
     "@type": "Organization",

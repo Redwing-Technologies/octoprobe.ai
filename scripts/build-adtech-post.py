@@ -9,10 +9,10 @@ post needs and the stock builder cannot express:
   * NOTE: paragraphs -> <p class="editor-note">Editor’s note: …</p>
   * {{ANSWER}} -> primary question + answer-first block (after the cover, isis-style)
   * {{FAQ}} -> visible FAQ section + FAQPage JSON-LD (as in the ISIS post)
-  * {{AUTHOR_NOTE}} -> .author-note bio from front matter author/author_url/author_bio, plus an
-    optional .author-links row from author_links: ["Label | https://url", ...] (also JSON-LD sameAs)
-  * author_image: /assets/authors/<name>-192.jpg -> circular headshot in the top byline
-    (<picture> with -96/-192 .webp + .jpg siblings) and JSON-LD Person image (absolute URL)
+  * author (scripts/authors.py; default Colin Aamot, overridable per post with author/author_url/
+    author_bio/author_image/author_links, or `author: OctoProbe Staff` for an Organization byline):
+    top byline with circular headshot, {{AUTHOR_NOTE}} -> .author-note bio + .author-links pills,
+    JSON-LD Person (name, url, description, image, sameAs)
   * dek under the H1, news-frame CSS, post-local assets/adtech.css + adtech.js
   * markdown tables wrapped in .table-wrap; template post-disclaimer replaced by the
     post's own Disclaimer section (as in blog/isis-media-survives-takedowns/)
@@ -97,31 +97,14 @@ def build(md_path: Path, out_root: Path):
     faq_html = '<section class="faq" aria-labelledby="frequently-asked-questions">\n<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>\n' + "\n".join(
         f"<h3>{escape(f['q'])}</h3>\n<p>{escape(f['a'])}</p>" for f in faq) + "\n</section>"
     html = html.replace("<p>{{FAQ}}</p>", faq_html)
-    a_name = meta.get("author"); a_url = meta.get("author_url"); a_bio = meta.get("author_bio")
-    a_links = [tuple(p.strip() for p in x.split(" | ", 1)) for x in (meta.get("author_links") or [])]
-    assert all(len(x) == 2 and x[1].startswith("https://") for x in a_links), a_links
-    links_html = ('<span class="author-links">' + "".join(f'<a href="{escape(u)}">{escape(l)}</a>' for l, u in a_links)
-                  + "</span>") if a_links else ""
-    if a_name and a_bio:
-        rest = a_bio[len(a_name):] if a_bio.startswith(a_name) else " " + a_bio
-        name_html = f'<a href="{escape(a_url)}" rel="author">{escape(a_name)}</a>' if a_url else escape(a_name)
-        html = html.replace("<p>{{AUTHOR_NOTE}}</p>", f'<p class="author-note">{name_html}{escape(rest)}{links_html}</p>')
-    else:
-        html = html.replace("<p>{{AUTHOR_NOTE}}</p>\n", "").replace("<p>{{AUTHOR_NOTE}}</p>", "")
+    person = bb.AU.resolve_author(meta)
+    html = bb.AU.insert_author_note(html, bb.AU.author_note_html(person))
     assert "{{" not in html, re.findall(r"\{\{[^}]+\}\}", html)
 
     ld = bb.build_json_ld(meta, slug, description)
     ld[0]["about"] = [{"@type": "Thing", "name": n} for n in ["commercial telemetry data", "mobile advertising ID", "Freedom of Information Act", "location privacy"]]
     ld[0]["mentions"] = [{"@type": "GovernmentOrganization", "name": n} for n in ["U.S. Department of Homeland Security", "Federal Bureau of Investigation", "U.S. Customs and Border Protection", "U.S. Immigration and Customs Enforcement"]]
-    if meta.get("author") and meta.get("author_url"):
-        ld[0]["author"] = {"@type": "Person", "name": meta["author"], "url": meta["author_url"]}
-        if meta.get("author_bio"):
-            ld[0]["author"]["description"] = meta["author_bio"]
-        if meta.get("author_image"):
-            ld[0]["author"]["image"] = bb.SITE + meta["author_image"]
-        if a_links:
-            ld[0]["author"]["sameAs"] = [u for _, u in a_links]
-    else:
+    if person is None:
         ld[0]["author"] = {"@type": "Organization", "name": "OctoProbe Staff", "url": f"{bb.SITE}/blog/"}
     if faq:
         ld.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
@@ -131,7 +114,7 @@ def build(md_path: Path, out_root: Path):
     head = f"""<title>{escape(meta.get("seo_title") or title)} · OctoProbe News</title>
 <meta name="description" content="{escape(description)}">
 <meta name="keywords" content="{escape(kw)}">
-<meta name="author" content="{escape(meta.get('author') or 'OctoProbe Staff')}">
+<meta name="author" content="{escape(person['name'] if person else 'OctoProbe Staff')}">
 <link rel="alternate" type="text/plain" title="LLM context (llms.txt)" href="/llms.txt">
 <link rel="alternate" type="text/plain" title="AI discovery (ai.txt)" href="/ai.txt">
 <meta name="ai-content-declaration" content="human-authored; investigative reporting from public records">
@@ -153,25 +136,15 @@ def build(md_path: Path, out_root: Path):
 <meta name="twitter:description" content="{escape(description)}">
 <meta name="twitter:image" content="{escape(og)}">
 {ld_scripts}"""
-    _bn = meta.get("byline") or "OctoProbe Staff"
-    byline_html = (f'<p class="byline">By <a href="{escape(meta["author_url"])}" rel="author">{escape(_bn)}</a></p>'
-                   if meta.get("author_url") and _bn == meta.get("author") else f'<p class="byline">By {escape(_bn)}</p>')
-    a_img = meta.get("author_image")
-    if a_img and _bn == meta.get("author"):
-        assert re.fullmatch(r"/assets/authors/[a-z0-9-]+-192\.jpg", a_img), a_img
-        stem = a_img[:-len("-192.jpg")]
-        pic = (f'<picture><source type="image/webp" srcset="{stem}-96.webp 1x, {stem}-192.webp 2x">'
-               f'<img class="author-avatar" src="{stem}-96.jpg" srcset="{stem}-96.jpg 1x, {stem}-192.jpg 2x" '
-               f'width="44" height="44" alt="{escape(meta["author"])}" decoding="async"></picture>')
-        byline_html = byline_html.replace('<p class="byline">By ', f'<p class="byline has-avatar">{pic}<span>By ', 1).replace("</p>", "</span></p>")
+    byline_html = bb.AU.byline_html(person, meta.get("byline") or "OctoProbe Staff")
     tpl = bb.TEMPLATE.read_text(encoding="utf-8")
     out = (tpl.replace("{{HEAD_META}}", head).replace("{{TITLE}}", escape(title)).replace("{{DATE}}", escape(date))
            .replace("{{DATE_DISPLAY}}", escape(date_display)).replace("{{TAGS_HTML}}", tags_html)
            .replace("{{BYLINE_HTML}}", byline_html)
            .replace("\n      {{HERO_HTML}}", "").replace("{{HERO_HTML}}", "").replace("{{BODY}}", html))
     out = out.replace("</h1>", "</h1>\n      <p class=\"post-dek\">" + escape(meta["dek"]) + "</p>", 1)
-    out = out.replace('<link rel="stylesheet" href="/assets/css/blog.css?v=news4">',
-        '<link rel="stylesheet" href="/assets/css/blog.css?v=news4">\n' + NEWS_FRAME +
+    out = out.replace('<link rel="stylesheet" href="/assets/css/blog.css?v=news5">',
+        '<link rel="stylesheet" href="/assets/css/blog.css?v=news5">\n' + NEWS_FRAME +
         f'\n<link rel="stylesheet" href="/blog/{slug}/assets/adtech.css?v=1">', 1)
     out = re.sub(r'\s*<p class="post-disclaimer">.*?</p>', "", out, count=1, flags=re.S)
     out = out.replace('<script src="/assets/js/blog-toc.js?v=toc7" defer></script>',
