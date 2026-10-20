@@ -1,0 +1,3 @@
+# Hosted as received; keep bytes (CRLF) intact in patches and checkouts.
+*.csv -text -diff
+*.txt -text

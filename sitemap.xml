@@ -178,4 +178,14 @@
       <image:title>North Korea's Fake IT Workers: Thin Covers, Borrowed Lives</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://www.octoprobe.ai/blog/secret-service-foia-sharepoint-browser-history-osint-guide/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/blog/secret-service-foia-sharepoint-browser-history-osint-guide/assets/og-cover.png</image:loc>
+      <image:title>Map the Tenant, Name the Custodian: How OSINT Unlocks Agency SharePoint, Teams and Browser Logs</image:title>
+    </image:image>
+  </url>
 </urlset>
