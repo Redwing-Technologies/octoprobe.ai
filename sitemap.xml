@@ -208,4 +208,14 @@
       <image:title>Map the Tenant, Name the Custodian: How OSINT Unlocks Agency SharePoint, Teams and Browser Logs</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://www.octoprobe.ai/blog/subpoena-warrant-online-accounts-three-branches/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/blog/subpoena-warrant-online-accounts-three-branches/assets/og-cover.png</image:loc>
+      <image:title>Congress, the Pentagon’s Watchdog and a Judge: Three Ways the Government Compels Your Records</image:title>
+    </image:image>
+  </url>
 </urlset>
