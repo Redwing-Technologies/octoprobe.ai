@@ -77,7 +77,7 @@ Both sites sit on the Lancaster Avenue (Main Line) corridor west of Philadelphia
 
 ## Method
 
-- **Sources:** The FBI wanted page, the public Google Maps contributor profile, and other public profile pages, correlated into an OctoProbe identifier graph. No non-public or breached data is shown.
+- **Sources:** The FBI wanted page, the public Google Maps contributor profile, and other public profile pages, correlated into an OctoProbe identifier graph.
 - **Capture date:** October 15, 2026.
 - **Timestamps:** Google Maps shows rounded relative dates, so "5 years ago" reads as ~2021 and "3 years ago" as ~2023.
 - **Graph image:** A direct export from the OctoProbe app with Privacy Mode on.

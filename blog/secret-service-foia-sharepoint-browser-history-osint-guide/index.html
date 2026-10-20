@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to FOIA Browser History, SharePoint and Teams · OctoProbe News</title>
+<meta name="description" content="A seven-step FOIA guide: find an agency&#x27;s SharePoint with public DNS, name a custodian, and request browser logs, documents and Teams chats.">
+<meta name="keywords" content="how to FOIA browser history, Secret Service FOIA, SharePoint FOIA request, Microsoft Teams FOIA, Microsoft 365 tenant OSINT, FOIA custodian search, OneDrive FOIA, FOIA fee waiver, FOIA expedited processing, FOIA exemption (b)(7)(E), Cause of Action v. OMB, agency records">
+<meta name="author" content="Colin Aamot">
+<link rel="alternate" type="text/plain" title="LLM context (llms.txt)" href="/llms.txt">
+<link rel="alternate" type="text/plain" title="AI discovery (ai.txt)" href="/ai.txt">
+<meta name="ai-content-declaration" content="human-authored; investigative reporting from public records">
+<link rel="canonical" href="https://www.octoprobe.ai/blog/secret-service-foia-sharepoint-browser-history-osint-guide/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="OctoProbe News">
+<meta property="og:url" content="https://www.octoprobe.ai/blog/secret-service-foia-sharepoint-browser-history-osint-guide/">
+<meta property="og:title" content="Map the Tenant, Name the Custodian: How OSINT Unlocks Agency SharePoint, Teams and Browser Logs">
+<meta property="og:description" content="A seven-step FOIA guide: find an agency&#x27;s SharePoint with public DNS, name a custodian, and request browser logs, documents and Teams chats.">
+<meta property="og:image" content="https://www.octoprobe.ai/blog/secret-service-foia-sharepoint-browser-history-osint-guide/assets/og-cover.png?v=1">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Street map of downtown Washington with a pin on Secret Service headquarters and the Secret Service star">
+<meta property="article:published_time" content="2026-10-20">
+<meta property="article:modified_time" content="2026-10-20">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@octoprobeai">
+<meta name="twitter:title" content="Map the Tenant, Name the Custodian: How OSINT Unlocks Agency SharePoint, Teams and Browser Logs">
+<meta name="twitter:description" content="A seven-step FOIA guide: find an agency&#x27;s SharePoint with public DNS, name a custodian, and request browser logs, documents and Teams chats.">
+<meta name="twitter:image" content="https://www.octoprobe.ai/blog/secret-service-foia-sharepoint-browser-history-osint-guide/assets/og-cover.png?v=1">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "How to FOIA an Official's Browser History, SharePoint Files and Teams Messages",
+  "description": "A seven-step FOIA guide: find an agency's SharePoint with public DNS, name a custodian, and request browser logs, documents and Teams chats.",
+  "datePublished": "2026-10-20",
+  "dateModified": "2026-10-20",
+  "author": {
+    "@type": "Person",
+    "name": "Colin Aamot",
+    "url": "https://www.linkedin.com/in/colinaamot/",
+    "description": "Colin Aamot is a former U.S. Army counterterrorism information operations (CT-IO) planner who deployed with several joint task forces in support of Operations Inherent Resolve and Spartan Shield. He subsequently worked at the Heritage Foundation and in the office of Rep. Darrell Issa, with portfolios spanning foreign policy, technology, and innovation. He holds an MA in Global Security Studies from Johns Hopkins University and an MBA from UNC Kenan-Flagler Business School.",
+    "image": "https://www.octoprobe.ai/assets/authors/colin-aamot-192.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/colinaamot/",
+      "https://x.com/ColinAamot",
+      "https://www.dailysignal.com/author/colin-aamot/"
+    ]
+  },
+  "publisher": {
+    "@type": "NewsMediaOrganization",
+    "@id": "https://www.octoprobe.ai/blog/#newsroom",
+    "name": "OctoProbe News",
+    "url": "https://www.octoprobe.ai/blog/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.octoprobe.ai/icon-512.png",
+      "width": 512,
+      "height": 512
+    },
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Redwing Technologies LLC",
+      "url": "https://rook-intel.com/"
+    }
+  },
+  "image": [
+    "https://www.octoprobe.ai/blog/secret-service-foia-sharepoint-browser-history-osint-guide/assets/og-cover.png?v=1"
+  ],
+  "keywords": "how to FOIA browser history, Secret Service FOIA, SharePoint FOIA request, Microsoft Teams FOIA, Microsoft 365 tenant OSINT, FOIA custodian search, OneDrive FOIA, FOIA fee waiver, FOIA expedited processing, FOIA exemption (b)(7)(E), Cause of Action v. OMB, agency records",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.octoprobe.ai/blog/secret-service-foia-sharepoint-browser-history-osint-guide/"
+  },
+  "url": "https://www.octoprobe.ai/blog/secret-service-foia-sharepoint-browser-history-osint-guide/",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "OctoProbe News",
+    "url": "https://www.octoprobe.ai/blog/"
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      ".answer-first",
+      ".callout.takeaways",
+      ".prose h2"
+    ]
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Freedom of Information Act"
+    },
+    {
+      "@type": "Thing",
+      "name": "open-source intelligence"
+    },
+    {
+      "@type": "Thing",
+      "name": "Microsoft SharePoint"
+    },
+    {
+      "@type": "Thing",
+      "name": "Microsoft Teams"
+    },
+    {
+      "@type": "Thing",
+      "name": "agency records"
+    }
+  ],
+  "mentions": [
+    {
+      "@type": "GovernmentOrganization",
+      "name": "United States Secret Service",
+      "url": "https://www.secretservice.gov/"
+    },
+    {
+      "@type": "Person",
+      "name": "Ronald L. Rowe Jr.",
+      "jobTitle": "Deputy Director, U.S. Secret Service (2023–2025)",
+      "sameAs": [
+        "https://www.secretservice.gov/newsroom/releases/2023/04/secret-service-welcomes-veteran-special-agent-ronald-rowe-deputy-director"
+      ]
+    },
+    {
+      "@type": "Legislation",
+      "name": "Freedom of Information Act, 5 U.S.C. § 552",
+      "url": "https://www.law.cornell.edu/uscode/text/5/552"
+    },
+    {
+      "@type": "Organization",
+      "name": "Microsoft"
+    }
+  ],
+  "articleSection": "Public Journalism Guide"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.octoprobe.ai/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.octoprobe.ai/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "How to FOIA an Official's Browser History, SharePoint Files and Teams Messages",
+      "item": "https://www.octoprobe.ai/blog/secret-service-foia-sharepoint-browser-history-osint-guide/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to FOIA an official’s browser history, SharePoint files and Teams messages",
+  "description": "A seven-step FOIA guide: find an agency's SharePoint with public DNS, name a custodian, and request browser logs, documents and Teams chats.",
+  "supply": [
+    {
+      "@type": "HowToSupply",
+      "name": "A FOIA request letter or portal submission"
+    }
+  ],
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "Public DNS-over-HTTPS resolver"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "Microsoft OpenID Connect discovery metadata"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "Certificate-transparency search (crt.sh)"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Identify the agency’s Microsoft 365 tenant and SharePoint hosts",
+      "text": "Confirm the tenant with public DNS, Microsoft’s OpenID Connect discovery metadata and certificate or passive-DNS logs. Stay passive.",
+      "url": "https://www.octoprobe.ai/blog/secret-service-foia-sharepoint-browser-history-osint-guide/#step-1-identify-the-agency-s-microsoft-365-tenant-and-sharepoint-hosts"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Identify the custodian by name or title",
+      "text": "Use leadership pages, press releases, testimony and FOIA logs to get the person’s full name, title and dates in the job. No email address is needed.",
+      "url": "https://www.octoprobe.ai/blog/secret-service-foia-sharepoint-browser-history-osint-guide/#step-2-identify-the-custodian-by-name-or-title"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Choose the record types",
+      "text": "Pick browser history and web-proxy logs, SharePoint documents created or edited, Teams messages, channel files, chat files, card statements or a sitemap, and name the system that holds each.",
+      "url": "https://www.octoprobe.ai/blog/secret-service-foia-sharepoint-browser-history-osint-guide/#step-3-choose-the-record-types"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Write the request",
+      "text": "One sentence per item with a date range, custodian and system; state format, fee category, any fee waiver and, where it applies, expedited processing.",
+      "url": "https://www.octoprobe.ai/blog/secret-service-foia-sharepoint-browser-history-osint-guide/#step-4-write-the-request"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Anticipate the agency’s answers",
+      "text": "Plan for exemptions (b)(6), (b)(7)(C) and (b)(7)(E), the no-duty-to-create-records objection to lists, and the not-an-agency-record argument.",
+      "url": "https://www.octoprobe.ai/blog/secret-service-foia-sharepoint-browser-history-osint-guide/#step-5-anticipate-the-agency-s-answers"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 6,
+      "name": "Track and follow up",
+      "text": "Log the receipt date and number, check the agency’s FOIA log, file log requests before disposal, and consider OGIS mediation for disputes.",
+      "url": "https://www.octoprobe.ai/blog/secret-service-foia-sharepoint-browser-history-osint-guide/#step-6-track-and-follow-up"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 7,
+      "name": "Use what comes back",
+      "text": "Read site names, hosts, hubs and redaction patterns in the release and turn them into the next requests.",
+      "url": "https://www.octoprobe.ai/blog/secret-service-foia-sharepoint-browser-history-osint-guide/#step-7-use-what-comes-back"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Federal FOIA components and SharePoint hostnames",
+  "description": "431 FOIA components with SharePoint base, OneDrive, sub-agency, office and admin hostnames, with a passive DNS check of every hostname on Oct. 20, 2026.",
+  "creator": {
+    "@type": "Organization",
+    "name": "Redwing Technologies"
+  },
+  "dateModified": "2026-10-20",
+  "isAccessibleForFree": true,
+  "url": "https://www.octoprobe.ai/blog/secret-service-foia-sharepoint-browser-history-osint-guide/#fig-hostfinder",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "contentUrl": "https://www.octoprobe.ai/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/federal-foia-sharepoint-hostnames.xlsx"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://www.octoprobe.ai/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/federal-foia-sharepoint-hostnames.csv"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is an official’s browser history an agency record under FOIA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the agency. In Cause of Action Institute v. OMB (2021), the D.C. Circuit held that browsing histories at the Office of Management and Budget and the Agriculture Department were not agency records, because the agencies did not use them and employees could delete them. The Secret Service, by contrast, processed five requests for senior officials’ browser histories and closed each as granted or denied in part."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need an official’s email address to request their records?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Agencies search by custodian. A full name and title, such as “Ronald L. Rowe Jr., Deputy Director,” is enough. Do not guess an email address; if a release shows a username, quote only what the agency released."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can an agency refuse a “last 100 documents” request as creating a new record?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It may try. Courts have held that running a search or query on existing data is not creating a record, but a federal judge in Washington ruled in 2012 that a bare listing or index of a database’s contents can be. Ask for the documents themselves, sorted by last-modified date, rather than a list."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where does Microsoft store Teams chats?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Microsoft’s eDiscovery documentation says messages in 1:1 and group chats are stored in the Exchange Online mailbox of every chat participant, channel posts in the mailbox associated with the team, files shared in chats in the sharer’s OneDrive and channel files in the team’s SharePoint site."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do FOIA exemptions (b)(6), (b)(7)(C) and (b)(7)(E) mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Exemption (b)(6) covers files whose release would be a clearly unwarranted invasion of personal privacy. (b)(7)(C) covers law-enforcement records whose release could reasonably be expected to invade personal privacy. (b)(7)(E) covers law-enforcement techniques and procedures. The Secret Service used all three in the releases described here."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long do agencies keep web and system logs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many logs are short-lived. The National Archives’ general schedule for system access records, including log-in files and system usage files, allows agencies to destroy them when business use ceases. File requests for logs soon after the period you care about."
+      }
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6T6HW79ZP0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6T6HW79ZP0');
+</script>
+<meta name="theme-color" content="#f7fbff">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/blog.css?v=news5">
+<style id="news-frame">.post-dek{max-width:46rem;margin:.6rem 0 0;font-size:1.15rem;line-height:1.5;color:#475569}.post-hero .byline{margin:1rem 0 0;font-weight:600;color:#334155;font-size:.98rem}.post-hero .byline a{color:inherit;text-decoration:underline;text-decoration-color:rgba(51,65,85,.35);text-underline-offset:3px}.post-hero .byline a:hover{color:var(--blue)}.table-wrap{overflow-x:auto}.table-wrap table{border-collapse:collapse;width:100%;font-size:.92rem}.table-wrap th,.table-wrap td{border:1px solid #e2e8f0;padding:.45rem .6rem;vertical-align:top;text-align:left}.related-reading{border-top:1px solid #e2e8f0;margin-top:2rem;padding-top:.5rem}.related-reading h2{margin-top:1rem}.related-reading li{margin:.4rem 0}.prose .faq h3{font-size:1.02rem;margin-top:1.2em}.prose .faq p{margin-top:.35em}</style>
+<link rel="stylesheet" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/assets/usss.css?v=3">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="top" id="nav" aria-label="Primary">
+  <a class="brand" href="/blog/" aria-label="OctoProbe News home">
+    <svg class="logo" viewBox="0 0 40 40" role="img" aria-label="OctoProbe AI" fill="none">
+      <defs>
+        <linearGradient id="g1" x1="6" y1="4" x2="34" y2="38" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#818cf8"/><stop offset=".55" stop-color="#38bdf8"/><stop offset="1" stop-color="#22d3ee"/>
+        </linearGradient>
+      </defs>
+      <g stroke="url(#g1)" stroke-width="2.4" stroke-linecap="round">
+        <path d="M12 21.5 C6 25 5.5 31 9.5 34.5"/><path d="M16 22.5 C13 27 12 32.5 15 36"/>
+        <path d="M19 23 C18 28.5 17.5 33 19 37"/><path d="M28 21.5 C34 25 34.5 31 30.5 34.5"/>
+        <path d="M24 22.5 C27 27 28 32.5 25 36"/><path d="M21 23 C22 28.5 22.5 33 21 37"/>
+      </g>
+      <g fill="url(#g1)"><circle cx="9.5" cy="34.5" r="2.1"/><circle cx="15" cy="36" r="2.1"/><circle cx="19" cy="37" r="2.1"/><circle cx="30.5" cy="34.5" r="2.1"/><circle cx="25" cy="36" r="2.1"/><circle cx="21" cy="37" r="2.1"/></g>
+      <path d="M20 4.5 C12.3 4.5 7.5 9.8 7.5 16.4 C7.5 20.6 10.6 23.2 14.8 23.2 L25.2 23.2 C29.4 23.2 32.5 20.6 32.5 16.4 C32.5 9.8 27.7 4.5 20 4.5 Z" fill="url(#g1)"/>
+      <rect x="15.2" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
+      <rect x="21.6" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
+      <rect x="30.5" y="8" width="2" height="2" rx=".5" fill="url(#g1)" opacity=".7"/>
+      <rect x="7.2" y="9.6" width="1.7" height="1.7" rx=".4" fill="url(#g1)" opacity=".6"/>
+    </svg>
+    <span class="bn">OctoProbe<small>News</small></span>
+  </a>
+  <div class="nav-center">
+    <a href="/blog/about/">About</a>
+    <a href="/blog/standards/">Standards</a>
+    <a href="/blog/corrections/">Corrections</a>
+    <a href="/blog/contact/">Contact</a>
+  </div>
+  <div class="nav-right">
+    <a href="/blog/" class="nav-cta nav-investigations" aria-current="page">Investigations</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+  <a href="/blog/" class="active" aria-current="page">Investigations</a>
+  <a href="/blog/about/">About</a>
+  <a href="/blog/standards/">Standards</a>
+  <a href="/blog/corrections/">Corrections</a>
+  <a href="/blog/contact/">Contact</a>
+  <a href="/">OctoProbe platform</a>
+</div>
+<main id="main">
+  <header class="post-hero">
+    <div class="wrap">
+      <div class="post-crumb">
+        <a class="back-link" href="/blog/">← All investigations</a>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span class="eyebrow">Public Journalism Guide</span>
+      </div>
+      <h1>How to FOIA an Official&#x27;s Browser History, SharePoint Files and Teams Messages</h1>
+      <p class="post-dek">A seven-step guide to finding an agency&#x27;s SharePoint, naming a custodian and requesting web logs, documents and Teams messages under the Freedom of Information Act, with Secret Service records as the worked example.</p>
+      <div class="post-meta">
+        <time datetime="2026-10-20">Oct 20, 2026</time>
+        <span class="sep" aria-hidden="true"></span>
+        <div class="tags"><span class="tag">Public Journalism Guide</span><span class="tag">FOIA</span><span class="tag blue">OSINT</span><span class="tag">Secret Service</span><span class="tag">Microsoft 365</span></div>
+      </div>
+      <p class="byline has-avatar"><picture><source type="image/webp" srcset="/assets/authors/colin-aamot-96.webp 1x, /assets/authors/colin-aamot-192.webp 2x"><img class="author-avatar" src="/assets/authors/colin-aamot-96.jpg" srcset="/assets/authors/colin-aamot-96.jpg 1x, /assets/authors/colin-aamot-192.jpg 2x" width="44" height="44" alt="Colin Aamot" decoding="async"></picture><span>By <a href="https://www.linkedin.com/in/colinaamot/" rel="author">Colin Aamot</a></span></p>
+    </div>
+  </header>
+  <article class="post-body">
+    <div class="wrap">
+      <div class="prose">
+<figure><img fetchpriority="high" decoding="async" src="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/assets/cover.png?v=1" width="2400" height="1260" alt="Illustration: bright street map of downtown Washington with a red pin on U.S. Secret Service headquarters at 950 H Street NW, the Secret Service star on the right, and the words Map the tenant. Name the custodian." ><figcaption>U.S. Secret Service headquarters at 950 H St. NW in Washington. Illustration: OctoProbe News; map © OpenStreetMap contributors; Secret Service star: U.S. Secret Service. Use of the star does not imply endorsement.</figcaption></figure>
+<p class="primary-question"><strong>How do you request a federal official’s browser history, SharePoint files or Teams messages under FOIA?</strong></p>
+<p class="answer-first">Find the agency’s real Microsoft 365 systems with public DNS and Microsoft’s sign-in metadata, name a custodian by name and title, and ask for each record type by the system that holds it. Results vary. The Secret Service processed requests for five senior officials’ browser histories and released records in part, but a federal appeals court has held that browsing histories an agency neither keeps nor uses are not agency records.</p>
+<aside class="checklist-box" aria-label="What you can request">
+<p class="cl-h">What you can request</p>
+<ul class="cl-list">
+<li><a href="#browser-history-and-web-proxy-logs">Browser history and web-proxy, gateway, DNS or endpoint logs</a></li>
+<li><a href="#sharepoint-documents-created-and-edited">SharePoint and OneDrive documents a custodian created or edited</a></li>
+<li><a href="#teams-messages-channel-files-and-chat-files">Teams chats (Exchange Online mailbox), channel posts (team mailbox), channel files (SharePoint) and chat files (OneDrive)</a></li>
+<li><a href="#card-statements-and-sitemaps">Agency card statements</a></li>
+<li><a href="#card-statements-and-sitemaps">A sitemap of the agency’s SharePoint</a></li>
+</ul>
+</aside>
+<p>You can ask a federal agency for an official’s web activity, the files the official made and the chats the official sent. Requests for those records can come back empty when they don’t name the system, the person or the place the data lives. This guide fixes that in seven steps, with copy-paste language for each record.</p>
+<p>The method is a loop. Public internet records tell you where an agency keeps its files. A records request names those systems and a custodian. Each release then hands you new names, offices and systems for the next request.</p>
+<p>The worked example throughout is two rounds of requests to the U.S. Secret Service, in 2023 and 2025. Here is what one page of the first round looks like.</p>
+<aside class="example-box" aria-label="Example: The page that started this guide">
+<p class="ex-k">Example</p>
+<p class="ex-t">The page that started this guide</p>
+<p>The page is a printout of a computer log. Each row has a timestamp, a username that begins “ron.rowe” and a box stamped “(b)(6); (b)(7)(C)” where something else used to be. Fifteen rows at 2:16 p.m. on Oct. 10, 2023, list Microsoft 365 servers, among them <code>unitedstatessecretservice.sharepoint.com</code>. The rest, logged between 10:33 and 10:38 p.m. on Oct. 4, list the Daily Mail, the New York Post and a run of advertising exchanges.</p>
+<p>The user was Ronald L. Rowe Jr., who had been the agency’s deputy director since April 2023, according to the <a href="https://www.dhs.gov/archive/news/2024/07/23/statement-secretary-homeland-security-alejandro-n-mayorkas-appointment-ronald-l">Homeland Security Department</a>. He went on to run the agency as acting director after Kimberly Cheatle resigned in July 2024. A federal law-enforcement agency treated a senior official’s web activity as a record it could search, review and release.</p>
+</aside>
+<figure class="ixm-fig" id="fig-rowe">
+<div class="ixm " data-ixm="rowe">
+<div class="ixm-head"><span class="ixm-kicker">Primary record · photographed page</span><span class="ixm-title">One page of a deputy director’s web log</span></div>
+<div class="ixm-live">
+<div class="rl-wrap">
+<a class="rl-open" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/assets/rowe-browser-history-zoom.jpg" data-full="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/assets/rowe-browser-history-zoom.jpg">
+<img src="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/assets/rowe-browser-history-web.jpg" width="1200" height="1679" loading="lazy" decoding="async" alt="Photograph of one printed page of a web-activity log. Columns show a date and time, a username beginning ron.rowe, a column covered by a box stamped (b)(6); (b)(7)(C), and a host name. The top rows are dated 10/10/2023 14:16 and list Microsoft 365 hosts including unitedstatessecretservice.sharepoint.com; the rest are dated 10/4/2023 between 22:33 and 22:38 and list news-site and advertising hosts. Some rows are highlighted in yellow.">
+<span class="rl-zoom" aria-hidden="true">Open full size</span></a>
+<div class="rl-notes">
+<p class="ixm-sub">What the page shows</p>
+<ul class="rl-list">
+<li><strong>Dates.</strong> 15 rows at <code>10/10/2023 14:16</code>; the rest between <code>10/4/2023 22:33</code> and <code>22:38</code>, newest first.</li>
+<li><strong>User.</strong> A username column that begins <code>ron.rowe</code>. The next column is withheld under (b)(6) and (b)(7)(C).</li>
+<li><strong>Agency systems.</strong> <code>unitedstatessecretservice.sharepoint.com</code>, <code>gcc.thor.aesir.office.com</code>, <code>graph.microsoft.com</code>, <code>login.microsoftonline.com</code>.</li>
+<li><strong>Everything else.</strong> Daily Mail, New York Post and Decider hosts, plus ad-exchange and ad-verification hosts such as <code>fastlane.rubiconproject.com</code>, <code>match.adsrvr.org</code> and <code>cdn.doubleverify.com</code>.</li>
+<li><strong>Format.</strong> Host names only, no page paths or titles.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<figcaption>One page of the web-activity records the Secret Service released for Ronald L. Rowe Jr., then its deputy director, in response to request 20240110. Rows are timestamped Oct. 4 and Oct. 10, 2023, within the request’s October 2023 window. Yellow highlighting appears on the page as photographed. By the author’s count, the agency mailed the records on paper, about 500 pages. Select the image to enlarge it.</figcaption>
+</figure>
+<p class="editor-note">Editor’s note: The author filed these requests in a personal capacity: five requests received by the Secret Service on Nov. 3, 2023 (log numbers 20240109 through 20240113), and a request received on April 21, 2025. OctoProbe News reviewed the releases and posts them with two redactions, described under Primary documents.</p>
+<aside aria-label="Key takeaways" class="key-takeaways">
+<h2>Key Takeaways</h2>
+<ul>
+<li><a href="#step-1-identify-the-agency-s-microsoft-365-tenant-and-sharepoint-hosts">You can confirm an agency’s SharePoint address with public DNS and Microsoft’s own sign-in metadata. No login, no scanning.</a></li>
+<li><a href="#step-2-identify-the-custodian-by-name-or-title">You don’t need an email address. A name and title are enough for the agency to search a custodian’s records.</a></li>
+<li><a href="#step-3-choose-the-record-types">Microsoft documents where Teams chats, channel posts and shared files are kept. A request that names those places is harder to answer with “no records.”</a></li>
+<li><a href="#step-5-anticipate-the-agency-s-answers">The D.C. Circuit held in 2021 that two other agencies’ browsing histories were not agency records. The Secret Service processed requests for five top officials’ browser histories and closed all five “Granted/Denied in Part,” according to its FY 2024 FOIA log.</a></li>
+<li><a href="#step-7-use-what-comes-back">An April 2025 request returned a sitemap of roughly 660 internal Secret Service sites and 105 pages of blacked-out card statements. The PDF contains no records for the two document requests.</a></li>
+</ul>
+</aside>
+<h2 id="how-does-the-osint-foia-loop-work">How does the OSINT–FOIA loop work?</h2>
+<p>Records requests fail for boring reasons. Yours names the wrong office. It asks for “all communications” and gets a steep fee estimate. It asks for “SharePoint files” and gets “no records,” because nobody searched SharePoint.</p>
+<p>Open-source intelligence, the research discipline built on public information, fixes much of that. It can tell you the name of an agency’s Microsoft 365 tenant, which cloud it runs in, which offices have their own sites and who holds which job. A request that carries those facts is harder to misread and harder to dodge.</p>
+<p>The loop runs the other way, too. Every release is a lead sheet for the next request.</p>
+<figure class="ixm-fig" id="fig-loop">
+<div class="ixm " data-ixm="loop">
+<div class="ixm-head"><span class="ixm-kicker">Interactive · method</span><span class="ixm-title">The OSINT–FOIA loop</span></div>
+<div class="ixm-live">
+<div class="lp-stage" aria-hidden="true"></div>
+<div class="ixm-controls lp-controls" hidden><button type="button" class="btn" data-lp="prev">← Back</button><button type="button" class="btn btn-primary" data-lp="next">Next step →</button><span class="lp-status" aria-live="polite"></span></div>
+<ol class="lp-list">
+<li class="lp-node" data-step="map"><span class="lp-n">1</span> <strong>Map.</strong> Find the agency’s Microsoft 365 tenant with public DNS and Microsoft’s sign-in metadata. <span class="lp-ex">Example: <code>unitedstatessecretservice-my.sharepoint.com</code></span></li>
+<li class="lp-node" data-step="name"><span class="lp-n">2</span> <strong>Name.</strong> Identify the custodian by name and title from bios, press releases and FOIA logs. <span class="lp-ex">Example: <code>Deputy Director Ronald L. Rowe Jr.</code></span></li>
+<li class="lp-node" data-step="request"><span class="lp-n">3</span> <strong>Request.</strong> Ask for the custodian’s web logs, SharePoint and OneDrive documents, and Teams messages. <span class="lp-ex">Example: <code>“The last 100 documents edited by the custodian”</code></span></li>
+<li class="lp-node" data-step="mine"><span class="lp-n">4</span> <strong>Mine.</strong> Read the release for new site names, hosts, offices and custodians, then map again. <span class="lp-ex">Example: <code>“SP 2016 Audit Logs,” p. 116</code></span></li>
+</ol>
+</div>
+</div>
+<figcaption>Each release becomes the starting point for the next round of research. Examples are from this guide’s Secret Service requests. Use the buttons or the arrow keys to step through the loop.</figcaption>
+</figure>
+<h2 id="step-1-identify-the-agency-s-microsoft-365-tenant-and-sharepoint-hosts">Step 1: Identify the agency’s Microsoft 365 tenant and SharePoint hosts</h2>
+<p>Many federal agencies run on Microsoft 365. Every Microsoft 365 customer has a tenant, and the tenant’s original name becomes its SharePoint address. Microsoft spells this out: “<a href="https://learn.microsoft.com/en-us/sharepoint/change-your-sharepoint-domain-name">When you first sign up for Microsoft 365, you create an onmicrosoft.com domain. Even if you later add a custom domain, all your SharePoint and OneDrive URLs use the original onmicrosoft.com domain.</a>”</p>
+<p>So don’t guess the address from the agency’s email domain. Confirm it with three public checks. None of them touches the agency’s servers.</p>
+<ol>
+<li><strong>Check DNS.</strong> Look up the candidate name, such as <code>[tenant].sharepoint.com</code>, through a public DNS-over-HTTPS service. A name that resolves exists. NXDOMAIN means no such name. Run a made-up control name too. If it fails and yours resolves, your result means something.</li>
+<li><strong>Read Microsoft’s public sign-in metadata.</strong> Microsoft publishes an <a href="https://learn.microsoft.com/en-us/entra/identity-platform/v2-protocols-oidc">OpenID Connect discovery document</a> for every tenant so that apps can sign users in. Ask for it by the agency’s email domain, and it returns the tenant’s ID. Ask again with <code>[tenant].onmicrosoft.com</code>. If the IDs match, the SharePoint name belongs to the agency. A region field reading “GCC” marks Microsoft’s government community cloud.</li>
+<li><strong>Search passive DNS and certificate logs.</strong> Services such as <a href="https://securitytrails.com/">SecurityTrails</a>, owned by Recorded Future since <a href="https://www.prnewswire.com/news-releases/recorded-future-acquires-securitytrails-301453543.html">January 2022</a>, keep histories of DNS names. Certificate-transparency logs, searchable at <a href="https://crt.sh/">crt.sh</a>, list the certificates issued for an agency’s own domains. Both are better at finding an agency’s websites than its SharePoint, which sits behind Microsoft’s certificates.</li>
+</ol>
+<aside class="cli-box" aria-label="For the command line">
+<p class="cli-h">For the command line</p>
+<p>Three public lookups. None of them touches the agency’s servers.</p>
+<pre><code># 1. Does the SharePoint name exist? (DNS-over-HTTPS; NXDOMAIN means no)
+curl -s "https://dns.google/resolve?name=unitedstatessecretservice.sharepoint.com&amp;type=A"
+
+# 2. Which Microsoft tenant signs in this email domain, and in which cloud?
+curl -s "https://login.microsoftonline.com/secretservice.gov/v2.0/.well-known/openid-configuration" \
+  | jq -r .issuer,.tenant_region_sub_scope
+
+# 3. Does the tenant's original name map to the same tenant?
+curl -s "https://login.microsoftonline.com/unitedstatessecretservice.onmicrosoft.com/v2.0/.well-known/openid-configuration" \
+  | jq -r .issuer</code></pre>
+<p>If the issuer lines match, the domains share one tenant. A <code>GCC</code> sub-scope marks Microsoft’s government community cloud.</p>
+</aside>
+<p>Know what each result proves. A name that resolves shows that a Microsoft customer by that name exists. It does not show who the customer is. Anyone can register a tenant with a government-sounding name. The tenant-ID match is what ties a SharePoint name to an agency’s own email domains. A name that fails to resolve is a dead end for now, but it may be a typo, a renamed tenant or a retired host. Check again before you write it into a request.</p>
+<aside class="example-box" aria-label="Example: The Secret Service tenant">
+<p class="ex-k">Example</p>
+<p class="ex-t">The Secret Service tenant</p>
+<p>The Secret Service’s email domain is <code>secretservice.gov</code>. Its SharePoint is not <code>usss.sharepoint.com</code>. That name does not exist. It is <code>unitedstatessecretservice.sharepoint.com</code>, with personal OneDrive storage at <code>unitedstatessecretservice-my.sharepoint.com</code>.</p>
+<p>Both Secret Service names resolve. <code>usss.sharepoint.com</code> and a made-up control name return NXDOMAIN. For <code>secretservice.gov</code>, <code>usss.dhs.gov</code> and <code>unitedstatessecretservice.onmicrosoft.com</code>, the tenant ID in Microsoft’s sign-in metadata is the same, and the region field reads “GCC.”</p>
+</aside>
+<p>Start with the host-finder table. A spreadsheet compiled by Redwing Technologies lists 431 FOIA components, nearly all federal, with their known SharePoint hosts. OctoProbe checked every host in it by DNS on Oct. 20, 2026. Of 334 unique names, 282 resolved and 52 did not. Treat it as a starting list, not an answer. Search your agency, then run the three checks yourself.</p>
+<figure class="ixm-fig" id="fig-hostfinder">
+<div class="ixm " data-ixm="hostfinder">
+<div class="ixm-head"><span class="ixm-kicker">Interactive · searchable table</span><span class="ixm-title">Federal FOIA components and their SharePoint hostnames</span></div>
+<div class="ixm-live">
+<div class="hf-sum"><p><span class="fe-big">431</span> rows</p><p><span class="fe-big">334</span> unique hosts</p><p><span class="fe-big fe-blue">282</span> resolve</p><p><span class="fe-big fe-red">52</span> no DNS record</p></div>
+<div class="ixm-controls hf-controls" hidden>
+<label class="ixm-search"><span class="sr-only">Search components or hostnames</span><input type="search" placeholder="Search agency or hostname" data-hf="q"></label>
+<label><span class="sr-only">Department</span><select data-hf="dept"><option value="">All departments</option><option value="Department of Agriculture">Department of Agriculture (20)</option><option value="Department of Commerce">Department of Commerce (15)</option><option value="Department of Defense">Department of Defense (36)</option><option value="Department of Education">Department of Education (2)</option><option value="Department of Energy">Department of Energy (19)</option><option value="Department of Health and Human Services">Department of Health and Human Services (12)</option><option value="Department of Homeland Security">Department of Homeland Security (14)</option><option value="Department of Housing and Urban Development">Department of Housing and Urban Development (12)</option><option value="Department of Justice">Department of Justice (41)</option><option value="Department of Labor">Department of Labor (26)</option><option value="Department of Transportation">Department of Transportation (12)</option><option value="Department of Veterans Affairs">Department of Veterans Affairs (24)</option><option value="Department of the Interior">Department of the Interior (14)</option><option value="Department of the Treasury">Department of the Treasury (9)</option><option value="Equal Employment Opportunity Commission">Equal Employment Opportunity Commission (18)</option><option value="Federal Housing Finance Agency">Federal Housing Finance Agency (2)</option><option value="Federal Labor Relations Authority">Federal Labor Relations Authority (2)</option><option value="General Services Administration">General Services Administration (2)</option><option value="Legal Services Corporation">Legal Services Corporation (2)</option><option value="National Aeronautics and Space Administration">National Aeronautics and Space Administration (13)</option><option value="National Archives and Records Administration">National Archives and Records Administration (22)</option><option value="National Credit Union Administration">National Credit Union Administration (2)</option><option value="National Labor Relations Board">National Labor Relations Board (2)</option><option value="National Railroad Passenger Corporation">National Railroad Passenger Corporation (2)</option><option value="National Science Foundation">National Science Foundation (2)</option><option value="Peace Corps">Peace Corps (2)</option><option value="U.S. Department of State">U.S. Department of State (3)</option><option value="U.S. Railroad Retirement Board">U.S. Railroad Retirement Board (2)</option><option value="United States Postal Service">United States Postal Service (3)</option><option value="Westpoint">Westpoint (1)</option><option value="Independent / untagged">Independent / untagged (95)</option></select></label>
+<div class="ixm-chips" role="group" aria-label="Filter rows"><button type="button" class="chip" data-hf-f="all" aria-pressed="true">All</button><button type="button" class="chip" data-hf-f="note" aria-pressed="false">Rows with notes</button><button type="button" class="chip" data-hf-f="none" aria-pressed="false">No resolving host</button></div>
+<span class="hf-count" aria-live="polite"></span>
+</div>
+<p class="hf-static-note">Showing the 35 Homeland Security rows and rows with notes. The full table of 431 rows is in the <a href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/federal-foia-sharepoint-hostnames.csv">CSV</a>.</p>
+<section class="ixm-table hf-scroll" tabindex="0" aria-label="SharePoint hostname table" data-src="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/assets/hostfinder-data.json">
+<table class="hf-table"><thead><tr><th scope="col">Row</th><th scope="col">Component</th><th scope="col">Hostnames in the sheet, with DNS check</th><th scope="col">Notes</th></tr></thead><tbody>
+<tr data-dept="Department of Education" data-dns="none" data-note="1"><td class="hf-row">73</td><td><strong>Department of Education</strong><span class="hf-dept">Department of Education</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-nx"><code>ed.sharepoint.com</code> <span class="hf-b">no DNS record</span></span></span></td><td class="hf-note"><p>No listed host resolves.</p></td></tr><tr data-dept="Department of Education" data-dns="none" data-note="1"><td class="hf-row">74</td><td><strong>Office of Inspector General</strong><span class="hf-dept">Department of Education</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-nx"><code>ed.sharepoint.com</code> <span class="hf-b">no DNS record</span></span></span></td><td class="hf-note"><p>No listed host resolves.</p></td></tr><tr data-dept="Department of Homeland Security" data-dns="all" data-note="0"><td class="hf-row">106</td><td><strong>U.S. Customs &amp; Border Protection</strong><span class="hf-dept">Department of Homeland Security</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-ok"><code>usdhs.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-ok"><code>usdhs-my.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Sub-agency</span> <span class="hf-h hf-ok"><code>cbpgov.sharepoint.com</code> <span class="hf-b">resolves</span></span><span class="hf-h hf-ok"><code>cbpgov-my.sharepoint.com</code> <span class="hf-b">resolves</span></span></span></td><td class="hf-note"></td></tr><tr data-dept="Department of Homeland Security" data-dns="some" data-note="1"><td class="hf-row">107</td><td><strong>United States Secret Service</strong><span class="hf-dept">Department of Homeland Security</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-ok"><code>usdhs.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-ok"><code>usdhs-my.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Sub-agency</span> <span class="hf-h hf-nx"><code>usss.sharepoint.com</code> <span class="hf-b">no DNS record</span></span></span></td><td class="hf-note"><p>Sheet lists <code>usss.sharepoint.com</code>, which has no DNS record. The live Secret Service tenant is <code>unitedstatessecretservice.sharepoint.com</code> (and <code>-my</code>), the hosts named in the author’s request and in the Rowe log. <code>usdhs</code> is DHS headquarters’ tenant.</p></td></tr><tr data-dept="Department of Homeland Security" data-dns="some" data-note="1"><td class="hf-row">108</td><td><strong>Cybersecurity and Information Security Agency</strong><span class="hf-dept">Department of Homeland Security</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-ok"><code>usdhs.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-ok"><code>usdhs-my.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Sub-agency</span> <span class="hf-h hf-nx"><code>cisa.sharepoint.com</code> <span class="hf-b">no DNS record</span></span><span class="hf-h hf-nx"><code>cisa-my.sharepoint.com</code> <span class="hf-b">no DNS record</span></span></span></td><td class="hf-note"><p>Agency name is wrong in the sheet: it is the Cybersecurity and <em>Infrastructure</em> Security Agency. The listed <code>cisa</code> hosts have no DNS record.</p></td></tr><tr data-dept="Department of Homeland Security" data-dns="all" data-note="0"><td class="hf-row">109</td><td><strong>DHS Privacy Office</strong><span class="hf-dept">Department of Homeland Security</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-ok"><code>usdhs.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-ok"><code>usdhs-my.sharepoint.com</code> <span class="hf-b">resolves</span></span></span></td><td class="hf-note"></td></tr><tr data-dept="Department of Homeland Security" data-dns="all" data-note="0"><td class="hf-row">110</td><td><strong>Federal Emergency Management Agency</strong><span class="hf-dept">Department of Homeland Security</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-ok"><code>usdhs.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-ok"><code>usdhs-my.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Sub-agency</span> <span class="hf-h hf-ok"><code>usfema.sharepoint.com</code> <span class="hf-b">resolves</span></span><span class="hf-h hf-ok"><code>usfema-my.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Admin</span> <span class="hf-h hf-ok"><code>usfema-admin.sharepoint.com</code> <span class="hf-b">resolves</span></span></span></td><td class="hf-note"></td></tr><tr data-dept="Department of Homeland Security" data-dns="all" data-note="0"><td class="hf-row">111</td><td><strong>Federal Law Enforcement Training Center</strong><span class="hf-dept">Department of Homeland Security</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-ok"><code>usdhs.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-ok"><code>usdhs-my.sharepoint.com</code> <span class="hf-b">resolves</span></span></span></td><td class="hf-note"></td></tr><tr data-dept="Department of Homeland Security" data-dns="all" data-note="0"><td class="hf-row">112</td><td><strong>Federal Protective Service</strong><span class="hf-dept">Department of Homeland Security</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-ok"><code>usdhs.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-ok"><code>usdhs-my.sharepoint.com</code> <span class="hf-b">resolves</span></span></span></td><td class="hf-note"></td></tr><tr data-dept="Department of Homeland Security" data-dns="all" data-note="0"><td class="hf-row">113</td><td><strong>Office of Biometric Identity Management</strong><span class="hf-dept">Department of Homeland Security</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-ok"><code>usdhs.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-ok"><code>usdhs-my.sharepoint.com</code> <span class="hf-b">resolves</span></span></span></td><td class="hf-note"></td></tr><tr data-dept="Department of Homeland Security" data-dns="all" data-note="0"><td class="hf-row">114</td><td><strong>Office of the Inspector General</strong><span class="hf-dept">Department of Homeland Security</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-ok"><code>usdhs.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-ok"><code>usdhs-my.sharepoint.com</code> <span class="hf-b">resolves</span></span></span></td><td class="hf-note"></td></tr><tr data-dept="Department of Homeland Security" data-dns="all" data-note="1"><td class="hf-row">115</td><td><strong>Select Department of Homeland Security component for me</strong><span class="hf-dept">Department of Homeland Security</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-ok"><code>usdhs.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-ok"><code>usdhs-my.sharepoint.com</code> <span class="hf-b">resolves</span></span></span></td><td class="hf-note"><p>Not a component: this row is a FOIA.gov menu option captured with the list.</p></td></tr><tr data-dept="Department of Homeland Security" data-dns="all" data-note="0"><td class="hf-row">116</td><td><strong>Transportation Security Administration</strong><span class="hf-dept">Department of Homeland Security</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-ok"><code>usdhs.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-ok"><code>usdhs-my.sharepoint.com</code> <span class="hf-b">resolves</span></span></span></td><td class="hf-note"></td></tr><tr data-dept="Department of Homeland Security" data-dns="all" data-note="0"><td class="hf-row">117</td><td><strong>U.S. Citizenship &amp; Immigration Services</strong><span class="hf-dept">Department of Homeland Security</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-ok"><code>usdhs.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-ok"><code>usdhs-my.sharepoint.com</code> <span class="hf-b">resolves</span></span></span></td><td class="hf-note"></td></tr><tr data-dept="Department of Homeland Security" data-dns="all" data-note="0"><td class="hf-row">118</td><td><strong>U.S. Coast Guard</strong><span class="hf-dept">Department of Homeland Security</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-ok"><code>usdhs.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-ok"><code>usdhs-my.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Sub-agency</span> <span class="hf-h hf-ok"><code>uscg.sharepoint-mil.us</code> <span class="hf-b">resolves</span></span><span class="hf-h hf-ok"><code>uscg-my.sharepoint-mil.us</code> <span class="hf-b">resolves</span></span><span class="hf-h hf-ok"><code>uscg-web.sharepoint-mil.us</code> <span class="hf-b">resolves</span></span></span></td><td class="hf-note"></td></tr><tr data-dept="Department of Homeland Security" data-dns="all" data-note="0"><td class="hf-row">119</td><td><strong>U.S. Immigration &amp; Customs Enforcement</strong><span class="hf-dept">Department of Homeland Security</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-ok"><code>usdhs.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-ok"><code>usdhs-my.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Sub-agency</span> <span class="hf-h hf-ok"><code>icegov.sharepoint.com</code> <span class="hf-b">resolves</span></span><span class="hf-h hf-ok"><code>icegov-my.sharepoint.com</code> <span class="hf-b">resolves</span></span><span class="hf-h hf-ok"><code>icegov-656b92bc306ea9.sharepoint.com</code> <span class="hf-b">resolves</span></span><span class="hf-h hf-ok"><code>icegov-5d604886c627e9.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Admin</span> <span class="hf-h hf-ok"><code>icegov-admin.sharepoint.com</code> <span class="hf-b">resolves</span></span></span></td><td class="hf-note"></td></tr><tr data-dept="Department of the Interior" data-dns="some" data-note="1"><td class="hf-row">200</td><td><strong>Bureau of Reclamation</strong><span class="hf-dept">Department of the Interior</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-ok"><code>https://doimspp.sharepoint.com/</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-ok"><code>doimspp-my.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Sub-agency</span> <span class="hf-h hf-ok"><code>https://doimspp.sharepoint.com/sites/bor-policyandprograms/SitePages/Reclamation-Manual-Coordinators.aspx</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Office</span> <span class="hf-h hf-nx"><code>https://doamspp.sharepoint.com/sites/bor-83-CRD&quot;</code> <span class="hf-b">no DNS record</span></span></span></td><td class="hf-note"><p>The Office host <code>doamspp</code> is a typo for <code>doimspp</code> and carries a stray quotation mark; <code>doamspp</code> has no DNS record.</p></td></tr><tr data-dept="General Services Administration" data-dns="none" data-note="1"><td class="hf-row">280</td><td><strong>Headquarters</strong><span class="hf-dept">General Services Administration</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-nx"><code>gsa.sharepoint.com</code> <span class="hf-b">no DNS record</span></span></span></td><td class="hf-note"><p>No listed host resolves.</p></td></tr><tr data-dept="General Services Administration" data-dns="none" data-note="1"><td class="hf-row">281</td><td><strong>Office of Inspector General</strong><span class="hf-dept">General Services Administration</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-nx"><code>gsa.sharepoint.com</code> <span class="hf-b">no DNS record</span></span></span></td><td class="hf-note"><p>No listed host resolves.</p></td></tr><tr data-dept="Legal Services Corporation" data-dns="none" data-note="1"><td class="hf-row">282</td><td><strong>Office of Inspector General</strong><span class="hf-dept">Legal Services Corporation</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-nx"><code>lsc.sharepoint.com</code> <span class="hf-b">no DNS record</span></span></span></td><td class="hf-note"><p>No listed host resolves.</p></td></tr><tr data-dept="Legal Services Corporation" data-dns="none" data-note="1"><td class="hf-row">283</td><td><strong>Office of Legal Affairs</strong><span class="hf-dept">Legal Services Corporation</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-nx"><code>lsc.sharepoint.com</code> <span class="hf-b">no DNS record</span></span></span></td><td class="hf-note"><p>No listed host resolves.</p></td></tr><tr data-dept="United States Postal Service" data-dns="all" data-note="1"><td class="hf-row">334</td><td><strong>Office of the Inspector General</strong><span class="hf-dept">United States Postal Service</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-ok"><code>usps365.sharepoint.com</code> <span class="hf-b">resolves</span></span><span class="hf-mm">Cell link points to <code>usps365-my.sharepoint.com</code></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-ok"><code>usps365-my.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Sub-agency</span> <span class="hf-h hf-ok"><code>uspsoiglab.sharepoint.com</code> <span class="hf-b">resolves</span></span><span class="hf-h hf-ok"><code>uspsoiglab-my.sharepoint.com</code> <span class="hf-b">resolves</span></span></span></td><td class="hf-note"><p>The cell’s hyperlink and its displayed text name different hosts.</p></td></tr><tr data-dept="United States Postal Service" data-dns="all" data-note="1"><td class="hf-row">335</td><td><strong>Postal Inspection Service</strong><span class="hf-dept">United States Postal Service</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-ok"><code>usps365.sharepoint.com</code> <span class="hf-b">resolves</span></span><span class="hf-mm">Cell link points to <code>usps365-my.sharepoint.com</code></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-ok"><code>usps365-my.sharepoint.com</code> <span class="hf-b">resolves</span></span></span></td><td class="hf-note"><p>The cell’s hyperlink and its displayed text name different hosts.</p></td></tr><tr data-dept="United States Postal Service" data-dns="all" data-note="1"><td class="hf-row">336</td><td><strong>USPS Headquarters Office</strong><span class="hf-dept">United States Postal Service</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-ok"><code>usps365.sharepoint.com</code> <span class="hf-b">resolves</span></span><span class="hf-mm">Cell link points to <code>usps365-my.sharepoint.com</code></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-ok"><code>usps365-my.sharepoint.com</code> <span class="hf-b">resolves</span></span></span></td><td class="hf-note"><p>The cell’s hyperlink and its displayed text name different hosts.</p></td></tr><tr data-dept="Independent / untagged" data-dns="all" data-note="1"><td class="hf-row">338</td><td><strong>District of Columbia</strong><span class="hf-dept">Independent / untagged</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-ok"><code>dcgovict.sharepoint.com</code> <span class="hf-b">resolves</span></span><span class="hf-mm">Cell link points to <code>dcgovict-my.sharepoint.com</code></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-ok"><code>dcgovict-my.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Admin</span> <span class="hf-h hf-ok"><code>dcgovict-admin.sharepoint.com</code> <span class="hf-b">resolves</span></span></span></td><td class="hf-note"><p>D.C. government. It answers requests under the D.C. FOIA, not the federal FOIA.</p><p>The cell’s hyperlink and its displayed text name different hosts.</p></td></tr><tr data-dept="Independent / untagged" data-dns="all" data-note="1"><td class="hf-row">343</td><td><strong>U.S. Chamber of Commerce</strong><span class="hf-dept">Independent / untagged</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-ok"><code>uscc.sharepoint.com</code> <span class="hf-b">resolves</span></span><span class="hf-mm">Cell link points to <code>uscc-my.sharepoint.com</code></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-ok"><code>uscc-my.sharepoint.com</code> <span class="hf-b">resolves</span></span></span></td><td class="hf-note"><p>The U.S. Chamber of Commerce is a private business group, not a federal agency. FOIA does not apply to it.</p><p>The cell’s hyperlink and its displayed text name different hosts.</p></td></tr><tr data-dept="Independent / untagged" data-dns="none" data-note="1"><td class="hf-row">359</td><td><strong>Court Services and Offender Supervision Agency</strong><span class="hf-dept">Independent / untagged</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-nx"><code>csosa.sharepoint.com</code> <span class="hf-b">no DNS record</span></span></span></td><td class="hf-note"><p>No listed host resolves.</p></td></tr><tr data-dept="Independent / untagged" data-dns="some" data-note="1"><td class="hf-row">362</td><td><strong>Environmental Protection Agency</strong><span class="hf-dept">Independent / untagged</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-ok"><code>usepa.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-ok"><code>usepa-my.sharepoint.com</code> <span class="hf-b">resolves</span></span><span class="hf-h hf-ok"><code>usepa-7291dac51b289a.sharepoint.com</code> <span class="hf-b">resolves</span></span><span class="hf-h hf-nx"><code>usepa-web.sharepoint.com</code> <span class="hf-b">no DNS record</span></span><span class="hf-mm">Cell link points to <code>usepa.sharepoint.com</code></span></span><span class="hf-col"><span class="hf-lab">Admin</span> <span class="hf-h hf-ok"><code>usepa-admin.sharepoint.com</code> <span class="hf-b">resolves</span></span></span></td><td class="hf-note"><p>The cell’s hyperlink and its displayed text name different hosts.</p></td></tr><tr data-dept="Independent / untagged" data-dns="all" data-note="1"><td class="hf-row">372</td><td><strong>Federal Mediation and Conciliation Service</strong><span class="hf-dept">Independent / untagged</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-ok"><code>fmcsgov.sharepoint.com</code> <span class="hf-b">resolves</span></span><span class="hf-mm">Cell link points to <code>fmcsgov-my.sharepoint.com</code></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-ok"><code>fmcsgov-my.sharepoint.com</code> <span class="hf-b">resolves</span></span></span></td><td class="hf-note"><p>The cell’s hyperlink and its displayed text name different hosts.</p></td></tr><tr data-dept="Independent / untagged" data-dns="all" data-note="1"><td class="hf-row">381</td><td><strong>Institute of Museum and Library Services</strong><span class="hf-dept">Independent / untagged</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-ok"><code>imls365.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-ok"><code>imls365-my.sharepoint.com</code> <span class="hf-b">resolves</span></span><span class="hf-mm">Cell link points to <code>imls365.sharepoint.com</code></span></span></td><td class="hf-note"><p>The cell’s hyperlink and its displayed text name different hosts.</p></td></tr><tr data-dept="Independent / untagged" data-dns="none" data-note="1"><td class="hf-row">393</td><td><strong>National Mediation Board</strong><span class="hf-dept">Independent / untagged</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-nx"><code>NMB.sharepoint.com</code> <span class="hf-b">no DNS record</span></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-nx"><code>NMB-my.sharepoint.com</code> <span class="hf-b">no DNS record</span></span></span></td><td class="hf-note"><p>No listed host resolves.</p></td></tr><tr data-dept="Independent / untagged" data-dns="all" data-note="1"><td class="hf-row">398</td><td><strong>Office of Government Ethics</strong><span class="hf-dept">Independent / untagged</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-ok"><code>OGE.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-ok"><code>OGE-my.sharepoint.com</code> <span class="hf-b">resolves</span></span><span class="hf-mm">Cell link points to <code>oge.sharepoint.com</code></span></span></td><td class="hf-note"><p>The cell’s hyperlink and its displayed text name different hosts.</p></td></tr><tr data-dept="Independent / untagged" data-dns="none" data-note="1"><td class="hf-row">401</td><td><strong>Office of Navajo and Hopi Indian Relocation</strong><span class="hf-dept">Independent / untagged</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-nx"><code>onhir.sharepoint.com</code> <span class="hf-b">no DNS record</span></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-nx"><code>onhir-my.sharepoint.com</code> <span class="hf-b">no DNS record</span></span></span></td><td class="hf-note"><p>No listed host resolves.</p></td></tr><tr data-dept="Independent / untagged" data-dns="some" data-note="1"><td class="hf-row">405</td><td><strong>Office of Special Counsel</strong><span class="hf-dept">Independent / untagged</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-ok"><code>osc.sharepoint.com</code> <span class="hf-b">resolves</span></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-ok"><code>osc-my.sharepoint.com</code> <span class="hf-b">resolves</span></span><span class="hf-h hf-nx"><code>osc-public.sharepoint.com</code> <span class="hf-b">no DNS record</span></span><span class="hf-mm">Cell link points to <code>osc.sharepoint.com</code></span></span></td><td class="hf-note"><p>The cell’s hyperlink and its displayed text name different hosts.</p></td></tr><tr data-dept="Independent / untagged" data-dns="none" data-note="1"><td class="hf-row">409</td><td><strong>Office of the Special Inspector General for Afghanistan Reconstruction</strong><span class="hf-dept">Independent / untagged</span></td><td><span class="hf-col"><span class="hf-lab">Base</span> <span class="hf-h hf-nx"><code>sigar.sharepoint.com</code> <span class="hf-b">no DNS record</span></span></span><span class="hf-col"><span class="hf-lab">Personal (-my)</span> <span class="hf-h hf-nx"><code>sigar-my.sharepoint.com</code> <span class="hf-b">no DNS record</span></span></span><span class="hf-col"><span class="hf-lab">Admin</span> <span class="hf-h hf-nx"><code>sigar-admin.sharepoint.com</code> <span class="hf-b">no DNS record</span></span></span></td><td class="hf-note"><p>No listed host resolves.</p></td></tr>
+</tbody></table></section>
+<p class="hf-dl">Compiled by Redwing Technologies. Download the data unaltered: <a href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/federal-foia-sharepoint-hostnames.xlsx">XLSX</a> · <a href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/federal-foia-sharepoint-hostnames.csv">CSV</a> · DNS results: <a href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/dns-check-2026-10-20.csv">CSV</a></p>
+</div>
+</div>
+<figcaption>Component names, departments and hostnames are shown as they appear in the sheet; row numbers match the XLSX. DNS badges record a passive lookup on Oct. 20, 2026: “resolves” means the name exists in Microsoft’s DNS, not that the agency owns it. “No DNS record” means the name did not exist that day. Hostnames are shown as text, not links.</figcaption>
+</figure>
+<aside class="example-box" aria-label="Example: Why every name needs checking">
+<p class="ex-k">Example</p>
+<p class="ex-t">Why every name needs checking</p>
+<p>The sheet’s own Secret Service row lists <code>usss.sharepoint.com</code>, which does not exist, alongside DHS headquarters’ <code>usdhs</code> tenant. The live Secret Service tenant is the one named in the author’s request and in the Rowe log.</p>
+</aside>
+<p class="editor-note">Editor’s note: OctoProbe hosts the spreadsheet unaltered and flags known errors in the table above rather than changing the file. The Secret Service row’s <code>usss.sharepoint.com</code> does not resolve; the live tenant is <code>unitedstatessecretservice.sharepoint.com</code>. The Cybersecurity and Infrastructure Security Agency is misnamed as the “Cybersecurity and Information Security Agency.” The Bureau of Reclamation row’s <code>doamspp</code> should read <code>doimspp</code>. The U.S. Chamber of Commerce and District of Columbia rows are not covered by the federal FOIA. In 10 cells, the hyperlink and the displayed text name different hosts: C334–C336, C338, C343, C372, D362, D381, D398 and D405.</p>
+<p class="editor-note">Editor’s note: Every check in this guide is passive. The Computer Fraud and Abuse Act makes it a crime to anyone who “<a href="https://www.law.cornell.edu/uscode/text/18/1030">intentionally accesses a computer without authorization or exceeds authorized access</a>” and obtains information. Looking up a public name is not access. Signing in is.</p>
+<h2 id="step-2-identify-the-custodian-by-name-or-title">Step 2: Identify the custodian by name or title</h2>
+<p>You don’t need an email address. Agencies search by custodian, the person whose records are at issue, and a name with a title is enough. If you don’t know the name, a title can work; Cause of Action Institute <a href="https://law.justia.com/cases/federal/appellate-courts/cadc/20-5006/20-5006-2021-08-20.html">named two of its officials by position</a>. A name and title together leave the least room for error.</p>
+<p>Start with the agency’s own words. Leadership pages, testimony, org charts and press releases give titles and dates. Those dates matter, because your request should cover a period when the person held the job.</p>
+<p>FOIA logs are a second source. Many agencies post them, and they show which custodians other requesters have named and what came back.</p>
+<p>If a release shows a username, note it. Don’t build on it. An address pattern guessed from one partial username is a guess, and your request doesn’t need it.</p>
+<aside class="example-box" aria-label="Example: Naming Ronald L. Rowe Jr.">
+<p class="ex-k">Example</p>
+<p class="ex-t">Naming Ronald L. Rowe Jr.</p>
+<p>The 2023 requests named “Ronald L. Rowe, Jr., Deputy Director,” and the agency found his records. The Secret Service announced his appointment in an <a href="https://www.secretservice.gov/newsroom/releases/2023/04/secret-service-welcomes-veteran-special-agent-ronald-rowe-deputy-director">April 18, 2023, release</a> that said, “His tenure will begin in the coming months.” His <a href="https://www.congress.gov/118/meeting/house/117738/witnesses/HHRG-118-ZT00-Bio-RoweR-20241205.pdf">congressional witness biography</a> from December 2024 says he was “Appointed in April 2023.”</p>
+<p>Titles change, and the request should follow them. In the fall of 2023, Rowe was the deputy director, and the requests said so. By April 2025, he was no longer acting director; Sean M. Curran took over the agency on <a href="https://www.secretservice.gov/about/leadership/director">Jan. 22, 2025</a>. That request named Rowe as the custodian for documents and a year of card statements covering 2024, when he served as deputy director and then as acting director. The release page shows a username beginning “ron.rowe.” Neither request needed it.</p>
+</aside>
+<h2 id="step-3-choose-the-record-types">Step 3: Choose the record types</h2>
+<p>Once you know the tenant and the person, these records come into reach. Ask for each one by the system that holds it.</p>
+<h3 id="browser-history-and-web-proxy-logs">Browser history and web-proxy logs</h3>
+<p>Ask for both the history and the logs. Request the browser history itself, and request any web-proxy, secure-gateway, DNS or endpoint logs that record what the custodian’s accounts and devices visited. <em>Cause of Action</em> turned partly on employees’ freedom to delete their own histories. A log kept centrally by the agency’s network or security tools stands on different footing.</p>
+<aside class="example-box" aria-label="Example: What the Secret Service returned">
+<p class="ex-k">Example</p>
+<p class="ex-t">What the Secret Service returned</p>
+<p>Each of the five 2023 requests asked first for “A copy of the individual’s browser history (whether exported from Chrome, Safari, Windows Explorer, Mozilla, etc), to include all file attachments regardless of type and the entire email chain for completeness.”</p>
+<p>The Rowe page is not a file exported from a browser. It has host names but no page addresses, a username column and background Microsoft traffic. It looks more like a log kept by the agency’s network or security tools than a history stored on one laptop. The agency sent the records on paper. By the author’s count, the stack ran about 500 pages.</p>
+</aside>
+<p class="editor-note">Editor’s note: The 10/4/2023 rows on the Rowe page list host names for ad auctions and ad verification, among them <code>fastlane.rubiconproject.com</code>, <code>ssum-sec.casalemedia.com</code>, <code>eb2.3lift.com</code>, <code>match.adsrvr.org</code>, <code>acdn.adnxs.com</code>, <code>x.bidswitch.net</code> and <code>cdn.doubleverify.com</code>. These are the kind of real-time-bidding systems explained in OctoProbe’s <a href="/blog/dhs-phone-location-data-legal-opinion-foia/">report on DHS and phone location data</a>. The log shows only that a browser on the account contacted them. It does not show what was read, what was shown or what data left the session.</p>
+<h3 id="sharepoint-documents-created-and-edited">SharePoint documents created and edited</h3>
+<p>Ask for documents by who made or changed them. Microsoft’s eDiscovery tools, which agencies use to search their own systems, track a document’s “<a href="https://learn.microsoft.com/en-us/purview/edisc-ref-document-metadata-fields">Created by</a>” value and “Last modified by,” described as “The user who last modified the document.” The audit log records “Modified file” and “Uploaded file” events, among others, according to <a href="https://learn.microsoft.com/en-us/purview/audit-log-activities">Microsoft’s activity list</a>.</p>
+<p>Name both hosts: the main SharePoint and the custodian’s OneDrive at <code>[tenant]-my.sharepoint.com</code>. Ask for the documents themselves, sorted by last-modified date, over a fixed period. Step 5 explains why.</p>
+<p>For documents a custodian commented on, ask for the documents. OctoProbe found no comment event for SharePoint files in Microsoft’s audit activity list, so a request for a comment log may come back empty even when the documents exist.</p>
+<h3 id="teams-messages-channel-files-and-chat-files">Teams messages, channel files and chat files</h3>
+<p>Teams chats are easy to miss in a records search. Microsoft’s eDiscovery guide says “<a href="https://learn.microsoft.com/en-us/purview/edisc-search-teams">Teams data is stored in Azure Cosmos DB. Exchange Online stores Teams compliance records</a>” that eDiscovery searches. In practice, chat messages are copied into mailboxes, and shared files land in OneDrive or SharePoint. Name each place:</p>
+<ul>
+<li><strong>Chats</strong> (1:1 and group): the custodian’s Exchange Online mailbox.</li>
+<li><strong>Channel posts:</strong> the team’s mailbox, by team name.</li>
+<li><strong>Channel files:</strong> the team’s SharePoint site.</li>
+<li><strong>Files shared in chats:</strong> the sharer’s OneDrive.</li>
+</ul>
+<figure class="ixm-fig" id="fig-m365">
+<div class="ixm " data-ixm="m365">
+<div class="ixm-head"><span class="ixm-kicker">Reference · Microsoft documentation</span><span class="ixm-title">Where Microsoft 365 keeps it</span></div>
+<div class="ixm-live">
+<div class="ixm-table"><table class="m3-table"><thead><tr><th scope="col">Record</th><th scope="col">What Microsoft says</th><th scope="col">Name it in the request as</th><th scope="col">Source</th></tr></thead><tbody>
+<tr><th scope="row">1:1 chats</th><td data-label="What Microsoft says">“Messages in 1:1 chats are stored in the Exchange Online mailbox of all chat participants.”</td><td data-label="Name it in the request as">The custodian’s Exchange Online mailbox</td><td data-label="Source"><a href="https://learn.microsoft.com/en-us/purview/edisc-search-teams">Microsoft Learn</a></td></tr>
+<tr><th scope="row">Group chats</th><td data-label="What Microsoft says">“Messages in group chats are stored in the Exchange Online mailbox of all chat participants.”</td><td data-label="Name it in the request as">The custodian’s Exchange Online mailbox</td><td data-label="Source"><a href="https://learn.microsoft.com/en-us/purview/edisc-search-teams">Microsoft Learn</a></td></tr>
+<tr><th scope="row">Files shared in chats</th><td data-label="What Microsoft says">“Files shared in a 1:1 chat are stored in the OneDrive account of the person who shared the file.”</td><td data-label="Name it in the request as">The custodian’s OneDrive (<code>[tenant]-my.sharepoint.com</code>)</td><td data-label="Source"><a href="https://learn.microsoft.com/en-us/purview/edisc-search-teams">Microsoft Learn</a></td></tr>
+<tr><th scope="row">Standard channel posts</th><td data-label="What Microsoft says">“All channel messages and posts are stored in the Exchange Online mailbox associated with the team.”</td><td data-label="Name it in the request as">The team’s mailbox, by team name</td><td data-label="Source"><a href="https://learn.microsoft.com/en-us/purview/edisc-search-teams">Microsoft Learn</a></td></tr>
+<tr><th scope="row">Channel files</th><td data-label="What Microsoft says">“Files shared in a channel are stored in the SharePoint site associated with the team.”</td><td data-label="Name it in the request as">The team’s SharePoint site</td><td data-label="Source"><a href="https://learn.microsoft.com/en-us/purview/edisc-search-teams">Microsoft Learn</a></td></tr>
+<tr><th scope="row">Who created or edited a document</th><td data-label="What Microsoft says">eDiscovery metadata includes “Created by” (“Created by value from SharePoint”) and “Last modified by” (“The user who last modified the document”).</td><td data-label="Name it in the request as">SharePoint and OneDrive, sorted by last-modified date</td><td data-label="Source"><a href="https://learn.microsoft.com/en-us/purview/edisc-ref-document-metadata-fields">Microsoft Learn</a></td></tr>
+<tr><th scope="row">File activity</th><td data-label="What Microsoft says">The audit log records “Accessed file” (<code>FileAccessed</code>), “Modified file” (<code>FileModified</code>) and “Uploaded file” (<code>FileUploaded</code>) events.</td><td data-label="Name it in the request as">Audit records for the custodian’s account, if retained</td><td data-label="Source"><a href="https://learn.microsoft.com/en-us/purview/audit-log-activities">Microsoft Learn</a></td></tr>
+</tbody></table></div>
+</div>
+</div>
+<figcaption>Quotes are from Microsoft’s eDiscovery and audit documentation. Microsoft says Teams data itself lives in Azure Cosmos DB and Exchange keeps the compliance copies eDiscovery searches. How long audit records are kept depends on the agency’s license and settings.</figcaption>
+</figure>
+<aside class="example-box" aria-label="Example: Other requesters already ask">
+<p class="ex-k">Example</p>
+<p class="ex-t">Other requesters already ask</p>
+<p>At least a dozen entries in the Secret Service’s FY 2024 log seek “<a href="https://www.secretservice.gov/sites/default/files/reports/2025-02/FOIA-Log-FY-2024.pdf#page=107">any chats in the relevant virtual platforms (e.g., Microsoft Teams, Zoom, Webex, etc.)</a>.” You can go further by naming the custodian’s mailbox for chats, the team’s mailbox and SharePoint site for channels and the custodian’s OneDrive for files shared in chats.</p>
+</aside>
+<h3 id="card-statements-and-sitemaps">Card statements and sitemaps</h3>
+<p>Two more records round out a request. An official’s agency card statements show spending. A sitemap of the agency’s SharePoint shows how the agency organizes its work, and its site names tell you which offices and systems to name next.</p>
+<aside class="example-box" aria-label="Example: The 2025 request">
+<p class="ex-k">Example</p>
+<p class="ex-t">The 2025 request</p>
+<p>The Secret Service received a four-part request on April 21, 2025. It asked for the last 100 documents Rowe edited and the last 100 he created on the agency’s SharePoint, a year of his agency card statements and a current sitemap of the agency’s SharePoint. Each item named the agency’s real SharePoint addresses. The release ran 117 pages. It held a sitemap of roughly 660 internal sites and 105 pages of blacked-out card statements. The PDF contains no records for the two document items.</p>
+</aside>
+<h2 id="step-4-write-the-request">Step 4: Write the request</h2>
+<p>Keep each item to one sentence. Give every item a date range, a custodian with a title and a system. Then add the parts that decide cost and speed.</p>
+<ul>
+<li><strong>Scope and date range.</strong> One record type per numbered item. A fixed start and end date on each.</li>
+<li><strong>Custodian.</strong> Full name and title.</li>
+<li><strong>Systems.</strong> SharePoint, OneDrive, Exchange Online and Teams, by host name where you have it.</li>
+<li><strong>Format.</strong> FOIA requires agencies to provide records “<a href="https://www.law.cornell.edu/uscode/text/5/552">in any form or format requested by the person if the record is readily reproducible</a>” in that form. Ask for electronic copies or native files.</li>
+<li><strong>Fee category.</strong> If you’re a reporter, say so. Fees for “a representative of the news media” are limited to “reasonable standard charges for document duplication” when records are not sought for commercial use. The law defines that requester as one who “gathers information of potential interest to a segment of the public, uses its editorial skills to turn the raw materials into a distinct work, and distributes that work to an audience.”</li>
+<li><strong>Fee waiver.</strong> Ask for one if the records are newsworthy. The standard is disclosure that “is likely to contribute significantly to public understanding of the operations or activities of the government and is not primarily in the commercial interest of the requester.” Explain how you will publish.</li>
+<li><strong>Expedited processing, where it applies.</strong> A requester “primarily engaged in disseminating information” can ask for it by showing “urgency to inform the public concerning actual or alleged Federal Government activity.” The request must be “certified by such person to be true and correct to the best of such person’s knowledge and belief.” Use it only when the urgency is real.</li>
+<li><strong>A search description.</strong> Ask the agency to describe where it looked. A “no records” answer means more when you know.</li>
+</ul>
+<aside class="example-box" aria-label="Example: The 2025 wording">
+<p class="ex-k">Example</p>
+<p class="ex-t">The 2025 wording</p>
+<p>The Secret Service’s <a href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-final-response-excerpt.png">letter</a> quotes the request’s first item this way: “The last 100 documents edited by the custodian on the Secret Service Sharepoint (https://unitedstatessecretservice.sharepoint.com OR https://unitedstatessecretservice-my.sharepoint.com).” The second item was the same, with “created” in place of “edited.” The fourth asked for “A current sitemap of the Secret Service Sharepoint (https://unitedstatessecretservice.sharepoint.com).” The request did this in four numbered items, and the response letter restates them.</p>
+</aside>
+<p>Use the builder to turn those into your own request. Fill in the brackets, tick the records you want and copy the text.</p>
+<figure class="ixm-fig" id="fig-builder">
+<div class="ixm " data-ixm="builder">
+<div class="ixm-head"><span class="ixm-kicker">Interactive · request builder</span><span class="ixm-title">Write the request</span></div>
+<div class="ixm-live">
+<div class="rb-form" hidden><div class="rb-fields"><label class="rb-f"><span>Agency</span><input type="text" data-rb="agency" value="U.S. Secret Service"></label><label class="rb-f"><span>Tenant name (before .sharepoint.com)</span><input type="text" data-rb="tenant" value="unitedstatessecretservice"></label><label class="rb-f"><span>Custodian’s name</span><input type="text" data-rb="custodian" value="[Full name]"></label><label class="rb-f"><span>Custodian’s title</span><input type="text" data-rb="title" value="[Title]"></label><label class="rb-f"><span>Start date</span><input type="text" data-rb="start" value="[Start date]"></label><label class="rb-f"><span>End date</span><input type="text" data-rb="end" value="[End date]"></label><label class="rb-f"><span>Keywords (Teams)</span><input type="text" data-rb="keywords" value="[keyword 1], [keyword 2]"></label></div><div class="rb-checks" role="group" aria-label="Records to request"><label class="rb-c"><input type="checkbox" data-rb-t="browser" checked> Browser history and web logs</label><label class="rb-c"><input type="checkbox" data-rb-t="edited" checked> Documents edited</label><label class="rb-c"><input type="checkbox" data-rb-t="created" checked> Documents created</label><label class="rb-c"><input type="checkbox" data-rb-t="commented"> Documents commented on</label><label class="rb-c"><input type="checkbox" data-rb-t="teams" checked> Teams messages</label><label class="rb-c"><input type="checkbox" data-rb-t="cards"> Card statements</label><label class="rb-c"><input type="checkbox" data-rb-t="sitemap"> Sitemap</label><span class="rb-sep">Fees and timing</span><label class="rb-c"><input type="checkbox" data-rb-x="media" checked> News-media fee category</label><label class="rb-c"><input type="checkbox" data-rb-x="waiver"> Fee waiver</label><label class="rb-c"><input type="checkbox" data-rb-x="expedite"> Expedited processing</label></div></div>
+<ol class="rb-list">
+<li data-t="browser"><strong>Browser history and web logs.</strong> <span class="rb-tpl">“The web browsing history of [CUSTODIAN], [TITLE], from [START] to [END], including any centrally retained web proxy, secure web gateway, DNS or endpoint logs that record the URLs or hostnames visited from [CUSTODIAN]’s agency accounts or devices.”</span></li>
+<li data-t="edited"><strong>Documents edited.</strong> <span class="rb-tpl">“The last 100 documents edited by [CUSTODIAN], [TITLE], on the [AGENCY] SharePoint (https://[TENANT].sharepoint.com OR https://[TENANT]-my.sharepoint.com), sorted by last-modified date.”</span></li>
+<li data-t="created"><strong>Documents created.</strong> <span class="rb-tpl">“The last 100 documents created by [CUSTODIAN], [TITLE], on the [AGENCY] SharePoint (https://[TENANT].sharepoint.com OR https://[TENANT]-my.sharepoint.com).”</span></li>
+<li data-t="commented"><strong>Documents commented on.</strong> <span class="rb-tpl">“Documents on the [AGENCY] SharePoint or OneDrive (https://[TENANT].sharepoint.com OR https://[TENANT]-my.sharepoint.com) on which [CUSTODIAN] added or replied to a comment from [START] to [END].”</span></li>
+<li data-t="teams"><strong>Teams messages.</strong> <span class="rb-tpl">“All Microsoft Teams messages sent or received by [CUSTODIAN], [TITLE], from [START] to [END], including 1:1 chats, group chats and channel posts, containing any of these terms: [KEYWORDS]. This includes the copies of those messages kept in [CUSTODIAN]’s Exchange Online mailbox, and files [CUSTODIAN] shared in those chats as stored in [CUSTODIAN]’s OneDrive (https://[TENANT]-my.sharepoint.com).”</span></li>
+<li data-t="cards"><strong>Card statements.</strong> <span class="rb-tpl">“[CUSTODIAN]’s agency credit card statements from [START] to [END], including statements available through the agency’s card-program portal.”</span></li>
+<li data-t="sitemap"><strong>Sitemap.</strong> <span class="rb-tpl">“A current sitemap of the [AGENCY] SharePoint (https://[TENANT].sharepoint.com), listing site names, URLs and hub sites.”</span></li>
+</ol>
+<p class="ixm-sub">Fee and timing language</p>
+<ul class="rb-xlist">
+<li data-x="media"><strong>News-media fee category.</strong> <span class="rb-tpl">“I am a representative of the news media, as defined in 5 U.S.C. § 552(a)(4)(A)(ii), and I seek these records for news gathering, not for commercial use. Please limit any fees to duplication charges.”</span></li>
+<li data-x="waiver"><strong>Fee waiver.</strong> <span class="rb-tpl">“I request a waiver of all fees under 5 U.S.C. § 552(a)(4)(A)(iii). Disclosure is in the public interest because it is likely to contribute significantly to public understanding of the operations or activities of the government, and it is not primarily in my commercial interest. [Explain how and where you will publish.]”</span></li>
+<li data-x="expedite"><strong>Expedited processing.</strong> <span class="rb-tpl">“I request expedited processing under 5 U.S.C. § 552(a)(6)(E). I am primarily engaged in disseminating information, and there is an urgency to inform the public concerning actual or alleged Federal Government activity: [explain the urgency]. I certify that this statement is true and correct to the best of my knowledge and belief.”</span></li>
+</ul>
+<div class="rb-out" hidden><label class="ixm-sub" for="rb-text">Your request text</label><textarea id="rb-text" rows="12" readonly></textarea>
+<div class="ixm-controls"><button type="button" class="btn btn-primary" data-rb-copy>Copy text</button><span class="rb-status" aria-live="polite"></span></div></div>
+<p class="ixm-sub">Before you send</p>
+<ul class="rb-check">
+<li>A date range on every item.</li>
+<li>The custodian’s full name and title, not an email address.</li>
+<li>The systems by name: SharePoint, OneDrive, Exchange Online, Teams.</li>
+<li>The format: electronic copies or native files, “if the record is readily reproducible.”</li>
+<li>Your fee category, any fee waiver or expedited-processing request, and a request for a description of the search.</li>
+</ul>
+</div>
+</div>
+<figcaption>Bracketed fields are yours to fill. The builder runs in your browser; it sends nothing anywhere. The documents-edited, documents-created and sitemap items follow the wording of the author’s April 2025 request. The rest, including the fee and timing language, are OctoProbe templates built on the statute’s wording. This is not legal advice.</figcaption>
+</figure>
+<p>A few rules of thumb:</p>
+<ul>
+<li>Use keywords for Teams and email. A year of chats with no search terms invites a delay or a fee estimate.</li>
+<li>Split big asks into separate numbered items, so one problem item doesn’t stall the rest.</li>
+<li>Keep the request about records, not people’s private lives. Expect exemptions (b)(6) and (b)(7)(C) on names and personal details.</li>
+</ul>
+<h2 id="step-5-anticipate-the-agency-s-answers">Step 5: Anticipate the agency’s answers</h2>
+<p>Three answers come back again and again. Plan for each before you file.</p>
+<h3 id="exempt">“Exempt”</h3>
+<p>In the Secret Service releases, three codes cover nearly everything withheld. Exemption (b)(6) protects files whose release would be “<a href="https://www.law.cornell.edu/uscode/text/5/552">a clearly unwarranted invasion of personal privacy</a>.” Exemption (b)(7)(C) protects law-enforcement records whose release “could reasonably be expected to constitute an unwarranted invasion of personal privacy.” Exemption (b)(7)(E) protects material that “would disclose techniques and procedures for law enforcement investigations or prosecutions.”</p>
+<p>How to word around them: ask for records about official work, not private details. Expect names of staff and account numbers to come out blacked out. Ask for what a withheld column would show in the aggregate, such as site names without addresses, when the addresses are the sensitive part.</p>
+<aside class="example-box" aria-label="Example: How the Secret Service used them">
+<p class="ex-k">Example</p>
+<p class="ex-t">How the Secret Service used them</p>
+<p>The first two codes explain the boxes over names and account digits. The third is the agency’s basis for withholding the sitemap’s URLs and much of the card statements. On the sitemap, the agency withheld the entire URL column under (b)(7)(E) on every page. It released the names.</p>
+</aside>
+<h3 id="no-duty-to-create-a-record">“No duty to create a record”</h3>
+<p>The legal risk is the word “list.” FOIA requires agencies to “<a href="https://www.law.cornell.edu/uscode/text/5/552">make reasonable efforts to search for the records in electronic form or format</a>,” and to provide records “in any form or format requested … if the record is readily reproducible.” Courts have said a database query is a search. The U.S. Court of Appeals for the Ninth Circuit held in 2021 that “<a href="https://www.justice.gov/oip/ctr-investigative-reporting-v-doj-no-18-17356-2021-wl-4314789-9th-cir-sept-23-2021-wardlaw-j">using a query to search for and extract a particular arrangement or subset of data already maintained in an agency’s database does not amount to the creation of a new record</a>.” The court added, “It makes no difference if the query produces a set of documents, a list, a spreadsheet, or some other form of results that the agency has not previously viewed.”</p>
+<p>A federal judge in Washington drew a line in 2012. The court held that “<a href="https://www.justice.gov/archive/oip/courtdecisions/oct-19-2012.html">sorting a pre-existing database of information to make information intelligible does not involve the creation of a new record</a>.” But a request for a “listing or index of a database’s contents that does not seek the contents of the database, but instead essentially seeks information about those contents, is a request that requires the creation of a new record, insofar as the agency has not previously created and retained such a listing or index.” In a later ruling in the same litigation, the D.C. Circuit <a href="https://www.justice.gov/oip/natl-sec-counselors-v-cia-969-f3d-406-dc-cir-2020-srinivasan-j">sided with the CIA</a> on a request for one such listing.</p>
+<p>That is a real risk for both “last 100” requests and sitemap requests. How to word around it: ask for the documents themselves, sorted by date, over a fixed period, not a list of them. For a sitemap, ask for an existing site inventory or admin report if one exists.</p>
+<aside class="example-box" aria-label="Example: Where the objection bites">
+<p class="ex-k">Example</p>
+<p class="ex-t">Where the objection bites</p>
+<p>The PDF contains no records for items 1 and 2, the last 100 documents the custodian edited and created. The Secret Service, for its part, did produce a sitemap.</p>
+</aside>
+<h3 id="not-an-agency-record">“Not an agency record”</h3>
+<p>Under FOIA, the public can get “agency records.” The law defines a record broadly, as information “<a href="https://www.law.cornell.edu/uscode/text/5/552">maintained by an agency in any format, including an electronic format</a>.” The harder question is whether something on a government computer belongs to the agency at all.</p>
+<p>In 2021, the U.S. Court of Appeals for the D.C. Circuit said browsing histories did not, at least in one case. A watchdog group, Cause of Action Institute, had asked the Office of Management and Budget and the Agriculture Department for senior officials’ web histories. The court ruled for the agencies.</p>
+<blockquote><p>“<a href="https://law.justia.com/cases/federal/appellate-courts/cadc/20-5006/20-5006-2021-08-20.html">In light of the foregoing, we hold that the internet browsing histories requested by Cause of Action are not agency records subject to disclosure under FOIA.</a>”</p></blockquote>
+<p>The court’s reasons were practical. “<a href="https://law.justia.com/cases/federal/appellate-courts/cadc/20-5006/20-5006-2021-08-20.html">OMB and USDA did not use the officials’ browsing histories for any purpose, much less a purpose connected to agency decisionmaking</a>,” the court wrote. And “<a href="https://law.justia.com/cases/federal/appellate-courts/cadc/20-5006/20-5006-2021-08-20.html">employees of OMB and USDA could freely delete their browsing histories, a practice incompatible with integration of these documents into the agencies’ record systems</a>.”</p>
+<p><em>Cause of Action</em> turned on control and use: whether the agency kept the data, relied on it and let employees erase it. A centrally kept web log is a different animal. The National Archives’ <a href="https://www.archives.gov/files/records-mgmt/grs/grs03-2.pdf">general records schedule for IT systems</a> treats “log-in files,” “audit trail files and extracts” and “system usage files” as federal records with a set disposition: “Destroy when business use ceases.” The schedule does not mention browser history by name, and it carves out monitoring for agency missions such as law enforcement. But it shows that logs of this kind are records an agency is expected to manage.</p>
+<p>How to word around it: ask for the browser history and for any centrally retained proxy, gateway, DNS or endpoint logs in the same item. If the agency calls the history personal, the logs are a separate question.</p>
+<aside class="example-box" aria-label="Example: The Secret Service’s practice points the other way">
+<p class="ex-k">Example</p>
+<p class="ex-t">The Secret Service’s practice points the other way</p>
+<p>On five requests received the same day, the Secret Service searched for an official’s browser history, processed what it found and released it in part, withholding some information under privacy and law-enforcement exemptions. The Rowe page looks more like a centrally kept log than a history stored on one laptop.</p>
+</aside>
+<h2 id="step-6-track-and-follow-up">Step 6: Track and follow up</h2>
+<p>Write down the date the agency received your request and the log number it assigns. The clock starts there. Agencies must “<a href="https://www.law.cornell.edu/uscode/text/5/552">determine within 20 days (excepting Saturdays, Sundays, and legal public holidays)</a>” whether to comply. The law lets agencies extend that deadline in “<a href="https://www.law.cornell.edu/uscode/text/5/552">unusual circumstances</a>,” and they must tell you in writing when they do.</p>
+<p>Check the agency’s FOIA log. Many agencies post them. A log entry confirms what the agency recorded as your request, when it arrived and how it closed. It also shows you how other requesters worded similar asks.</p>
+<aside class="example-box" aria-label="Example: The Secret Service’s FY 2024 log">
+<p class="ex-k">Example</p>
+<p class="ex-t">The Secret Service’s FY 2024 log</p>
+<p>The Secret Service’s <a href="https://www.secretservice.gov/sites/default/files/reports/2025-02/FOIA-Log-FY-2024.pdf#page=12">FOIA log for fiscal 2024</a>, posted on the agency’s website, lists five requests received Nov. 3, 2023, from the author. Each sought records “from the last month of October 2023” for one official: Director Kimberly A. Cheatle; “Ronald L. Rowe, Jr., Deputy Director”; Chief Operating Officer Cynthia Sjoberg Radway; David M. Smith, assistant director for investigations; and Gloria R. Armstrong, assistant director for professional responsibility. The log records the result for all five in three words: “Granted/Denied in Part.” The photographed page comes from the return for Rowe, request 20240110. Its dates, Oct. 4 and Oct. 10, fall inside the request’s October window.</p>
+</aside>
+<figure class="fig-pad wide-doc"><img src="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/assets/usss-foia-log-fy2024-browser-history-requests.png" width="2200" height="763" alt="Rows from the Secret Service FOIA log for requests 20240109 through 20240113, received Nov. 3, 2023, each seeking an official’s browser history from October 2023 and each marked Granted/Denied in Part. The requester column is covered by black boxes added by OctoProbe." loading="lazy" decoding="async"><figcaption>The Secret Service’s FY 2024 FOIA log lists five requests for top officials’ browser histories, received Nov. 3, 2023, each closed “Granted/Denied in Part.” Requester name redacted by OctoProbe; the requester is the author. Source: U.S. Secret Service, <a href="https://www.secretservice.gov/sites/default/files/reports/2025-02/FOIA-Log-FY-2024.pdf#page=12">FOIA Log FY 2024</a>, pp. 12–13 (full log, as posted).</figcaption></figure>
+<p class="editor-note">Editor’s note: Requester name redacted by OctoProbe; the requester is the author. The full log is linked as the agency posted it.</p>
+<p>Watch the disposal clock. The National Archives’ schedule lets agencies destroy many system logs “when business use ceases,” so a request for last month’s web log has better odds than one for last year’s. File log requests fast.</p>
+<p>If you hit a dispute you can’t resolve with the FOIA office, the Office of Government Information Services at the National Archives is one option. The law says <a href="https://www.archives.gov/ogis">OGIS</a> “shall offer mediation services to resolve disputes between persons making requests under this section and administrative agencies as a nonexclusive alternative to litigation.”</p>
+<h2 id="step-7-use-what-comes-back">Step 7: Use what comes back</h2>
+<p>Each release is raw material. Read it for names, systems and redaction patterns, and turn them into the next set of requests.</p>
+<ul>
+<li><strong>Sites become systems.</strong> A site that holds audit logs or a card-program portal points to records you can name.</li>
+<li><strong>Hosts become clouds.</strong> Microsoft host names in a log confirm which cloud the agency runs in.</li>
+<li><strong>Hubs become offices.</strong> Each hub in a sitemap is an office with its own records, staff and leaders. Those leaders are your next custodians.</li>
+<li><strong>Withholdings become questions.</strong> An entire column withheld under (b)(7)(E) tells you what the agency considers sensitive. That is worth knowing when you write the next request.</li>
+</ul>
+<aside class="example-box" aria-label="Example: Reading the April 2025 release">
+<p class="ex-k">Example</p>
+<p class="ex-t">Reading the April 2025 release</p>
+<p>The release is 117 image-only pages. The PDF itself holds no cover letter; the agency’s response letter, sent separately, opens by restating the four items.</p>
+<p><strong>Card statements, pages 1–105.</strong> The pages make up 44 statement fragments. Every one starts at “Page 2.” Page 1 of each statement, normally the summary page, is absent, and page 3 of one four-page statement is missing (pages 101–102). Every page is blacked out except the page number and, on each final page, a line reading “Account: XXXX-XXXX-XXXX” followed by an exemption box. No merchant, amount or date is visible on any page.</p>
+</aside>
+<figure class="fig-pad doc-page"><img src="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/assets/usss-release-p003-statement.png" width="850" height="1100" alt="A released card-statement page that is blank except for the header Account: XXXX-XXXX-XXXX followed by a box stamped (b)(7)(E); (b)(6); (b)(7)(C), and the footer Page 4 of 4" loading="lazy" decoding="async"><figcaption>A typical card-statement page: a masked account line, an exemption box and a page number. Source: Secret Service FOIA release (<a href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=3">PDF p. 3</a>).</figcaption></figure>
+<aside class="example-box" aria-label="Example: The sitemap, pages 106–117">
+<p class="ex-k">Example</p>
+<p class="ex-t">The sitemap, pages 106–117</p>
+<p>The sitemap is headed “USSS - Standard Sensitive Info” and has four columns: site name, URL, hub and “Active/Accessable.” The agency withheld the entire URL column under (b)(7)(E), the exemption for law-enforcement techniques and procedures, on every page. It released the names.</p>
+<p>Those names are a map of the agency. There are hubs for administration, investigations and protection, with sites named for presidents’ protective divisions (<a href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=107">p. 107</a>). There are sites a records requester will want to know about: “Freedom of Information Act” and “Enterprise Records and Knowledge Management Division” (<a href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=113">p. 113</a>), and “SP 2016 Audit Logs” and “Travel Card Portal” (<a href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=116">p. 116</a>). Event sites run from “RNC 2024” and “DNC 2024” to “2025 Presidential Inauguration.”</p>
+</aside>
+<figure class="fig-pad wide-doc"><img src="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/assets/usss-release-p106-sitemap.png" width="1650" height="1275" alt="First page of the released SharePoint sitemap, headed USSS - Standard Sensitive Info, with columns for site name, URL, hub and Active/Accessable; the entire URL column is covered by one box stamped (b)(7)(E)" loading="lazy" decoding="async"><figcaption>First page of the sitemap the Secret Service released. Site names and hubs came out; every URL was withheld under exemption (b)(7)(E). Source: Secret Service FOIA release (<a href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=106">PDF p. 106</a>).</figcaption></figure>
+<figure class="ixm-fig" id="fig-explorer">
+<div class="ixm " data-ixm="explorer">
+<div class="ixm-head"><span class="ixm-kicker">Interactive · release explorer</span><span class="ixm-title">All 117 pages of the April 2025 release</span></div>
+<div class="ixm-live">
+<div class="fe-sum"><p><span class="fe-big">105</span> statement pages</p><p><span class="fe-big fe-red">0</span> transactions visible</p><p><span class="fe-big fe-blue">12</span> sitemap pages</p><p><span class="fe-big">~660</span> site names, 0 URLs</p></div>
+<div class="ixm-controls rx-controls" hidden><div class="ixm-chips" role="group" aria-label="Show pages">
+<button type="button" class="chip" data-show="all" aria-pressed="true">All pages</button>
+<button type="button" class="chip" data-show="st" aria-pressed="false">Card statements</button>
+<button type="button" class="chip" data-show="sm" aria-pressed="false">Sitemap</button></div></div>
+<p class="fe-legend"><span class="pg st">n</span> statement page <span class="pg st acct">n</span> last page, masked account line <span class="pg sm">n</span> sitemap page <span class="pg sm key">n</span> noted below</p>
+<div class="fe-doc" data-g="st"><p class="fe-h">Item 3: card statements <span>pp. 1–105 · 44 statements · page 1 of each absent</span></p><ol class="fe-grid"><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=1" aria-label="PDF page 1: card statement page 2 of 4. Content blacked out." title="PDF page 1: card statement page 2 of 4. Content blacked out.">1</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=2" aria-label="PDF page 2: card statement page 3 of 4. Content blacked out." title="PDF page 2: card statement page 3 of 4. Content blacked out.">2</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=3" aria-label="PDF page 3: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 3: card statement page 4 of 4, masked account line. Content blacked out.">3</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=4" aria-label="PDF page 4: card statement page 2 of 2. Content blacked out." title="PDF page 4: card statement page 2 of 2. Content blacked out.">4</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=5" aria-label="PDF page 5: card statement page 2 of 2. Content blacked out." title="PDF page 5: card statement page 2 of 2. Content blacked out.">5</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=6" aria-label="PDF page 6: card statement page 2 of 4. Content blacked out." title="PDF page 6: card statement page 2 of 4. Content blacked out.">6</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=7" aria-label="PDF page 7: card statement page 3 of 4. Content blacked out." title="PDF page 7: card statement page 3 of 4. Content blacked out.">7</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=8" aria-label="PDF page 8: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 8: card statement page 4 of 4, masked account line. Content blacked out.">8</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=9" aria-label="PDF page 9: card statement page 2 of 4. Content blacked out." title="PDF page 9: card statement page 2 of 4. Content blacked out.">9</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=10" aria-label="PDF page 10: card statement page 3 of 4. Content blacked out." title="PDF page 10: card statement page 3 of 4. Content blacked out.">10</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=11" aria-label="PDF page 11: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 11: card statement page 4 of 4, masked account line. Content blacked out.">11</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=12" aria-label="PDF page 12: card statement page 2 of 4. Content blacked out." title="PDF page 12: card statement page 2 of 4. Content blacked out.">12</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=13" aria-label="PDF page 13: card statement page 3 of 4. Content blacked out." title="PDF page 13: card statement page 3 of 4. Content blacked out.">13</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=14" aria-label="PDF page 14: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 14: card statement page 4 of 4, masked account line. Content blacked out.">14</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=15" aria-label="PDF page 15: card statement page 2 of 4. Content blacked out." title="PDF page 15: card statement page 2 of 4. Content blacked out.">15</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=16" aria-label="PDF page 16: card statement page 3 of 4. Content blacked out." title="PDF page 16: card statement page 3 of 4. Content blacked out.">16</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=17" aria-label="PDF page 17: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 17: card statement page 4 of 4, masked account line. Content blacked out.">17</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=18" aria-label="PDF page 18: card statement page 2 of 4. Content blacked out." title="PDF page 18: card statement page 2 of 4. Content blacked out.">18</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=19" aria-label="PDF page 19: card statement page 3 of 4. Content blacked out." title="PDF page 19: card statement page 3 of 4. Content blacked out.">19</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=20" aria-label="PDF page 20: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 20: card statement page 4 of 4, masked account line. Content blacked out.">20</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=21" aria-label="PDF page 21: card statement page 2 of 4. Content blacked out." title="PDF page 21: card statement page 2 of 4. Content blacked out.">21</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=22" aria-label="PDF page 22: card statement page 3 of 4. Content blacked out." title="PDF page 22: card statement page 3 of 4. Content blacked out.">22</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=23" aria-label="PDF page 23: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 23: card statement page 4 of 4, masked account line. Content blacked out.">23</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=24" aria-label="PDF page 24: card statement page 2 of 2. Content blacked out." title="PDF page 24: card statement page 2 of 2. Content blacked out.">24</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=25" aria-label="PDF page 25: card statement page 2 of 2. Content blacked out." title="PDF page 25: card statement page 2 of 2. Content blacked out.">25</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=26" aria-label="PDF page 26: card statement page 2 of 4. Content blacked out." title="PDF page 26: card statement page 2 of 4. Content blacked out.">26</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=27" aria-label="PDF page 27: card statement page 3 of 4. Content blacked out." title="PDF page 27: card statement page 3 of 4. Content blacked out.">27</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=28" aria-label="PDF page 28: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 28: card statement page 4 of 4, masked account line. Content blacked out.">28</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=29" aria-label="PDF page 29: card statement page 2 of 2. Content blacked out." title="PDF page 29: card statement page 2 of 2. Content blacked out.">29</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=30" aria-label="PDF page 30: card statement page 2 of 2. Content blacked out." title="PDF page 30: card statement page 2 of 2. Content blacked out.">30</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=31" aria-label="PDF page 31: card statement page 2 of 4. Content blacked out." title="PDF page 31: card statement page 2 of 4. Content blacked out.">31</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=32" aria-label="PDF page 32: card statement page 3 of 4. Content blacked out." title="PDF page 32: card statement page 3 of 4. Content blacked out.">32</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=33" aria-label="PDF page 33: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 33: card statement page 4 of 4, masked account line. Content blacked out.">33</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=34" aria-label="PDF page 34: card statement page 2 of 4. Content blacked out." title="PDF page 34: card statement page 2 of 4. Content blacked out.">34</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=35" aria-label="PDF page 35: card statement page 3 of 4. Content blacked out." title="PDF page 35: card statement page 3 of 4. Content blacked out.">35</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=36" aria-label="PDF page 36: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 36: card statement page 4 of 4, masked account line. Content blacked out.">36</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=37" aria-label="PDF page 37: card statement page 2 of 4. Content blacked out." title="PDF page 37: card statement page 2 of 4. Content blacked out.">37</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=38" aria-label="PDF page 38: card statement page 3 of 4. Content blacked out." title="PDF page 38: card statement page 3 of 4. Content blacked out.">38</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=39" aria-label="PDF page 39: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 39: card statement page 4 of 4, masked account line. Content blacked out.">39</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=40" aria-label="PDF page 40: card statement page 2 of 4. Content blacked out." title="PDF page 40: card statement page 2 of 4. Content blacked out.">40</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=41" aria-label="PDF page 41: card statement page 3 of 4. Content blacked out." title="PDF page 41: card statement page 3 of 4. Content blacked out.">41</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=42" aria-label="PDF page 42: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 42: card statement page 4 of 4, masked account line. Content blacked out.">42</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=43" aria-label="PDF page 43: card statement page 2 of 4. Content blacked out." title="PDF page 43: card statement page 2 of 4. Content blacked out.">43</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=44" aria-label="PDF page 44: card statement page 3 of 4. Content blacked out." title="PDF page 44: card statement page 3 of 4. Content blacked out.">44</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=45" aria-label="PDF page 45: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 45: card statement page 4 of 4, masked account line. Content blacked out.">45</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=46" aria-label="PDF page 46: card statement page 2 of 4. Content blacked out." title="PDF page 46: card statement page 2 of 4. Content blacked out.">46</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=47" aria-label="PDF page 47: card statement page 3 of 4. Content blacked out." title="PDF page 47: card statement page 3 of 4. Content blacked out.">47</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=48" aria-label="PDF page 48: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 48: card statement page 4 of 4, masked account line. Content blacked out.">48</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=49" aria-label="PDF page 49: card statement page 2 of 2. Content blacked out." title="PDF page 49: card statement page 2 of 2. Content blacked out.">49</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=50" aria-label="PDF page 50: card statement page 2 of 4. Content blacked out." title="PDF page 50: card statement page 2 of 4. Content blacked out.">50</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=51" aria-label="PDF page 51: card statement page 3 of 4. Content blacked out." title="PDF page 51: card statement page 3 of 4. Content blacked out.">51</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=52" aria-label="PDF page 52: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 52: card statement page 4 of 4, masked account line. Content blacked out.">52</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=53" aria-label="PDF page 53: card statement page 2 of 2. Content blacked out." title="PDF page 53: card statement page 2 of 2. Content blacked out.">53</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=54" aria-label="PDF page 54: card statement page 2 of 4. Content blacked out." title="PDF page 54: card statement page 2 of 4. Content blacked out.">54</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=55" aria-label="PDF page 55: card statement page 3 of 4. Content blacked out." title="PDF page 55: card statement page 3 of 4. Content blacked out.">55</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=56" aria-label="PDF page 56: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 56: card statement page 4 of 4, masked account line. Content blacked out.">56</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=57" aria-label="PDF page 57: card statement page 2 of 4. Content blacked out." title="PDF page 57: card statement page 2 of 4. Content blacked out.">57</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=58" aria-label="PDF page 58: card statement page 3 of 4. Content blacked out." title="PDF page 58: card statement page 3 of 4. Content blacked out.">58</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=59" aria-label="PDF page 59: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 59: card statement page 4 of 4, masked account line. Content blacked out.">59</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=60" aria-label="PDF page 60: card statement page 2 of 4. Content blacked out." title="PDF page 60: card statement page 2 of 4. Content blacked out.">60</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=61" aria-label="PDF page 61: card statement page 3 of 4. Content blacked out." title="PDF page 61: card statement page 3 of 4. Content blacked out.">61</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=62" aria-label="PDF page 62: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 62: card statement page 4 of 4, masked account line. Content blacked out.">62</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=63" aria-label="PDF page 63: card statement page 2 of 4. Content blacked out." title="PDF page 63: card statement page 2 of 4. Content blacked out.">63</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=64" aria-label="PDF page 64: card statement page 3 of 4. Content blacked out." title="PDF page 64: card statement page 3 of 4. Content blacked out.">64</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=65" aria-label="PDF page 65: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 65: card statement page 4 of 4, masked account line. Content blacked out.">65</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=66" aria-label="PDF page 66: card statement page 2 of 4. Content blacked out." title="PDF page 66: card statement page 2 of 4. Content blacked out.">66</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=67" aria-label="PDF page 67: card statement page 3 of 4. Content blacked out." title="PDF page 67: card statement page 3 of 4. Content blacked out.">67</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=68" aria-label="PDF page 68: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 68: card statement page 4 of 4, masked account line. Content blacked out.">68</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=69" aria-label="PDF page 69: card statement page 2 of 2. Content blacked out." title="PDF page 69: card statement page 2 of 2. Content blacked out.">69</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=70" aria-label="PDF page 70: card statement page 2 of 2. Content blacked out." title="PDF page 70: card statement page 2 of 2. Content blacked out.">70</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=71" aria-label="PDF page 71: card statement page 2 of 4. Content blacked out." title="PDF page 71: card statement page 2 of 4. Content blacked out.">71</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=72" aria-label="PDF page 72: card statement page 3 of 4. Content blacked out." title="PDF page 72: card statement page 3 of 4. Content blacked out.">72</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=73" aria-label="PDF page 73: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 73: card statement page 4 of 4, masked account line. Content blacked out.">73</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=74" aria-label="PDF page 74: card statement page 2 of 2. Content blacked out." title="PDF page 74: card statement page 2 of 2. Content blacked out.">74</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=75" aria-label="PDF page 75: card statement page 2 of 4. Content blacked out." title="PDF page 75: card statement page 2 of 4. Content blacked out.">75</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=76" aria-label="PDF page 76: card statement page 3 of 4. Content blacked out." title="PDF page 76: card statement page 3 of 4. Content blacked out.">76</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=77" aria-label="PDF page 77: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 77: card statement page 4 of 4, masked account line. Content blacked out.">77</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=78" aria-label="PDF page 78: card statement page 2 of 4. Content blacked out." title="PDF page 78: card statement page 2 of 4. Content blacked out.">78</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=79" aria-label="PDF page 79: card statement page 3 of 4. Content blacked out." title="PDF page 79: card statement page 3 of 4. Content blacked out.">79</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=80" aria-label="PDF page 80: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 80: card statement page 4 of 4, masked account line. Content blacked out.">80</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=81" aria-label="PDF page 81: card statement page 2 of 4. Content blacked out." title="PDF page 81: card statement page 2 of 4. Content blacked out.">81</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=82" aria-label="PDF page 82: card statement page 3 of 4. Content blacked out." title="PDF page 82: card statement page 3 of 4. Content blacked out.">82</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=83" aria-label="PDF page 83: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 83: card statement page 4 of 4, masked account line. Content blacked out.">83</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=84" aria-label="PDF page 84: card statement page 2 of 2. Content blacked out." title="PDF page 84: card statement page 2 of 2. Content blacked out.">84</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=85" aria-label="PDF page 85: card statement page 2 of 4. Content blacked out." title="PDF page 85: card statement page 2 of 4. Content blacked out.">85</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=86" aria-label="PDF page 86: card statement page 3 of 4. Content blacked out." title="PDF page 86: card statement page 3 of 4. Content blacked out.">86</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=87" aria-label="PDF page 87: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 87: card statement page 4 of 4, masked account line. Content blacked out.">87</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=88" aria-label="PDF page 88: card statement page 2 of 4. Content blacked out." title="PDF page 88: card statement page 2 of 4. Content blacked out.">88</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=89" aria-label="PDF page 89: card statement page 3 of 4. Content blacked out." title="PDF page 89: card statement page 3 of 4. Content blacked out.">89</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=90" aria-label="PDF page 90: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 90: card statement page 4 of 4, masked account line. Content blacked out.">90</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=91" aria-label="PDF page 91: card statement page 2 of 4. Content blacked out." title="PDF page 91: card statement page 2 of 4. Content blacked out.">91</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=92" aria-label="PDF page 92: card statement page 3 of 4. Content blacked out." title="PDF page 92: card statement page 3 of 4. Content blacked out.">92</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=93" aria-label="PDF page 93: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 93: card statement page 4 of 4, masked account line. Content blacked out.">93</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=94" aria-label="PDF page 94: card statement page 2 of 4. Content blacked out." title="PDF page 94: card statement page 2 of 4. Content blacked out.">94</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=95" aria-label="PDF page 95: card statement page 3 of 4. Content blacked out." title="PDF page 95: card statement page 3 of 4. Content blacked out.">95</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=96" aria-label="PDF page 96: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 96: card statement page 4 of 4, masked account line. Content blacked out.">96</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=97" aria-label="PDF page 97: card statement page 2 of 4. Content blacked out." title="PDF page 97: card statement page 2 of 4. Content blacked out.">97</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=98" aria-label="PDF page 98: card statement page 3 of 4. Content blacked out." title="PDF page 98: card statement page 3 of 4. Content blacked out.">98</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=99" aria-label="PDF page 99: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 99: card statement page 4 of 4, masked account line. Content blacked out.">99</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=100" aria-label="PDF page 100: card statement page 2 of 2. Content blacked out." title="PDF page 100: card statement page 2 of 2. Content blacked out.">100</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=101" aria-label="PDF page 101: card statement page 2 of 4. Content blacked out." title="PDF page 101: card statement page 2 of 4. Content blacked out.">101</a></li><li><a class="pg st acct gap" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=102" aria-label="PDF page 102: card statement page 4 of 4, masked account line. Page 3 of this statement is not in the release. Content blacked out." title="PDF page 102: card statement page 4 of 4, masked account line. Page 3 of this statement is not in the release. Content blacked out.">102</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=103" aria-label="PDF page 103: card statement page 2 of 4. Content blacked out." title="PDF page 103: card statement page 2 of 4. Content blacked out.">103</a></li><li><a class="pg st" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=104" aria-label="PDF page 104: card statement page 3 of 4. Content blacked out." title="PDF page 104: card statement page 3 of 4. Content blacked out.">104</a></li><li><a class="pg st acct" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=105" aria-label="PDF page 105: card statement page 4 of 4, masked account line. Content blacked out." title="PDF page 105: card statement page 4 of 4, masked account line. Content blacked out.">105</a></li></ol></div>
+<div class="fe-doc" data-g="sm"><p class="fe-h">Item 4: SharePoint sitemap <span>pp. 106–117 · URL column withheld on every page</span></p><ol class="fe-grid"><li><a class="pg sm key" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=106" aria-label="PDF page 106: SharePoint sitemap. Header “USSS - Standard Sensitive Info”; URL column withheld, (b)(7)(E)" title="PDF page 106: SharePoint sitemap. Header “USSS - Standard Sensitive Info”; URL column withheld, (b)(7)(E)">106</a></li><li><a class="pg sm key" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=107" aria-label="PDF page 107: SharePoint sitemap. Protective divisions named for former presidents" title="PDF page 107: SharePoint sitemap. Protective divisions named for former presidents">107</a></li><li><a class="pg sm" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=108" aria-label="PDF page 108: SharePoint sitemap" title="PDF page 108: SharePoint sitemap">108</a></li><li><a class="pg sm" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=109" aria-label="PDF page 109: SharePoint sitemap" title="PDF page 109: SharePoint sitemap">109</a></li><li><a class="pg sm key" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=110" aria-label="PDF page 110: SharePoint sitemap. Contains one OctoProbe redaction (an employee’s first name)" title="PDF page 110: SharePoint sitemap. Contains one OctoProbe redaction (an employee’s first name)">110</a></li><li><a class="pg sm" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=111" aria-label="PDF page 111: SharePoint sitemap" title="PDF page 111: SharePoint sitemap">111</a></li><li><a class="pg sm" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=112" aria-label="PDF page 112: SharePoint sitemap" title="PDF page 112: SharePoint sitemap">112</a></li><li><a class="pg sm key" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=113" aria-label="PDF page 113: SharePoint sitemap. “Freedom of Information Act” and “Enterprise Records and Knowledge Management Division” sites" title="PDF page 113: SharePoint sitemap. “Freedom of Information Act” and “Enterprise Records and Knowledge Management Division” sites">113</a></li><li><a class="pg sm key" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=114" aria-label="PDF page 114: SharePoint sitemap. Contains one OctoProbe redaction (an employee’s first name)" title="PDF page 114: SharePoint sitemap. Contains one OctoProbe redaction (an employee’s first name)">114</a></li><li><a class="pg sm" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=115" aria-label="PDF page 115: SharePoint sitemap" title="PDF page 115: SharePoint sitemap">115</a></li><li><a class="pg sm key" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=116" aria-label="PDF page 116: SharePoint sitemap. “SP 2016 Audit Logs” and “Travel Card Portal” sites" title="PDF page 116: SharePoint sitemap. “SP 2016 Audit Logs” and “Travel Card Portal” sites">116</a></li><li><a class="pg sm key" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf#page=117" aria-label="PDF page 117: SharePoint sitemap. Last page, about a dozen rows" title="PDF page 117: SharePoint sitemap. Last page, about a dozen rows">117</a></li></ol></div>
+<p class="fe-detail" aria-live="polite">Hover or focus a page for details; select it to open the PDF at that page.</p>
+</div>
+</div>
+<figcaption>Page structure is read from each page’s footer (“Page 2 of 4”). Items 1 and 2, the last 100 documents the custodian edited and created, have no pages in the release. Each square opens the hosted PDF at that page.</figcaption>
+</figure>
+<aside class="example-box" aria-label="Example: The next round">
+<p class="ex-k">Example</p>
+<p class="ex-t">The next round</p>
+<p>“SP 2016 Audit Logs” suggests the agency keeps SharePoint audit records in a site of their own. Ask for the audit entries for a named custodian and date range. “Travel Card Portal” points to the card program’s guidance and records. The Rowe page lists <code>gcc.thor.aesir.office.com</code> and other Microsoft government-cloud hosts. That confirms what the sign-in metadata showed: the agency runs in Microsoft’s government community cloud.</p>
+<p>Two lessons follow. First, a sitemap request can work even with the addresses withheld, because the site names tell you which offices and record systems to name next. Second, the document items are where the listing-or-index objection bites. A future request should ask for the documents, sorted by last-modified date, over a fixed period.</p>
+</aside>
+<p class="editor-note">Editor’s note: The release contains some site names that point to sensitive operations. OctoProbe quotes only names that illustrate what a sitemap request returns, and posts the rest as the agency released them.</p>
+<p>Then map again. The method doesn’t end with one release.</p>
+<h2 id="before-you-file">Before you file</h2>
+<aside class="checklist-box cl-end" aria-label="Before you file checklist">
+<ul class="cl-list cl-check">
+<li>You confirmed the tenant: DNS resolves, and the tenant ID matches the agency’s email domain.</li>
+<li>You named both hosts: <code>[tenant].sharepoint.com</code> and <code>[tenant]-my.sharepoint.com</code>.</li>
+<li>Every item names a custodian by full name and title, with the dates the person held the job.</li>
+<li>Every item has a fixed start and end date.</li>
+<li>Each record type is its own numbered item, tied to the system that holds it.</li>
+<li>You asked for documents sorted by date, not a list or index of them.</li>
+<li>Teams and email items carry keywords.</li>
+<li>Browser-history items also ask for centrally retained proxy, gateway, DNS or endpoint logs.</li>
+<li>You asked for electronic copies or native files and a description of the search.</li>
+<li>You stated your fee category and, if it fits, asked for a fee waiver or expedited processing.</li>
+<li>You are filing log requests soon after the period you care about.</li>
+<li>You will record the receipt date and log number, then check the agency’s FOIA log.</li>
+</ul>
+</aside>
+<h2 id="primary-documents">Primary documents</h2>
+<p>The files below are hosted on this page. The explorer above links each release page to the PDF.</p>
+<div class="table-wrap docs-tw"><table class="docs-table"><thead><tr><th scope="col">Document</th><th scope="col">Source</th><th scope="col">Date</th><th scope="col">File</th><th scope="col">Notes</th></tr></thead><tbody>
+<tr><td data-label="Document"><a href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-foia-release-two-redactions.pdf">Secret Service FOIA release, April 2025 request (117 pp.)</a></td><td data-label="Source">U.S. Secret Service</td><td data-label="Date">Request received April 21, 2025</td><td data-label="File">PDF, image only, 2.3 MB</td><td data-label="Notes">Two OctoProbe redactions, pp. 110 and 114; otherwise as released</td></tr>
+<tr><td data-label="Document"><a href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-final-response-excerpt.png">Final response letter, opening paragraphs</a></td><td data-label="Source">U.S. Secret Service</td><td data-label="Date">2025</td><td data-label="File">PNG, 170 KB</td><td data-label="Notes">Excerpt only; file metadata removed</td></tr>
+<tr><td data-label="Document"><a href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/assets/rowe-browser-history-zoom.jpg">Browser-history page, request 20240110 (photo)</a></td><td data-label="Source">U.S. Secret Service</td><td data-label="Date">Rows dated Oct. 4 and 10, 2023</td><td data-label="File">JPEG, 911 KB</td><td data-label="Notes">Photograph of one printed page</td></tr>
+<tr><td data-label="Document"><a href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/federal-foia-sharepoint-hostnames.xlsx">Federal FOIA components and SharePoint hostnames</a></td><td data-label="Source">Redwing Technologies</td><td data-label="Date">Checked Oct. 20, 2026</td><td data-label="File">XLSX, 54 KB</td><td data-label="Notes">Unaltered</td></tr>
+<tr><td data-label="Document"><a href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/federal-foia-sharepoint-hostnames.csv">Same table as CSV</a></td><td data-label="Source">Redwing Technologies</td><td data-label="Date">—</td><td data-label="File">CSV, 57 KB</td><td data-label="Notes">Columns A–G, values as in the XLSX</td></tr>
+<tr><td data-label="Document"><a href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/dns-check-2026-10-20.csv">DNS check results for every hostname in the table</a></td><td data-label="Source">OctoProbe News</td><td data-label="Date">Oct. 20, 2026</td><td data-label="File">CSV, 53 KB</td><td data-label="Notes">Passive lookups</td></tr>
+<tr><td data-label="Document"><a href="https://www.secretservice.gov/sites/default/files/reports/2025-02/FOIA-Log-FY-2024.pdf">Secret Service FOIA Log, FY 2024</a> (see pp. 12–13)</td><td data-label="Source">U.S. Secret Service</td><td data-label="Date">Fiscal 2024</td><td data-label="File">PDF, on secretservice.gov</td><td data-label="Notes">Linked, not hosted</td></tr>
+</tbody></table></div>
+<p class="editor-note">Editor’s note: OctoProbe redacted two apparent employee first names that the agency left unredacted in the sitemap: one on page 110 and one on page 114. Neighboring rows of the same kind, sites such as “[name] Playground” and “[name] Sandbox,” carry (b)(6) boxes where the agency withheld a name. Those two black boxes are the only changes to the hosted PDF. Every other page is as released, and the page images outside the two boxes are unchanged. The original file is not posted. SHA-256 checksums are in the <a href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/SHA256SUMS.txt">SHA256SUMS file</a>.</p>
+<p class="editor-note">Editor’s note: The browser-history page is a photograph of one printed page, posted without the original file’s metadata. The response-letter excerpt is shown as provided, with file metadata removed. The spreadsheet is posted as received. The FOIA-log figure is a crop with the requester name redacted; the full log is linked, not hosted.</p>
+<h2 id="what-terms-should-foia-requesters-use">What terms should FOIA requesters use?</h2>
+<p>Agencies and Microsoft use their own vocabulary. A request that speaks it is easier to route.</p>
+<div class="table-wrap"><table><thead><tr><th>Term</th><th>Meaning</th><th>Source</th></tr></thead><tbody>
+<tr><td>Tenant</td><td>An organization’s Microsoft 365 instance. Its original name forms the SharePoint address.</td><td><a href="https://learn.microsoft.com/en-us/sharepoint/change-your-sharepoint-domain-name">Microsoft Learn</a></td></tr>
+<tr><td>Custodian</td><td>The person whose records are searched. Agencies search by custodian, so a name and title usually suffice.</td><td>FOIA practice</td></tr>
+<tr><td>OneDrive “-my” host</td><td>The personal-storage address, <code>[tenant]-my.sharepoint.com</code>. Files shared in Teams chats land here.</td><td><a href="https://learn.microsoft.com/en-us/purview/edisc-search-teams">Microsoft Learn</a></td></tr>
+<tr><td>GCC</td><td>Government Community Cloud, Microsoft’s U.S. government environment. Shown in the tenant’s public sign-in metadata.</td><td><a href="https://learn.microsoft.com/en-us/entra/identity-platform/v2-protocols-oidc">Microsoft Learn</a></td></tr>
+<tr><td>Compliance copy</td><td>The copy of a Teams message that Exchange Online keeps for eDiscovery.</td><td><a href="https://learn.microsoft.com/en-us/purview/edisc-search-teams">Microsoft Learn</a></td></tr>
+<tr><td>Audit log</td><td>Microsoft’s record of user actions such as <code>FileAccessed</code> and <code>FileModified</code>.</td><td><a href="https://learn.microsoft.com/en-us/purview/audit-log-activities">Microsoft Learn</a></td></tr>
+<tr><td>Hub site</td><td>A SharePoint site that groups related sites. The released sitemap lists a hub for each site.</td><td>Sitemap, pp. 106–117</td></tr>
+<tr><td>(b)(6)</td><td>Exemption for files whose release would be “a clearly unwarranted invasion of personal privacy.”</td><td><a href="https://www.law.cornell.edu/uscode/text/5/552">5 U.S.C. § 552(b)(6)</a></td></tr>
+<tr><td>(b)(7)(C)</td><td>Law-enforcement records whose release “could reasonably be expected to constitute an unwarranted invasion of personal privacy.”</td><td><a href="https://www.law.cornell.edu/uscode/text/5/552">§ 552(b)(7)(C)</a></td></tr>
+<tr><td>(b)(7)(E)</td><td>Law-enforcement records that “would disclose techniques and procedures for law enforcement investigations or prosecutions.”</td><td><a href="https://www.law.cornell.edu/uscode/text/5/552">§ 552(b)(7)(E)</a></td></tr>
+</tbody></table></div>
+<section class="faq" aria-labelledby="frequently-asked-questions">
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3>Is an official’s browser history an agency record under FOIA?</h3>
+<p>It depends on the agency. In Cause of Action Institute v. OMB (2021), the D.C. Circuit held that browsing histories at the Office of Management and Budget and the Agriculture Department were not agency records, because the agencies did not use them and employees could delete them. The Secret Service, by contrast, processed five requests for senior officials’ browser histories and closed each as granted or denied in part.</p>
+<h3>Do I need an official’s email address to request their records?</h3>
+<p>No. Agencies search by custodian. A full name and title, such as “Ronald L. Rowe Jr., Deputy Director,” is enough. Do not guess an email address; if a release shows a username, quote only what the agency released.</p>
+<h3>Can an agency refuse a “last 100 documents” request as creating a new record?</h3>
+<p>It may try. Courts have held that running a search or query on existing data is not creating a record, but a federal judge in Washington ruled in 2012 that a bare listing or index of a database’s contents can be. Ask for the documents themselves, sorted by last-modified date, rather than a list.</p>
+<h3>Where does Microsoft store Teams chats?</h3>
+<p>Microsoft’s eDiscovery documentation says messages in 1:1 and group chats are stored in the Exchange Online mailbox of every chat participant, channel posts in the mailbox associated with the team, files shared in chats in the sharer’s OneDrive and channel files in the team’s SharePoint site.</p>
+<h3>What do FOIA exemptions (b)(6), (b)(7)(C) and (b)(7)(E) mean?</h3>
+<p>Exemption (b)(6) covers files whose release would be a clearly unwarranted invasion of personal privacy. (b)(7)(C) covers law-enforcement records whose release could reasonably be expected to invade personal privacy. (b)(7)(E) covers law-enforcement techniques and procedures. The Secret Service used all three in the releases described here.</p>
+<h3>How long do agencies keep web and system logs?</h3>
+<p>Many logs are short-lived. The National Archives’ general schedule for system access records, including log-in files and system usage files, allows agencies to destroy them when business use ceases. File requests for logs soon after the period you care about.</p>
+</section>
+<p class="author-note"><a href="https://www.linkedin.com/in/colinaamot/" rel="author">Colin Aamot</a> is a former U.S. Army counterterrorism information operations (CT-IO) planner who deployed with several joint task forces in support of Operations Inherent Resolve and Spartan Shield. He subsequently worked at the Heritage Foundation and in the office of Rep. Darrell Issa, with portfolios spanning foreign policy, technology, and innovation. He holds an MA in Global Security Studies from Johns Hopkins University and an MBA from UNC Kenan-Flagler Business School.<span class="author-links"><a href="https://www.linkedin.com/in/colinaamot/">LinkedIn</a><a href="https://x.com/ColinAamot">X</a><a href="https://www.dailysignal.com/author/colin-aamot/">Daily Signal (previous bylines)</a></span></p>
+<aside aria-label="Related reading" class="related-reading">
+<h2>Related Reading</h2>
+<ul>
+<li><a href="/blog/dhs-phone-location-data-legal-opinion-foia/">DHS Lawyers Wrote 24 Pages on Buying Your Phone’s Location Data. They Withheld Every Page of the Analysis.</a></li>
+<li><a href="/blog/centcom-war-orders-anvil-chart-foia/">The Only Public Map of CENTCOM’s War Orders Is Dated 2022</a></li>
+</ul>
+</aside>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>This guide relies on FOIA releases, agency records, court opinions, statutes and Microsoft’s public documentation. It is not legal advice.</p>
+      </div>
+    </div>
+  </article>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="frow">
+      <a class="fbrand" href="/" aria-label="OctoProbe AI">
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <defs><linearGradient id="gf" x1="6" y1="4" x2="34" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#818cf8"/><stop offset=".55" stop-color="#38bdf8"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs>
+          <g stroke="url(#gf)" stroke-width="2.4" stroke-linecap="round">
+            <path d="M12 21.5 C6 25 5.5 31 9.5 34.5"/><path d="M16 22.5 C13 27 12 32.5 15 36"/><path d="M19 23 C18 28.5 17.5 33 19 37"/>
+            <path d="M28 21.5 C34 25 34.5 31 30.5 34.5"/><path d="M24 22.5 C27 27 28 32.5 25 36"/><path d="M21 23 C22 28.5 22.5 33 21 37"/>
+          </g>
+          <g fill="url(#gf)"><circle cx="9.5" cy="34.5" r="2.1"/><circle cx="15" cy="36" r="2.1"/><circle cx="19" cy="37" r="2.1"/><circle cx="30.5" cy="34.5" r="2.1"/><circle cx="25" cy="36" r="2.1"/><circle cx="21" cy="37" r="2.1"/></g>
+          <path d="M20 4.5 C12.3 4.5 7.5 9.8 7.5 16.4 C7.5 20.6 10.6 23.2 14.8 23.2 L25.2 23.2 C29.4 23.2 32.5 20.6 32.5 16.4 C32.5 9.8 27.7 4.5 20 4.5 Z" fill="url(#gf)"/>
+          <rect x="15.2" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
+          <rect x="21.6" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
+        </svg>
+        OctoProbe News
+      </a>
+      <nav class="fnav" aria-label="Footer navigation">
+        <a href="/blog/">Investigations</a>
+        <a href="/blog/about/">About</a>
+        <a href="/blog/standards/">Standards</a>
+        <a href="/blog/corrections/">Corrections</a>
+        <a href="/blog/contact/">Contact</a>
+        <a href="mailto:press@octoprobe.ai">press@octoprobe.ai</a>
+      </nav>
+    </div>
+    <div class="legal">
+      <p>© <span id="yr">2026</span> Redwing Technologies LLC · OctoProbe News · <a href="mailto:press@octoprobe.ai" style="color:inherit">press@octoprobe.ai</a></p>
+      <p><strong>OctoProbe News</strong> is published by Redwing Technologies LLC, which also develops the OctoProbe OSINT investigation platform for law firms, licensed investigators and analysts. The newsroom operates independently of that commercial business; see our <a href="/blog/standards/#independence" style="color:inherit">editorial standards</a>. Platform inquiries: <a href="/" style="color:inherit">octoprobe.ai</a> · <a href="mailto:team@octoprobe.ai" style="color:inherit">team@octoprobe.ai</a>.</p>
+    </div>
+  </div>
+</footer>
+<script>
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 10), { passive: true });
+  const tg = document.getElementById('navToggle'), mm = document.getElementById('mobileMenu');
+  tg.addEventListener('click', () => { const o = mm.classList.toggle('open'); tg.setAttribute('aria-expanded', o); });
+  mm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mm.classList.remove('open'); tg.setAttribute('aria-expanded', 'false'); }));
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+<script src="/assets/js/blog-toc.js?v=toc7" defer></script>
+<script src="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/assets/usss.js?v=2" defer></script>
+</body>
+</html>
