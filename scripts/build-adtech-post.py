@@ -9,7 +9,8 @@ post needs and the stock builder cannot express:
   * NOTE: paragraphs -> <p class="editor-note">Editor’s note: …</p>
   * {{ANSWER}} -> primary question + answer-first block (after the cover, isis-style)
   * {{FAQ}} -> visible FAQ section + FAQPage JSON-LD (as in the ISIS post)
-  * {{AUTHOR_NOTE}} -> .author-note bio from front matter author/author_url/author_bio
+  * {{AUTHOR_NOTE}} -> .author-note bio from front matter author/author_url/author_bio, plus an
+    optional .author-links row from author_links: ["Label | https://url", ...] (also JSON-LD sameAs)
   * dek under the H1, news-frame CSS, post-local assets/adtech.css + adtech.js
   * markdown tables wrapped in .table-wrap; template post-disclaimer replaced by the
     post's own Disclaimer section (as in blog/isis-media-survives-takedowns/)
@@ -33,7 +34,6 @@ NEWS_FRAME = ('<style id="news-frame">.post-dek{max-width:46rem;margin:.6rem 0 0
  '.post-hero .byline{margin:1rem 0 0;font-weight:600;color:#334155;font-size:.98rem}.post-hero .byline a{color:inherit;text-decoration:underline;text-decoration-color:rgba(51,65,85,.35);text-underline-offset:3px}.post-hero .byline a:hover{color:var(--blue)}.table-wrap{overflow-x:auto}'
  '.table-wrap table{border-collapse:collapse;width:100%;font-size:.92rem}.table-wrap th,.table-wrap td{border:1px solid #e2e8f0;padding:.45rem .6rem;vertical-align:top;text-align:left}'
  '.related-reading{border-top:1px solid #e2e8f0;margin-top:2rem;padding-top:.5rem}.related-reading h2{margin-top:1rem}.related-reading li{margin:.4rem 0}'
- '.prose .editor-note{margin-top:.4em;font-size:.85em;line-height:1.5;color:#6b7280}.prose .editor-note a{color:inherit;text-decoration:underline}'
  '.prose .faq h3{font-size:1.02rem;margin-top:1.2em}.prose .faq p{margin-top:.35em}</style>')
 
 def smart(t):
@@ -96,10 +96,14 @@ def build(md_path: Path, out_root: Path):
         f"<h3>{escape(f['q'])}</h3>\n<p>{escape(f['a'])}</p>" for f in faq) + "\n</section>"
     html = html.replace("<p>{{FAQ}}</p>", faq_html)
     a_name = meta.get("author"); a_url = meta.get("author_url"); a_bio = meta.get("author_bio")
+    a_links = [tuple(p.strip() for p in x.split(" | ", 1)) for x in (meta.get("author_links") or [])]
+    assert all(len(x) == 2 and x[1].startswith("https://") for x in a_links), a_links
+    links_html = ('<span class="author-links">' + "".join(f'<a href="{escape(u)}">{escape(l)}</a>' for l, u in a_links)
+                  + "</span>") if a_links else ""
     if a_name and a_bio:
         rest = a_bio[len(a_name):] if a_bio.startswith(a_name) else " " + a_bio
         name_html = f'<a href="{escape(a_url)}" rel="author">{escape(a_name)}</a>' if a_url else escape(a_name)
-        html = html.replace("<p>{{AUTHOR_NOTE}}</p>", f'<p class="author-note">{name_html}{escape(rest)}</p>')
+        html = html.replace("<p>{{AUTHOR_NOTE}}</p>", f'<p class="author-note">{name_html}{escape(rest)}{links_html}</p>')
     else:
         html = html.replace("<p>{{AUTHOR_NOTE}}</p>\n", "").replace("<p>{{AUTHOR_NOTE}}</p>", "")
     assert "{{" not in html, re.findall(r"\{\{[^}]+\}\}", html)
@@ -111,6 +115,8 @@ def build(md_path: Path, out_root: Path):
         ld[0]["author"] = {"@type": "Person", "name": meta["author"], "url": meta["author_url"]}
         if meta.get("author_bio"):
             ld[0]["author"]["description"] = meta["author_bio"]
+        if a_links:
+            ld[0]["author"]["sameAs"] = [u for _, u in a_links]
     else:
         ld[0]["author"] = {"@type": "Organization", "name": "OctoProbe Staff", "url": f"{bb.SITE}/blog/"}
     if faq:
@@ -152,8 +158,8 @@ def build(md_path: Path, out_root: Path):
            .replace("{{BYLINE_HTML}}", byline_html)
            .replace("\n      {{HERO_HTML}}", "").replace("{{HERO_HTML}}", "").replace("{{BODY}}", html))
     out = out.replace("</h1>", "</h1>\n      <p class=\"post-dek\">" + escape(meta["dek"]) + "</p>", 1)
-    out = out.replace('<link rel="stylesheet" href="/assets/css/blog.css?v=news2">',
-        '<link rel="stylesheet" href="/assets/css/blog.css?v=news2">\n' + NEWS_FRAME +
+    out = out.replace('<link rel="stylesheet" href="/assets/css/blog.css?v=news3">',
+        '<link rel="stylesheet" href="/assets/css/blog.css?v=news3">\n' + NEWS_FRAME +
         f'\n<link rel="stylesheet" href="/blog/{slug}/assets/adtech.css?v=1">', 1)
     out = re.sub(r'\s*<p class="post-disclaimer">.*?</p>', "", out, count=1, flags=re.S)
     out = out.replace('<script src="/assets/js/blog-toc.js?v=toc7" defer></script>',
