@@ -89,6 +89,8 @@ Styles live in `/assets/css/blog.css` (`.prose .author-note`): italic, ~1rem, th
 
 Optional profile-links row: put `<span class="author-links"><a href="…">LinkedIn</a><a href="…">X</a></span>` as the last child **inside** the `<p class="author-note">` (keeps the `.author-note + .related-reading` spacing rule working), and list the same URLs in the Person JSON-LD `sameAs`. In `scripts/build-adtech-post.py` posts this comes from front matter `author_links: ["Label | https://url", ...]`.
 
+Author headshot (top byline): bylined authors may show a small circular photo before the name. Store square crops once under `/assets/authors/` as `<name>-96.webp`, `<name>-192.webp`, `<name>-96.jpg`, `<name>-192.jpg` (face centered). Markup: `<p class="byline has-avatar"><picture><source type="image/webp" srcset="…-96.webp 1x, …-192.webp 2x"><img class="author-avatar" src="…-96.jpg" srcset="…-96.jpg 1x, …-192.jpg 2x" width="44" height="44" alt="Name" decoding="async"></picture><span>By <a href="…" rel="author">Name</a></span></p>`; styles in `blog.css` (`.post-hero .byline.has-avatar`, `.author-avatar`: 42px desktop / 36px ≤520px). Add the absolute `-192.jpg` URL as Person JSON-LD `image`. In `scripts/build-adtech-post.py` posts set front matter `author_image: /assets/authors/<name>-192.jpg`. Posts bylined "OctoProbe Staff" have no avatar.
+
 ### Editor's note
 
 `<p class="editor-note">Editor’s note: …</p>` is styled site-wide in `/assets/css/blog.css` (`.prose .editor-note`); do not add per-post overrides. When `blog.css` changes, bump its `?v=` query in `blog/_template.html`, `scripts/build-adtech-post.py`, and every built `blog/**/index.html`.

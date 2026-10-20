@@ -397,6 +397,17 @@ footer .legal strong{color:var(--soft)}
 .prose > figure:first-child{margin-top:0;margin-bottom:2.75em}
 .prose figcaption:not(.sr-only),.prose .caption,.prose .em-caption,figcaption,.caption,.em-caption{margin-top:calc(.7em + 10px);text-align:center;font-style:italic;font-size:9pt;color:var(--soft-2);line-height:1.5}
 
+/* Author headshot in the top byline (bylined authors only):
+   <p class="byline has-avatar"><picture>…<img class="author-avatar"></picture><span>By <a>Name</a></span></p>
+   Higher specificity than the per-post inline .post-hero .byline rule. */
+.post-hero .byline.has-avatar{display:flex;align-items:center;gap:11px;margin:1.4rem 0 .4rem;line-height:1.3}
+.post-hero .byline.has-avatar picture{display:block;flex:none;line-height:0}
+.post-hero .byline .author-avatar{display:block;width:42px;height:42px;border-radius:50%;object-fit:cover;background:var(--panel-2);box-shadow:0 0 0 1px var(--line-2)}
+@media(max-width:520px){
+  .post-hero .byline.has-avatar{gap:10px;margin:1.2rem 0 .3rem}
+  .post-hero .byline .author-avatar{width:36px;height:36px}
+}
+
 /* Author bio note — op-eds and bylined posts. Place <p class="author-note">…</p>
    immediately before Related Reading; set Person JSON-LD description to the same text. */
 .prose .author-note{
