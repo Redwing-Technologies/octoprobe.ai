@@ -137,20 +137,6 @@
 .ixm .m3-table th[scope="row"]{font-size:.8rem;text-transform:none;letter-spacing:0;white-space:normal;min-width:110px;text-align:left;background:#f8fafc}
 .ixm .m3-table td{vertical-align:top;border-top:1px solid var(--ix-l);font-size:.82rem}
 
-/* ---- Request builder ---- */
-.rb-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 12px;margin:0 0 .8rem}
-.rb-f span{display:block;font:600 .64rem var(--fm,monospace);letter-spacing:.06em;text-transform:uppercase;color:var(--ix-s);margin:0 0 2px}
-.rb-f input{width:100%;font:400 .86rem var(--fb,Inter,sans-serif);padding:7px 10px;border:1px solid var(--ix-l2);border-radius:8px;min-height:36px}
-.rb-checks{display:flex;flex-wrap:wrap;gap:6px 14px;margin:0 0 .8rem;font-size:.84rem}
-.rb-c{display:inline-flex;align-items:center;gap:6px;cursor:pointer;min-height:30px}
-.rb-list li{padding:.45rem 0;border-bottom:1px solid var(--ix-l);font-size:.86rem}
-.ixm-ready .rb-list{display:none}
-.rb-out textarea{width:100%;font:400 .82rem/1.5 var(--fm,monospace);padding:10px;border:1px solid var(--ix-l2);border-radius:8px;background:#f8fafc;color:var(--ix-h);resize:vertical}
-.rb-out .ixm-controls{margin:.5rem 0 0}
-.rb-status{font:500 .76rem var(--fm,monospace);color:var(--ix-teal)}
-.rb-check{margin-top:.2rem!important}
-.rb-check li{padding:.2rem 0 .2rem 1.1rem;position:relative;font-size:.85rem}
-.rb-check li::before{content:"✓";position:absolute;left:0;color:var(--ix-teal);font-weight:700}
 
 /* ---- Release explorer ---- */
 .fe-sum{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0 0 .9rem}
@@ -186,7 +172,6 @@
   .rl-wrap{grid-template-columns:1fr}
   .rl-open{max-width:320px;margin:0 auto}
   .hf-sum,.fe-sum{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .rb-fields{grid-template-columns:1fr}
   .ixm-search input{min-width:0;width:100%}
   .ixm-search{flex:1 1 100%}
   .ixm-live{padding:.8rem}
@@ -202,8 +187,6 @@
 @media print{
   .ixm-controls,.hf-copy,.rl-zoom{display:none!important}
   .hf-scroll{max-height:none;overflow:visible}
-  .ixm-ready .rb-list{display:block}
-  .rb-form,.rb-out{display:none!important}
   .ixm-fig,.doc-page,.cli-box{break-inside:avoid}
   .hf-table tr{break-inside:avoid}
 }
@@ -234,6 +217,4 @@
 .prose .checklist-box .cl-list li{position:relative;margin:.35rem 0;padding-left:1.7rem;font-size:.96rem}
 .prose .checklist-box .cl-list li::before{content:"";position:absolute;left:0;top:.28em;width:.95em;height:.95em;border:2px solid #1d4ed8;border-radius:3px;box-sizing:border-box}
 .prose .checklist-box.cl-end .cl-list li::before{border-color:#0f766e}
-.ixm .rb-sep{flex-basis:100%;margin-top:6px;font:600 .62rem var(--fm,monospace);letter-spacing:.06em;text-transform:uppercase;color:var(--ix-s)}
-.ixm .rb-xlist{margin:0 0 10px;padding-left:1.1rem;font-size:.85rem}
 @media print{.prose .example-box,.prose .checklist-box{break-inside:avoid}}

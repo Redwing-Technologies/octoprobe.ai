@@ -1,6 +1,6 @@
 /* Interactive modules for the Secret Service FOIA x OSINT guide.
    Progressive enhancement: every module's content is in the HTML; this script adds the
-   lightbox, the loop diagram, table search and filters, the request builder and the
+   lightbox, the loop diagram, table search and filters, and the
    release explorer. No network calls except loading this post's own hostfinder-data.json. */
 (function () {
   'use strict';
@@ -129,29 +129,6 @@
     }).catch(function () { cnt.textContent += ' (full table unavailable; use the CSV)'; });
   }
 
-  // ---------- Request builder ----------
-  function builder(m) {
-    var form = $('.rb-form', m), out = $('.rb-out', m), ta = $('textarea', out), status = $('.rb-status', m);
-    form.hidden = false; out.hidden = false;
-    var tpls = {};
-    $$('.rb-list li', m).forEach(function (li) { tpls[li.getAttribute('data-t')] = $('.rb-tpl', li).textContent.replace(/^“|”$/g, ''); });
-    var xtra = {};
-    $$('.rb-xlist li', m).forEach(function (li) { xtra[li.getAttribute('data-x')] = $('.rb-tpl', li).textContent.replace(/^“|”$/g, ''); });
-    function val(k) { var v = $('[data-rb="' + k + '"]', m).value.trim(); return v; }
-    function render() {
-      var map = { AGENCY: val('agency') || '[Agency]', TENANT: val('tenant') || '[tenant]', CUSTODIAN: val('custodian') || '[Full name]', TITLE: val('title') || '[Title]', START: val('start') || '[Start date]', END: val('end') || '[End date]', KEYWORDS: val('keywords') || '[keywords]' };
-      var items = $$('[data-rb-t]', m).filter(function (c) { return c.checked; }).map(function (c) { return tpls[c.getAttribute('data-rb-t')]; });
-      var body = items.map(function (t, i) { return (i + 1) + '. ' + t.replace(/\[([A-Z]+)\]/g, function (x, k) { return map[k] || x; }); }).join('\n\n');
-      var extras = $$('[data-rb-x]', m).filter(function (c) { return c.checked; }).map(function (c) { return xtra[c.getAttribute('data-rb-x')]; });
-      ta.value = 'Under the Freedom of Information Act, 5 U.S.C. § 552, I request the following records:\n\n' + (body || '[Select at least one item.]') +
-        '\n\nPlease provide the records in electronic form, as native files where available, under 5 U.S.C. § 552(a)(3)(B). Please describe the systems and locations searched.' +
-        (extras.length ? '\n\n' + extras.join('\n\n') : '');
-    }
-    $$('input', form).forEach(function (i) { i.addEventListener('input', render); i.addEventListener('change', render); });
-    $('[data-rb-copy]', m).addEventListener('click', function () { copyText(ta.value, function (ok) { status.textContent = ok ? 'Copied.' : 'Select the text and copy it manually.'; }); });
-    render();
-  }
-
   // ---------- Release explorer ----------
   function explorer(m) {
     var det = $('.fe-detail', m), chips = $$('[data-show]', m), docs = $$('.fe-doc', m);
@@ -165,7 +142,7 @@
     }); });
   }
 
-  var INIT = { rowe: rowe, loop: loop, hostfinder: hostfinder, builder: builder, explorer: explorer };
+  var INIT = { rowe: rowe, loop: loop, hostfinder: hostfinder, explorer: explorer };
   function boot() {
     $$('.ixm[data-ixm]').forEach(function (m) {
       var f = INIT[m.getAttribute('data-ixm')];

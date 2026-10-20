@@ -342,7 +342,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/blog.css?v=news5">
 <style id="news-frame">.post-dek{max-width:46rem;margin:.6rem 0 0;font-size:1.15rem;line-height:1.5;color:#475569}.post-hero .byline{margin:1rem 0 0;font-weight:600;color:#334155;font-size:.98rem}.post-hero .byline a{color:inherit;text-decoration:underline;text-decoration-color:rgba(51,65,85,.35);text-underline-offset:3px}.post-hero .byline a:hover{color:var(--blue)}.table-wrap{overflow-x:auto}.table-wrap table{border-collapse:collapse;width:100%;font-size:.92rem}.table-wrap th,.table-wrap td{border:1px solid #e2e8f0;padding:.45rem .6rem;vertical-align:top;text-align:left}.related-reading{border-top:1px solid #e2e8f0;margin-top:2rem;padding-top:.5rem}.related-reading h2{margin-top:1rem}.related-reading li{margin:.4rem 0}.prose .faq h3{font-size:1.02rem;margin-top:1.2em}.prose .faq p{margin-top:.35em}</style>
-<link rel="stylesheet" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/assets/usss.css?v=3">
+<link rel="stylesheet" href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/assets/usss.css?v=4">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -625,41 +625,25 @@ curl -s "https://login.microsoftonline.com/unitedstatessecretservice.onmicrosoft
 <p class="ex-t">The 2025 wording</p>
 <p>The Secret Service’s <a href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-final-response-excerpt.png">letter</a> quotes the request’s first item this way: “The last 100 documents edited by the custodian on the Secret Service Sharepoint (https://unitedstatessecretservice.sharepoint.com OR https://unitedstatessecretservice-my.sharepoint.com).” The second item was the same, with “created” in place of “edited.” The fourth asked for “A current sitemap of the Secret Service Sharepoint (https://unitedstatessecretservice.sharepoint.com).” The request did this in four numbered items, and the response letter restates them.</p>
 </aside>
-<p>Use the builder to turn those into your own request. Fill in the brackets, tick the records you want and copy the text.</p>
-<figure class="ixm-fig" id="fig-builder">
-<div class="ixm " data-ixm="builder">
-<div class="ixm-head"><span class="ixm-kicker">Interactive · request builder</span><span class="ixm-title">Write the request</span></div>
-<div class="ixm-live">
-<div class="rb-form" hidden><div class="rb-fields"><label class="rb-f"><span>Agency</span><input type="text" data-rb="agency" value="U.S. Secret Service"></label><label class="rb-f"><span>Tenant name (before .sharepoint.com)</span><input type="text" data-rb="tenant" value="unitedstatessecretservice"></label><label class="rb-f"><span>Custodian’s name</span><input type="text" data-rb="custodian" value="[Full name]"></label><label class="rb-f"><span>Custodian’s title</span><input type="text" data-rb="title" value="[Title]"></label><label class="rb-f"><span>Start date</span><input type="text" data-rb="start" value="[Start date]"></label><label class="rb-f"><span>End date</span><input type="text" data-rb="end" value="[End date]"></label><label class="rb-f"><span>Keywords (Teams)</span><input type="text" data-rb="keywords" value="[keyword 1], [keyword 2]"></label></div><div class="rb-checks" role="group" aria-label="Records to request"><label class="rb-c"><input type="checkbox" data-rb-t="browser" checked> Browser history and web logs</label><label class="rb-c"><input type="checkbox" data-rb-t="edited" checked> Documents edited</label><label class="rb-c"><input type="checkbox" data-rb-t="created" checked> Documents created</label><label class="rb-c"><input type="checkbox" data-rb-t="commented"> Documents commented on</label><label class="rb-c"><input type="checkbox" data-rb-t="teams" checked> Teams messages</label><label class="rb-c"><input type="checkbox" data-rb-t="cards"> Card statements</label><label class="rb-c"><input type="checkbox" data-rb-t="sitemap"> Sitemap</label><span class="rb-sep">Fees and timing</span><label class="rb-c"><input type="checkbox" data-rb-x="media" checked> News-media fee category</label><label class="rb-c"><input type="checkbox" data-rb-x="waiver"> Fee waiver</label><label class="rb-c"><input type="checkbox" data-rb-x="expedite"> Expedited processing</label></div></div>
-<ol class="rb-list">
-<li data-t="browser"><strong>Browser history and web logs.</strong> <span class="rb-tpl">“The web browsing history of [CUSTODIAN], [TITLE], from [START] to [END], including any centrally retained web proxy, secure web gateway, DNS or endpoint logs that record the URLs or hostnames visited from [CUSTODIAN]’s agency accounts or devices.”</span></li>
-<li data-t="edited"><strong>Documents edited.</strong> <span class="rb-tpl">“The last 100 documents edited by [CUSTODIAN], [TITLE], on the [AGENCY] SharePoint (https://[TENANT].sharepoint.com OR https://[TENANT]-my.sharepoint.com), sorted by last-modified date.”</span></li>
-<li data-t="created"><strong>Documents created.</strong> <span class="rb-tpl">“The last 100 documents created by [CUSTODIAN], [TITLE], on the [AGENCY] SharePoint (https://[TENANT].sharepoint.com OR https://[TENANT]-my.sharepoint.com).”</span></li>
-<li data-t="commented"><strong>Documents commented on.</strong> <span class="rb-tpl">“Documents on the [AGENCY] SharePoint or OneDrive (https://[TENANT].sharepoint.com OR https://[TENANT]-my.sharepoint.com) on which [CUSTODIAN] added or replied to a comment from [START] to [END].”</span></li>
-<li data-t="teams"><strong>Teams messages.</strong> <span class="rb-tpl">“All Microsoft Teams messages sent or received by [CUSTODIAN], [TITLE], from [START] to [END], including 1:1 chats, group chats and channel posts, containing any of these terms: [KEYWORDS]. This includes the copies of those messages kept in [CUSTODIAN]’s Exchange Online mailbox, and files [CUSTODIAN] shared in those chats as stored in [CUSTODIAN]’s OneDrive (https://[TENANT]-my.sharepoint.com).”</span></li>
-<li data-t="cards"><strong>Card statements.</strong> <span class="rb-tpl">“[CUSTODIAN]’s agency credit card statements from [START] to [END], including statements available through the agency’s card-program portal.”</span></li>
-<li data-t="sitemap"><strong>Sitemap.</strong> <span class="rb-tpl">“A current sitemap of the [AGENCY] SharePoint (https://[TENANT].sharepoint.com), listing site names, URLs and hub sites.”</span></li>
-</ol>
-<p class="ixm-sub">Fee and timing language</p>
-<ul class="rb-xlist">
-<li data-x="media"><strong>News-media fee category.</strong> <span class="rb-tpl">“I am a representative of the news media, as defined in 5 U.S.C. § 552(a)(4)(A)(ii), and I seek these records for news gathering, not for commercial use. Please limit any fees to duplication charges.”</span></li>
-<li data-x="waiver"><strong>Fee waiver.</strong> <span class="rb-tpl">“I request a waiver of all fees under 5 U.S.C. § 552(a)(4)(A)(iii). Disclosure is in the public interest because it is likely to contribute significantly to public understanding of the operations or activities of the government, and it is not primarily in my commercial interest. [Explain how and where you will publish.]”</span></li>
-<li data-x="expedite"><strong>Expedited processing.</strong> <span class="rb-tpl">“I request expedited processing under 5 U.S.C. § 552(a)(6)(E). I am primarily engaged in disseminating information, and there is an urgency to inform the public concerning actual or alleged Federal Government activity: [explain the urgency]. I certify that this statement is true and correct to the best of my knowledge and belief.”</span></li>
-</ul>
-<div class="rb-out" hidden><label class="ixm-sub" for="rb-text">Your request text</label><textarea id="rb-text" rows="12" readonly></textarea>
-<div class="ixm-controls"><button type="button" class="btn btn-primary" data-rb-copy>Copy text</button><span class="rb-status" aria-live="polite"></span></div></div>
-<p class="ixm-sub">Before you send</p>
-<ul class="rb-check">
-<li>A date range on every item.</li>
-<li>The custodian’s full name and title, not an email address.</li>
-<li>The systems by name: SharePoint, OneDrive, Exchange Online, Teams.</li>
-<li>The format: electronic copies or native files, “if the record is readily reproducible.”</li>
-<li>Your fee category, any fee waiver or expedited-processing request, and a request for a description of the search.</li>
-</ul>
-</div>
-</div>
-<figcaption>Bracketed fields are yours to fill. The builder runs in your browser; it sends nothing anywhere. The documents-edited, documents-created and sitemap items follow the wording of the author’s April 2025 request. The rest, including the fee and timing language, are OctoProbe templates built on the statute’s wording. This is not legal advice.</figcaption>
-</figure>
+<h3 id="sample-request-language">Sample request language</h3>
+<p>Open with one line, number one item per record and close with format and fees. Replace every bracketed field. For documents and sitemaps, adapt the 2025 wording above. The templates below are OctoProbe’s, built on the statute’s wording.</p>
+<blockquote><p>Under the Freedom of Information Act, 5 U.S.C. § 552, I request the following records:</p></blockquote>
+<p><strong>Browser history and web logs.</strong></p>
+<blockquote><p>The web browsing history of [CUSTODIAN], [TITLE], from [START] to [END], including any centrally retained web proxy, secure web gateway, DNS or endpoint logs that record the URLs or hostnames visited from [CUSTODIAN]’s agency accounts or devices.</p></blockquote>
+<p><strong>Documents commented on.</strong></p>
+<blockquote><p>Documents on the [AGENCY] SharePoint or OneDrive (https://[TENANT].sharepoint.com OR https://[TENANT]-my.sharepoint.com) on which [CUSTODIAN] added or replied to a comment from [START] to [END].</p></blockquote>
+<p><strong>Teams messages.</strong></p>
+<blockquote><p>All Microsoft Teams messages sent or received by [CUSTODIAN], [TITLE], from [START] to [END], including 1:1 chats, group chats and channel posts, containing any of these terms: [KEYWORDS]. This includes the copies of those messages kept in [CUSTODIAN]’s Exchange Online mailbox, and files [CUSTODIAN] shared in those chats as stored in [CUSTODIAN]’s OneDrive (https://[TENANT]-my.sharepoint.com).</p></blockquote>
+<p><strong>Card statements.</strong></p>
+<blockquote><p>[CUSTODIAN]’s agency credit card statements from [START] to [END], including statements available through the agency’s card-program portal.</p></blockquote>
+<p><strong>Format and search.</strong></p>
+<blockquote><p>Please provide the records in electronic form, as native files where available, under 5 U.S.C. § 552(a)(3)(B). Please describe the systems and locations searched.</p></blockquote>
+<p><strong>News-media fee category.</strong></p>
+<blockquote><p>I am a representative of the news media, as defined in 5 U.S.C. § 552(a)(4)(A)(ii), and I seek these records for news gathering, not for commercial use. Please limit any fees to duplication charges.</p></blockquote>
+<p><strong>Fee waiver.</strong></p>
+<blockquote><p>I request a waiver of all fees under 5 U.S.C. § 552(a)(4)(A)(iii). Disclosure is in the public interest because it is likely to contribute significantly to public understanding of the operations or activities of the government, and it is not primarily in my commercial interest. [Explain how and where you will publish.]</p></blockquote>
+<p><strong>Expedited processing.</strong></p>
+<blockquote><p>I request expedited processing under 5 U.S.C. § 552(a)(6)(E). I am primarily engaged in disseminating information, and there is an urgency to inform the public concerning actual or alleged Federal Government activity: [explain the urgency]. I certify that this statement is true and correct to the best of my knowledge and belief.</p></blockquote>
 <p>A few rules of thumb:</p>
 <ul>
 <li>Use keywords for Teams and email. A year of chats with no search terms invites a delay or a fee estimate.</li>
@@ -803,7 +787,7 @@ curl -s "https://login.microsoftonline.com/unitedstatessecretservice.onmicrosoft
 <section class="faq" aria-labelledby="frequently-asked-questions">
 <h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
 <h3>Is an official’s browser history an agency record under FOIA?</h3>
-<p>It depends on the agency. In Cause of Action Institute v. OMB (2021), the D.C. Circuit held that browsing histories at the Office of Management and Budget and the Agriculture Department were not agency records, because the agencies did not use them and employees could delete them. The Secret Service, by contrast, processed five requests for senior officials’ browser histories and closed each as granted or denied in part.</p>
+<p>It depends on the agency. In <em>Cause of Action Institute v. OMB</em> (2021), the D.C. Circuit held that browsing histories at the Office of Management and Budget and the Agriculture Department were not agency records, because the agencies did not use them and employees could delete them. The Secret Service, by contrast, processed five requests for senior officials’ browser histories and closed each as granted or denied in part.</p>
 <h3>Do I need an official’s email address to request their records?</h3>
 <p>No. Agencies search by custodian. A full name and title, such as “Ronald L. Rowe Jr., Deputy Director,” is enough. Do not guess an email address; if a release shows a username, quote only what the agency released.</p>
 <h3>Can an agency refuse a “last 100 documents” request as creating a new record?</h3>
@@ -872,6 +856,6 @@ curl -s "https://login.microsoftonline.com/unitedstatessecretservice.onmicrosoft
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 <script src="/assets/js/blog-toc.js?v=toc7" defer></script>
-<script src="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/assets/usss.js?v=2" defer></script>
+<script src="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/assets/usss.js?v=3" defer></script>
 </body>
 </html>

@@ -70,6 +70,15 @@ HOWTO = [
     ("Use what comes back", "Read site names, hosts, hubs and redaction patterns in the release and turn them into the next requests.", "step-7-use-what-comes-back"),
 ]
 
+
+def inline_em(t):
+    """*Case v. Name* in FAQ text -> <em>Case v. Name</em> (visible HTML only)."""
+    return re.sub(r"\*([^*\n]+)\*", r"<em>\1</em>", t)
+
+def no_em(t):
+    """Strip *...* italics markers where markup is not allowed (JSON-LD)."""
+    return re.sub(r"\*([^*\n]+)\*", r"\1", t)
+
 def build(md_path: Path, out_root: Path):
     meta, body_md = bb.parse_frontmatter(md_path.read_text(encoding="utf-8"))
     for wmsg in bb.validate_meta(meta, md_path, strict=True):
@@ -113,7 +122,7 @@ def build(md_path: Path, out_root: Path):
     html = html.replace("<p>{{ANSWER}}</p>", f'<p class="primary-question"><strong>{q}</strong></p>\n<p class="answer-first">{a}</p>')
     faq = meta.get("faq") or []
     faq_html = '<section class="faq" aria-labelledby="frequently-asked-questions">\n<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>\n' + "\n".join(
-        f"<h3>{escape(f['q'])}</h3>\n<p>{escape(f['a'])}</p>" for f in faq) + "\n</section>"
+        f"<h3>{inline_em(escape(f['q']))}</h3>\n<p>{inline_em(escape(f['a']))}</p>" for f in faq) + "\n</section>"
     html = html.replace("<p>{{FAQ}}</p>", faq_html)
     person = bb.AU.resolve_author(meta)
     html = bb.AU.insert_author_note(html, bb.AU.author_note_html(person))
@@ -147,7 +156,7 @@ def build(md_path: Path, out_root: Path):
         ld[0]["author"] = {"@type": "Organization", "name": "OctoProbe Staff", "url": f"{bb.SITE}/blog/"}
     if faq:
         ld.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-            {"@type": "Question", "name": f["q"], "acceptedAnswer": {"@type": "Answer", "text": f["a"]}} for f in faq]})
+            {"@type": "Question", "name": no_em(f["q"]), "acceptedAnswer": {"@type": "Answer", "text": no_em(f["a"])}} for f in faq]})
     ld_scripts = "\n".join(f'<script type="application/ld+json">\n{json.dumps(b, indent=2, ensure_ascii=False)}\n</script>' for b in ld)
     og_title = meta.get("og_title") or title
     canonical = meta["canonical"]; og = meta["og_image"]; kw = ", ".join(meta.get("keywords") or meta["tags"])
@@ -186,10 +195,10 @@ def build(md_path: Path, out_root: Path):
     out = out.replace("</h1>", "</h1>\n      <p class=\"post-dek\">" + escape(meta["dek"]) + "</p>", 1)
     out = out.replace('<link rel="stylesheet" href="/assets/css/blog.css?v=news5">',
         '<link rel="stylesheet" href="/assets/css/blog.css?v=news5">\n' + NEWS_FRAME +
-        f'\n<link rel="stylesheet" href="/blog/{slug}/assets/usss.css?v=3">', 1)
+        f'\n<link rel="stylesheet" href="/blog/{slug}/assets/usss.css?v=4">', 1)
     out = re.sub(r'\s*<p class="post-disclaimer">.*?</p>', "", out, count=1, flags=re.S)
     out = out.replace('<script src="/assets/js/blog-toc.js?v=toc7" defer></script>',
-        f'<script src="/assets/js/blog-toc.js?v=toc7" defer></script>\n<script src="/blog/{slug}/assets/usss.js?v=2" defer></script>', 1)
+        f'<script src="/assets/js/blog-toc.js?v=toc7" defer></script>\n<script src="/blog/{slug}/assets/usss.js?v=3" defer></script>', 1)
     # <title> uses seo_title when set
     dest = REPO / "blog" / slug / "index.html"; dest.write_text(out, encoding="utf-8"); print("built", dest.relative_to(REPO))
     return out
