@@ -2,13 +2,15 @@
 """Generate the post's figure-style interactive modules (static, readable HTML;
 assets/adtech.js enhances them). All data is illustrative except the FOIA page
 maps, document facts and timeline events, which are sourced."""
-import json, html, pathlib
+import json, html, pathlib, re
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 MODULES = {}  # name -> HTML, read by scripts/build-adtech-post.py
 SLUG = "dhs-phone-location-data-legal-opinion-foia"
 D = f"/blog/{SLUG}/docs/"
 A = f"/blog/{SLUG}/assets/"
 e = html.escape
+def ei(t):  # escape, then *Case* -> <em>Case</em> (case names)
+    return re.sub(r"\*([^*\n]+)\*", r"<em>\1</em>", e(t))
 
 def fig(mid, kicker, title, body, caption, fallback=True, extra_cls=""):
     fbp = ROOT / "blog" / SLUG / "assets" / f"fallback-{mid}.png"
@@ -293,10 +295,10 @@ FLOW = [
  ("Reseller and contract vehicle","An IT reseller sells the subscription under an existing governmentwide contract.",
   [("USAspending: FBI order to GovPlace, $22,346.37","https://www.usaspending.gov/award/CONT_AWD_15F06720F0000659_1549_NNG15SC77B_8000"),("FBI order, PDF p. 22",D+"fbi-foipa-1491075-000-venntel-portal-contract.pdf#page=22")]),
  ("Agency user","Analysts log in and run queries; the data is treated as purchased commercial information, without a warrant.",
-  [("OIG-23-61: 55,000+ CBP queries","https://www.oig.dhs.gov/sites/default/files/assets/2023-09/OIG-23-61-Sep23-Redacted.pdf#page=13"),("DIA memo on Carpenter","https://www.wyden.senate.gov/imo/media/doc/011521%20CTD%20Discussion%20RFI%20Response.pdf")]),
+  [("OIG-23-61: 55,000+ CBP queries","https://www.oig.dhs.gov/sites/default/files/assets/2023-09/OIG-23-61-Sep23-Redacted.pdf#page=13"),("DIA memo on *Carpenter*","https://www.wyden.senate.gov/imo/media/doc/011521%20CTD%20Discussion%20RFI%20Response.pdf")]),
 ]
 fl = "\n".join(f'<li data-i="{i}"><button type="button" class="fl-btn" aria-expanded="{"true" if i==0 else "false"}"><span class="fl-n">{i+1}</span> {e(n)}</button>'
-               f'<div class="fl-det"><p>{e(d)}</p><ul>{"".join(f"<li><a href=\"{e(u)}\">{e(t)}</a></li>" for t,u in s)}</ul></div></li>' for i,(n,d,s) in enumerate(FLOW))
+               f'<div class="fl-det"><p>{e(d)}</p><ul>{"".join(f"<li><a href=\"{e(u)}\">{ei(t)}</a></li>" for t,u in s)}</ul></div></li>' for i,(n,d,s) in enumerate(FLOW))
 w("flow", fig("flow", "Interactive · acquisition path", "From an app to an agency, with the documents for each step",
  f'<ol class="fl-list">\n{fl}\n</ol>',
  'Stages generalized from the public record; each links to a document showing that step for a real transaction. Select a stage to see its sources.', fallback=False))
@@ -305,14 +307,14 @@ w("flow", fig("flow", "Interactive · acquisition path", "From an app to an agen
 TL = [
  ("2012-09","platform","Apple introduces the IDFA with iOS 6.", "https://developer.apple.com/documentation/adsupport/asidentifiermanager/advertisingidentifier","Apple"),
  ("2016-01","military","Contractors testing ad data see phones move from U.S. bases to a cement factory in Syria (reported 2024).","https://www.wired.com/story/how-pentagon-learned-targeted-ads-to-find-targets-and-vladimir-putin/","Wired"),
- ("2018-06","law","Supreme Court decides Carpenter v. United States.","https://www.supremecourt.gov/opinions/17pdf/16-402_h315.pdf","Supreme Court"),
+ ("2018-06","law","Supreme Court decides *Carpenter v. United States*.","https://www.supremecourt.gov/opinions/17pdf/16-402_h315.pdf","Supreme Court"),
  ("2018-09","dhs","ICE begins using CTD without an approved privacy assessment.","https://www.oig.dhs.gov/sites/default/files/assets/2023-09/OIG-23-61-Sep23-Redacted.pdf#page=14","DHS OIG"),
- ("2019-06","dhs","DHS Privacy Office asks whether OGC ran a Carpenter analysis.","https://assets.aclu.org/live/uploads/legal-documents/DHS_HQ_21_09_Records.pdf#page=100","ACLU release"),
+ ("2019-06","dhs","DHS Privacy Office asks whether OGC ran a *Carpenter* analysis.","https://assets.aclu.org/live/uploads/legal-documents/DHS_HQ_21_09_Records.pdf#page=100","ACLU release"),
  ("2020-02","press","WSJ reports CBP and ICE buy Venntel location data.","https://www.wsj.com/articles/federal-agencies-use-cellphone-location-data-for-immigration-enforcement-11581078600","WSJ"),
  ("2020-02","fbi","FBI orders one Venntel Portal seat (Feb. 13).",D+"fbi-foipa-1491075-000-venntel-portal-contract.pdf#page=22","FBI FOIA"),
  ("2020-06","congress","Bicameral inquiry into Venntel opens.","https://oversightdemocrats.house.gov/news/press-releases/members-launch-bicameral-investigation-into-company-tracking-collecting-and","House Oversight"),
  ("2020-09","dhs","DHS OGC signs the AdID legal opinion (Sept. 25).",D+"dhs-ogc-adid-legal-opinion-2020-09-25.pdf#page=1","DHS FOIA"),
- ("2021-01","military","DIA says Carpenter does not require a warrant for purchases.","https://www.wyden.senate.gov/imo/media/doc/011521%20CTD%20Discussion%20RFI%20Response.pdf","DIA"),
+ ("2021-01","military","DIA says *Carpenter* does not require a warrant for purchases.","https://www.wyden.senate.gov/imo/media/doc/011521%20CTD%20Discussion%20RFI%20Response.pdf","DIA"),
  ("2021-04","platform","iOS 14.5 requires apps to ask before tracking.","https://www.apple.com/newsroom/2021/04/ios-14-5-offers-unlock-iphone-with-apple-watch-diverse-siri-voices-and-more/","Apple"),
  ("2022-06","law","ODNI declassifies its report on commercially available information.","https://www.dni.gov/files/ODNI/documents/assessments/ODNI-Declassified-Report-on-CAI-January2022.pdf","ODNI"),
  ("2023-09","dhs","DHS inspector general report OIG-23-61.","https://www.oversight.gov/reports/audit/cbp-ice-and-secret-service-did-not-adhere-privacy-policies-or-develop-sufficient","Oversight.gov"),
@@ -334,7 +336,7 @@ def dd(s):
     y,m=s.split("-")
     return y if s in YEAR_ONLY else f"{MON[int(m)-1]} {y}"
 YEAR_ONLY={"2016-01"}
-tl = "\n".join(f'<li data-cat="{c}" data-d="{d}"><time datetime="{d if d not in YEAR_ONLY else d[:4]}">{dd(d)}</time> <span class="tl-cat tl-c-{c}">{CAT[c]}</span> <span class="tl-t">{e(t)}</span> <a href="{e(u)}">{e(s)}</a></li>' for d,c,t,u,s in TL)
+tl = "\n".join(f'<li data-cat="{c}" data-d="{d}"><time datetime="{d if d not in YEAR_ONLY else d[:4]}">{dd(d)}</time> <span class="tl-cat tl-c-{c}">{CAT[c]}</span> <span class="tl-t">{ei(t)}</span> <a href="{e(u)}">{e(s)}</a></li>' for d,c,t,u,s in TL)
 w("timeline", fig("timeline", "Interactive · timeline", "The advertising-ID location trade, 2012–2026",
  f'''<div class="ixm-controls tl-controls" hidden><div class="ixm-chips" role="group" aria-label="Filter events"><button type="button" class="chip" data-cat="all" aria-pressed="true">All</button>{"".join(f'<button type="button" class="chip" data-cat="{k}" aria-pressed="false">{v}</button>' for k,v in CAT.items())}</div></div>
 <div class="tl-axis" aria-hidden="true"></div>

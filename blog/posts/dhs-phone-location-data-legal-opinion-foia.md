@@ -21,7 +21,7 @@ faq:
   - q: What is commercial telemetry data?
     a: It is the Homeland Security Department's term for location and device data bought from commercial brokers, usually collected by smartphone apps and advertising systems and keyed to a phone's advertising ID. The Defense Department and GAO use a related term, collateral telemetry data.
   - q: Do federal agencies need a warrant to buy phone location data?
-    a: No court has squarely decided it. The Supreme Court's 2018 Carpenter decision requires a warrant to compel cell-site records from carriers, but agencies including DHS, ICE and the Defense Intelligence Agency have taken the position that purchasing commercially available data is different. The House passed a bill to ban such purchases in April 2024; it did not become law.
+    a: No court has squarely decided it. The Supreme Court's 2018 *Carpenter* decision requires a warrant to compel cell-site records from carriers, but agencies including DHS, ICE and the Defense Intelligence Agency have taken the position that purchasing commercially available data is different. The House passed a bill to ban such purchases in April 2024; it did not become law.
   - q: What did the DHS legal opinion on advertising IDs conclude?
     a: The public does not know. DHS released only the first page of the Sept. 25, 2020 opinion, which says it reviews Fourth Amendment and Privacy Act challenges and proposes measures to mitigate legal risks. The remaining 23 pages were withheld under FOIA exemption (b)(5) for privileged deliberations.
   - q: Is an advertising ID anonymous?

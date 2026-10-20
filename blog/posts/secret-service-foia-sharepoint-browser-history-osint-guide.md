@@ -18,7 +18,7 @@ primary_question: How do you request a federal official's browser history, Share
 answer_first: Find the agency's real Microsoft 365 systems with public DNS and Microsoft's sign-in metadata, name a custodian by name and title, and ask for each record type by the system that holds it. Results vary. The Secret Service processed requests for five senior officials' browser histories and released records in part, but a federal appeals court has held that browsing histories an agency neither keeps nor uses are not agency records.
 faq:
   - q: Is an official's browser history an agency record under FOIA?
-    a: It depends on the agency. In Cause of Action Institute v. OMB (2021), the D.C. Circuit held that browsing histories at the Office of Management and Budget and the Agriculture Department were not agency records, because the agencies did not use them and employees could delete them. The Secret Service, by contrast, processed five requests for senior officials' browser histories and closed each as granted or denied in part.
+    a: It depends on the agency. In *Cause of Action Institute v. OMB* (2021), the D.C. Circuit held that browsing histories at the Office of Management and Budget and the Agriculture Department were not agency records, because the agencies did not use them and employees could delete them. The Secret Service, by contrast, processed five requests for senior officials' browser histories and closed each as granted or denied in part.
   - q: Do I need an official's email address to request their records?
     a: No. Agencies search by custodian. A full name and title, such as "Ronald L. Rowe Jr., Deputy Director," is enough. Do not guess an email address; if a release shows a username, quote only what the agency released.
   - q: Can an agency refuse a "last 100 documents" request as creating a new record?
@@ -177,9 +177,43 @@ Keep each item to one sentence. Give every item a date range, a custodian with a
 The Secret Service's [letter](/blog/secret-service-foia-sharepoint-browser-history-osint-guide/docs/usss-final-response-excerpt.png) quotes the request's first item this way: "The last 100 documents edited by the custodian on the Secret Service Sharepoint (https://unitedstatessecretservice.sharepoint.com OR https://unitedstatessecretservice-my.sharepoint.com)." The second item was the same, with "created" in place of "edited." The fourth asked for "A current sitemap of the Secret Service Sharepoint (https://unitedstatessecretservice.sharepoint.com)." The request did this in four numbered items, and the response letter restates them.
 :::
 
-Use the builder to turn those into your own request. Fill in the brackets, tick the records you want and copy the text.
+### Sample request language
 
-{{MODULE:builder}}
+Open with one line, number one item per record and close with format and fees. Replace every bracketed field. For documents and sitemaps, adapt the 2025 wording above. The templates below are OctoProbe's, built on the statute's wording.
+
+> Under the Freedom of Information Act, 5 U.S.C. § 552, I request the following records:
+
+**Browser history and web logs.**
+
+> The web browsing history of [CUSTODIAN], [TITLE], from [START] to [END], including any centrally retained web proxy, secure web gateway, DNS or endpoint logs that record the URLs or hostnames visited from [CUSTODIAN]'s agency accounts or devices.
+
+**Documents commented on.**
+
+> Documents on the [AGENCY] SharePoint or OneDrive (https://[TENANT].sharepoint.com OR https://[TENANT]-my.sharepoint.com) on which [CUSTODIAN] added or replied to a comment from [START] to [END].
+
+**Teams messages.**
+
+> All Microsoft Teams messages sent or received by [CUSTODIAN], [TITLE], from [START] to [END], including 1:1 chats, group chats and channel posts, containing any of these terms: [KEYWORDS]. This includes the copies of those messages kept in [CUSTODIAN]'s Exchange Online mailbox, and files [CUSTODIAN] shared in those chats as stored in [CUSTODIAN]'s OneDrive (https://[TENANT]-my.sharepoint.com).
+
+**Card statements.**
+
+> [CUSTODIAN]'s agency credit card statements from [START] to [END], including statements available through the agency's card-program portal.
+
+**Format and search.**
+
+> Please provide the records in electronic form, as native files where available, under 5 U.S.C. § 552(a)(3)(B). Please describe the systems and locations searched.
+
+**News-media fee category.**
+
+> I am a representative of the news media, as defined in 5 U.S.C. § 552(a)(4)(A)(ii), and I seek these records for news gathering, not for commercial use. Please limit any fees to duplication charges.
+
+**Fee waiver.**
+
+> I request a waiver of all fees under 5 U.S.C. § 552(a)(4)(A)(iii). Disclosure is in the public interest because it is likely to contribute significantly to public understanding of the operations or activities of the government, and it is not primarily in my commercial interest. [Explain how and where you will publish.]
+
+**Expedited processing.**
+
+> I request expedited processing under 5 U.S.C. § 552(a)(6)(E). I am primarily engaged in disseminating information, and there is an urgency to inform the public concerning actual or alleged Federal Government activity: [explain the urgency]. I certify that this statement is true and correct to the best of my knowledge and belief.
 
 A few rules of thumb:
 

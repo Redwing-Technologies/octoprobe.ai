@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Figure-style interactive modules for the Secret Service FOIA x OSINT guide.
 Every module's content is readable static HTML; assets/usss.js adds search, filters,
-the loop stepper, the request builder and the lightbox. Data sources:
+the loop stepper and the lightbox. Data sources:
   - docs/federal-foia-sharepoint-hostnames.csv (practitioner sheet, unaltered)
   - docs/dns-check-2026-10-20.csv (passive DNS results, Oct. 20, 2026)
   - page structure of docs/usss-foia-release-two-redactions.pdf (page footers)
@@ -250,50 +250,6 @@ w("m365", fig("m365", "Reference · Microsoft documentation", "Where Microsoft 3
 {m3}
 </tbody></table></div>''',
  'Quotes are from Microsoft’s eDiscovery and audit documentation. Microsoft says Teams data itself lives in Azure Cosmos DB and Exchange keeps the compliance copies eDiscovery searches. How long audit records are kept depends on the agency’s license and settings.'))
-
-# ---------- Fig. 5: request builder ----------
-TPL = [
- ("browser","Browser history and web logs","The web browsing history of [CUSTODIAN], [TITLE], from [START] to [END], including any centrally retained web proxy, secure web gateway, DNS or endpoint logs that record the URLs or hostnames visited from [CUSTODIAN]’s agency accounts or devices."),
- ("edited","Documents edited","The last 100 documents edited by [CUSTODIAN], [TITLE], on the [AGENCY] SharePoint (https://[TENANT].sharepoint.com OR https://[TENANT]-my.sharepoint.com), sorted by last-modified date."),
- ("created","Documents created","The last 100 documents created by [CUSTODIAN], [TITLE], on the [AGENCY] SharePoint (https://[TENANT].sharepoint.com OR https://[TENANT]-my.sharepoint.com)."),
- ("commented","Documents commented on","Documents on the [AGENCY] SharePoint or OneDrive (https://[TENANT].sharepoint.com OR https://[TENANT]-my.sharepoint.com) on which [CUSTODIAN] added or replied to a comment from [START] to [END]."),
- ("teams","Teams messages","All Microsoft Teams messages sent or received by [CUSTODIAN], [TITLE], from [START] to [END], including 1:1 chats, group chats and channel posts, containing any of these terms: [KEYWORDS]. This includes the copies of those messages kept in [CUSTODIAN]’s Exchange Online mailbox, and files [CUSTODIAN] shared in those chats as stored in [CUSTODIAN]’s OneDrive (https://[TENANT]-my.sharepoint.com)."),
- ("cards","Card statements","[CUSTODIAN]’s agency credit card statements from [START] to [END], including statements available through the agency’s card-program portal."),
- ("sitemap","Sitemap","A current sitemap of the [AGENCY] SharePoint (https://[TENANT].sharepoint.com), listing site names, URLs and hub sites."),
-]
-FIELDS = [("agency","Agency","U.S. Secret Service"),("tenant","Tenant name (before .sharepoint.com)","unitedstatessecretservice"),
-          ("custodian","Custodian’s name","[Full name]"),("title","Custodian’s title","[Title]"),
-          ("start","Start date","[Start date]"),("end","End date","[End date]"),("keywords","Keywords (Teams)","[keyword 1], [keyword 2]")]
-XTRA = [
- ("media","News-media fee category","I am a representative of the news media, as defined in 5 U.S.C. § 552(a)(4)(A)(ii), and I seek these records for news gathering, not for commercial use. Please limit any fees to duplication charges."),
- ("waiver","Fee waiver","I request a waiver of all fees under 5 U.S.C. § 552(a)(4)(A)(iii). Disclosure is in the public interest because it is likely to contribute significantly to public understanding of the operations or activities of the government, and it is not primarily in my commercial interest. [Explain how and where you will publish.]"),
- ("expedite","Expedited processing","I request expedited processing under 5 U.S.C. § 552(a)(6)(E). I am primarily engaged in disseminating information, and there is an urgency to inform the public concerning actual or alleged Federal Government activity: [explain the urgency]. I certify that this statement is true and correct to the best of my knowledge and belief."),
-]
-fl = "".join(f'<label class="rb-f"><span>{lab}</span><input type="text" data-rb="{k}" value="{e(v)}"></label>' for k,lab,v in FIELDS)
-cb = "".join(f'<label class="rb-c"><input type="checkbox" data-rb-t="{k}"{" checked" if k in ("browser","edited","created","teams") else ""}> {lab}</label>' for k,lab,_ in TPL)
-cb += '<span class="rb-sep">Fees and timing</span>' + "".join(f'<label class="rb-c"><input type="checkbox" data-rb-x="{k}"{" checked" if k == "media" else ""}> {lab}</label>' for k,lab,_ in XTRA)
-tl = "\n".join(f'<li data-t="{k}"><strong>{lab}.</strong> <span class="rb-tpl">“{e(t)}”</span></li>' for k,lab,t in TPL)
-xl = "\n".join(f'<li data-x="{k}"><strong>{lab}.</strong> <span class="rb-tpl">“{e(t)}”</span></li>' for k,lab,t in XTRA)
-w("builder", fig("builder", "Interactive · request builder", "Write the request",
- f'''<div class="rb-form" hidden><div class="rb-fields">{fl}</div><div class="rb-checks" role="group" aria-label="Records to request">{cb}</div></div>
-<ol class="rb-list">
-{tl}
-</ol>
-<p class="ixm-sub">Fee and timing language</p>
-<ul class="rb-xlist">
-{xl}
-</ul>
-<div class="rb-out" hidden><label class="ixm-sub" for="rb-text">Your request text</label><textarea id="rb-text" rows="12" readonly></textarea>
-<div class="ixm-controls"><button type="button" class="btn btn-primary" data-rb-copy>Copy text</button><span class="rb-status" aria-live="polite"></span></div></div>
-<p class="ixm-sub">Before you send</p>
-<ul class="rb-check">
-<li>A date range on every item.</li>
-<li>The custodian’s full name and title, not an email address.</li>
-<li>The systems by name: SharePoint, OneDrive, Exchange Online, Teams.</li>
-<li>The format: electronic copies or native files, “if the record is readily reproducible.”</li>
-<li>Your fee category, any fee waiver or expedited-processing request, and a request for a description of the search.</li>
-</ul>''',
- 'Bracketed fields are yours to fill. The builder runs in your browser; it sends nothing anywhere. The documents-edited, documents-created and sitemap items follow the wording of the author’s April 2025 request. The rest, including the fee and timing language, are OctoProbe templates built on the statute’s wording. This is not legal advice.'))
 
 # ---------- Fig. 6: release explorer ----------
 # Page structure from the PDF footers: 44 statement fragments on pp. 1-105, sitemap on pp. 106-117.
