@@ -95,7 +95,7 @@ The sheet's own Secret Service row lists `usss.sharepoint.com`, which does not e
 
 NOTE: OctoProbe hosts the spreadsheet unaltered and flags known errors in the table above rather than changing the file. The Secret Service row's `usss.sharepoint.com` does not resolve; the live tenant is `unitedstatessecretservice.sharepoint.com`. The Cybersecurity and Infrastructure Security Agency is misnamed as the "Cybersecurity and Information Security Agency." The Bureau of Reclamation row's `doamspp` should read `doimspp`. The U.S. Chamber of Commerce and District of Columbia rows are not covered by the federal FOIA. In 10 cells, the hyperlink and the displayed text name different hosts: C334–C336, C338, C343, C372, D362, D381, D398 and D405.
 
-NOTE: Every check in this guide is passive. OctoProbe did not visit any agency SharePoint page, try a login, guess subdomains or scan a network. The Computer Fraud and Abuse Act makes it a crime to anyone who "[intentionally accesses a computer without authorization or exceeds authorized access](https://www.law.cornell.edu/uscode/text/18/1030)" and obtains information. Looking up a public name is not access. Signing in is.
+NOTE: Every check in this guide is passive. The Computer Fraud and Abuse Act makes it a crime to anyone who "[intentionally accesses a computer without authorization or exceeds authorized access](https://www.law.cornell.edu/uscode/text/18/1030)" and obtains information. Looking up a public name is not access. Signing in is.
 
 ## Step 2: Identify the custodian by name or title
 
@@ -127,7 +127,7 @@ Each of the five 2023 requests asked first for "A copy of the individual's brows
 The Rowe page is not a file exported from a browser. It has host names but no page addresses, a username column and background Microsoft traffic. It looks more like a log kept by the agency's network or security tools than a history stored on one laptop. The agency sent the records on paper. By the author's count, the stack ran about 500 pages.
 :::
 
-NOTE: The 10/4/2023 rows on the Rowe page list host names for ad auctions and ad verification, among them `fastlane.rubiconproject.com`, `ssum-sec.casalemedia.com`, `eb2.3lift.com`, `match.adsrvr.org`, `acdn.adnxs.com`, `x.bidswitch.net` and `cdn.doubleverify.com`. These are the kind of real-time-bidding systems explained in OctoProbe's [report on DHS and phone location data](/blog/dhs-phone-location-data-legal-opinion-foia/). The log shows only that a browser on the account contacted them. It does not show what was read, what was shown or what data left the session, and this report draws no conclusion about either.
+NOTE: The 10/4/2023 rows on the Rowe page list host names for ad auctions and ad verification, among them `fastlane.rubiconproject.com`, `ssum-sec.casalemedia.com`, `eb2.3lift.com`, `match.adsrvr.org`, `acdn.adnxs.com`, `x.bidswitch.net` and `cdn.doubleverify.com`. These are the kind of real-time-bidding systems explained in OctoProbe's [report on DHS and phone location data](/blog/dhs-phone-location-data-legal-opinion-foia/). The log shows only that a browser on the account contacted them. It does not show what was read, what was shown or what data left the session.
 
 ### SharePoint documents created and edited
 
@@ -314,4 +314,4 @@ Agencies and Microsoft use their own vocabulary. A request that speaks it is eas
 
 ## Disclaimer
 
-This guide relies on FOIA releases, agency records, court opinions, statutes and Microsoft's public documentation. It is not legal advice. All online checks described are passive lookups of public information.
+This guide relies on FOIA releases, agency records, court opinions, statutes and Microsoft's public documentation. It is not legal advice.

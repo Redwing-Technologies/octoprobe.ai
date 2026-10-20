@@ -240,4 +240,4 @@ A thorough request lists the variants: "commercial telemetry data," "collateral 
 
 ## Disclaimer
 
-This report relies on public records, FOIA releases, court opinions, government reports and published journalism. Interactive figures use generated data and fictional places. It does not accuse any named person of wrongdoing beyond what official findings state. OctoProbe is not a consumer reporting agency, and nothing here may be used for FCRA-covered eligibility decisions.
+This report relies on public records, FOIA releases, court opinions, government reports and published journalism. Interactive figures use generated data and fictional places.

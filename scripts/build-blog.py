@@ -595,14 +595,6 @@ def build_one(md_path: Path, *, strict: bool = True) -> dict:
         hero_html = ""
         print(f"WARNING: {md_path.name}: no hero/featured image — add hero: under assets/blog/", file=sys.stderr)
 
-    if "FCRA" not in body_html:
-        body_html += (
-            '\n<div class="callout"><strong>Public OSINT · not FCRA</strong>'
-            "This writeup covers public-OSINT methodology with fictional examples. "
-            "OctoProbe is not a consumer reporting agency; results may not be used for "
-            "FCRA-covered eligibility decisions.</div>"
-        )
-
     # Author: Colin Aamot by default (byline + avatar, bio box, Person JSON-LD); see scripts/authors.py.
     # Front matter `author: OctoProbe Staff` (or OctoProbe / OctoProbe News) keeps the Organization byline.
     person = AU.resolve_author(meta)

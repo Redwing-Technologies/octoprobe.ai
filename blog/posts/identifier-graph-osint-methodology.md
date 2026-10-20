@@ -40,7 +40,7 @@ Two failure modes show up again and again. **Manual** workflows spend most of th
 - **Manual pain:** hours go to reviewing candidate links, adding or correcting nodes, and markup—not to the first search.
 - **Automation pain:** unconstrained expansion creates false-positive nodes (namesakes, role accounts, recycled numbers, lookalikes) outside the investigation’s scope.
 - Soft correlates get soft edges; facial matches stay analyst-reviewed (**facial recognition OSINT** is suggestion until a human accepts).
-- Teaching examples use fictional **Mira Calden** / **Northline Example Labs** only. Public OSINT first; OctoProbe is **not** a consumer reporting agency (not for FCRA eligibility).
+- Teaching examples use fictional **Mira Calden** / **Northline Example Labs** only. Public OSINT first.
 
 ## What problem does an identifier graph solve?
 
@@ -162,7 +162,7 @@ Budget the collect step as part of the case, not an afterthought. Markup deferre
 
 **Investigative question:** “What public digital footprint is associated with the speaker Mira Calden of Northline Example Labs?”
 
-**Out of scope (examples):** full employee directory mapping; personal relatives; unrelated Northline vendors; any FCRA eligibility use.
+**Out of scope (examples):** full employee directory mapping; personal relatives; unrelated Northline vendors.
 
 **Round 1 — Seed**
 
@@ -209,8 +209,7 @@ OctoProbe’s job, in that framing, is to compress the bookkeeping around these 
 3. **Analyst in the loop for faces.** Facial matches are suggestions until a human accepts them.
 4. **Edge or delete (from the accepted view).** Orphan identifiers without provenance clutter the map and inflate confidence.
 5. **Purpose-bound use.** Map the footprint you were asked to map. Expansion is not an excuse to wander into protected or irrelevant spaces.
-6. **Not for FCRA eligibility.** Credit, employment, insurance, and tenant screening decisions are out of scope for this kind of OSINT workspace.
-7. **No free lunch on review.** Automation can propose faster; someone still owns accept/reject for anything that changes the story of the subject.
+6. **No free lunch on review.** Automation can propose faster; someone still owns accept/reject for anything that changes the story of the subject.
 
 ## How does OctoProbe encode the method?
 
@@ -231,4 +230,4 @@ A public lead becomes an identifier graph when you treat expansion as a **repeat
 
 ---
 
-**Disclaimer:** This article discusses public OSINT methodology using fictional examples (Mira Calden / Northline Example Labs). OctoProbe AI integrates licensed third-party data providers and public-record sources. OctoProbe is **not** a consumer reporting agency; results may not be used for FCRA-covered eligibility decisions (credit, employment, insurance, tenant screening, and similar).
+**Disclaimer:** This article discusses public OSINT methodology using fictional examples (Mira Calden / Northline Example Labs). OctoProbe AI integrates licensed third-party data providers and public-record sources.
