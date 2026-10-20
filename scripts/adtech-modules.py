@@ -27,7 +27,7 @@ def fig(mid, kicker, title, body, caption, fallback=True, extra_cls=""):
 def w(name, s): MODULES[name] = s
 
 # ---------- cover ----------
-w("cover", f'<figure><img fetchpriority="high" decoding="async" src="{A}cover.png" width="2400" height="1260" '
+w("cover", f'<figure><img fetchpriority="high" decoding="async" src="{A}cover.png?v=2" width="2400" height="1260" '
   'alt="Illustration: bright street map of the Paso del Norte International Bridge over the Rio Grande between El Paso, Texas, and Ciudad Juárez, Mexico, with a red pin on the bridge, a U.S. flag, and a red line to a phone graphic showing an ad slot and a fictional advertising ID" '
   'title="87 of 93 pages withheld"><figcaption>The Paso del Norte port of entry on the U.S.–Mexico border at El Paso, Texas, linked to an example phone ad slot. '
   'The app, advertising ID and coordinates shown are fictional. Illustration: OctoProbe News; map © OpenStreetMap contributors; U.S. flag via Wikimedia Commons (public domain).</figcaption></figure>\n')

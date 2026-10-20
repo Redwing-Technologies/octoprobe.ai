@@ -8,7 +8,7 @@ slug: dhs-phone-location-data-legal-opinion-foia
 canonical: https://www.octoprobe.ai/blog/dhs-phone-location-data-legal-opinion-foia/
 tags: [Investigation, FOIA, Surveillance, Privacy, Adtech]
 keywords: [commercial telemetry data, advertising ID location data, DHS FOIA, Venntel, CBP, ICE, FBI, real-time bidding, MAID, IDFA, Carpenter, Fourth Amendment Is Not For Sale Act]
-og_image: https://www.octoprobe.ai/blog/dhs-phone-location-data-legal-opinion-foia/assets/og-cover.png
+og_image: https://www.octoprobe.ai/blog/dhs-phone-location-data-legal-opinion-foia/assets/og-cover.png?v=2
 byline: Colin Aamot
 author: Colin Aamot
 author_url: https://www.linkedin.com/in/colinaamot/
