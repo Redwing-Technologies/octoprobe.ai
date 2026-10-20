@@ -89,16 +89,6 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.octoprobe.ai/blog/about/</loc>
-    <lastmod>2026-10-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.octoprobe.ai/og-image.png</image:loc>
-      <image:title>About OctoProbe News: Mission, Masthead and Ownership</image:title>
-    </image:image>
-  </url>
-  <url>
     <loc>https://www.octoprobe.ai/blog/contact/</loc>
     <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
@@ -116,6 +106,16 @@
     <image:image>
       <image:loc>https://www.octoprobe.ai/og-image.png</image:loc>
       <image:title>Corrections Policy · OctoProbe News</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.octoprobe.ai/blog/about/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/og-image.png</image:loc>
+      <image:title>About OctoProbe News: Mission, Masthead and Ownership</image:title>
     </image:image>
   </url>
   <url>
@@ -225,7 +225,7 @@
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://www.octoprobe.ai/blog/authors/colin-aamot/assets/colin-aamot.jpg</image:loc>
-      <image:title>Colin Aamot · OctoProbe News</image:title>
+      <image:title>Colin Aamot: Founder, Redwing Technologies | OctoProbe News</image:title>
     </image:image>
   </url>
 </urlset>
