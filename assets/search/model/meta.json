@@ -1,0 +1,17 @@
+{
+ "name": "minishlab/potion-base-8M",
+ "revision": "bf8b056651a2c21b8d2565580b8569da283cab23",
+ "source": "https://huggingface.co/minishlab/potion-base-8M",
+ "license": "MIT",
+ "dim": 256,
+ "vocab_size": 29528,
+ "unk_token": "[UNK]",
+ "skip_ids": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "format": "embeddings.i8: int8 row-major vocab_size x dim; scales.f32: float32 LE per-row scale; row = int8 * scale"
+}
