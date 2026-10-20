@@ -634,6 +634,10 @@ def build_one(md_path: Path, *, strict: bool = True) -> dict:
 <meta name="twitter:image" content="{escape(og_image)}">
 {ld_scripts}"""
 
+    # Visible byline: defaults to "OctoProbe Staff"; set front matter `byline:` to override
+    # (e.g. a staff writer or guest author). JSON-LD/meta author stay the Organization.
+    byline_name = meta.get("byline") or "OctoProbe Staff"
+    byline_html = f'<p class="byline">By {escape(byline_name)}</p>'
     tpl = TEMPLATE.read_text(encoding="utf-8")
     html = (
         tpl.replace("{{HEAD_META}}", head_meta)
@@ -641,6 +645,7 @@ def build_one(md_path: Path, *, strict: bool = True) -> dict:
         .replace("{{DATE}}", escape(date))
         .replace("{{DATE_DISPLAY}}", escape(date_display))
         .replace("{{TAGS_HTML}}", tags_html)
+        .replace("{{BYLINE_HTML}}", byline_html)
         .replace("{{HERO_HTML}}", hero_html)
         .replace("{{BODY}}", body_html)
     )
