@@ -73,7 +73,23 @@ python3 scripts/build-blog.py blog/posts/YYYY-MM-DD-slug.md
 This writes `blog/<slug>/index.html`, injects BlogPosting + BreadcrumbList, regenerates `sitemap.xml`, and refreshes the Blog section in `llms.txt` and `.well-known/llms.txt`.
 
 4. Add a card on `blog/index.html` (thumb, title, date, tags, excerpt, link). Update listing FAQ JSON-LD if you add site-wide questions.
-5. Preview locally. Deploy only after approval.
+5. Refresh the search index (after the card is on `blog/index.html`; CI runs `--check` and fails if stale):
+
+```bash
+python3 scripts/build-search-index.py
+```
+
+6. Preview locally. Deploy only after approval.
+
+## Search (blog index)
+
+The search bar on `/blog/` filters and ranks the existing post cards; the cards stay the source of truth (no JavaScript = every card shows, bar hidden).
+
+- `scripts/build-search-index.py` reads each card on `blog/index.html` plus its post page (article prose only, minus the author bio box and Related Reading) and writes `assets/search/index.json` (lexical index: title, description, category, date, tags, keywords, body capped at 16k chars) and `assets/search/vectors.json` (int8 semantic vectors: one for title + description + tags + keywords, one per ~120-word body passage). It also stamps a content hash into `data-search-version` on `#blogSearch`, which is the `?v=` cache-buster for those two files. Deterministic; `--check` for CI. No third-party packages.
+- `assets/js/blog-search.js` (`?v=search1`; bump when it changes) ranks instantly with MiniSearch (BM25; title > description/tags > category/keywords > body; prefix match on the last word; typo tolerance on words of 6+ letters), then, once the reader has focused the box, loads the static embedding model and re-ranks by meaning (cosine to the title vector and the best passage, fused 65/35 with the keyword score). The model is skipped on Save-Data and 2G/3G connections, and any load failure leaves keyword ranking in place.
+- Model: `assets/search/model/` is minishlab/potion-base-8M (Model2Vec, MIT), converted to int8 by `scripts/vendor-search-model.py` (pinned revision + SHA-256). ~7.9 MB, fetched once on first use; the query is embedded in plain JS (WordPiece tokenizer + table lookup), no WASM.
+- Vendored library: `assets/vendor/minisearch/minisearch-7.2.0.min.js` (MIT). Styles: `assets/css/blog-search.css` (`?v=search1`), loaded only by `blog/index.html`; it reuses the `blog.css` tokens, so `blog.css` and its `?v=` are unchanged.
+- `?q=` deep links work (`/blog/?q=cell+phone+location`); `/` focuses the box, Enter jumps to the top result, Escape clears.
 
 ## Conventions
 

@@ -20,6 +20,8 @@ jobs:
           python-version: "3.12"
       - name: Check sitemap.xml is up to date
         run: python3 scripts/gen-sitemap.py --check
+      - name: Check the blog search index is up to date
+        run: python3 scripts/build-search-index.py --check
       - name: Validate sitemap XML and robots.txt reference
         run: |
           python3 -c "import xml.dom.minidom as m; m.parse('sitemap.xml'); print('sitemap.xml well-formed')"
