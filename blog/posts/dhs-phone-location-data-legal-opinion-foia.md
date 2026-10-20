@@ -12,6 +12,7 @@ og_image: https://www.octoprobe.ai/blog/dhs-phone-location-data-legal-opinion-fo
 byline: Colin Aamot
 author: Colin Aamot
 author_url: https://www.linkedin.com/in/colinaamot/
+author_image: /assets/authors/colin-aamot-192.jpg
 author_bio: "Colin Aamot is a former U.S. Army counterterrorism information operations (CT-IO) planner who deployed with several joint task forces in support of Operations Inherent Resolve and Spartan Shield. He subsequently worked at the Heritage Foundation and in the office of Rep. Darrell Issa, with portfolios spanning foreign policy, technology, and innovation. He holds an MA in Global Security Studies from Johns Hopkins University and an MBA from UNC Kenan-Flagler Business School."
 author_links: ["LinkedIn | https://www.linkedin.com/in/colinaamot/", "X | https://x.com/ColinAamot", "Daily Signal (previous bylines) | https://www.dailysignal.com/author/colin-aamot/"]
 primary_question: How does the U.S. government use commercial phone advertising data to track location?

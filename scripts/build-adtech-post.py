@@ -11,6 +11,8 @@ post needs and the stock builder cannot express:
   * {{FAQ}} -> visible FAQ section + FAQPage JSON-LD (as in the ISIS post)
   * {{AUTHOR_NOTE}} -> .author-note bio from front matter author/author_url/author_bio, plus an
     optional .author-links row from author_links: ["Label | https://url", ...] (also JSON-LD sameAs)
+  * author_image: /assets/authors/<name>-192.jpg -> circular headshot in the top byline
+    (<picture> with -96/-192 .webp + .jpg siblings) and JSON-LD Person image (absolute URL)
   * dek under the H1, news-frame CSS, post-local assets/adtech.css + adtech.js
   * markdown tables wrapped in .table-wrap; template post-disclaimer replaced by the
     post's own Disclaimer section (as in blog/isis-media-survives-takedowns/)
@@ -115,6 +117,8 @@ def build(md_path: Path, out_root: Path):
         ld[0]["author"] = {"@type": "Person", "name": meta["author"], "url": meta["author_url"]}
         if meta.get("author_bio"):
             ld[0]["author"]["description"] = meta["author_bio"]
+        if meta.get("author_image"):
+            ld[0]["author"]["image"] = bb.SITE + meta["author_image"]
         if a_links:
             ld[0]["author"]["sameAs"] = [u for _, u in a_links]
     else:
@@ -152,14 +156,22 @@ def build(md_path: Path, out_root: Path):
     _bn = meta.get("byline") or "OctoProbe Staff"
     byline_html = (f'<p class="byline">By <a href="{escape(meta["author_url"])}" rel="author">{escape(_bn)}</a></p>'
                    if meta.get("author_url") and _bn == meta.get("author") else f'<p class="byline">By {escape(_bn)}</p>')
+    a_img = meta.get("author_image")
+    if a_img and _bn == meta.get("author"):
+        assert re.fullmatch(r"/assets/authors/[a-z0-9-]+-192\.jpg", a_img), a_img
+        stem = a_img[:-len("-192.jpg")]
+        pic = (f'<picture><source type="image/webp" srcset="{stem}-96.webp 1x, {stem}-192.webp 2x">'
+               f'<img class="author-avatar" src="{stem}-96.jpg" srcset="{stem}-96.jpg 1x, {stem}-192.jpg 2x" '
+               f'width="44" height="44" alt="{escape(meta["author"])}" decoding="async"></picture>')
+        byline_html = byline_html.replace('<p class="byline">By ', f'<p class="byline has-avatar">{pic}<span>By ', 1).replace("</p>", "</span></p>")
     tpl = bb.TEMPLATE.read_text(encoding="utf-8")
     out = (tpl.replace("{{HEAD_META}}", head).replace("{{TITLE}}", escape(title)).replace("{{DATE}}", escape(date))
            .replace("{{DATE_DISPLAY}}", escape(date_display)).replace("{{TAGS_HTML}}", tags_html)
            .replace("{{BYLINE_HTML}}", byline_html)
            .replace("\n      {{HERO_HTML}}", "").replace("{{HERO_HTML}}", "").replace("{{BODY}}", html))
     out = out.replace("</h1>", "</h1>\n      <p class=\"post-dek\">" + escape(meta["dek"]) + "</p>", 1)
-    out = out.replace('<link rel="stylesheet" href="/assets/css/blog.css?v=news3">',
-        '<link rel="stylesheet" href="/assets/css/blog.css?v=news3">\n' + NEWS_FRAME +
+    out = out.replace('<link rel="stylesheet" href="/assets/css/blog.css?v=news4">',
+        '<link rel="stylesheet" href="/assets/css/blog.css?v=news4">\n' + NEWS_FRAME +
         f'\n<link rel="stylesheet" href="/blog/{slug}/assets/adtech.css?v=1">', 1)
     out = re.sub(r'\s*<p class="post-disclaimer">.*?</p>', "", out, count=1, flags=re.S)
     out = out.replace('<script src="/assets/js/blog-toc.js?v=toc7" defer></script>',
