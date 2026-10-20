@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Police Find a Phone: Silent SMS and the FBI Guide · OctoProbe News</title>
+<meta name="description" content="An FBI field guide shows how police make a phone reveal its location with silent texts, pings and tower timing, how precise it gets, and what the law requires.">
+<meta name="keywords" content="silent SMS, Type 0 SMS, stealth ping, cell phone ping, FBI CAST, Cellular Analysis Survey Team, cell site location information, CSLI, Carpenter v. United States, timing advance, PCMD, NELOS, tower dump, E911 Phase II, NDCAC, CALEA">
+<meta name="author" content="Colin Aamot">
+<link rel="alternate" type="text/plain" title="LLM context (llms.txt)" href="/llms.txt">
+<link rel="alternate" type="text/plain" title="AI discovery (ai.txt)" href="/ai.txt">
+<meta name="ai-content-declaration" content="human-authored; investigative reporting from public records">
+<link rel="canonical" href="https://www.octoprobe.ai/blog/fbi-cell-phone-location-silent-sms-cast-guide/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="OctoProbe News">
+<meta property="og:url" content="https://www.octoprobe.ai/blog/fbi-cell-phone-location-silent-sms-cast-guide/">
+<meta property="og:title" content="Silent Texts, No-Ring Calls and Tower Math: How the FBI Finds a Phone">
+<meta property="og:description" content="An FBI field guide shows how police make a phone reveal its location with silent texts, pings and tower timing, how precise it gets, and what the law requires.">
+<meta property="og:image" content="https://www.octoprobe.ai/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/og-cover.png?v=1">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Illustration: three cell towers on a stylized street grid, each casting a 120-degree sector and a range band that overlap around a red phone dot">
+<meta property="article:published_time" content="2026-10-20">
+<meta property="article:modified_time" content="2026-10-20">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@octoprobeai">
+<meta name="twitter:title" content="Silent Texts, No-Ring Calls and Tower Math: How the FBI Finds a Phone">
+<meta name="twitter:description" content="An FBI field guide shows how police make a phone reveal its location with silent texts, pings and tower timing, how precise it gets, and what the law requires.">
+<meta name="twitter:image" content="https://www.octoprobe.ai/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/og-cover.png?v=1">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Inside the FBI's CAST Guide: How Carriers and Agents Pin Down a Cell Phone",
+  "description": "An FBI field guide shows how police make a phone reveal its location with silent texts, pings and tower timing, how precise it gets, and what the law requires.",
+  "datePublished": "2026-10-20",
+  "dateModified": "2026-10-20",
+  "author": {
+    "@type": "Person",
+    "name": "Colin Aamot",
+    "url": "https://www.linkedin.com/in/colinaamot/",
+    "description": "Colin Aamot is a former U.S. Army counterterrorism information operations (CT-IO) planner who deployed with several joint task forces in support of Operations Inherent Resolve and Spartan Shield. He subsequently worked at the Heritage Foundation and in the office of Rep. Darrell Issa, with portfolios spanning foreign policy, technology, and innovation. He holds an MA in Global Security Studies from Johns Hopkins University and an MBA from UNC Kenan-Flagler Business School.",
+    "image": "https://www.octoprobe.ai/assets/authors/colin-aamot-192.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/colinaamot/",
+      "https://x.com/ColinAamot",
+      "https://www.dailysignal.com/author/colin-aamot/"
+    ]
+  },
+  "publisher": {
+    "@type": "NewsMediaOrganization",
+    "@id": "https://www.octoprobe.ai/blog/#newsroom",
+    "name": "OctoProbe News",
+    "url": "https://www.octoprobe.ai/blog/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.octoprobe.ai/icon-512.png",
+      "width": 512,
+      "height": 512
+    },
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Redwing Technologies LLC",
+      "url": "https://rook-intel.com/"
+    }
+  },
+  "image": [
+    "https://www.octoprobe.ai/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/og-cover.png?v=1"
+  ],
+  "keywords": "silent SMS, Type 0 SMS, stealth ping, cell phone ping, FBI CAST, Cellular Analysis Survey Team, cell site location information, CSLI, Carpenter v. United States, timing advance, PCMD, NELOS, tower dump, E911 Phase II, NDCAC, CALEA",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.octoprobe.ai/blog/fbi-cell-phone-location-silent-sms-cast-guide/"
+  },
+  "url": "https://www.octoprobe.ai/blog/fbi-cell-phone-location-silent-sms-cast-guide/",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "OctoProbe News",
+    "url": "https://www.octoprobe.ai/blog/"
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      ".answer-first",
+      ".callout.takeaways",
+      ".prose h2"
+    ]
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "cell site location information"
+    },
+    {
+      "@type": "Thing",
+      "name": "silent SMS"
+    },
+    {
+      "@type": "Thing",
+      "name": "cell phone tracking"
+    },
+    {
+      "@type": "Thing",
+      "name": "Communications Assistance for Law Enforcement Act"
+    },
+    {
+      "@type": "Thing",
+      "name": "Fourth Amendment"
+    }
+  ],
+  "mentions": [
+    {
+      "@type": "GovernmentOrganization",
+      "name": "Federal Bureau of Investigation",
+      "url": "https://www.fbi.gov/"
+    },
+    {
+      "@type": "GovernmentOrganization",
+      "name": "National Domestic Communications Assistance Center",
+      "url": "https://ndcac.fbi.gov/"
+    },
+    {
+      "@type": "GovernmentOrganization",
+      "name": "Federal Communications Commission",
+      "url": "https://www.fcc.gov/"
+    },
+    {
+      "@type": "Legislation",
+      "name": "Communications Assistance for Law Enforcement Act",
+      "legislationIdentifier": "Pub. L. No. 103-414"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Carpenter v. United States, 585 U.S. 296 (2018)",
+      "url": "https://www.supremecourt.gov/opinions/17pdf/16-402_h315.pdf"
+    },
+    {
+      "@type": "DigitalDocument",
+      "name": "FBI CAST Cellular Analysis & Geo-Location Field Resource Guide (March 2019)",
+      "url": "https://www.octoprobe.ai/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf",
+      "encodingFormat": "application/pdf"
+    },
+    {
+      "@type": "DigitalDocument",
+      "name": "NDCAC Program Update, April 11, 2018",
+      "url": "https://ndcac.fbi.gov/file-repository/ndcac-director-eab-briefing-april-2018.pdf",
+      "encodingFormat": "application/pdf"
+    },
+    {
+      "@type": "DigitalDocument",
+      "name": "FCC 05-153, CALEA and Broadband Access and Services, First Report and Order",
+      "url": "https://www.octoprobe.ai/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fcc-05-153-calea-broadband-first-report-and-order-2005.pdf",
+      "encodingFormat": "application/pdf"
+    }
+  ],
+  "articleSection": "Investigations"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.octoprobe.ai/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.octoprobe.ai/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Inside the FBI's CAST Guide: How Carriers and Agents Pin Down a Cell Phone",
+      "item": "https://www.octoprobe.ai/blog/fbi-cell-phone-location-silent-sms-cast-guide/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a silent SMS, or Type 0 SMS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is a text message the phone is required to acknowledge but not show. The 3GPP standard for text messaging says that for a “short message type 0,” the phone “shall acknowledge receipt of the short message to the SC but shall discard its contents,” “shall not indicate the receipt of the type 0 short message to the user,” and stores it nowhere. The acknowledgment travels over the network, which is why the message produces records of where the phone is connected."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can police ping a phone without the owner knowing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, with the carrier’s help. A 2019 FBI field guide describes a Sprint location service in which “a silent message is sent to the phone requesting a location update,” and says that on U.S. Cellular “you can force a call without a ring to the target device to determine tower/sector.” In Germany, the federal government reported that the Federal Criminal Police Office registered 37,064 silent texts in the first half of 2022 alone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate is cell-tower location?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It ranges from a few dozen meters to several kilometers. A single tower and sector covers a wedge of roughly 120 degrees. Round-trip timing adds a distance band, and readings from three or more towers can narrow it further. A GPS-based ping can be much tighter. The FBI guide warns that some carrier coordinates are “NOT GPS-based,” and the FBI’s cell team “does not testify to the accuracy” of AT&T’s NELOS records."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do police need a warrant to get cell-phone location data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For historical cell-site records, generally yes. A court order under 18 U.S.C. § 2703(d) needs only “specific and articulable facts” showing the records are “relevant and material” to an investigation, but in Carpenter v. United States (2018) the Supreme Court held that such an order “is not a permissible mechanism for accessing historical cell-site records” and told the government to “get a warrant,” which requires probable cause. The Court left “real-time CSLI or ‘tower dumps’” undecided, so rules for real-time pinging vary by court and state, and emergencies can justify going without a warrant."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the FBI’s CAST team?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CAST, the Cellular Analysis Survey Team, is the FBI unit that analyzes phone records and tower data for the bureau and for state, local and tribal agencies. Its 2019 guide lists 5 headquarters supervisors, 15 “National Assets” and more than 50 certified “Field Assets,” and the FBI offers free CAST training in its CASTViz mapping software."
+      }
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6T6HW79ZP0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6T6HW79ZP0');
+</script>
+<meta name="theme-color" content="#f7fbff">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/blog.css?v=news6">
+<style id="news-frame">.post-dek{max-width:46rem;margin:.6rem 0 0;font-size:1.15rem;line-height:1.5;color:#475569}.post-hero .byline{margin:1rem 0 0;font-weight:600;color:#334155;font-size:.98rem}.post-hero .byline a{color:inherit;text-decoration:underline;text-decoration-color:rgba(51,65,85,.35);text-underline-offset:3px}.post-hero .byline a:hover{color:var(--blue)}.table-wrap{overflow-x:auto}.table-wrap table{border-collapse:collapse;width:100%;font-size:.92rem}.table-wrap th,.table-wrap td{border:1px solid #e2e8f0;padding:.45rem .6rem;vertical-align:top;text-align:left}.related-reading{border-top:1px solid #e2e8f0;margin-top:2rem;padding-top:.5rem}.related-reading h2{margin-top:1rem}.related-reading li{margin:.4rem 0}.prose .faq h3{font-size:1.02rem;margin-top:1.2em}.prose .faq p{margin-top:.35em}.prose .doc-fig{margin:1.6em 0}.prose .doc-fig img{display:block;width:100%;height:auto;border:1px solid #e2e8f0;border-radius:8px;background:#fff}.doc-cards ul{list-style:none;margin:1.4em 0;padding:0;display:grid;gap:14px}.doc-cards .doc-card{display:grid;grid-template-columns:132px 1fr;gap:16px;align-items:start;border:1px solid #e2e8f0;border-radius:12px;padding:14px;margin:0;background:#f8fafc}.doc-cards .doc-thumb img{display:block;width:132px;height:auto;border:1px solid #e2e8f0;border-radius:6px;background:#fff}.doc-cards p{margin:0}.doc-cards .doc-title{font-weight:700;line-height:1.35}.doc-cards .doc-meta{font-size:.88rem;color:#475569;margin-top:.25rem}.doc-cards .doc-prov{font-size:.88rem;color:#475569;margin-top:.35rem}.doc-cards .doc-actions{font-size:.9rem;font-weight:600;margin-top:.5rem} @media (max-width:760px){.doc-cards .doc-card{grid-template-columns:84px 1fr;gap:12px}.doc-cards .doc-thumb img{width:84px}.prose .table-wrap table{display:table;width:auto;min-width:100%;margin:0}.prose .table-wrap{margin:1.2em 0;border-radius:12px}.prose .table-wrap th,.prose .table-wrap td{min-width:8.5rem}.prose .table-wrap td:last-child{min-width:17rem}}</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="top" id="nav" aria-label="Primary">
+  <a class="brand" href="/blog/" aria-label="OctoProbe News home">
+    <svg class="logo" viewBox="0 0 40 40" role="img" aria-label="OctoProbe AI" fill="none">
+      <defs>
+        <linearGradient id="g1" x1="6" y1="4" x2="34" y2="38" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#818cf8"/><stop offset=".55" stop-color="#38bdf8"/><stop offset="1" stop-color="#22d3ee"/>
+        </linearGradient>
+      </defs>
+      <g stroke="url(#g1)" stroke-width="2.4" stroke-linecap="round">
+        <path d="M12 21.5 C6 25 5.5 31 9.5 34.5"/><path d="M16 22.5 C13 27 12 32.5 15 36"/>
+        <path d="M19 23 C18 28.5 17.5 33 19 37"/><path d="M28 21.5 C34 25 34.5 31 30.5 34.5"/>
+        <path d="M24 22.5 C27 27 28 32.5 25 36"/><path d="M21 23 C22 28.5 22.5 33 21 37"/>
+      </g>
+      <g fill="url(#g1)"><circle cx="9.5" cy="34.5" r="2.1"/><circle cx="15" cy="36" r="2.1"/><circle cx="19" cy="37" r="2.1"/><circle cx="30.5" cy="34.5" r="2.1"/><circle cx="25" cy="36" r="2.1"/><circle cx="21" cy="37" r="2.1"/></g>
+      <path d="M20 4.5 C12.3 4.5 7.5 9.8 7.5 16.4 C7.5 20.6 10.6 23.2 14.8 23.2 L25.2 23.2 C29.4 23.2 32.5 20.6 32.5 16.4 C32.5 9.8 27.7 4.5 20 4.5 Z" fill="url(#g1)"/>
+      <rect x="15.2" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
+      <rect x="21.6" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
+      <rect x="30.5" y="8" width="2" height="2" rx=".5" fill="url(#g1)" opacity=".7"/>
+      <rect x="7.2" y="9.6" width="1.7" height="1.7" rx=".4" fill="url(#g1)" opacity=".6"/>
+    </svg>
+    <span class="bn">OctoProbe<small>News</small></span>
+  </a>
+  <div class="nav-center">
+    <a href="/blog/about/">About</a>
+    <a href="/blog/standards/">Standards</a>
+    <a href="/blog/corrections/">Corrections</a>
+    <a href="/blog/contact/">Contact</a>
+  </div>
+  <div class="nav-right">
+    <a href="/blog/" class="nav-cta nav-investigations" aria-current="page">Investigations</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+  <a href="/blog/" class="active" aria-current="page">Investigations</a>
+  <a href="/blog/about/">About</a>
+  <a href="/blog/standards/">Standards</a>
+  <a href="/blog/corrections/">Corrections</a>
+  <a href="/blog/contact/">Contact</a>
+  <a href="/">OctoProbe platform</a>
+</div>
+<main id="main">
+  <header class="post-hero">
+    <div class="wrap">
+      <div class="post-crumb">
+        <a class="back-link" href="/blog/">← All investigations</a>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span class="eyebrow">Investigations</span>
+      </div>
+      <h1>Inside the FBI&#x27;s CAST Guide: How Carriers and Agents Pin Down a Cell Phone</h1>
+      <p class="post-dek">A 2019 FBI field guide, a public NDCAC briefing and an FCC order show how a phone can be made to reveal where it is, how precise the answer is, and where the law steps in.</p>
+      <div class="post-meta">
+        <time datetime="2026-10-20">Oct 20, 2026</time>
+        <span class="sep" aria-hidden="true"></span>
+        <div class="tags"><span class="tag">Investigations</span><span class="tag">Surveillance</span><span class="tag">Cell Phones</span><span class="tag">FBI</span><span class="tag">Privacy Law</span></div>
+      </div>
+      <p class="byline has-avatar"><picture><source type="image/webp" srcset="/assets/authors/colin-aamot-96.webp 1x, /assets/authors/colin-aamot-192.webp 2x"><img class="author-avatar" src="/assets/authors/colin-aamot-96.jpg" srcset="/assets/authors/colin-aamot-96.jpg 1x, /assets/authors/colin-aamot-192.jpg 2x" width="44" height="44" alt="Colin Aamot" decoding="async"></picture><span>By <a href="https://www.linkedin.com/in/colinaamot/" rel="author">Colin Aamot</a></span></p>
+    </div>
+  </header>
+  <article class="post-body">
+    <div class="wrap">
+      <div class="prose">
+<!-- Closing order (default): … FAQ → Correction (if any) → Disclaimer → author bio note → Related Reading (always LAST, never empty; no entry whose source is already linked in the body; no generic methodology link). See blog/README.md. -->
+<figure><img fetchpriority="high" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/cover.png?v=1" width="2400" height="1260" alt="Illustration: a stylized street grid on a navy card with three cell towers, each casting a 120-degree sector and a dashed range band; the three overlap around a red phone dot labeled Overlap." ><figcaption>How a phone is narrowed down: three sectors and three round-trip range bands overlap in one spot. Illustration: OctoProbe News. The street grid is fictional.</figcaption></figure>
+<p class="primary-question"><strong>How do police and the FBI locate a cell phone, and what legal rules apply?</strong></p>
+<p class="answer-first">A phone tells its carrier where it is every time the network reaches it, and investigators can trigger that on demand with an invisible “silent” message, a call that never rings or a carrier “ping.” The answer can be as rough as a tower sector or as tight as a GPS fix. Historical records generally need a warrant under <em>Carpenter v. United States</em>; real-time pinging is a separate, unsettled category.</p>
+<aside aria-label="Key takeaways" class="key-takeaways">
+<h2>Key Takeaways</h2>
+<ul>
+<li>A phone checks in through a specific tower and sector whenever the network reaches it, and carriers log those events.</li>
+<li>Investigators can trigger check-ins on demand. The FBI’s 2019 CAST guide describes a carrier “ping” that sends “a silent message” and, for one carrier, a call “without a ring.”</li>
+<li>Location gets narrowed by exclusion: a 120-degree sector, a round-trip distance band and readings from three or more towers. A GPS-based ping can be tighter still.</li>
+<li><em>Carpenter v. United States</em> (2018) generally requires a warrant for historical cell-site records. The Court left real-time tracking and tower dumps undecided.</li>
+<li>A tower hit is not proof of presence. The guide itself warns that some coordinates are “NOT GPS-based” and that CAST does not testify to the accuracy of one carrier’s data.</li>
+</ul>
+</aside>
+<p>Your phone is not hiding from the cell network. To deliver a call or a text, the network has to find it, and every time it does, the phone checks in through a particular antenna on a particular tower. Carriers record those check-ins. Investigators can read them later or, with the right paperwork, cause new ones on demand.</p>
+<p>How that works, in the government’s own words, is laid out in three public documents. The first is a 139-page FBI field guide from 2019. The second is a 2018 briefing from the Justice Department’s National Domestic Communications Assistance Center (NDCAC). The third is the 2005 Federal Communications Commission order that extended federal wiretap-assistance rules to broadband. All three are posted below, with page images of the key passages.</p>
+<h2 id="the-documents">The documents</h2>
+<p>The FBI guide is the “Cellular Analysis &amp; Geo-Location Field Resource Guide,” produced by the bureau’s Cellular Analysis Survey Team and marked “Current as of March 2019.” The nonprofit Property of the People obtained it under the Freedom of Information Act, and <a href="https://www.vice.com/en/article/how-fbi-gets-phone-data-att-tmobile-verizon/">Motherboard reported on it</a> in October 2021. It is a training deck: how towers work, what each carrier keeps and for how long, what legal process to use, and how to plot records on a map.</p>
+<p>The <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf#page=5">CAST mission</a>, per the guide, “is to support FBI, along with state, local, and tribal investigations through the analysis of cellular call detail records (CDRs) and their associated tower information.” Its listed priorities are, in order, “An immediate threat to life,” FBI priorities “to include National Security, Criminal, and Cyber,” and “Assistance to state, local, and other federal agencies.” The program had 5 headquarters supervisors, 15 “National Assets” embedded in field offices, and “over 50 CAST certified ‘Field Assets’” who work cases in their own offices. The FBI still advertises <a href="https://forms.fbi.gov/cast-basic-cell-site-analysis">free CAST training</a> for police, where students install “the FBI provided mapping software CASTViz.”</p>
+<figure class="doc-fig" id="fig-cast-mission"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s1-p005-cast-mission.jpg" width="1500" height="1125" alt="CAST Mission and Structure slide listing the program’s mission, three priorities, headquarters supervisors, National Assets and Field Assets"><figcaption>CAST’s mission, priorities and staffing. <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf#page=5">FBI CAST field guide, p. 5</a>. Handling marking redacted by OctoProbe.</figcaption></figure>
+<p>The NDCAC briefing is a 14-slide “Program Update” presented by then-Director Marybeth Paglino to the center’s Executive Advisory Board on April 11, 2018, at a meeting <a href="https://www.federalregister.gov/documents/2018/03/23/2018-05968/meeting-of-the-ndcac-executive-advisory-board">announced in the Federal Register</a> as open to the public. NDCAC posts it on its own public site, at <a href="https://ndcac.fbi.gov/file-repository/ndcac-director-eab-briefing-april-2018.pdf">ndcac.fbi.gov</a>.</p>
+<p>The FCC order is <a href="https://www.federalregister.gov/documents/2005/10/13/05-20606/communications-assistance-for-law-enforcement-act-and-broadband-access-and-services">FCC 05-153</a>, adopted Aug. 5, 2005, which applied the Communications Assistance for Law Enforcement Act (CALEA) to broadband and internet phone providers.</p>
+<section class="doc-cards" aria-label="Source documents">
+<ul>
+<li class="doc-card"><a class="doc-thumb" href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s1-p001-cover.jpg" width="1500" height="1125" alt="First page of FBI CAST, Cellular Analysis &amp; Geo-Location Field Resource Guide (PDF)"></a><div class="doc-body"><p class="doc-title"><a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf">FBI CAST, Cellular Analysis &amp; Geo-Location Field Resource Guide</a></p><p class="doc-meta">139 pages · “Current as of March 2019” · PDF, 13 MB</p><p class="doc-prov">Released under FOIA to Property of the People. Five pages carry OctoProbe redactions of personal information.</p><p class="doc-actions"><a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf">View PDF</a> · <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf" download>Download</a></p></div></li>
+<li class="doc-card"><a class="doc-thumb" href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/ndcac-director-eab-briefing-april-2018.pdf"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s2-p01-cover.jpg" width="1500" height="1159" alt="First page of NDCAC Program Update, April 11, 2018 (PDF)"></a><div class="doc-body"><p class="doc-title"><a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/ndcac-director-eab-briefing-april-2018.pdf">NDCAC Program Update, April 11, 2018</a></p><p class="doc-meta">14 slides · PDF, 0.7 MB</p><p class="doc-prov">Public briefing posted by NDCAC at <a href="https://ndcac.fbi.gov/file-repository/ndcac-director-eab-briefing-april-2018.pdf">ndcac.fbi.gov</a>. Unaltered.</p><p class="doc-actions"><a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/ndcac-director-eab-briefing-april-2018.pdf">View PDF</a> · <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/ndcac-director-eab-briefing-april-2018.pdf" download>Download</a></p></div></li>
+<li class="doc-card"><a class="doc-thumb" href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fcc-05-153-calea-broadband-first-report-and-order-2005.pdf"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s3-p01-caption.png" width="1148" height="594" alt="First page of FCC 05-153, CALEA and Broadband Access and Services (PDF)"></a><div class="doc-body"><p class="doc-title"><a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fcc-05-153-calea-broadband-first-report-and-order-2005.pdf">FCC 05-153, CALEA and Broadband Access and Services</a></p><p class="doc-meta">First Report and Order, Aug. 5, 2005 · 59 pages · PDF, 0.3 MB</p><p class="doc-prov">Published FCC order. Unaltered copy of the file NDCAC hosts.</p><p class="doc-actions"><a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fcc-05-153-calea-broadband-first-report-and-order-2005.pdf">View PDF</a> · <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fcc-05-153-calea-broadband-first-report-and-order-2005.pdf" download>Download</a></p></div></li>
+</ul>
+</section>
+<p class="editor-note">Editor’s note: The FBI guide’s pages carry the handling marking “UNCLASSIFIED//LES.” OctoProbe removed it from the page images in this article; it remains in the hosted PDF as released. In the hosted PDF, OctoProbe redacted a special agent’s name on page 14 and telephone numbers, an MSISDN and IMSI/IMEI columns in sample carrier records on pages 95, 111, 112 and 128. Those five pages are replaced with redacted images; every other page is as released. The NDCAC briefing is byte-identical to the copy on ndcac.fbi.gov. The FCC order is byte-identical to the copy NDCAC hosts at ndcac.fbi.gov/file-repository/34.pdf. Checksums are in the <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/SHA256SUMS.txt">SHA256SUMS file</a>.</p>
+<h2 id="how-a-phone-gives-away-where-it-is">How a phone gives away where it is</h2>
+<p>A switched-on phone is always listening. The FBI guide puts it plainly: “A cellular phone is regularly surveying the Radio Frequency (RF) environment of the cellular provider to identify the cell tower and sector with the BEST RF Signal.” The phone keeps a running list of neighboring sectors and their signal strengths, and it camps on the strongest one.</p>
+<figure class="doc-fig" id="fig-rf-survey"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s1-p017-rf-survey.jpg" width="1500" height="1125" alt="Map of hexagonal cells with a phone in cell 691 and a neighbor list ranking five nearby cells by signal strength"><figcaption>A phone keeps measuring nearby sectors and camps on the strongest. <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf#page=17">FBI CAST field guide, p. 17</a>. Handling marking redacted by OctoProbe.</figcaption></figure>
+<p>Each tower is usually split into sectors, and each sector has its own identifier. According to the guide, a typical “3-sector tower” transmits “through 3 separate sectors each covering approximately 120 degrees,” and each base station’s Global Cell ID “is unique on the network and not duplicated (like a fingerprint).” When the phone does something on the network, the carrier writes it down: “When a cell phone connects to a tower to conduct an outgoing call or receive an incoming call, the phone company (provider) maintains a record of that EVENT in the Call Detail Records.”</p>
+<figure class="doc-fig" id="fig-sectors"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s1-p030-sectors.jpg" width="1500" height="1125" alt="A tower drawn over a map with three colored sectors of about 120 degrees each, labeled alpha, beta and gamma"><figcaption>A three-sector tower splits its coverage into wedges of about 120 degrees. <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf#page=30">FBI CAST field guide, p. 30</a>. Handling marking redacted by OctoProbe.</figcaption></figure>
+<figure class="doc-fig" id="fig-cell-id"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s1-p016-cell-id.jpg" width="1500" height="1125" alt="Base Stations slide with a table of switch and tower identifiers for AT&amp;T, T-Mobile, Sprint, Verizon and U.S. Cellular on 3G and 4G networks"><figcaption>Each sector has a network-unique cell identifier; carriers format it differently. <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf#page=16">FBI CAST field guide, p. 16</a>. Handling marking redacted by OctoProbe.</figcaption></figure>
+<p>So the basic unit of cell-site location information (CSLI) is a time stamp, a tower and a sector: a pie wedge, not a point. Everything else in the guide is about making that wedge smaller or making the phone produce more of them.</p>
+<h2 id="making-a-phone-talk-silent-texts-and-calls-that-never-ring">Making a phone talk: silent texts and calls that never ring</h2>
+<p>A phone that sits idle produces few records. One that’s told to answer produces them on command.</p>
+<p>The best-known trigger is the “silent SMS.” The 3GPP standard for text messaging, <a href="https://www.3gpp.org/DynaReport/23040.htm">TS 23.040</a>, defines a “Short Message Type 0” in its protocol-identifier field. The standard’s conformance requirement, as quoted in a <a href="https://www.3gpp.org/ftp/tsg_t/TSG_T/TSGT_16/Docs/PDFs/TP-020164.pdf">3GPP test specification change</a>, reads: “When a mobile terminated message is type 0, the UE shall acknowledge receipt of the short message to the SC but shall discard its contents.” The phone “shall not indicate the receipt of the type 0 short message to the user,” and “the short message shall neither be stored in the (U)SIM nor ME.”</p>
+<p>In other words, the phone must answer but must not tell its owner. To deliver the message, the network first has to find the handset; the 3GPP test sequence for a Type 0 message begins with the phone’s “PAGING RESPONSE.” That round trip happens over a specific cell, and it leaves the same kind of network record a real text would.</p>
+<p class="editor-note">Editor’s note: 3GPP specifications are revised by release; the Type 0 language quoted here is from the conformance test text, which cites “3GPP TS 23.040, 9.2.3.9” as its reference. OctoProbe did not test how any particular carrier logs Type 0 deliveries.</p>
+<p>The FBI guide doesn’t use the term “Type 0,” but it describes the same idea in carrier products. On Sprint’s GPS “Ping,” the guide says: “A Ping is conducted with the assistance of the cellular provider. A silent message is sent to the phone requesting a location update. The phone uses its own GPS receiver and reports its location.”</p>
+<figure class="doc-fig" id="fig-silent-message"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s1-p100-detail-silent-message.jpg" width="705" height="326" alt="Slide text: A Ping is conducted with the assistance of the cellular provider. A silent message is sent to the phone requesting a location update."><figcaption>From the guide’s slide on Sprint’s GPS “Ping.” <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf#page=100">FBI CAST field guide, p. 100</a>.</figcaption></figure>
+<p>For a carrier without that service, the guide offers a cruder trigger. Its provider table says of U.S. Cellular: “No. However, you can force a call without a ring to the target device to determine tower/sector.” The retention chart repeats it under real-time (“Prospective”) tools: “No, but force ‘no ring’ call.”</p>
+<figure class="doc-fig" id="fig-no-ring"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s1-p057-detail-ping-and-no-ring-call.jpg" width="1500" height="495" alt="Table rows for Sprint, Verizon and U.S. Cellular; the U.S. Cellular cell reads: No. However, you can force a call without a ring to the target device to determine tower/sector."><figcaption>The guide’s provider table. Bottom right: a call “without a ring.” <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf#page=57">FBI CAST field guide, p. 57</a>.</figcaption></figure>
+<p>And for T-Mobile, the guide supplies the wording to put in a court order or warrant: “Such service provider shall initiate a signal to determine the location of the subject’s mobile device on the service provider’s network or with such other reference points as may be reasonably available and at such intervals and times as directed by the law enforcement agent serving this order.”</p>
+<figure class="doc-fig" id="fig-initiate-signal"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s1-p109-detail-initiate-a-signal.jpg" width="1500" height="326" alt="Slide heading Phrase to use in court orders/search warrants for T-Mobile E-911/GPS/Geo Locator, followed by the quoted order language"><figcaption>Suggested order language for T-Mobile’s locator. <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf#page=109">FBI CAST field guide, p. 109</a>.</figcaption></figure>
+<p>Anything that makes the network reach the phone (a call, a text of any kind, a data session) can produce a location record. The guide’s retention chart lists separate “Cell Site (Voice),” “Cell Site (SMS)” and “Cell Site (Data)” records for each carrier. A silent text or no-ring call just does it without the owner seeing anything.</p>
+<p>App push notifications are a different category. Sen. Ron Wyden <a href="https://www.wyden.senate.gov/imo/media/doc/wyden_smartphone_push_notification_surveillance_letter.pdf">wrote in December 2023</a> that governments had sought push records from Apple and Google, which hold metadata “detailing which app received a notification and when, as well as the phone and associated Apple or Google account to which that notification was intended to be delivered.” That is account data at a tech company, not tower data at a carrier.</p>
+<p>Germany is one of the few places that counts silent texts publicly. In a <a href="https://dserver.bundestag.de/btd/20/062/2006233.pdf">March 2023 answer to lawmakers</a>, the federal government reported that the Federal Criminal Police Office (BKA) registered 37,064 “Stille SMS” in the first half of 2022 and 14,886 in the second. The Federal Police sent 12,475 and 7,228, plus 457 and 903 through outside firms. Figures for the domestic intelligence service and customs were classified “VS – Geheim.” The government cited a Federal Court of Justice ruling placing the practice under section 100i of the criminal procedure code.</p>
+<h2 id="from-a-wedge-to-a-dot-timing-triangulation-and-exclusion">From a wedge to a dot: timing, triangulation and exclusion</h2>
+<p>A sector wedge can cover miles. Three techniques shrink it.</p>
+<p><strong>Distance from the tower.</strong> Carriers measure how long a signal takes to make the round trip. The guide’s explanation of Sprint’s Per Call Measurement Data (PCMD): “By using the data transfer rate between the cellular device and the tower, the cellular provider can approximate the signal distance between the tower and the cellular device using a Round Trip Delay measurement from the tower.” Verizon’s version, the Real Time Tool, provides “sector/tower and distance from tower with confidence rating.” T-Mobile’s is called True Call. The output is an arc: a band at a certain distance inside the wedge.</p>
+<figure class="doc-fig" id="fig-pcmd"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s1-p097-pcmd.jpg" width="1500" height="1125" alt="Engineering Data PCMD slide: a map with a tower, a 0.79-mile range arc and a red search-area box, with a caution that coordinates are not GPS-based"><figcaption>Round-trip delay turns a sector into a distance band. <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf#page=97">FBI CAST field guide, p. 97</a>. Handling marking redacted by OctoProbe.</figcaption></figure>
+<p><strong>Multiple towers.</strong> Measuring the same signal at several towers gives intersecting arcs. The guide’s slide on T-Mobile’s E-911 Locator and AT&amp;T’s Mobile Locator says: “TOA positioning method is based on measuring the Time of Arrival (TOA) or (Timing Advance) of a known signal sent from the cell phone and received at three or more measurement units (towers).” Its provider table describes T-Mobile’s version as “3 to 6 tower triangulation.” The sample response on the slide gives a latitude, a longitude and “Uncertainty 443 m.”</p>
+<figure class="doc-fig" id="fig-triangulation"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s1-p058-e911-triangulation.jpg" width="1500" height="1125" alt="E-911 Mobile Locator Tool slide: three towers on a street map with dashed range rings meeting at a phone, labeled with a latitude, longitude and uncertainty of 443 meters"><figcaption>Triangulation from three or more towers. The coordinates are the guide’s sample. <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf#page=58">FBI CAST field guide, p. 58</a>. Handling marking redacted by OctoProbe.</figcaption></figure>
+<p><strong>The phone’s own GPS.</strong> The Sprint ping asks the handset for a satellite fix, which the guide says depends “upon the phone interacting with a minimum of 4 satellites (3 without altitude).” For 911 calls, federal rules set the bar: handset-based systems must deliver “<a href="https://www.ecfr.gov/current/title-47/chapter-I/subchapter-A/part-9/subpart-C/section-9.10">50 meters for 67 percent of calls, and 150 meters for 80 percent of calls</a>,” on a per-county or per-PSAP basis.</p>
+<p>The narrowing works by exclusion. The phone is in this sector, not the other two. It is about 0.8 miles out, not 0.2 or 2. Three towers’ arcs overlap here and nowhere else. Investigators apply the same logic across many phones with “tower dumps,” lists of every device that used a site during a window. The guide suggests narrowing a <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf#page=60">tower dump</a> “based on knowledge (outgoing call only, 3 minute conversation, not in area after crime, etc.)”</p>
+<figure class="doc-fig" id="fig-tower-dumps"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s1-p060-tower-dumps.jpg" width="1500" height="1125" alt="Tower Dump Uses slide describing tower dumps for a specific crime and for multiple crimes"><figcaption>Tower dumps, and how the guide suggests narrowing them. <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf#page=60">FBI CAST field guide, p. 60</a>. Handling marking redacted by OctoProbe.</figcaption></figure>
+<p>Even a failed ping says something. The guide’s list of T-Mobile locator responses includes “[Absent_Subscriber] – phone is not on the network” and “[Position_Method_ Failure] – phone is powered off or has moved into an area where switch is not provisioned,” with the note: “If you see this – it may come back on.”</p>
+<figure class="doc-fig" id="fig-e911-responses"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s1-p111-e911-responses.jpg" width="1500" height="1125" alt="Table of five T-Mobile E-911 locator responses, from a successful location with coordinates to absent subscriber, position method failure, internal error and system failure"><figcaption>What the locator returns, including failures. The sample phone number was redacted by OctoProbe. <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf#page=111">FBI CAST field guide, p. 111</a>. Handling marking redacted by OctoProbe.</figcaption></figure>
+<p>AT&amp;T’s historical tool, NELOS, grades each location record on a 14-step scale, from “Location accuracy likely better than 25 meters” for GPS-derived events to “better than 25000 meters” for tower-and-sector-only records. Its timing records cover cases where “low propagation delay indicates very near presence to a particular cell tower (within 200M).”</p>
+<figure class="doc-fig" id="fig-nelos"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s1-p082-nelos.jpg" width="1500" height="1125" alt="AT&amp;T NELOS slide listing network event types and a location accuracy key from 0 to 13, with the banner CAST currently does not testify to the accuracy to NELOS"><figcaption>AT&amp;T’s NELOS accuracy key runs from 25 meters to 25 kilometers. <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf#page=82">FBI CAST field guide, p. 82</a>. Handling marking redacted by OctoProbe.</figcaption></figure>
+<h2 id="real-time-pinging-and-historical-records-are-different-things">Real-time pinging and historical records are different things</h2>
+<p>The guide separates two kinds of data, and the law increasingly does too.</p>
+<p><strong>Historical records</strong> already exist in the carrier’s files: call detail records with cell sites, tower dumps, and engineering data such as PCMD, RTT, True Call and NELOS. The March 2019 retention chart shows AT&amp;T keeping call records, cell sites and tower dumps for “7 years,” T-Mobile for “2 years,” Sprint for “18 months,” and Verizon for “1 year.” Engineering data is short-lived: Verizon RTT “8 days,” Sprint PCMD “~90 days SMS &amp; voice; 2 weeks data,” AT&amp;T NELOS “90 days.”</p>
+<p><strong>Real-time (“prospective”) location</strong> is generated on request: AT&amp;T’s “Mobile Locate (Triangulation / AGPS),” T-Mobile’s “E911 (Triangulation),” Sprint’s “GPS ‘Ping’ (device dependent),” and, for U.S. Cellular, the no-ring call. Verizon RTT, the guide says, is “provided to law enforcement during exigent circumstances or if requested in a legal document.”</p>
+<figure class="doc-fig" id="fig-retention"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s1-p074-retention-prospective.jpg" width="1500" height="1125" alt="Provider Retention Periods grid, as of March 2019, listing how long AT&amp;T, Cricket, T-Mobile, MetroPCS, Sprint, Verizon and U.S. Cellular keep each record type, including prospective location tools"><figcaption>Retention periods and real-time (“prospective”) tools by carrier, as of March 2019. <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf#page=74">FBI CAST field guide, p. 74</a>. Handling marking redacted by OctoProbe.</figcaption></figure>
+<figure class="doc-fig" id="fig-rtt"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s1-p130-verizon-rtt.jpg" width="1500" height="1125" alt="Verizon RTT slide comparing a call detail record with Real Time Tool columns that add an access distance in miles"><figcaption>Verizon’s Real Time Tool adds distance from the tower. <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf#page=130">FBI CAST field guide, p. 130</a>. Handling marking redacted by OctoProbe.</figcaption></figure>
+<p>Retention figures are as of March 2019. Sprint has since merged into T-Mobile, and carriers’ practices may have changed.</p>
+<h2 id="what-the-law-requires">What the law requires</h2>
+<p>Two kinds of court paper come up again and again in the FBI guide: a court order under 18 U.S.C. § 2703(d) and a search warrant. They are not interchangeable, and the difference decides which phone records police can get.</p>
+<h3 id="a-2703-d-order-vs-a-search-warrant">A 2703(d) order vs. a search warrant</h3>
+<p>The Stored Communications Act lets the government require a carrier to hand over customer records “(not including the contents of communications)” when it “obtains a warrant issued using the procedures described in the Federal Rules of Criminal Procedure” or “obtains a court order for such disclosure under subsection (d) of this section,” <a href="https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title18-section2703&amp;num=0&amp;edition=prelim">according to § 2703(c)</a>.</p>
+<p>The two routes have different bars. A <a href="https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title18-section2703&amp;num=0&amp;edition=prelim">§ 2703(d) order</a> “shall issue only if the governmental entity offers specific and articulable facts showing that there are reasonable grounds to believe that the contents of a wire or electronic communication, or the records or other information sought, are relevant and material to an ongoing criminal investigation.” A federal warrant under <a href="https://www.uscourts.gov/sites/default/files/2025-02/federal-rules-of-criminal-procedure-dec-1-2024_0.pdf#page=75">Rule 41(d)(1)</a> is different: a judge “must issue the warrant if there is probable cause to search for and seize a person or property or to install and use a tracking device.”</p>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col"></th><th scope="col">§ 2703(d) court order</th><th scope="col">Rule 41 search warrant</th></tr></thead>
+<tbody>
+<tr><td>Standard</td><td>“Specific and articulable facts” showing “reasonable grounds to believe” the records are “relevant and material” to an investigation</td><td>“Probable cause”</td></tr>
+<tr><td>What it authorizes</td><td>Disclosure of stored provider records</td><td>A search or seizure, including installing and using a tracking device</td></tr>
+<tr><td>Content or non-content</td><td>Mainly non-content records: subscriber details, call logs, cell sites</td><td>Content and non-content</td></tr>
+<tr><td>Typical cell-phone use, per the 2019 FBI guide</td><td>Historical call detail records, offered as “2703(d) or search warrant”</td><td>Text-message content, which one carrier page marks “Requires a Search Warrant”</td></tr>
+</tbody>
+</table></div>
+<p class="editor-note">Editor’s note: The last row reflects the FBI guide’s carrier-specific request language (<a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf#page=10">pp. 10, 14</a>). Section 2703(d) orders can also reach some stored content under § 2703(b) with notice to the customer. The guide’s general table lists “Text Messaging /Text Content” under “Court Order or Search Warrant,” while its carrier pages flag message content as warrant-only.</p>
+<h3 id="what-carpenter-changed">What <em>Carpenter</em> changed</h3>
+<p>Before 2018, a § 2703(d) order was the usual way to get historical cell-site records. That is how prosecutors got 12,898 location points on Timothy Carpenter, “an average of 101 data points per day.” In <a href="https://www.supremecourt.gov/opinions/17pdf/16-402_h315.pdf"><em>Carpenter v. United States</em></a>, decided in June 2018, the Supreme Court called cell-phone location data “detailed, encyclopedic, and effortlessly compiled,” and held “that accessing seven days of CSLI constitutes a Fourth Amendment search.”</p>
+<p>The Court said the § 2703(d) standard falls short. Under it, “law enforcement need only show that the cell-site evidence might be pertinent to an ongoing investigation—a ‘gigantic’ departure from the probable cause rule.” Its conclusion: “Consequently, an order issued under Section 2703(d) of the Act is not a permissible mechanism for accessing historical cell-site records. Before compelling a wireless carrier to turn over a subscriber’s CSLI, the Government’s obligation is a familiar one—get a warrant.”</p>
+<h3 id="the-gaps-tower-dumps-and-real-time-location">The gaps: tower dumps and real-time location</h3>
+<p>The Court also said what it was not deciding: “Our decision today is a narrow one. We do not express a view on matters not before us: real-time CSLI or ‘tower dumps’ (a download of information on all the devices that connected to a particular cell site during a particular interval).” It noted that emergencies, such as the need to “pursue a fleeing suspect,” can still justify a warrantless search.</p>
+<p>Silent texts, no-ring calls and carrier pings fall in that gap. They don’t pull records the carrier already holds; they make the phone produce new location data on the government’s request. No Supreme Court ruling settles whether that requires a warrant, and courts and legislatures have answered differently. Massachusetts’ highest court took up the question in <a href="https://www.eff.org/files/2019/04/24/mass_supreme_court_opinion-almonor.pdf"><em>Commonwealth v. Almonor</em></a> (2019), describing the practice this way: “On request, a cellular service provider (service provider) can cause a cell phone to transmit its global positioning system (GPS) coordinates to the provider, in a process known as ‘pinging.’” It held under the state constitution that “by causing the defendant’s cell phone to reveal its real-time location, the Commonwealth intruded on the defendant’s reasonable expectation of privacy in the real-time location of his cell phone.” The court still upheld that ping, which police ran without a warrant, because of the emergency.</p>
+<p>Tower dumps sit in the same gap. The FBI guide’s section on them gives the “Legal Threshold” as “Need a court order or search warrant” (<a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf#page=60">p. 60</a>).</p>
+<h3 id="what-the-2019-fbi-guide-tells-agents">What the 2019 FBI guide tells agents</h3>
+<p>The FBI guide, “Current as of March 2019,” about nine months after <em>Carpenter</em>, still lists both options for historical records: “Court order 2703(d) or search warrant for historical call detail and cell site. Refer to the AUSA for the most current court requirement.” It adds: “Court order 2703(d) &amp; 3123 hybrid order for pen register to also get historical records may require a search warrant,” and advises agents to “discuss with your local AUSA and determine what method (2703(d) or search warrant) should be pursued.” Its general table, headed “Varies by Judicial District,” puts “Ping data (Sprint),” “E-911 (T-Mobile &amp; AT&amp;T)” and “Location Based Services” under “Court Order or Search Warrant.”</p>
+<figure class="doc-fig" id="fig-legal"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s1-p010-codes-and-orders.jpg" width="1500" height="1125" alt="US Codes and Orders slide listing statutes and advising a 2703(d) court order or search warrant for historical call detail and cell site records"><figcaption>The guide’s statute list and its advice to consult a federal prosecutor. <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf#page=10">FBI CAST field guide, p. 10</a>. Handling marking redacted by OctoProbe.</figcaption></figure>
+<figure class="doc-fig" id="fig-legal-table"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s1-p011-legal-process.jpg" width="1500" height="1125" alt="Two-column table: records available by subpoena versus by court order or search warrant, including ping data and E-911"><figcaption>What the guide puts under subpoena and under court order or warrant. It notes requirements vary by judicial district. <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf#page=11">FBI CAST field guide, p. 11</a>. Handling marking redacted by OctoProbe.</figcaption></figure>
+<p>There is also an emergency route. Under 18 U.S.C. § 2702(c)(4), a carrier “may divulge a record or other information” to the government if it “in good faith, believes that an emergency involving danger of death or serious physical injury to any person requires disclosure without delay.” The guide notes that “Providers have the discretion to refuse or except [sic] these requests” and that FBI personnel need assistant special agent in charge approval.</p>
+<figure class="doc-fig" id="fig-exigent"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s1-p066-exigent-requests.jpg" width="1500" height="1125" alt="Exigent Requests slide explaining voluntary disclosure under 18 U.S.C. 2702(c)(4) and compelled emergency disclosure under 18 U.S.C. 3125"><figcaption>Emergency disclosure, voluntary and compelled. <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf#page=66">FBI CAST field guide, p. 66</a>. Handling marking redacted by OctoProbe.</figcaption></figure>
+<p>One more limit is written into CALEA itself. For information acquired “solely pursuant to the authority for pen registers and trap and trace devices,” call-identifying information “shall not include any information that may disclose the physical location of the subscriber (except to the extent that the location may be determined from the telephone number),” <a href="https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title47-section1002&amp;num=0&amp;edition=prelim">under 47 U.S.C. § 1002</a>. A pen-register order alone is not supposed to deliver location.</p>
+<h2 id="why-a-tower-hit-isn-t-proof">Why a tower hit isn’t proof</h2>
+<p>A phone that connected to a tower near a crime scene was somewhere in that tower’s coverage, which in a city can include thousands of people and in the country can stretch for miles. Towers are everywhere; a connection to one is not evidence of anything by itself.</p>
+<p>The guide is candid about this. Its first content page warns: “Cell analysis is a great investigative tool. However, testifying in court regarding cell phone records is difficult and requires significant training. Prior to testifying, CAST agents receive over 500 hours of training.” CAST uses “drive test equipment to determine the true geographical coverage breadth of a cell site sector,” because a sector’s real reach depends on terrain and buildings.</p>
+<figure class="doc-fig" id="fig-disclaimer"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s1-p002-disclaimer.jpg" width="1500" height="1125" alt="Disclaimer slide: studying the manual does not certify anyone to testify; CAST agents receive over 500 hours of training before testifying"><figcaption>The guide’s first content page. <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf#page=2">FBI CAST field guide, p. 2</a>. Handling marking redacted by OctoProbe.</figcaption></figure>
+<figure class="doc-fig" id="fig-cast-origin"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s1-p004-cast-origin.jpg" width="1500" height="1125" alt="CAST’s Origin slide describing drive testing of cell site coverage and a Project Pin Point mapping program"><figcaption>CAST says it drive-tests sectors to find their true coverage. An email address was redacted by OctoProbe. <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf#page=4">FBI CAST field guide, p. 4</a>. Handling marking redacted by OctoProbe.</figcaption></figure>
+<p>Several data sources come with explicit cautions. On PCMD: “Lat/Long coordinates are NOT GPS-based. The distance from tower information is generally more accurate.” On NELOS: “Use cautiously. AT&amp;T does not validate results,” and “CAST currently does not testify to the accuracy to NELOS.” On a T-Mobile switch list that maps record codes to cities: “NOT TO BE INTERPRETED AS THE LOCATION OF THE DEVICE.”</p>
+<figure class="doc-fig" id="fig-switch-pooling"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s1-p120-switch-pooling-not-location.jpg" width="1500" height="1125" alt="Switch list mapping two-letter codes to cities, under the heading MSC Location, not to be interpreted as the location of the device"><figcaption>A switch code names a city, not a phone’s location. <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf#page=120">FBI CAST field guide, p. 120</a>. Handling marking redacted by OctoProbe.</figcaption></figure>
+<h2 id="the-plumbing-ndcac-and-calea">The plumbing: NDCAC and CALEA</h2>
+<p>Most police departments don’t have a CAST agent. That is part of why NDCAC exists. The Justice Department center helps state and local agencies with the technical side of electronic evidence and surveillance. Its April 2018 update said its Technical Resource Group served “more that [sic] 14,600” law-enforcement clients and handled 3,497 requests in six months. Among the “Types of calls handled”: “Interpretation of provider call detail records / cell tower information” and “Assistance with legal demand (templates).” The center’s 2018 budget was $10,987,055.</p>
+<figure class="doc-fig" id="fig-ndcac-trg"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s2-p03-trg.jpg" width="1500" height="1159" alt="NDCAC Technical Resource Group slide listing client numbers, types of calls handled including interpretation of call detail records, and 3,497 requests in six months"><figcaption>NDCAC’s help desk for police, April 2018. <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/ndcac-director-eab-briefing-april-2018.pdf#page=3">NDCAC program update, p. 3</a>.</figcaption></figure>
+<p>The FBI guide points readers to NDCAC’s restricted portal for a “Database of current and archived tower lists for all major” carriers, the reference data needed to turn a cell ID into a map location.</p>
+<p>The legal foundation is CALEA. “Congress enacted CALEA on October 25, 1994,” the FCC’s 2005 order explains, “in response to concerns that emerging technologies such as digital and wireless communications were making it increasingly difficult for law enforcement agencies to execute authorized surveillance.” The law requires carriers to build their networks so they can deliver intercepts and call-identifying information under court order.</p>
+<figure class="doc-fig" id="fig-fcc-para4"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s3-p02-para4-background.png" width="1148" height="264" alt="Paragraph 4 of FCC order 05-153, explaining that Congress enacted CALEA on October 25, 1994"><figcaption>Why Congress passed CALEA, in the FCC’s words. <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fcc-05-153-calea-broadband-first-report-and-order-2005.pdf#page=2">FCC 05-153, p. 2</a>.</figcaption></figure>
+<p>The 2005 order extended that duty: “In this Order, we conclude that the Communications Assistance for Law Enforcement Act (CALEA) applies to facilities-based broadband Internet access providers and providers of interconnected voice over Internet Protocol (VoIP) service.” It responded to a 2004 petition from the Justice Department, the FBI and the Drug Enforcement Administration, and gave newly covered providers 18 months to comply.</p>
+<figure class="doc-fig" id="fig-fcc-para1"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s3-p01-para1.png" width="1148" height="247" alt="Paragraph 1 of FCC order 05-153: CALEA applies to facilities-based broadband Internet access providers and interconnected VoIP providers"><figcaption>The 2005 order’s holding. <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fcc-05-153-calea-broadband-first-report-and-order-2005.pdf#page=1">FCC 05-153, p. 1</a>.</figcaption></figure>
+<p class="editor-note">Editor’s note: Download the documents: the <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf">FBI CAST field guide (redacted as described above)</a>, the <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/ndcac-director-eab-briefing-april-2018.pdf">NDCAC April 2018 program update</a> and <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fcc-05-153-calea-broadband-first-report-and-order-2005.pdf">FCC 05-153</a>. Figures in the guide reflect carrier practices as of 2018 and 2019.</p>
+<section class="faq" aria-labelledby="frequently-asked-questions">
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3>What is a silent SMS, or Type 0 SMS?</h3>
+<p>It is a text message the phone is required to acknowledge but not show. The 3GPP standard for text messaging says that for a “short message type 0,” the phone “shall acknowledge receipt of the short message to the SC but shall discard its contents,” “shall not indicate the receipt of the type 0 short message to the user,” and stores it nowhere. The acknowledgment travels over the network, which is why the message produces records of where the phone is connected.</p>
+<h3>Can police ping a phone without the owner knowing?</h3>
+<p>Yes, with the carrier’s help. A 2019 FBI field guide describes a Sprint location service in which “a silent message is sent to the phone requesting a location update,” and says that on U.S. Cellular “you can force a call without a ring to the target device to determine tower/sector.” In Germany, the federal government reported that the Federal Criminal Police Office registered 37,064 silent texts in the first half of 2022 alone.</p>
+<h3>How accurate is cell-tower location?</h3>
+<p>It ranges from a few dozen meters to several kilometers. A single tower and sector covers a wedge of roughly 120 degrees. Round-trip timing adds a distance band, and readings from three or more towers can narrow it further. A GPS-based ping can be much tighter. The FBI guide warns that some carrier coordinates are “NOT GPS-based,” and the FBI’s cell team “does not testify to the accuracy” of AT&amp;T’s NELOS records.</p>
+<h3>Do police need a warrant to get cell-phone location data?</h3>
+<p>For historical cell-site records, generally yes. A court order under 18 U.S.C. § 2703(d) needs only “specific and articulable facts” showing the records are “relevant and material” to an investigation, but in <em>Carpenter v. United States</em> (2018) the Supreme Court held that such an order “is not a permissible mechanism for accessing historical cell-site records” and told the government to “get a warrant,” which requires probable cause. The Court left “real-time CSLI or ‘tower dumps’” undecided, so rules for real-time pinging vary by court and state, and emergencies can justify going without a warrant.</p>
+<h3>What is the FBI’s CAST team?</h3>
+<p>CAST, the Cellular Analysis Survey Team, is the FBI unit that analyzes phone records and tower data for the bureau and for state, local and tribal agencies. Its 2019 guide lists 5 headquarters supervisors, 15 “National Assets” and more than 50 certified “Field Assets,” and the FBI offers free CAST training in its CASTViz mapping software.</p>
+</section>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>This article describes government documents and published law for public understanding. It is not legal advice.</p>
+<p class="author-note has-avatar"><picture class="author-note-avatar"><source type="image/webp" srcset="/assets/authors/colin-aamot-96.webp 1x, /assets/authors/colin-aamot-192.webp 2x"><img class="author-avatar" src="/assets/authors/colin-aamot-96.jpg" srcset="/assets/authors/colin-aamot-96.jpg 1x, /assets/authors/colin-aamot-192.jpg 2x" width="96" height="96" alt="" loading="lazy" decoding="async"></picture><span class="author-note-text"><a href="https://www.linkedin.com/in/colinaamot/" rel="author">Colin Aamot</a> is a former U.S. Army counterterrorism information operations (CT-IO) planner who deployed with several joint task forces in support of Operations Inherent Resolve and Spartan Shield. He subsequently worked at the Heritage Foundation and in the office of Rep. Darrell Issa, with portfolios spanning foreign policy, technology, and innovation. He holds an MA in Global Security Studies from Johns Hopkins University and an MBA from UNC Kenan-Flagler Business School.<span class="author-links"><a href="https://www.linkedin.com/in/colinaamot/">LinkedIn</a><a href="https://x.com/ColinAamot">X</a><a href="https://www.dailysignal.com/author/colin-aamot/">Daily Signal (previous bylines)</a></span></span></p>
+<aside aria-label="Related reading" class="related-reading">
+<h2>Related Reading</h2>
+<ul>
+<li><a href="/blog/dhs-phone-location-data-legal-opinion-foia/">DHS Lawyers Wrote 24 Pages on Buying Your Phone’s Location Data. They Withheld Every Page of the Analysis.</a></li>
+<li><a href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/">How to FOIA an Official’s Browser History, SharePoint Files and Teams Messages</a></li>
+</ul>
+</aside>
+      </div>
+    </div>
+  </article>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="frow">
+      <a class="fbrand" href="/" aria-label="OctoProbe AI">
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <defs><linearGradient id="gf" x1="6" y1="4" x2="34" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#818cf8"/><stop offset=".55" stop-color="#38bdf8"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs>
+          <g stroke="url(#gf)" stroke-width="2.4" stroke-linecap="round">
+            <path d="M12 21.5 C6 25 5.5 31 9.5 34.5"/><path d="M16 22.5 C13 27 12 32.5 15 36"/><path d="M19 23 C18 28.5 17.5 33 19 37"/>
+            <path d="M28 21.5 C34 25 34.5 31 30.5 34.5"/><path d="M24 22.5 C27 27 28 32.5 25 36"/><path d="M21 23 C22 28.5 22.5 33 21 37"/>
+          </g>
+          <g fill="url(#gf)"><circle cx="9.5" cy="34.5" r="2.1"/><circle cx="15" cy="36" r="2.1"/><circle cx="19" cy="37" r="2.1"/><circle cx="30.5" cy="34.5" r="2.1"/><circle cx="25" cy="36" r="2.1"/><circle cx="21" cy="37" r="2.1"/></g>
+          <path d="M20 4.5 C12.3 4.5 7.5 9.8 7.5 16.4 C7.5 20.6 10.6 23.2 14.8 23.2 L25.2 23.2 C29.4 23.2 32.5 20.6 32.5 16.4 C32.5 9.8 27.7 4.5 20 4.5 Z" fill="url(#gf)"/>
+          <rect x="15.2" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
+          <rect x="21.6" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
+        </svg>
+        OctoProbe News
+      </a>
+      <nav class="fnav" aria-label="Footer navigation">
+        <a href="/blog/">Investigations</a>
+        <a href="/blog/about/">About</a>
+        <a href="/blog/standards/">Standards</a>
+        <a href="/blog/corrections/">Corrections</a>
+        <a href="/blog/contact/">Contact</a>
+        <a href="mailto:press@octoprobe.ai">press@octoprobe.ai</a>
+      </nav>
+    </div>
+    <div class="legal">
+      <p>© <span id="yr">2026</span> Redwing Technologies LLC · OctoProbe News · <a href="mailto:press@octoprobe.ai" style="color:inherit">press@octoprobe.ai</a></p>
+      <p><strong>OctoProbe News</strong> is published by Redwing Technologies LLC, which also develops the OctoProbe OSINT investigation platform for law firms, licensed investigators and analysts. The newsroom operates independently of that commercial business; see our <a href="/blog/standards/#independence" style="color:inherit">editorial standards</a>. Platform inquiries: <a href="/" style="color:inherit">octoprobe.ai</a> · <a href="mailto:team@octoprobe.ai" style="color:inherit">team@octoprobe.ai</a>.</p>
+    </div>
+  </div>
+</footer>
+<script>
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 10), { passive: true });
+  const tg = document.getElementById('navToggle'), mm = document.getElementById('mobileMenu');
+  tg.addEventListener('click', () => { const o = mm.classList.toggle('open'); tg.setAttribute('aria-expanded', o); });
+  mm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mm.classList.remove('open'); tg.setAttribute('aria-expanded', 'false'); }));
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+<script src="/assets/js/blog-toc.js?v=toc7" defer></script>
+</body>
+</html>
