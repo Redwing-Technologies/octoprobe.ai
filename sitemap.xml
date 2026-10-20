@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://www.octoprobe.ai/blog/</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -136,6 +136,16 @@
     <image:image>
       <image:loc>https://www.octoprobe.ai/blog/centcom-war-orders-anvil-chart-foia/assets/cover.png</image:loc>
       <image:title>Op-Ed: The Only Public Map of CENTCOM’s War Orders Is Dated 2022</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.octoprobe.ai/blog/north-korea-it-worker-personas-backstopping/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/blog/north-korea-it-worker-personas-backstopping/assets/cover.png</image:loc>
+      <image:title>North Korea's Fake IT Workers: Thin Covers, Borrowed Lives</image:title>
     </image:image>
   </url>
 </urlset>
