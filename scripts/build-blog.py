@@ -27,6 +27,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 POSTS_DIR = ROOT / "blog" / "posts"
 TEMPLATE = ROOT / "blog" / "_template.html"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import authors as AU  # noqa: E402  shared author defaults (Colin Aamot) + overrides
 SITEMAP = ROOT / "sitemap.xml"
 LLMS_PATHS = [ROOT / "llms.txt", ROOT / ".well-known" / "llms.txt"]
 SITE = "https://www.octoprobe.ai"
@@ -443,7 +445,8 @@ def build_json_ld(meta: dict, slug: str, description: str) -> list[dict]:
         "description": description,
         "datePublished": date,
         "dateModified": date_mod,
-        "author": {"@type": "Organization", "name": author_name, "url": f"{SITE}/blog/"},
+        "author": (AU.person_ld(_person) if (_person := AU.resolve_author(meta))
+                   else {"@type": "Organization", "name": author_name, "url": f"{SITE}/blog/"}),
         "publisher": {"@type": "NewsMediaOrganization", "@id": f"{SITE}/blog/#newsroom", "name": "OctoProbe News", "url": f"{SITE}/blog/", "logo": org["logo"], "parentOrganization": org["parentOrganization"]},
         "image": [og_image],
         "keywords": ", ".join(keywords) if isinstance(keywords, list) else str(keywords),
@@ -600,6 +603,11 @@ def build_one(md_path: Path, *, strict: bool = True) -> dict:
             "FCRA-covered eligibility decisions.</div>"
         )
 
+    # Author: Colin Aamot by default (byline + avatar, bio box, Person JSON-LD); see scripts/authors.py.
+    # Front matter `author: OctoProbe Staff` (or OctoProbe / OctoProbe News) keeps the Organization byline.
+    person = AU.resolve_author(meta)
+    body_html = AU.insert_author_note(body_html, AU.author_note_html(person))
+
     ld_blocks = build_json_ld(meta, slug, description)
     ld_scripts = "\n".join(
         f'<script type="application/ld+json">\n{json.dumps(block, indent=2, ensure_ascii=False)}\n</script>'
@@ -613,7 +621,7 @@ def build_one(md_path: Path, *, strict: bool = True) -> dict:
     head_meta = f"""<title>{escape(page_title)}</title>
 <meta name="description" content="{escape(description)}">
 <meta name="keywords" content="{escape(keywords_str)}">
-<meta name="author" content="{escape(meta.get('author') or 'OctoProbe News')}">
+<meta name="author" content="{escape(person['name'] if person else (meta.get('author') or 'OctoProbe News'))}">
 <link rel="alternate" type="text/plain" title="LLM context (llms.txt)" href="/llms.txt">
 <link rel="alternate" type="text/plain" title="AI discovery (ai.txt)" href="/ai.txt">
 <meta name="ai-content-declaration" content="human-authored; product documentation and OSINT methodology">
@@ -634,10 +642,9 @@ def build_one(md_path: Path, *, strict: bool = True) -> dict:
 <meta name="twitter:image" content="{escape(og_image)}">
 {ld_scripts}"""
 
-    # Visible byline: defaults to "OctoProbe Staff"; set front matter `byline:` to override
-    # (e.g. a staff writer or guest author). JSON-LD/meta author stay the Organization.
-    byline_name = meta.get("byline") or "OctoProbe Staff"
-    byline_html = f'<p class="byline">By {escape(byline_name)}</p>'
+    # Visible byline: the resolved author (with headshot); for Organization authors the
+    # staff line, `byline:` overrides the visible name.
+    byline_html = AU.byline_html(person, meta.get("byline") or "OctoProbe Staff")
     tpl = TEMPLATE.read_text(encoding="utf-8")
     html = (
         tpl.replace("{{HEAD_META}}", head_meta)

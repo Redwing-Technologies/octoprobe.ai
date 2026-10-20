@@ -43,7 +43,7 @@ Before writing or shipping a post, complete all of the following:
    - `og_image` / `hero` (featured image under `/assets/blog/…`)
    - `hero_alt`
    - optional: `date_modified`, `author`, `excerpt`, `byline`
-   - **Byline:** the visible byline defaults to **"By OctoProbe Staff"**. Set `byline:` to override (e.g. a staff writer or a guest author such as `byline: Colin Aamot`). The JSON-LD and `<meta name="author">` keep the Organization identity ("OctoProbe"); `byline` only sets the human-readable line under the headline.
+   - **Author (default Colin Aamot):** every post is bylined **Colin Aamot** by default — top byline with circular headshot (`has-avatar` / `author-avatar`), name linked to https://www.linkedin.com/in/colinaamot/, the bottom `.author-note` bio with LinkedIn · X · Daily Signal pills, `<meta name="author">`, and JSON-LD `author` as a Person (name, url, description, image, sameAs); the Organization stays `publisher`. Defaults live in `scripts/authors.py` (used by `build-blog.py` and `build-adtech-post.py`). The bio is placed before Related Reading, or at `{{AUTHOR_NOTE}}` in the markdown, else at the end of the body. Override per post: another person via `author:`, `author_url:`, `author_bio:`, `author_image:`, `author_links:`; `byline:` changes only the visible name; `author: OctoProbe Staff` (or `OctoProbe` / `OctoProbe AI` / `OctoProbe News`) keeps the old Organization byline with no avatar or bio. Hand-authored HTML posts copy the same markup (see Author bio note below). Exception: the first post, `identifier-graph-osint-methodology` (`author: "OctoProbe AI"`), is intentionally left with its original Organization authorship.
 6. **Entity mentions** (natural, no stuffing): OctoProbe AI, Redwing Technologies, OSINT, identifier graph, breach intelligence, facial recognition OSINT, MCP OSINT as relevant.
 7. **Internal links** to homepage sections (`/#capabilities`, `/#faq`, `/#access`, `/#audiences`, `/#integration`), other posts, and listing FAQ. App login only as gated CTA.
 8. **Disclaimer** — public OSINT; not a consumer reporting agency / not FCRA.
@@ -77,9 +77,9 @@ This writes `blog/<slug>/index.html`, injects BlogPosting + BreadcrumbList, rege
 
 ## Conventions
 
-### Author bio note (op-eds / bylined posts)
+### Author bio note (all bylined posts)
 
-For a short author note at the end of a post, use this markup **immediately before** the Related Reading block (no heading):
+For the author note at the end of a post, use this markup **immediately before** the Related Reading block (no heading):
 
 ```html
 <p class="author-note"><a href="https://example.com/author" rel="author">Author Name</a> is a short one-sentence bio.</p>
@@ -89,7 +89,7 @@ Styles live in `/assets/css/blog.css` (`.prose .author-note`): italic, ~1rem, th
 
 Optional profile-links row: put `<span class="author-links"><a href="…">LinkedIn</a><a href="…">X</a></span>` as the last child **inside** the `<p class="author-note">` (keeps the `.author-note + .related-reading` spacing rule working), and list the same URLs in the Person JSON-LD `sameAs`. In `scripts/build-adtech-post.py` posts this comes from front matter `author_links: ["Label | https://url", ...]`.
 
-Author headshot (top byline): bylined authors may show a small circular photo before the name. Store square crops once under `/assets/authors/` as `<name>-96.webp`, `<name>-192.webp`, `<name>-96.jpg`, `<name>-192.jpg` (face centered). Markup: `<p class="byline has-avatar"><picture><source type="image/webp" srcset="…-96.webp 1x, …-192.webp 2x"><img class="author-avatar" src="…-96.jpg" srcset="…-96.jpg 1x, …-192.jpg 2x" width="44" height="44" alt="Name" decoding="async"></picture><span>By <a href="…" rel="author">Name</a></span></p>`; styles in `blog.css` (`.post-hero .byline.has-avatar`, `.author-avatar`: 42px desktop / 36px ≤520px). Add the absolute `-192.jpg` URL as Person JSON-LD `image`. In `scripts/build-adtech-post.py` posts set front matter `author_image: /assets/authors/<name>-192.jpg`. Posts bylined "OctoProbe Staff" have no avatar.
+Author headshot (top byline): bylined authors may show a small circular photo before the name. Store square crops once under `/assets/authors/` as `<name>-96.webp`, `<name>-192.webp`, `<name>-96.jpg`, `<name>-192.jpg` (face centered). Markup: `<p class="byline has-avatar"><picture><source type="image/webp" srcset="…-96.webp 1x, …-192.webp 2x"><img class="author-avatar" src="…-96.jpg" srcset="…-96.jpg 1x, …-192.jpg 2x" width="44" height="44" alt="Name" decoding="async"></picture><span>By <a href="…" rel="author">Name</a></span></p>`; styles in `blog.css` (`.post-hero .byline.has-avatar`, `.author-avatar`: 42px desktop / 36px ≤520px). Add the absolute `-192.jpg` URL as Person JSON-LD `image`. In `scripts/build-adtech-post.py` posts set front matter `author_image: /assets/authors/<name>-192.jpg`. Organization-bylined posts (`author: OctoProbe Staff`) have no avatar.
 
 ### Editor's note
 

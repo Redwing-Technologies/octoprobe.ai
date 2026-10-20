@@ -397,6 +397,10 @@ footer .legal strong{color:var(--soft)}
 .prose > figure:first-child{margin-top:0;margin-bottom:2.75em}
 .prose figcaption:not(.sr-only),.prose .caption,.prose .em-caption,figcaption,.caption,.em-caption{margin-top:calc(.7em + 10px);text-align:center;font-style:italic;font-size:9pt;color:var(--soft-2);line-height:1.5}
 
+/* Top byline base style (was only inline per post; identical values, so no change where inlined) */
+.post-hero .byline{margin:1rem 0 0;font-weight:600;color:#334155;font-size:.98rem}
+.post-hero .byline a{color:inherit;text-decoration:underline;text-decoration-color:rgba(51,65,85,.35);text-underline-offset:3px}
+.post-hero .byline a:hover{color:var(--blue)}
 /* Author headshot in the top byline (bylined authors only):
    <p class="byline has-avatar"><picture>…<img class="author-avatar"></picture><span>By <a>Name</a></span></p>
    Higher specificity than the per-post inline .post-hero .byline rule. */
