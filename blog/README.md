@@ -87,6 +87,12 @@ For a short author note at the end of a post, use this markup **immediately befo
 
 Styles live in `/assets/css/blog.css` (`.prose .author-note`): italic, ~1rem, thin top rule, soft color, equal spacing above the rule / between rule and text / before Related Reading. If the post uses Person JSON-LD for the author, set `author.description` to the same plain-text bio (without the HTML link markup).
 
+Optional profile-links row: put `<span class="author-links"><a href="…">LinkedIn</a><a href="…">X</a></span>` as the last child **inside** the `<p class="author-note">` (keeps the `.author-note + .related-reading` spacing rule working), and list the same URLs in the Person JSON-LD `sameAs`. In `scripts/build-adtech-post.py` posts this comes from front matter `author_links: ["Label | https://url", ...]`.
+
+### Editor's note
+
+`<p class="editor-note">Editor’s note: …</p>` is styled site-wide in `/assets/css/blog.css` (`.prose .editor-note`); do not add per-post overrides. When `blog.css` changes, bump its `?v=` query in `blog/_template.html`, `scripts/build-adtech-post.py`, and every built `blog/**/index.html`.
+
 
 - Fictional / example names only in teaching posts.
 - Keep GA `G-6T6HW79ZP0` on blog pages (in the template).

@@ -416,11 +416,25 @@ footer .legal strong{color:var(--soft)}
   text-underline-offset:3px;
 }
 .prose .author-note a:hover{color:var(--blue)}
+/* Author profile links row inside the bio note: <span class="author-links"><a>…</a></span> */
+.prose .author-note .author-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:.75rem;font-style:normal;line-height:1.2}
+.prose .author-note .author-links a{
+  font-family:var(--fm);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;
+  color:var(--soft);background:var(--panel-2);border:1px solid var(--line-2);
+  padding:6px 11px;border-radius:999px;text-decoration:none;white-space:nowrap;
+}
+.prose .author-note .author-links a:hover,
+.prose .author-note .author-links a:focus-visible{color:var(--blue);border-color:rgba(2,136,209,.35);background:rgba(2,136,209,.06)}
 /* Equal gap into Related Reading: author-note margin-bottom owns the space */
 .prose .author-note + .related-reading,
 .prose .author-note + aside.related-reading{margin-top:0}
 .prose .author-note + .related-reading > h2:first-child,
 .prose .author-note + aside.related-reading > h2:first-child{margin-top:0}
+
+/* Editor's note: site-wide default (was a per-post inline style). Extra space above
+   separates it from the preceding paragraph; small and grey so it still reads as attached. */
+.prose .editor-note{margin-top:.9em;padding-top:.35em;font-size:.85em;line-height:1.5;color:#6b7280}
+.prose .editor-note a{color:inherit;text-decoration:underline}
 
 .prose a{color:var(--blue);text-decoration:underline;text-underline-offset:3px;font-weight:500}
 .prose a:hover{color:var(--blue-deep)}
