@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Regenerate sitemap.xml from the built site (homepage, /blog/, every blog/<slug>/index.html except redirect stubs).
+"""Regenerate sitemap.xml from the built site (homepage, /blog/, every blog/<slug>/index.html except redirect stubs,
+and every author page blog/authors/<name>/index.html, which sits two directory levels under blog/).
 
 The published HTML is the source of truth, so hand-built posts are included too.
 Per page it reads: canonical URL, og:title, og:image (query string stripped) and the
@@ -45,18 +46,27 @@ def page(path: Path) -> dict:
     }
 
 
-def build() -> str:
-    home = page(ROOT / "index.html")
-    posts = []
-    for p in sorted((ROOT / "blog").glob("*/index.html")):
-        if p.parent.name.startswith(("_", ".")):
+def live_pages(pattern: str) -> list[dict]:
+    """Pages matching blog/<pattern>, minus _/. dirs and redirect stubs."""
+    out = []
+    for p in sorted((ROOT / "blog").glob(pattern)):
+        if any(part.startswith(("_", ".")) for part in p.relative_to(ROOT / "blog").parts[:-1]):
             continue
         if 'http-equiv="refresh"' in p.read_text(encoding="utf-8"):
             continue  # redirect stub for a moved URL; only live URLs go in the sitemap
         d = page(p)
         if not d["lastmod"]:
             raise SystemExit(f"ERROR: {p.relative_to(ROOT)} has no JSON-LD dateModified/datePublished")
-        posts.append(d)
+        out.append(d)
+    return out
+
+
+def build() -> str:
+    home = page(ROOT / "index.html")
+    posts = live_pages("*/index.html")
+    # Author pages are two levels deep (blog/authors/<name>/index.html), so the one-level glob above
+    # never sees them. lastmod = the ProfilePage dateModified (stamped by scripts/build-author-page.py).
+    authors = sorted(live_pages("authors/*/index.html"), key=lambda d: d["loc"])
     posts.sort(key=lambda d: (d["published"], d["lastmod"], d["loc"]))
     blog_last = max(d["lastmod"] for d in posts) if posts else home["lastmod"]
     urls = [
@@ -64,7 +74,9 @@ def build() -> str:
              img=(home["image"], home["title"])),
         dict(loc=f"{SITE}/blog/", lastmod=blog_last, cf="weekly", pr="0.8", img=None),
     ] + [dict(loc=d["loc"], lastmod=d["lastmod"], cf="monthly", pr="0.7",
-              img=(d["image"], d["title"]) if d["image"] else None) for d in posts]
+              img=(d["image"], d["title"]) if d["image"] else None) for d in posts] + [
+        dict(loc=d["loc"], lastmod=d["lastmod"], cf="monthly", pr="0.6",
+             img=(d["image"], d["title"]) if d["image"] else None) for d in authors]
     out = ['<?xml version="1.0" encoding="UTF-8"?>',
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
            '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"',

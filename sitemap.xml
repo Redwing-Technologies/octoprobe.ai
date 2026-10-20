@@ -120,7 +120,7 @@
   </url>
   <url>
     <loc>https://www.octoprobe.ai/blog/standards/</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -216,6 +216,16 @@
     <image:image>
       <image:loc>https://www.octoprobe.ai/blog/subpoena-warrant-online-accounts-three-branches/assets/og-cover.png</image:loc>
       <image:title>Congress, the Pentagon’s Watchdog and a Judge: Three Ways the Government Compels Your Records</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.octoprobe.ai/blog/authors/colin-aamot/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/blog/authors/colin-aamot/assets/colin-aamot.jpg</image:loc>
+      <image:title>Colin Aamot · OctoProbe News</image:title>
     </image:image>
   </url>
 </urlset>
