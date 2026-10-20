@@ -1,0 +1,82 @@
+/* OctoProbe News: search filter bar on the blog index (/blog/). Loaded only by blog/index.html;
+   uses the design tokens from blog.css. The bar is [hidden] until assets/js/blog-search.js runs,
+   so without JavaScript the listing looks exactly as before. */
+.blog-search{margin:0 0 30px}
+/* html.js-search is set by an inline script in <head>: reserve the bar's space before the deferred
+   script mounts it (no layout shift); without JS the bar takes no space at all. */
+html.js-search .blog-search[hidden]{display:block;visibility:hidden}
+.blog-search[hidden],.blog-search-empty[hidden],.post-grid[hidden],.post-card[hidden],.blog-search-clear[hidden]{display:none}
+.blog-search-label,.blog-search-hint,.blog-search.is-empty .blog-search-status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.blog-search-field{
+  position:relative;display:flex;align-items:center;
+  background:linear-gradient(175deg,var(--panel),var(--ink-2));
+  border:1px solid var(--line-2);border-radius:16px;
+  box-shadow:0 14px 36px rgba(15,23,42,.06);
+  transition:border-color .2s,box-shadow .2s;
+}
+.blog-search-field:hover{border-color:rgba(2,132,199,.32)}
+.blog-search-field:focus-within{border-color:var(--blue);box-shadow:0 0 0 4px rgba(2,136,209,.14),0 18px 42px rgba(15,23,42,.08)}
+.blog-search-icon{position:absolute;left:20px;color:var(--soft-2);pointer-events:none;transition:color .2s}
+.blog-search-field:focus-within .blog-search-icon{color:var(--blue)}
+.blog-search-input{
+  flex:1;min-width:0;width:100%;height:58px;margin:0;
+  padding:0 64px 0 54px;
+  border:0;border-radius:16px;background:transparent;outline:none;
+  font-family:var(--fb);font-size:1.02rem;font-weight:400;color:var(--heading);
+  -webkit-appearance:none;appearance:none;
+}
+.blog-search.is-active .blog-search-input{padding-right:58px}
+.blog-search-input::placeholder{color:var(--soft-2);opacity:1}
+.blog-search-input::-webkit-search-decoration,.blog-search-input::-webkit-search-cancel-button,
+.blog-search-input::-webkit-search-results-button,.blog-search-input::-webkit-search-results-decoration{-webkit-appearance:none;appearance:none;display:none}
+.blog-search-kbd{
+  position:absolute;right:18px;
+  font-family:var(--fm);font-size:.7rem;font-weight:500;line-height:1;color:var(--soft-2);
+  padding:5px 8px;border:1px solid var(--line-2);border-radius:7px;background:var(--panel);
+  pointer-events:none;transition:opacity .15s;
+}
+.blog-search.is-active .blog-search-kbd,.blog-search-field:focus-within .blog-search-kbd{opacity:0}
+.blog-search-clear{
+  position:absolute;right:12px;display:inline-flex;align-items:center;justify-content:center;
+  width:34px;height:34px;padding:0;border:1px solid transparent;border-radius:999px;
+  background:rgba(15,23,42,.05);color:var(--soft);cursor:pointer;transition:background .2s,color .2s,border-color .2s;
+}
+.blog-search-clear:hover{background:rgba(2,136,209,.08);color:var(--blue);border-color:rgba(2,136,209,.25)}
+.blog-search-clear:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.blog-search-status{
+  margin:12px 2px 0;min-height:1.4em;
+  font-family:var(--fm);font-size:.68rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--soft-2);line-height:1.4;
+}
+.blog-search-status:empty{display:none}
+.blog-search-empty{
+  padding:34px 30px 32px;text-align:center;
+  background:linear-gradient(175deg,var(--panel),var(--ink-2));
+  border:1px solid var(--line-2);border-radius:18px;box-shadow:0 20px 50px rgba(15,23,42,.07);
+  font-family:var(--fb);color:var(--soft);line-height:1.7;
+}
+.blog-search-empty p{margin:0 auto;max-width:34em}
+.blog-search-empty .blog-search-empty-title{
+  margin-bottom:8px;font-family:var(--fd);font-size:clamp(1.2rem,2.2vw,1.4rem);font-weight:700;
+  letter-spacing:-.02em;color:var(--heading);line-height:1.3;overflow-wrap:anywhere;
+}
+.blog-search-showall{
+  margin-top:20px;display:inline-flex;align-items:center;
+  padding:10px 18px;border:1px solid rgba(2,136,209,.25);border-radius:999px;background:rgba(2,136,209,.08);
+  font-family:var(--fm);font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);
+  cursor:pointer;transition:background .2s,transform .2s;
+}
+.blog-search-showall:hover{background:rgba(2,136,209,.14);transform:translateY(-1px)}
+.post-card:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
+@media(max-width:520px){
+  .blog-search{margin-bottom:24px}
+  .blog-search-input{height:52px;padding:0 14px 0 46px;font-size:1rem}
+  .blog-search.is-active .blog-search-input{padding-right:52px}
+  .blog-search-icon{left:16px}
+  .blog-search-kbd{display:none}
+  .blog-search-clear{right:9px}
+  .blog-search-empty{padding:28px 20px}
+}
+@media(prefers-reduced-motion:reduce){
+  .blog-search-field,.blog-search-clear,.blog-search-showall{transition:none}
+}

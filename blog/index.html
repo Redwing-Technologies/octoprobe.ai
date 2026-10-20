@@ -21,6 +21,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/blog.css?v=news5">
+<link rel="stylesheet" href="/assets/css/blog-search.css?v=search1">
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+<script>document.documentElement.classList.add('js-search')</script>
 <title>OctoProbe News: National Security and Influence Operations</title>
 <meta name="description" content="Investigative reporting on national security, intelligence, digital targeting and online influence operations, built from open-source records.">
 <meta name="keywords" content="OctoProbe News, national security, intelligence, digital targeting, influence operations, open-source investigations, OSINT journalism">
@@ -240,7 +243,18 @@
   </header>
   <section class="blog-list" aria-label="Latest investigations">
     <div class="wrap">
-      <div class="post-grid">
+      <div class="blog-search" id="blogSearch" role="search" aria-label="Search OctoProbe News" data-search-base="/assets/search/" data-search-version="a9ec26af2a" hidden>
+        <label class="blog-search-label" for="blogSearchInput">Search investigations and guides</label>
+        <div class="blog-search-field">
+          <svg class="blog-search-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <input class="blog-search-input" id="blogSearchInput" type="search" name="q" placeholder="Search investigations and guides" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" aria-describedby="blogSearchHint blogSearchStatus" aria-controls="postGrid">
+          <kbd class="blog-search-kbd" aria-hidden="true">/</kbd>
+          <button class="blog-search-clear" type="button" aria-label="Clear search" hidden><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+        </div>
+        <p class="blog-search-hint" id="blogSearchHint">Results are ranked by meaning, not just matching words. Press Enter to jump to the top story, Escape to clear.</p>
+        <p class="blog-search-status" id="blogSearchStatus" role="status" aria-live="polite" aria-atomic="true"></p>
+      </div>
+      <div class="post-grid" id="postGrid">
         <a class="post-card reveal" href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/">
           <div class="thumb" aria-hidden="true">
             <img src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/cover.png?v=1" alt="" loading="lazy" decoding="async">
@@ -512,6 +526,11 @@
           </div>
         </a>
       </div>
+      <div class="blog-search-empty" id="blogSearchEmpty" hidden>
+        <p class="blog-search-empty-title">No stories match &ldquo;<span id="blogSearchEmptyQuery"></span>&rdquo;.</p>
+        <p>Try a broader phrase, or search for a place, an agency or a topic such as FOIA, surveillance or Iran.</p>
+        <button class="blog-search-showall" id="blogSearchShowAll" type="button">Show all stories</button>
+      </div>
     </div>
   </section>
   <section class="desk-about" aria-labelledby="about-desk">
@@ -565,5 +584,7 @@
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .1 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
+<script src="/assets/vendor/minisearch/minisearch-7.2.0.min.js" defer></script>
+<script src="/assets/js/blog-search.js?v=search1" defer></script>
 </body>
 </html>
