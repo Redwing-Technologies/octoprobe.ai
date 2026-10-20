@@ -1,0 +1,205 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#page",
+      "url": "https://www.octoprobe.ai/blog/authors/colin-aamot/",
+      "name": "Colin Aamot, OctoProbe News",
+      "inLanguage": "en-US",
+      "dateCreated": "TODO-DEPLOY-DATE",
+      "dateModified": "TODO-DEPLOY-DATE",
+      "isPartOf": {
+        "@id": "https://www.octoprobe.ai/blog/#blog"
+      },
+      "publisher": {
+        "@id": "https://www.octoprobe.ai/blog/#newsroom"
+      },
+      "mainEntity": {
+        "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#person"
+      },
+      "breadcrumb": {
+        "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#breadcrumb"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#headshot"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#person",
+      "name": "Colin Aamot",
+      "url": "https://www.octoprobe.ai/blog/authors/colin-aamot/",
+      "mainEntityOfPage": {
+        "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#page"
+      },
+      "description": "Colin Aamot is the founder of Redwing Technologies, which publishes OctoProbe News, builds a portfolio of SaaS products, and runs Rook Intelligence, a licensed Washington, DC private detective agency. A U.S. Army veteran, he began in the 173rd Airborne Brigade and was selected for the Special Operations psychological operations regiment, then served as a counterterrorism information operations planner with USASOC and SOCCENT supporting Operation Inherent Resolve and Operation Spartan Shield. He was a TechCongress Congressional Innovation Fellow in the office of Rep. Darrell Issa and later an investigator for The Heritage Foundation's Oversight Project and an investigative columnist for The Daily Signal. He holds an MA in Global Security Studies from Johns Hopkins University and an MBA from UNC Kenan-Flagler Business School.",
+      "image": [
+        {
+          "@type": "ImageObject",
+          "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#headshot",
+          "url": "https://www.octoprobe.ai/blog/authors/colin-aamot/assets/colin-aamot.jpg",
+          "contentUrl": "https://www.octoprobe.ai/blog/authors/colin-aamot/assets/colin-aamot.jpg",
+          "encodingFormat": "image/jpeg",
+          "width": 1000,
+          "height": 1000,
+          "caption": "Colin Aamot"
+        },
+        {
+          "@type": "ImageObject",
+          "url": "https://www.octoprobe.ai/blog/authors/colin-aamot/assets/colin-aamot.webp",
+          "contentUrl": "https://www.octoprobe.ai/blog/authors/colin-aamot/assets/colin-aamot.webp",
+          "encodingFormat": "image/webp",
+          "width": 1000,
+          "height": 1000,
+          "caption": "Colin Aamot"
+        }
+      ],
+      "jobTitle": "Founder",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Redwing Technologies",
+        "legalName": "Redwing Technologies LLC",
+        "description": "Redwing Technologies publishes OctoProbe News, builds a portfolio of SaaS products, and runs Rook Intelligence, a licensed Washington, DC private detective agency.",
+        "brand": [
+          {
+            "@type": "Brand",
+            "name": "Rook Intelligence",
+            "url": "https://rook-intel.com/"
+          },
+          {
+            "@type": "Brand",
+            "name": "OctoProbe",
+            "url": "https://www.octoprobe.ai/"
+          }
+        ],
+        "subOrganization": [
+          {
+            "@id": "https://rook-intel.com/#organization"
+          },
+          {
+            "@id": "https://www.octoprobe.ai/blog/#newsroom"
+          }
+        ]
+      },
+      "affiliation": [
+        {
+          "@id": "https://www.octoprobe.ai/blog/#newsroom"
+        },
+        {
+          "@type": "Organization",
+          "name": "TechCongress",
+          "url": "https://techcongress.io/"
+        }
+      ],
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Johns Hopkins University"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University of North Carolina at Chapel Hill, Kenan-Flagler Business School"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Defense Language Institute"
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "degree",
+          "name": "MA, Global Security Studies",
+          "recognizedBy": {
+            "@type": "CollegeOrUniversity",
+            "name": "Johns Hopkins University"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "degree",
+          "name": "MBA",
+          "recognizedBy": {
+            "@type": "CollegeOrUniversity",
+            "name": "UNC Kenan-Flagler Business School"
+          }
+        }
+      ],
+      "knowsLanguage": [
+        "English",
+        "Levantine Arabic"
+      ],
+      "knowsAbout": [
+        "Open-source intelligence (OSINT)",
+        "Freedom of Information Act (FOIA) research",
+        "Information warfare",
+        "Information operations",
+        "Misinformation and disinformation network analysis",
+        "Digital privacy and targeting",
+        "National security",
+        "Due diligence and vetting",
+        "Private investigation"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/colinaamot/",
+        "https://x.com/ColinAamot",
+        "https://rook-intel.com/#colin-aamot",
+        "https://techcongress.io/colin-aamot",
+        "https://www.dailysignal.com/author/colin-aamot/"
+      ],
+      "subjectOf": [
+        {
+          "@type": "NewsArticle",
+          "headline": "Heritage Foundation Staffers Flood Federal Agencies With Thousands of Information Requests",
+          "url": "https://www.propublica.org/article/have-government-employees-mentioned-climate-change-voting-or-gender-identity-the-heritage-foundation-wants-to-know",
+          "datePublished": "2024-10-01",
+          "author": [
+            {
+              "@type": "Person",
+              "name": "Sharon Lerner"
+            },
+            {
+              "@type": "Person",
+              "name": "Andy Kroll"
+            }
+          ],
+          "publisher": {
+            "@type": "NewsMediaOrganization",
+            "name": "ProPublica",
+            "url": "https://www.propublica.org/"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "name": "Meet the June 2022 Fellows: Colin Aamot",
+          "url": "https://techcongress.io/blog/meet-colin-aamot",
+          "datePublished": "2022-07-27",
+          "publisher": {
+            "@type": "Organization",
+            "name": "TechCongress",
+            "url": "https://techcongress.io/"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "OctoProbe News",
+          "item": "https://www.octoprobe.ai/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Colin Aamot",
+          "item": "https://www.octoprobe.ai/blog/authors/colin-aamot/"
+        }
+      ]
+    }
+  ]
+}
