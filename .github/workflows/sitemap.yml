@@ -22,6 +22,10 @@ jobs:
         run: python3 scripts/gen-sitemap.py --check
       - name: Check the blog search index is up to date
         run: python3 scripts/build-search-index.py --check
+      - name: Check the author page and post author markup are up to date
+        run: |
+          python3 scripts/build-author-page.py --check
+          python3 scripts/refresh-author-markup.py --check
       - name: Validate sitemap XML and robots.txt reference
         run: |
           python3 -c "import xml.dom.minidom as m; m.parse('sitemap.xml'); print('sitemap.xml well-formed')"
@@ -35,3 +39,11 @@ jobs:
             grep -q "/blog/$slug/</loc>" sitemap.xml || { echo "missing $slug"; exit 1; }
           done
           echo "all posts listed"
+      - name: Every author page is listed
+        run: |
+          for d in blog/authors/*/index.html; do
+            [ -e "$d" ] || continue
+            name=$(basename "$(dirname "$d")")
+            grep -q "/blog/authors/$name/</loc>" sitemap.xml || { echo "missing author $name"; exit 1; }
+          done
+          echo "all author pages listed"
