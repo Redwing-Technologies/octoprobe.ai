@@ -44,7 +44,7 @@ Two failure modes show up again and again. **Manual** workflows spend most of th
 
 ## What problem does an identifier graph solve?
 
-Investigations rarely start with a complete dossier. They start with a thin public clue: an email on a company About page, a phone in a press release, a handle in a conference agenda, or a photo on a speaker bio. The craft is not “find everything.” It is disciplined expansion—turning that seed into a graph of identifiers, each edge backed by a source and a timestamp.
+Investigations rarely start with a complete picture. They start with a thin public clue: an email on a company About page, a phone in a press release, a handle in a conference agenda, or a photo on a speaker bio. The craft is not “find everything.” It is disciplined expansion—turning that seed into a graph of identifiers, each edge backed by a source and a timestamp.
 
 Without a graph, analysts drown in tabs. With a graph and no provenance, they invent confidence. With a graph that expands without a scope, they drown again—this time in nodes that look related and are not. The methodology below is how **breach intelligence**, account discovery, public records, and open-web pivots stay auditable—whether you run them by hand or inside OctoProbe’s live investigation graph and [MCP OSINT](/#integration) toolkit.
 
