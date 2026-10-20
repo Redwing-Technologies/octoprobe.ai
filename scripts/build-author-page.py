@@ -43,7 +43,7 @@ ASSETS = f"/blog/authors/{SLUG}/assets"
 DATE_CREATED = "2026-10-20"
 NAME = AU.DEFAULT_AUTHOR["name"]
 ROLE = "Founder, Redwing Technologies"
-TITLE = f"{NAME} · OctoProbe News"
+TITLE = f"{NAME}: {ROLE} | OctoProbe News"
 DESCRIPTION = ("Colin Aamot is the founder of Redwing Technologies, publisher of OctoProbe News. "
                "Bio, background, profiles, press coverage and his investigations.")
 SRCSET = (f"{ASSETS}/colin-aamot-192.webp 192w, {ASSETS}/colin-aamot-400.webp 400w, "
@@ -199,7 +199,7 @@ def build() -> str:
         <div class="post-crumb">
           <a class="back-link" href="/blog/">← OctoProbe News</a>
           <span class="crumb-sep" aria-hidden="true">/</span>
-          <span class="eyebrow">Author</span>
+          <span class="eyebrow">{NAME}</span>
         </div>
         <h1>{NAME}</h1>
         <p class="author-role">{ROLE}</p>
