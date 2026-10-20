@@ -342,10 +342,10 @@ Agencies and Microsoft use their own vocabulary. A request that speaks it is eas
 
 {{FAQ}}
 
-{{AUTHOR_NOTE}}
-
-{{MODULE:related}}
-
 ## Disclaimer
 
 This guide relies on FOIA releases, agency records, court opinions, statutes and Microsoft's public documentation. It is not legal advice.
+
+{{AUTHOR_NOTE}}
+
+{{MODULE:related}}

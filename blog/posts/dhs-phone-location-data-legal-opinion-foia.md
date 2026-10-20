@@ -234,10 +234,10 @@ A thorough request lists the variants: "commercial telemetry data," "collateral 
 
 {{FAQ}}
 
-{{AUTHOR_NOTE}}
-
-{{MODULE:related}}
-
 ## Disclaimer
 
 This report relies on public records, FOIA releases, court opinions, government reports and published journalism. Interactive figures use generated data and fictional places.
+
+{{AUTHOR_NOTE}}
+
+{{MODULE:related}}

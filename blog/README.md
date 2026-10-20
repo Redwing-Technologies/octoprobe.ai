@@ -79,7 +79,7 @@ This writes `blog/<slug>/index.html`, injects BlogPosting + BreadcrumbList, rege
 
 ### Author bio note (all bylined posts)
 
-For the author note at the end of a post, use this markup **immediately before** the Related Reading block (no heading):
+For the author note at the end of a post, use this markup **after the Disclaimer and immediately before** the Related Reading block, which is always the last section (no heading):
 
 ```html
 <p class="author-note"><a href="https://example.com/author" rel="author">Author Name</a> is a short one-sentence bio.</p>
@@ -98,6 +98,13 @@ Styles: `.prose .author-note.has-avatar` in `blog.css` (flex row with a 92px cir
 Optional profile-links row: put `<span class="author-links"><a href="…">LinkedIn</a><a href="…">X</a></span>` as the last child **inside** the `<p class="author-note">` (keeps the `.author-note + .related-reading` spacing rule working), and list the same URLs in the Person JSON-LD `sameAs`. In `scripts/build-adtech-post.py` posts this comes from front matter `author_links: ["Label | https://url", ...]`.
 
 Author headshot (top byline): bylined authors may show a small circular photo before the name. Store square crops once under `/assets/authors/` as `<name>-96.webp`, `<name>-192.webp`, `<name>-96.jpg`, `<name>-192.jpg` (face centered). Markup: `<p class="byline has-avatar"><picture><source type="image/webp" srcset="…-96.webp 1x, …-192.webp 2x"><img class="author-avatar" src="…-96.jpg" srcset="…-96.jpg 1x, …-192.jpg 2x" width="44" height="44" alt="Name" decoding="async"></picture><span>By <a href="…" rel="author">Name</a></span></p>`; styles in `blog.css` (`.post-hero .byline.has-avatar`, `.author-avatar`: 42px desktop / 36px ≤520px). Add the absolute `-192.jpg` URL as Person JSON-LD `image`. In `scripts/build-adtech-post.py` posts set front matter `author_image: /assets/authors/<name>-192.jpg`. Organization-bylined posts (`author: OctoProbe Staff`) have no avatar.
+
+### Related Reading (all posts)
+
+- **Last section.** Related Reading is the final block of the article body: closing sections (FAQ, Correction, Disclaimer, records note) come first, then the author bio note, then `<aside class="related-reading" aria-label="Related reading"><h2 id="related-reading">Related Reading</h2><ul>…</ul></aside>`. Nothing follows it inside the article.
+- **No repeats.** Don't list a source that is already linked in the body (compare URLs ignoring `#fragments` and trailing slashes). Related Reading is for further reading, not a second bibliography.
+- **No generic methodology link.** Don't use `/blog/identifier-graph-osint-methodology/` (or any other generic methodology explainer) as filler. Prefer 1–3 substantive, closely related, recent OctoProbe posts with their exact live titles (verify each URL returns 200; never the post itself or a duplicate).
+- **Never empty.** If the de-duplication would empty the list, add 1–2 relevant OctoProbe posts.
 
 ### Editor's note
 
