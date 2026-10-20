@@ -65,9 +65,9 @@ def build_html(a):
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
 html,body{{margin:0;width:{W}px;height:{H}px;overflow:hidden;background:#0a1226}}
-#map{{position:absolute;inset:0;filter:grayscale(1) invert(1) brightness(.78) contrast(1.15) sepia(.35) hue-rotate(185deg) saturate(1.6)}}
+#map{{position:absolute;inset:0;filter:grayscale(1) invert(1) brightness(1.05) contrast(1.2) sepia(.35) hue-rotate(185deg) saturate(1.6)}}
 .leaflet-control-container{{display:none}}
-.shade{{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,14,32,.94) 0%,rgba(8,14,32,.82) 38%,rgba(8,14,32,.35) 62%,rgba(8,14,32,.15) 100%),linear-gradient(0deg,rgba(8,14,32,.55),rgba(8,14,32,0) 30%)}}
+.shade{{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,14,32,.94) 0%,rgba(8,14,32,.72) 38%,rgba(8,14,32,.2) 62%,rgba(8,14,32,.05) 100%),linear-gradient(0deg,rgba(8,14,32,.55),rgba(8,14,32,0) 30%)}}
 .brand{{position:absolute;left:48px;top:40px;display:flex;align-items:center;gap:12px;color:#fff;font:700 26px/1 'Space Grotesk',sans-serif;letter-spacing:-.01em}}
 .brand img{{width:46px;height:46px}}
 .brand small{{display:block;font:500 10px/1.4 'JetBrains Mono',monospace;letter-spacing:.22em;color:#9fb0cc;margin-top:4px}}
