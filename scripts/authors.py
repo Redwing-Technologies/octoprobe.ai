@@ -1,8 +1,12 @@
 """Shared author defaults for OctoProbe News posts (used by build-blog.py and build-adtech-post.py).
 
 Default author for every post is Colin Aamot: top byline with circular headshot, bottom
-.author-note bio box (same headshot, larger, left of the text) with profile-link pills, and a JSON-LD Person (name, url, image,
-description, sameAs). The Organization stays the JSON-LD publisher.
+.author-note bio box (same headshot, larger, left of the text) with profile-link pills, and a JSON-LD
+Person reference ({"@type": "Person", "@id": AUTHOR_PAGE#person, "name", "url"}). The byline name and the
+bio-box name link (rel="author") to the on-site author page /blog/authors/colin-aamot/, which carries the
+full ProfilePage + Person node (scripts/build-author-page.py). The Organization stays the JSON-LD publisher.
+After changing anything here, run scripts/refresh-author-markup.py (hand-built posts) and the post
+builders, then scripts/build-author-page.py and scripts/gen-sitemap.py.
 
 Per-post override (front matter):
   * another person: author: Name, author_url:, author_bio:, author_image:
@@ -17,18 +21,34 @@ import re
 SITE = "https://www.octoprobe.ai"
 ORG_AUTHOR_NAMES = {"OctoProbe", "OctoProbe AI", "OctoProbe News", "OctoProbe Staff"}
 
+# Canonical bio: byte-identical to Person.description on the author page and in every post's
+# bio box (source of truth: this string; scripts/build-author-page.py reads it from here).
+CANONICAL_BIO = (
+    "Colin Aamot is the founder of Redwing Technologies, which publishes OctoProbe News, builds a "
+    "portfolio of SaaS products, and runs Rook Intelligence, a licensed Washington, DC private "
+    "detective agency. A U.S. Army veteran, he began in the 173rd Airborne Brigade and was selected "
+    "for the Special Operations psychological operations regiment, then served as a counterterrorism "
+    "information operations planner with USASOC and SOCCENT supporting Operation Inherent Resolve and "
+    "Operation Spartan Shield. He was a TechCongress Congressional Innovation Fellow in the office of "
+    "Rep. Darrell Issa and later an investigator for The Heritage Foundation's Oversight Project and "
+    "an investigative columnist for The Daily Signal. He holds an MA in Global Security Studies from "
+    "Johns Hopkins University and an MBA from UNC Kenan-Flagler Business School."
+)
+
+AUTHOR_PAGE = SITE + "/blog/authors/colin-aamot/"
+
 DEFAULT_AUTHOR = {
     "name": "Colin Aamot",
-    "url": "https://www.linkedin.com/in/colinaamot/",
+    # Stable entity id: the full Person node lives on the author page; posts reference it by @id.
+    "id": AUTHOR_PAGE + "#person",
+    "url": AUTHOR_PAGE,
     "image": "/assets/authors/colin-aamot-192.jpg",
-    "bio": ("Colin Aamot is a former U.S. Army counterterrorism information operations (CT-IO) planner who "
-            "deployed with several joint task forces in support of Operations Inherent Resolve and Spartan "
-            "Shield. He subsequently worked at the Heritage Foundation and in the office of Rep. Darrell Issa, "
-            "with portfolios spanning foreign policy, technology, and innovation. He holds an MA in Global "
-            "Security Studies from Johns Hopkins University and an MBA from UNC Kenan-Flagler Business School."),
+    "bio": CANONICAL_BIO,
     "links": [
         ("LinkedIn", "https://www.linkedin.com/in/colinaamot/"),
         ("X", "https://x.com/ColinAamot"),
+        ("TechCongress", "https://techcongress.io/colin-aamot"),
+        ("Rook Intelligence", "https://rook-intel.com/"),
         ("Daily Signal (previous bylines)", "https://www.dailysignal.com/author/colin-aamot/"),
     ],
 }
@@ -42,9 +62,10 @@ def resolve_author(meta: dict) -> dict | None:
     if not name or name == DEFAULT_AUTHOR["name"]:
         a = dict(DEFAULT_AUTHOR)
     else:
-        a = {"name": name, "url": None, "image": None, "bio": None, "links": []}
-    if meta.get("author_url"):
+        a = {"name": name, "id": None, "url": None, "image": None, "bio": None, "links": []}
+    if meta.get("author_url") and meta["author_url"] != a.get("url"):
         a["url"] = meta["author_url"]
+        a["id"] = None  # a different entity home: don't claim the default Person @id
     if meta.get("author_image"):
         a["image"] = meta["author_image"]
     if meta.get("author_bio"):
@@ -101,6 +122,11 @@ def author_note_html(a: dict | None) -> str:
 
 
 def person_ld(a: dict) -> dict:
+    """JSON-LD author for a post. An author with an on-site entity home (DEFAULT_AUTHOR: id + url)
+    gets only a reference: @type, @id, name, url. The full Person node (description, image,
+    sameAs, jobTitle, ...) lives once on the author page, so posts can't drift from it."""
+    if a.get("id"):
+        return {"@type": "Person", "@id": a["id"], "name": a["name"], "url": a["url"]}
     p = {"@type": "Person", "name": a["name"]}
     if a.get("url"):
         p["url"] = a["url"]
