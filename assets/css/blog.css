@@ -164,6 +164,8 @@ footer .legal strong{color:var(--soft)}
   font-weight:700;
   color:var(--heading);
   max-width:14em;
+  text-wrap:pretty;
+  text-wrap:balance;
 }
 .blog-hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--indigo),var(--blue),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .blog-hero .lead{
