@@ -1,0 +1,194 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Pegasus Took a Phone’s Past. AI Makes It Attributable",
+    "description": "NSO’s own Pegasus 3.0 product description, filed in the WhatsApp case, pitches pulling a phone’s full history. AI makes that past the key to attribution.",
+    "datePublished": "2026-10-21T16:49:00-04:00",
+    "dateModified": "2026-10-21T16:49:00-04:00",
+    "author": {
+      "@type": "Person",
+      "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#person",
+      "name": "Colin Aamot",
+      "url": "https://www.octoprobe.ai/blog/authors/colin-aamot/"
+    },
+    "publisher": {
+      "@type": "NewsMediaOrganization",
+      "@id": "https://www.octoprobe.ai/blog/#newsroom",
+      "name": "OctoProbe News",
+      "url": "https://www.octoprobe.ai/blog/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.octoprobe.ai/icon-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Redwing Technologies LLC",
+        "url": "https://rook-intel.com/"
+      }
+    },
+    "image": [
+      "https://www.octoprobe.ai/blog/pegasus-nso-capabilities-historical-data-attribution/assets/og-cover.png",
+      "https://www.octoprobe.ai/blog/pegasus-nso-capabilities-historical-data-attribution/assets/cover.png"
+    ],
+    "keywords": "Pegasus, NSO Group, Q Cyber Technologies, WhatsApp v. NSO Group, Pegasus Version 3.0 Product Description, historical data extraction, Request Historical Data, zero-click, mobile implant, spyware, command and control, Anonymizing Transmission Network, signature reduction, attribution, AI attribution, historical datasets, security clearance, Tier 5, SSBI, background investigation, OSINT",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.octoprobe.ai/blog/pegasus-nso-capabilities-historical-data-attribution/"
+    },
+    "url": "https://www.octoprobe.ai/blog/pegasus-nso-capabilities-historical-data-attribution/",
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "OctoProbe News",
+      "url": "https://www.octoprobe.ai/blog/"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        ".answer-first",
+        ".callout.takeaways",
+        ".prose h2"
+      ]
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Pegasus spyware"
+      },
+      {
+        "@type": "Thing",
+        "name": "Mobile spyware"
+      },
+      {
+        "@type": "Thing",
+        "name": "Cyber attribution"
+      },
+      {
+        "@type": "Thing",
+        "name": "Historical data"
+      },
+      {
+        "@type": "Thing",
+        "name": "Signature reduction"
+      },
+      {
+        "@type": "Thing",
+        "name": "Security clearance vetting"
+      }
+    ],
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "NSO Group Technologies"
+      },
+      {
+        "@type": "Organization",
+        "name": "Q Cyber Technologies"
+      },
+      {
+        "@type": "Organization",
+        "name": "WhatsApp"
+      },
+      {
+        "@type": "Organization",
+        "name": "Meta Platforms"
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "WhatsApp v. NSO Group, No. 4:19-cv-07123-PJH (N.D. Cal.), Document 796-15",
+        "url": "https://www.octoprobe.ai/blog/pegasus-nso-capabilities-historical-data-attribution/assets/nso-pegasus-3-product-description-whatsapp-v-nso-doc-796-15.pdf",
+        "encodingFormat": "application/pdf"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Mobile Verification Toolkit",
+        "url": "https://github.com/mvt-project/mvt"
+      },
+      {
+        "@type": "Organization",
+        "name": "OctoProbe AI"
+      }
+    ],
+    "articleSection": "Investigations"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.octoprobe.ai/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://www.octoprobe.ai/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Pegasus Took a Phone’s Past. AI Makes It Attributable",
+        "item": "https://www.octoprobe.ai/blog/pegasus-nso-capabilities-historical-data-attribution/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the Pegasus Version 3.0 Product Description?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is an NSO Group sales and technical overview dated August 2018 and written for government agencies evaluating a Pegasus license. NSO produced it in discovery in WhatsApp v. NSO Group, and it was filed on September 15, 2025, as Exhibit 32 within Document 796-15 in the U.S. District Court for the Northern District of California. Some passages are blacked out and marked “Redacted – Export Controlled.”"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is historical data extraction in Pegasus?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is NSO’s term for pulling the data already stored on a phone when the implant lands, not just what arrives afterward. The document lists SMS records, contacts, call history, calendar records, emails, instant messages, browsing history, installed applications, and Wi-Fi networks. NSO wrote that organizations normally spend months collecting such information and that Pegasus does it in minutes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does zero-click mean?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A zero-click installation compromises a phone without the target tapping a link or opening a message. NSO’s document describes a covert method in which “the target is not engaged” and says only the target’s phone number is required. Those are NSO’s claims in a marketing document, not independently verified findings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Did NSO claim Pegasus leaves no trace?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The document says Pegasus “Leaves no trace whatsoever on a target’s mobile device.” Forensic researchers later contested that in public. In July 2021 Amnesty International’s Security Lab released the open-source Mobile Verification Toolkit, which scans phones for forensic traces of spyware, including Pegasus."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does AI change attribution?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Attribution means tying an operation to the person, unit, or government behind it. AI makes correlation across years of logs, device records, and infrastructure traces fast and cheap. That shifts the limiting factor from analyst time to the depth of the historical record, which keeps growing and which operators cannot scrub after the fact."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How could this change security clearance background investigations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Today a Tier 5 investigation for Top Secret access carries a seven-year scope. Persistent historical datasets and AI make it practical to reconstruct a subject’s behavior across a whole life. That deepens vetting and raises fairness questions about old, context-free data. Foreign services can run the same kind of reconstruction against cleared people."
+        }
+      }
+    ]
+  }
+]
