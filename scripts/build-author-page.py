@@ -15,6 +15,9 @@ Inputs:
     srcset + colin-aamot.jpg (1000px, also og:image and Person.image). Committed as-is.
 
 Deterministic (no "today"): dateModified = max(DATE_CREATED, newest bylined post dateModified).
+Every JSON-LD date on the page (ProfilePage dateCreated/dateModified, subjectOf datePublished) is
+emitted as full ISO 8601 with a UTC offset via iso_datetime(): a date-only value becomes local
+midnight in America/New_York (offset -04:00 or -05:00 by DST); a value with a time keeps it.
 Usage (repo root):
   python3 scripts/build-author-page.py          # write the page
   python3 scripts/build-author-page.py --check  # exit 1 if it is stale
@@ -25,7 +28,8 @@ from __future__ import annotations
 import json
 import re
 import sys
-from datetime import date
+from datetime import date, datetime
+from zoneinfo import ZoneInfo
 from html import escape, unescape
 from pathlib import Path
 
@@ -40,7 +44,8 @@ SRC = ROOT / "scripts" / "author-data" / f"{SLUG}.person.jsonld"
 TEMPLATE = ROOT / "blog" / "_template.html"
 URL = AU.AUTHOR_PAGE
 ASSETS = f"/blog/authors/{SLUG}/assets"
-DATE_CREATED = "2026-10-20"
+TZ = ZoneInfo("America/New_York")
+DATE_CREATED = "2026-10-20T19:45:00-04:00"  # author date of 6b2e48d, the commit that added this page
 NAME = AU.DEFAULT_AUTHOR["name"]
 ROLE = "Founder, Redwing Technologies"
 TITLE = f"{NAME}: {ROLE} | OctoProbe News"
@@ -105,6 +110,19 @@ def fmt_date(d: str) -> str:
     return date.fromisoformat(d[:10]).strftime("%b %-d, %Y")
 
 
+def parse_dt(d: str) -> datetime:
+    """Aware datetime from 'YYYY-MM-DD' (local midnight, America/New_York) or a full ISO 8601 value."""
+    if len(d) == 10:
+        return datetime.combine(date.fromisoformat(d), datetime.min.time(), TZ)
+    dt = datetime.fromisoformat(d.replace("Z", "+00:00"))
+    return dt if dt.tzinfo else dt.replace(tzinfo=TZ)
+
+
+def iso_datetime(d: str) -> str:
+    """Full ISO 8601 with UTC offset, seconds precision: 2024-10-01 -> 2024-10-01T00:00:00-04:00."""
+    return parse_dt(d).isoformat(timespec="seconds")
+
+
 def posts() -> list[dict]:
     res = []
     for p in sorted((ROOT / "blog").glob("*/index.html")):
@@ -136,8 +154,12 @@ def graph(modified: str) -> dict:
     assert person["url"] == URL and page["url"] == URL
     if person["description"] != AU.CANONICAL_BIO:
         raise SystemExit("ERROR: Person.description differs from scripts/authors.py CANONICAL_BIO")
-    page["dateCreated"] = DATE_CREATED
-    page["dateModified"] = modified
+    page["dateCreated"] = iso_datetime(DATE_CREATED)
+    page["dateModified"] = iso_datetime(modified)
+    for node in person.get("subjectOf", []):
+        for k in ("datePublished", "dateModified"):
+            if k in node:
+                node[k] = iso_datetime(node[k])
     return g
 
 
@@ -145,7 +167,7 @@ def build() -> str:
     items = posts()
     if not items:
         raise SystemExit(f"ERROR: no posts bylined {NAME}")
-    modified = max([DATE_CREATED] + [d["mod"] for d in items])
+    modified = max([DATE_CREATED] + [d["mod"] for d in items], key=parse_dt)
     ld = json.dumps(graph(modified), indent=2, ensure_ascii=False)
     tpl = TEMPLATE.read_text(encoding="utf-8")
 
