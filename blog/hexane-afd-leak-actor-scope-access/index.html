@@ -22,7 +22,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Hexane’s AfD Dump: Assessing the Actor, the Scope, and the Access">
 <meta property="article:published_time" content="2026-10-21T11:55:00-04:00">
-<meta property="article:modified_time" content="2026-10-21T12:05:00-04:00">
+<meta property="article:modified_time" content="2026-10-21T12:22:45-04:00">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@octoprobeai">
 <meta name="twitter:title" content="Hexane’s AfD Dump: Assessing the Actor, the Scope, and the Access">
@@ -35,7 +35,7 @@
   "headline": "Hexane’s AfD Dump: Assessing the Actor, the Scope, and the Access",
   "description": "Three-part assessment of Hexane’s AfD dump: a privacy-focused cyber actor, a 281 GB archive of ~421,000 emails, and how deep the system access went.",
   "datePublished": "2026-10-21T11:55:00-04:00",
-  "dateModified": "2026-10-21T12:05:00-04:00",
+  "dateModified": "2026-10-21T12:22:45-04:00",
   "author": {
     "@type": "Person",
     "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#person",
@@ -355,7 +355,7 @@
 <p>DDoSecrets filed the release on October 20, 2026, under Germany, type “Extremist, Fascist,” source “Hexane.cc,” download size <a href="https://ddosecrets.org/article/hexane">281.00 GB</a>. Its summary: “Internal material from the far-right German party Alternative für Deutschland… more than half a million emails, attachments, documents, invoices, member records, contracts, and databases which reveal allegations of embezzlement and financial misconduct.”</p>
 <p>OctoProbe counted the bytes Hexane listed. <code>MANIFEST.tsv</code> enumerates <strong>102,985 files totaling 301,876,945,879 bytes</strong> — 281 GB when measured the same way DDoSecrets does. Hexane’s journalist briefing gives the working tallies reporters will use: about 421,000 messages across ten mailboxes; about 48,700 documents; about 14,500 tabular exports; about 39,000 images; plus WordPress and SQL dumps.</p>
 
-<figure class="wide"><img decoding="async" loading="lazy" src="/blog/hexane-afd-leak-actor-scope-access/assets/hexane-corpus-directory-sizes.png" width="1610" height="1288" alt="Two-panel dark navy bar chart: top panel shows corpus directories by size with 01_EMAIL at 209.67 GB in red and five other directories in blue; bottom panel shows ten mailboxes by size from fabian.jacobi at about 32.6 GB down to bundesgeschaeftsstelle at about 1.1 GB."><figcaption>Corpus directories and the ten mailboxes by size, rendered from Hexane’s <code>MANIFEST.tsv</code> (GiB). Source: Hexane MANIFEST.tsv; chart by OctoProbe.</figcaption></figure>
+<figure class="wide"><img decoding="async" loading="lazy" src="/blog/hexane-afd-leak-actor-scope-access/assets/hexane-corpus-directory-sizes.png" width="2250" height="2628" alt="Two-panel bar chart on a white background: top panel shows six corpus directories by size with 01_EMAIL at 209.67 GB in Hexane gold and five other directories in distinct bright colors; bottom panel shows ten mailboxes by size from fabian.jacobi at 32.6 GB down to bundesgeschaeftsstelle at 1.1 GB."><figcaption>Corpus directories and the ten mailboxes by size, rendered from Hexane’s <code>MANIFEST.tsv</code> (GiB). Source: Hexane MANIFEST.tsv; chart by OctoProbe.</figcaption></figure>
 
 <h3 id="what-is-in-the-directory-tree">What Is in the Directory Tree?</h3>
 <p>Hexane’s corpus README is a legend, not marketing copy:</p>
