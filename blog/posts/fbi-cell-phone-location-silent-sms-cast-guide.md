@@ -4,7 +4,7 @@ og_title: "Silent Texts, No-Ring Calls and Tower Math: How the FBI Finds a Phone
 seo_title: "How Police Find a Phone: Silent SMS and the FBI Guide"
 dek: "A 2019 FBI field guide, a public NDCAC briefing and an FCC order show how a phone can be made to reveal where it is, how precise the answer is, and where the law steps in."
 description: "An FBI field guide shows how police make a phone reveal its location with silent texts, pings and tower timing, how precise it gets, and what the law requires."
-date: 2026-10-20
+date: 2026-10-20T17:55:59-04:00
 slug: fbi-cell-phone-location-silent-sms-cast-guide
 canonical: https://www.octoprobe.ai/blog/fbi-cell-phone-location-silent-sms-cast-guide/
 section: Investigations

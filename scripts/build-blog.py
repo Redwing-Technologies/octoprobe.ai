@@ -544,7 +544,7 @@ def build_one(md_path: Path, *, strict: bool = True) -> dict:
         keywords_str = str(keywords)
 
     try:
-        dt = datetime.strptime(date, "%Y-%m-%d")
+        dt = datetime.strptime(date[:10], "%Y-%m-%d")
         date_display = f"{dt.strftime('%b')} {dt.day}, {dt.year}"
     except ValueError:
         date_display = date

@@ -3,7 +3,7 @@ title: "DHS Lawyers Wrote 24 Pages on Buying Your Phone’s Location Data. They 
 seo_title: "DHS Withheld Its Legal Case for Buying Location Data"
 dek: "A 2020 Homeland Security legal opinion weighed whether CBP and ICE could use advertising-ID location data without a warrant. Released under the Freedom of Information Act, it comes back as a cover page and 23 pages stamped “(b)(5).”"
 description: "A DHS legal opinion on buying phone ad-ID location data came back under FOIA as one page and 23 withheld pages. How the trade works and what is still secret."
-date: 2026-10-20
+date: 2026-10-20T10:25:04-04:00
 slug: dhs-phone-location-data-legal-opinion-foia
 canonical: https://www.octoprobe.ai/blog/dhs-phone-location-data-legal-opinion-foia/
 tags: [Investigation, FOIA, Surveillance, Privacy, Adtech]

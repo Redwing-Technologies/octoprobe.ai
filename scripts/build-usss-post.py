@@ -85,7 +85,7 @@ def build(md_path: Path, out_root: Path):
         print("WARNING:", wmsg, file=sys.stderr)
     slug = meta["slug"]; title = meta["title"]; date = meta["date"]
     description = meta["description"]
-    dt = bb.datetime.strptime(date, "%Y-%m-%d"); date_display = f"{dt.strftime('%b')} {dt.day}, {dt.year}"
+    dt = bb.datetime.strptime(date[:10], "%Y-%m-%d"); date_display = f"{dt.strftime('%b')} {dt.day}, {dt.year}"
     tags_html = '<div class="tags">' + "".join(f'<span class="{bb.tag_class(t)}">{escape(t)}</span>' for t in meta["tags"]) + "</div>"
 
     # :::example Title ... ::: blocks -> worked-example boxes (inner markdown rendered separately)

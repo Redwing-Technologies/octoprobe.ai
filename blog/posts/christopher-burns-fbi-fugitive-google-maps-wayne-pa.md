@@ -1,6 +1,6 @@
 ---
 title: "Christopher W. Burns (FBI Most Wanted Fraudsters): Public Google Maps Activity Dated After His Last Sighting, Wayne, PA Area"
-date: 2026-10-15
+date: 2026-10-15T14:54:04-04:00
 slug: christopher-burns-fbi-fugitive-google-maps-wayne-pa
 tags: [Investigation, OSINT, Fugitives, Identifier Graph]
 excerpt: "A Google Maps account allegedly attributed to FBI Most Wanted Fraudster Christopher W. Burns shows activity in Wayne and Wynnewood, PA (~2021 and ~2023), after his last known sighting on September 24, 2020."

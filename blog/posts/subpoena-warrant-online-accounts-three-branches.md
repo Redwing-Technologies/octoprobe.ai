@@ -4,7 +4,7 @@ og_title: "Congress, the Pentagon’s Watchdog and a Judge: Three Ways the Gover
 seo_title: "Subpoena vs. Warrant: What Each Branch Can Get"
 dek: "Two FOIA releases, one from House committees and one from the Navy’s criminal investigators, show what a subpoena can demand, what it can’t, and where a judge has to step in."
 description: "Two FOIA releases show how Congress, an inspector general and the courts compel records, and why a subpoena gets your subscriber data but not your messages."
-date: 2026-10-20
+date: 2026-10-20T19:16:57-04:00
 slug: subpoena-warrant-online-accounts-three-branches
 canonical: https://www.octoprobe.ai/blog/subpoena-warrant-online-accounts-three-branches/
 section: Investigations

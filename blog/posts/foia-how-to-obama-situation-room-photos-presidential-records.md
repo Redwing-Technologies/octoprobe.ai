@@ -4,7 +4,7 @@ og_title: "How to FOIA the Situation Room: My Request Freed 3,951 Obama Photos a
 seo_title: "How to FOIA Presidential Records: Situation Room Photos"
 dek: "A Freedom of Information Act request to the Obama Presidential Library freed thousands of photographs from inside the White House Situation Room, with the metadata to match. Here is how it was written, what came back and how to file your own."
 description: "A FOIA how-to built on a real win: case 24-09538-F freed 3,951 Obama Situation Room photos and 3,851 files. How to file, read exemptions and get copies."
-date: 2026-10-20
+date: 2026-10-20T21:26:24-04:00
 slug: foia-how-to-obama-situation-room-photos-presidential-records
 canonical: https://www.octoprobe.ai/blog/foia-how-to-obama-situation-room-photos-presidential-records/
 section: Public Journalism Guide

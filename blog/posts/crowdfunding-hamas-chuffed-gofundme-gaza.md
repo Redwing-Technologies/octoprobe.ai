@@ -3,8 +3,8 @@ title: "Crowdfunding’s Hamas Problem: A Gaza Fundraiser’s Telegram Badge Lea
 seo_title: "Crowdfunding’s Hamas Problem: Chuffed, GoFundMe and Gaza"
 dek: "Both pages pay out to organizers in the United States and Australia. One wrote that the money would reach Gaza “probably via PayPal or a crypto wallet.” Hamas is a designated Foreign Terrorist Organization."
 description: "Two Chuffed pages raised $12,948 and $6,736 for a Gaza man whose Telegram status badge traces to a chat named for al-Qassam, Hamas’s armed wing."
-date: 2026-10-20
-date_modified: 2026-10-20
+date: 2026-10-20T19:58:22-04:00
+date_modified: 2026-10-20T19:58:22-04:00
 slug: crowdfunding-hamas-chuffed-gofundme-gaza
 canonical: https://www.octoprobe.ai/blog/crowdfunding-hamas-chuffed-gofundme-gaza/
 section: Investigations
