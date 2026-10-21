@@ -84,7 +84,7 @@ def build(md_path: Path, out_root: Path):
         print("WARNING:", wmsg, file=sys.stderr)
     slug = meta["slug"]; title = meta["title"]; date = meta["date"]
     description = meta["description"]
-    dt = bb.datetime.strptime(date, "%Y-%m-%d"); date_display = f"{dt.strftime('%b')} {dt.day}, {dt.year}"
+    dt = bb.datetime.strptime(date[:10], "%Y-%m-%d"); date_display = f"{dt.strftime('%b')} {dt.day}, {dt.year}"
     tags_html = '<div class="tags">' + "".join(f'<span class="{bb.tag_class(t)}">{escape(t)}</span>' for t in meta["tags"]) + "</div>"
 
     # NOTE: lines -> sentinel, so md_to_html keeps them as paragraphs we can re-class
@@ -126,6 +126,7 @@ def build(md_path: Path, out_root: Path):
 <meta name="author" content="{escape(person['name'] if person else 'OctoProbe Staff')}">
 <link rel="alternate" type="text/plain" title="LLM context (llms.txt)" href="/llms.txt">
 <link rel="alternate" type="text/plain" title="AI discovery (ai.txt)" href="/ai.txt">
+<link rel="alternate" type="application/rss+xml" title="OctoProbe News" href="https://www.octoprobe.ai/blog/feed.xml">
 <meta name="ai-content-declaration" content="human-authored; investigative reporting from public records">
 <link rel="canonical" href="{escape(canonical)}">
 <meta property="og:type" content="article">

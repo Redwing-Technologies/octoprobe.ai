@@ -19,6 +19,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.octoprobe.ai/blog/identifier-graph-osint-methodology/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/assets/blog/identifier-graph-hero.jpg</image:loc>
+      <image:title>From Public Lead to Identifier Graph</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.octoprobe.ai/blog/christopher-burns-fbi-fugitive-google-maps-wayne-pa/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -36,16 +46,6 @@
     <image:image>
       <image:loc>https://www.octoprobe.ai/blog/heather-zhang-prc-agent-case-reddit-allegation/assets/cover.png</image:loc>
       <image:title>Heather Zhang Case: OSINT Trail From a 2024 Reddit Allegation</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.octoprobe.ai/blog/identifier-graph-osint-methodology/</loc>
-    <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.octoprobe.ai/assets/blog/identifier-graph-hero.jpg</image:loc>
-      <image:title>From Public Lead to Identifier Graph</image:title>
     </image:image>
   </url>
   <url>
@@ -139,6 +139,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://www.octoprobe.ai/blog/north-korea-it-worker-personas-backstopping/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/blog/north-korea-it-worker-personas-backstopping/assets/cover.png</image:loc>
+      <image:title>North Korea's Fake IT Workers: Thin Covers, Borrowed Lives</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.octoprobe.ai/blog/cefc-china-energy-pla-base-311-public-record/</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -146,56 +156,6 @@
     <image:image>
       <image:loc>https://www.octoprobe.ai/blog/cefc-china-energy-pla-base-311-public-record/assets/cover.png</image:loc>
       <image:title>Analysis: CEFC, PLA Base 311, and the Long Gap from FBI Surveillance to Designation</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.octoprobe.ai/blog/crowdfunding-hamas-chuffed-gofundme-gaza/</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.octoprobe.ai/blog/crowdfunding-hamas-chuffed-gofundme-gaza/assets/og-cover.png</image:loc>
-      <image:title>Crowdfunding’s Hamas Problem: A Gaza Fundraiser’s Telegram Badge Leads to an Al-Qassam Chat</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.octoprobe.ai/blog/dhs-phone-location-data-legal-opinion-foia/</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.octoprobe.ai/blog/dhs-phone-location-data-legal-opinion-foia/assets/og-cover.png</image:loc>
-      <image:title>DHS Lawyers Wrote 24 Pages on Buying Your Phone’s Location Data. They Withheld Every Page of the Analysis.</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.octoprobe.ai/blog/fbi-cell-phone-location-silent-sms-cast-guide/</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.octoprobe.ai/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/og-cover.png</image:loc>
-      <image:title>Silent Texts, No-Ring Calls and Tower Math: How the FBI Finds a Phone</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.octoprobe.ai/blog/foia-how-to-obama-situation-room-photos-presidential-records/</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.octoprobe.ai/blog/foia-how-to-obama-situation-room-photos-presidential-records/assets/og-cover.png</image:loc>
-      <image:title>How to FOIA the Situation Room: My Request Freed 3,951 Obama Photos and 3,851 Files</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.octoprobe.ai/blog/iran-hormuz-mine-strike-claims-fall-apart/</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.octoprobe.ai/blog/iran-hormuz-mine-strike-claims-fall-apart/assets/og-cover.png</image:loc>
-      <image:title>Iran Says It Rules Hormuz. Its “Mine Strike” Stories Keep Falling Apart.</image:title>
     </image:image>
   </url>
   <url>
@@ -209,13 +169,13 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.octoprobe.ai/blog/north-korea-it-worker-personas-backstopping/</loc>
+    <loc>https://www.octoprobe.ai/blog/dhs-phone-location-data-legal-opinion-foia/</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://www.octoprobe.ai/blog/north-korea-it-worker-personas-backstopping/assets/cover.png</image:loc>
-      <image:title>North Korea's Fake IT Workers: Thin Covers, Borrowed Lives</image:title>
+      <image:loc>https://www.octoprobe.ai/blog/dhs-phone-location-data-legal-opinion-foia/assets/og-cover.png</image:loc>
+      <image:title>DHS Lawyers Wrote 24 Pages on Buying Your Phone’s Location Data. They Withheld Every Page of the Analysis.</image:title>
     </image:image>
   </url>
   <url>
@@ -229,6 +189,26 @@
     </image:image>
   </url>
   <url>
+    <loc>https://www.octoprobe.ai/blog/iran-hormuz-mine-strike-claims-fall-apart/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/blog/iran-hormuz-mine-strike-claims-fall-apart/assets/og-cover.png</image:loc>
+      <image:title>Iran Says It Rules Hormuz. Its “Mine Strike” Stories Keep Falling Apart.</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.octoprobe.ai/blog/fbi-cell-phone-location-silent-sms-cast-guide/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/og-cover.png</image:loc>
+      <image:title>Silent Texts, No-Ring Calls and Tower Math: How the FBI Finds a Phone</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.octoprobe.ai/blog/subpoena-warrant-online-accounts-three-branches/</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -236,6 +216,26 @@
     <image:image>
       <image:loc>https://www.octoprobe.ai/blog/subpoena-warrant-online-accounts-three-branches/assets/og-cover.png</image:loc>
       <image:title>Congress, the Pentagon’s Watchdog and a Judge: Three Ways the Government Compels Your Records</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.octoprobe.ai/blog/crowdfunding-hamas-chuffed-gofundme-gaza/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/blog/crowdfunding-hamas-chuffed-gofundme-gaza/assets/og-cover.png</image:loc>
+      <image:title>Crowdfunding’s Hamas Problem: A Gaza Fundraiser’s Telegram Badge Leads to an Al-Qassam Chat</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.octoprobe.ai/blog/foia-how-to-obama-situation-room-photos-presidential-records/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/blog/foia-how-to-obama-situation-room-photos-presidential-records/assets/og-cover.png</image:loc>
+      <image:title>How to FOIA the Situation Room: My Request Freed 3,951 Obama Photos and 3,851 Files</image:title>
     </image:image>
   </url>
   <url>

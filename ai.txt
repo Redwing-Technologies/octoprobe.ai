@@ -7,6 +7,7 @@ company: Redwing Technologies LLC
 llms: https://www.octoprobe.ai/llms.txt
 llms_wellknown: https://www.octoprobe.ai/.well-known/llms.txt
 blog: https://www.octoprobe.ai/blog/
+feed: https://www.octoprobe.ai/blog/feed.xml
 sitemap: https://www.octoprobe.ai/sitemap.xml
 contact: team@octoprobe.ai
 x: https://x.com/octoprobeai

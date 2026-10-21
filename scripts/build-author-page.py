@@ -177,6 +177,7 @@ def build() -> str:
         f'<meta name="author" content="{NAME}">',
         '<link rel="alternate" type="text/plain" title="LLM context (llms.txt)" href="/llms.txt">',
         '<link rel="alternate" type="text/plain" title="AI discovery (ai.txt)" href="/ai.txt">',
+        '<link rel="alternate" type="application/rss+xml" title="OctoProbe News" href="https://www.octoprobe.ai/blog/feed.xml">',
         f'<link rel="canonical" href="{URL}">',
         '<meta property="og:type" content="profile">',
         '<meta property="og:site_name" content="OctoProbe News">',

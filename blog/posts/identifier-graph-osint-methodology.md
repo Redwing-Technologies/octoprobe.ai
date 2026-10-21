@@ -1,9 +1,9 @@
 ---
 title: "From Public Lead to Identifier Graph"
 description: "How OSINT teams turn one public clue into a sourced identifier graph—and how to avoid burning hours on manual markup or drowning in automated false-positive nodes."
-date: 2026-10-15
-date_modified: 2026-10-15
-author: "OctoProbe AI"
+date: 2026-10-15T12:48:07-04:00
+date_modified: 2026-10-15T12:48:07-04:00
+author: "Colin Aamot"
 slug: identifier-graph-osint-methodology
 tags: [Methodology, OSINT, Identifier Graph]
 keywords: [OSINT investigation platform, identifier graph, false positive OSINT, analyst review time, breach intelligence, facial recognition OSINT, skip tracing, MCP OSINT]
