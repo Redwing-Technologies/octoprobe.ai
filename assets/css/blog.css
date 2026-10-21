@@ -37,7 +37,11 @@ html{scroll-behavior:smooth}
 body{font-family:var(--fb);font-size:var(--fs-body);font-weight:var(--fw-body);color:var(--text);background:var(--ink);overflow-x:hidden;line-height:1.65}
 img{max-width:100%;display:block}
 ::selection{background:var(--blue);color:var(--on-accent)}
-a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:12px}
+nav.top a:focus-visible,nav.top button:focus-visible,.mobile-menu a:focus-visible{
+  outline:2px solid var(--blue-deep);outline-offset:3px;border-radius:12px;
+  box-shadow:0 0 0 4px rgba(2,136,209,.28);
+}
 .skip{position:absolute;left:-9999px;top:0;z-index:300;background:var(--blue);color:var(--on-accent);padding:10px 18px;border-radius:0 0 10px 0;font-weight:600;font-size:.9rem;text-decoration:none}
 .skip:focus{left:0}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -67,21 +71,21 @@ p.sub{margin-top:14px;color:var(--soft);font-size:1.05rem;font-weight:400;max-wi
 
 /* ── NAV (matches landing) ── */
 nav.top{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
-  padding:0 32px;height:72px;background:rgba(247,251,255,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-  border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
+  padding:0 32px;height:72px;background:rgba(247,251,255,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);transition:background .3s}
 nav.top .nav-center,
 nav.top .nav-right{display:flex;align-items:center;height:100%}
 nav.top.scrolled{border-bottom-color:var(--line);background:rgba(247,251,255,.92)}
-.brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:var(--heading)}
-.brand svg.logo{width:46px;height:46px;flex:none}
-.brand .bn{font-family:var(--fd);font-weight:700;font-size:1.22rem;letter-spacing:-.025em;line-height:1}
-.brand .bn small{display:block;font-family:var(--fm);font-weight:400;font-size:.58rem;letter-spacing:.2em;color:var(--soft-2);margin-top:4px;text-transform:uppercase}
-.nav-center{display:flex;gap:4px 22px;align-items:center}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--heading);min-width:0}
+.brand svg.logo{width:40px;height:40px;flex:none}
+.brand .bn{font-family:var(--fd);font-weight:600;font-size:1.2rem;letter-spacing:-.03em;line-height:1;display:inline-flex;align-items:baseline;gap:.34em;white-space:nowrap;color:var(--heading)}
+.brand .bn small{display:inline;font-family:var(--fd);font-weight:500;font-size:.92em;letter-spacing:-.02em;color:var(--blue-deep);margin:0;text-transform:none}
+.nav-center{display:flex;gap:2px;align-items:center}
 .nav-center a{
-  text-decoration:none;color:var(--soft);font-size:.88rem;font-weight:500;transition:color .2s;
-  display:inline-flex;align-items:center;height:40px;line-height:1;padding:0 2px;position:relative;
+  text-decoration:none;color:var(--text);font-size:.9rem;font-weight:500;letter-spacing:-.011em;transition:color .2s,background .2s;
+  display:inline-flex;align-items:center;height:40px;line-height:1;padding:0 12px;position:relative;border-radius:12px;
 }
-.nav-center a:hover{color:var(--heading)}
+.nav-center a:hover{color:var(--heading);background:rgba(2,136,209,.06)}
 .nav-center a.active{color:var(--heading);font-weight:600}
 .nav-center a.active::after{
   content:"";position:absolute;left:0;right:0;bottom:6px;height:2px;border-radius:2px;
@@ -99,7 +103,7 @@ nav.top.scrolled{border-bottom-color:var(--line);background:rgba(247,251,255,.92
   background:var(--blue);color:var(--on-accent);
   display:inline-flex;align-items:center;justify-content:center;
   height:40px;padding:0 18px;line-height:1;
-  border-radius:8px;font-size:.86rem;font-weight:700;text-decoration:none;
+  border-radius:12px;font-size:.86rem;font-weight:600;text-decoration:none;
   transition:background .2s,transform .2s;box-sizing:border-box;
 }
 .nav-cta:hover{background:var(--blue-deep);transform:translateY(-1px)}
@@ -108,8 +112,8 @@ nav.top.scrolled{border-bottom-color:var(--line);background:rgba(247,251,255,.92
 .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
 .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;z-index:99;background:rgba(247,251,255,.98);
-  backdrop-filter:blur(16px);border-bottom:1px solid var(--line);flex-direction:column;padding:8px 30px 22px}
+.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;z-index:99;background:rgba(247,251,255,.98);
+  backdrop-filter:blur(16px);border-bottom:1px solid var(--line);flex-direction:column;padding:8px 20px 18px;box-shadow:0 16px 32px rgba(15,27,45,.06)}
 .mobile-menu.open{display:flex}
 .mobile-menu a{text-decoration:none;color:var(--heading);font-size:1rem;font-weight:500;padding:13px 0;border-bottom:1px solid var(--line)}
 .mobile-menu a.active{color:var(--blue);font-weight:700}
@@ -644,9 +648,11 @@ main{position:relative;z-index:1;min-height:50vh}
   .prose table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
 }
 @media(max-width:520px){
+  nav.top{padding:0 12px;height:60px}
+  .mobile-menu{top:60px}
   nav.top .nav-login{display:none}
-  nav.top .nav-cta{padding-left:12px;padding-right:12px;font-size:.85rem;white-space:nowrap}
-  nav.top .brand small{display:none}
+  nav.top .nav-cta{padding-left:10px;padding-right:10px;font-size:.78rem;white-space:nowrap}
+  nav.top .brand small{display:inline}
 }
 
 .prose figure.fig-pad{max-width:560px;margin:2.4em auto;padding:28px 28px 12px;background:var(--panel);border:1px solid var(--line);border-radius:14px}
@@ -676,10 +682,13 @@ main{position:relative;z-index:1;min-height:50vh}
 /* OctoProbe News nav: Investigations is the prominent right-side item */
 nav.top .nav-investigations{white-space:nowrap}
 @media(max-width:520px){
-  nav.top .brand{gap:9px}
-  nav.top .brand svg.logo{width:36px;height:36px}
-  nav.top .brand .bn{font-size:1.05rem}
-  nav.top .nav-right{gap:6px}
-  nav.top .nav-investigations{padding:8px 11px;font-size:.8rem}
+  nav.top .brand{gap:8px}
+  nav.top .brand svg.logo{width:32px;height:32px}
+  nav.top .brand .bn{font-size:1rem}
+  nav.top .nav-right{gap:6px;flex:none}
+  nav.top .nav-investigations{height:34px;padding:0 10px;font-size:.75rem}
 }
-@media(max-width:360px){nav.top .brand .bn{display:none}}
+@media(max-width:360px){
+  nav.top .brand .bn{display:inline-flex;font-size:.92rem}
+  nav.top .nav-investigations{padding:0 8px}
+}
