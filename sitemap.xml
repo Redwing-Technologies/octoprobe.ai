@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://www.octoprobe.ai/blog/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -239,8 +239,18 @@
     </image:image>
   </url>
   <url>
+    <loc>https://www.octoprobe.ai/blog/afghanistan-withdrawal-foia-kabul-evacuation-record/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/blog/afghanistan-withdrawal-foia-kabul-evacuation-record/assets/og-cover.png</image:loc>
+      <image:title>‘Did Not Wish to Create Panic’: FOIA Records Rebuild the Kabul Evacuation</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.octoprobe.ai/blog/authors/colin-aamot/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
