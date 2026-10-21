@@ -119,8 +119,8 @@ def build():
            .replace("\n      {{HERO_HTML}}", "").replace("{{HERO_HTML}}", "").replace("{{BODY}}", html))
     out = out.replace('<span class="eyebrow">Investigations</span>', f'<span class="eyebrow">{escape(section)}</span>', 1)
     out = out.replace("</h1>", "</h1>\n      <p class=\"post-dek\">" + escape(U.smart(meta["dek"])) + "</p>", 1)
-    out = out.replace('<link rel="stylesheet" href="/assets/css/blog.css?v=news6">',
-        '<link rel="stylesheet" href="/assets/css/blog.css?v=news6">\n' + U.NEWS_FRAME +
+    out = out.replace('<link rel="stylesheet" href="/assets/css/blog.css?v=news7">',
+        '<link rel="stylesheet" href="/assets/css/blog.css?v=news7">\n' + U.NEWS_FRAME +
         f'\n<link rel="stylesheet" href="/blog/{slug}/assets/foia.css?v=1">', 1)
     out = re.sub(r'\s*<p class="post-disclaimer">.*?</p>', "", out, count=1, flags=re.S)
     dest = REPO / "blog" / slug / "index.html"; dest.write_text(out, encoding="utf-8"); print("built", dest.relative_to(REPO))

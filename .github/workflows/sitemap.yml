@@ -28,6 +28,8 @@ jobs:
         run: |
           python3 scripts/build-author-page.py --check
           python3 scripts/refresh-author-markup.py --check
+      - name: Check every post carries the current share bar
+        run: python3 scripts/build-blog.py --share-only --check
       - name: Validate sitemap XML and robots.txt reference
         run: |
           python3 -c "import xml.dom.minidom as m; m.parse('sitemap.xml'); print('sitemap.xml well-formed')"
