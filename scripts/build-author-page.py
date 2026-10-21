@@ -46,12 +46,12 @@ URL = AU.AUTHOR_PAGE
 ASSETS = f"/blog/authors/{SLUG}/assets"
 TZ = ZoneInfo("America/New_York")
 DATE_CREATED = "2026-10-20T19:45:00-04:00"  # author date of 6b2e48d, the commit that added this page
-PAGE_UPDATED = "2026-10-21T13:30:00-04:00"  # newsroom copy and schema edit
+PAGE_UPDATED = "2026-10-21T13:40:00-04:00"  # primary descriptor edit
 NAME = AU.DEFAULT_AUTHOR["name"]
-ROLE = "Founder, Redwing Technologies"
-TITLE = f"{NAME}: {ROLE} · OctoProbe News"
-DESCRIPTION = ("Colin Aamot, Founder, Redwing Technologies, publishes OctoProbe News. "
-               "Biography, background, profiles, press coverage, and his investigations.")
+ROLE = "Investigative Journalist & OSINT Domain Expert"
+TITLE = f"{NAME}: {ROLE}"  # 59 characters; a site suffix would exceed 60
+DESCRIPTION = ("Colin Aamot is an Investigative Journalist & OSINT Domain Expert and Founder of "
+               "Redwing Technologies, the company that publishes OctoProbe News.")
 SRCSET = (f"{ASSETS}/colin-aamot-192.webp 192w, {ASSETS}/colin-aamot-400.webp 400w, "
           f"{ASSETS}/colin-aamot-800.webp 800w, {ASSETS}/colin-aamot.webp 1000w")
 SIZES = "(max-width: 520px) 152px, 200px"
@@ -69,8 +69,9 @@ BACKGROUND = [
     "supporting Operation Inherent Resolve and Operation Spartan Shield",
     "TechCongress Congressional Innovation Fellow (June 2022 cohort), office of Rep. Darrell Issa",
     "Investigator, The Heritage Foundation's Oversight Project; investigative columnist, The Daily Signal",
-    "Founder, Redwing Technologies, which publishes OctoProbe News, builds a portfolio of SaaS products, "
-    "and runs Rook Intelligence (licensed DC private detective agency)",
+    "Investigative Journalist and OSINT Domain Expert; Founder of Redwing Technologies, which publishes "
+    "OctoProbe News, runs a portfolio of other SaaS products, and operates Rook Intelligence "
+    "(licensed DC private detective agency)",
     "MA, Global Security Studies, Johns Hopkins University · MBA, UNC Kenan-Flagler · Levantine Arabic, "
     "Defense Language Institute",
 ]
@@ -235,7 +236,7 @@ def build() -> str:
           <span class="eyebrow">{NAME}</span>
         </div>
         <h1>{NAME}</h1>
-        <p class="author-role">{ROLE}</p>
+        <p class="author-role">{escape(ROLE)}</p>
         <p class="post-meta"><time datetime="{parse_dt(modified).date().isoformat()}">Updated {parse_dt(modified).strftime("%b %-d, %Y")}</time></p>
       </div>
     </div>
@@ -243,7 +244,7 @@ def build() -> str:
   <article class="post-body page-body">
     <div class="wrap">
       <div class="prose">
-<p>This is the author page for Colin Aamot, Founder, Redwing Technologies, which publishes OctoProbe News.</p>
+<p>This is the author page for Colin Aamot, an Investigative Journalist &amp; OSINT Domain Expert and Founder of Redwing Technologies, which publishes OctoProbe News and runs a portfolio of other SaaS products.</p>
 <h2 id="bio">Biography</h2>
 <p>{escape(AU.CANONICAL_BIO, quote=False)}</p>
 <p>Ownership is on the <a href="/blog/about/">About &amp; Masthead</a> page. Reporting rules are the <a href="/blog/standards/">Editorial Standards</a>. Errors are handled in the <a href="/blog/corrections/">Corrections Policy</a>. The desk is reached at <a href="/blog/contact/">Contact &amp; Tips</a>. Stories are listed on <a href="/blog/">Investigations</a>.</p>

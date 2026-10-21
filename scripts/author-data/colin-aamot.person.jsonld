@@ -33,7 +33,7 @@
       "mainEntityOfPage": {
         "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#page"
       },
-      "description": "Colin Aamot is the founder of Redwing Technologies, which publishes OctoProbe News, builds a portfolio of SaaS products, and runs Rook Intelligence, a licensed Washington, DC private detective agency. A U.S. Army veteran, he began in the 173rd Airborne Brigade and was selected for the Special Operations psychological operations regiment, then served as a counterterrorism information operations planner with USASOC and SOCCENT supporting Operation Inherent Resolve and Operation Spartan Shield. He was a TechCongress Congressional Innovation Fellow in the office of Rep. Darrell Issa and later an investigator for The Heritage Foundation's Oversight Project and an investigative columnist for The Daily Signal. He holds an MA in Global Security Studies from Johns Hopkins University and an MBA from UNC Kenan-Flagler Business School.",
+      "description": "Colin Aamot is an Investigative Journalist & OSINT Domain Expert and Founder of Redwing Technologies, which publishes OctoProbe News, runs a portfolio of other SaaS products, and operates Rook Intelligence, a licensed Washington, DC private detective agency. A U.S. Army veteran, he began in the 173rd Airborne Brigade and was selected for the Special Operations psychological operations regiment, then served as a counterterrorism information operations planner with USASOC and SOCCENT supporting Operation Inherent Resolve and Operation Spartan Shield. He was a TechCongress Congressional Innovation Fellow in the office of Rep. Darrell Issa and later an investigator for The Heritage Foundation's Oversight Project and an investigative columnist for The Daily Signal. He holds an MA in Global Security Studies from Johns Hopkins University and an MBA from UNC Kenan-Flagler Business School.",
       "image": [
         {
           "@type": "ImageObject",
@@ -55,12 +55,16 @@
           "caption": "Colin Aamot"
         }
       ],
-      "jobTitle": "Founder, Redwing Technologies",
+      "jobTitle": [
+        "Investigative Journalist",
+        "OSINT Domain Expert",
+        "Founder, Redwing Technologies"
+      ],
       "worksFor": {
         "@type": "Organization",
         "name": "Redwing Technologies",
         "legalName": "Redwing Technologies LLC",
-        "description": "Redwing Technologies publishes OctoProbe News, builds a portfolio of SaaS products, and runs Rook Intelligence, a licensed Washington, DC private detective agency.",
+        "description": "Redwing Technologies publishes OctoProbe News, runs a portfolio of other SaaS products, and operates Rook Intelligence, a licensed Washington, DC private detective agency.",
         "brand": [
           {
             "@type": "Brand",
@@ -131,6 +135,11 @@
         "Levantine Arabic"
       ],
       "knowsAbout": [
+        "OSINT",
+        "investigative journalism",
+        "sanctions",
+        "threat intelligence",
+        "terror financing",
         "Open-source intelligence (OSINT)",
         "Freedom of Information Act (FOIA) research",
         "Information warfare",

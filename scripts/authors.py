@@ -24,9 +24,10 @@ ORG_AUTHOR_NAMES = {"OctoProbe", "OctoProbe AI", "OctoProbe News", "OctoProbe St
 # Canonical bio: byte-identical to Person.description on the author page and in every post's
 # bio box (source of truth: this string; scripts/build-author-page.py reads it from here).
 CANONICAL_BIO = (
-    "Colin Aamot is the founder of Redwing Technologies, which publishes OctoProbe News, builds a "
-    "portfolio of SaaS products, and runs Rook Intelligence, a licensed Washington, DC private "
-    "detective agency. A U.S. Army veteran, he began in the 173rd Airborne Brigade and was selected "
+    "Colin Aamot is an Investigative Journalist & OSINT Domain Expert and Founder of Redwing "
+    "Technologies, which publishes OctoProbe News, runs a portfolio of other SaaS products, and "
+    "operates Rook Intelligence, a licensed Washington, DC private detective agency. A U.S. Army "
+    "veteran, he began in the 173rd Airborne Brigade and was selected "
     "for the Special Operations psychological operations regiment, then served as a counterterrorism "
     "information operations planner with USASOC and SOCCENT supporting Operation Inherent Resolve and "
     "Operation Spartan Shield. He was a TechCongress Congressional Innovation Fellow in the office of "
