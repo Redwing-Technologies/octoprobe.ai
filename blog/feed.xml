@@ -15,7 +15,7 @@
     <managingEditor>press@octoprobe.ai (OctoProbe News)</managingEditor>
     <webMaster>press@octoprobe.ai (OctoProbe News)</webMaster>
     <pubDate>Wed, 21 Oct 2026 16:01:22 -0400</pubDate>
-    <lastBuildDate>Wed, 21 Oct 2026 16:01:22 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 16:29:49 -0400</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <ttl>60</ttl>
     <image>
@@ -32,7 +32,7 @@
       <title>Signal Encryption Stops at the Endpoint</title>
       <link>https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/</link>
       <guid isPermaLink="true">https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/</guid>
-      <description>sigtop unlocks Signal Desktop’s local store. E2EE is not endpoint security. Cross-group membership and durable UUIDv4 ACIs are the real collection surface.</description>
+      <description>sigtop unlocks Signal Desktop’s local store. E2EE is not endpoint security. Messages, media, group membership and UUIDv4 ACIs are the collection surface.</description>
       <pubDate>Wed, 21 Oct 2026 16:01:22 -0400</pubDate>
       <dc:creator>Colin Aamot</dc:creator>
       <category>Investigations</category>
