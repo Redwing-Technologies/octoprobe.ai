@@ -88,11 +88,29 @@ Inside Gaza, Hamas runs its own financial plumbing. When the Treasury Department
 
 ## The Telegram Trail
 
-Screenshots gathered for an OctoProbe investigation show @Ashrafgaza working the campaigns hard. In a Telegram group called “Palestine Lives Matter,” which listed 1,810 members, he posted an appeal for small donations and shares with the 2026 campaign link. A search of the group returned 31 messages from him, dating back at least to December 2024. Many carry links to one of the two Chuffed pages.
+Screenshots gathered for an OctoProbe investigation show @Ashrafgaza working the campaigns hard. In a Telegram group called “Palestine Lives Matter,” which listed 1,810 members, he posted this appeal above the link to the 2026 campaign:
 
-The same screenshots capture his profile. Telegram’s own panel says he set an emoji from “Resistance-Toast :: @fStikBot” as his current status, and labels emoji status a premium feature. Telegram’s public page for the set says only that “a Telegram user” created it.
+> A small donation or even a share could save a family struggling to survive. We are living through unimaginable hardship, constant bombardment, and harsh living conditions in Gaza, where every single day has become a fight for survival. I humbly ask for your support to help my family through these extremely difficult times—even the smallest contribution or share makes a world of difference to us. Our full story and details are available in the campaign link below. If you wish to verify our story or reach out directly, please feel free to send me a private message. Thank you for your compassion and humanity. 🙏
+>
+> — @Ashrafgaza, in the Telegram group “Palestine Lives Matter” (1,810 members), captured October 20, 2026
 
-A Telegram channel carries the same name: “Resistance Toast🔻[Cyber Army].” It had about 17,650 subscribers on October 20, 2026. Its description invites readers into a group chat called “Al-Qassam Toast [Cyber Army],” which listed 3,536 members. The channel signs its posts with a red inverted triangle.
+![Telegram group Palestine Lives Matter, 1,810 members, showing a post from Ashraf asking for a small donation or a share to help his family survive in Gaza, followed by a Chuffed link and a preview card for the campaign Help Ashraf and his family maintain their life in Gaza with a black-and-white photo of a young man in a cap](https://www.octoprobe.ai/blog/crowdfunding-hamas-chuffed-gofundme-gaza/assets/telegram-palestine-lives-matter-ashraf-chuffed-appeal.jpg)
+
+*Ashraf’s appeal in the “Palestine Lives Matter” group, with the preview card for the February 2026 Chuffed campaign. Source: Telegram, captured October 20, 2026.*
+
+It was not a one-time post. A search of the group returned 31 messages from the account, dating back at least to December 2024. Many carry a link to one of the two Chuffed pages, and the most recent ones repeat the 2026 link days apart.
+
+![Telegram search results reading 31 messages found, listing posts from Ashraf dated from December 9, 2024, to October 2026, most showing a link fragment for the Chuffed campaigns help-ashrafs-family](https://www.octoprobe.ai/blog/crowdfunding-hamas-chuffed-gofundme-gaza/assets/telegram-ashraf-31-messages-recurring-chuffed-links.jpg)
+
+*Search results for the account in the group: 31 messages, the oldest shown dated December 9, 2024, most linking to the Chuffed campaigns. Source: Telegram, captured October 20, 2026.*
+
+The same screenshots capture his profile, and here the militant imagery is plain. Telegram’s own panel says Ashraf set an emoji from “Resistance-Toast :: @fStikBot” as his current status. The emoji is a masked fighter, his face wrapped in a red-and-white keffiyeh, a Palestinian flag on his sleeve and one finger raised, ringed by stars. Telegram labels emoji status a premium feature. Its public page for the set says only that “a Telegram user” created it.
+
+![Telegram emoji status panel showing a masked fighter in a red-and-white keffiyeh face covering with a Palestinian flag on his sleeve, raising an index finger, surrounded by stars, above the text Ashraf set this emoji from Resistance-Toast :: @fStikBot as their current status](https://www.octoprobe.ai/blog/crowdfunding-hamas-chuffed-gofundme-gaza/assets/telegram-ashraf-resistance-toast-al-qassam-emoji-status.jpg)
+
+*The status Telegram attributes to Ashraf: a masked fighter from the “Resistance-Toast” emoji set. Source: Telegram, captured October 20, 2026.*
+
+A Telegram channel carries the same name: “Resistance Toast🔻[Cyber Army].” It had about 17,650 subscribers on October 20, 2026. Its description steers readers into a group chat named for al-Qassam, Hamas’s armed wing: “Al-Qassam Toast [Cyber Army],” which listed 3,536 members. The channel signs its posts with a red inverted triangle.
 
 ![Four Telegram public pages in a grid: 1, the profile card for Ashraf at @Ashrafgaza; 2, the Resistance-Toast emoji set page; 3, the Resistance Toast Cyber Army channel card with 17,650 subscribers and a description inviting readers to the Al Qassam Toast chat; 4, the Al-Qassam Toast Cyber Army chat card with 3,536 members](https://www.octoprobe.ai/blog/crowdfunding-hamas-chuffed-gofundme-gaza/assets/telegram-status-chain-al-qassam-chat.jpg)
 
