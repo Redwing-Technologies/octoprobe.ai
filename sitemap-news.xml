@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.octoprobe.ai/blog/dia-islamic-jihad-foia-intelligence-reports-osint/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>OctoProbe News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-21T13:22:00-04:00</news:publication_date>
+      <news:title>Old Secrets, New Leads: DIA’s Islamic Jihad Files as OSINT</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.octoprobe.ai/blog/hexane-afd-leak-actor-scope-access/</loc>
     <news:news>
       <news:publication>
