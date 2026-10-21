@@ -1,0 +1,17 @@
+/* Post-local styles: Obama Library FOIA guide. Captions and tables otherwise inherit blog.css. */
+.prose .table-note{margin:-.4em 0 1.4em;font-size:.82rem;color:var(--soft-2)}
+.prose .meta-fig{margin:1.6em 0}
+.prose .meta-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.prose .meta-table{min-width:600px;font-size:.76rem;margin:0}
+.prose .meta-table th,.prose .meta-table td{padding:.4rem .45rem}
+.prose .meta-table td:nth-child(4){min-width:15rem}
+.prose .meta-table td,.prose .meta-table th{vertical-align:top}
+.prose .meta-table code{font-size:.9em;white-space:nowrap;padding:1px 4px}
+.prose .meta-table .dt{display:block;white-space:nowrap}
+.prose .ex-table code,.prose .meta-table code{overflow-wrap:normal}
+.prose .ex-table td:first-child{white-space:nowrap}
+.prose .wd-fig{margin:1.6em 0}
+.prose .wd-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.prose .wd-sheet{margin:0;font-size:.7rem;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere;background:#fff;border:1px solid #cbd5e1;box-shadow:0 2px 8px rgba(15,23,42,.06)}
+.prose .wd-sheet mark{background:#fde68a;color:#0f172a;padding:0 2px;border-radius:2px}
+@media print{.prose .wd-sheet,.prose .meta-fig{break-inside:avoid}}
