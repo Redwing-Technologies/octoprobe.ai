@@ -85,6 +85,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/blog.css?v=news7">
+<link rel="stylesheet" href="/assets/css/blog-lightbox.css?v=lb1">
 <style id="news-frame">.correction-note{border:1px solid var(--line);border-left:4px solid #f59e0b;border-radius:10px;background:var(--panel);padding:14px 18px;margin:2rem 0 0}.correction-note h2{margin:0 0 .4rem;font-size:1.05rem}.correction-note p{margin:0;font-size:.95rem}</style>
 </head>
 <body>
@@ -173,7 +174,7 @@
 <li><strong>Description:</strong> Date of birth used December 11, 1982. Place of birth Wayne, Pennsylvania. 6'2", about 240 lb, brown hair, brown eyes. Tattoo of three interlaced black triangles on the left forearm. Former Registered Investment Advisor.</li>
 <li><strong>Reward:</strong> Up to $150,000.</li>
 </ul>
-<figure><img loading="lazy" alt="FBI Most Wanted Fraudsters page for Christopher W. Burns" src="https://www.octoprobe.ai/blog/christopher-burns-fbi-fugitive-google-maps-wayne-pa/assets/fbi-christopher-w-burns.png" /><figcaption>FBI Most Wanted Fraudsters page for Christopher W. Burns, captured October 15, 2026. Source: <a href="https://www.fbi.gov/wanted/most-wanted-fraudsters/christopher-w-burns">fbi.gov</a>.</figcaption></figure>
+<figure class="shot-mobile"><a class="shot-open" href="https://www.octoprobe.ai/blog/christopher-burns-fbi-fugitive-google-maps-wayne-pa/assets/fbi-christopher-w-burns.png" aria-haspopup="dialog"><img loading="lazy" alt="FBI Most Wanted Fraudsters page for Christopher W. Burns" src="https://www.octoprobe.ai/blog/christopher-burns-fbi-fugitive-google-maps-wayne-pa/assets/fbi-christopher-w-burns.png" /></a><figcaption>FBI Most Wanted Fraudsters page for Christopher W. Burns, captured October 15, 2026. Source: <a href="https://www.fbi.gov/wanted/most-wanted-fraudsters/christopher-w-burns">fbi.gov</a>.</figcaption></figure>
 <h2>OSINT analysis</h2>
 <h3>Identifier graph</h3>
 <p>Starting from public identifiers, OctoProbe built a graph of 25 nodes and 47 edges connecting the FBI wanted page to:</p>
@@ -288,6 +289,7 @@
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 <script src="/assets/js/blog-toc.js?v=toc7" defer></script>
+<script src="/assets/js/blog-lightbox.js?v=lb1" defer></script>
 <script src="/assets/js/blog-share.js?v=share1" defer></script>
 </body>
 </html>
