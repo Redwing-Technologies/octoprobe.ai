@@ -67,6 +67,9 @@ BACKGROUND = [
     "U.S. Army: 173rd Airborne Brigade; selected for the Special Operations Psychological Operations "
     "Regiment (2016); counterterrorism information operations planner who served with USASOC and SOCCENT "
     "supporting Operation Inherent Resolve and Operation Spartan Shield",
+    "Military schooling: graduate of the Joint Targeting Staff Course (JTSC), the Joint Cyber "
+    "Operational Planners Course (JCOPC), Special Warfare Brighton, Special Warfare Touchstone, and "
+    "SOF Sensitive Site Exploitation, among other courses",
     "TechCongress Congressional Innovation Fellow (June 2022 cohort), office of Rep. Darrell Issa",
     "Investigator, The Heritage Foundation's Oversight Project; investigative columnist, The Daily Signal",
     "Investigative Journalist and OSINT Domain Expert; Founder of Redwing Technologies, which publishes "
