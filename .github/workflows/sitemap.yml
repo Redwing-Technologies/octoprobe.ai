@@ -20,6 +20,8 @@ jobs:
           python-version: "3.12"
       - name: Check sitemap.xml is up to date
         run: python3 scripts/gen-sitemap.py --check
+      - name: Check blog/feed.xml (RSS) is up to date and every post date carries a timezone
+        run: python3 scripts/gen-feed.py --check --strict
       - name: Check the blog search index is up to date
         run: python3 scripts/build-search-index.py --check
       - name: Check the author page and post author markup are up to date
@@ -30,6 +32,8 @@ jobs:
         run: |
           python3 -c "import xml.dom.minidom as m; m.parse('sitemap.xml'); print('sitemap.xml well-formed')"
           grep -q '^Sitemap: https://www.octoprobe.ai/sitemap.xml' robots.txt
+          python3 -c "import xml.dom.minidom as m; m.parse('blog/feed.xml'); print('blog/feed.xml well-formed')"
+          python3 -c "import xml.dom.minidom as m; m.parse('sitemap-news.xml'); print('sitemap-news.xml well-formed')"
       - name: Every served page carries exactly one Google Analytics tag
         run: |
           fail=0

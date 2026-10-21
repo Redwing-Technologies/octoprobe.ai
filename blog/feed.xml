@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:media="http://search.yahoo.com/mrss/"
+     xmlns:webfeeds="http://webfeeds.org/rss/1.0">
+  <channel>
+    <title>OctoProbe News</title>
+    <link>https://www.octoprobe.ai/blog/</link>
+    <description>Investigative reporting on national security, intelligence, digital targeting and online influence operations, built from open-source records.</description>
+    <atom:link href="https://www.octoprobe.ai/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+    <language>en-us</language>
+    <copyright>© 2026 Redwing Technologies LLC</copyright>
+    <managingEditor>press@octoprobe.ai (OctoProbe News)</managingEditor>
+    <webMaster>press@octoprobe.ai (OctoProbe News)</webMaster>
+    <pubDate>Tue, 20 Oct 2026 21:26:24 -0400</pubDate>
+    <lastBuildDate>Tue, 20 Oct 2026 21:26:24 -0400</lastBuildDate>
+    <docs>https://www.rssboard.org/rss-specification</docs>
+    <ttl>60</ttl>
+    <image>
+      <url>https://www.octoprobe.ai/feed-icon-144.png</url>
+      <title>OctoProbe News</title>
+      <link>https://www.octoprobe.ai/blog/</link>
+      <width>144</width>
+      <height>144</height>
+    </image>
+    <webfeeds:icon>https://www.octoprobe.ai/icon-512.png</webfeeds:icon>
+    <webfeeds:accentColor>0284C7</webfeeds:accentColor>
+    <webfeeds:analytics id="G-6T6HW79ZP0" engine="GoogleAnalytics"/>
+    <item>
+      <title>How to FOIA the Situation Room: One Request Pried Loose Thousands of Obama-Era Photos</title>
+      <link>https://www.octoprobe.ai/blog/foia-how-to-obama-situation-room-photos-presidential-records/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/foia-how-to-obama-situation-room-photos-presidential-records/</guid>
+      <description>A FOIA how-to built on a real win: case 24-09538-F freed 3,951 Obama Situation Room photos and 3,851 files. How to file, read exemptions and get copies.</description>
+      <pubDate>Tue, 20 Oct 2026 21:26:24 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Public Journalism Guide</category>
+      <category>FOIA</category>
+      <category>Presidential Records</category>
+      <enclosure url="https://www.octoprobe.ai/blog/foia-how-to-obama-situation-room-photos-presidential-records/assets/og-cover.png?v=2" length="241701" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/foia-how-to-obama-situation-room-photos-presidential-records/assets/og-cover.png?v=2" medium="image" type="image/png" width="1200" height="630">
+        <media:description type="plain">Duotone photograph of President Obama in the Situation Room over a dark street map of Washington, with the words How to FOIA the Situation Room</media:description>
+      </media:content>
+    </item>
+    <item>
+      <title>Crowdfunding’s Hamas Problem: A Gaza Fundraiser’s Telegram Badge Leads to an Al-Qassam Chat</title>
+      <link>https://www.octoprobe.ai/blog/crowdfunding-hamas-chuffed-gofundme-gaza/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/crowdfunding-hamas-chuffed-gofundme-gaza/</guid>
+      <description>Two Chuffed pages raised $12,948 and $6,736 for a Gaza man whose Telegram status badge traces to a chat named for al-Qassam, Hamas’s armed wing.</description>
+      <pubDate>Tue, 20 Oct 2026 19:58:22 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Investigation</category>
+      <category>OSINT</category>
+      <category>Counterterrorism</category>
+      <enclosure url="https://www.octoprobe.ai/blog/crowdfunding-hamas-chuffed-gofundme-gaza/assets/og-cover.png" length="161555" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/crowdfunding-hamas-chuffed-gofundme-gaza/assets/og-cover.png" medium="image" type="image/png" width="1200" height="630">
+        <media:description type="plain">Crowdfunding’s Hamas Problem: A Gaza Fundraiser’s Telegram Badge Leads to an Al-Qassam Chat</media:description>
+      </media:content>
+    </item>
+    <item>
+      <title>Subpoena, Order, Warrant: How the Government Gets Your Data</title>
+      <link>https://www.octoprobe.ai/blog/subpoena-warrant-online-accounts-three-branches/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/subpoena-warrant-online-accounts-three-branches/</guid>
+      <description>Two FOIA releases show how Congress, an inspector general and the courts compel records, and why a subpoena gets your subscriber data but not your messages.</description>
+      <pubDate>Tue, 20 Oct 2026 19:16:57 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Investigations</category>
+      <category>Subpoenas</category>
+      <category>Privacy Law</category>
+      <enclosure url="https://www.octoprobe.ai/blog/subpoena-warrant-online-accounts-three-branches/assets/og-cover.png?v=1" length="109117" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/subpoena-warrant-online-accounts-three-branches/assets/og-cover.png?v=1" medium="image" type="image/png" width="1200" height="630">
+        <media:description type="plain">Excerpts of a House subpoena, a Defense Department inspector general subpoena and a search warrant attachment above a three-step ladder: subpoena, 2703(d) order, warrant</media:description>
+      </media:content>
+    </item>
+    <item>
+      <title>Inside the FBI's CAST Guide: How Carriers and Agents Pin Down a Cell Phone</title>
+      <link>https://www.octoprobe.ai/blog/fbi-cell-phone-location-silent-sms-cast-guide/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/fbi-cell-phone-location-silent-sms-cast-guide/</guid>
+      <description>An FBI field guide shows how police make a phone reveal its location with silent texts, pings and tower timing, how precise it gets, and what the law requires.</description>
+      <pubDate>Tue, 20 Oct 2026 17:55:59 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Investigations</category>
+      <category>Surveillance</category>
+      <category>Cell Phones</category>
+      <enclosure url="https://www.octoprobe.ai/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/og-cover.png?v=1" length="309188" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/og-cover.png?v=1" medium="image" type="image/png" width="1200" height="630">
+        <media:description type="plain">Illustration: three cell towers on a stylized street grid, each casting a 120-degree sector and a range band that overlap around a red phone dot</media:description>
+      </media:content>
+    </item>
+    <item>
+      <title>Iran Says It Rules Hormuz. Its “Mine Strike” Stories Keep Falling Apart.</title>
+      <link>https://www.octoprobe.ai/blog/iran-hormuz-mine-strike-claims-fall-apart/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/iran-hormuz-mine-strike-claims-fall-apart/</guid>
+      <description>Iran’s Guards say a supertanker hit a mine near Hormuz on Oct. 20. No ship, no position, no outside confirmation, and a record of relabeled strikes.</description>
+      <pubDate>Tue, 20 Oct 2026 15:15:39 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Investigation</category>
+      <category>OSINT</category>
+      <category>Iran</category>
+      <enclosure url="https://www.octoprobe.ai/blog/iran-hormuz-mine-strike-claims-fall-apart/assets/og-cover.png" length="256826" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/iran-hormuz-mine-strike-claims-fall-apart/assets/og-cover.png" medium="image" type="image/png" width="1200" height="630">
+        <media:description type="plain">Dark OctoProbe cover over a map of the Strait of Hormuz with a red pin at the narrows; at right, the yellow IRGC Navy title card reading Management of the Strait of Hormuz, beside the headline Iran Says It Rules Hormuz</media:description>
+      </media:content>
+    </item>
+    <item>
+      <title>How to FOIA an Official's Browser History, SharePoint Files and Teams Messages</title>
+      <link>https://www.octoprobe.ai/blog/secret-service-foia-sharepoint-browser-history-osint-guide/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/secret-service-foia-sharepoint-browser-history-osint-guide/</guid>
+      <description>A seven-step FOIA guide: find an agency's SharePoint with public DNS, name a custodian, and request browser logs, documents and Teams chats.</description>
+      <pubDate>Tue, 20 Oct 2026 12:39:43 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Public Journalism Guide</category>
+      <category>FOIA</category>
+      <category>OSINT</category>
+      <enclosure url="https://www.octoprobe.ai/blog/secret-service-foia-sharepoint-browser-history-osint-guide/assets/og-cover.png?v=1" length="375974" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/secret-service-foia-sharepoint-browser-history-osint-guide/assets/og-cover.png?v=1" medium="image" type="image/png" width="1200" height="630">
+        <media:description type="plain">Street map of downtown Washington with a pin on Secret Service headquarters and the Secret Service star</media:description>
+      </media:content>
+    </item>
+    <item>
+      <title>DHS Lawyers Wrote 24 Pages on Buying Your Phone’s Location Data. They Withheld Every Page of the Analysis.</title>
+      <link>https://www.octoprobe.ai/blog/dhs-phone-location-data-legal-opinion-foia/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/dhs-phone-location-data-legal-opinion-foia/</guid>
+      <description>A DHS legal opinion on buying phone ad-ID location data came back under FOIA as one page and 23 withheld pages. How the trade works and what is still secret.</description>
+      <pubDate>Tue, 20 Oct 2026 10:25:04 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Investigation</category>
+      <category>FOIA</category>
+      <category>Surveillance</category>
+      <enclosure url="https://www.octoprobe.ai/blog/dhs-phone-location-data-legal-opinion-foia/assets/og-cover.png?v=2" length="261079" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/dhs-phone-location-data-legal-opinion-foia/assets/og-cover.png?v=2" medium="image" type="image/png" width="1200" height="630">
+        <media:description type="plain">DHS Lawyers Wrote 24 Pages on Buying Your Phone’s Location Data. They Withheld Every Page of the Analysis.</media:description>
+      </media:content>
+    </item>
+    <item>
+      <title>Jailed, Purged, Still Shipping: How ISIS Media Survives the Takedowns</title>
+      <link>https://www.octoprobe.ai/blog/isis-media-survives-takedowns/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/isis-media-survives-takedowns/</guid>
+      <description>A life sentence for its lead narrator and seized servers across Europe and North America have not stopped the weekly newspaper. Public records show the workarounds.</description>
+      <pubDate>Tue, 20 Oct 2026 08:18:36 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Investigation</category>
+      <category>OSINT</category>
+      <category>Counterterrorism</category>
+      <enclosure url="https://www.octoprobe.ai/blog/isis-media-survives-takedowns/assets/cover-og-1200x630.png" length="497468" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/isis-media-survives-takedowns/assets/cover-og-1200x630.png" medium="image" type="image/png" width="1200" height="630">
+        <media:description type="plain">Dark OctoProbe cover over a map of Nigeria's Borno State and the Lake Chad basin; at right, the Islamic State weekly al-Naba masthead for issue 569 in white Arabic lettering with red diamonds, beside the headline Jailed, Purged, Still Shipping</media:description>
+      </media:content>
+    </item>
+    <item>
+      <title>CEFC, PLA Base 311, and the Long Gap from FBI Surveillance to Designation</title>
+      <link>https://www.octoprobe.ai/blog/cefc-china-energy-pla-base-311-public-record/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/cefc-china-energy-pla-base-311-public-record/</guid>
+      <description>FBI files show surveillance of a Confucius Institute from 2008; designation came in 2020. CEFC’s PLA Base 311 links were public in between. A dated timeline.</description>
+      <pubDate>Tue, 20 Oct 2026 07:05:41 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Analysis</category>
+      <category>PLA Base 311</category>
+      <category>FOIA</category>
+      <enclosure url="https://www.octoprobe.ai/blog/cefc-china-energy-pla-base-311-public-record/assets/cover.png" length="695131" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/cefc-china-energy-pla-base-311-public-record/assets/cover.png" medium="image" type="image/png" width="2400" height="1260">
+        <media:description type="plain">Cover: headline CEFC China Energy beside a tilted FBI file page dated December 1, 2008, over a dark map of Fuzhou with a red pin</media:description>
+      </media:content>
+    </item>
+    <item>
+      <title>North Korea's Fake IT Workers: Thin Covers, Borrowed Lives</title>
+      <link>https://www.octoprobe.ai/blog/north-korea-it-worker-personas-backstopping/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/north-korea-it-worker-personas-backstopping/</guid>
+      <description>We checked the eleven Gmail accounts DOJ tied to North Korean IT workers. Most had thin covers and new accounts. One rode what looks like a real American's history.</description>
+      <pubDate>Tue, 20 Oct 2026 05:44:25 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Investigation</category>
+      <category>OSINT</category>
+      <category>North Korea</category>
+      <enclosure url="https://www.octoprobe.ai/blog/north-korea-it-worker-personas-backstopping/assets/cover.png" length="1762777" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/north-korea-it-worker-personas-backstopping/assets/cover.png" medium="image" type="image/png" width="2400" height="1260">
+        <media:description type="plain">Cover: North Korean national flag over a dark map of Northeast Asia, with the headline Thin Covers, Borrowed Lives</media:description>
+      </media:content>
+    </item>
+    <item>
+      <title>The Only Public Map of CENTCOM’s War Orders Is Dated 2022</title>
+      <link>https://www.octoprobe.ai/blog/centcom-war-orders-anvil-chart-foia/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/centcom-war-orders-anvil-chart-foia/</guid>
+      <description>Op-ed: CENTCOM’s FOIA-released “Anvil Chart” shows how it stacks its war orders and what it hides. Iran-war modernization must start with authorities.</description>
+      <pubDate>Mon, 19 Oct 2026 09:28:41 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Op-Ed</category>
+      <category>CENTCOM</category>
+      <category>FOIA</category>
+      <enclosure url="https://www.octoprobe.ai/blog/centcom-war-orders-anvil-chart-foia/assets/cover.png" length="528695" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/centcom-war-orders-anvil-chart-foia/assets/cover.png" medium="image" type="image/png" width="2400" height="1260">
+        <media:description type="plain">Op-ed cover: headline beside the U.S. Central Command emblem and a B-2 Spirit over a dark map of the Persian Gulf</media:description>
+      </media:content>
+    </item>
+    <item>
+      <title>Your Taxes, Their Target List: Following NED Money Into Ukraine’s Online Info-Ops Web</title>
+      <link>https://www.octoprobe.ai/blog/myrotvorets-informnapalm-ned-grant/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/myrotvorets-informnapalm-ned-grant/</guid>
+      <description>In 2016 NED paid Prometheus $100,000 for work on InformNapalm, a site that shares a mail server with Myrotvorets, a list naming Americans, and promotes it.</description>
+      <pubDate>Fri, 16 Oct 2026 22:25:42 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Investigation</category>
+      <category>OSINT</category>
+      <category>Ukraine</category>
+      <enclosure url="https://www.octoprobe.ai/blog/myrotvorets-informnapalm-ned-grant/assets/cover.png?v=3" length="2497573" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/myrotvorets-informnapalm-ned-grant/assets/cover.png?v=3" medium="image" type="image/png" width="2400" height="1260">
+        <media:description type="plain">Your Taxes, Their Target List: OctoProbe cover over a map of Kyiv</media:description>
+      </media:content>
+    </item>
+    <item>
+      <title>25 Pages of Press Clips: Leak Shows How Thin White House Vetting Really Was</title>
+      <link>https://www.octoprobe.ai/blog/white-house-vetting-leak-press-clips/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/white-house-vetting-leak-press-clips/</guid>
+      <description>Leaked transition files show White House vetting ran on 25-page clippings files, while the clearance system rewards speed and contracts over depth. Here is what real vetting pulls.</description>
+      <pubDate>Fri, 16 Oct 2026 19:25:41 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Investigation</category>
+      <category>OSINT</category>
+      <category>Vetting</category>
+      <enclosure url="https://www.octoprobe.ai/blog/white-house-vetting-leak-press-clips/assets/cover.png" length="3049451" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/white-house-vetting-leak-press-clips/assets/cover.png" medium="image" type="image/png" width="2400" height="1260">
+        <media:description type="plain">25 Pages of Press Clips: page one of the leaked Giuliani business-ties research file over a map of Washington</media:description>
+      </media:content>
+    </item>
+    <item>
+      <title>Alleged Saudi Spy List Leaked by Houthi-Tied Group, and Their Phones Do the Rest</title>
+      <link>https://www.octoprobe.ai/blog/saudi-intelligence-spy-list-leak-houthi/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/saudi-intelligence-spy-list-leak-houthi/</guid>
+      <description>Houthi-tied hackers dumped an alleged Saudi spy roster. Google Maps reviews tied to its contacts cluster in Riyadh, corroborating part of the leak.</description>
+      <pubDate>Fri, 16 Oct 2026 16:03:58 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Investigation</category>
+      <category>OSINT</category>
+      <category>Counterintelligence</category>
+      <enclosure url="https://www.octoprobe.ai/blog/saudi-intelligence-spy-list-leak-houthi/assets/cover.png" length="2135478" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/saudi-intelligence-spy-list-leak-houthi/assets/cover.png" medium="image" type="image/png" width="2400" height="1260">
+        <media:description type="plain">Alleged Saudi Spy List Leaked by Houthi-Tied Group: abstract identifier graph over Riyadh</media:description>
+      </media:content>
+    </item>
+    <item>
+      <title>Whose Coffee? An Anti-Bot Developer’s Handle Turns Up on Archive.today’s Donate Link</title>
+      <link>https://www.octoprobe.ai/blog/archive-today-donate-link-takion-api-developer/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/archive-today-donate-link-takion-api-developer/</guid>
+      <description>An anti-bot developer known as glizzykingdreko runs Takion API, a commercial bot-check bypass service. His donation page appeared in Archive.today’s donate link from August 2025 to October 2026. He now disclaims any tie. Here is the evidence chain, with confidence levels.</description>
+      <pubDate>Thu, 15 Oct 2026 17:22:31 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Investigation</category>
+      <category>OSINT</category>
+      <category>Infrastructure</category>
+      <enclosure url="https://www.octoprobe.ai/blog/archive-today-donate-link-takion-api-developer/assets/cover.png?v=1" length="2555309" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/archive-today-donate-link-takion-api-developer/assets/cover.png?v=1" medium="image" type="image/png" width="2400" height="1260">
+      </media:content>
+    </item>
+    <item>
+      <title>Heather Zhang Case: OSINT Trail From a 2024 Reddit Allegation</title>
+      <link>https://www.octoprobe.ai/blog/heather-zhang-prc-agent-case-reddit-allegation/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/heather-zhang-prc-agent-case-reddit-allegation/</guid>
+      <description>Charged, not convicted: Irvine realtor Wanying "Heather" Zhang is accused of acting as an unregistered PRC agent. An OctoProbe investigation began from a January 2024 Reddit allegation naming Fatai Miao, whom CBS News identifies as "Individual 1." DOJ has not accused him of wrongdoing.</description>
+      <pubDate>Thu, 15 Oct 2026 15:44:19 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Investigation</category>
+      <category>OSINT</category>
+      <category>Counterintelligence</category>
+      <enclosure url="https://www.octoprobe.ai/blog/heather-zhang-prc-agent-case-reddit-allegation/assets/cover.png?v=3" length="2952150" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/heather-zhang-prc-agent-case-reddit-allegation/assets/cover.png?v=3" medium="image" type="image/png">
+      </media:content>
+    </item>
+    <item>
+      <title>Christopher W. Burns: Public Google Maps Activity Dated After His Last Sighting, Wayne, PA Area</title>
+      <link>https://www.octoprobe.ai/blog/christopher-burns-fbi-fugitive-google-maps-wayne-pa/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/christopher-burns-fbi-fugitive-google-maps-wayne-pa/</guid>
+      <description>A Google Maps account allegedly attributed to FBI Most Wanted Fraudster Christopher W. Burns shows activity in Wayne and Wynnewood, PA (~2021 and ~2023), after his last known sighting on September 24, 2020.</description>
+      <pubDate>Thu, 15 Oct 2026 14:54:04 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Investigation</category>
+      <category>OSINT</category>
+      <category>Fugitives</category>
+      <enclosure url="https://www.octoprobe.ai/blog/christopher-burns-fbi-fugitive-google-maps-wayne-pa/assets/cover.png?v=3" length="2988920" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/christopher-burns-fbi-fugitive-google-maps-wayne-pa/assets/cover.png?v=3" medium="image" type="image/png">
+      </media:content>
+    </item>
+    <item>
+      <title>From Public Lead to Identifier Graph</title>
+      <link>https://www.octoprobe.ai/blog/identifier-graph-osint-methodology/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/identifier-graph-osint-methodology/</guid>
+      <description>How OSINT teams turn one public clue into a sourced identifier graph—and how to avoid burning hours on manual markup or drowning in automated false-positive nodes.</description>
+      <pubDate>Thu, 15 Oct 2026 12:48:07 -0400</pubDate>
+      <dc:creator>OctoProbe News</dc:creator>
+      <category>Methodology</category>
+      <category>OSINT</category>
+      <category>Identifier Graph</category>
+      <enclosure url="https://www.octoprobe.ai/assets/blog/identifier-graph-hero.jpg" length="134198" type="image/jpeg"/>
+      <media:content url="https://www.octoprobe.ai/assets/blog/identifier-graph-hero.jpg" medium="image" type="image/jpeg">
+        <media:description type="plain">From Public Lead to Identifier Graph</media:description>
+      </media:content>
+    </item>
+  </channel>
+</rss>
