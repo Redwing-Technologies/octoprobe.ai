@@ -279,6 +279,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://www.octoprobe.ai/blog/hexane-afd-leak-actor-scope-access/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/blog/hexane-afd-leak-actor-scope-access/assets/og-cover.png</image:loc>
+      <image:title>Hexane’s AfD Dump: Assessing the Actor, the Scope, and the Access</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.octoprobe.ai/blog/authors/colin-aamot/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>

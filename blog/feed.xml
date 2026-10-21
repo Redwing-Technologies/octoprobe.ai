@@ -14,8 +14,8 @@
     <copyright>© 2026 Redwing Technologies LLC</copyright>
     <managingEditor>press@octoprobe.ai (OctoProbe News)</managingEditor>
     <webMaster>press@octoprobe.ai (OctoProbe News)</webMaster>
-    <pubDate>Wed, 21 Oct 2026 09:45:00 -0400</pubDate>
-    <lastBuildDate>Wed, 21 Oct 2026 11:22:00 -0400</lastBuildDate>
+    <pubDate>Wed, 21 Oct 2026 11:55:00 -0400</pubDate>
+    <lastBuildDate>Wed, 21 Oct 2026 12:05:00 -0400</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <ttl>60</ttl>
     <image>
@@ -28,6 +28,22 @@
     <webfeeds:icon>https://www.octoprobe.ai/icon-512.png</webfeeds:icon>
     <webfeeds:accentColor>0284C7</webfeeds:accentColor>
     <webfeeds:analytics id="G-6T6HW79ZP0" engine="GoogleAnalytics"/>
+    <item>
+      <title>Hexane’s AfD Dump: Assessing the Actor, the Scope, and the Access</title>
+      <link>https://www.octoprobe.ai/blog/hexane-afd-leak-actor-scope-access/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/hexane-afd-leak-actor-scope-access/</guid>
+      <description>Three-part assessment of Hexane’s AfD dump: a privacy-focused cyber actor, a 281 GB archive of ~421,000 emails, and how deep the system access went.</description>
+      <pubDate>Wed, 21 Oct 2026 11:55:00 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Investigation</category>
+      <category>OSINT</category>
+      <category>Leak</category>
+      <category>Germany</category>
+      <enclosure url="https://www.octoprobe.ai/blog/hexane-afd-leak-actor-scope-access/assets/og-cover.png" length="969267" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/hexane-afd-leak-actor-scope-access/assets/og-cover.png" medium="image" type="image/png" width="1200" height="630">
+        <media:description type="plain">Hexane’s AfD Dump: Assessing the Actor, the Scope, and the Access</media:description>
+      </media:content>
+    </item>
     <item>
       <title>Operation Lonestar Roundup: Tracing the Gmail Accounts DOJ Tied to North Korea’s Texas Laptop Farms</title>
       <link>https://www.octoprobe.ai/blog/north-korean-laptop-farm-texas-gmail-accounts/</link>
