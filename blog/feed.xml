@@ -14,8 +14,8 @@
     <copyright>© 2026 Redwing Technologies LLC</copyright>
     <managingEditor>press@octoprobe.ai (OctoProbe News)</managingEditor>
     <webMaster>press@octoprobe.ai (OctoProbe News)</webMaster>
-    <pubDate>Wed, 21 Oct 2026 16:49:00 -0400</pubDate>
-    <lastBuildDate>Wed, 21 Oct 2026 16:49:00 -0400</lastBuildDate>
+    <pubDate>Wed, 21 Oct 2026 18:45:00 -0400</pubDate>
+    <lastBuildDate>Wed, 21 Oct 2026 18:45:00 -0400</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <ttl>60</ttl>
     <image>
@@ -28,6 +28,21 @@
     <webfeeds:icon>https://www.octoprobe.ai/icon-512.png</webfeeds:icon>
     <webfeeds:accentColor>0288D1</webfeeds:accentColor>
     <webfeeds:analytics id="G-6T6HW79ZP0" engine="GoogleAnalytics"/>
+    <item>
+      <title>Treasury Sanctioned Whales Shipping Line. Its Company Profile Still Names Its Staff.</title>
+      <link>https://www.octoprobe.ai/blog/whales-shipping-line-ofac-iran-shadow-fleet-dubai-agent/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/whales-shipping-line-ofac-iran-shadow-fleet-dubai-agent/</guid>
+      <description>OFAC sanctioned Dubai ship agent Whales Shipping Line on October 21, 2026. Its company profile, website, and two blocked boats, traced through public records.</description>
+      <pubDate>Wed, 21 Oct 2026 18:45:00 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Investigations</category>
+      <category>Sanctions</category>
+      <category>Iran</category>
+      <enclosure url="https://www.octoprobe.ai/blog/whales-shipping-line-ofac-iran-shadow-fleet-dubai-agent/assets/og-cover.png" length="83244" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/whales-shipping-line-ofac-iran-shadow-fleet-dubai-agent/assets/og-cover.png" medium="image" type="image/png" width="1200" height="630">
+        <media:description type="plain">Dark OctoProbe map cover of the Indian Ocean with markers for ships sanctioned on October 21, 2026, titled Tracking Iran’s Shadow Fleet.</media:description>
+      </media:content>
+    </item>
     <item>
       <title>Pegasus Took a Phone’s Past. AI Makes It Attributable</title>
       <link>https://www.octoprobe.ai/blog/pegasus-nso-capabilities-historical-data-attribution/</link>
