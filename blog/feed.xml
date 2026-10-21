@@ -14,8 +14,8 @@
     <copyright>© 2026 Redwing Technologies LLC</copyright>
     <managingEditor>press@octoprobe.ai (OctoProbe News)</managingEditor>
     <webMaster>press@octoprobe.ai (OctoProbe News)</webMaster>
-    <pubDate>Wed, 21 Oct 2026 11:55:00 -0400</pubDate>
-    <lastBuildDate>Wed, 21 Oct 2026 12:22:45 -0400</lastBuildDate>
+    <pubDate>Wed, 21 Oct 2026 13:22:00 -0400</pubDate>
+    <lastBuildDate>Wed, 21 Oct 2026 13:22:00 -0400</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <ttl>60</ttl>
     <image>
@@ -28,6 +28,23 @@
     <webfeeds:icon>https://www.octoprobe.ai/icon-512.png</webfeeds:icon>
     <webfeeds:accentColor>0284C7</webfeeds:accentColor>
     <webfeeds:analytics id="G-6T6HW79ZP0" engine="GoogleAnalytics"/>
+    <item>
+      <title>Old Secrets, New Leads: DIA’s Islamic Jihad Files as OSINT</title>
+      <link>https://www.octoprobe.ai/blog/dia-islamic-jihad-foia-intelligence-reports-osint/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/dia-islamic-jihad-foia-intelligence-reports-osint/</guid>
+      <description>DIA reports on Palestinian Islamic Jihad from 2001 and 2005, once classified up to SECRET//NOFORN, map its cells, Damascus command and Iranian money.</description>
+      <pubDate>Wed, 21 Oct 2026 13:22:00 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Investigations</category>
+      <category>FOIA</category>
+      <category>OSINT</category>
+      <category>Counterterrorism</category>
+      <category>Iran</category>
+      <enclosure url="https://www.octoprobe.ai/blog/dia-islamic-jihad-foia-intelligence-reports-osint/assets/og-cover.png" length="757886" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/dia-islamic-jihad-foia-intelligence-reports-osint/assets/og-cover.png" medium="image" type="image/png" width="1200" height="630">
+        <media:description type="plain">Dark OctoProbe cover over a map of central Israel and the northern West Bank with a yellow pin near Netanya and the yellow Palestinian Islamic Jihad emblem at right, beside the headline Old Secrets, New Leads</media:description>
+      </media:content>
+    </item>
     <item>
       <title>Hexane’s AfD Dump: Assessing the Actor, the Scope, and the Access</title>
       <link>https://www.octoprobe.ai/blog/hexane-afd-leak-actor-scope-access/</link>
