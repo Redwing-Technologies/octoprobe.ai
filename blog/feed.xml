@@ -14,8 +14,8 @@
     <copyright>© 2026 Redwing Technologies LLC</copyright>
     <managingEditor>press@octoprobe.ai (OctoProbe News)</managingEditor>
     <webMaster>press@octoprobe.ai (OctoProbe News)</webMaster>
-    <pubDate>Wed, 21 Oct 2026 13:22:00 -0400</pubDate>
-    <lastBuildDate>Wed, 21 Oct 2026 13:22:00 -0400</lastBuildDate>
+    <pubDate>Wed, 21 Oct 2026 15:09:00 -0400</pubDate>
+    <lastBuildDate>Wed, 21 Oct 2026 15:09:00 -0400</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <ttl>60</ttl>
     <image>
@@ -28,6 +28,22 @@
     <webfeeds:icon>https://www.octoprobe.ai/icon-512.png</webfeeds:icon>
     <webfeeds:accentColor>0288D1</webfeeds:accentColor>
     <webfeeds:analytics id="G-6T6HW79ZP0" engine="GoogleAnalytics"/>
+    <item>
+      <title>Redacted, Not Useless: FOIA Logs as OSINT Pivots</title>
+      <link>https://www.octoprobe.ai/blog/foia-assessments-redacted-logs-osint-pivots/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/foia-assessments-redacted-logs-osint-pivots/</guid>
+      <description>A redacted EUCOM watch log and a DoD Inspector General case log show how FOIA records become OSINT pivot points: what a command tracked and which files to pull.</description>
+      <pubDate>Wed, 21 Oct 2026 15:09:00 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>FOIA</category>
+      <category>OSINT</category>
+      <category>Methodology</category>
+      <category>Investigations</category>
+      <enclosure url="https://www.octoprobe.ai/blog/foia-assessments-redacted-logs-osint-pivots/assets/og-cover.png" length="1075564" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/foia-assessments-redacted-logs-osint-pivots/assets/og-cover.png" medium="image" type="image/png" width="1200" height="630">
+        <media:description type="plain">Dark OctoProbe cover over a map of Stuttgart, Germany, with a red pin on the city and the blue U.S. Army Europe and Africa shield with a flaming sword at right, beside the headline Redacted, Not Useless</media:description>
+      </media:content>
+    </item>
     <item>
       <title>Old Secrets, New Leads: DIA’s Islamic Jihad Files as OSINT</title>
       <link>https://www.octoprobe.ai/blog/dia-islamic-jihad-foia-intelligence-reports-osint/</link>
