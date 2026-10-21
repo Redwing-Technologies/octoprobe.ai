@@ -15,6 +15,8 @@ Usage (from landing repo root):
   python3 scripts/build-blog.py blog/posts/identifier-graph-osint-methodology.md
   python3 scripts/build-blog.py --share-only          # only (re)insert the share bar in every post
   python3 scripts/build-blog.py --share-only --check  # exit 1 if any post's share bar is missing/stale
+  python3 scripts/build-blog.py --lightbox-only        # tall-screenshot lightbox (LIGHTBOX_SLUGS posts)
+  python3 scripts/build-blog.py --lightbox-only --check  # exit 1 if a tall screenshot lacks it
 
 No remote deploy — write local HTML only. Requires no third-party packages.
 """
@@ -821,6 +823,81 @@ def refresh_share_bars(check: bool = False) -> int:
     return stale
 
 
+# ── Screenshot lightbox ──────────────────────────────────────────────────────
+# Tall screenshots (height / width >= SHOT_RATIO, e.g. phone captures of Telegram or LinkedIn)
+# rendered at full column width are over a screen tall. In the posts listed in LIGHTBOX_SLUGS,
+# every bare `<figure><img …>` whose width/height attributes give that ratio is rewritten to
+#   <figure class="shot-mobile"><a class="shot-open" href="IMG" aria-haspopup="dialog"><img …></a>…
+# and the page gets /assets/css/blog-lightbox.css + /assets/js/blog-lightbox.js: the screenshot
+# shows at ~1/3 of the column (~60% on phones) and opens larger in an accessible modal.
+# The <img> (src, alt, width, height, loading) is left byte-identical, so SEO, the image sitemap
+# (og:image only) and CLS are unaffected. Idempotent: the pass unwraps its own markup and re-applies
+# it, so it is safe on hand-built posts. Calibrated on Gaza Now (Oct. 21, 2026): the three reference
+# screenshots are 1.238, 1.788 and 1.747; the post's near-square images are <= 1.051.
+# Rolled out one post at a time: add a slug to LIGHTBOX_SLUGS to enable it there.
+
+LIGHTBOX_SLUGS = {"gaza-now-telegram-hamas-fundraising-sanctions-sabassi"}
+SHOT_RATIO = 1.2
+LIGHTBOX_CSS_TAG = '<link rel="stylesheet" href="/assets/css/blog-lightbox.css?v=lb1">'
+LIGHTBOX_JS_TAG = '<script src="/assets/js/blog-lightbox.js?v=lb1" defer></script>'
+_SHOT_WRAPPED_RE = re.compile(r'<figure class="shot-mobile"><a class="shot-open" href="[^"]*" aria-haspopup="dialog">(<img\b[^>]*>)</a>')
+_BARE_FIG_IMG_RE = re.compile(r'<figure>(<img\b[^>]*>)')
+
+
+def _attr(tag: str, name: str) -> str | None:
+    m = re.search(r'\s' + name + r'="([^"]*)"', tag)
+    return m.group(1) if m else None
+
+
+def apply_lightbox(html: str, label: str = "") -> str:
+    """(Re)apply the tall-screenshot thumbnail + lightbox markup to one post."""
+    html = _SHOT_WRAPPED_RE.sub(r"<figure>\1", html)
+    html = html.replace(LIGHTBOX_CSS_TAG + "\n", "").replace(LIGHTBOX_JS_TAG + "\n", "")
+
+    def wrap(m: re.Match) -> str:
+        img = m.group(1)
+        w, h, src = _attr(img, "width"), _attr(img, "height"), _attr(img, "src")
+        if not (w and h and w.isdigit() and h.isdigit() and int(w) > 0):
+            raise BuildError(f"{label}: lightbox: figure image {src!r} has no width/height (needed for ratio + CLS)")
+        if not (_attr(img, "alt") or "").strip():
+            raise BuildError(f"{label}: lightbox: figure image {src!r} has no alt text")
+        if int(h) / int(w) < SHOT_RATIO:
+            return m.group(0)
+        return f'<figure class="shot-mobile"><a class="shot-open" href="{src}" aria-haspopup="dialog">{img}</a>'
+
+    html, n = _BARE_FIG_IMG_RE.subn(wrap, html)
+    if 'class="shot-mobile"' not in html:
+        return html
+    css = re.search(r'<link rel="stylesheet" href="/assets/css/blog\.css[^"]*">\n?', html)
+    if not css:
+        raise BuildError(f"{label}: lightbox: no blog.css link to anchor the lightbox CSS")
+    html = html[: css.end()] + ("" if css.group(0).endswith("\n") else "\n") + LIGHTBOX_CSS_TAG + "\n" + html[css.end():]
+    # Sit just before the share-bar script, which inject_share_bar() keeps last before </body>,
+    # so the two passes leave each other's output unchanged.
+    if SHARE_JS_TAG in html:
+        return html.replace(SHARE_JS_TAG, LIGHTBOX_JS_TAG + "\n" + SHARE_JS_TAG, 1)
+    if "</body>" not in html:
+        raise BuildError(f"{label}: lightbox: no </body>")
+    return html.replace("</body>", LIGHTBOX_JS_TAG + "\n</body>", 1)
+
+
+def refresh_lightbox(check: bool = False) -> int:
+    """Apply the lightbox pass to every post in LIGHTBOX_SLUGS. Returns the stale count."""
+    stale = 0
+    for slug in sorted(LIGHTBOX_SLUGS):
+        p = ROOT / "blog" / slug / "index.html"
+        if not p.exists():
+            raise BuildError(f"lightbox: {p.relative_to(ROOT)} not found")
+        old = p.read_text(encoding="utf-8")
+        new = apply_lightbox(old, str(p.relative_to(ROOT)))
+        if new != old:
+            stale += 1
+            if not check:
+                p.write_text(new, encoding="utf-8")
+                print(f"lightbox: refreshed {p.relative_to(ROOT)}")
+    return stale
+
+
 # ── Sitemap + llms.txt ───────────────────────────────────────────────────────
 
 def regenerate_sitemap(posts: list[dict]) -> None:
@@ -945,7 +1022,7 @@ def load_all_post_metas() -> list[dict]:
 
 
 def main():
-    flags = {"--no-strict", "--share-only", "--check"}
+    flags = {"--no-strict", "--share-only", "--lightbox-only", "--check"}
     strict = "--no-strict" not in sys.argv
     args = [Path(a) for a in sys.argv[1:] if a not in flags]
 
@@ -964,6 +1041,22 @@ def main():
                       file=sys.stderr)
                 sys.exit(1)
             print(f"share bar is up to date on {len(share_bar_targets())} posts")
+        return
+
+    # --lightbox-only: (re)apply the tall-screenshot lightbox to the posts in LIGHTBOX_SLUGS.
+    # --lightbox-only --check: exit 1 if a tall figure image there lacks the markup (CI preflight).
+    if "--lightbox-only" in sys.argv:
+        try:
+            stale = refresh_lightbox(check="--check" in sys.argv)
+        except BuildError as e:
+            print(f"ERROR: {e}", file=sys.stderr)
+            sys.exit(1)
+        if "--check" in sys.argv:
+            if stale:
+                print(f"{stale} post(s) have tall screenshots without the lightbox markup. "
+                      "Run: python3 scripts/build-blog.py --lightbox-only", file=sys.stderr)
+                sys.exit(1)
+            print(f"lightbox markup is up to date on {len(LIGHTBOX_SLUGS)} post(s)")
         return
 
     if args:
@@ -988,6 +1081,7 @@ def main():
     # Share bar on every post, including hand-built posts that have no markdown source.
     try:
         refresh_share_bars()
+        refresh_lightbox()
     except BuildError as e:
         print(f"ERROR: {e}", file=sys.stderr)
         sys.exit(1)

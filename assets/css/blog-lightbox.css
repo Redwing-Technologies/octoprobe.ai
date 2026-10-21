@@ -1,0 +1,73 @@
+/* OctoProbe blog: tall mobile screenshots shown at ~1/3 column width, click/tap to enlarge.
+   Markup (added by scripts/build-blog.py, lightbox pass):
+     <figure class="shot-mobile"><a class="shot-open" href="IMG" aria-haspopup="dialog"><img ... width height alt></a><figcaption>…</figcaption></figure>
+   Behaviour: /assets/js/blog-lightbox.js. Tokens come from /assets/css/blog.css (:root);
+   the dialog follows the existing post lightbox (USSS guide: dark scrim rgba(2,6,23,.82), pill
+   "open full size" badge rgba(15,27,45,.82), Close control) and the blog focus ring (2px, 3px offset). */
+
+/* ── Thumbnail ───────────────────────────────────────────────── */
+.prose figure.shot-mobile > .shot-open{
+  position:relative;display:block;
+  width:max(240px,33.333%);max-width:100%;   /* ~1/3 of the 722px column on desktop (≈241px) */
+  margin:0 auto;line-height:0;
+  border:1px solid var(--line-2);border-radius:12px;overflow:hidden;
+  background:var(--panel);box-shadow:0 10px 28px rgba(15,23,42,.06);
+  cursor:zoom-in;transition:border-color .2s,box-shadow .2s;
+}
+.prose figure.shot-mobile > .shot-open:hover{border-color:rgba(2,132,199,.32);box-shadow:0 16px 40px rgba(15,23,42,.1)}
+.prose figure.shot-mobile > .shot-open:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:12px}
+.prose figure.shot-mobile > .shot-open img{display:block;width:100%;height:auto;border-radius:0;margin:0}
+.shot-hint{
+  position:absolute;right:8px;bottom:8px;display:inline-flex;align-items:center;gap:5px;
+  font:600 .7rem/1.2 var(--fb);color:#fff;background:rgba(15,27,45,.82);
+  border-radius:999px;padding:4px 10px;pointer-events:none;
+}
+.shot-hint svg{width:12px;height:12px;flex:none}
+/* phones: a third of a ~330px column is unreadable, so use ~60% (≈200px at 390px wide) */
+@media (max-width:600px){
+  .prose figure.shot-mobile > .shot-open{width:60%;min-width:200px}
+}
+@media print{
+  .shot-hint{display:none}
+  .prose figure.shot-mobile > .shot-open{width:50%;box-shadow:none}
+}
+
+/* ── Modal ───────────────────────────────────────────────────── */
+/* lock page scroll: body overflow propagates to the viewport (html stays visible, so the scroll position is kept) */
+html.shot-lock{scrollbar-gutter:stable}
+html.shot-lock body{overflow:hidden}
+.shot-dialog{
+  position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;
+  margin:0;padding:0;border:0;background:transparent;overflow:hidden;
+}
+.shot-dialog::backdrop{background:rgba(2,6,23,.82)}
+.shot-stage{
+  box-sizing:border-box;width:100%;height:100%;margin:0;padding:64px 16px 20px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+}
+.shot-stage img{
+  display:block;width:auto;height:auto;
+  max-width:min(100%,1100px);max-height:calc(90vh - 4.5rem);
+  border-radius:12px;background:var(--panel);
+  box-shadow:0 24px 56px rgba(0,0,0,.35);cursor:zoom-out;
+}
+.shot-stage figcaption{
+  max-width:62ch;margin:0;text-align:center;
+  font:italic .82rem/1.5 var(--fb);color:#cbd5e1;
+}
+.shot-close{
+  position:absolute;top:14px;right:14px;z-index:1;
+  width:44px;height:44px;padding:0;border-radius:999px;
+  display:inline-flex;align-items:center;justify-content:center;
+  border:1px solid rgba(255,255,255,.3);background:rgba(15,27,45,.82);color:#fff;
+  cursor:pointer;transition:background-color .15s ease,border-color .15s ease;
+}
+.shot-close:hover{background:rgba(15,27,45,1);border-color:rgba(255,255,255,.6)}
+.shot-close:focus-visible{outline:2px solid #7dd3fc;outline-offset:3px}
+.shot-dialog[open]{animation:shot-fade .18s ease-out}
+.shot-dialog[open]::backdrop{animation:shot-fade .18s ease-out}
+@keyframes shot-fade{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){
+  .prose figure.shot-mobile > .shot-open,.shot-close{transition:none}
+  .shot-dialog[open],.shot-dialog[open]::backdrop{animation:none}
+}
