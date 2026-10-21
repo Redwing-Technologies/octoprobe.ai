@@ -35,13 +35,61 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "NewsMediaOrganization",
+      "@id": "https://www.octoprobe.ai/blog/#newsroom",
+      "name": "OctoProbe News",
+      "alternateName": [
+        "OctoProbe",
+        "octoprobe.ai"
+      ],
+      "url": "https://www.octoprobe.ai/blog/",
+      "description": "Investigative reporting on national security, intelligence, digital targeting and online influence operations, built from open-source records.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.octoprobe.ai/icon-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Redwing Technologies",
+        "legalName": "Redwing Technologies LLC"
+      },
+      "publishingPrinciples": "https://www.octoprobe.ai/blog/standards/",
+      "ethicsPolicy": "https://www.octoprobe.ai/blog/standards/#independence",
+      "correctionsPolicy": "https://www.octoprobe.ai/blog/corrections/",
+      "verificationFactCheckingPolicy": "https://www.octoprobe.ai/blog/standards/#sourcing",
+      "actionableFeedbackPolicy": "https://www.octoprobe.ai/blog/contact/",
+      "ownershipFundingInfo": "https://www.octoprobe.ai/blog/about/#ownership",
+      "masthead": "https://www.octoprobe.ai/blog/about/#masthead",
+      "noBylinesPolicy": "https://www.octoprobe.ai/blog/standards/#bylines",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "Press Inquiries, Tips, and Corrections",
+          "email": "press@octoprobe.ai",
+          "url": "https://www.octoprobe.ai/blog/contact/"
+        }
+      ],
+      "knowsAbout": [
+        "national security",
+        "intelligence",
+        "digital targeting",
+        "online influence operations",
+        "open-source investigation"
+      ],
+      "sameAs": [
+        "https://x.com/octoprobeai"
+      ]
+    },
+    {
       "@type": "ProfilePage",
       "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#page",
       "url": "https://www.octoprobe.ai/blog/authors/colin-aamot/",
       "name": "Colin Aamot, OctoProbe News",
       "inLanguage": "en-US",
       "dateCreated": "2026-10-20T19:45:00-04:00",
-      "dateModified": "2026-10-21T00:00:00-04:00",
+      "dateModified": "2026-10-21T13:30:00-04:00",
       "isPartOf": {
         "@id": "https://www.octoprobe.ai/blog/#blog"
       },
@@ -340,14 +388,17 @@
         </div>
         <h1>Colin Aamot</h1>
         <p class="author-role">Founder, Redwing Technologies</p>
+        <p class="post-meta"><time datetime="2026-10-21">Updated Oct 21, 2026</time></p>
       </div>
     </div>
   </header>
   <article class="post-body page-body">
     <div class="wrap">
       <div class="prose">
-<h2 id="bio">About</h2>
+<p>This is the author page for Colin Aamot, Founder, Redwing Technologies, which publishes OctoProbe News.</p>
+<h2 id="bio">Biography</h2>
 <p>Colin Aamot is the founder of Redwing Technologies, which publishes OctoProbe News, builds a portfolio of SaaS products, and runs Rook Intelligence, a licensed Washington, DC private detective agency. A U.S. Army veteran, he began in the 173rd Airborne Brigade and was selected for the Special Operations psychological operations regiment, then served as a counterterrorism information operations planner with USASOC and SOCCENT supporting Operation Inherent Resolve and Operation Spartan Shield. He was a TechCongress Congressional Innovation Fellow in the office of Rep. Darrell Issa and later an investigator for The Heritage Foundation's Oversight Project and an investigative columnist for The Daily Signal. He holds an MA in Global Security Studies from Johns Hopkins University and an MBA from UNC Kenan-Flagler Business School.</p>
+<p>Ownership is on the <a href="/blog/about/">About &amp; Masthead</a> page. Reporting rules are the <a href="/blog/standards/">Editorial Standards</a>. Errors are handled in the <a href="/blog/corrections/">Corrections Policy</a>. The desk is reached at <a href="/blog/contact/">Contact &amp; Tips</a>. Stories are listed on <a href="/blog/">Investigations</a>.</p>
 <h2 id="background">Background</h2>
 <ul>
 <li>U.S. Army: 173rd Airborne Brigade; selected for the Special Operations Psychological Operations Regiment (2016); counterterrorism information operations planner who served with USASOC and SOCCENT supporting Operation Inherent Resolve and Operation Spartan Shield</li>
@@ -419,9 +470,10 @@
       </a>
       <nav class="fnav" aria-label="Footer navigation">
         <a href="/blog/">Investigations</a>
+        <a href="/blog/authors/colin-aamot/">Colin Aamot</a>
         <a href="/blog/about/">About &amp; Masthead</a>
         <a href="/blog/standards/">Editorial Standards</a>
-        <a href="/blog/corrections/">Corrections</a>
+        <a href="/blog/corrections/">Corrections Policy</a>
         <a href="/blog/contact/">Contact &amp; Tips</a>
         <a href="mailto:press@octoprobe.ai">press@octoprobe.ai</a>
       </nav>

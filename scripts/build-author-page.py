@@ -46,6 +46,7 @@ URL = AU.AUTHOR_PAGE
 ASSETS = f"/blog/authors/{SLUG}/assets"
 TZ = ZoneInfo("America/New_York")
 DATE_CREATED = "2026-10-20T19:45:00-04:00"  # author date of 6b2e48d, the commit that added this page
+PAGE_UPDATED = "2026-10-21T13:30:00-04:00"  # newsroom copy and schema edit
 NAME = AU.DEFAULT_AUTHOR["name"]
 ROLE = "Founder, Redwing Technologies"
 TITLE = f"{NAME}: {ROLE} · OctoProbe News"
@@ -146,8 +147,17 @@ def posts() -> list[dict]:
     return res
 
 
+def newsroom_node() -> dict:
+    """The About page is the entity home for the newsroom. Keep this copy in step with it."""
+    about = (ROOT / "blog" / "about" / "index.html").read_text(encoding="utf-8")
+    raw = re.search(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', about, re.S).group(1)
+    node = next(n for n in json.loads(raw)["@graph"] if n.get("@type") == "NewsMediaOrganization")
+    return node
+
+
 def graph(modified: str) -> dict:
     g = json.loads(SRC.read_text(encoding="utf-8"))
+    g["@graph"].insert(0, newsroom_node())
     page = next(n for n in g["@graph"] if n["@type"] == "ProfilePage")
     person = next(n for n in g["@graph"] if n["@type"] == "Person")
     assert person["@id"] == AU.DEFAULT_AUTHOR["id"], person["@id"]
@@ -167,7 +177,7 @@ def build() -> str:
     items = posts()
     if not items:
         raise SystemExit(f"ERROR: no posts bylined {NAME}")
-    modified = max([DATE_CREATED] + [d["mod"] for d in items], key=parse_dt)
+    modified = max([DATE_CREATED, PAGE_UPDATED] + [d["mod"] for d in items], key=parse_dt)
     ld = json.dumps(graph(modified), indent=2, ensure_ascii=False)
     tpl = TEMPLATE.read_text(encoding="utf-8")
 
@@ -226,14 +236,17 @@ def build() -> str:
         </div>
         <h1>{NAME}</h1>
         <p class="author-role">{ROLE}</p>
+        <p class="post-meta"><time datetime="{parse_dt(modified).date().isoformat()}">Updated {parse_dt(modified).strftime("%b %-d, %Y")}</time></p>
       </div>
     </div>
   </header>
   <article class="post-body page-body">
     <div class="wrap">
       <div class="prose">
-<h2 id="bio">About</h2>
+<p>This is the author page for Colin Aamot, Founder, Redwing Technologies, which publishes OctoProbe News.</p>
+<h2 id="bio">Biography</h2>
 <p>{escape(AU.CANONICAL_BIO, quote=False)}</p>
+<p>Ownership is on the <a href="/blog/about/">About &amp; Masthead</a> page. Reporting rules are the <a href="/blog/standards/">Editorial Standards</a>. Errors are handled in the <a href="/blog/corrections/">Corrections Policy</a>. The desk is reached at <a href="/blog/contact/">Contact &amp; Tips</a>. Stories are listed on <a href="/blog/">Investigations</a>.</p>
 <h2 id="background">Background</h2>
 <ul>
 {li_bg}

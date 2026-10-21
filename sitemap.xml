@@ -89,8 +89,18 @@
     </image:image>
   </url>
   <url>
+    <loc>https://www.octoprobe.ai/blog/about/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/og-image.png</image:loc>
+      <image:title>About OctoProbe News: Masthead, Ownership and Contact</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.octoprobe.ai/blog/contact/</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -100,7 +110,7 @@
   </url>
   <url>
     <loc>https://www.octoprobe.ai/blog/corrections/</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -109,18 +119,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.octoprobe.ai/blog/about/</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.octoprobe.ai/og-image.png</image:loc>
-      <image:title>About OctoProbe News: Masthead, Ownership and Contact</image:title>
-    </image:image>
-  </url>
-  <url>
     <loc>https://www.octoprobe.ai/blog/standards/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
