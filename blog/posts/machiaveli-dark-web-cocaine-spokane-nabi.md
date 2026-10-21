@@ -4,7 +4,7 @@ seo_title: "From ‘E-Commerce Agent’ to Dark-Web Cocaine Vendor"
 dek: "On LinkedIn he was an “Instagram Agent and E-commerce Business Owner.” Postal inspectors say he was also Machiaveli, mailing cocaine sold as ‘Medallin cartel’ product."
 description: "On LinkedIn, Salim Ghulam Nabi was an e-commerce agent. A federal affidavit says he was also Machiaveli, a darknet vendor selling ‘Medallin cartel’ cocaine."
 date: 2026-10-21T08:55:00-04:00
-date_modified: 2026-10-21T09:15:00-04:00
+date_modified: 2026-10-21T09:25:00-04:00
 slug: machiaveli-dark-web-cocaine-spokane-nabi
 canonical: https://www.octoprobe.ai/blog/machiaveli-dark-web-cocaine-spokane-nabi/
 section: Investigations
@@ -132,7 +132,7 @@ Nabi is 24, [The Spokesman-Review reported](https://www.spokesman.com/stories/20
 
 ## What the Open Record Adds
 
-OctoProbe started from a handful of identifiers: Nabi’s name, three email addresses, the phone number listed in the affidavit, and his LinkedIn and X handles. From those seeds, its searches built a graph of 104 nodes and 146 links in under ten minutes of run time.
+OctoProbe started from a handful of identifiers: Nabi’s name, three email addresses, the phone number listed in the affidavit, and his LinkedIn and X handles. From those seeds, its searches built a graph of 104 identifiers and 175 links in under ten minutes of run time.
 
 ![Full OctoProbe investigation network graph rooted at Salim Ghulam Nabi, fanning out from a few starting identifiers to more than a hundred connected accounts, addresses, emails and case records.](https://www.octoprobe.ai/blog/machiaveli-dark-web-cocaine-spokane-nabi/assets/graph-octoprobe.png)
 
@@ -140,7 +140,7 @@ From a handful of identifiers to a partial footprint: the OctoProbe investigatio
 
 ![Horizontal OctoProbe graph view for investigation 855b7df4-495a-49a8-81dc-06c416c14e90, labeled 104 identifiers and 175 links, with color-coded identifier boxes linked left to right.](https://www.octoprobe.ai/blog/machiaveli-dark-web-cocaine-spokane-nabi/assets/graph-octoprobe-secondary.png)
 
-A second view of the same OctoProbe investigation, listing 104 identifiers and 175 links. That tally counts connections differently from the 146 distinct links between identifiers in the investigation data. Source: OctoProbe.
+A second view of the same OctoProbe investigation, listing 104 identifiers and 175 links. Source: OctoProbe.
 
 One public handle still answers, and it appears to be the vendor’s own. A Telegram account at [t.me/machiavelilimited](https://t.me/machiavelilimited), display name “MachiaveliLimited,” resolved on October 21, 2026. It carries the same name as the MachiaveliLimited dark-web store described in Alder’s affidavit, and the OctoProbe investigation attributes the handle to Nabi. The affidavit itself does not mention Telegram.
 
