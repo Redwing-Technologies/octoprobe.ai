@@ -16,7 +16,7 @@ w("cover", f'<figure><img fetchpriority="high" decoding="async" src="{A}cover.pn
   'Illustration: OctoProbe News; map © OpenStreetMap contributors.</figcaption></figure>\n')
 
 w("takeaways", '''<div class="callout takeaways"><strong class="callout-label">Key Takeaways</strong><ul>
-<li>This reporter’s FOIA request, Obama Library case 24-09538-F, freed 3,951 Situation Room photographs and 3,851 electronic files from January 2009 through July 2010.</li>
+<li>My FOIA request, Obama Library case 24-09538-F, freed 3,951 Situation Room photographs and 3,851 electronic files from January 2009 through July 2010.</li>
 <li>The winning formula: name the record type, the people, the place and the time, and ask for the metadata. The metadata came back as spreadsheets with dates, photographers and original captions.</li>
 <li>The library withheld 1,208 images, most as confidential presidential advice (P5) or classified information (P1/(b)(1)).</li>
 <li>Free downloads are web-size. Publication-quality copies are ordered from the library by “P” number, at $14 to $17 per image.</li>
@@ -30,7 +30,7 @@ w("template", '''<div class="callout"><strong class="callout-label">A request yo
 </div>
 ''')
 
-w("letter", f'''<figure><img loading="lazy" decoding="async" src="{A}foia-24-09538-f-response-letter-p1-redacted.png?v=1" width="1100" height="1424" alt="First page of the Obama Presidential Library’s response letter in FOIA case 24-09538-F. It reports that about 5,159 images and 3,851 electronic files were processed, 1,208 images were withheld in whole and 3,951 images and 3,851 electronic files were released in whole, and it lists the withholding counts by code. The letter date, this reporter’s email address and the request date are covered by black bars."><figcaption>Page one of the response letter in case 24-09538-F. This reporter’s email address and two dates are redacted.</figcaption></figure>
+w("letter", f'''<figure><img loading="lazy" decoding="async" src="{A}foia-24-09538-f-response-letter-p1-redacted.png?v=1" width="1100" height="1424" alt="First page of the Obama Presidential Library’s response letter in FOIA case 24-09538-F. It reports that about 5,159 images and 3,851 electronic files were processed, 1,208 images were withheld in whole and 3,951 images and 3,851 electronic files were released in whole, and it lists the withholding counts by code. The letter date, my email address and the request date are covered by black bars."><figcaption>Page one of the response letter in case 24-09538-F. My email address and two dates are redacted.</figcaption></figure>
 ''')
 
 w("casenumber", f'''<figure><img loading="lazy" decoding="async" src="{A}foia-24-09538-f-response-letter-p3-case-number.png?v=1" width="1100" height="461" alt="Close of the response letter: the FOIA case log number is 24-09538-F (segment 1), followed by the signature of Jill Zawacki, Supervisory Archivist, Barack Obama Presidential Library."><figcaption>The letter’s last paragraph gives the case number, 24-09538-F (segment 1). It is signed by Jill Zawacki, supervisory archivist.</figcaption></figure>
