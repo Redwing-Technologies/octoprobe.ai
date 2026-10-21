@@ -840,11 +840,7 @@ LIGHTBOX_SLUGS = {"gaza-now-telegram-hamas-fundraising-sanctions-sabassi"}
 SHOT_RATIO = 1.2
 # Basename of an <img src> that is a mobile screenshot the ratio misses. The pass wraps these
 # with the same shot-mobile / shot-open markup, and --lightbox-only --check fails until it does.
-LIGHTBOX_INCLUDE = {
-    "gaza-now-telegram-hamas-fundraising-sanctions-sabassi": {
-        "telegram-gaza-now-egypt-donation-numbers.jpg",
-    },
-}
+LIGHTBOX_INCLUDE: dict[str, set[str]] = {}
 LIGHTBOX_CSS_TAG = '<link rel="stylesheet" href="/assets/css/blog-lightbox.css?v=lb1">'
 LIGHTBOX_JS_TAG = '<script src="/assets/js/blog-lightbox.js?v=lb1" defer></script>'
 _SHOT_WRAPPED_RE = re.compile(r'<figure class="shot-mobile"><a class="shot-open" href="[^"]*" aria-haspopup="dialog">(<img\b[^>]*>)</a>')
