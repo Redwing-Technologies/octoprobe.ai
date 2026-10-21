@@ -309,6 +309,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/assets/og-cover.png</image:loc>
+      <image:title>Signal Encryption Stops at the Endpoint</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.octoprobe.ai/blog/authors/colin-aamot/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>

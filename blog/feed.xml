@@ -14,8 +14,8 @@
     <copyright>© 2026 Redwing Technologies LLC</copyright>
     <managingEditor>press@octoprobe.ai (OctoProbe News)</managingEditor>
     <webMaster>press@octoprobe.ai (OctoProbe News)</webMaster>
-    <pubDate>Wed, 21 Oct 2026 15:09:00 -0400</pubDate>
-    <lastBuildDate>Wed, 21 Oct 2026 15:09:00 -0400</lastBuildDate>
+    <pubDate>Wed, 21 Oct 2026 16:01:22 -0400</pubDate>
+    <lastBuildDate>Wed, 21 Oct 2026 16:01:22 -0400</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <ttl>60</ttl>
     <image>
@@ -28,6 +28,23 @@
     <webfeeds:icon>https://www.octoprobe.ai/icon-512.png</webfeeds:icon>
     <webfeeds:accentColor>0288D1</webfeeds:accentColor>
     <webfeeds:analytics id="G-6T6HW79ZP0" engine="GoogleAnalytics"/>
+    <item>
+      <title>Signal Encryption Stops at the Endpoint</title>
+      <link>https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/</guid>
+      <description>sigtop unlocks Signal Desktop’s local store. E2EE is not endpoint security. Cross-group membership and durable UUIDv4 ACIs are the real collection surface.</description>
+      <pubDate>Wed, 21 Oct 2026 16:01:22 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Investigations</category>
+      <category>OSINT</category>
+      <category>Signal</category>
+      <category>Privacy</category>
+      <category>Methodology</category>
+      <enclosure url="https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/assets/og-cover.png" length="322632" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/assets/og-cover.png" medium="image" type="image/png" width="1200" height="630">
+        <media:description type="plain">Light OctoProbe cover over a grey North America map on a white field with the blue Signal logo at right and a Signal-blue accent rule beside the black headline Signal Encryption Stops at the Endpoint</media:description>
+      </media:content>
+    </item>
     <item>
       <title>Redacted, Not Useless: FOIA Logs as OSINT Pivots</title>
       <link>https://www.octoprobe.ai/blog/foia-assessments-redacted-logs-osint-pivots/</link>
