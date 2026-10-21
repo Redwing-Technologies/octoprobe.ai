@@ -7,10 +7,14 @@ SEO / AEO / chat-engine aware:
   - Validates title/description length
   - Regenerates sitemap.xml via scripts/gen-sitemap.py (from all built HTML)
   - Refreshes the Blog section in llms.txt and .well-known/llms.txt
+  - Adds the default social share bar under the byline of EVERY built post
+    (markdown and hand-built), see "Share bar" below
 
 Usage (from landing repo root):
   python3 scripts/build-blog.py
   python3 scripts/build-blog.py blog/posts/identifier-graph-osint-methodology.md
+  python3 scripts/build-blog.py --share-only          # only (re)insert the share bar in every post
+  python3 scripts/build-blog.py --share-only --check  # exit 1 if any post's share bar is missing/stale
 
 No remote deploy — write local HTML only. Requires no third-party packages.
 """
@@ -646,6 +650,7 @@ def build_one(md_path: Path, *, strict: bool = True) -> dict:
         .replace("{{DATE_DISPLAY}}", escape(date_display))
         .replace("{{TAGS_HTML}}", tags_html)
         .replace("{{BYLINE_HTML}}", byline_html)
+        .replace("{{SHARE_HTML}}", "\n      ".join(share_bar_html().split("\n")))
         .replace("{{HERO_HTML}}", hero_html)
         .replace("{{BODY}}", body_html)
     )
@@ -669,6 +674,151 @@ def build_one(md_path: Path, *, strict: bool = True) -> dict:
         "tags": tags,
         "path": md_path,
     }
+
+
+# ── Share bar ────────────────────────────────────────────────────────────────
+# Default social share bar, injected directly under the top byline of EVERY post at build time.
+# The build emits only the static container: inline SVG icons, aria labels, target/rel. It
+# carries no per-post URLs or text. /assets/js/blog-share.js reads the page's own
+# <link rel="canonical"> and <h1> (fallback og:title) at runtime, URL-encodes them and assembles
+# every share href, the mailto, the copy-link value, the utm params and the GA4 `share` event,
+# so each article is correct automatically. No third-party share scripts or trackers.
+# The bar starts `hidden` and the JS reveals it (no JS = no dead buttons). Styles: `.share-bar`
+# in /assets/css/blog.css. Idempotent: the block lives between SHARE_START / SHARE_END and is
+# re-rendered in place, so markdown posts (via the template) and hand-built posts (via the
+# refresh pass in main) carry byte-identical markup.
+
+SHARE_START = "<!-- share-bar -->"
+SHARE_END = "<!-- /share-bar -->"
+SHARE_JS = "/assets/js/blog-share.js?v=share1"
+SHARE_JS_TAG = f'<script src="{SHARE_JS}" defer></script>'
+
+# Brand marks: Simple Icons paths (CC0-1.0, simple-icons 16.35.0; LinkedIn from 9.x, which still
+# shipped it). 24x24 viewBox, single path, painted with currentColor (monochrome).
+SHARE_ICONS = {
+    "x": "M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z",
+    "facebook": "M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z",
+    "linkedin": "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z",
+    "reddit": "M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z",
+    "whatsapp": "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z",
+    "telegram": "M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z",
+    "bluesky": "M5.202 2.857C7.954 4.922 10.913 9.11 12 11.358c1.087-2.247 4.046-6.436 6.798-8.501C20.783 1.366 24 .213 24 3.883c0 .732-.42 6.156-.667 7.037-.856 3.061-3.978 3.842-6.755 3.37 4.854.826 6.089 3.562 3.422 6.299-5.065 5.196-7.28-1.304-7.847-2.97-.104-.305-.152-.448-.153-.327 0-.121-.05.022-.153.327-.568 1.666-2.782 8.166-7.847 2.97-2.667-2.737-1.432-5.473 3.422-6.3-2.777.473-5.899-.308-6.755-3.369C.42 10.04 0 4.615 0 3.883c0-3.67 3.217-2.517 5.202-1.026",
+}
+# Line icons (email, link, share, check): 24x24, stroked with currentColor.
+SHARE_LINE_ICONS = {
+    "email": '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/>',
+    "copy": '<path d="M10 13.5a4.5 4.5 0 0 0 6.4.4l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.6 1.6"/><path d="M14 10.5a4.5 4.5 0 0 0-6.4-.4l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.6-1.6"/>',
+    "share": '<path d="M12 3v12"/><path d="m7.5 7.5 4.5-4.5 4.5 4.5"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/>',
+    "check": '<path d="m5 12.5 4.5 4.5L19 7.5"/>',
+}
+
+# (key, aria label, bare endpoint). Display order. The static href is only the network's bare
+# share endpoint (identical on every post, keeps the markup valid); blog-share.js replaces it
+# with the full URL built from the page's canonical + headline.
+# Not included by design: any upgrade/support button, Truth Social, Gettr.
+SHARE_NETWORKS = [
+    ("x", "Share on X", "https://x.com/intent/post"),
+    ("facebook", "Share on Facebook", "https://facebook.com/sharer/sharer.php"),
+    ("linkedin", "Share on LinkedIn", "https://www.linkedin.com/sharing/share-offsite/"),
+    ("reddit", "Share on Reddit", "https://www.reddit.com/submit"),
+    ("whatsapp", "Share on WhatsApp", "https://api.whatsapp.com/send"),
+    ("telegram", "Share on Telegram", "https://t.me/share/url"),
+    ("bluesky", "Share on Bluesky", "https://bsky.app/intent/compose"),
+    ("email", "Share by email", "mailto:"),
+]
+
+
+def _svg(key: str) -> str:
+    if key in SHARE_ICONS:
+        return (f'<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">'
+                f'<path d="{SHARE_ICONS[key]}"/></svg>')
+    return (f'<svg class="share-ico-line" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" '
+            f'focusable="false">{SHARE_LINE_ICONS[key]}</svg>')
+
+
+def share_bar_html() -> str:
+    """The static share bar block (between SHARE_START / SHARE_END). Same for every post."""
+    items = []
+    for key, label, endpoint in SHARE_NETWORKS:
+        ext = "" if key == "email" else ' target="_blank" rel="noopener noreferrer"'
+        items.append(f'<li><a class="share-link" href="{endpoint}" data-share="{key}"{ext} aria-label="{label}">'
+                     f'{_svg(key)}</a></li>')
+    items.append(f'<li class="share-copy-item"><button type="button" class="share-link share-copy" '
+                 f'data-share="copy" aria-label="Copy link">{_svg("copy")}{_svg("check")}</button></li>')
+    return (
+        f'{SHARE_START}\n'
+        f'<div class="share-bar" role="group" aria-label="Share this article" hidden>'
+        f'<span class="share-label" aria-hidden="true">Share</span>'
+        f'<button type="button" class="share-native" aria-label="Share this article">{_svg("share")}<span>Share</span></button>'
+        f'<ul class="share-list">{"".join(items)}</ul>'
+        f'<span class="share-status" role="status" aria-live="polite"></span>'
+        f'</div>\n'
+        f'{SHARE_END}'
+    )
+
+
+_BYLINE_RE = re.compile(r'(?P<ind>[ \t]*)<p class="byline(?: has-avatar)?">.*?</p>', re.S)
+_SHARE_BLOCK_RE = re.compile(r"\n?[ \t]*" + re.escape(SHARE_START) + r".*?" + re.escape(SHARE_END), re.S)
+
+
+def _page_title(html: str) -> str:
+    from html import unescape
+    m = re.search(r"<h1[^>]*>(.*?)</h1>", html, re.S)
+    if not m:
+        raise BuildError("share bar: post has no <h1>")
+    return re.sub(r"\s+", " ", unescape(re.sub(r"<[^>]+>", "", m.group(1)))).strip()
+
+
+def inject_share_bar(html: str, label: str = "") -> str:
+    """Insert (or refresh) the share bar directly under the top byline, plus the share JS."""
+    canon = re.search(r'<link rel="canonical" href="([^"]+)"', html)
+    if not canon:
+        raise BuildError(f"{label}: share bar: no canonical link")
+    if not canon.group(1).startswith(SITE + "/"):
+        raise BuildError(f"{label}: share bar: canonical {canon.group(1)!r} is not on {SITE}")
+    _page_title(html)  # blog-share.js reads the headline from the <h1>; fail the build if absent
+    block = share_bar_html()
+    html = _SHARE_BLOCK_RE.sub("", html)
+    bylines = list(_BYLINE_RE.finditer(html))
+    if len(bylines) != 1:
+        raise BuildError(f"{label}: share bar: expected 1 top byline, found {len(bylines)}")
+    m = bylines[0]
+    ind = m.group("ind")
+    html = html[: m.end()] + "\n" + "\n".join(ind + ln for ln in block.split("\n")) + html[m.end():]
+    html = re.sub(r'<script src="/assets/js/blog-share\.js[^"]*" defer></script>\n?', "", html)
+    if "</body>" not in html:
+        raise BuildError(f"{label}: share bar: no </body>")
+    html = html.replace("</body>", SHARE_JS_TAG + "\n</body>", 1)
+    return html
+
+
+def share_bar_targets() -> list[Path]:
+    """Every live post: blog/<slug>/index.html with og:type article and a top byline
+    (skips _template, redirect stubs, and the about/standards/... pages)."""
+    out = []
+    for p in sorted((ROOT / "blog").glob("*/index.html")):
+        if p.parent.name.startswith(("_", ".")):
+            continue
+        html = p.read_text(encoding="utf-8")
+        if 'http-equiv="refresh"' in html:
+            continue
+        if '<meta property="og:type" content="article">' in html and _BYLINE_RE.search(html):
+            out.append(p)
+    return out
+
+
+def refresh_share_bars(check: bool = False) -> int:
+    """Re-render the share bar in every built post (markdown-built and hand-built). Returns stale count."""
+    stale = 0
+    for p in share_bar_targets():
+        old = p.read_text(encoding="utf-8")
+        new = inject_share_bar(old, str(p.relative_to(ROOT)))
+        if new != old:
+            stale += 1
+            if not check:
+                p.write_text(new, encoding="utf-8")
+                print(f"share bar: refreshed {p.relative_to(ROOT)}")
+    return stale
 
 
 # ── Sitemap + llms.txt ───────────────────────────────────────────────────────
@@ -795,9 +945,26 @@ def load_all_post_metas() -> list[dict]:
 
 
 def main():
-    args = [Path(a) for a in sys.argv[1:]]
+    flags = {"--no-strict", "--share-only", "--check"}
     strict = "--no-strict" not in sys.argv
-    args = [a for a in args if str(a) != "--no-strict"]
+    args = [Path(a) for a in sys.argv[1:] if a not in flags]
+
+    # --share-only: refresh just the share bar in every built post (no markdown rebuild; the
+    # markdown builders' output has been hand-edited since, so a full rebuild is not byte-safe).
+    # --share-only --check: exit 1 if any post is missing the bar or carries a stale one (CI).
+    if "--share-only" in sys.argv:
+        try:
+            stale = refresh_share_bars(check="--check" in sys.argv)
+        except BuildError as e:
+            print(f"ERROR: {e}", file=sys.stderr)
+            sys.exit(1)
+        if "--check" in sys.argv:
+            if stale:
+                print(f"{stale} post(s) have a missing or stale share bar. Run: python3 scripts/build-blog.py --share-only",
+                      file=sys.stderr)
+                sys.exit(1)
+            print(f"share bar is up to date on {len(share_bar_targets())} posts")
+        return
 
     if args:
         paths = [a if a.is_absolute() else ROOT / a for a in args]
@@ -816,6 +983,13 @@ def main():
             print(f"ERROR: {e}", file=sys.stderr)
             errors += 1
     if errors:
+        sys.exit(1)
+
+    # Share bar on every post, including hand-built posts that have no markdown source.
+    try:
+        refresh_share_bars()
+    except BuildError as e:
+        print(f"ERROR: {e}", file=sys.stderr)
         sys.exit(1)
 
     # Always regenerate sitemap/llms from the full posts corpus so a one-file

@@ -133,6 +133,15 @@ Author headshot (top byline): bylined authors may show a small circular photo be
 - **No generic methodology link.** Don't use `/blog/identifier-graph-osint-methodology/` (or any other generic methodology explainer) as filler. Prefer 1–3 substantive, closely related, recent OctoProbe posts with their exact live titles (verify each URL returns 200; never the post itself or a duplicate).
 - **Never empty.** If the de-duplication would empty the list, add 1–2 relevant OctoProbe posts.
 
+### Share bar (all posts)
+
+Every post gets a social share bar directly under the top byline, injected by `scripts/build-blog.py` (markdown posts through `{{SHARE_HTML}}` in `blog/_template.html`; hand-built posts through the refresh pass at the end of every build). The build emits only the static container (inline SVG icons, `aria-label`s, `target="_blank" rel="noopener noreferrer"` on outbound networks, none on Email/Copy) between `<!-- share-bar -->` and `<!-- /share-bar -->`; it holds no per-post URLs or text (each link's static `href` is the bare network endpoint, identical on every post).
+
+- `assets/js/blog-share.js` (`?v=share1`; bump when it changes) reads the page's own `<link rel="canonical">` and `<h1>` (fallback `og:title`) at runtime, URL-encodes them and builds every link (X, Facebook, LinkedIn, Reddit, WhatsApp, Telegram, Bluesky, Email), the copy-link value (clean canonical), `utm_source=<network>&utm_medium=social` on shared URLs, and the GA4 event `gtag('event','share',{method:<network>})`. ≤720px with `navigator.share` it shows one Share button (system sheet) and falls back to the icon row. The bar stays `hidden` without JavaScript. No third-party share scripts.
+- Styles: `.share-bar` in `/assets/css/blog.css` (OctoProbe tokens: `--soft` icons, `--blue` on hover/focus, 40px targets).
+- Not included by design: upgrade/support buttons, Truth Social, Gettr.
+- Only (re)insert the bar without rebuilding markdown (a full rebuild is not byte-safe for hand-edited output): `python3 scripts/build-blog.py --share-only`. CI runs `--share-only --check`. Posts from the other `scripts/build-*-post.py` builders pick it up on the next `build-blog.py --share-only`.
+
 ### Editor's note
 
 `<p class="editor-note">Editor’s note: …</p>` is styled site-wide in `/assets/css/blog.css` (`.prose .editor-note`); do not add per-post overrides. When `blog.css` changes, bump its `?v=` query in `blog/_template.html`, `scripts/build-adtech-post.py`, and every built `blog/**/index.html`.
