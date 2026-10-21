@@ -616,6 +616,7 @@ def build_one(md_path: Path, *, strict: bool = True) -> dict:
 <meta name="author" content="{escape(person['name'] if person else (meta.get('author') or 'OctoProbe News'))}">
 <link rel="alternate" type="text/plain" title="LLM context (llms.txt)" href="/llms.txt">
 <link rel="alternate" type="text/plain" title="AI discovery (ai.txt)" href="/ai.txt">
+<link rel="alternate" type="application/rss+xml" title="OctoProbe News" href="https://www.octoprobe.ai/blog/feed.xml">
 <meta name="ai-content-declaration" content="human-authored; product documentation and OSINT methodology">
 <link rel="canonical" href="{escape(canonical)}">
 <meta property="og:type" content="article">

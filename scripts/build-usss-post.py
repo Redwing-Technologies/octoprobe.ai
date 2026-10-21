@@ -166,6 +166,7 @@ def build(md_path: Path, out_root: Path):
 <meta name="author" content="{escape(person['name'] if person else 'OctoProbe Staff')}">
 <link rel="alternate" type="text/plain" title="LLM context (llms.txt)" href="/llms.txt">
 <link rel="alternate" type="text/plain" title="AI discovery (ai.txt)" href="/ai.txt">
+<link rel="alternate" type="application/rss+xml" title="OctoProbe News" href="https://www.octoprobe.ai/blog/feed.xml">
 <meta name="ai-content-declaration" content="human-authored; investigative reporting from public records">
 <link rel="canonical" href="{escape(canonical)}">
 <meta property="og:type" content="article">

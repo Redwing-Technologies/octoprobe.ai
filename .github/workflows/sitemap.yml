@@ -34,6 +34,7 @@ jobs:
           grep -q '^Sitemap: https://www.octoprobe.ai/sitemap.xml' robots.txt
           python3 -c "import xml.dom.minidom as m; m.parse('blog/feed.xml'); print('blog/feed.xml well-formed')"
           python3 -c "import xml.dom.minidom as m; m.parse('sitemap-news.xml'); print('sitemap-news.xml well-formed')"
+          grep -q '^Sitemap: https://www.octoprobe.ai/sitemap-news.xml' robots.txt
       - name: Every served page carries exactly one Google Analytics tag
         run: |
           fail=0
@@ -61,3 +62,14 @@ jobs:
             grep -q "/blog/authors/$name/</loc>" sitemap.xml || { echo "missing author $name"; exit 1; }
           done
           echo "all author pages listed"
+      - name: Homepage and every blog page advertise the RSS feed exactly once
+        run: |
+          fail=0
+          for f in index.html blog/index.html blog/*/index.html blog/authors/*/index.html; do
+            case "$f" in blog/_*) continue;; esac
+            grep -q 'http-equiv="refresh"' "$f" && continue
+            n=$(grep -c '<link rel="alternate" type="application/rss+xml" title="OctoProbe News" href="https://www.octoprobe.ai/blog/feed.xml">' "$f")
+            [ "$n" = 1 ] || { echo "RSS autodiscovery link missing or duplicated in $f ($n)"; fail=1; }
+          done
+          [ "$fail" = 0 ] && echo "RSS autodiscovery link present once on every page"
+          exit $fail

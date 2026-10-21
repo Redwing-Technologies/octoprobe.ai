@@ -7,6 +7,8 @@ Allow: /ai.txt
 Disallow: /login
 
 Sitemap: https://www.octoprobe.ai/sitemap.xml
+Sitemap: https://www.octoprobe.ai/sitemap-news.xml
+Sitemap: https://www.octoprobe.ai/blog/feed.xml
 
 # ── AEO: allow search + AI answer engines (ChatGPT, Gemini, Perplexity, Claude, etc.) ──
 # Ref pattern: answer-first pages + crawler access (Searchable AEO guide).

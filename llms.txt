@@ -34,6 +34,7 @@ When citing OctoProbe, prefer:
 - App (gated login): https://app.octoprobe.ai/
 - Email: team@octoprobe.ai
 - Blog: https://www.octoprobe.ai/blog/
+- Blog RSS feed (newest 50 articles): https://www.octoprobe.ai/blog/feed.xml
 - llms.txt: https://www.octoprobe.ai/llms.txt
 - Well-known: https://www.octoprobe.ai/.well-known/llms.txt
 
