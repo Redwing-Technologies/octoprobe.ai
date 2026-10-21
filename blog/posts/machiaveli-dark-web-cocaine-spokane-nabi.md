@@ -4,7 +4,7 @@ seo_title: "From ‘E-Commerce Agent’ to Dark-Web Cocaine Vendor"
 dek: "On LinkedIn he was an “Instagram Agent and E-commerce Business Owner.” Postal inspectors say he was also Machiaveli, mailing cocaine sold as ‘Medallin cartel’ product."
 description: "On LinkedIn, Salim Ghulam Nabi was an e-commerce agent. A federal affidavit says he was also Machiaveli, a darknet vendor selling ‘Medallin cartel’ cocaine."
 date: 2026-10-21T08:55:00-04:00
-date_modified: 2026-10-21T08:55:00-04:00
+date_modified: 2026-10-21T09:15:00-04:00
 slug: machiaveli-dark-web-cocaine-spokane-nabi
 canonical: https://www.octoprobe.ai/blog/machiaveli-dark-web-cocaine-spokane-nabi/
 section: Investigations
@@ -19,8 +19,8 @@ faq:
     a: "It is a darknet cocaine vendor persona, also called NiccoloMachiaveli and Machiaveli Ltd. In a federal affidavit, Postal Inspector P. Justin Alder says investigators believe Salim Ghulam Nabi of Spokane ran it and sold on eight markets from about November 2022."
   - q: "What is Salim Ghulam Nabi charged with?"
     a: "A September 24, 2026, criminal complaint charges him with distribution of cocaine and use of a communication facility in a drug felony. A grand jury returned a two-count indictment on October 7; its text is not public."
-  - q: "Was the cocaine really from the Medellín cartel?"
-    a: "The affidavit does not say. “Medallin cartel Era Ether Washed Cocaine” was the name of the product listing. The filing alleges no link to any Colombian group."
+  - q: "Is the cocaine tied to the Medellín cartel?"
+    a: "Per Postal Inspector Alder’s affidavit, the vendor sold it as “Medallin cartel Era Ether Washed Cocaine,” the name on the listing the undercover buyer ordered from. The affidavit does not say where the cocaine came from or describe any other connection to the cartel."
   - q: "How did Nabi present himself online?"
     a: "His LinkedIn profile calls him an “Instagram Agent and E-commerce Business Owner” and lists Shopify and Eastern Washington University. An older X account under his handle posted discount sunglasses ads and subscriber schemes. Neither account appears in the court record."
   - q: "How did investigators connect the persona to Nabi?"
@@ -43,7 +43,7 @@ Salim Ghulam Nabi’s LinkedIn profile photo. Source: [LinkedIn](https://www.lin
 
 Nabi was arrested on September 23 and charged by criminal complaint the next day with distribution of cocaine and use of a communication facility in a drug felony. On October 7, a federal grand jury returned a two-count indictment, according to the [court docket](https://www.courtlistener.com/docket/74934725/united-states-v-nabi/). The indictment itself is not public.
 
-The “Medallin cartel” name is a sales label. The affidavit does not say where the cocaine came from, and it alleges no tie to any Colombian trafficking group. What it lays out is narrower and more concrete: one email address, four postal accounts, eight darknet markets and a parcel traced to an apartment building in Spokane.
+According to Alder’s affidavit, the vendor marketed its cocaine under the Medellín cartel’s name: the listing the undercover buyer ordered from was titled “[Medallin cartel Era Ether Washed Cocaine](https://storage.courtlistener.com/recap/gov.uscourts.waed.119248/gov.uscourts.waed.119248.2.0.pdf#page=4).” The affidavit does not say where the cocaine was sourced. What it lays out in detail is one email address, four postal accounts, eight darknet markets and a parcel traced to an apartment building in Spokane.
 
 ## Key Takeaways
 
@@ -76,7 +76,7 @@ None of this is evidence of drug dealing, and neither account appears in the cou
 
 The buy took place on May 14, 2026. Alder wrote that law enforcement “[made an undercover purchase of ‘Medallin cartel Era Ether Washed Cocaine’ sold by ‘Machiavelilimited’ with Monero cryptocurrency on the MachiaveliLimited dark web private store](https://storage.courtlistener.com/recap/gov.uscourts.waed.119248/gov.uscourts.waed.119248.2.0.pdf#page=4).”
 
-The product name borrows the aura of Pablo Escobar’s Medellín cartel, which the filing spells “Medallin.” Darknet vendors routinely brand their stock with origin stories they never have to prove. Monero, the payment method, is a privacy coin built to hide senders, receivers and amounts. The affidavit gives no wallet address.
+The listing invokes Pablo Escobar’s Medellín cartel, which the filing spells “Medallin.” The affidavit quotes the product name but does not trace the drugs to Colombia or describe the vendor’s suppliers. Monero, the payment method, is a privacy coin built to hide senders, receivers and amounts. The affidavit gives no wallet address.
 
 Six days later, on May 20, investigators opened the parcel. It was a USPS Priority Mail parcel with a label dated May 15 and a return address of “A&D INC.” on North Jefferson Lane in Spokane. Inside was “[a white powdery substance](https://storage.courtlistener.com/recap/gov.uscourts.waed.119248/gov.uscourts.waed.119248.2.0.pdf#page=4)” that a TruNarc narcotics analyzer flagged as a “[presumptive positive for cocaine](https://storage.courtlistener.com/recap/gov.uscourts.waed.119248/gov.uscourts.waed.119248.2.0.pdf#page=4).” The filing does not say whether A&D Inc. exists.
 
@@ -132,15 +132,21 @@ Nabi is 24, [The Spokesman-Review reported](https://www.spokesman.com/stories/20
 
 ## What the Open Record Adds
 
-OctoProbe started from a handful of identifiers: Nabi’s name, three email addresses, the phone number listed in the affidavit, and his LinkedIn and X handles. From those seeds, its searches built a graph of 104 nodes and 146 links in about 14 minutes.
+OctoProbe started from a handful of identifiers: Nabi’s name, three email addresses, the phone number listed in the affidavit, and his LinkedIn and X handles. From those seeds, its searches built a graph of 104 nodes and 146 links in under ten minutes of run time.
 
 ![Full OctoProbe investigation network graph rooted at Salim Ghulam Nabi, fanning out from a few starting identifiers to more than a hundred connected accounts, addresses, emails and case records.](https://www.octoprobe.ai/blog/machiaveli-dark-web-cocaine-spokane-nabi/assets/graph-octoprobe.png)
 
 From a handful of identifiers to a partial footprint: the OctoProbe investigation graph, rooted at Salim Ghulam Nabi. Source: OctoProbe.
 
-One public handle still answers. A Telegram account at [t.me/machiavelilimited](https://t.me/machiavelilimited), display name “MachiaveliLimited,” resolved on October 21, 2026. The affidavit never mentions Telegram, and a matching handle proves nothing on its own about who runs it.
+![Horizontal OctoProbe graph view for investigation 855b7df4-495a-49a8-81dc-06c416c14e90, labeled 104 identifiers and 175 links, with color-coded identifier boxes linked left to right.](https://www.octoprobe.ai/blog/machiaveli-dark-web-cocaine-spokane-nabi/assets/graph-octoprobe-secondary.png)
 
-The graph also shows how fast a common name collects strangers. Searches on a similar Outlook address returned a record from Jeddah, Saudi Arabia, with a 1991 birth date. That does not fit a 24-year-old, so the analyst set it aside. Consumer-service sign-ups tied to the iCloud address, such as fitness and language-learning apps, say nothing about drugs and were not treated as evidence. Everything in this report about the alleged operation comes from the court record.
+A second view of the same OctoProbe investigation, listing 104 identifiers and 175 links. That tally counts connections differently from the 146 distinct links between identifiers in the investigation data. Source: OctoProbe.
+
+One public handle still answers, and it appears to be the vendor’s own. A Telegram account at [t.me/machiavelilimited](https://t.me/machiavelilimited), display name “MachiaveliLimited,” resolved on October 21, 2026. It carries the same name as the MachiaveliLimited dark-web store described in Alder’s affidavit, and the OctoProbe investigation attributes the handle to Nabi. The affidavit itself does not mention Telegram.
+
+![Telegram profile card for MachiaveliLimited, handle @machiavelilimited, with a pixel-art avatar and a Send Message button.](https://www.octoprobe.ai/blog/machiaveli-dark-web-cocaine-spokane-nabi/assets/telegram-machiaveli-channel.png)
+
+The @machiavelilimited account on Telegram, which still resolves. It shares the name of the MachiaveliLimited store in the affidavit, and the OctoProbe investigation attributes it to Nabi. Source: [Telegram](https://t.me/machiavelilimited).
 
 ## How This Story Was Reported
 
@@ -156,9 +162,9 @@ It is a darknet cocaine vendor persona, also called NiccoloMachiaveli and Machia
 
 A September 24, 2026, criminal complaint charges him with distribution of cocaine and use of a communication facility in a drug felony. A grand jury returned a two-count indictment on October 7; its text is not public.
 
-### Was the cocaine really from the Medellín cartel?
+### Is the cocaine tied to the Medellín cartel?
 
-The affidavit does not say. “Medallin cartel Era Ether Washed Cocaine” was the name of the product listing. The filing alleges no link to any Colombian group.
+Per Postal Inspector Alder’s affidavit, the vendor sold it as “Medallin cartel Era Ether Washed Cocaine,” the name on the listing the undercover buyer ordered from. The affidavit does not say where the cocaine came from or describe any other connection to the cartel.
 
 ### How did Nabi present himself online?
 
