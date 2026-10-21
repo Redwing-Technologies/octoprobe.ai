@@ -16,7 +16,7 @@ Usage (from landing repo root):
   python3 scripts/build-blog.py --share-only          # only (re)insert the share bar in every post
   python3 scripts/build-blog.py --share-only --check  # exit 1 if any post's share bar is missing/stale
   python3 scripts/build-blog.py --lightbox-only        # tall-screenshot lightbox (LIGHTBOX_SLUGS posts)
-  python3 scripts/build-blog.py --lightbox-only --check  # exit 1 if a tall screenshot lacks it
+  python3 scripts/build-blog.py --lightbox-only --check  # exit 1 if a tall screenshot or a LIGHTBOX_INCLUDE image lacks it
 
 No remote deploy — write local HTML only. Requires no third-party packages.
 """
@@ -832,12 +832,19 @@ def refresh_share_bars(check: bool = False) -> int:
 # shows at ~1/3 of the column (~60% on phones) and opens larger in an accessible modal.
 # The <img> (src, alt, width, height, loading) is left byte-identical, so SEO, the image sitemap
 # (og:image only) and CLS are unaffected. Idempotent: the pass unwraps its own markup and re-applies
-# it, so it is safe on hand-built posts. Calibrated on Gaza Now (Oct. 21, 2026): the three reference
-# screenshots are 1.238, 1.788 and 1.747; the post's near-square images are <= 1.051.
-# Rolled out one post at a time: add a slug to LIGHTBOX_SLUGS to enable it there.
+# it, so it is safe on hand-built posts. Calibrated on Gaza Now (Oct. 21, 2026): the ratio catches
+# 1.238, 1.788, 1.747 and 1.360; near-square images (<= 1.051) stay full width unless named in
+# LIGHTBOX_INCLUDE. Rolled out one post at a time: add a slug to LIGHTBOX_SLUGS to enable it there.
 
 LIGHTBOX_SLUGS = {"gaza-now-telegram-hamas-fundraising-sanctions-sabassi"}
 SHOT_RATIO = 1.2
+# Basename of an <img src> that is a mobile screenshot the ratio misses. The pass wraps these
+# with the same shot-mobile / shot-open markup, and --lightbox-only --check fails until it does.
+LIGHTBOX_INCLUDE = {
+    "gaza-now-telegram-hamas-fundraising-sanctions-sabassi": {
+        "telegram-gaza-now-egypt-donation-numbers.jpg",
+    },
+}
 LIGHTBOX_CSS_TAG = '<link rel="stylesheet" href="/assets/css/blog-lightbox.css?v=lb1">'
 LIGHTBOX_JS_TAG = '<script src="/assets/js/blog-lightbox.js?v=lb1" defer></script>'
 _SHOT_WRAPPED_RE = re.compile(r'<figure class="shot-mobile"><a class="shot-open" href="[^"]*" aria-haspopup="dialog">(<img\b[^>]*>)</a>')
@@ -849,8 +856,9 @@ def _attr(tag: str, name: str) -> str | None:
     return m.group(1) if m else None
 
 
-def apply_lightbox(html: str, label: str = "") -> str:
+def apply_lightbox(html: str, label: str = "", slug: str = "") -> str:
     """(Re)apply the tall-screenshot thumbnail + lightbox markup to one post."""
+    include = LIGHTBOX_INCLUDE.get(slug, ())
     html = _SHOT_WRAPPED_RE.sub(r"<figure>\1", html)
     html = html.replace(LIGHTBOX_CSS_TAG + "\n", "").replace(LIGHTBOX_JS_TAG + "\n", "")
 
@@ -861,11 +869,21 @@ def apply_lightbox(html: str, label: str = "") -> str:
             raise BuildError(f"{label}: lightbox: figure image {src!r} has no width/height (needed for ratio + CLS)")
         if not (_attr(img, "alt") or "").strip():
             raise BuildError(f"{label}: lightbox: figure image {src!r} has no alt text")
-        if int(h) / int(w) < SHOT_RATIO:
+        name = (src or "").rsplit("/", 1)[-1]
+        if int(h) / int(w) < SHOT_RATIO and name not in include:
             return m.group(0)
         return f'<figure class="shot-mobile"><a class="shot-open" href="{src}" aria-haspopup="dialog">{img}</a>'
 
     html, n = _BARE_FIG_IMG_RE.subn(wrap, html)
+    for name in sorted(include):
+        if not re.search(
+            r'<figure class="shot-mobile"><a class="shot-open" href="[^"]*' + re.escape(name) + r'"',
+            html,
+        ):
+            raise BuildError(
+                f"{label}: lightbox: included screenshot {name!r} is not wrapped "
+                "(missing from the post, or not a bare <figure><img>)"
+            )
     if 'class="shot-mobile"' not in html:
         return html
     css = re.search(r'<link rel="stylesheet" href="/assets/css/blog\.css[^"]*">\n?', html)
@@ -889,7 +907,7 @@ def refresh_lightbox(check: bool = False) -> int:
         if not p.exists():
             raise BuildError(f"lightbox: {p.relative_to(ROOT)} not found")
         old = p.read_text(encoding="utf-8")
-        new = apply_lightbox(old, str(p.relative_to(ROOT)))
+        new = apply_lightbox(old, str(p.relative_to(ROOT)), slug)
         if new != old:
             stale += 1
             if not check:
