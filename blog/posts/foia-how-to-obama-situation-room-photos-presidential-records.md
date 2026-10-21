@@ -1,6 +1,6 @@
 ---
 title: "How to FOIA the Situation Room: One Request Pried Loose Thousands of Obama-Era Photos"
-og_title: "How to FOIA the Situation Room: This Reporter’s Request Freed 3,951 Obama Photos and 3,851 Files"
+og_title: "How to FOIA the Situation Room: My Request Freed 3,951 Obama Photos and 3,851 Files"
 seo_title: "How to FOIA Presidential Records: Situation Room Photos"
 dek: "A Freedom of Information Act request to the Obama Presidential Library freed thousands of photographs from inside the White House Situation Room, with the metadata to match. Here is how it was written, what came back and how to file your own."
 description: "A FOIA how-to built on a real win: case 24-09538-F freed 3,951 Obama Situation Room photos and 3,851 files. How to file, read exemptions and get copies."
@@ -15,7 +15,7 @@ hero_alt: "Duotone photograph of President Obama in the Situation Room over a da
 byline: Colin Aamot
 author: Colin Aamot
 primary_question: How do you use FOIA to get records like White House photographs released?
-answer_first: File a specific written request with the office that holds the records, name the record type, the people, the place and the metadata you want, and track it by case number. This reporter's request to the Obama Presidential Library, case 24-09538-F, freed 3,951 Situation Room photographs and 3,851 electronic files, free to download.
+answer_first: File a specific written request with the office that holds the records, name the record type, the people, the place and the metadata you want, and track it by case number. My request to the Obama Presidential Library, case 24-09538-F, freed 3,951 Situation Room photographs and 3,851 electronic files, free to download.
 faq:
   - q: Who can file a FOIA request?
     a: Any person. The Freedom of Information Act says records must be made available to "any person" who reasonably describes them and follows the agency's rules. You don't need to be a journalist or a U.S. citizen, and you don't have to say why you want the records.
@@ -26,7 +26,7 @@ faq:
   - q: What is a withdrawal sheet?
     a: It is the placeholder the National Archives leaves where it pulls a record. It names the case, the reason codes, such as P1 or b(1), and an identifier for the missing item. For a White House photograph that identifier is the frame number, or "P" number, which you can cite to ask for review of that one image.
   - q: Can I get classified photos released?
-    a: You can ask. The Obama Library's letter in case 24-09538-F told this reporter that its withdrawal sheets can be used to request a declassification review of specific classified records, either under the existing FOIA request or through mandatory declassification review under Executive Order 13526. Agencies decide whether the information is still classified.
+    a: You can ask. The Obama Library's letter in case 24-09538-F told me that its withdrawal sheets can be used to request a declassification review of specific classified records, either under the existing FOIA request or through mandatory declassification review under Executive Order 13526. Agencies decide whether the information is still classified.
 ---
 
 {{MODULE:cover}}
@@ -35,7 +35,7 @@ faq:
 
 {{MODULE:takeaways}}
 
-Yes, you can pry remarkable material loose with the Freedom of Information Act. This reporter did. One request to the Barack Obama Presidential Library, logged as case 24-09538-F, pulled 3,851 electronic files and thousands of photographs out of the White House Situation Room: terrorism threat briefings, National Security Council meetings, video calls with foreign leaders and sessions on Iran, Iraq, Afghanistan, Pakistan and North Korea.
+Yes, you can pry remarkable material loose with the Freedom of Information Act. I did. My request to the Barack Obama Presidential Library, logged as case 24-09538-F, pulled 3,851 electronic files and thousands of photographs out of the White House Situation Room: terrorism threat briefings, National Security Council meetings, video calls with foreign leaders and sessions on Iran, Iraq, Afghanistan, Pakistan and North Korea.
 
 The National Archives processed about 5,159 images for the first segment of the request and released 3,951 of them in full, according to the library's response letter. Every released photo is now free to download, and each comes with the date, the photographer and the caption the White House Photo Office wrote at the time.
 
@@ -57,7 +57,7 @@ Ask the office that has the records. For an agency, that is its FOIA office. For
 
 ### Step 2: Describe the Records Precisely
 
-Name four things: the record type, the people, the place and the time. Then ask for the data that describes each record. This reporter’s request in case 24-09538-F, as the library summarized it, sought "all photographs of President Obama or Vice President Biden in the situation room, as well as the associated date/time groups and metadata of the photo."
+Name four things: the record type, the people, the place and the time. Then ask for the data that describes each record. My request in case 24-09538-F, as the library summarized it, sought "all photographs of President Obama or Vice President Biden in the situation room, as well as the associated date/time groups and metadata of the photo."
 
 That one sentence did three jobs. It named a record type archivists can search: White House photographs. It named a place that shows up in photo captions: the Situation Room. And it asked for the metadata, which turned thousands of pictures into a searchable, dated record.
 
@@ -81,7 +81,7 @@ Withheld isn't always final. You can appeal, ask for a declassification review o
 
 ## The Worked Example: Case 24-09538-F
 
-The Obama Library's answer to this reporter's request came in a seven-page package: a three-page response letter signed by Jill Zawacki, a supervisory archivist at the library, a key to the restriction codes and a finding aid that describes the release.
+The Obama Library's answer to my request came in a seven-page package: a three-page response letter signed by Jill Zawacki, a supervisory archivist at the library, a key to the restriction codes and a finding aid that describes the release.
 
 {{MODULE:letter}}
 
@@ -105,7 +105,7 @@ The library listed every reason it withheld images. "Some images may be restrict
 
 {{MODULE:exemptions}}
 
-The biggest category is P5, confidential advice to the president, at 1,178 images. Next is P1/(b)(1), classified national security information, at 745. Those two codes are where this reporter, or anyone filing a similar request, can push hardest, as the advanced moves below explain.
+The biggest category is P5, confidential advice to the president, at 1,178 images. Next is P1/(b)(1), classified national security information, at 745. Those two codes are where I, or anyone filing a similar request, can push hardest, as the advanced moves below explain.
 
 ### What the Metadata Looks Like
 
@@ -131,7 +131,7 @@ To see the photographs, [search the National Archives Catalog for "24-09538-F"](
 
 ### Download the Free Versions
 
-The free catalog downloads this reporter pulled are JPEG files 1,024 pixels wide. That is enough for a web story or for research. It isn't enough for print or a large display.
+The free catalog downloads I pulled are JPEG files 1,024 pixels wide. That is enough for a web story or for research. It isn't enough for print or a large display.
 
 ### Order High-Resolution Copies
 
