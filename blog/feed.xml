@@ -14,8 +14,8 @@
     <copyright>© 2026 Redwing Technologies LLC</copyright>
     <managingEditor>press@octoprobe.ai (OctoProbe News)</managingEditor>
     <webMaster>press@octoprobe.ai (OctoProbe News)</webMaster>
-    <pubDate>Wed, 21 Oct 2026 16:01:22 -0400</pubDate>
-    <lastBuildDate>Wed, 21 Oct 2026 16:29:49 -0400</lastBuildDate>
+    <pubDate>Wed, 21 Oct 2026 16:49:00 -0400</pubDate>
+    <lastBuildDate>Wed, 21 Oct 2026 16:49:00 -0400</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <ttl>60</ttl>
     <image>
@@ -28,6 +28,23 @@
     <webfeeds:icon>https://www.octoprobe.ai/icon-512.png</webfeeds:icon>
     <webfeeds:accentColor>0288D1</webfeeds:accentColor>
     <webfeeds:analytics id="G-6T6HW79ZP0" engine="GoogleAnalytics"/>
+    <item>
+      <title>Pegasus Took a Phone’s Past. AI Makes It Attributable</title>
+      <link>https://www.octoprobe.ai/blog/pegasus-nso-capabilities-historical-data-attribution/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/pegasus-nso-capabilities-historical-data-attribution/</guid>
+      <description>Op-ed: NSO’s own Pegasus 3.0 product description, filed in the WhatsApp case, pitches pulling a phone’s full history. AI makes that past the key to attribution.</description>
+      <pubDate>Wed, 21 Oct 2026 16:49:00 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Op-Ed</category>
+      <category>OSINT</category>
+      <category>Pegasus</category>
+      <category>Spyware</category>
+      <category>Attribution</category>
+      <enclosure url="https://www.octoprobe.ai/blog/pegasus-nso-capabilities-historical-data-attribution/assets/og-cover.png" length="526984" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/pegasus-nso-capabilities-historical-data-attribution/assets/og-cover.png" medium="image" type="image/png" width="1200" height="630">
+        <media:description type="plain">Op-ed cover: dark OctoProbe cover over a world map with a drawn smartphone whose screen shows a timeline of message, Wi-Fi, and call records, with fading record bars rising out of the phone, beside the headline Pegasus Took a Phone’s Past</media:description>
+      </media:content>
+    </item>
     <item>
       <title>Signal Encryption Stops at the Endpoint</title>
       <link>https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/</link>

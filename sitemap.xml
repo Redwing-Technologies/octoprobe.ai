@@ -319,6 +319,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://www.octoprobe.ai/blog/pegasus-nso-capabilities-historical-data-attribution/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/blog/pegasus-nso-capabilities-historical-data-attribution/assets/og-cover.png</image:loc>
+      <image:title>Op-Ed: Pegasus Took a Phone’s Past. AI Makes It Attributable</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.octoprobe.ai/blog/authors/colin-aamot/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
