@@ -1,0 +1,146 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Old Secrets, New Leads: DIA’s Islamic Jihad Files as OSINT",
+    "description": "DIA reports on Palestinian Islamic Jihad from 2001 and 2005, once classified up to SECRET//NOFORN, map its cells, Damascus command and Iranian money.",
+    "datePublished": "2026-10-21T13:22:00-04:00",
+    "dateModified": "2026-10-21T13:22:00-04:00",
+    "author": {
+      "@type": "Person",
+      "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#person",
+      "name": "Colin Aamot",
+      "url": "https://www.octoprobe.ai/blog/authors/colin-aamot/"
+    },
+    "publisher": {
+      "@type": "NewsMediaOrganization",
+      "@id": "https://www.octoprobe.ai/blog/#newsroom",
+      "name": "OctoProbe News",
+      "url": "https://www.octoprobe.ai/blog/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.octoprobe.ai/icon-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Redwing Technologies LLC",
+        "url": "https://rook-intel.com/"
+      }
+    },
+    "image": [
+      "https://www.octoprobe.ai/blog/dia-islamic-jihad-foia-intelligence-reports-osint/assets/og-cover.png",
+      "https://www.octoprobe.ai/blog/dia-islamic-jihad-foia-intelligence-reports-osint/assets/cover.png"
+    ],
+    "keywords": "Palestinian Islamic Jihad, PIJ, Saraya al-Quds, al-Quds Brigades, Defense Intelligence Agency, DIA FOIA, Intelligence Information Report, IIR, SECRET//NOFORN, al-Aqsa Intifada, Second Intifada, HaSharon Mall bombing, Netanya July 12 2005, Tulkarm, Damascus, Iran, saraya.ps, Derak Cloud, DNSPod, FOIA exemption (b)(1), FOIA exemption (b)(3), 10 U.S.C. 424, 50 U.S.C. 3024, Mariupol theater, Myanmar FOIA, OSINT, identifier graph",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.octoprobe.ai/blog/dia-islamic-jihad-foia-intelligence-reports-osint/"
+    },
+    "url": "https://www.octoprobe.ai/blog/dia-islamic-jihad-foia-intelligence-reports-osint/",
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "OctoProbe News",
+      "url": "https://www.octoprobe.ai/blog/"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        ".answer-first",
+        ".callout.takeaways",
+        ".prose h2"
+      ]
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Palestinian Islamic Jihad"
+      },
+      {
+        "@type": "Thing",
+        "name": "Second Intifada"
+      },
+      {
+        "@type": "Thing",
+        "name": "Freedom of Information Act"
+      },
+      {
+        "@type": "Thing",
+        "name": "Open-source intelligence"
+      },
+      {
+        "@type": "Thing",
+        "name": "Defense Intelligence Agency"
+      }
+    ],
+    "mentions": [
+      {
+        "@type": "GovernmentOrganization",
+        "name": "Defense Intelligence Agency",
+        "url": "https://www.dia.mil/FOIA/FOIA-Electronic-Reading-Room/"
+      },
+      {
+        "@type": "Organization",
+        "name": "Palestinian Islamic Jihad"
+      },
+      {
+        "@type": "Place",
+        "name": "Netanya, Israel"
+      },
+      {
+        "@type": "Place",
+        "name": "Tulkarm"
+      },
+      {
+        "@type": "Report",
+        "name": "DIA Intelligence Information Report, DOI July 13, 2005, PIJ suicide bombing in Netanya",
+        "url": "https://www.dia.mil/FOIA/FOIA-Electronic-Reading-Room/FileId/246079/"
+      },
+      {
+        "@type": "Report",
+        "name": "DIA Intelligence Information Report, DOI March 30, 2001, al-Aqsa Intifada and Egypt",
+        "url": "https://www.dia.mil/FOIA/FOIA-Electronic-Reading-Room/FileId/246080/"
+      },
+      {
+        "@type": "Legislation",
+        "name": "Executive Order 13526",
+        "url": "https://www.archives.gov/isoo/policy-documents/cnsi-eo.html"
+      },
+      {
+        "@type": "Legislation",
+        "name": "10 U.S.C. § 424",
+        "url": "https://www.law.cornell.edu/uscode/text/10/424"
+      },
+      {
+        "@type": "Organization",
+        "name": "OctoProbe AI"
+      }
+    ],
+    "articleSection": "Investigations"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.octoprobe.ai/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://www.octoprobe.ai/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Old Secrets, New Leads: DIA’s Islamic Jihad Files as OSINT",
+        "item": "https://www.octoprobe.ai/blog/dia-islamic-jihad-foia-intelligence-reports-osint/"
+      }
+    ]
+  }
+]
