@@ -14,8 +14,8 @@
     <copyright>© 2026 Redwing Technologies LLC</copyright>
     <managingEditor>press@octoprobe.ai (OctoProbe News)</managingEditor>
     <webMaster>press@octoprobe.ai (OctoProbe News)</webMaster>
-    <pubDate>Wed, 21 Oct 2026 08:55:00 -0400</pubDate>
-    <lastBuildDate>Wed, 21 Oct 2026 09:25:00 -0400</lastBuildDate>
+    <pubDate>Wed, 21 Oct 2026 09:45:00 -0400</pubDate>
+    <lastBuildDate>Wed, 21 Oct 2026 09:45:00 -0400</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <ttl>60</ttl>
     <image>
@@ -28,6 +28,21 @@
     <webfeeds:icon>https://www.octoprobe.ai/icon-512.png</webfeeds:icon>
     <webfeeds:accentColor>0284C7</webfeeds:accentColor>
     <webfeeds:analytics id="G-6T6HW79ZP0" engine="GoogleAnalytics"/>
+    <item>
+      <title>Operation Lonestar Roundup: Tracing the Gmail Accounts DOJ Tied to North Korea’s Texas Laptop Farms</title>
+      <link>https://www.octoprobe.ai/blog/north-korean-laptop-farm-texas-gmail-accounts/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/north-korean-laptop-farm-texas-gmail-accounts/</guid>
+      <description>DOJ tied eleven Gmail accounts to North Korean IT workers after FBI searches of forty-plus Texas laptop farms. The full list, traced through the court record.</description>
+      <pubDate>Wed, 21 Oct 2026 09:45:00 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Investigation</category>
+      <category>North Korea</category>
+      <category>DOJ Selectors</category>
+      <enclosure url="https://www.octoprobe.ai/blog/north-korean-laptop-farm-texas-gmail-accounts/assets/cover.png" length="2245658" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/north-korean-laptop-farm-texas-gmail-accounts/assets/cover.png" medium="image" type="image/png" width="2400" height="1260">
+        <media:description type="plain">Cover: a Justice Department official speaking at a podium, cut out with a red outline, over a dark map of North Texas, with the headline North Korea’s Texas Laptop Farms and the line 11 Gmail accounts named by DOJ, Oct. 13, 2026</media:description>
+      </media:content>
+    </item>
     <item>
       <title>From ‘E-Commerce Agent’ to ‘Machiaveli’: Feds Say Spokane Man Mailed ‘Medallin Cartel’ Cocaine</title>
       <link>https://www.octoprobe.ai/blog/machiaveli-dark-web-cocaine-spokane-nabi/</link>
