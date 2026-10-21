@@ -1,0 +1,175 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Signal Encryption Stops at the Endpoint",
+    "description": "sigtop exports Signal Desktop’s local database. E2EE is not endpoint security. Group invite links, ACIs and membership snapshots are the real collection surface.",
+    "datePublished": "2026-10-21T15:53:36-04:00",
+    "dateModified": "2026-10-21T15:53:36-04:00",
+    "author": {
+      "@type": "Person",
+      "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#person",
+      "name": "Colin Aamot",
+      "url": "https://www.octoprobe.ai/blog/authors/colin-aamot/"
+    },
+    "publisher": {
+      "@type": "NewsMediaOrganization",
+      "@id": "https://www.octoprobe.ai/blog/#newsroom",
+      "name": "OctoProbe News",
+      "url": "https://www.octoprobe.ai/blog/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.octoprobe.ai/icon-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Redwing Technologies LLC",
+        "url": "https://rook-intel.com/"
+      }
+    },
+    "image": [
+      "https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/assets/og-cover.png",
+      "https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/assets/cover.png"
+    ],
+    "keywords": "Signal, Signal Desktop, sigtop, end-to-end encryption, E2EE, endpoint security, ACI, UUID, group master key, signal.group, invite link, Always relay calls, TURN, P2P call geolocation, OSINT, metadata, membership snapshot, Tim van der Molen",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/"
+    },
+    "url": "https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/",
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "OctoProbe News",
+      "url": "https://www.octoprobe.ai/blog/"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        ".answer-first",
+        ".callout.takeaways",
+        ".prose h2"
+      ]
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Signal Messenger"
+      },
+      {
+        "@type": "Thing",
+        "name": "End-to-end encryption"
+      },
+      {
+        "@type": "Thing",
+        "name": "Open-source intelligence"
+      },
+      {
+        "@type": "Thing",
+        "name": "Endpoint security"
+      },
+      {
+        "@type": "Thing",
+        "name": "sigtop"
+      }
+    ],
+    "mentions": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "sigtop",
+        "url": "https://github.com/tbvdm/sigtop"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Signal Desktop",
+        "url": "https://signal.org/download/"
+      },
+      {
+        "@type": "Organization",
+        "name": "Signal Technology Foundation",
+        "url": "https://signal.org/"
+      },
+      {
+        "@type": "Person",
+        "name": "Tim van der Molen",
+        "url": "https://www.kariliq.nl/"
+      },
+      {
+        "@type": "Organization",
+        "name": "OctoProbe AI"
+      }
+    ],
+    "articleSection": "Investigations"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.octoprobe.ai/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://www.octoprobe.ai/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Signal Encryption Stops at the Endpoint",
+        "item": "https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is sigtop?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "sigtop is an open-source utility by Tim van der Molen that exports messages, attachments, avatars and other data from a local Signal Desktop install. Its man page documents commands including export-messages, export-attachments, export-avatars, export-database and export-key. It needs access to Signal Desktop’s data directory and the encryption key that unlocks the SQLCipher database—not access to Signal’s servers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does end-to-end encryption protect a seized phone or laptop?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. E2EE protects content in transit between endpoints. Once an investigator has the device, a forensic image, or the desktop database and its key, plaintext is available locally. Signal’s own design assumes the device is the trust boundary."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you brute-force Signal group membership?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not in practice. Signal group invite links encode a random thirty-two-byte group master key. That keyspace is large enough that guessing membership is infeasible. Collection means being in the group, receiving an invite, or harvesting invite links that users post in public venues."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Signal hide your IP address on calls by default?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not fully. Signal’s “Always relay calls” setting is off by default. For one-to-one calls with contacts, Signal may negotiate a peer-to-peer path, which can expose IP addresses. Enabling Always relay calls forces media through Signal’s TURN relays. Group calls are not peer-to-peer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is an ACI on Signal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An ACI, or Account Identifier, is a UUID that uniquely identifies a Signal user. Phone numbers are the legacy identifier. Sigtop’s conversation selectors treat a service ID as that UUID. Identifiers persist across username changes and show up in membership lists and exports."
+        }
+      }
+    ]
+  }
+]

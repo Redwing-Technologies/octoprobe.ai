@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signal Encryption Stops at the Endpoint · OctoProbe News</title>
+<meta name="description" content="sigtop unlocks Signal Desktop’s local store. E2EE is not endpoint security. Cross-group membership and durable UUIDv4 ACIs are the real collection surface.">
+<meta name="keywords" content="Signal, Signal Desktop, sigtop, end-to-end encryption, E2EE, endpoint security, ACI, UUIDv4, service ID, group master key, signal.group, invite link, Always relay calls, TURN, P2P call geolocation, OSINT, metadata, membership snapshot, cross-group membership, Tim van der Molen">
+<meta name="author" content="Colin Aamot">
+<link rel="alternate" type="text/plain" title="LLM context (llms.txt)" href="/llms.txt">
+<link rel="alternate" type="text/plain" title="AI discovery (ai.txt)" href="/ai.txt">
+<link rel="alternate" type="application/rss+xml" title="OctoProbe News" href="https://www.octoprobe.ai/blog/feed.xml">
+<meta name="ai-content-declaration" content="human-authored; investigative reporting from public records">
+<link rel="canonical" href="https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="OctoProbe News">
+<meta property="og:url" content="https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/">
+<meta property="og:title" content="Signal Encryption Stops at the Endpoint">
+<meta property="og:description" content="sigtop unlocks Signal Desktop’s local store. E2EE is not endpoint security. Cross-group membership and durable UUIDv4 ACIs are the real collection surface.">
+<meta property="og:image" content="https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Light OctoProbe cover over a grey North America map on a white field with the blue Signal logo at right and a Signal-blue accent rule beside the black headline Signal Encryption Stops at the Endpoint">
+<meta property="article:published_time" content="2026-10-21T16:01:22-04:00">
+<meta property="article:modified_time" content="2026-10-21T16:01:22-04:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@octoprobeai">
+<meta name="twitter:title" content="Signal Encryption Stops at the Endpoint">
+<meta name="twitter:description" content="sigtop unlocks Signal Desktop’s local store. E2EE is not endpoint security. Cross-group membership and durable UUIDv4 ACIs are the real collection surface.">
+<meta name="twitter:image" content="https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/assets/og-cover.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Signal Encryption Stops at the Endpoint",
+  "description": "sigtop unlocks Signal Desktop’s local store. E2EE is not endpoint security. Cross-group membership and durable UUIDv4 ACIs are the real collection surface.",
+  "datePublished": "2026-10-21T16:01:22-04:00",
+  "dateModified": "2026-10-21T16:01:22-04:00",
+  "author": {
+    "@type": "Person",
+    "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#person",
+    "name": "Colin Aamot",
+    "url": "https://www.octoprobe.ai/blog/authors/colin-aamot/"
+  },
+  "publisher": {
+    "@type": "NewsMediaOrganization",
+    "@id": "https://www.octoprobe.ai/blog/#newsroom",
+    "name": "OctoProbe News",
+    "url": "https://www.octoprobe.ai/blog/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.octoprobe.ai/icon-512.png",
+      "width": 512,
+      "height": 512
+    },
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Redwing Technologies LLC",
+      "url": "https://rook-intel.com/"
+    }
+  },
+  "image": [
+    "https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/assets/og-cover.png",
+    "https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/assets/cover.png"
+  ],
+  "keywords": "Signal, Signal Desktop, sigtop, end-to-end encryption, E2EE, endpoint security, ACI, UUIDv4, service ID, group master key, signal.group, invite link, Always relay calls, TURN, P2P call geolocation, OSINT, metadata, membership snapshot, cross-group membership, Tim van der Molen",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/"
+  },
+  "url": "https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "OctoProbe News",
+    "url": "https://www.octoprobe.ai/blog/"
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      ".answer-first",
+      ".callout.takeaways",
+      ".prose h2"
+    ]
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Signal Messenger"
+    },
+    {
+      "@type": "Thing",
+      "name": "End-to-end encryption"
+    },
+    {
+      "@type": "Thing",
+      "name": "Open-source intelligence"
+    },
+    {
+      "@type": "Thing",
+      "name": "Endpoint security"
+    },
+    {
+      "@type": "Thing",
+      "name": "sigtop"
+    }
+  ],
+  "mentions": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "sigtop",
+      "url": "https://github.com/tbvdm/sigtop"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Signal Desktop",
+      "url": "https://signal.org/download/"
+    },
+    {
+      "@type": "Organization",
+      "name": "Signal Technology Foundation",
+      "url": "https://signal.org/"
+    },
+    {
+      "@type": "Person",
+      "name": "Tim van der Molen",
+      "url": "https://www.kariliq.nl/"
+    },
+    {
+      "@type": "Organization",
+      "name": "OctoProbe AI"
+    }
+  ],
+  "articleSection": "Investigations"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.octoprobe.ai/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.octoprobe.ai/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Signal Encryption Stops at the Endpoint",
+      "item": "https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is sigtop?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "sigtop is an open-source utility by Tim van der Molen that exports messages, attachments, avatars and other data from a local Signal Desktop install. Its man page documents commands including export-messages, export-attachments, export-avatars, export-database and export-key. It needs access to Signal Desktop’s data directory and the encryption key that unlocks the SQLCipher database—not access to Signal’s servers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does end-to-end encryption protect a seized phone or laptop?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. E2EE protects content in transit between endpoints. Once an investigator has the device, a forensic image, or the desktop database and its key, plaintext and local metadata are available. Signal’s own design assumes the device is the trust boundary."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is cross-group membership so powerful?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A single user-level endpoint export can list every group that account belongs to—often dozens or 100-plus—with names, descriptions, sizes and roles. That list alone reconstructs interests and affiliations with no message content. A group-level export returns every member’s UUIDv4 service ID, names and avatar pointer in one shot, which is the raw material for correlating the same person across many groups."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you brute-force Signal group membership?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not in practice. Signal group invite links encode a random thirty-two-byte group master key. That keyspace is large enough that guessing membership is infeasible. Collection means being in the group, receiving an invite, or harvesting invite links that users post in public venues. Those links are also revocable: admins can reset or disable them, so a scraped link is time-sensitive."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a Signal service ID or ACI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The service ID is the Account Identifier, or ACI—a standard UUIDv4 that uniquely identifies a Signal user. Group invite links, optional usernames and username/discovery links are ephemeral; display names and avatars change. The UUIDv4 persists through all of them, so it is the durable anchor an observer correlates on. Phone numbers are the legacy identifier."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Signal hide your IP address on calls by default?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not fully. Signal’s “Always relay calls” setting is off by default. For one-to-one calls with contacts, Signal may negotiate a peer-to-peer path, which can expose IP addresses. Enabling Always relay calls forces media through Signal’s TURN relays. Group calls are not peer-to-peer."
+      }
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6T6HW79ZP0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6T6HW79ZP0');
+</script>
+<meta name="theme-color" content="#f7fbff">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/blog.css?v=news8">
+<style id="news-frame">.post-dek{max-width:46rem;margin:.6rem 0 0;font-size:1.15rem;line-height:1.5;color:#475569}.post-hero .byline{margin:1rem 0 0;font-weight:600;color:#334155;font-size:.98rem}.post-hero .byline a{color:inherit;text-decoration:underline;text-decoration-color:rgba(51,65,85,.35);text-underline-offset:3px}.post-hero .byline a:hover{color:var(--blue)}.table-wrap{overflow-x:auto}.table-wrap table{border-collapse:collapse;width:100%;font-size:.92rem}.table-wrap th,.table-wrap td{border:1px solid #e2e8f0;padding:.45rem .6rem;vertical-align:top;text-align:left}.related-reading{border-top:1px solid #e2e8f0;margin-top:2rem;padding-top:.5rem}.related-reading h2{margin-top:1rem}.related-reading li{margin:.4rem 0}.prose .faq h3{font-size:1.02rem;margin-top:1.2em}.prose .faq p{margin-top:.35em}</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="top" id="nav" aria-label="Primary">
+  <a class="brand" href="/blog/" aria-label="OctoProbe News home">
+    <svg class="logo" viewBox="0 0 40 40" role="img" aria-label="OctoProbe AI" fill="none">
+      <defs>
+        <linearGradient id="g1" x1="6" y1="4" x2="34" y2="38" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#818cf8"/><stop offset=".55" stop-color="#38bdf8"/><stop offset="1" stop-color="#22d3ee"/>
+        </linearGradient>
+      </defs>
+      <g stroke="url(#g1)" stroke-width="2.4" stroke-linecap="round">
+        <path d="M12 21.5 C6 25 5.5 31 9.5 34.5"/><path d="M16 22.5 C13 27 12 32.5 15 36"/>
+        <path d="M19 23 C18 28.5 17.5 33 19 37"/><path d="M28 21.5 C34 25 34.5 31 30.5 34.5"/>
+        <path d="M24 22.5 C27 27 28 32.5 25 36"/><path d="M21 23 C22 28.5 22.5 33 21 37"/>
+      </g>
+      <g fill="url(#g1)"><circle cx="9.5" cy="34.5" r="2.1"/><circle cx="15" cy="36" r="2.1"/><circle cx="19" cy="37" r="2.1"/><circle cx="30.5" cy="34.5" r="2.1"/><circle cx="25" cy="36" r="2.1"/><circle cx="21" cy="37" r="2.1"/></g>
+      <path d="M20 4.5 C12.3 4.5 7.5 9.8 7.5 16.4 C7.5 20.6 10.6 23.2 14.8 23.2 L25.2 23.2 C29.4 23.2 32.5 20.6 32.5 16.4 C32.5 9.8 27.7 4.5 20 4.5 Z" fill="url(#g1)"/>
+      <rect x="15.2" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
+      <rect x="21.6" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
+      <rect x="30.5" y="8" width="2" height="2" rx=".5" fill="url(#g1)" opacity=".7"/>
+      <rect x="7.2" y="9.6" width="1.7" height="1.7" rx=".4" fill="url(#g1)" opacity=".6"/>
+    </svg>
+    <span class="bn">OctoProbe<small>News</small></span>
+  </a>
+  <div class="nav-center">
+    <a href="/blog/about/">About &amp; Masthead</a>
+    <a href="/blog/standards/">Editorial Standards</a>
+    <a href="/blog/corrections/">Corrections</a>
+    <a href="/blog/contact/">Contact &amp; Tips</a>
+  </div>
+  <div class="nav-right">
+    <a href="/blog/" class="nav-cta nav-investigations" aria-current="page">Investigations</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+  <a href="/blog/" class="active" aria-current="page">Investigations</a>
+  <a href="/blog/about/">About &amp; Masthead</a>
+  <a href="/blog/standards/">Editorial Standards</a>
+  <a href="/blog/corrections/">Corrections</a>
+  <a href="/blog/contact/">Contact &amp; Tips</a>
+  <a href="/">OctoProbe platform</a>
+</div>
+<main id="main">
+  <header class="post-hero">
+    <div class="wrap">
+      <div class="post-crumb">
+        <a class="back-link" href="/blog/">← All investigations</a>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span class="eyebrow">Investigations</span>
+      </div>
+      <h1>Signal Encryption Stops at the Endpoint</h1>
+      <p class="post-dek">End-to-end encryption protects the wire. On a seized or consented desktop, an endpoint export turns the local store into a structured archive—and one user’s group list can map a social graph with no message content.</p>
+      <div class="post-meta">
+        <time datetime="2026-10-21T16:01:22-04:00">Oct 21, 2026</time>
+        <span class="sep" aria-hidden="true"></span>
+        <div class="tags"><span class="tag">Investigations</span><span class="tag blue">OSINT</span><span class="tag">Signal</span><span class="tag">Privacy</span><span class="tag">Methodology</span></div>
+      </div>
+      <p class="byline has-avatar"><picture><source type="image/webp" srcset="/assets/authors/colin-aamot-96.webp 1x, /assets/authors/colin-aamot-192.webp 2x"><img class="author-avatar" src="/assets/authors/colin-aamot-96.jpg" srcset="/assets/authors/colin-aamot-96.jpg 1x, /assets/authors/colin-aamot-192.jpg 2x" width="44" height="44" alt="Colin Aamot" decoding="async"></picture><span>By <a href="https://www.octoprobe.ai/blog/authors/colin-aamot/" rel="author">Colin Aamot</a></span></p>
+      <!-- share-bar -->
+      <div class="share-bar" role="group" aria-label="Share this article" hidden><span class="share-label" aria-hidden="true">Share</span><button type="button" class="share-native" aria-label="Share this article"><svg class="share-ico-line" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M12 3v12"/><path d="m7.5 7.5 4.5-4.5 4.5 4.5"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg><span>Share</span></button><ul class="share-list"><li><a class="share-link" href="https://x.com/intent/post" data-share="x" target="_blank" rel="noopener noreferrer" aria-label="Share on X"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg></a></li><li><a class="share-link" href="https://facebook.com/sharer/sharer.php" data-share="facebook" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a></li><li><a class="share-link" href="https://www.linkedin.com/sharing/share-offsite/" data-share="linkedin" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></li><li><a class="share-link" href="https://www.reddit.com/submit" data-share="reddit" target="_blank" rel="noopener noreferrer" aria-label="Share on Reddit"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg></a></li><li><a class="share-link" href="https://api.whatsapp.com/send" data-share="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a></li><li><a class="share-link" href="https://t.me/share/url" data-share="telegram" target="_blank" rel="noopener noreferrer" aria-label="Share on Telegram"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a></li><li><a class="share-link" href="https://bsky.app/intent/compose" data-share="bluesky" target="_blank" rel="noopener noreferrer" aria-label="Share on Bluesky"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M5.202 2.857C7.954 4.922 10.913 9.11 12 11.358c1.087-2.247 4.046-6.436 6.798-8.501C20.783 1.366 24 .213 24 3.883c0 .732-.42 6.156-.667 7.037-.856 3.061-3.978 3.842-6.755 3.37 4.854.826 6.089 3.562 3.422 6.299-5.065 5.196-7.28-1.304-7.847-2.97-.104-.305-.152-.448-.153-.327 0-.121-.05.022-.153.327-.568 1.666-2.782 8.166-7.847 2.97-2.667-2.737-1.432-5.473 3.422-6.3-2.777.473-5.899-.308-6.755-3.369C.42 10.04 0 4.615 0 3.883c0-3.67 3.217-2.517 5.202-1.026"/></svg></a></li><li><a class="share-link" href="mailto:" data-share="email" aria-label="Share by email"><svg class="share-ico-line" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg></a></li><li class="share-copy-item"><button type="button" class="share-link share-copy" data-share="copy" aria-label="Copy link"><svg class="share-ico-line" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M10 13.5a4.5 4.5 0 0 0 6.4.4l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.6 1.6"/><path d="M14 10.5a4.5 4.5 0 0 0-6.4-.4l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.6-1.6"/></svg><svg class="share-ico-line" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></button></li></ul><span class="share-status" role="status" aria-live="polite"></span></div>
+      <!-- /share-bar -->
+    </div>
+  </header>
+  <article class="post-body">
+    <div class="wrap">
+      <div class="prose">
+<!-- Closing order (default): … FAQ → Correction (if any) → Disclaimer → author bio note → Related Reading (always LAST, never empty; no entry whose source is already linked in the body; no generic methodology link). See blog/README.md. -->
+<h2 id="key-takeaways">Key Takeaways</h2>
+<div class="callout takeaways"><strong>TL;DR · Key takeaways</strong><ul>
+<li><a href="#what-does-sigtop-actually-export">sigtop turns a Signal Desktop endpoint into an export of messages, attachments, avatars and metadata—it does not talk to Signal’s servers.</a></li>
+<li><a href="#why-isnt-end-to-end-encryption-endpoint-security">End-to-end encryption protects the wire. It is not endpoint security.</a></li>
+<li><a href="#why-is-cross-group-membership-the-headline">Cross-group membership is the headline: one user export can place a person in 100-plus groups; one group export returns every member’s stable UUIDv4.</a></li>
+<li><a href="#how-do-investigators-collect-without-cryptanalysis">You don’t break Signal. You observe membership, revocable invite links and the identifiers that leak across platforms.</a></li>
+<li><a href="#why-cant-you-brute-force-signal-groups">Signal group master keys are thirty-two random bytes. Invite links can be reset or turned off, so open-web scraping is time-sensitive and sustained observation matters more.</a></li>
+</ul></div>
+<figure><img fetchpriority="high" decoding="async" src="/blog/signal-osint-sigtop-endpoint-collection/assets/cover.png" width="2400" height="1260" alt="Light OctoProbe cover over a grey North America map on a white field with the blue Signal logo at right and a Signal-blue accent rule beside the black headline Signal Encryption Stops at the Endpoint" title="Signal Encryption Stops at the Endpoint"><figcaption>The Signal logo over a grey map on a white field. Illustration: OctoProbe News; logo: Signal Technology Foundation brand assets; map © OpenStreetMap contributors.</figcaption></figure>
+<p class="primary-question"><strong>Does Signal’s end-to-end encryption stop law enforcement or OSINT collectors from reading messages and mapping groups?</strong></p>
+<p class="answer-first">No. End-to-end encryption protects messages in transit between devices. It does nothing once an investigator has the Signal Desktop endpoint—or its on-disk database and keychain secret. Tools such as sigtop export that local store. One user-level export can place a person in 100-plus groups at once; one group export hands over every member’s stable UUIDv4 service ID. Cross-group membership, not cryptanalysis, is the collection surface.</p>
+<p>Signal sells privacy on the wire. The product does what it claims: messages between devices are end-to-end encrypted, so Signal’s servers cannot read them. That fact is not in dispute. The collection problem for investigators and OSINT analysts sits one layer down.</p>
+<p>The local endpoint—the installed Signal Desktop app, its encrypted database, and the operating-system keychain secret that unlocks it—holds plaintext after decryption. An open-source tool named <a href="https://github.com/tbvdm/sigtop">sigtop</a>, written by Tim van der Molen, reads that store and writes messages, attachments, avatars and related data to disk. No cryptanalysis. No server compromise. Endpoint access.</p>
+<p>That distinction is the spine of this piece. The payoff is larger than a chat dump. A structured user-level export can list every group an account belongs to—causes, workplaces, locations, hobbies, affiliations—often numbering in the dozens or <strong>100-plus groups at once</strong>. A structured group-level export returns every member’s durable UUIDv4 service ID in one shot. Cross-group membership, not breaking the protocol, is the collection surface.</p>
+<h2 id="what-does-sigtop-actually-export">What Does sigtop Actually Export?</h2>
+<p>sigtop is a command-line utility. Its <a href="https://www.kariliq.nl/man/sigtop.1.html">online manual</a> is the authoritative list of shipped commands. The README’s two example commands are the everyday path:</p>
+<p>``<code> sigtop export-messages messages sigtop export-attachments attachments </code>``</p>
+<p>The man page documents a fuller set. <code>export-messages</code> writes per-conversation files as plain text, short text or JSON pulled from the desktop database. <code>export-attachments</code> writes media into per-conversation directories, with optional incremental runs and time filters. <code>export-avatars</code> pulls conversation avatars. <code>export-database</code> decrypts and dumps the SQLCipher store as a regular SQLite file. <code>export-key</code> exports the encryption key needed to unlock that database—or, with a flag, the database key itself. <code>query-database</code> runs read-only SQL against the live store. Conversation selectors accept a display name, a phone number, a service ID (a UUID) or a group ID.</p>
+<p>sigtop must see Signal Desktop’s data directory. Defaults are <code>%AppData%\Signal</code> on Windows, <code>$HOME/Library/Application Support/Signal</code> on macOS, and <code>$XDG_CONFIG_HOME/Signal</code> or <code>~/.config/Signal</code> on Unix, with Snap and Flatpak paths as fallbacks. A <code>-d</code> flag points elsewhere; <code>-B</code> targets Signal Desktop Beta. None of those paths is Signal’s cloud. The tool is local.</p>
+<p>That is the operational fact investigators need. Physical access, a consented image, a corporate endpoint already under management, or a forensic extraction that includes the keychain material is enough. Remote compromise of Signal’s servers is not required and is not what sigtop does.</p>
+<h2 id="what-does-an-endpoint-export-actually-contain">What Does an Endpoint Export Actually Contain?</h2>
+<p>sigtop’s commands are the unlock and the dump. The <strong>data model</strong> that falls out of a Signal Desktop endpoint collection—readable once the local database is unlocked—is richer than a message transcript. Described abstractly, with synthetic placeholders only, a user-level export and a group-level export look like this.</p>
+<p><strong>A user-level export</strong> typically exposes:</p>
+<ul>
+<li>The account’s <strong>service ID</strong>, a UUIDv4 Account Identifier (ACI), plus the legacy phone number when present—for example, a dummy value such as <code>aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeeeee</code>, never a live identifier.</li>
+<li><strong>Current and historically observed profile names</strong>, which support alias tracking as a person renames themselves.</li>
+<li>An <strong>“about”</strong> profile blurb when set.</li>
+<li>A <strong>timestamped history of past avatars</strong>, each downloadable as an image—fuel for avatar reuse checks and face or reverse-image matching over time.</li>
+<li>A <strong>complete group-membership list</strong>: for each group, a name, description, member count and the account’s role (for example, member or admin).</li>
+</ul>
+<p><strong>A group-level export</strong> typically exposes:</p>
+<ul>
+<li>The group’s <strong>master key</strong>, <strong>invite-link password</strong> and derived <strong>secret params</strong>, from which a collector can reconstruct the current invite link while that link remains valid.</li>
+<li>A <strong>retention</strong> or disappearing-messages period when configured.</li>
+<li><strong>Group-avatar history</strong>.</li>
+<li>A <strong>full member roster</strong>: every member’s UUIDv4 service ID, display name, profile name, role and avatar pointer—<strong>all at once</strong>.</li>
+</ul>
+<p>The investigative point is structural. Observing a single group hands you every member’s stable UUID, name fields and avatar pointer in one pass—the raw material for cross-group correlation. Observing a single well-connected user hands you that person’s entire group landscape. Neither step requires reading message bodies. (Field names here describe the endpoint-derived model investigators work with after a local unlock; they are not a claim that every field is its own sigtop subcommand.)</p>
+<h2 id="why-is-cross-group-membership-the-headline">Why Is Cross-Group Membership the Headline?</h2>
+<p>Message content is optional for a useful picture. <strong>Cross-group membership is the headline capability.</strong></p>
+<p>A single user-level export can place one person in dozens to <strong>100-plus groups simultaneously</strong>. That list alone—advocacy causes, city or regional chats, employer or campus communities, hobby groups, mutual-aid circles, diaspora networks—reconstructs a detailed interest and social graph with <strong>zero message content</strong>. Repeated exports turn the list into a time series: which groups appeared, which disappeared, which roles changed.</p>
+<p>Flip the lens. A single group-level export returns the full roster of UUIDv4 service IDs. Join several such rosters and the same synthetic member, say “User A” with service ID <code>aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeeeee</code>, shows up in “Example Group,” “Example City Mutual Aid,” and “Example Alumni Chat.” Co-membership edges accumulate. The graph grows from observed rolls, not from ciphertext.</p>
+<p>That is why endpoint collection and sustained group observation sit together. One desktop unlock can warehouse a user’s whole membership map. One group unlock can warehouse everyone else’s durable IDs. Correlation does the rest.</p>
+<h2 id="why-isn-t-end-to-end-encryption-endpoint-security">Why Isn’t End-to-End Encryption Endpoint Security?</h2>
+<p>End-to-end encryption, or E2EE, encrypts content so that only the communicating endpoints can read it. Signal’s protocol does that well. The servers that relay ciphertext do not hold the message keys in a form that lets the company read chats.</p>
+<p>E2EE says nothing about the endpoint after decryption. The desktop client stores a local database. The operating system’s credential store—Keychain on macOS, Credential Manager or DPAPI-backed secrets on Windows, libsecret on many Linux desktops—holds material sigtop can export with <code>export-key</code>. Once that material and the data directory are available, the messages <strong>and</strong> the membership metadata are available. Encryption protected the path between phones. It did not protect the laptop sitting on the desk.</p>
+<p>This is not a novel critique of Signal. It is the standard trust model for any E2EE messenger. The device is the trust boundary. Treat a seized, imaged or administered Signal Desktop install as a collection surface, not as a cryptographic puzzle.</p>
+<h2 id="how-do-investigators-collect-without-cryptanalysis">How Do Investigators Collect Without Cryptanalysis?</h2>
+<p>Law-enforcement and intelligence framing for Signal is observation, not cryptanalysis. You do not “break” the protocol. You stand where a participant already stands.</p>
+<p>Inside a group, an observer sees what every member sees: messages, attachments, reaction patterns, and the links people paste. Shared ProtonMail Drive URLs, Google Drive folders, new <code>signal.group</code> invite links, and cross-referenced handles are all in the clear to anyone already in the chat. Membership itself is signal. Who was added, who left, who posts, and which outside identifiers appear in the scrollback are analytic facts before anyone opens an attachment.</p>
+<p>That is why endpoint export and group observation sit together. sigtop and equivalent local reads turn one desktop into a structured archive. Group access turns many accounts into a living graph. Neither step requires defeating Signal’s cryptography.</p>
+<h2 id="why-can-t-you-brute-force-signal-groups">Why Can’t You Brute-Force Signal Groups?</h2>
+<p>Signal’s modern groups are built around a group master key. In Signal’s group cryptography, that master key is a random thirty-two-byte value. Invite links of the form <code>https://signal.group/#…</code> encode that master key (plus an invite-link password) so a recipient can join. Signal’s own <a href="https://support.signal.org/hc/en-us/articles/360051086971-Group-Link-or-QR-code">support page</a> describes turning the link on and sharing it.</p>
+<p>Thirty-two bytes of randomness is a two-hundred-fifty-six-bit keyspace. Guessing a group identifier by brute force is not a realistic collection method. The practical paths are fewer and more human:</p>
+<ol>
+<li>Be added to the group, or operate an account that already is.</li>
+<li>Receive the invite link through another channel.</li>
+<li>Harvest invite links that participants post in public or semi-public venues—Reddit threads, Facebook and Instagram posts and stories, Telegram channels, paste sites, and the usual OSINT surfaces where people advertise “DM for the Signal link.”</li>
+</ol>
+<p>Those links are <strong>ephemeral and revocable</strong>. Signal lets admins <a href="https://support.signal.org/hc/en-us/articles/360051086971-Group-Link-or-QR-code">reset a group link</a> (invalidating the old URL and issuing a new one) or turn the group link off entirely. <a href="https://signal.org/blog/group-links/">Signal’s own product writing</a> on group links makes the same point: you can turn the link off or reset it at any time. A scraped link found on Reddit last month may already be dead. That is why open-web link scraping is <strong>time-sensitive</strong>, and why <strong>sustained direct group observation</strong>—being inside, or holding a fresh endpoint-derived membership view—matters more than a one-time link grab.</p>
+<p>Open-web harvesting remains the discovery method that scales for <em>finding</em> groups. Cryptography and revocability together force collectors onto that path and then onto continued observation.</p>
+<h2 id="what-identifiers-persist-on-signal">What Identifiers Persist on Signal?</h2>
+<p>Signal’s durable user identifier is the <strong>service ID</strong>: the Account Identifier, or ACI, stored as a <strong>standard UUIDv4</strong>. It is a common protocol identifier, not a Signal-only curiosity. Phone numbers remain the legacy identifier used at registration and still visible in some contact contexts. Sigtop’s man page states the operational consequence plainly: “A service ID is a UUID that uniquely identifies a Signal user,” and conversation selectors of the form <code>:id</code> match on that service ID or on a group ID.</p>
+<p>Almost everything else a person shows is <strong>ephemeral</strong>. Group invite links can be reset or turned off. Optional <strong>usernames</strong> are user-chosen, changeable or droppable at any time, and the username or discovery link rotates with them—a transient handle, not a stable ID. Signal’s <a href="https://signal.org/blog/phone-number-privacy-usernames/">own product writing</a> emphasizes that a username can be altered or deleted and is not a stable public directory entry. Display names change. Avatars rotate. None of those presentation layers is the join key.</p>
+<p>The UUIDv4 service ID is the <strong>one durable anchor</strong>. It persists through invite-link resets, username drops, nickname edits and avatar swaps. Membership lists and local databases key on it. An observer who correlates on the ACI can follow one person as presentation shifts; an observer who keys only on a username, a display name or a scraped <code>signal.group</code> link cannot.</p>
+<p>Phone numbers that remain on an account continue to anchor older contact graphs. They are not permanent labels. Across roughly <strong>700,000</strong> accounts OctoProbe observed, only about <strong>1.5 percent</strong> of registered phone numbers remained active after signup. The rest had churned or gone quiet. Treat number-based hits as leads to verify against the UUIDv4 and other corroboration, not as durable names for a person.</p>
+<h2 id="what-do-membership-snapshots-reveal-over-time">What Do Membership Snapshots Reveal Over Time?</h2>
+<p>With access to enough groups—through participated accounts, exported desktops, or collected invite links—repeated membership snapshots show which UUIDv4 ACIs appear together across the ecosystem. Appearances, disappearances and co-membership over weeks and months sketch a social graph built from observed rolls, not from reading every chat.</p>
+<p>That graph is metadata in the investigative sense: who associates with whom, in which named communities, across which time windows. It is weaker than a full message export and often sufficient to prioritize targets, corroborate other reporting, or decide where a warrant or a further endpoint collection would matter. Large-group access multiplies the effect. One busy community’s member list is a roster. Many overlapping lists, joined on service ID, are a map—and a user export that already lists 100-plus groups is a map in a single file.</p>
+<h2 id="how-do-users-actually-get-unmasked">How Do Users Actually Get Unmasked?</h2>
+<p>Signal can separate a person from a phone number more than it used to. It cannot separate a person from habits. The classic OSINT de-anonymization chain still applies, viewed here from the defensive side:</p>
+<ul>
+<li><strong>Username and handle reuse</strong> across Signal, Telegram, Reddit, X, GitHub and email local parts.</li>
+<li><strong>Real-name reuse</strong> in profile fields, group nicknames and linked payment or crowdfunding pages.</li>
+<li><strong>Avatar reuse</strong>, including the same crop or face appearing on other platforms where face matching or reverse-image search works—made sharper when an endpoint export includes a timestamped avatar history.</li>
+<li><strong>Location talk</strong> in chat—“I’m at…,” flight complaints, local slang, venue check-ins pasted as links.</li>
+<li><strong>Cross-posted invite links and cloud folders</strong> that carry account names, shared-drive permissions or tracker parameters.</li>
+</ul>
+<p>None of that requires defeating E2EE. It requires correlating what participants voluntarily expose, then joining those traces to the stable UUIDv4. From a privacy perspective, the weak layer is continuity of identity across services, not Signal’s wire protocol.</p>
+<h2 id="can-a-signal-call-expose-a-location">Can a Signal Call Expose a Location?</h2>
+<p>Voice and video add a separate metadata path. Signal can relay call media through its TURN servers so that participants do not see each other’s IP addresses. It can also negotiate a peer-to-peer path.</p>
+<p>Signal’s own <a href="https://signal.org/blog/signal-video-calls/">2017 product post</a> on video calling leaving beta stated the default policy: the app attempts a peer-to-peer connection when the user is placing the call or when the incoming caller is in the user’s contacts; calls from people not in the address book are relayed. A setting—<strong>Always relay calls</strong>—forces relay for direct calls when enabled. Signal staff have since confirmed on the public issue tracker that the setting defaults to off, and that it applies to one-to-one calls; group calls are not peer-to-peer.</p>
+<p>When a one-to-one call does go peer-to-peer, each side can observe the other’s IP address from the media path. An IP address is not a street address, but it is often enough for a coarse geolocation—city or metro—via standard IP intelligence. That is the classic STUN/TURN versus P2P tradeoff. Relay is available and recommended for wary users; it is not forced on for contact calls unless Always relay calls is turned on.</p>
+<h2 id="what-could-tooling-add-next">What Could Tooling Add Next?</h2>
+<p>The following are <strong>proposed analytical extensions</strong>, not features sigtop ships today. They are framed so engineers and oversight readers can see where endpoint-adjacent tooling naturally grows beyond today’s public commands and the endpoint-derived data model above:</p>
+<ul>
+<li><strong>Avatar retrieval probes.</strong> A forced key-exchange or profile fetch against a UUIDv4 ACI to test whether an avatar is retrievable and to decrypt or download it when the protocol allows—useful for the avatar-reuse de-anonymization step above.</li>
+<li><strong>Broader enumeration and bulk export.</strong> Structured sweeps of conversations, membership metadata, message bodies and media at a scale aimed at warehouse-and-query workflows rather than one-off directory dumps.</li>
+</ul>
+<p>Mark those clearly as forward-looking. Today’s public sigtop surface is the man page: messages, attachments, avatars, database, key and read-only SQL. The user- and group-level field inventory described earlier is the shape of data available from a local unlock, not a second product claim. Overstating either helps no one.</p>
+<h2 id="what-should-defenders-and-oversight-take-from-this">What Should Defenders and Oversight Take From This?</h2>
+<p>For users who chose Signal for the cryptography: keep it—and harden the endpoint. Full-disk encryption, strong device passcodes, Screen Lock, disappearing messages where appropriate, care with group invite links, and <strong>Always relay calls</strong> when IP exposure matters are the controls that match the threat model this article describes. Do not paste <code>signal.group</code> links into public posts if the membership list is sensitive—and remember that resetting the link does not remove people who already joined. Do not reuse avatars and handles you use under a real name. Assume that anyone who obtains your desktop endpoint obtains your group list.</p>
+<p>For investigators and oversight: document the legal theory for endpoint access, group undercover participation and invite-link collection the same way you would for any other messenger. The technical story is straightforward. The policy story—consent, warrant, covert online identity, minimization—is where the work is.</p>
+<p class="editor-note">Editor’s note: This is a methodology explainer for defensive awareness and lawful collection analysis. It is not a how-to for targeting a private person. Capabilities attributed to sigtop track its public README and man page. The user- and group-level export field inventory describes the endpoint-derived data model in the abstract, with synthetic placeholders only. Proposed tooling extensions are labeled as such.</p>
+<h2 id="faq">FAQ</h2>
+<p><strong>What is sigtop?</strong> sigtop is an open-source utility by Tim van der Molen that exports messages, attachments, avatars and other data from a local Signal Desktop install. Its man page documents <code>export-messages</code>, <code>export-attachments</code>, <code>export-avatars</code>, <code>export-database</code>, <code>export-key</code> and <code>query-database</code>. It needs the desktop data directory and unlocking key material, not Signal’s servers.</p>
+<p><strong>Does end-to-end encryption protect a seized phone or laptop?</strong> No. E2EE protects content in transit between endpoints. Once an investigator has the device or the desktop database and its key, local plaintext and membership metadata are available. Signal’s design treats the device as the trust boundary.</p>
+<p><strong>Why is cross-group membership so powerful?</strong> A single user-level endpoint export can list every group that account belongs to—often dozens or 100-plus—with names, descriptions, sizes and roles. That list alone reconstructs interests and affiliations with no message content. A group-level export returns every member’s UUIDv4 service ID, names and avatar pointer in one shot, which is the raw material for correlating the same person across many groups.</p>
+<p><strong>Can you brute-force Signal group membership?</strong> Not in practice. Invite links carry a random thirty-two-byte group master key. Collection means group access or harvesting invite links posted in the open. Those links are revocable—admins can reset or disable them—so a scraped link is time-sensitive and sustained observation matters more than a one-time grab.</p>
+<p><strong>What is a Signal service ID or ACI?</strong> The service ID is the Account Identifier, a standard UUIDv4 that uniquely identifies a Signal user. Group invite links, optional usernames and username/discovery links are ephemeral; display names and avatars change. The UUIDv4 persists through all of them, so it is the durable anchor an observer correlates on. Phone numbers are the legacy identifier.</p>
+<p><strong>Does Signal hide your IP address on calls by default?</strong> Not fully. Always relay calls is off by default. One-to-one calls with contacts may use a peer-to-peer path that exposes IP addresses. Enable Always relay calls to force TURN relays. Group calls are not peer-to-peer.</p>
+<p class="author-note has-avatar"><picture class="author-note-avatar"><source type="image/webp" srcset="/assets/authors/colin-aamot-96.webp 1x, /assets/authors/colin-aamot-192.webp 2x"><img class="author-avatar" src="/assets/authors/colin-aamot-96.jpg" srcset="/assets/authors/colin-aamot-96.jpg 1x, /assets/authors/colin-aamot-192.jpg 2x" width="96" height="96" alt="" loading="lazy" decoding="async"></picture><span class="author-note-text"><a href="https://www.octoprobe.ai/blog/authors/colin-aamot/" rel="author">Colin Aamot</a> is an Investigative Journalist &amp; OSINT Domain Expert and Founder of Redwing Technologies, which publishes OctoProbe News, runs a portfolio of other SaaS products, and operates Rook Intelligence, a licensed Washington, DC private detective agency. A U.S. Army veteran, he began in the 173rd Airborne Brigade and was selected for the Special Operations psychological operations regiment, then served as a counterterrorism information operations planner with USASOC and SOCCENT supporting Operation Inherent Resolve and Operation Spartan Shield. He was a TechCongress Congressional Innovation Fellow in the office of Rep. Darrell Issa and later an investigator for The Heritage Foundation&#x27;s Oversight Project and an investigative columnist for The Daily Signal. He holds an MA in Global Security Studies from Johns Hopkins University and an MBA from UNC Kenan-Flagler Business School.<span class="author-links"><a href="https://www.linkedin.com/in/colinaamot/">LinkedIn</a><a href="https://x.com/ColinAamot">X</a><a href="https://techcongress.io/colin-aamot">TechCongress</a><a href="https://rook-intel.com/">Rook Intelligence</a><a href="https://www.dailysignal.com/author/colin-aamot/">Daily Signal (previous bylines)</a></span></span></p>
+<aside aria-label="Related reading" class="related-reading">
+<h2 id="related-reading">Related Reading</h2>
+<ul>
+<li><a href="/blog/subpoena-warrant-online-accounts-three-branches/">Subpoena, Order, Warrant: How the Government Gets Your Data</a></li>
+<li><a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/">Inside the FBI’s CAST Guide: How Carriers and Agents Pin Down a Cell Phone</a></li>
+<li><a href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/">How to FOIA an Official’s Browser History, SharePoint Files and Teams Messages</a></li>
+</ul>
+</aside>
+      </div>
+    </div>
+  </article>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="frow">
+      <a class="fbrand" href="/" aria-label="OctoProbe AI">
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <defs><linearGradient id="gf" x1="6" y1="4" x2="34" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#818cf8"/><stop offset=".55" stop-color="#38bdf8"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs>
+          <g stroke="url(#gf)" stroke-width="2.4" stroke-linecap="round">
+            <path d="M12 21.5 C6 25 5.5 31 9.5 34.5"/><path d="M16 22.5 C13 27 12 32.5 15 36"/><path d="M19 23 C18 28.5 17.5 33 19 37"/>
+            <path d="M28 21.5 C34 25 34.5 31 30.5 34.5"/><path d="M24 22.5 C27 27 28 32.5 25 36"/><path d="M21 23 C22 28.5 22.5 33 21 37"/>
+          </g>
+          <g fill="url(#gf)"><circle cx="9.5" cy="34.5" r="2.1"/><circle cx="15" cy="36" r="2.1"/><circle cx="19" cy="37" r="2.1"/><circle cx="30.5" cy="34.5" r="2.1"/><circle cx="25" cy="36" r="2.1"/><circle cx="21" cy="37" r="2.1"/></g>
+          <path d="M20 4.5 C12.3 4.5 7.5 9.8 7.5 16.4 C7.5 20.6 10.6 23.2 14.8 23.2 L25.2 23.2 C29.4 23.2 32.5 20.6 32.5 16.4 C32.5 9.8 27.7 4.5 20 4.5 Z" fill="url(#gf)"/>
+          <rect x="15.2" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
+          <rect x="21.6" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
+        </svg>
+        OctoProbe News
+      </a>
+      <nav class="fnav" aria-label="Footer navigation">
+        <a href="/blog/">Investigations</a>
+        <a href="/blog/authors/colin-aamot/">Colin Aamot</a>
+        <a href="/blog/about/">About &amp; Masthead</a>
+        <a href="/blog/standards/">Editorial Standards</a>
+        <a href="/blog/corrections/">Corrections Policy</a>
+        <a href="/blog/contact/">Contact &amp; Tips</a>
+        <a href="mailto:press@octoprobe.ai">press@octoprobe.ai</a>
+      </nav>
+    </div>
+    <div class="legal">
+      <p>© <span id="yr">2026</span> Redwing Technologies LLC · OctoProbe News · <a href="mailto:press@octoprobe.ai" style="color:inherit">press@octoprobe.ai</a></p>
+      <p><strong>OctoProbe News</strong> is published by Redwing Technologies LLC, which also develops the OctoProbe OSINT investigation platform for law firms, licensed investigators and analysts. The newsroom operates independently of that commercial business; see our <a href="/blog/standards/#independence" style="color:inherit">Editorial Standards</a>. Platform inquiries: <a href="/" style="color:inherit">octoprobe.ai</a> · <a href="mailto:team@octoprobe.ai" style="color:inherit">team@octoprobe.ai</a>.</p>
+    </div>
+  </div>
+</footer>
+<script>
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 10), { passive: true });
+  const tg = document.getElementById('navToggle'), mm = document.getElementById('mobileMenu');
+  tg.addEventListener('click', () => { const o = mm.classList.toggle('open'); tg.setAttribute('aria-expanded', o); });
+  mm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mm.classList.remove('open'); tg.setAttribute('aria-expanded', 'false'); }));
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+<script src="/assets/js/blog-toc.js?v=toc7" defer></script>
+<script src="/assets/js/blog-share.js?v=share1" defer></script>
+</body>
+</html>
