@@ -3,9 +3,9 @@
     "@context": "https://schema.org",
     "@type": "NewsArticle",
     "headline": "Signal Encryption Stops at the Endpoint",
-    "description": "sigtop exports Signal Desktop’s local database. E2EE is not endpoint security. Group invite links, ACIs and membership snapshots are the real collection surface.",
-    "datePublished": "2026-10-21T15:53:36-04:00",
-    "dateModified": "2026-10-21T15:53:36-04:00",
+    "description": "sigtop unlocks Signal Desktop’s local store. E2EE is not endpoint security. Messages, media, group membership and UUIDv4 ACIs are the collection surface.",
+    "datePublished": "2026-10-21T16:01:22-04:00",
+    "dateModified": "2026-10-21T16:29:49-04:00",
     "author": {
       "@type": "Person",
       "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#person",
@@ -33,7 +33,7 @@
       "https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/assets/og-cover.png",
       "https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/assets/cover.png"
     ],
-    "keywords": "Signal, Signal Desktop, sigtop, end-to-end encryption, E2EE, endpoint security, ACI, UUID, group master key, signal.group, invite link, Always relay calls, TURN, P2P call geolocation, OSINT, metadata, membership snapshot, Tim van der Molen",
+    "keywords": "Signal, Signal Desktop, sigtop, end-to-end encryption, E2EE, endpoint security, ACI, UUIDv4, service ID, group master key, signal.group, invite link, Always relay calls, TURN, P2P call geolocation, OSINT, metadata, membership snapshot, cross-group membership, Tim van der Molen",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/"
@@ -143,7 +143,15 @@
         "name": "Does end-to-end encryption protect a seized phone or laptop?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. E2EE protects content in transit between endpoints. Once an investigator has the device, a forensic image, or the desktop database and its key, plaintext is available locally. Signal’s own design assumes the device is the trust boundary."
+          "text": "No. E2EE protects content in transit between endpoints. Once an investigator has the device, a forensic image, or the desktop database and its key, plaintext and local metadata are available. Signal’s own design assumes the device is the trust boundary."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is cross-group membership so powerful?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A single user-level endpoint export can list every group that account belongs to—often dozens or 100-plus—with names, descriptions, sizes and roles. That list alone reconstructs interests and affiliations with no message content. A group-level export returns every member’s UUIDv4 service ID, names and avatar pointer in one shot, which is the raw material for correlating the same person across many groups."
         }
       },
       {
@@ -151,7 +159,15 @@
         "name": "Can you brute-force Signal group membership?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Not in practice. Signal group invite links encode a random thirty-two-byte group master key. That keyspace is large enough that guessing membership is infeasible. Collection means being in the group, receiving an invite, or harvesting invite links that users post in public venues."
+          "text": "Not in practice. Signal group invite links encode a random thirty-two-byte group master key. That keyspace is large enough that guessing membership is infeasible. Collection means being in the group, receiving an invite, or harvesting invite links that users post in public venues. Those links are also revocable: admins can reset or disable them, so a scraped link is time-sensitive."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a Signal service ID or ACI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The service ID is the Account Identifier, or ACI—a standard UUIDv4 that uniquely identifies a Signal user. Group invite links, optional usernames and username/discovery links are ephemeral; display names and avatars change. The UUIDv4 persists through all of them, so it is the durable anchor an observer correlates on. Phone numbers are the legacy identifier."
         }
       },
       {
@@ -160,14 +176,6 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Not fully. Signal’s “Always relay calls” setting is off by default. For one-to-one calls with contacts, Signal may negotiate a peer-to-peer path, which can expose IP addresses. Enabling Always relay calls forces media through Signal’s TURN relays. Group calls are not peer-to-peer."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is an ACI on Signal?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "An ACI, or Account Identifier, is a UUID that uniquely identifies a Signal user. Phone numbers are the legacy identifier. Sigtop’s conversation selectors treat a service ID as that UUID. Identifiers persist across username changes and show up in membership lists and exports."
         }
       }
     ]
