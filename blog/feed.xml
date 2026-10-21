@@ -14,8 +14,8 @@
     <copyright>© 2026 Redwing Technologies LLC</copyright>
     <managingEditor>press@octoprobe.ai (OctoProbe News)</managingEditor>
     <webMaster>press@octoprobe.ai (OctoProbe News)</webMaster>
-    <pubDate>Wed, 21 Oct 2026 08:10:00 -0400</pubDate>
-    <lastBuildDate>Wed, 21 Oct 2026 08:10:00 -0400</lastBuildDate>
+    <pubDate>Wed, 21 Oct 2026 08:55:00 -0400</pubDate>
+    <lastBuildDate>Wed, 21 Oct 2026 08:55:00 -0400</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <ttl>60</ttl>
     <image>
@@ -28,6 +28,21 @@
     <webfeeds:icon>https://www.octoprobe.ai/icon-512.png</webfeeds:icon>
     <webfeeds:accentColor>0284C7</webfeeds:accentColor>
     <webfeeds:analytics id="G-6T6HW79ZP0" engine="GoogleAnalytics"/>
+    <item>
+      <title>From ‘E-Commerce Agent’ to ‘Machiaveli’: Feds Say Spokane Man Mailed ‘Medallin Cartel’ Cocaine</title>
+      <link>https://www.octoprobe.ai/blog/machiaveli-dark-web-cocaine-spokane-nabi/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/machiaveli-dark-web-cocaine-spokane-nabi/</guid>
+      <description>On LinkedIn, Salim Ghulam Nabi was an e-commerce agent. A federal affidavit says he was also Machiaveli, a darknet vendor selling ‘Medallin cartel’ cocaine.</description>
+      <pubDate>Wed, 21 Oct 2026 08:55:00 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Investigations</category>
+      <category>Narcotics</category>
+      <category>Dark Web</category>
+      <enclosure url="https://www.octoprobe.ai/blog/machiaveli-dark-web-cocaine-spokane-nabi/assets/og-cover.png" length="921626" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/machiaveli-dark-web-cocaine-spokane-nabi/assets/og-cover.png" medium="image" type="image/png" width="1200" height="630">
+        <media:description type="plain">From ‘E-Commerce Agent’ to ‘Machiaveli’: Feds Say Spokane Man Mailed ‘Medallin Cartel’ Cocaine</media:description>
+      </media:content>
+    </item>
     <item>
       <title>Sanctioned Over Hamas Fundraising, Gaza Now Is Still Collecting on Telegram</title>
       <link>https://www.octoprobe.ai/blog/gaza-now-telegram-hamas-fundraising-sanctions-sabassi/</link>
