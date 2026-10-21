@@ -33,11 +33,11 @@ Before writing or shipping a post, complete all of the following:
 1. **Primary query + 3 secondary queries** the post should answer (e.g. “what is an identifier graph”, “OSINT investigation platform”, “breach correlation methodology”).
 2. **Definitional opening** — first 2–3 sentences answer “OctoProbe is…” / the core concept before narrative. Answer engines pull this.
 3. **TL;DR / Key takeaways** box near the top (bullets).
-4. **No FAQ or "next steps" section** — posts are for end users; no FAQ, FAQPage JSON-LD, or internal analyst to-dos/placeholders.
+4. **No FAQ or "next steps" section** — posts are for end users; no FAQ, FAQPage JSON-LD, or internal analyst to-dos/placeholders. **OPEN QUESTION — Colin to decide:** recent shipped posts carry visible FAQ + FAQPage JSON-LD (some also HowTo) under a standing directive to keep them, which conflicts with this item; see the note in [AEO-STRUCTURE.md](./AEO-STRUCTURE.md). Until decided, don’t add or strip FAQ/HowTo because of this item; flag it at review. Either way, FAQPage/HowTo JSON-LD only when the Q&A/steps are visible.
 5. **Front matter required fields:**
    - `title` (aim ≤ ~60 chars for the primary title)
    - `description` (~150–160 chars)
-   - `date` (`YYYY-MM-DD`)
+   - `date` (`YYYY-MM-DD`; the emitted JSON-LD must still meet item 11’s ISO 8601 + offset rule — see the dates tooling note)
    - `tags` (list)
    - `canonical` (full https URL)
    - `slug`
@@ -50,7 +50,16 @@ Before writing or shipping a post, complete all of the following:
 7. **Internal links** to homepage sections (`/#capabilities`, `/#faq`, `/#access`, `/#audiences`, `/#integration`), other posts, and listing FAQ. App login only as gated CTA.
 8. **Disclaimer** — sources relied on; public OSINT.
 9. **No passport numbers**; minimize PII; teaching examples stay fictional.
-10. **Run the build** so llms.txt + sitemap stay current:
+10. **Featured snippets** ([Google doc](https://developers.google.com/search/docs/appearance/featured-snippets)) — can’t be marked up or requested; Google lifts passages from well-structured text. House shape (verify): ≥ 2 H2/H3s phrased as real user questions (end in `?`); the first paragraph under each answers it in 40–60 words, answer first; procedures as `<ol>`, sets as `<ul>`, comparisons or event sequences as a `<table>` with a header row. No opt-out controls (items 12, 15).
+11. **Publication dates** ([Google doc](https://developers.google.com/search/docs/appearance/publication-dates)) — verify: one visible, labelled date near the H1 (“Published …”; “Updated …” only after a material change) whose calendar date equals JSON-LD `datePublished` / `dateModified`; both full ISO 8601 with time and correct UTC offset, DST included (e.g. `2026-10-20T21:45:00-04:00`); `datePublished` ≤ `dateModified` ≤ build time; dates describe the page, not the events covered; no other publish-style dates in the page chrome. Updates set `date_modified`, never change `datePublished`. (Dates tooling note in [AEO-STRUCTURE.md](./AEO-STRUCTURE.md): `build-blog.py` emits date-only values today.)
+12. **Snippet / meta description** ([Google doc](https://developers.google.com/search/docs/appearance/snippet)) — verify: `description` is unique site-wide, summarizes this page in readable prose (no keyword list, no boilerplate), ~150–160 chars (house target; Google has no limit and truncates) with the key entity and finding in the first ~100 chars. Key content is visible text (not hidden in tabs/accordions); no script resets scroll or strips the `#fragment`. Robots meta keeps `max-snippet:-1`; no `nosnippet`; `data-nosnippet` only on deliberately excluded elements, each listed in the PR, never on the lede, TL;DR, or question answers.
+13. **Sitelinks** ([Google doc](https://developers.google.com/search/docs/appearance/sitelinks)) — automated; no markup exists. Verify: `title` and headings informative and compact, `title` unique site-wide; one H1, no skipped heading levels; post linked from its `/blog/` card and ≥ 1 related page and links back to `/blog/` (item 7); internal anchor text concise and descriptive (no “click here” / “here” / “read more” / bare URLs); shared template nav; no repeated sections or near-duplicate pages.
+14. **Favicon in Search** ([Google doc](https://developers.google.com/search/docs/appearance/favicon-in-search)) — Google reads one favicon per hostname from the home page `<head>`. Verify: home page has `<link rel="icon" …>`; each icon URL returns 200 with an image type; square, > 48×48 preferred, supported format (ICO/PNG/GIF/JPEG/BMP/PPM/TIFF; keep ICO/PNG beside the SVG); brand mark; stable URLs (never rename/move the icon files); `robots.txt` blocks neither `/` nor the icon paths. New pages copy the icon links from `blog/_template.html`. Status 2026-10-20: passes (see AEO-STRUCTURE.md).
+15. **AI features (AI Overviews / AI Mode)** ([Google doc](https://developers.google.com/search/docs/appearance/ai-features)) — no extra requirements beyond Search: indexed and snippet-eligible. Verify: URL in `sitemap.xml`; not blocked by `robots.txt` or Cloudflare; no `noindex`; robots meta is the template default `<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">` (no `nosnippet`, no `max-snippet:0`) unless Colin explicitly wants the page off AI surfaces; key content in text; every JSON-LD block parses and matches visible text.
+16. **Document images are transcribed** — screenshots aren't quotable text. Pair every key document image with a short HTML transcription/summary carrying the document ID in visible text; descriptive `alt`; a caption naming document, date, and source; link the primary source where one exists.
+17. **Timeline table** — when the post reconstructs a sequence of events, include a dated timeline/summary table (one row per event: date, event, source document).
+18. **Personal-info inventory at review** — even for public / FOIA-released documents, list any visible personal info (names, phone numbers, personal emails) so the owner can make an explicit call (Google personal-info removal policies). Redaction is the owner's decision; Colin's standing default is **no redaction** of public / FOIA-released material.
+19. **Run the build** so llms.txt + sitemap stay current:
 
 ```bash
 python3 scripts/build-blog.py
