@@ -4,7 +4,7 @@ seo_title: "Gaza Now Is Still Raising Money on Telegram"
 dek: "Gaza Now pinned the Tether address of a San Diego charity whose chief executive is now charged with aiding Hamas. The channel outlasted sanctions and the freeze."
 description: "Treasury sanctioned Gaza Now in 2024. Its Telegram channel now has 1.1 million subscribers and still solicits money. A San Diego charity ran its crypto rail."
 date: 2026-10-21T08:10:00-04:00
-date_modified: 2026-10-21T08:10:00-04:00
+date_modified: 2026-10-21T11:22:00-04:00
 slug: gaza-now-telegram-hamas-fundraising-sanctions-sabassi
 canonical: https://www.octoprobe.ai/blog/gaza-now-telegram-hamas-fundraising-sanctions-sabassi/
 section: Investigations
@@ -61,10 +61,6 @@ That channel posted 184 times in the week from 5:10 p.m. EDT on October 14 to 7:
 Gaza Now’s main Telegram channel, verified and with 1,120,559 subscribers. Source: Telegram public preview of @gazaalannet, captured October 21, 2026.
 
 The channel has also kept raising money. On October 16 and again on October 18, it posted an Arabic appeal to supporters in Egypt to pay for drinking water, with one InstaPay number and four Vodafone Cash numbers, Egypt’s bank-transfer and mobile-wallet services. Donors outside Egypt were told to send money to a trusted person in Egypt to forward, because those were the only two methods then available. Donors were told to send a photo of each transfer to @Gazasupport. The October 16 version had 15,200 views by the morning of October 21.
-
-![Gaza Now Telegram post in Arabic asking people in Egypt to donate for drinking water through one InstaPay number and four Vodafone Cash numbers, all partly masked, and to send transfer receipts to @Gazasupport; 10.9K views, edited October 18 at 19:00](/blog/gaza-now-telegram-hamas-fundraising-sanctions-sabassi/assets/telegram-gaza-now-egypt-donation-numbers.jpg "Gaza Now’s Egyptian donation numbers")
-
-Gaza Now’s October 18, 2026, appeal for donations through InstaPay and Vodafone Cash. The middle digits of each phone number are masked. Source: Telegram post 84162 on @gazaalannet, captured October 21, 2026.
 
 The English channel pushes a second rail. A post on October 14 called Telegram Stars the easiest way to donate and walked readers through it: open the channel, tap its name, tap the Send Stars button and pay with a bank card, Apple Pay, Google Pay, an app-store balance or PayPal. A pinned post said $10 could help provide drinking water to displaced families. Stars are Telegram’s in-app currency. Of Stars sent to a channel, Telegram’s developer documentation says, “[Channel owners receive 100% of the stars — and can convert them into Gram cryptocurrency rewards or subsidized ads](https://core.telegram.org/api/stars#:~:text=Channel%20owners%20receive%20100%25%20of%20the%20stars).” Telegram’s terms say it “[currently outsources the processing of all Content Creator Rewards to Fragment](https://telegram.org/tos/content-creator-rewards#:~:text=Telegram%20currently%20outsources%20the%20processing%20of%20all%20Content%20Creator%20Rewards%20to%20Fragment),” a separate platform.
 

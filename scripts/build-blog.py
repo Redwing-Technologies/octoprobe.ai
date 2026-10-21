@@ -839,15 +839,13 @@ def refresh_share_bars(check: bool = False) -> int:
 
 SHOT_RATIO = 1.2
 # Basename of the img src (query string ignored).
+# The Egypt donation-numbers capture was removed from the Gaza Now post in #83, so it is not listed.
 LIGHTBOX_INCLUDE = {
     "archive-today-donate-link-takion-api-developer": {
         "bmc-glizzykingdreko-disclaimer.png",  # mobile Buy Me a Coffee page, 980x1160, no width/height attrs
     },
     "christopher-burns-fbi-fugitive-google-maps-wayne-pa": {
         "fbi-christopher-w-burns.png",  # mobile FBI wanted page, 692x950, no width/height attrs
-    },
-    "gaza-now-telegram-hamas-fundraising-sanctions-sabassi": {
-        "telegram-gaza-now-egypt-donation-numbers.jpg",  # near-square Telegram capture, 1000x1042
     },
     "heather-zhang-prc-agent-case-reddit-allegation": {
         "reddit-allegation-ludepress.png",  # mobile article screenshot, 717x880, no width/height attrs
