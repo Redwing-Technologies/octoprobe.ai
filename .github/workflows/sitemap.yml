@@ -30,6 +30,16 @@ jobs:
         run: |
           python3 -c "import xml.dom.minidom as m; m.parse('sitemap.xml'); print('sitemap.xml well-formed')"
           grep -q '^Sitemap: https://www.octoprobe.ai/sitemap.xml' robots.txt
+      - name: Every served page carries exactly one Google Analytics tag
+        run: |
+          fail=0
+          for f in $(git ls-files '*.html'); do
+            js=$(grep -c 'googletagmanager.com/gtag/js?id=G-6T6HW79ZP0' "$f")
+            cfg=$(grep -c "gtag('config', 'G-6T6HW79ZP0')" "$f")
+            [ "$js" = 1 ] && [ "$cfg" = 1 ] || { echo "GA tag missing or duplicated in $f (js=$js config=$cfg)"; fail=1; }
+          done
+          [ "$fail" = 0 ] && echo "GA tag present once on every page"
+          exit $fail
       - name: Every blog post is listed
         run: |
           for d in blog/*/index.html; do
