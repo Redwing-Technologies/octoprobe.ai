@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hexane’s AfD Dump: Assessing the Actor, the Scope, and the Access · OctoProbe News</title>
+<meta name="description" content="Three-part assessment of Hexane’s AfD dump: a privacy-focused cyber actor, a 281 GB archive of ~421,000 emails, and how deep the system access went.">
+<meta name="keywords" content="Hexane, hexane.cc, AfD, Alternative für Deutschland, data breach, BitTorrent, DDoSecrets, Cloudflare, cock.li, Monero, mbox, DKIM, hacktivism, OSINT, identifier graph, OctoProbe">
+<meta name="author" content="Colin Aamot">
+<link rel="alternate" type="text/plain" title="LLM context (llms.txt)" href="/llms.txt">
+<link rel="alternate" type="text/plain" title="AI discovery (ai.txt)" href="/ai.txt">
+<meta name="ai-content-declaration" content="human-authored; investigative reporting from public records">
+<link rel="canonical" href="https://www.octoprobe.ai/blog/hexane-afd-leak-actor-scope-access/">
+<link rel="alternate" type="application/rss+xml" title="OctoProbe News" href="https://www.octoprobe.ai/blog/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="OctoProbe News">
+<meta property="og:url" content="https://www.octoprobe.ai/blog/hexane-afd-leak-actor-scope-access/">
+<meta property="og:title" content="Hexane’s AfD Dump: Assessing the Actor, the Scope, and the Access">
+<meta property="og:description" content="Three-part assessment of Hexane’s AfD dump: a privacy-focused cyber actor, a 281 GB archive of ~421,000 emails, and how deep the system access went.">
+<meta property="og:image" content="https://www.octoprobe.ai/blog/hexane-afd-leak-actor-scope-access/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Hexane’s AfD Dump: Assessing the Actor, the Scope, and the Access">
+<meta property="article:published_time" content="2026-10-21T11:55:00-04:00">
+<meta property="article:modified_time" content="2026-10-21T12:05:00-04:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@octoprobeai">
+<meta name="twitter:title" content="Hexane’s AfD Dump: Assessing the Actor, the Scope, and the Access">
+<meta name="twitter:description" content="Three-part assessment of Hexane’s AfD dump: a privacy-focused cyber actor, a 281 GB archive of ~421,000 emails, and how deep the system access went.">
+<meta name="twitter:image" content="https://www.octoprobe.ai/blog/hexane-afd-leak-actor-scope-access/assets/og-cover.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Hexane’s AfD Dump: Assessing the Actor, the Scope, and the Access",
+  "description": "Three-part assessment of Hexane’s AfD dump: a privacy-focused cyber actor, a 281 GB archive of ~421,000 emails, and how deep the system access went.",
+  "datePublished": "2026-10-21T11:55:00-04:00",
+  "dateModified": "2026-10-21T12:05:00-04:00",
+  "author": {
+    "@type": "Person",
+    "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#person",
+    "name": "Colin Aamot",
+    "url": "https://www.octoprobe.ai/blog/authors/colin-aamot/"
+  },
+  "publisher": {
+    "@type": "NewsMediaOrganization",
+    "@id": "https://www.octoprobe.ai/blog/#newsroom",
+    "name": "OctoProbe News",
+    "url": "https://www.octoprobe.ai/blog/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.octoprobe.ai/icon-512.png",
+      "width": 512,
+      "height": 512
+    },
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Redwing Technologies LLC",
+      "url": "https://rook-intel.com/"
+    }
+  },
+  "image": [
+    "https://www.octoprobe.ai/blog/hexane-afd-leak-actor-scope-access/assets/og-cover.png",
+    "https://www.octoprobe.ai/blog/hexane-afd-leak-actor-scope-access/assets/cover.png",
+    "https://www.octoprobe.ai/blog/hexane-afd-leak-actor-scope-access/assets/octoprobe-graph-hexane-infrastructure.png",
+    "https://www.octoprobe.ai/blog/hexane-afd-leak-actor-scope-access/assets/hexane-corpus-directory-sizes.png"
+  ],
+  "keywords": "Hexane, hexane.cc, AfD, Alternative für Deutschland, data breach, BitTorrent, DDoSecrets, Cloudflare, cock.li, Monero, mbox, DKIM, hacktivism, OSINT, identifier graph, OctoProbe",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.octoprobe.ai/blog/hexane-afd-leak-actor-scope-access/"
+  },
+  "url": "https://www.octoprobe.ai/blog/hexane-afd-leak-actor-scope-access/",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "OctoProbe News",
+    "url": "https://www.octoprobe.ai/blog/"
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      ".answer-first",
+      ".key-takeaways",
+      ".prose h2"
+    ]
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "data breach"
+    },
+    {
+      "@type": "Thing",
+      "name": "hacktivism"
+    },
+    {
+      "@type": "Organization",
+      "name": "Alternative für Deutschland"
+    },
+    {
+      "@type": "Thing",
+      "name": "BitTorrent distribution"
+    }
+  ],
+  "mentions": [
+    {
+      "@type": "Organization",
+      "name": "Hexane",
+      "url": "https://hexane.cc/"
+    },
+    {
+      "@type": "Organization",
+      "name": "Distributed Denial of Secrets",
+      "url": "https://ddosecrets.org/article/hexane"
+    },
+    {
+      "@type": "Organization",
+      "name": "Cloudflare",
+      "url": "https://www.cloudflare.com/"
+    },
+    {
+      "@type": "Organization",
+      "name": "Asvin"
+    }
+  ],
+  "citation": [
+    {
+      "@type": "CreativeWork",
+      "name": "Hexane — Distributed Denial of Secrets",
+      "url": "https://ddosecrets.org/article/hexane"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Massive AfD data breach exposes illegally copied files — heise online",
+      "url": "https://www.heise.de/en/news/Massive-AfD-data-breach-exposes-illegally-copied-files-11493923.html"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Germany news: Hackers release AfD party emails — Deutsche Welle",
+      "url": "https://www.dw.com/en/germany-news-hackers-release-afd-party-emails/live-79709090"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.octoprobe.ai/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.octoprobe.ai/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Hexane’s AfD Dump: Assessing the Actor, the Scope, and the Access",
+      "item": "https://www.octoprobe.ai/blog/hexane-afd-leak-actor-scope-access/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who is Hexane?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hexane is an anonymous publisher that released a 281 GB archive of Alternative für Deutschland internal records via hexane.cc, BitTorrent and a DDoSecrets mirror. It presents itself as an independent document archive and contacts media only through a cock.li address and PGP."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How large is the Hexane AfD archive?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hexane’s MANIFEST.tsv lists 301,876,945,879 bytes across 102,985 files — 281 GB as DDoSecrets reports. Hexane’s journalist briefing counts about 421,000 messages across ten mailboxes, plus tens of thousands of documents, tabular exports and images."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How did attackers say they got into AfD systems?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "According to heise online, attackers said they entered through an outdated website. heise reported that several web servers and at least one mail server were the source. AfD said mostly inactive mailboxes hosted by a provider were stolen in September; published material running into early September, including a live state-campaign mailbox, undercuts that downplaying."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this an insider leak?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Security researcher Mirko Ross of Asvin told heise online it does not look like an insider job, but rather hacktivism. Attackers quoted via Telegram said their goal was not destruction but to expose the party’s degeneracy and hypocrisy."
+      }
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6T6HW79ZP0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6T6HW79ZP0');
+</script>
+<meta name="theme-color" content="#f7fbff">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/blog.css?v=news7">
+<link rel="stylesheet" href="/assets/css/blog-lightbox.css?v=lb1">
+<style id="news-frame">.post-dek{max-width:46rem;margin:.6rem 0 0;font-size:1.15rem;line-height:1.5;color:#475569}.post-hero .byline{margin:1rem 0 0;font-weight:600;color:#334155;font-size:.98rem}.post-hero .byline a{color:inherit;text-decoration:underline;text-decoration-color:rgba(51,65,85,.35);text-underline-offset:3px}.post-hero .byline a:hover{color:var(--blue)}.table-wrap{overflow-x:auto}.table-wrap table{border-collapse:collapse;width:100%;font-size:.92rem}.table-wrap th,.table-wrap td{border:1px solid #e2e8f0;padding:.45rem .6rem;vertical-align:top;text-align:left}.related-reading{border-top:1px solid #e2e8f0;margin-top:2rem;padding-top:.5rem}.related-reading h2{margin-top:1rem}.related-reading li{margin:.4rem 0}.prose .faq h3{font-size:1.02rem;margin-top:1.2em}.prose .faq p{margin-top:.35em}.prose figure.wide img{width:100%;height:auto;border:1px solid #e2e8f0;border-radius:12px}.prose .assessment-pillars{display:grid;gap:.6rem;margin:1.1rem 0 1.4rem}.prose .assessment-pillars li{margin:.2rem 0}.prose .timeline-table th:first-child,.prose .timeline-table td:first-child{white-space:nowrap}</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="top" id="nav" aria-label="Primary">
+  <a class="brand" href="/blog/" aria-label="OctoProbe News home">
+    <svg class="logo" viewBox="0 0 40 40" role="img" aria-label="OctoProbe AI" fill="none">
+      <defs>
+        <linearGradient id="g1" x1="6" y1="4" x2="34" y2="38" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#818cf8"/><stop offset=".55" stop-color="#38bdf8"/><stop offset="1" stop-color="#22d3ee"/>
+        </linearGradient>
+      </defs>
+      <g stroke="url(#g1)" stroke-width="2.4" stroke-linecap="round">
+        <path d="M12 21.5 C6 25 5.5 31 9.5 34.5"/><path d="M16 22.5 C13 27 12 32.5 15 36"/>
+        <path d="M19 23 C18 28.5 17.5 33 19 37"/><path d="M28 21.5 C34 25 34.5 31 30.5 34.5"/>
+        <path d="M24 22.5 C27 27 28 32.5 25 36"/><path d="M21 23 C22 28.5 22.5 33 21 37"/>
+      </g>
+      <g fill="url(#g1)"><circle cx="9.5" cy="34.5" r="2.1"/><circle cx="15" cy="36" r="2.1"/><circle cx="19" cy="37" r="2.1"/><circle cx="30.5" cy="34.5" r="2.1"/><circle cx="25" cy="36" r="2.1"/><circle cx="21" cy="37" r="2.1"/></g>
+      <path d="M20 4.5 C12.3 4.5 7.5 9.8 7.5 16.4 C7.5 20.6 10.6 23.2 14.8 23.2 L25.2 23.2 C29.4 23.2 32.5 20.6 32.5 16.4 C32.5 9.8 27.7 4.5 20 4.5 Z" fill="url(#g1)"/>
+      <rect x="15.2" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
+      <rect x="21.6" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
+      <rect x="30.5" y="8" width="2" height="2" rx=".5" fill="url(#g1)" opacity=".7"/>
+      <rect x="7.2" y="9.6" width="1.7" height="1.7" rx=".4" fill="url(#g1)" opacity=".6"/>
+    </svg>
+    <span class="bn">OctoProbe<small>News</small></span>
+  </a>
+  <div class="nav-center">
+    <a href="/blog/about/">About</a>
+    <a href="/blog/standards/">Standards</a>
+    <a href="/blog/corrections/">Corrections</a>
+    <a href="/blog/contact/">Contact</a>
+  </div>
+  <div class="nav-right">
+    <a href="/blog/" class="nav-cta nav-investigations" aria-current="page">Investigations</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+  <a href="/blog/" class="active" aria-current="page">Investigations</a>
+  <a href="/blog/about/">About</a>
+  <a href="/blog/standards/">Standards</a>
+  <a href="/blog/corrections/">Corrections</a>
+  <a href="/blog/contact/">Contact</a>
+  <a href="/">OctoProbe platform</a>
+</div>
+<main id="main">
+  <header class="post-hero">
+    <div class="wrap">
+      <div class="post-crumb">
+        <a class="back-link" href="/blog/">← All investigations</a>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span class="eyebrow">Investigations</span>
+      </div>
+      <h1>Hexane’s AfD Dump: Assessing the Actor, the Scope, and the Access</h1>
+      <p class="post-dek">A three-part assessment of the anonymous Hexane dump: the privacy-hardened actor, the 281 GB archive left for journalists, and how deep the compromise went.</p>
+      <div class="post-meta">
+        <time datetime="2026-10-21">Oct 21, 2026</time>
+        <span class="sep" aria-hidden="true"></span>
+        <div class="tags"><span class="tag">Investigation</span><span class="tag blue">OSINT</span><span class="tag teal">Leak</span><span class="tag">Germany</span></div>
+      </div>
+      <p class="byline has-avatar"><picture><source type="image/webp" srcset="/assets/authors/colin-aamot-96.webp 1x, /assets/authors/colin-aamot-192.webp 2x"><img class="author-avatar" src="/assets/authors/colin-aamot-96.jpg" srcset="/assets/authors/colin-aamot-96.jpg 1x, /assets/authors/colin-aamot-192.jpg 2x" width="44" height="44" alt="Colin Aamot" decoding="async"></picture><span>By <a href="https://www.octoprobe.ai/blog/authors/colin-aamot/" rel="author">Colin Aamot</a></span></p>
+      <!-- share-bar -->
+      <div class="share-bar" role="group" aria-label="Share this article" hidden><span class="share-label" aria-hidden="true">Share</span><button type="button" class="share-native" aria-label="Share this article"><svg class="share-ico-line" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M12 3v12"/><path d="m7.5 7.5 4.5-4.5 4.5 4.5"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg><span>Share</span></button><ul class="share-list"><li><a class="share-link" href="https://x.com/intent/post" data-share="x" target="_blank" rel="noopener noreferrer" aria-label="Share on X"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg></a></li><li><a class="share-link" href="https://facebook.com/sharer/sharer.php" data-share="facebook" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a></li><li><a class="share-link" href="https://www.linkedin.com/sharing/share-offsite/" data-share="linkedin" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></li><li><a class="share-link" href="https://www.reddit.com/submit" data-share="reddit" target="_blank" rel="noopener noreferrer" aria-label="Share on Reddit"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg></a></li><li><a class="share-link" href="https://api.whatsapp.com/send" data-share="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a></li><li><a class="share-link" href="https://t.me/share/url" data-share="telegram" target="_blank" rel="noopener noreferrer" aria-label="Share on Telegram"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a></li><li><a class="share-link" href="https://bsky.app/intent/compose" data-share="bluesky" target="_blank" rel="noopener noreferrer" aria-label="Share on Bluesky"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M5.202 2.857C7.954 4.922 10.913 9.11 12 11.358c1.087-2.247 4.046-6.436 6.798-8.501C20.783 1.366 24 .213 24 3.883c0 .732-.42 6.156-.667 7.037-.856 3.061-3.978 3.842-6.755 3.37 4.854.826 6.089 3.562 3.422 6.299-5.065 5.196-7.28-1.304-7.847-2.97-.104-.305-.152-.448-.153-.327 0-.121-.05.022-.153.327-.568 1.666-2.782 8.166-7.847 2.97-2.667-2.737-1.432-5.473 3.422-6.3-2.777.473-5.899-.308-6.755-3.369C.42 10.04 0 4.615 0 3.883c0-3.67 3.217-2.517 5.202-1.026"/></svg></a></li><li><a class="share-link" href="mailto:" data-share="email" aria-label="Share by email"><svg class="share-ico-line" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg></a></li><li class="share-copy-item"><button type="button" class="share-link share-copy" data-share="copy" aria-label="Copy link"><svg class="share-ico-line" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M10 13.5a4.5 4.5 0 0 0 6.4.4l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.6 1.6"/><path d="M14 10.5a4.5 4.5 0 0 0-6.4-.4l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.6-1.6"/></svg><svg class="share-ico-line" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></button></li></ul><span class="share-status" role="status" aria-live="polite"></span></div>
+      <!-- /share-bar -->
+    </div>
+  </header>
+  
+  <article class="post-body">
+    <div class="wrap">
+      <div class="prose">
+<!-- Closing order: FAQ → author bio → Related Reading (always LAST). LOCAL REVIEW DRAFT — DO NOT PUBLISH. -->
+
+<figure><img fetchpriority="high" decoding="async" src="/blog/hexane-afd-leak-actor-scope-access/assets/cover.png" width="2400" height="1260" alt="OctoProbe cover over a dark map of Berlin with a red pin; abstract hexagon identifier-graph graphic at right; headline Hexane’s AfD Dump — Actor, Scope, Access; insight line 281 GB, about 421,000 emails, ten mailboxes."><figcaption>Graphic: OctoProbe (abstract identifier graph); hexane.cc Overview inset. Map © OpenStreetMap contributors.</figcaption></figure>
+
+<p class="primary-question"><strong>What should investigators make of the Hexane AfD dump — the actor who published it, the archive’s scope, and the access that made it possible?</strong></p>
+<p class="answer-first">Treat it as a three-part assessment. <strong>The actor</strong> is Hexane: a sophisticated, privacy-focused cyber operator that stood up a purpose-built, anonymized, one-time-dump stack — Cloudflare-fronted domain, cock.li contact plus PGP, Monero-only donations, BitTorrent and a <a href="https://ddosecrets.org/article/hexane">Distributed Denial of Secrets</a> mirror — engineered to resist attribution and takedown. <strong>The scope</strong> is a 281 GB primary-source archive: Hexane’s <code>MANIFEST.tsv</code> lists 301,876,945,879 bytes across 102,985 files, and Hexane’s own briefing counts about 421,000 messages across ten mailboxes. <strong>The access</strong> looks like more than a few dusty inboxes. Attackers said they entered through an “outdated website”; <em>heise online</em> reported several web servers and at least one mail server as the source; and the corpus includes SQL dumps plus a credentials-and-keys trove that implies deep system reach.</p>
+
+<aside aria-label="Key takeaways" class="key-takeaways">
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ul class="assessment-pillars">
+<li><a href="#the-actor">The actor:</a> Hexane built a privacy-hardened, single-purpose release stack and billed itself as “an independent document archive,” not a smash-and-grab vandal.</li>
+<li><a href="#scope-of-the-leak">Scope of the leak:</a> 281 GB and roughly 103,000 files, dominated by 209.67 GB of mailbox parts, with documents, tabular exports, media, databases and credentials layered underneath.</li>
+<li><a href="#access">Access:</a> “Outdated website” entry, multi-server sourcing, live campaign mail alongside arbitration-court boxes, and a credentials folder that shows how deep the compromise went.</li>
+<li><a href="#scope-of-the-leak">For journalists:</a> Hexane shipped a start-here pack — briefing, data dictionary, search recipes, verification notes — and told readers the torrent, not the website index, is the primary source.</li>
+<li><a href="#the-actor">Motive frame:</a> Mirko Ross of Asvin told <em>heise online</em> it looks like hacktivism, not an insider job; attackers said the goal was “not destruction” but to expose “degeneracy and hypocrisy.”</li>
+</ul>
+</aside>
+
+<div class="table-wrap">
+<table class="timeline-table">
+<thead><tr><th>Date</th><th>Event</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>Oct. 15, 2026</td><td><code>hexane.cc</code> registered (NiceNIC); nameservers point at Cloudflare.</td><td>RDAP</td></tr>
+<tr><td>Sept. 2026 (party claim)</td><td>AfD says mailboxes at a hosting provider were stolen; party says it stopped the attack.</td><td><em>heise</em> / <em>DW</em></td></tr>
+<tr><td>Oct. 20, 2026</td><td>DDoSecrets publishes the Hexane corpus (281.00 GB). <em>heise</em> and <em>DW</em>/<em>Bild</em> report the dump; Hexane site reported offline by Tuesday afternoon.</td><td>DDoSecrets; <em>heise</em>; <em>DW</em></td></tr>
+<tr><td>Oct. 20–21, 2026</td><td>DDoSecrets file index shows the seven corpus directories plus <code>MANIFEST.tsv</code>.</td><td>data.ddosecrets.org</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="the-actor">The Actor: A Privacy-Focused Cyber Operator</h2>
+<p>Hexane did not leave a face, a company, or a press officer. What it left is posture.</p>
+<p>On its About page, Hexane titled the project “An archive of internal records” and wrote that <a href="https://hexane.cc/about">hexane.cc</a> “publishes organisational documents, internal correspondence and administrative records that are in the public interest.” The archive, it said, “exists so that journalists, researchers and members of the public can examine primary material directly rather than rely on second-hand summaries.” It grouped records into five classes — correspondence, mailboxes, documents, databases, sensitive records — each with a severity from low to critical that “describes the substance of the content, not the prominence of anyone named in it.” Near-identical items were collapsed. Material with “no public-interest value” — routine invoices, templates, automated noise — was withheld from the browsable index.</p>
+<p>That is a publisher’s self-presentation, not a confession of identity. The infrastructure around it is where the sophistication shows.</p>
+
+<figure class="wide"><img decoding="async" loading="lazy" src="/blog/hexane-afd-leak-actor-scope-access/assets/octoprobe-graph-hexane-infrastructure.png" width="1150" height="410" alt="OctoProbe network graph for Hexane infrastructure: hexane.cc at left, dense Cloudflare DNS and mail nodes in the center, and on the right cock.li contact email, Monero wallet, Trocador AnonPay and DDoSecrets mirror URLs."><figcaption>Hexane’s public infrastructure as mapped in OctoProbe: domain and Cloudflare DNS/mail in the middle; privacy contact, Monero funding and DDoSecrets distribution on the right. Source: OctoProbe.</figcaption></figure>
+
+<h3 id="purpose-built-one-time-dump-stack">What Is the Purpose-Built One-Time-Dump Stack?</h3>
+<p>Read the stack as a deliberate anti-attribution, anti-takedown design.</p>
+<ul>
+<li><strong>Domain fronted by Cloudflare.</strong> Live DNS for <code>hexane.cc</code> resolves to Cloudflare anycast addresses (including 172.67.212.198 and 104.21.61.183), nameservers <code>keaton.ns.cloudflare.com</code> and <code>lia.ns.cloudflare.com</code>, and Cloudflare MX hosts. That hides origin IPs and absorbs floods. Hexane told reporters they were hit with a DDoS and offered money to take the site down, <em>heise online</em> reported.</li>
+<li><strong>Privacy contact only.</strong> Media contact is <code>hexanedotcc@cock.li</code>, with a PGP fingerprint Hexane published “exclusively” for contact and media enquiries — and explicitly <em>not</em> for signing documents, releases or torrents. “A signature from it should not be read as authentication of any file,” Hexane wrote.</li>
+<li><strong>Monero-only funding.</strong> <code>DONATE.txt</code> in the corpus asks for Monero and routes other coins through a Trocador AnonPay link — privacy coin first, no advertising, “no sponsor.”</li>
+<li><strong>Decentralized distribution.</strong> The corpus ships as BitTorrent plus magnet links and a DDoSecrets mirror at <a href="https://data.ddosecrets.org/Hexane/hexane-corpus/">data.ddosecrets.org/Hexane/hexane-corpus/</a>. That is how a one-time dump outlives its own website. <em>Deutsche Welle</em> reported the hosting site offline by Tuesday afternoon on October 20, 2026; the torrent and the DDoSecrets copy persist.</li>
+</ul>
+<p>RDAP shows <code>hexane.cc</code> registered on October 15, 2026, through NiceNIC International Group — five days before the DDoSecrets publication stamp. Single-purpose domain, short lead time, no personal attribution on the wire.</p>
+
+<h3 id="hacktivism-not-an-insider-job">Hacktivism, Not an Insider Job?</h3>
+<p>Security researcher Mirko Ross of Asvin examined the breach and told <a href="https://www.heise.de/en/news/Massive-AfD-data-breach-exposes-illegally-copied-files-11493923.html"><em>heise online</em></a>: “This doesn’t look like an insider job to me, but rather hacktivism.” Attackers quoted via a Telegram channel said their goal was “not destruction,” since they could have destroyed servers and backups, but to expose the party’s “degeneracy and hypocrisy.” They said they got in through an “outdated website,” and told “International Cyber Digest” they were later offered money to take the leak site down and hit with a DDoS.</p>
+<p>Shared infrastructure — Cloudflare, cock.li, Monero — is privacy tooling here, not a fingerprint tying Hexane to any named person. Treat ubiquitous services as cover, not as attribution.</p>
+
+<h2 id="scope-of-the-leak">Scope of the Leak: What Hexane Published</h2>
+<p>DDoSecrets filed the release on October 20, 2026, under Germany, type “Extremist, Fascist,” source “Hexane.cc,” download size <a href="https://ddosecrets.org/article/hexane">281.00 GB</a>. Its summary: “Internal material from the far-right German party Alternative für Deutschland… more than half a million emails, attachments, documents, invoices, member records, contracts, and databases which reveal allegations of embezzlement and financial misconduct.”</p>
+<p>OctoProbe counted the bytes Hexane listed. <code>MANIFEST.tsv</code> enumerates <strong>102,985 files totaling 301,876,945,879 bytes</strong> — 281 GB when measured the same way DDoSecrets does. Hexane’s journalist briefing gives the working tallies reporters will use: about 421,000 messages across ten mailboxes; about 48,700 documents; about 14,500 tabular exports; about 39,000 images; plus WordPress and SQL dumps.</p>
+
+<figure class="wide"><img decoding="async" loading="lazy" src="/blog/hexane-afd-leak-actor-scope-access/assets/hexane-corpus-directory-sizes.png" width="1610" height="1288" alt="Two-panel dark navy bar chart: top panel shows corpus directories by size with 01_EMAIL at 209.67 GB in red and five other directories in blue; bottom panel shows ten mailboxes by size from fabian.jacobi at about 32.6 GB down to bundesgeschaeftsstelle at about 1.1 GB."><figcaption>Corpus directories and the ten mailboxes by size, rendered from Hexane’s <code>MANIFEST.tsv</code> (GiB). Source: Hexane MANIFEST.tsv; chart by OctoProbe.</figcaption></figure>
+
+<h3 id="what-is-in-the-directory-tree">What Is in the Directory Tree?</h3>
+<p>Hexane’s corpus README is a legend, not marketing copy:</p>
+<ul>
+<li><code>01_EMAIL/</code> — mailbox archives in standard mbox format (a mailbox file format most mail clients and forensic tools open), one directory per mailbox, split into roughly 4 GB parts. <strong>Sixty files, 209.67 GB.</strong></li>
+<li><code>04_TABULAR_DATA/</code> — CSV, TSV, JSON and JSONL exports (form submissions, member tables, logs). <strong>14,484 files, 29.02 GB.</strong></li>
+<li><code>03_DOCUMENTS/</code> — PDFs, Office, OpenDocument, RTF. <strong>48,725 files, 26.14 GB</strong> (including 42,295 PDFs in the manifest).</li>
+<li><code>06_MEDIA/</code> — photographs and scans from mail attachments. <strong>39,145 files, 10.11 GB.</strong></li>
+<li><code>02_DATABASES/</code> — SQL and WordPress dumps, four files totaling 5.65 GB (including a 3.03 GB full SQL dump and WordPress packages).</li>
+<li><code>05_CREDENTIALS_AND_KEYS/</code> — password hashes, SSH keys, TLS keys, config secrets. <strong>560 files, 0.56 GB.</strong></li>
+<li><code>99_FOR_JOURNALISTS/</code> — start-here briefing, data dictionary, search recipes, verification notes. Five small files.</li>
+</ul>
+<p>Email is most of the disk. Documents and tables are most of the file count. Credentials are a small folder with outsized implications — see Access below.</p>
+
+<h3 id="which-ten-mailboxes">Which Ten Mailboxes?</h3>
+<p>Hexane’s briefing lists the ten boxes that “happened to be on the systems reached.” Sizes below are from the manifest (largest first):</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Mailbox</th><th>Role (per Hexane)</th><th>Size</th></tr></thead>
+<tbody>
+<tr><td><code>fabian.jacobi@afd.nrw</code></td><td>NRW official</td><td>32.6 GB</td></tr>
+<tr><td><code>bundesschiedsgericht@alternativefuer.de</code></td><td>Federal party arbitration court</td><td>32.0 GB</td></tr>
+<tr><td><code>geschaeftsstelle@afd.nrw</code></td><td>NRW state office</td><td>31.2 GB</td></tr>
+<tr><td><code>leif.erik.holm@afd-mv.de</code></td><td>Mecklenburg-Vorpommern top candidate</td><td>~29 GB</td></tr>
+<tr><td><code>schiedsgericht@afd.nrw</code></td><td>NRW arbitration court</td><td>24.0 GB</td></tr>
+<tr><td><code>alexander.gauland@alternativefuer.de</code></td><td>Former federal leader</td><td>21.0 GB</td></tr>
+<tr><td><code>sascha.huemmer@afd-fanshop.de</code></td><td>Party shop</td><td>19.4 GB</td></tr>
+<tr><td><code>sebastian.lux@afd-fanshop.de</code></td><td>Party shop</td><td>14.8 GB</td></tr>
+<tr><td><code>unknown</code></td><td>(unlabeled bucket)</td><td>4.6 GB</td></tr>
+<tr><td><code>bundesgeschaeftsstelle@alternativefuer.de</code></td><td>Federal office</td><td>1.1 GB</td></tr>
+</tbody>
+</table>
+</div>
+<p>Hexane flagged the arbitration courts as “the most under-reported part of this archive” — internal expulsions, appeals and disputes the party would not volunteer. <em>Bild</em>, via <em>DW</em>, put the published email count above 420,000 and said material included mail tied to co-leader Alice Weidel plus bank statements, certificates and membership lists. This article does not open those records; it maps the container.</p>
+
+<h3 id="what-hexane-told-journalists">What Did Hexane Tell Journalists?</h3>
+<p>The <code>99_FOR_JOURNALISTS/</code> pack is the tell that this was built for reporters, not for scrapers alone. Hexane’s briefing warns of three traps (paraphrased, attributed to Hexane): do not confuse a political position with misconduct; do not attribute forwarded or third-party material to the party — check the sender line; a document is not a finding — the finding is the relationship it proves.</p>
+<p>On integrity, Hexane says <code>MANIFEST.tsv</code> lists every file and size in bytes so a downloader can confirm a complete copy. On limits, it calls the archive partial; records reflect systems at acquisition and may be incomplete, duplicated or superseded; personal data appears as in the originals, some about private individuals; “Nothing in this archive is a legal finding… Verify before publishing.”</p>
+<p>On verification, Hexane’s guidance is blunt: the website is an index of summaries, not a primary source; the torrent holds original mbox messages byte-for-byte; authenticate with DKIM-Signature (a cryptographic mail signature that proves the message passed a domain’s mail server — origin and integrity, not authorship or truth), Received chains, Message-ID, and cross-checks across independent files. “Nothing on this site replaces that, and nothing on this site should be cited as a primary source.”</p>
+
+<h2 id="access">Access: How Deep the Compromise Went</h2>
+<p>Scope describes what left the building. Access asks how far inside the operators got.</p>
+
+<h3 id="outdated-website-entry">How Did They Say They Got In?</h3>
+<p>Attackers said they entered through an “outdated website,” <em>heise online</em> reported. The same piece says several web servers and at least one mail server were the source of the unauthorized copies. That is a web-to-mail (and likely web-to-database) path, not a single misplaced USB stick.</p>
+
+<h3 id="afd-mostly-inactive-claim">Does AfD’s “Mostly Inactive” Claim Hold?</h3>
+<p>AfD confirmed the incident. A spokesperson told reporters hackers targeted a hosting provider and copied data from “a small number of mostly inactive email accounts,” and that the theft happened in September; the party said it stopped the attack after discovering it. <em>heise</em> noted the contradiction: published data running into early September includes communications about the Mecklenburg-Western Pomerania state-election campaign and the mailbox of Leif-Erik Holm, the AfD’s top candidate there. A live campaign inbox is not an attic account.</p>
+<p><em>Deutsche Welle</em> reported the party launched an inquiry; archived versions of the Hexane site showed 281 GB under the headline “The party’s own records, unedited”; and nothing had yet been certified authentic by an independent body. Context around the party — several state chapters classified “confirmed right-wing extremist” by German domestic intelligence, the party topping recent national polls, ban calls from some politicians — is the political weather, not proof of any document inside the dump.</p>
+
+<h3 id="credentials-and-what-depth-means">What Do Credentials and Databases Say About Depth?</h3>
+<p>Mailbox exports alone would be a serious breach. Hexane shipped more.</p>
+<p><code>02_DATABASES/</code> holds multi-gigabyte SQL and WordPress dumps — the kind of exports that usually require administrative or host-level reach on the systems that ran them. <code>05_CREDENTIALS_AND_KEYS/</code> holds 560 files Hexane labels as password hashes, SSH keys, TLS keys and configuration secrets: manifest names include WordPress config credential extracts, JWT and session-token analyses, PEM private-key material, per-vhost profiles, and dozens of host-named JSON packs tied to AfD web properties. That folder is only 0.56 GB. It is evidence of how deep the operators went once they were in — not a claim, in this article, about any specific password or key.</p>
+<p>Put the three access signals together: an “outdated website” entry story; multi-server sourcing (web plus mail); and a publish set that spans live political mail, arbitration-court mail, shop mail, SQL/WordPress databases and a credentials harvest. The compromise, on that evidence, was not a single idle inbox. It was system-level enough to empty mail stores, database exports and secret material into one torrent.</p>
+
+<h2 id="how-this-story-was-reported">How This Story Was Reported</h2>
+<p>This assessment is built from Hexane’s own corpus documentation (<code>README.md</code>, <code>README_FOR_JOURNALISTS.md</code>, <code>VERIFY.md</code>, <code>DONATE.txt</code>, <code>MANIFEST.tsv</code>), the public DDoSecrets publication page and file index, contemporaneous reporting by <em>heise online</em> (Falk Steiner) and <em>Deutsche Welle</em> (citing <em>Bild</em>), live DNS and RDAP for <code>hexane.cc</code>, and an OctoProbe infrastructure graph of already-public Hexane nodes. It does not quote private-individual personal data from inside the mailboxes, and it does not treat the archive’s unverified contents as adjudicated findings.</p>
+
+<section class="faq" aria-labelledby="frequently-asked-questions">
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3>Who is Hexane?</h3>
+<p>Hexane is an anonymous publisher that released a 281 GB archive of Alternative für Deutschland internal records via hexane.cc, BitTorrent and a DDoSecrets mirror. It presents itself as an independent document archive and contacts media only through a cock.li address and PGP.</p>
+<h3>How large is the Hexane AfD archive?</h3>
+<p>Hexane’s <code>MANIFEST.tsv</code> lists 301,876,945,879 bytes across 102,985 files — 281 GB as DDoSecrets reports. Hexane’s journalist briefing counts about 421,000 messages across ten mailboxes, plus tens of thousands of documents, tabular exports and images.</p>
+<h3>How did attackers say they got into AfD systems?</h3>
+<p>According to <em>heise online</em>, attackers said they entered through an outdated website. <em>heise</em> reported that several web servers and at least one mail server were the source. AfD said mostly inactive mailboxes hosted by a provider were stolen in September; published material running into early September, including a live state-campaign mailbox, undercuts that downplaying.</p>
+<h3>Is this an insider leak?</h3>
+<p>Security researcher Mirko Ross of Asvin told <em>heise online</em> it does not look like an insider job, but rather hacktivism. Attackers quoted via Telegram said their goal was “not destruction” but to expose the party’s “degeneracy and hypocrisy.”</p>
+</section>
+
+<p class="author-note has-avatar"><picture class="author-note-avatar"><source type="image/webp" srcset="/assets/authors/colin-aamot-96.webp 1x, /assets/authors/colin-aamot-192.webp 2x"><img class="author-avatar" src="/assets/authors/colin-aamot-96.jpg" srcset="/assets/authors/colin-aamot-96.jpg 1x, /assets/authors/colin-aamot-192.jpg 2x" width="96" height="96" alt="" loading="lazy" decoding="async"></picture><span class="author-note-text"><a href="https://www.octoprobe.ai/blog/authors/colin-aamot/" rel="author">Colin Aamot</a> is the founder of Redwing Technologies, which publishes OctoProbe News, builds a portfolio of SaaS products, and runs Rook Intelligence, a licensed Washington, DC private detective agency. A U.S. Army veteran, he began in the 173rd Airborne Brigade and was selected for the Special Operations psychological operations regiment, then served as a counterterrorism information operations planner with USASOC and SOCCENT supporting Operation Inherent Resolve and Operation Spartan Shield. He was a TechCongress Congressional Innovation Fellow in the office of Rep. Darrell Issa and later an investigator for The Heritage Foundation&#x27;s Oversight Project and an investigative columnist for The Daily Signal. He holds an MA in Global Security Studies from Johns Hopkins University and an MBA from UNC Kenan-Flagler Business School.<span class="author-links"><a href="https://www.linkedin.com/in/colinaamot/">LinkedIn</a><a href="https://x.com/ColinAamot">X</a><a href="https://techcongress.io/colin-aamot">TechCongress</a><a href="https://rook-intel.com/">Rook Intelligence</a><a href="https://www.dailysignal.com/author/colin-aamot/">Daily Signal (previous bylines)</a></span></span></p>
+<aside aria-label="Related reading" class="related-reading">
+<h2 id="related-reading">Related Reading</h2>
+<ul>
+<li><a href="/blog/saudi-intelligence-spy-list-leak-houthi/">Alleged Saudi Spy List Leaked by Houthi-Tied Group, and Their Phones Do the Rest</a></li>
+<li><a href="/blog/isis-media-survives-takedowns/">Jailed, Purged, Still Shipping: How ISIS Media Survives the Takedowns</a></li>
+<li><a href="/blog/white-house-vetting-leak-press-clips/">25 Pages of Press Clips: Leak Shows How Thin White House Vetting Really Was</a></li>
+</ul>
+</aside>
+
+      </div>
+    </div>
+  </article>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="frow">
+      <a class="fbrand" href="/" aria-label="OctoProbe AI">
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <defs><linearGradient id="gf" x1="6" y1="4" x2="34" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#818cf8"/><stop offset=".55" stop-color="#38bdf8"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs>
+          <g stroke="url(#gf)" stroke-width="2.4" stroke-linecap="round">
+            <path d="M12 21.5 C6 25 5.5 31 9.5 34.5"/><path d="M16 22.5 C13 27 12 32.5 15 36"/><path d="M19 23 C18 28.5 17.5 33 19 37"/>
+            <path d="M28 21.5 C34 25 34.5 31 30.5 34.5"/><path d="M24 22.5 C27 27 28 32.5 25 36"/><path d="M21 23 C22 28.5 22.5 33 21 37"/>
+          </g>
+          <g fill="url(#gf)"><circle cx="9.5" cy="34.5" r="2.1"/><circle cx="15" cy="36" r="2.1"/><circle cx="19" cy="37" r="2.1"/><circle cx="30.5" cy="34.5" r="2.1"/><circle cx="25" cy="36" r="2.1"/><circle cx="21" cy="37" r="2.1"/></g>
+          <path d="M20 4.5 C12.3 4.5 7.5 9.8 7.5 16.4 C7.5 20.6 10.6 23.2 14.8 23.2 L25.2 23.2 C29.4 23.2 32.5 20.6 32.5 16.4 C32.5 9.8 27.7 4.5 20 4.5 Z" fill="url(#gf)"/>
+          <rect x="15.2" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
+          <rect x="21.6" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
+        </svg>
+        OctoProbe News
+      </a>
+      <nav class="fnav" aria-label="Footer navigation">
+        <a href="/blog/">Investigations</a>
+        <a href="/blog/about/">About</a>
+        <a href="/blog/standards/">Standards</a>
+        <a href="/blog/corrections/">Corrections</a>
+        <a href="/blog/contact/">Contact</a>
+        <a href="mailto:press@octoprobe.ai">press@octoprobe.ai</a>
+      </nav>
+    </div>
+    <div class="legal">
+      <p>© <span id="yr">2026</span> Redwing Technologies LLC · OctoProbe News · <a href="mailto:press@octoprobe.ai" style="color:inherit">press@octoprobe.ai</a></p>
+      <p><strong>OctoProbe News</strong> is published by Redwing Technologies LLC, which also develops the OctoProbe OSINT investigation platform for law firms, licensed investigators and analysts. The newsroom operates independently of that commercial business; see our <a href="/blog/standards/#independence" style="color:inherit">editorial standards</a>. Platform inquiries: <a href="/" style="color:inherit">octoprobe.ai</a> · <a href="mailto:team@octoprobe.ai" style="color:inherit">team@octoprobe.ai</a>.</p>
+    </div>
+  </div>
+</footer>
+<script>
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 10), { passive: true });
+  const tg = document.getElementById('navToggle'), mm = document.getElementById('mobileMenu');
+  tg.addEventListener('click', () => { const o = mm.classList.toggle('open'); tg.setAttribute('aria-expanded', o); });
+  mm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mm.classList.remove('open'); tg.setAttribute('aria-expanded', 'false'); }));
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+<script src="/assets/js/blog-toc.js?v=toc7" defer></script>
+<script src="/assets/js/blog-lightbox.js?v=lb1" defer></script>
+<script src="/assets/js/blog-share.js?v=share1" defer></script>
+</body>
+</html>
