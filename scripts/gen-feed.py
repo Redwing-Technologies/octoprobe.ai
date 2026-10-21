@@ -57,7 +57,7 @@ FEED_TITLE = "OctoProbe News"
 # meta edit cannot silently change the feed. Facts already published on /blog/about/.
 FEED_DESCRIPTION = (
     "OctoProbe News is an investigative desk published by Redwing Technologies LLC. "
-    "The feed carries its reporting on national security, intelligence, digital targeting, and online influence operations."
+    "The feed carries its reporting on national security, intelligence, digital targeting, influence operations, and news verification through public records."
 )
 FEED_ICON = f"{SITE}/icon-512.png"            # square, used by Feedly (webfeeds:icon) and Atom <icon>
 RSS_IMAGE = (f"{SITE}/feed-icon-144.png", 144, 144)  # RSS <image> must be <= 144 px wide
