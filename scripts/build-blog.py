@@ -15,8 +15,8 @@ Usage (from landing repo root):
   python3 scripts/build-blog.py blog/posts/identifier-graph-osint-methodology.md
   python3 scripts/build-blog.py --share-only          # only (re)insert the share bar in every post
   python3 scripts/build-blog.py --share-only --check  # exit 1 if any post's share bar is missing/stale
-  python3 scripts/build-blog.py --lightbox-only        # tall-screenshot lightbox (LIGHTBOX_SLUGS posts)
-  python3 scripts/build-blog.py --lightbox-only --check  # exit 1 if a tall screenshot or a LIGHTBOX_INCLUDE image lacks it
+  python3 scripts/build-blog.py --lightbox-only        # screenshot lightbox on every post
+  python3 scripts/build-blog.py --lightbox-only --check  # exit 1 if include/exclude/ratio markup is stale
 
 No remote deploy — write local HTML only. Requires no third-party packages.
 """
@@ -824,31 +824,59 @@ def refresh_share_bars(check: bool = False) -> int:
 
 
 # ── Screenshot lightbox ──────────────────────────────────────────────────────
-# Tall screenshots (height / width >= SHOT_RATIO, e.g. phone captures of Telegram or LinkedIn)
-# rendered at full column width are over a screen tall. In the posts listed in LIGHTBOX_SLUGS,
-# every bare `<figure><img …>` whose width/height attributes give that ratio is rewritten to
+# Phone and app screenshots, plus other images that render about 800px tall or more at the
+# 722px column (height/width >= SHOT_RATIO), are shown at ~1/3 of the column (~60% on phones)
+# and open in the shared modal (/assets/css/blog-lightbox.css, /assets/js/blog-lightbox.js):
 #   <figure class="shot-mobile"><a class="shot-open" href="IMG" aria-haspopup="dialog"><img …></a>…
-# and the page gets /assets/css/blog-lightbox.css + /assets/js/blog-lightbox.js: the screenshot
-# shows at ~1/3 of the column (~60% on phones) and opens larger in an accessible modal.
-# The <img> (src, alt, width, height, loading) is left byte-identical, so SEO, the image sitemap
-# (og:image only) and CLS are unaffected. Idempotent: the pass unwraps its own markup and re-applies
-# it, so it is safe on hand-built posts. Calibrated on Gaza Now (Oct. 21, 2026): the ratio catches
-# 1.238, 1.788, 1.747 and 1.360; near-square images (<= 1.051) stay full width unless named in
-# LIGHTBOX_INCLUDE. Rolled out one post at a time: add a slug to LIGHTBOX_SLUGS to enable it there.
+# The <img> (src, alt, width, height, loading) is left byte-identical. Idempotent: the pass
+# unwraps its own markup and re-applies it, including on hand-built posts. It only rewrites a
+# plain <figure> whose image is a direct child or the sole child of an <a href> pointing at
+# that same file. Classed figures (doc-fig, fig-pad, doc-page, portrait, ixm-fig, post-featured)
+# are left alone, so document layouts and the Secret Service lightbox stay as they are.
+# LIGHTBOX_INCLUDE forces a screenshot the ratio misses (near-square phone captures, or an
+# <img> with no width/height). LIGHTBOX_EXCLUDE keeps a tall figure full width (a scanned
+# page, a graph, a narrow sidebar). --lightbox-only --check fails if either list is stale.
 
-LIGHTBOX_SLUGS = {"gaza-now-telegram-hamas-fundraising-sanctions-sabassi"}
 SHOT_RATIO = 1.2
-# Basename of an <img src> that is a mobile screenshot the ratio misses. The pass wraps these
-# with the same shot-mobile / shot-open markup, and --lightbox-only --check fails until it does.
+# Basename of the img src (query string ignored).
 LIGHTBOX_INCLUDE = {
+    "archive-today-donate-link-takion-api-developer": {
+        "bmc-glizzykingdreko-disclaimer.png",  # mobile Buy Me a Coffee page, 980x1160, no width/height attrs
+    },
+    "christopher-burns-fbi-fugitive-google-maps-wayne-pa": {
+        "fbi-christopher-w-burns.png",  # mobile FBI wanted page, 692x950, no width/height attrs
+    },
     "gaza-now-telegram-hamas-fundraising-sanctions-sabassi": {
-        "telegram-gaza-now-egypt-donation-numbers.jpg",
+        "telegram-gaza-now-egypt-donation-numbers.jpg",  # near-square Telegram capture, 1000x1042
+    },
+    "heather-zhang-prc-agent-case-reddit-allegation": {
+        "reddit-allegation-ludepress.png",  # mobile article screenshot, 717x880, no width/height attrs
+    },
+    "machiaveli-dark-web-cocaine-spokane-nabi": {
+        "telegram-machiaveli-channel.png",  # Telegram channel card, 542x612 (ratio 1.13)
+    },
+}
+LIGHTBOX_EXCLUDE = {
+    "foia-how-to-obama-situation-room-photos-presidential-records": {
+        "foia-24-09538-f-response-letter-p1-redacted.png",  # one US-letter response page, not a phone capture
+    },
+    "myrotvorets-informnapalm-ned-grant": {
+        "foia-fl-2020-00028-sytnyk-uglava-counterespionage-email.png",  # one FOIA email page
+        "myrotvorets-our-projects-sidebar-identigraf-ordilo.png",  # 212px-wide sidebar, stays at intrinsic size
+        "myrotvorets-sidebar-help-the-project-donations-site-mirrors-tor.png",  # 246px-wide sidebar
+        "octoprobe-myrotvorets-informnapalm-ned-investigation-graph.png",  # investigation graph
+    },
+    "white-house-vetting-leak-press-clips": {
+        "giuliani-business-ties-research-page-1.png",  # one scanned research page
     },
 }
 LIGHTBOX_CSS_TAG = '<link rel="stylesheet" href="/assets/css/blog-lightbox.css?v=lb1">'
 LIGHTBOX_JS_TAG = '<script src="/assets/js/blog-lightbox.js?v=lb1" defer></script>'
 _SHOT_WRAPPED_RE = re.compile(r'<figure class="shot-mobile"><a class="shot-open" href="[^"]*" aria-haspopup="dialog">(<img\b[^>]*>)</a>')
-_BARE_FIG_IMG_RE = re.compile(r'<figure>(<img\b[^>]*>)')
+# Plain figure: direct <img>, or <a href="THE IMAGE"><img></a>. No other figure class.
+_PLAIN_FIG_RE = re.compile(
+    r'<figure>(?:\s*<a href="([^"]*)">\s*(<img\b[^>]*>)\s*</a>|\s*(<img\b[^>]*>))'
+)
 
 
 def _attr(tag: str, name: str) -> str | None:
@@ -856,25 +884,34 @@ def _attr(tag: str, name: str) -> str | None:
     return m.group(1) if m else None
 
 
+def _src_name(src: str) -> str:
+    return src.split("?", 1)[0].rsplit("/", 1)[-1]
+
+
 def apply_lightbox(html: str, label: str = "", slug: str = "") -> str:
-    """(Re)apply the tall-screenshot thumbnail + lightbox markup to one post."""
+    """(Re)apply the screenshot thumbnail + lightbox markup to one post."""
     include = LIGHTBOX_INCLUDE.get(slug, ())
+    exclude = LIGHTBOX_EXCLUDE.get(slug, ())
     html = _SHOT_WRAPPED_RE.sub(r"<figure>\1", html)
     html = html.replace(LIGHTBOX_CSS_TAG + "\n", "").replace(LIGHTBOX_JS_TAG + "\n", "")
 
     def wrap(m: re.Match) -> str:
-        img = m.group(1)
-        w, h, src = _attr(img, "width"), _attr(img, "height"), _attr(img, "src")
-        if not (w and h and w.isdigit() and h.isdigit() and int(w) > 0):
-            raise BuildError(f"{label}: lightbox: figure image {src!r} has no width/height (needed for ratio + CLS)")
+        href, img = (m.group(1), m.group(2)) if m.group(2) else (None, m.group(3))
+        src = _attr(img, "src") or ""
+        name = _src_name(src)
+        if href and _src_name(href) != name:
+            return m.group(0)  # the link opens a different file than the one shown
+        if name in exclude:
+            return m.group(0)
+        w, h = _attr(img, "width"), _attr(img, "height")
+        tall = bool(w and h and w.isdigit() and h.isdigit() and int(w) > 0 and int(h) / int(w) >= SHOT_RATIO)
+        if name not in include and not tall:
+            return m.group(0)
         if not (_attr(img, "alt") or "").strip():
             raise BuildError(f"{label}: lightbox: figure image {src!r} has no alt text")
-        name = (src or "").rsplit("/", 1)[-1]
-        if int(h) / int(w) < SHOT_RATIO and name not in include:
-            return m.group(0)
         return f'<figure class="shot-mobile"><a class="shot-open" href="{src}" aria-haspopup="dialog">{img}</a>'
 
-    html, n = _BARE_FIG_IMG_RE.subn(wrap, html)
+    html, n = _PLAIN_FIG_RE.subn(wrap, html)
     for name in sorted(include):
         if not re.search(
             r'<figure class="shot-mobile"><a class="shot-open" href="[^"]*' + re.escape(name) + r'"',
@@ -882,8 +919,11 @@ def apply_lightbox(html: str, label: str = "", slug: str = "") -> str:
         ):
             raise BuildError(
                 f"{label}: lightbox: included screenshot {name!r} is not wrapped "
-                "(missing from the post, or not a bare <figure><img>)"
+                "(missing from the post, or not a plain <figure><img>)"
             )
+    for name in sorted(exclude):
+        if re.search(r'class="shot-open" href="[^"]*' + re.escape(name), html):
+            raise BuildError(f"{label}: lightbox: excluded image {name!r} was wrapped")
     if 'class="shot-mobile"' not in html:
         return html
     css = re.search(r'<link rel="stylesheet" href="/assets/css/blog\.css[^"]*">\n?', html)
@@ -900,12 +940,11 @@ def apply_lightbox(html: str, label: str = "", slug: str = "") -> str:
 
 
 def refresh_lightbox(check: bool = False) -> int:
-    """Apply the lightbox pass to every post in LIGHTBOX_SLUGS. Returns the stale count."""
+    """Apply the lightbox pass to every live post. Returns the stale count."""
     stale = 0
-    for slug in sorted(LIGHTBOX_SLUGS):
-        p = ROOT / "blog" / slug / "index.html"
-        if not p.exists():
-            raise BuildError(f"lightbox: {p.relative_to(ROOT)} not found")
+    posts = share_bar_targets()
+    for p in posts:
+        slug = p.parent.name
         old = p.read_text(encoding="utf-8")
         new = apply_lightbox(old, str(p.relative_to(ROOT)), slug)
         if new != old:
@@ -1061,8 +1100,9 @@ def main():
             print(f"share bar is up to date on {len(share_bar_targets())} posts")
         return
 
-    # --lightbox-only: (re)apply the tall-screenshot lightbox to the posts in LIGHTBOX_SLUGS.
-    # --lightbox-only --check: exit 1 if a tall figure image there lacks the markup (CI preflight).
+    # --lightbox-only: (re)apply the screenshot lightbox on every live post.
+    # --lightbox-only --check: exit 1 if a plain-figure screenshot is missing its markup,
+    # or an include/exclude override does not match the page (CI preflight).
     if "--lightbox-only" in sys.argv:
         try:
             stale = refresh_lightbox(check="--check" in sys.argv)
@@ -1071,10 +1111,10 @@ def main():
             sys.exit(1)
         if "--check" in sys.argv:
             if stale:
-                print(f"{stale} post(s) have tall screenshots without the lightbox markup. "
+                print(f"{stale} post(s) have screenshot lightbox markup that does not match the pass. "
                       "Run: python3 scripts/build-blog.py --lightbox-only", file=sys.stderr)
                 sys.exit(1)
-            print(f"lightbox markup is up to date on {len(LIGHTBOX_SLUGS)} post(s)")
+            print(f"lightbox markup is up to date on {len(share_bar_targets())} post(s)")
         return
 
     if args:
