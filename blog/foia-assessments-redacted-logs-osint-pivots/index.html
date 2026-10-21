@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redacted, Not Useless: FOIA Logs as OSINT Pivots · OctoProbe News</title>
+<meta name="description" content="A redacted EUCOM watch log and a DoD Inspector General case log show how FOIA records become OSINT pivot points: what a command tracked and which files to pull.">
+<meta name="keywords" content="FOIA, OSINT pivoting, redacted records, USEUCOM, U.S. European Command, Joint Operations Center, JOC log, SIGACT, significant activities log, FOIA case 23-F-008, FOIA exemption (b)(1), FOIA exemption (b)(3), 10 U.S.C. 130c, Executive Order 13526, DoD Inspector General, DoD OIG case log, procurement fraud, product substitution, public corruption, finding aid, hotline logs, incident logs, public records research">
+<meta name="author" content="Colin Aamot">
+<link rel="alternate" type="text/plain" title="LLM context (llms.txt)" href="/llms.txt">
+<link rel="alternate" type="text/plain" title="AI discovery (ai.txt)" href="/ai.txt">
+<link rel="alternate" type="application/rss+xml" title="OctoProbe News" href="https://www.octoprobe.ai/blog/feed.xml">
+<meta name="ai-content-declaration" content="human-authored; investigative reporting from public records">
+<link rel="canonical" href="https://www.octoprobe.ai/blog/foia-assessments-redacted-logs-osint-pivots/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="OctoProbe News">
+<meta property="og:url" content="https://www.octoprobe.ai/blog/foia-assessments-redacted-logs-osint-pivots/">
+<meta property="og:title" content="Redacted, Not Useless: FOIA Logs as OSINT Pivots">
+<meta property="og:description" content="A redacted EUCOM watch log and a DoD Inspector General case log show how FOIA records become OSINT pivot points: what a command tracked and which files to pull.">
+<meta property="og:image" content="https://www.octoprobe.ai/blog/foia-assessments-redacted-logs-osint-pivots/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Dark OctoProbe cover over a map of Stuttgart, Germany, with a red pin on the city and the blue U.S. Army Europe and Africa shield with a flaming sword at right, beside the headline Redacted, Not Useless">
+<meta property="article:published_time" content="2026-10-21T15:09:00-04:00">
+<meta property="article:modified_time" content="2026-10-21T15:09:00-04:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@octoprobeai">
+<meta name="twitter:title" content="Redacted, Not Useless: FOIA Logs as OSINT Pivots">
+<meta name="twitter:description" content="A redacted EUCOM watch log and a DoD Inspector General case log show how FOIA records become OSINT pivot points: what a command tracked and which files to pull.">
+<meta name="twitter:image" content="https://www.octoprobe.ai/blog/foia-assessments-redacted-logs-osint-pivots/assets/og-cover.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Redacted, Not Useless: FOIA Logs as OSINT Pivots",
+  "description": "A redacted EUCOM watch log and a DoD Inspector General case log show how FOIA records become OSINT pivot points: what a command tracked and which files to pull.",
+  "datePublished": "2026-10-21T15:09:00-04:00",
+  "dateModified": "2026-10-21T15:09:00-04:00",
+  "author": {
+    "@type": "Person",
+    "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#person",
+    "name": "Colin Aamot",
+    "url": "https://www.octoprobe.ai/blog/authors/colin-aamot/"
+  },
+  "publisher": {
+    "@type": "NewsMediaOrganization",
+    "@id": "https://www.octoprobe.ai/blog/#newsroom",
+    "name": "OctoProbe News",
+    "url": "https://www.octoprobe.ai/blog/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.octoprobe.ai/icon-512.png",
+      "width": 512,
+      "height": 512
+    },
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Redwing Technologies LLC",
+      "url": "https://rook-intel.com/"
+    }
+  },
+  "image": [
+    "https://www.octoprobe.ai/blog/foia-assessments-redacted-logs-osint-pivots/assets/og-cover.png",
+    "https://www.octoprobe.ai/blog/foia-assessments-redacted-logs-osint-pivots/assets/cover.png"
+  ],
+  "keywords": "FOIA, OSINT pivoting, redacted records, USEUCOM, U.S. European Command, Joint Operations Center, JOC log, SIGACT, significant activities log, FOIA case 23-F-008, FOIA exemption (b)(1), FOIA exemption (b)(3), 10 U.S.C. 130c, Executive Order 13526, DoD Inspector General, DoD OIG case log, procurement fraud, product substitution, public corruption, finding aid, hotline logs, incident logs, public records research",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.octoprobe.ai/blog/foia-assessments-redacted-logs-osint-pivots/"
+  },
+  "url": "https://www.octoprobe.ai/blog/foia-assessments-redacted-logs-osint-pivots/",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "OctoProbe News",
+    "url": "https://www.octoprobe.ai/blog/"
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      ".answer-first",
+      ".callout.takeaways",
+      ".prose h2"
+    ]
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Freedom of Information Act"
+    },
+    {
+      "@type": "Thing",
+      "name": "Open-source intelligence"
+    },
+    {
+      "@type": "Thing",
+      "name": "Public records research"
+    },
+    {
+      "@type": "Thing",
+      "name": "United States European Command"
+    },
+    {
+      "@type": "Thing",
+      "name": "Department of Defense Office of Inspector General"
+    }
+  ],
+  "mentions": [
+    {
+      "@type": "GovernmentOrganization",
+      "name": "United States European Command",
+      "url": "https://www.eucom.mil/"
+    },
+    {
+      "@type": "GovernmentOrganization",
+      "name": "Department of Defense Office of Inspector General",
+      "url": "https://www.dodig.mil/"
+    },
+    {
+      "@type": "Place",
+      "name": "Stuttgart, Germany"
+    },
+    {
+      "@type": "Report",
+      "name": "USEUCOM FOIA case 23-F-008 release: Joint Operations Center and SIGACT logs, February 2022 onward (released in part September 11, 2023)",
+      "url": "https://www.octoprobe.ai/blog/foia-assessments-redacted-logs-osint-pivots/assets/docs/eucom-foia-23-f-008-release-redacted.pdf"
+    },
+    {
+      "@type": "Report",
+      "name": "DoD OIG log of investigations closed January 1, 2017, to September 29, 2023",
+      "url": "https://www.octoprobe.ai/blog/foia-assessments-redacted-logs-osint-pivots/assets/docs/dodig-closed-investigations-log-2017-2023.pdf"
+    },
+    {
+      "@type": "Legislation",
+      "name": "Executive Order 13526",
+      "url": "https://www.archives.gov/isoo/policy-documents/cnsi-eo.html"
+    },
+    {
+      "@type": "Legislation",
+      "name": "10 U.S.C. § 130c",
+      "url": "https://www.law.cornell.edu/uscode/text/10/130c"
+    },
+    {
+      "@type": "Organization",
+      "name": "OctoProbe AI"
+    }
+  ],
+  "articleSection": "Investigations"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.octoprobe.ai/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.octoprobe.ai/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Redacted, Not Useless: FOIA Logs as OSINT Pivots",
+      "item": "https://www.octoprobe.ai/blog/foia-assessments-redacted-logs-osint-pivots/"
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6T6HW79ZP0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6T6HW79ZP0');
+</script>
+<meta name="theme-color" content="#f7fbff">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/blog.css?v=news8">
+<style id="news-frame">.post-dek{max-width:46rem;margin:.6rem 0 0;font-size:1.15rem;line-height:1.5;color:#475569}.post-hero .byline{margin:1rem 0 0;font-weight:600;color:#334155;font-size:.98rem}.post-hero .byline a{color:inherit;text-decoration:underline;text-decoration-color:rgba(51,65,85,.35);text-underline-offset:3px}.post-hero .byline a:hover{color:var(--blue)}.table-wrap{overflow-x:auto}.table-wrap table{border-collapse:collapse;width:100%;font-size:.92rem}.table-wrap th,.table-wrap td{border:1px solid #e2e8f0;padding:.45rem .6rem;vertical-align:top;text-align:left}.related-reading{border-top:1px solid #e2e8f0;margin-top:2rem;padding-top:.5rem}.related-reading h2{margin-top:1rem}.related-reading li{margin:.4rem 0}.prose .faq h3{font-size:1.02rem;margin-top:1.2em}.prose .faq p{margin-top:.35em}</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="top" id="nav" aria-label="Primary">
+  <a class="brand" href="/blog/" aria-label="OctoProbe News home">
+    <svg class="logo" viewBox="0 0 40 40" role="img" aria-label="OctoProbe AI" fill="none">
+      <defs>
+        <linearGradient id="g1" x1="6" y1="4" x2="34" y2="38" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#818cf8"/><stop offset=".55" stop-color="#38bdf8"/><stop offset="1" stop-color="#22d3ee"/>
+        </linearGradient>
+      </defs>
+      <g stroke="url(#g1)" stroke-width="2.4" stroke-linecap="round">
+        <path d="M12 21.5 C6 25 5.5 31 9.5 34.5"/><path d="M16 22.5 C13 27 12 32.5 15 36"/>
+        <path d="M19 23 C18 28.5 17.5 33 19 37"/><path d="M28 21.5 C34 25 34.5 31 30.5 34.5"/>
+        <path d="M24 22.5 C27 27 28 32.5 25 36"/><path d="M21 23 C22 28.5 22.5 33 21 37"/>
+      </g>
+      <g fill="url(#g1)"><circle cx="9.5" cy="34.5" r="2.1"/><circle cx="15" cy="36" r="2.1"/><circle cx="19" cy="37" r="2.1"/><circle cx="30.5" cy="34.5" r="2.1"/><circle cx="25" cy="36" r="2.1"/><circle cx="21" cy="37" r="2.1"/></g>
+      <path d="M20 4.5 C12.3 4.5 7.5 9.8 7.5 16.4 C7.5 20.6 10.6 23.2 14.8 23.2 L25.2 23.2 C29.4 23.2 32.5 20.6 32.5 16.4 C32.5 9.8 27.7 4.5 20 4.5 Z" fill="url(#g1)"/>
+      <rect x="15.2" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
+      <rect x="21.6" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
+      <rect x="30.5" y="8" width="2" height="2" rx=".5" fill="url(#g1)" opacity=".7"/>
+      <rect x="7.2" y="9.6" width="1.7" height="1.7" rx=".4" fill="url(#g1)" opacity=".6"/>
+    </svg>
+    <span class="bn">OctoProbe<small>News</small></span>
+  </a>
+  <div class="nav-center">
+    <a href="/blog/about/">About &amp; Masthead</a>
+    <a href="/blog/standards/">Editorial Standards</a>
+    <a href="/blog/corrections/">Corrections</a>
+    <a href="/blog/contact/">Contact &amp; Tips</a>
+  </div>
+  <div class="nav-right">
+    <a href="/blog/" class="nav-cta nav-investigations" aria-current="page">Investigations</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+  <a href="/blog/" class="active" aria-current="page">Investigations</a>
+  <a href="/blog/about/">About &amp; Masthead</a>
+  <a href="/blog/standards/">Editorial Standards</a>
+  <a href="/blog/corrections/">Corrections</a>
+  <a href="/blog/contact/">Contact &amp; Tips</a>
+  <a href="/">OctoProbe platform</a>
+</div>
+<main id="main">
+  <header class="post-hero">
+    <div class="wrap">
+      <div class="post-crumb">
+        <a class="back-link" href="/blog/">← All investigations</a>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span class="eyebrow">Investigations</span>
+      </div>
+      <h1>Redacted, Not Useless: FOIA Logs as OSINT Pivots</h1>
+      <p class="post-dek">Most of the European Command’s watch log came back blacked out. What survived, along with a 3,382-case Inspector General log, shows researchers where to dig next.</p>
+      <div class="post-meta">
+        <time datetime="2026-10-21T15:09:00-04:00">Oct 21, 2026</time>
+        <span class="sep" aria-hidden="true"></span>
+        <div class="tags"><span class="tag">FOIA</span><span class="tag blue">OSINT</span><span class="tag">Methodology</span><span class="tag">Investigations</span></div>
+      </div>
+      <p class="byline has-avatar"><picture><source type="image/webp" srcset="/assets/authors/colin-aamot-96.webp 1x, /assets/authors/colin-aamot-192.webp 2x"><img class="author-avatar" src="/assets/authors/colin-aamot-96.jpg" srcset="/assets/authors/colin-aamot-96.jpg 1x, /assets/authors/colin-aamot-192.jpg 2x" width="44" height="44" alt="Colin Aamot" decoding="async"></picture><span>By <a href="https://www.octoprobe.ai/blog/authors/colin-aamot/" rel="author">Colin Aamot</a></span></p>
+      <!-- share-bar -->
+      <div class="share-bar" role="group" aria-label="Share this article" hidden><span class="share-label" aria-hidden="true">Share</span><button type="button" class="share-native" aria-label="Share this article"><svg class="share-ico-line" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M12 3v12"/><path d="m7.5 7.5 4.5-4.5 4.5 4.5"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg><span>Share</span></button><ul class="share-list"><li><a class="share-link" href="https://x.com/intent/post" data-share="x" target="_blank" rel="noopener noreferrer" aria-label="Share on X"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg></a></li><li><a class="share-link" href="https://facebook.com/sharer/sharer.php" data-share="facebook" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a></li><li><a class="share-link" href="https://www.linkedin.com/sharing/share-offsite/" data-share="linkedin" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></li><li><a class="share-link" href="https://www.reddit.com/submit" data-share="reddit" target="_blank" rel="noopener noreferrer" aria-label="Share on Reddit"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg></a></li><li><a class="share-link" href="https://api.whatsapp.com/send" data-share="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a></li><li><a class="share-link" href="https://t.me/share/url" data-share="telegram" target="_blank" rel="noopener noreferrer" aria-label="Share on Telegram"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a></li><li><a class="share-link" href="https://bsky.app/intent/compose" data-share="bluesky" target="_blank" rel="noopener noreferrer" aria-label="Share on Bluesky"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M5.202 2.857C7.954 4.922 10.913 9.11 12 11.358c1.087-2.247 4.046-6.436 6.798-8.501C20.783 1.366 24 .213 24 3.883c0 .732-.42 6.156-.667 7.037-.856 3.061-3.978 3.842-6.755 3.37 4.854.826 6.089 3.562 3.422 6.299-5.065 5.196-7.28-1.304-7.847-2.97-.104-.305-.152-.448-.153-.327 0-.121-.05.022-.153.327-.568 1.666-2.782 8.166-7.847 2.97-2.667-2.737-1.432-5.473 3.422-6.3-2.777.473-5.899-.308-6.755-3.369C.42 10.04 0 4.615 0 3.883c0-3.67 3.217-2.517 5.202-1.026"/></svg></a></li><li><a class="share-link" href="mailto:" data-share="email" aria-label="Share by email"><svg class="share-ico-line" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg></a></li><li class="share-copy-item"><button type="button" class="share-link share-copy" data-share="copy" aria-label="Copy link"><svg class="share-ico-line" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M10 13.5a4.5 4.5 0 0 0 6.4.4l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.6 1.6"/><path d="M14 10.5a4.5 4.5 0 0 0-6.4-.4l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.6-1.6"/></svg><svg class="share-ico-line" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></button></li></ul><span class="share-status" role="status" aria-live="polite"></span></div>
+      <!-- /share-bar -->
+    </div>
+  </header>
+  <article class="post-body">
+    <div class="wrap">
+      <div class="prose">
+<!-- Closing order (default): … FAQ → Correction (if any) → Disclaimer → author bio note → Related Reading (always LAST, never empty; no entry whose source is already linked in the body; no generic methodology link). See blog/README.md. -->
+<figure><img fetchpriority="high" decoding="async" src="/blog/foia-assessments-redacted-logs-osint-pivots/assets/cover.png" width="2400" height="1260" alt="Dark OctoProbe cover over a map of Stuttgart, Germany, with a red pin on the city; at right, the blue U.S. Army Europe and Africa shield with a rainbow arc and a white sword in red flames, beside the headline Redacted, Not Useless" title="Redacted, Not Useless"><figcaption>The U.S. Army Europe and Africa shoulder-sleeve insignia over a map of Stuttgart, Germany, home of U.S. European Command headquarters. Illustration: OctoProbe News; insignia: U.S. Army; map © OpenStreetMap contributors.</figcaption></figure>
+<p class="primary-question"><strong>How can redacted FOIA logs serve as OSINT pivot points?</strong></p>
+<p class="answer-first">Redacted logs still carry dates, identifiers, categories, and the subjects an agency chose to track. A EUCOM watch log released to me in 2023 shows which European political events the command logged and when, even with its assessments withheld. A DoD Inspector General log lists 3,382 closed investigations by ID, each a lead for a follow-up request.</p>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<div class="callout takeaways"><strong>TL;DR · Key takeaways</strong><ul>
+<li><a href="#what-did-eucom-release">U.S. European Command released twenty-eight pages of its Joint Operations Center logs to me in part, withholding the classified entries under FOIA Exemption 1.</a></li>
+<li><a href="#what-survives-in-a-sigact-entry">The unclassified entries that survived record which European political events the command’s watch floor logged, to the minute, from Ukraine’s state of emergency to Germany’s new defense minister.</a></li>
+<li><a href="#why-is-the-metadata-of-attention-worth-having">That is little insight into what EUCOM concluded, but real insight into what it watched and how fast.</a></li>
+<li><a href="#what-did-the-dod-inspector-general-release">A Defense Department Inspector General log lists 3,382 investigations closed from 2017 to 2023, each with an ID, a category, and dates.</a></li>
+<li><a href="#how-does-a-case-log-become-a-finding-aid">Each row is a pointer to a closed case file a researcher can request next, the same index-then-pivot move used in open-source investigations.</a></li>
+</ul></div>
+<h2 id="what-can-a-redacted-log-tell-an-osint-researcher">What Can a Redacted Log Tell an OSINT Researcher?</h2>
+<p>A redacted log tells a researcher what an agency tracked, when, and under what label, even when it withholds what the agency thought. Dates, entry numbers, categories, places, and classification markings usually survive. Those fields are pivot points: each one can be searched, counted, matched to public reporting, or named in the next FOIA request.</p>
+<p>Open-source intelligence, or OSINT, works by pivoting. A researcher starts from one identifier, such as an email address or a domain, and follows it to the accounts, servers, and records attached to it. Public-records research works the same way. A log is an index. The entries in it are identifiers. The files behind them are the records worth requesting next.</p>
+<p>Two releases from my own Freedom of Information Act requests show the method. One is a U.S. European Command watch log that came back mostly black. The other is a Defense Department Inspector General list of closed investigations that came back nearly whole.</p>
+<h2 id="what-did-eucom-release">What Did EUCOM Release?</h2>
+<p>I asked U.S. European Command, the Stuttgart, Germany, headquarters for U.S. forces in Europe, for two records: “<a href="/blog/foia-assessments-redacted-logs-osint-pivots/assets/docs/eucom-foia-23-f-008-release-redacted.pdf#page=1">the EUCOM Joint Operations Center (JOC) Log from February 2022 to present</a>,” and “the EUCOM Joint Operations Center SIGACTS Log from February 2022 to present.” A SIGACT is a significant activity, the military’s term for an event a watch floor records and tracks. The command’s FOIA office received my request on November 21, 2022, and assigned it case number 23-F-008.</p>
+<p>The command answered on September 11, 2023. “As a result of our review, we are releasing 28 pages in part,” the letter said. It cited four exemptions:</p>
+<ul>
+<li><strong>Exemption (b)(1)</strong>, for information “properly classified” under an executive order.</li>
+<li><strong>Exemption (b)(3)</strong>, through <a href="https://www.law.cornell.edu/uscode/text/10/130c">10 U.S.C. § 130c</a>, which “protects from disclosure certain sensitive information of foreign governments,” the letter said.</li>
+<li><strong>Exemption (b)(6)</strong>, for personal privacy.</li>
+<li><strong>Exemption (b)(7)(c)</strong>, for law-enforcement records whose release could invade personal privacy.</li>
+</ul>
+<p>The Initial Denial Authority, the official who made the withholding decision, was Col. Christopher Longo, whom the letter identifies as “EPOC Chief of Staff.” It was signed by Col. Luis A. Parilli, the command’s director of manpower and personnel.</p>
+<figure id="eucom-letter"><img decoding="async" loading="lazy" src="/blog/foia-assessments-redacted-logs-osint-pivots/assets/eucom-foia-23-f-008-letter-redacted.png" width="1400" height="1756" alt="First page of a U.S. European Command letter dated September 11, 2023, on Department of Defense letterhead, with the requester block and salutation name blacked out; it assigns USEUCOM FOIA case number 23-F-008, says the command is releasing 28 pages in part, lists Exemptions (b)(1), (b)(3) citing 10 U.S.C. 130(c), (b)(6) and (b)(7)(c), and names COL Christopher Longo, EPOC Chief of Staff, as the Initial Denial Authority" title="USEUCOM letter, case 23-F-008"><figcaption>U.S. European Command’s final response, page 1. Source: U.S. European Command FOIA release, case 23-F-008 (September 11, 2023), <a href="/blog/foia-assessments-redacted-logs-osint-pivots/assets/docs/eucom-foia-23-f-008-release-redacted.pdf#page=1">PDF page 1</a>.</figcaption></figure>
+<p class="editor-note">Requester name, address and email redacted by OctoProbe News.</p>
+<p>The release runs thirty pages: the two-page letter and twenty-eight pages of log. Nearly every page is dominated by black boxes stamped “(b)(1) 1.4(a), (g).” Those codes point to <a href="https://www.archives.gov/isoo/policy-documents/cnsi-eo.html">Executive Order 13526</a>, section 1.4, which allows classification of military plans and operations, category (a), and of vulnerabilities or capabilities of systems and installations tied to national security, category (g).</p>
+<h2 id="what-survives-in-a-sigact-entry">What Survives in a SIGACT Entry?</h2>
+<p>What survives is the skeleton of the log, and every unclassified entry in full. Each row of the log has the same fields, which a researcher can read like a form:</p>
+<ul>
+<li><strong>Title:</strong> a status (INITIAL or UPDATE), a date-time group, the tag “EUCOM SIGACT,” a subject, a place, and a classification marking.</li>
+<li><strong>SIGACT ID:</strong> a four-digit entry number.</li>
+<li><strong>Who</strong> and <strong>What:</strong> the actor and the event, in a few words.</li>
+<li><strong>WhenBeginTime</strong> and <strong>WhenEndTime:</strong> when the event started and ended.</li>
+<li><strong>Details:</strong> a short narrative, often citing the press.</li>
+<li><strong>EventLocation:</strong> a city.</li>
+</ul>
+<p>The date-time group is military shorthand. “23 1330Z Feb 22” means February 23, 2022, at 13:30 Zulu time, or Coordinated Universal Time.</p>
+<figure><img decoding="async" loading="lazy" src="/blog/foia-assessments-redacted-logs-osint-pivots/assets/eucom-sigact-ukraine.png" width="2698" height="94" alt="One row of the EUCOM SIGACT log: INITIAL 23 1330Z Feb 22 EUCOM SIGACT Ukraine Declared State of Emergency - Kyiv (UNCLASSIFIED), ID 6303, with a details field on Ukrainians leaving Russia and a conscription order for reservists aged 18 to 60, location Kyiv" title="SIGACT 6303, February 23, 2022"><figcaption>SIGACT 6303, Ukraine’s state of emergency. Source: U.S. European Command FOIA release, case 23-F-008 (September 11, 2023), <a href="/blog/foia-assessments-redacted-logs-osint-pivots/assets/docs/eucom-foia-23-f-008-release-redacted.pdf#page=28">PDF page 28</a>.</figcaption></figure>
+<p>The earliest unclassified entry in this set, SIGACT 6303, is titled “<a href="/blog/foia-assessments-redacted-logs-osint-pivots/assets/docs/eucom-foia-23-f-008-release-redacted.pdf#page=28">Ukraine Declared State of Emergency - Kyiv</a>.” It was logged on the eve of Russia’s full-scale invasion. Its narrative notes that Ukraine’s Foreign Ministry told Ukrainians in Russia to “depart as soon as possible” and that “the Ministry of Defense has authorized a conscription order calling up reservists between the ages of 18-60.”</p>
+<figure><img decoding="async" loading="lazy" src="/blog/foia-assessments-redacted-logs-osint-pivots/assets/eucom-sigact-zelensky.png" width="2698" height="438" alt="Section of the EUCOM log: four rows blacked out with boxes citing (b)(1) 1.4(a), (g) and (b)(6), with struck-through markings including SECRET//REL TO FVEY,USA and SECRET//NOFORN, above the unclassified SIGACT 6353, Ukraine President Zelensky Allows foreigners to fight in Ukrainian Armed Forces - Kyiv, dated 01 0839Z Mar 22, details NFI" title="SIGACT 6353, March 1, 2022"><figcaption>SIGACT 6353 below four withheld rows; the black boxes and exemption codes are the government’s. Source: U.S. European Command FOIA release, case 23-F-008 (September 11, 2023), <a href="/blog/foia-assessments-redacted-logs-osint-pivots/assets/docs/eucom-foia-23-f-008-release-redacted.pdf#page=26">PDF page 26</a>.</figcaption></figure>
+<p>Six days later, SIGACT 6353 recorded “<a href="/blog/foia-assessments-redacted-logs-osint-pivots/assets/docs/eucom-foia-23-f-008-release-redacted.pdf#page=26">Ukraine President Zelensky Allows foreigners to fight in Ukrainian Armed Forces - Kyiv</a>.” Its details field reads “NFI,” for no further information. The four rows above it are blacked out. Their classification markings, struck through but still legible, include “SECRET//REL TO FVEY,USA,” meaning releasable only to the Five Eyes allies, and “SECRET//NOFORN,” meaning no foreign nationals.</p>
+<p>The summer of 2022 shows the log tracking European governments falling.</p>
+<figure><img decoding="async" loading="lazy" src="/blog/foia-assessments-redacted-logs-osint-pivots/assets/eucom-sigact-draghi-johnson.png" width="2698" height="1634" alt="Section of the EUCOM log with unclassified entries 7084 and 7083 on Italian Prime Minister Mario Draghi&#x27;s resignation, 21 1130Z Jul 22, Rome; entry 7064 on his July 14 offer to step down; and entry 7043 on UK Prime Minister Boris Johnson&#x27;s resignation, 07 0811Z Jul 22, London; rows between them are blacked out under (b)(1) 1.4(a), (g) and (b)(6)" title="SIGACTs 7084, 7083, 7064 and 7043, July 2022"><figcaption>Entries on Mario Draghi and Boris Johnson, with withheld rows between them. Source: U.S. European Command FOIA release, case 23-F-008 (September 11, 2023), <a href="/blog/foia-assessments-redacted-logs-osint-pivots/assets/docs/eucom-foia-23-f-008-release-redacted.pdf#page=19">PDF page 19</a>.</figcaption></figure>
+<p>SIGACT 7043, logged at 08:11 Zulu on July 7, 2022, recorded “<a href="/blog/foia-assessments-redacted-logs-osint-pivots/assets/docs/eucom-foia-23-f-008-release-redacted.pdf#page=19">UK Prime Minister Boris Johnson Resignation - London</a>.” Its narrative said Johnson was resigning “following the resignation of 55x Members of Parliament (MP) from cabinet and other governmental positions.” It went on to recount the scandal over Chris Pincher’s appointment as deputy chief whip and the arithmetic of a Conservative leadership change.</p>
+<p>Italy came next. SIGACT 7064, on July 14, logged Prime Minister Mario Draghi’s first resignation attempt: “PM Draghi offered to step down after a populist coalition ally refused to support a key government bill. The nation’s president rejected the resignation.” Two entries a week later, 7083 and 7084, both timed 11:30 Zulu on July 21, logged his second. They said “Corriere della Sera reports that elections are now likely to take place in autumn 2022,” a reminder that the unclassified entries lean on the newspapers.</p>
+<p class="editor-note">Editor’s note: The July 21 entries say three parties refused to back Draghi “in a confidence vote 18 Jul.” The Italian Senate vote that ended his government <a href="https://apnews.com/article/elections-legislature-italy-mario-draghi-2fb215fc97c314a663d87c0b33d7f915">was held July 20, 2022</a>, according to the Associated Press. Logs are written fast and carry errors; check each date against an outside source before relying on it.</p>
+<figure><img decoding="async" loading="lazy" src="/blog/foia-assessments-redacted-logs-osint-pivots/assets/eucom-sigact-dincu-sunak.png" width="2698" height="98" alt="Two rows of the EUCOM log: SIGACT 7673, Vasile Dincu Resignation - Bucharest, 24 1130Z Oct 22, saying he resigned over disagreements with Romanian President Klaus Iohannis on Ukrainian peace talks; and SIGACT 7672, Rishi Sunak Elected Tory Leader - London, 24 1400Z Oct 22, details NFI" title="SIGACTs 7673 and 7672, October 24, 2022"><figcaption>Romania’s defense minister resigns and Rishi Sunak wins the Conservative leadership, logged the same day. Source: U.S. European Command FOIA release, case 23-F-008 (September 11, 2023), <a href="/blog/foia-assessments-redacted-logs-osint-pivots/assets/docs/eucom-foia-23-f-008-release-redacted.pdf#page=13">PDF page 13</a>.</figcaption></figure>
+<p>October 24, 2022, brought two entries an hour and a half apart. SIGACT 7673, at 11:30 Zulu, recorded “<a href="/blog/foia-assessments-redacted-logs-osint-pivots/assets/docs/eucom-foia-23-f-008-release-redacted.pdf#page=13">Vasile Dincu Resignation - Bucharest</a>.” Romania’s defense minister, it said, “resigned pending disagreements with Romanian President Klaus Iohannis over Ukrainian Peace Talks.” SIGACT 7672, at 14:00 Zulu, recorded “Rishi Sunak Elected Tory Leader - London.”</p>
+<figure><img decoding="async" loading="lazy" src="/blog/foia-assessments-redacted-logs-osint-pivots/assets/eucom-sigact-lambrecht.png" width="2698" height="554" alt="Section of the EUCOM log: UPDATE 1, 17 1541Z Jan 23, EUCOM SIGACT DEU Appoints New DM - DM Pistorius - Berlin, ID 8048, and INITIAL 16 1300Z Jan 23 DEU DM Lambrecht Resignation - Berlin, ID 8038, with candidate successors listed; withheld rows between them cite (b)(1) 1.4(a), (g) and (b)(6)" title="SIGACTs 8048 and 8038, January 2023"><figcaption>Germany’s defense-minister change, initial entry and update. Source: U.S. European Command FOIA release, case 23-F-008 (September 11, 2023), <a href="/blog/foia-assessments-redacted-logs-osint-pivots/assets/docs/eucom-foia-23-f-008-release-redacted.pdf#page=10">PDF page 10</a>.</figcaption></figure>
+<p>The last unclassified pair in this set comes from Berlin. SIGACT 8038, at 13:00 Zulu on January 16, 2023, logged “<a href="/blog/foia-assessments-redacted-logs-osint-pivots/assets/docs/eucom-foia-23-f-008-release-redacted.pdf#page=10">DEU DM Lambrecht Resignation - Berlin</a>,” for German Defense Minister Christine Lambrecht. Its narrative listed the successors German media were floating, among them armed forces commissioner Eva Högl and Social Democratic Party chief Lars Klingbeil. The next day, SIGACT 8048 was logged as “UPDATE 1” under the title “DEU Appoints New DM - DM Pistorius - Berlin,” naming Boris Pistorius.</p>
+<div class="table-wrap"><table>
+<tr><th>Logged (UTC)</th><th>Event in the log, location</th><th>SIGACT</th><th>Page</th></tr>
+<tr><td>February 23, 2022, 13:30</td><td>Ukraine declares state of emergency, Kyiv</td><td>6303</td><td>28</td></tr>
+<tr><td>March 1, 2022, 08:39</td><td>Zelensky allows foreigners to fight in Ukraine’s armed forces, Kyiv</td><td>6353</td><td>26</td></tr>
+<tr><td>July 7, 2022, 08:11</td><td>Boris Johnson resignation, London</td><td>7043</td><td>19</td></tr>
+<tr><td>July 14, 2022, 00:00</td><td>Mario Draghi offers to resign; president rejects it, Rome</td><td>7064</td><td>19</td></tr>
+<tr><td>July 21, 2022, 11:30</td><td>Mario Draghi resigns, Rome</td><td>7083, 7084</td><td>19</td></tr>
+<tr><td>October 24, 2022, 11:30</td><td>Vasile Dincu resigns as Romania’s defense minister, Bucharest</td><td>7673</td><td>13</td></tr>
+<tr><td>October 24, 2022, 14:00</td><td>Rishi Sunak elected Conservative leader, London</td><td>7672</td><td>13</td></tr>
+<tr><td>January 16, 2023, 13:00</td><td>Christine Lambrecht resigns as Germany’s defense minister, Berlin</td><td>8038</td><td>10</td></tr>
+<tr><td>January 17, 2023, 15:41</td><td>Update: Boris Pistorius named defense minister, Berlin</td><td>8048</td><td>10</td></tr>
+</table></div>
+<h2 id="why-is-the-metadata-of-attention-worth-having">Why Is the Metadata of Attention Worth Having?</h2>
+<p>The surviving entries reveal what a combatant command chose to watch, how quickly it logged it, and how it labeled it. They reveal almost nothing about what EUCOM concluded. For a researcher, that split matters: priorities and tempo are findings in their own right, and the withheld substance can be pursued separately.</p>
+<p>Read as data, the log says several things the letter does not:</p>
+<ul>
+<li><strong>Priorities.</strong> Among the entries left open, EUCOM’s watch floor logged resignations and leadership changes in four NATO capitals, London, Rome, Bucharest, and Berlin, alongside the war in Ukraine. Political stability among allies was a tracked event, not background.</li>
+<li><strong>Tempo.</strong> Johnson’s resignation entry is timed 08:11 Zulu, and Sunak’s election as Conservative leader is logged at 14:00 Zulu on the day it happened. The watch floor wrote these up the same day.</li>
+<li><strong>Volume.</strong> The entry numbers climb from 6303 in February 2022 to 8048 in January 2023. If the numbers run in sequence, the log took in roughly 1,700 entries in those eleven months. The release does not say whether they do.</li>
+<li><strong>Process.</strong> Sunak’s entry, logged later in the day, carries a lower number, 7672, than Dincu’s, 7673. Draghi’s resignation appears twice, as 7083 and 7084. Numbers track when someone opened an entry, not when the event happened, and duplicates happen.</li>
+<li><strong>Sources.</strong> The open entries cite <em>Corriere della Sera</em>, “German media,” and “UK news outlets.” The unclassified layer of a military watch log is built largely from open sources.</li>
+<li><strong>Classification mix.</strong> Even withheld rows keep their struck-through markings, from UNCLASSIFIED and CUI, for controlled unclassified information, to SECRET//NOFORN. A researcher can see where the sensitive reporting clusters without reading a word of it.</li>
+</ul>
+<p class="editor-note">Editor’s note: The release also contains rows in a second layout, with an “EventType” column that reads “OPREP,” for operational report, on the rows examined. That fits my request for two logs, the JOC log and the SIGACT log, but the release does not label which pages come from which.</p>
+<h2 id="how-do-you-turn-a-redacted-log-into-a-next-request">How Do You Turn a Redacted Log Into a Next Request?</h2>
+<p>You use the fields that survived as the terms of the next request. Entry numbers, date-time groups, and titles let an agency find specific records fast, and a narrow request for named entries is harder to refuse than a broad one.</p>
+<ol>
+<li><strong>Inventory the release.</strong> List every visible ID, date, title, place, and marking. A table like the one above is the working document.</li>
+<li><strong>Match the entries to public events.</strong> Confirm each against news reports and official statements, and note any date that does not match.</li>
+<li><strong>Request by identifier.</strong> Ask for the full entries, attachments, and updates tied to specific SIGACT numbers, such as “UPDATE 1” to 8048, rather than “all records about Germany.”</li>
+<li><strong>Challenge the withholding.</strong> The letter set a ninety-day window to appeal. Classified entries can also be sought through Mandatory Declassification Review under section 3.5 of Executive Order 13526, a separate process from FOIA.</li>
+<li><strong>Pivot sideways.</strong> Events a command logged often produced cables, briefings, or press guidance at other offices. Each can be requested from the office that wrote it.</li>
+</ol>
+<h2 id="what-did-the-dod-inspector-general-release">What Did the DoD Inspector General Release?</h2>
+<p>A second request I filed, with the Defense Department’s Office of Inspector General, returned a 162-page log of closed investigations. Its header reads “<a href="/blog/foia-assessments-redacted-logs-osint-pivots/assets/docs/dodig-closed-investigations-log-2017-2023.pdf#page=1">Cases Closed from 01/01/2017 to 09/29/2023</a>,” with the report run at 1 p.m. on September 29, 2023. The case types are “REGULAR INVESTIGATION, FULL INVESTIGATION, PRELIMINARY INVESTIGATION,” and the count line reads “Total: 3382.”</p>
+<p>Each row has seven columns: UID, Case Type, Category Group, PI Open Date, PI Close Date, Case Open Date, and Case Close Date. “PI” refers to a preliminary investigation. The first two pages list Category Groups of Public Corruption, Procurement Fraud, Product Substitution, Cyber Crimes, Health Care, Counter-Proliferation, and Other. The columns carry no names, contractors, or case summaries.</p>
+<figure id="dodig-log"><img decoding="async" loading="lazy" src="/blog/foia-assessments-redacted-logs-osint-pivots/assets/dodig-case-log-page-1.png" width="1633" height="1932" alt="First page of a Defense Department Inspector General case log: Run 9/29/2023 1:00:00 PM, Cases Closed from 01/01/2017 to 09/29/2023, Case Types Regular, Full and Preliminary Investigation, Total 3382, with columns UID, Case Type, Category Group, PI Open Date, PI Close Date, Case Open Date and Case Close Date, and twenty-one regular-investigation rows in categories including Public Corruption, Product Substitution, Procurement Fraud, Counter-Proliferation and Other" title="DoD OIG closed-cases log, page 1"><figcaption>The first page of the 162-page log of closed investigations. Source: Department of Defense Office of Inspector General FOIA release, closed-cases log run September 29, 2023, <a href="/blog/foia-assessments-redacted-logs-osint-pivots/assets/docs/dodig-closed-investigations-log-2017-2023.pdf#page=1">PDF page 1</a>.</figcaption></figure>
+<p>On the pages examined, the log runs in order of case open date, so its first rows are its oldest cases. The very first, UID 200200055W, is a Public Corruption case opened October 16, 2001, and closed August 15, 2018, nearly seventeen years later. On the rows I checked, the first four digits of each UID match the federal fiscal year in which the case opened. Case 200200055W, opened in October 2001, falls in fiscal 2002. That pattern is my observation, not anything the log explains.</p>
+<p class="editor-note">Editor’s note: The 162-page file I reviewed contains the log only. The Inspector General’s cover letter, with its case number, date, and any exemptions, is not part of that file, so this article does not cite them. Category Groups are described from the first two pages; this article does not count them across all 3,382 cases.</p>
+<h2 id="how-does-a-case-log-become-a-finding-aid">How Does a Case Log Become a Finding Aid?</h2>
+<p>A finding aid is an archivist’s term for a guide that tells a researcher what exists and where to look. A case log works the same way. Each row confirms that a closed investigation exists, gives it an identifier the agency itself uses, and dates it. That is enough to request the file behind it.</p>
+<p>The pivot runs in three moves, the same as in any open-source investigation:</p>
+<ol>
+<li><strong>Start from the index.</strong> The log is the seed, just as a domain or a username is the seed in an online investigation.</li>
+<li><strong>Enumerate the entities.</strong> Filter the rows by Category Group, such as Procurement Fraud, Product Substitution, or Public Corruption, and by open and close dates. Each UID is an entity.</li>
+<li><strong>Pivot to the underlying records.</strong> Request the closing report or case file for specific UIDs. Closed cases matter here: FOIA’s Exemption 7(A), for records whose release could interfere with enforcement proceedings, generally fades once a case is over, though privacy exemptions for the people named will still apply.</li>
+</ol>
+<p>A row is only a pointer. A closed case may have ended in charges, a settlement, an administrative action, or nothing at all, and the log does not say which. A Category Group is the agency’s label for a case, not a finding that fraud or corruption occurred. Outcomes have to come from the file, a court docket, or an official announcement.</p>
+<h2 id="which-logs-should-researchers-request">Which Logs Should Researchers Request?</h2>
+<p>Start with the records agencies keep about their own work. They are often released with few redactions because they summarize rather than reveal.</p>
+<ul>
+<li><strong>FOIA logs:</strong> an agency’s list of the requests it received, with dates and subjects, which shows what others are already asking for.</li>
+<li><strong>Investigation and case logs:</strong> lists like the Inspector General’s, with case IDs, categories, and dates.</li>
+<li><strong>Incident and watch logs:</strong> SIGACT, operational-report, and duty-officer logs like EUCOM’s, which timestamp what an operations center tracked.</li>
+<li><strong>Hotline logs:</strong> records of complaints received electronically, by internet form or by phone, which show what was reported before anything was investigated.</li>
+</ul>
+<p>Each is a primary source for pivoting into the investigations, reports, and files behind it.</p>
+<h2 id="how-this-story-was-reported">How This Story Was Reported</h2>
+<p>Every quotation from the EUCOM release and the Inspector General log was read directly off the page images and checked against the released PDFs; none was taken from machine-extracted text. The black boxes and exemption codes in the SIGACT images are the government’s and are shown as released. The only redaction added by OctoProbe News is to my own name, address, and email on the EUCOM letter. Both FOIA requests are mine.</p>
+<p class="author-note has-avatar"><picture class="author-note-avatar"><source type="image/webp" srcset="/assets/authors/colin-aamot-96.webp 1x, /assets/authors/colin-aamot-192.webp 2x"><img class="author-avatar" src="/assets/authors/colin-aamot-96.jpg" srcset="/assets/authors/colin-aamot-96.jpg 1x, /assets/authors/colin-aamot-192.jpg 2x" width="96" height="96" alt="" loading="lazy" decoding="async"></picture><span class="author-note-text"><a href="https://www.octoprobe.ai/blog/authors/colin-aamot/" rel="author">Colin Aamot</a> is an Investigative Journalist &amp; OSINT Domain Expert and Founder of Redwing Technologies, which publishes OctoProbe News, runs a portfolio of other SaaS products, and operates Rook Intelligence, a licensed Washington, DC private detective agency. A U.S. Army veteran, he began in the 173rd Airborne Brigade and was selected for the Special Operations psychological operations regiment, then served as a counterterrorism information operations planner with USASOC and SOCCENT supporting Operation Inherent Resolve and Operation Spartan Shield. He was a TechCongress Congressional Innovation Fellow in the office of Rep. Darrell Issa and later an investigator for The Heritage Foundation&#x27;s Oversight Project and an investigative columnist for The Daily Signal. He holds an MA in Global Security Studies from Johns Hopkins University and an MBA from UNC Kenan-Flagler Business School.<span class="author-links"><a href="https://www.linkedin.com/in/colinaamot/">LinkedIn</a><a href="https://x.com/ColinAamot">X</a><a href="https://techcongress.io/colin-aamot">TechCongress</a><a href="https://rook-intel.com/">Rook Intelligence</a><a href="https://www.dailysignal.com/author/colin-aamot/">Daily Signal (previous bylines)</a></span></span></p>
+<aside aria-label="Related reading" class="related-reading">
+<h2 id="related-reading">Related Reading</h2>
+<ul>
+<li><a href="/blog/dia-islamic-jihad-foia-intelligence-reports-osint/">Old Secrets, New Leads: DIA’s Islamic Jihad Files as OSINT</a></li>
+<li><a href="/blog/afghanistan-withdrawal-foia-kabul-evacuation-record/">‘Did Not Wish to Create Panic’: FOIA Records Rebuild the Official Story of the Kabul Evacuation</a></li>
+<li><a href="/blog/secret-service-foia-sharepoint-browser-history-osint-guide/">How to FOIA an Official’s Browser History, SharePoint Files and Teams Messages</a></li>
+</ul>
+</aside>
+      </div>
+    </div>
+  </article>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="frow">
+      <a class="fbrand" href="/" aria-label="OctoProbe AI">
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <defs><linearGradient id="gf" x1="6" y1="4" x2="34" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#818cf8"/><stop offset=".55" stop-color="#38bdf8"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs>
+          <g stroke="url(#gf)" stroke-width="2.4" stroke-linecap="round">
+            <path d="M12 21.5 C6 25 5.5 31 9.5 34.5"/><path d="M16 22.5 C13 27 12 32.5 15 36"/><path d="M19 23 C18 28.5 17.5 33 19 37"/>
+            <path d="M28 21.5 C34 25 34.5 31 30.5 34.5"/><path d="M24 22.5 C27 27 28 32.5 25 36"/><path d="M21 23 C22 28.5 22.5 33 21 37"/>
+          </g>
+          <g fill="url(#gf)"><circle cx="9.5" cy="34.5" r="2.1"/><circle cx="15" cy="36" r="2.1"/><circle cx="19" cy="37" r="2.1"/><circle cx="30.5" cy="34.5" r="2.1"/><circle cx="25" cy="36" r="2.1"/><circle cx="21" cy="37" r="2.1"/></g>
+          <path d="M20 4.5 C12.3 4.5 7.5 9.8 7.5 16.4 C7.5 20.6 10.6 23.2 14.8 23.2 L25.2 23.2 C29.4 23.2 32.5 20.6 32.5 16.4 C32.5 9.8 27.7 4.5 20 4.5 Z" fill="url(#gf)"/>
+          <rect x="15.2" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
+          <rect x="21.6" y="12.8" width="3.2" height="4.3" rx="1.1" fill="#0b1220" opacity=".9"/>
+        </svg>
+        OctoProbe News
+      </a>
+      <nav class="fnav" aria-label="Footer navigation">
+        <a href="/blog/">Investigations</a>
+        <a href="/blog/authors/colin-aamot/">Colin Aamot</a>
+        <a href="/blog/about/">About &amp; Masthead</a>
+        <a href="/blog/standards/">Editorial Standards</a>
+        <a href="/blog/corrections/">Corrections Policy</a>
+        <a href="/blog/contact/">Contact &amp; Tips</a>
+        <a href="mailto:press@octoprobe.ai">press@octoprobe.ai</a>
+      </nav>
+    </div>
+    <div class="legal">
+      <p>© <span id="yr">2026</span> Redwing Technologies LLC · OctoProbe News · <a href="mailto:press@octoprobe.ai" style="color:inherit">press@octoprobe.ai</a></p>
+      <p><strong>OctoProbe News</strong> is published by Redwing Technologies LLC, which also develops the OctoProbe OSINT investigation platform for law firms, licensed investigators and analysts. The newsroom operates independently of that commercial business; see our <a href="/blog/standards/#independence" style="color:inherit">Editorial Standards</a>. Platform inquiries: <a href="/" style="color:inherit">octoprobe.ai</a> · <a href="mailto:team@octoprobe.ai" style="color:inherit">team@octoprobe.ai</a>.</p>
+    </div>
+  </div>
+</footer>
+<script>
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 10), { passive: true });
+  const tg = document.getElementById('navToggle'), mm = document.getElementById('mobileMenu');
+  tg.addEventListener('click', () => { const o = mm.classList.toggle('open'); tg.setAttribute('aria-expanded', o); });
+  mm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mm.classList.remove('open'); tg.setAttribute('aria-expanded', 'false'); }));
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+<script src="/assets/js/blog-toc.js?v=toc7" defer></script>
+<script src="/assets/js/blog-share.js?v=share1" defer></script>
+</body>
+</html>

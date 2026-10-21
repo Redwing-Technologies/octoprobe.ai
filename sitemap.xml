@@ -299,6 +299,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://www.octoprobe.ai/blog/foia-assessments-redacted-logs-osint-pivots/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/blog/foia-assessments-redacted-logs-osint-pivots/assets/og-cover.png</image:loc>
+      <image:title>Redacted, Not Useless: FOIA Logs as OSINT Pivots</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.octoprobe.ai/blog/authors/colin-aamot/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
