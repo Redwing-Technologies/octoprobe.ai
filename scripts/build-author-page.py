@@ -48,9 +48,9 @@ TZ = ZoneInfo("America/New_York")
 DATE_CREATED = "2026-10-20T19:45:00-04:00"  # author date of 6b2e48d, the commit that added this page
 NAME = AU.DEFAULT_AUTHOR["name"]
 ROLE = "Founder, Redwing Technologies"
-TITLE = f"{NAME}: {ROLE} | OctoProbe News"
-DESCRIPTION = ("Colin Aamot is the founder of Redwing Technologies, publisher of OctoProbe News. "
-               "Bio, background, profiles, press coverage and his investigations.")
+TITLE = f"{NAME}: {ROLE} · OctoProbe News"
+DESCRIPTION = ("Colin Aamot, Founder, Redwing Technologies, publishes OctoProbe News. "
+               "Biography, background, profiles, press coverage, and his investigations.")
 SRCSET = (f"{ASSETS}/colin-aamot-192.webp 192w, {ASSETS}/colin-aamot-400.webp 400w, "
           f"{ASSETS}/colin-aamot-800.webp 800w, {ASSETS}/colin-aamot.webp 1000w")
 SIZES = "(max-width: 520px) 152px, 200px"
@@ -59,8 +59,8 @@ PROFILES = [  # same URLs as Person.sameAs (Rook links its homepage; sameAs uses
     ("LinkedIn", "https://www.linkedin.com/in/colinaamot/", True),
     ("X", "https://x.com/ColinAamot", True),
     ("Rook Intelligence", "https://rook-intel.com/", False),
-    ("TechCongress profile", "https://techcongress.io/colin-aamot", False),
-    ("The Daily Signal (previous bylines)", "https://www.dailysignal.com/author/colin-aamot/", False),
+    ("TechCongress Profile", "https://techcongress.io/colin-aamot", False),
+    ("The Daily Signal (Previous Bylines)", "https://www.dailysignal.com/author/colin-aamot/", False),
 ]
 BACKGROUND = [
     "U.S. Army: 173rd Airborne Brigade; selected for the Special Operations Psychological Operations "
@@ -242,7 +242,7 @@ def build() -> str:
 <ul class="author-profiles">
 {li_prof}
 </ul>
-<h2 id="press">In the press</h2>
+<h2 id="press">In the Press</h2>
 <ul>
 {li_press}
 </ul>

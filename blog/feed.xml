@@ -7,7 +7,7 @@
   <channel>
     <title>OctoProbe News</title>
     <link>https://www.octoprobe.ai/blog/</link>
-    <description>Investigative reporting on national security, intelligence, digital targeting and online influence operations, built from open-source records.</description>
+    <description>Investigative reporting on national security, intelligence, digital targeting and online influence operations. Published by Redwing Technologies LLC.</description>
     <atom:link href="https://www.octoprobe.ai/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
     <language>en-us</language>
@@ -26,7 +26,7 @@
       <height>144</height>
     </image>
     <webfeeds:icon>https://www.octoprobe.ai/icon-512.png</webfeeds:icon>
-    <webfeeds:accentColor>0284C7</webfeeds:accentColor>
+    <webfeeds:accentColor>0288D1</webfeeds:accentColor>
     <webfeeds:analytics id="G-6T6HW79ZP0" engine="GoogleAnalytics"/>
     <item>
       <title>Old Secrets, New Leads: DIA’s Islamic Jihad Files as OSINT</title>

@@ -21,6 +21,8 @@ or zone; it is read as 00:00 America/New_York (the newsroom's zone) and reported
 ISO 8601 timestamp with offset).
 
 Output is deterministic: lastBuildDate = newest item dateModified, never "now".
+Channel title, description, and accent are the constants below. The description is the
+newsroom line, not the blog-index meta description.
 
 Usage (repo root):
   python3 scripts/gen-feed.py            # write blog/feed.xml (and blog/atom.xml if it exists or --atom)
@@ -51,6 +53,12 @@ HUB = "https://pubsubhubbub.appspot.com/"   # WebSub hub announced in the feed (
 NEWSROOM_TZ = ZoneInfo("America/New_York")
 MAX_ITEMS = 50
 FEED_TITLE = "OctoProbe News"
+# Newsroom line for the channel. Not scraped from blog/index.html, so a homepage
+# meta edit cannot silently change the feed. Facts already published on /blog/about/.
+FEED_DESCRIPTION = (
+    "Investigative reporting on national security, intelligence, digital targeting and online "
+    "influence operations. Published by Redwing Technologies LLC."
+)
 FEED_ICON = f"{SITE}/icon-512.png"            # square, used by Feedly (webfeeds:icon) and Atom <icon>
 RSS_IMAGE = (f"{SITE}/feed-icon-144.png", 144, 144)  # RSS <image> must be <= 144 px wide
 COPYRIGHT = "© 2026 Redwing Technologies LLC"
@@ -204,8 +212,7 @@ def a(s: str) -> str:
 
 
 def channel_description() -> str:
-    html = (ROOT / "blog" / "index.html").read_text(encoding="utf-8")
-    return meta(html, "description") or "Investigative reporting from OctoProbe News."
+    return FEED_DESCRIPTION
 
 
 def build_rss(items: list[dict]) -> str:
@@ -239,7 +246,7 @@ def build_rss(items: list[dict]) -> str:
          f"      <height>{RSS_IMAGE[2]}</height>",
          "    </image>",
          f"    <webfeeds:icon>{x(FEED_ICON)}</webfeeds:icon>",
-         "    <webfeeds:accentColor>0284C7</webfeeds:accentColor>",
+         "    <webfeeds:accentColor>0288D1</webfeeds:accentColor>",
          "    <webfeeds:analytics id=\"G-6T6HW79ZP0\" engine=\"GoogleAnalytics\"/>"]
     for i in items:
         o += ["    <item>",
