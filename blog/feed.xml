@@ -14,8 +14,8 @@
     <copyright>© 2026 Redwing Technologies LLC</copyright>
     <managingEditor>press@octoprobe.ai (OctoProbe News)</managingEditor>
     <webMaster>press@octoprobe.ai (OctoProbe News)</webMaster>
-    <pubDate>Tue, 20 Oct 2026 21:26:24 -0400</pubDate>
-    <lastBuildDate>Tue, 20 Oct 2026 21:26:24 -0400</lastBuildDate>
+    <pubDate>Wed, 21 Oct 2026 05:46:30 -0400</pubDate>
+    <lastBuildDate>Wed, 21 Oct 2026 05:46:30 -0400</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <ttl>60</ttl>
     <image>
@@ -28,6 +28,21 @@
     <webfeeds:icon>https://www.octoprobe.ai/icon-512.png</webfeeds:icon>
     <webfeeds:accentColor>0284C7</webfeeds:accentColor>
     <webfeeds:analytics id="G-6T6HW79ZP0" engine="GoogleAnalytics"/>
+    <item>
+      <title>‘Did Not Wish to Create Panic’: FOIA Records Rebuild the Official Story of the Kabul Evacuation</title>
+      <link>https://www.octoprobe.ai/blog/afghanistan-withdrawal-foia-kabul-evacuation-record/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/afghanistan-withdrawal-foia-kabul-evacuation-record/</guid>
+      <description>State Department OIG files released under FOIA rebuild the 2021 Afghanistan withdrawal: a Kabul embassy that feared panic, bad evacuee counts, and Navy emails.</description>
+      <pubDate>Wed, 21 Oct 2026 05:46:30 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Investigations</category>
+      <category>FOIA</category>
+      <category>Afghanistan</category>
+      <enclosure url="https://www.octoprobe.ai/blog/afghanistan-withdrawal-foia-kabul-evacuation-record/assets/og-cover.png?v=1" length="462450" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/afghanistan-withdrawal-foia-kabul-evacuation-record/assets/og-cover.png?v=1" medium="image" type="image/png" width="1200" height="630">
+        <media:description type="plain">Three FOIA-released document excerpts on a navy card: State Department OIG report AUD-MERO-23-15, a Navy status report on 662 evacuees at Sigonella, and an August 27, 2021, email about 53 at-risk women stopped at a Taliban checkpoint</media:description>
+      </media:content>
+    </item>
     <item>
       <title>How to FOIA the Situation Room: One Request Pried Loose Thousands of Obama-Era Photos</title>
       <link>https://www.octoprobe.ai/blog/foia-how-to-obama-situation-room-photos-presidential-records/</link>

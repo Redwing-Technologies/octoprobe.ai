@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.octoprobe.ai/blog/afghanistan-withdrawal-foia-kabul-evacuation-record/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>OctoProbe News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-21T05:46:30-04:00</news:publication_date>
+      <news:title>‘Did Not Wish to Create Panic’: FOIA Records Rebuild the Official Story of the Kabul Evacuation</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.octoprobe.ai/blog/foia-how-to-obama-situation-room-photos-presidential-records/</loc>
     <news:news>
       <news:publication>
