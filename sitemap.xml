@@ -89,43 +89,43 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.octoprobe.ai/blog/contact/</loc>
-    <lastmod>2026-10-17</lastmod>
+    <loc>https://www.octoprobe.ai/blog/about/</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://www.octoprobe.ai/og-image.png</image:loc>
-      <image:title>Contact OctoProbe News: Press, Tips and Corrections</image:title>
+      <image:title>About OctoProbe News: Masthead, Ownership and Contact</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.octoprobe.ai/blog/contact/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.octoprobe.ai/og-image.png</image:loc>
+      <image:title>Contact &amp; Tips for the OctoProbe News Editorial Desk</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.octoprobe.ai/blog/corrections/</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://www.octoprobe.ai/og-image.png</image:loc>
-      <image:title>Corrections Policy · OctoProbe News</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.octoprobe.ai/blog/about/</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://www.octoprobe.ai/og-image.png</image:loc>
-      <image:title>About OctoProbe News: Mission, Masthead and Ownership</image:title>
+      <image:title>OctoProbe News Corrections Policy and Public Process</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.octoprobe.ai/blog/standards/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://www.octoprobe.ai/og-image.png</image:loc>
-      <image:title>Editorial Standards and Ethics · OctoProbe News</image:title>
+      <image:title>Editorial Standards, Sourcing and Ethics · OctoProbe News</image:title>
     </image:image>
   </url>
   <url>
@@ -305,7 +305,7 @@
     <priority>0.6</priority>
     <image:image>
       <image:loc>https://www.octoprobe.ai/blog/authors/colin-aamot/assets/colin-aamot.jpg</image:loc>
-      <image:title>Colin Aamot: Founder, Redwing Technologies | OctoProbe News</image:title>
+      <image:title>Colin Aamot: Investigative Journalist &amp; OSINT Domain Expert</image:title>
     </image:image>
   </url>
 </urlset>
