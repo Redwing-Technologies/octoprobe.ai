@@ -1,0 +1,162 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Treasury Sanctioned Whales Shipping Line. Its Company Profile Still Names Its Staff.",
+    "description": "OFAC sanctioned Dubai ship agent Whales Shipping Line on October 21, 2026. Its company profile, website, and two blocked boats, traced through public records.",
+    "datePublished": "2026-10-21T18:45:00-04:00",
+    "dateModified": "2026-10-21T18:45:00-04:00",
+    "author": {
+      "@type": "Person",
+      "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#person",
+      "name": "Colin Aamot",
+      "url": "https://www.octoprobe.ai/blog/authors/colin-aamot/"
+    },
+    "publisher": {
+      "@type": "NewsMediaOrganization",
+      "@id": "https://www.octoprobe.ai/blog/#newsroom",
+      "name": "OctoProbe News",
+      "url": "https://www.octoprobe.ai/blog/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.octoprobe.ai/icon-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Redwing Technologies LLC",
+        "url": "https://rook-intel.com/"
+      }
+    },
+    "image": [
+      "https://www.octoprobe.ai/blog/whales-shipping-line-ofac-iran-shadow-fleet-dubai-agent/assets/og-cover.png",
+      "https://www.octoprobe.ai/blog/whales-shipping-line-ofac-iran-shadow-fleet-dubai-agent/assets/cover.png"
+    ],
+    "keywords": "Whales Shipping Line, OFAC, Treasury, sanctions, Iran, shadow fleet, E.O. 13902, IRAN-EO13902, Amigoz Singapore, Sparrow Trading FZE, Karnakis and Karnakis, Roxette Maritime, WHALES DIAMOND, WHALES PEARL, IMO 9375032, IMO 9483114, MMSI, AIS, Dubai, Fujairah, ship agent, OSINT",
+    "articleSection": "Investigations",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.octoprobe.ai/blog/whales-shipping-line-ofac-iran-shadow-fleet-dubai-agent/"
+    },
+    "url": "https://www.octoprobe.ai/blog/whales-shipping-line-ofac-iran-shadow-fleet-dubai-agent/",
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "OctoProbe News",
+      "url": "https://www.octoprobe.ai/blog/"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        ".answer-first",
+        ".key-takeaways",
+        ".prose h2"
+      ]
+    },
+    "about": [
+      {
+        "@type": "Organization",
+        "name": "Whales Shipping Line LLC",
+        "url": "https://www.whalesshipping.com/"
+      },
+      {
+        "@type": "Thing",
+        "name": "Iran shadow fleet sanctions"
+      }
+    ],
+    "mentions": [
+      {
+        "@type": "GovernmentOrganization",
+        "name": "Office of Foreign Assets Control",
+        "url": "https://ofac.treasury.gov/"
+      },
+      {
+        "@type": "GovernmentOrganization",
+        "name": "U.S. Department of the Treasury",
+        "url": "https://home.treasury.gov/"
+      },
+      {
+        "@type": "Organization",
+        "name": "Amigoz Singapore Pte. Ltd."
+      },
+      {
+        "@type": "Organization",
+        "name": "Karnakis and Karnakis"
+      },
+      {
+        "@type": "Organization",
+        "name": "Roxette Maritime Shipping and Trading S.A."
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.octoprobe.ai/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://www.octoprobe.ai/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Treasury Sanctioned Whales Shipping Line. Its Company Profile Still Names Its Staff.",
+        "item": "https://www.octoprobe.ai/blog/whales-shipping-line-ofac-iran-shadow-fleet-dubai-agent/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Whales Shipping Line LLC?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Dubai shipping agency, licensed since 2013, that Treasury sanctioned on October 21, 2026, for supporting Amigoz Singapore Pte. Ltd. Treasury says it acted as the shipping agent for Sparrow Trading FZE."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which Whales ships are sanctioned?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WHALES DIAMOND (IMO 9375032) and WHALES PEARL (IMO 9483114), two UAE-flagged crew and supply boats. Whales Star and Whales Ruby, also on the company’s fleet page, are not."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are Whales employees sanctioned?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. OFAC’s entry for Whales names no individuals, and no Whales staff member is on OFAC’s list."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Whales connected to Karnakis and Karnakis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not in any OFAC or Treasury document. Both were sanctioned on the same day, but OFAC links Whales only to Amigoz Singapore."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does WHALES DIAMOND’s MMSI differ from OFAC’s?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The boat broadcasts MMSI 470530000, while OFAC lists 470132000, which another vessel now uses. That pattern suggests re-registration, but it is unconfirmed."
+        }
+      }
+    ]
+  }
+]
