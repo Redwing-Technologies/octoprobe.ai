@@ -13,6 +13,17 @@
     </news:news>
   </url>
   <url>
+    <loc>https://www.octoprobe.ai/blog/julani-rebrand-terrorist-to-politician-dia-tow-idlib-geolocation/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>OctoProbe News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-22T09:00:00-04:00</news:publication_date>
+      <news:title>From $10 Million Bounty to the Oval Office: The Record Behind Julani’s Rebrand</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.octoprobe.ai/blog/jmwc-foia-socom-online-psyops-military-deception/</loc>
     <news:news>
       <news:publication>
@@ -219,17 +230,6 @@
       </news:publication>
       <news:publication_date>2026-10-20T17:55:59-04:00</news:publication_date>
       <news:title>Inside the FBI's CAST Guide: How Carriers and Agents Pin Down a Cell Phone</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.octoprobe.ai/blog/iran-hormuz-mine-strike-claims-fall-apart/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>OctoProbe News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-10-20T15:15:39-04:00</news:publication_date>
-      <news:title>Iran Says It Rules Hormuz. Its “Mine Strike” Stories Keep Falling Apart.</news:title>
     </news:news>
   </url>
 </urlset>
