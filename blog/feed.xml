@@ -14,8 +14,8 @@
     <copyright>© 2026 Redwing Technologies LLC</copyright>
     <managingEditor>press@octoprobe.ai (OctoProbe News)</managingEditor>
     <webMaster>press@octoprobe.ai (OctoProbe News)</webMaster>
-    <pubDate>Wed, 21 Oct 2026 18:45:00 -0400</pubDate>
-    <lastBuildDate>Wed, 21 Oct 2026 18:45:00 -0400</lastBuildDate>
+    <pubDate>Wed, 21 Oct 2026 21:45:00 -0400</pubDate>
+    <lastBuildDate>Wed, 21 Oct 2026 21:45:00 -0400</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <ttl>60</ttl>
     <image>
@@ -28,6 +28,21 @@
     <webfeeds:icon>https://www.octoprobe.ai/icon-512.png</webfeeds:icon>
     <webfeeds:accentColor>0288D1</webfeeds:accentColor>
     <webfeeds:analytics id="G-6T6HW79ZP0" engine="GoogleAnalytics"/>
+    <item>
+      <title>Panama Law Firm Was Tied to Iran’s Shadow Fleet Three Years Before Treasury Sanctioned It</title>
+      <link>https://www.octoprobe.ai/blog/karnakis-and-karnakis-panama-law-firm-iran-shadow-fleet-ofac/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/karnakis-and-karnakis-panama-law-firm-iran-shadow-fleet-ofac/</guid>
+      <description>Karnakis and Karnakis, sanctioned October 21, 2026: the earliest public report, the seven linked companies sanctioned first, where the allegations came from, and how openly the firm operated.</description>
+      <pubDate>Wed, 21 Oct 2026 21:45:00 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Investigations</category>
+      <category>Sanctions</category>
+      <category>Iran</category>
+      <enclosure url="https://www.octoprobe.ai/blog/karnakis-and-karnakis-panama-law-firm-iran-shadow-fleet-ofac/assets/og-cover.png" length="288604" type="image/png"/>
+      <media:content url="https://www.octoprobe.ai/blog/karnakis-and-karnakis-panama-law-firm-iran-shadow-fleet-ofac/assets/og-cover.png" medium="image" type="image/png" width="1200" height="630">
+        <media:description type="plain">Cutouts of five Karnakis and Karnakis staff photos from the firm’s website, outlined in red and overlapping at lower right, on a dark street map of Panama City, beside the words The Law Firm Behind the Fleet.</media:description>
+      </media:content>
+    </item>
     <item>
       <title>Treasury Sanctioned Whales Shipping Line. Its Company Profile Still Names Its Staff.</title>
       <link>https://www.octoprobe.ai/blog/whales-shipping-line-ofac-iran-shadow-fleet-dubai-agent/</link>

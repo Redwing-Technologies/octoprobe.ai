@@ -1,0 +1,200 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Panama Law Firm Was Tied to Iran’s Shadow Fleet Three Years Before Treasury Sanctioned It",
+    "description": "Karnakis and Karnakis, sanctioned October 21, 2026: the earliest public report, the seven linked companies sanctioned first, where the allegations came from, and how openly the firm operated.",
+    "datePublished": "2026-10-21T21:45:00-04:00",
+    "dateModified": "2026-10-21T21:45:00-04:00",
+    "author": {
+      "@type": "Person",
+      "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#person",
+      "name": "Colin Aamot",
+      "url": "https://www.octoprobe.ai/blog/authors/colin-aamot/"
+    },
+    "publisher": {
+      "@type": "NewsMediaOrganization",
+      "@id": "https://www.octoprobe.ai/blog/#newsroom",
+      "name": "OctoProbe News",
+      "url": "https://www.octoprobe.ai/blog/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.octoprobe.ai/icon-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Redwing Technologies LLC",
+        "url": "https://rook-intel.com/"
+      }
+    },
+    "image": [
+      "https://www.octoprobe.ai/blog/karnakis-and-karnakis-panama-law-firm-iran-shadow-fleet-ofac/assets/og-cover.png",
+      "https://www.octoprobe.ai/blog/karnakis-and-karnakis-panama-law-firm-iran-shadow-fleet-ofac/assets/cover.png"
+    ],
+    "keywords": "Karnakis and Karnakis, OFAC, Treasury, sanctions, Iran, shadow fleet, E.O. 13902, IRAN-EO13902, Panama, Piraeus, Roxette Maritime, Skyros Maritime, Corfu Maritime, Elias Shipping, Aquila Worldwide Marine, Thasos Maritime, Serifos Maritime, Tilos Maritime, Al-Qatirji, Pedro Ortega Jones, Lloyd’s List, Dnews, Offshore Leaks, HH GLORY, GAS ATHENA, SEAGATE, RAMONA I, DAHAB, Emamjomeh, LPG, AIS, MMSI, OSINT",
+    "articleSection": "Investigations",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.octoprobe.ai/blog/karnakis-and-karnakis-panama-law-firm-iran-shadow-fleet-ofac/"
+    },
+    "url": "https://www.octoprobe.ai/blog/karnakis-and-karnakis-panama-law-firm-iran-shadow-fleet-ofac/",
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "OctoProbe News",
+      "url": "https://www.octoprobe.ai/blog/"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        ".answer-first",
+        ".key-takeaways",
+        ".prose h2"
+      ]
+    },
+    "about": [
+      {
+        "@type": "Organization",
+        "name": "Karnakis and Karnakis"
+      },
+      {
+        "@type": "Thing",
+        "name": "Iran shadow fleet sanctions"
+      }
+    ],
+    "mentions": [
+      {
+        "@type": "GovernmentOrganization",
+        "name": "Office of Foreign Assets Control",
+        "url": "https://ofac.treasury.gov/"
+      },
+      {
+        "@type": "GovernmentOrganization",
+        "name": "U.S. Department of the Treasury",
+        "url": "https://home.treasury.gov/"
+      },
+      {
+        "@type": "Organization",
+        "name": "Roxette Maritime Shipping and Trading S.A."
+      },
+      {
+        "@type": "Organization",
+        "name": "Lloyd’s List",
+        "url": "https://www.lloydslist.com/"
+      },
+      {
+        "@type": "Organization",
+        "name": "Dnews",
+        "url": "https://www.dnews.gr/"
+      },
+      {
+        "@type": "Organization",
+        "name": "La Prensa",
+        "url": "https://www.prensa.com/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.octoprobe.ai/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://www.octoprobe.ai/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Panama Law Firm Was Tied to Iran’s Shadow Fleet Three Years Before Treasury Sanctioned It",
+        "item": "https://www.octoprobe.ai/blog/karnakis-and-karnakis-panama-law-firm-iran-shadow-fleet-ofac/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "When was the firm first publicly tied to Iranian shipping?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The earliest public report found is a Lloyd’s List investigation published November 17, 2023, which said ships carrying Iranian gas had been sold to shell companies registered to an associate of the firm. Lloyd’s List said it was not suggesting the companies broke sanctions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Karnakis and Karnakis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A law firm with offices in Panama City and Piraeus, Greece, founded in 2006, that Treasury sanctioned on October 21, 2026, saying it registered companies whose ships carried Iranian petroleum, petrochemicals, and steel."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who was sanctioned with the firm?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Its founders and co-owners, Sofianos and Konstantinos Karnakis Kosmas, and employees Ioanis Karnakis Kosmas, Pedro Ortega Jones, and Roberto Ortega Jones, along with Roxette Maritime Shipping and Trading S.A. and the seven cargo ships it manages."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which companies does Treasury say the firm set up?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Skyros Maritime and Trading S.A., Corfu Maritime and Trading S.A., and Elias Shipping and Trading Group S.A., “among others.” Treasury says all three were sanctioned earlier for owning ships active in the trade of Iranian petroleum and petroleum products."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many companies tied to the firm were sanctioned before it was?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "At least seven, along with seven ships. Treasury says the firm set up three of them, Elias, Corfu, and Skyros, sanctioned from November 2024 to April 2026. News reports say it was resident agent for four more: Thasos, Serifos, and Tilos, sanctioned in November 2025, and Aquila, sanctioned in May 2026."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was the firm in the Panama Papers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. OctoProbe searched the full Offshore Leaks data from the International Consortium of Investigative Journalists, which includes the Panama Papers, and found no record of the firm, its designated people, or its companies. The connection first surfaced in a November 2023 Lloyd’s List investigation that drew on public records and documents leaked from a sanctioned Iranian petrochemical broker."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Has the firm faced other criminal allegations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OctoProbe found none. It searched U.S. sanctions programs for narcotics, organized crime, and corruption, U.S. court and Justice Department records, and Greek-, Spanish-, and Italian-language press, and found no allegation that could be tied to the firm or its people by identifying details."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can companies still deal with the firm?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Only to wind down existing dealings. OFAC’s General License GG authorizes transactions ordinarily incident and necessary to that wind-down through 12:01 a.m. eastern standard time on November 20, 2026."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happened to the ships of the firm’s earlier companies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HH GLORY and GAS ATHENA, which OFAC lists as Panama-flagged, now broadcast Nicaragua and Anguilla flags with new MMSI numbers; GAS ATHENA uses the name SEAGATE. RAMONA I broadcasts the name DAHAB."
+        }
+      }
+    ]
+  }
+]
