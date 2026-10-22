@@ -63,6 +63,8 @@ REWRITES = {
         "Heather Zhang Case: OSINT From a 2024 Reddit Allegation", True),
     "hexane-afd-leak-actor-scope-access": (
         "Hexane’s AfD Dump: The Actor, the Scope, and the Access", True),
+    "help-tds-hotejka-tech-support-scam-new-server": (
+        "Help TDS Tech-Support Scam Still Running From a New Server", True),
     "karnakis-and-karnakis-panama-law-firm-iran-shadow-fleet-ofac": (
         "Karnakis Panama Firm Linked to Iran’s OFAC Shadow Fleet", True),
     "myrotvorets-informnapalm-ned-grant": (
