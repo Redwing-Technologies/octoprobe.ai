@@ -221,15 +221,4 @@
       <news:title>Jailed, Purged, Still Shipping: How ISIS Media Survives the Takedowns</news:title>
     </news:news>
   </url>
-  <url>
-    <loc>https://www.octoprobe.ai/blog/cefc-china-energy-pla-base-311-public-record/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>OctoProbe News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-10-20T07:05:41-04:00</news:publication_date>
-      <news:title>CEFC, PLA Base 311, and the Long Gap from FBI Surveillance to Designation</news:title>
-    </news:news>
-  </url>
 </urlset>

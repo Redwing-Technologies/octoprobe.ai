@@ -5,7 +5,7 @@
     "headline": "The Tech-Support Scam Infoblox Exposed Is Still Running, From a Server Not on Its List",
     "description": "After Infoblox exposed Help TDS and its Russian-language operator Hotejka on October 15, 2026, the scam’s redirect domain was found on a new Frankfurt server behind a decoy page shared with other scam domains.",
     "datePublished": "2026-10-22T06:49:00-04:00",
-    "dateModified": "2026-10-22T06:49:00-04:00",
+    "dateModified": "2026-10-22T07:05:00-04:00",
     "author": {
       "@type": "Person",
       "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#person",
@@ -299,7 +299,7 @@
         "name": "What happens if you call the number on the pop-up?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "In Infoblox’s test call, a man claiming to be Microsoft Technical Support removed the lock and told the caller to download the UltraViewer remote-access tool, which would give him full control of the computer."
+          "text": "In Infoblox’s test call, a man claiming to be Microsoft Technical Support removed the lock and told the caller to download the UltraViewer remote-access tool, which would give him complete access to the computer."
         }
       }
     ]
