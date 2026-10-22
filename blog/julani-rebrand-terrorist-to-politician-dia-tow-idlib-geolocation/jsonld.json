@@ -1,0 +1,216 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "From $10 Million Bounty to the Oval Office: The Record Behind Julani’s Rebrand",
+    "description": "How Abu Muhammad al-Julani rebranded as Syrian President Ahmed al-Sharaa: U.S. designation and delisting records, DIA files on American TOW missiles in Syria, a geolocation of his Idlib appearances, and the human rights record of Hayat Tahrir al-Sham.",
+    "image": [
+      "https://www.octoprobe.ai/blog/julani-rebrand-terrorist-to-politician-dia-tow-idlib-geolocation/assets/cover.png",
+      "https://www.octoprobe.ai/blog/julani-rebrand-terrorist-to-politician-dia-tow-idlib-geolocation/assets/og-cover.png"
+    ],
+    "datePublished": "2026-10-22T09:00:00-04:00",
+    "dateModified": "2026-10-22T09:00:00-04:00",
+    "author": {
+      "@type": "Person",
+      "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#person",
+      "name": "Colin Aamot",
+      "url": "https://www.octoprobe.ai/blog/authors/colin-aamot/"
+    },
+    "publisher": {
+      "@type": "NewsMediaOrganization",
+      "@id": "https://www.octoprobe.ai/blog/#newsroom",
+      "name": "OctoProbe News",
+      "url": "https://www.octoprobe.ai/blog/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.octoprobe.ai/icon-512.png",
+        "width": 512,
+        "height": 512
+      }
+    },
+    "keywords": [
+      "Abu Muhammad al-Julani",
+      "al-Jawlani",
+      "al-Jolani",
+      "Ahmed al-Sharaa",
+      "Hayat Tahrir al-Sham",
+      "HTS",
+      "Nusra Front",
+      "Jabhat al-Nusra",
+      "Rewards for Justice",
+      "Defense Intelligence Agency",
+      "DIA FOIA-00321-2023",
+      "TOW missile",
+      "anti-tank guided missile",
+      "ATGM",
+      "Harakat Hazm",
+      "Timber Sycamore",
+      "Idlib",
+      "Bab al-Hawa",
+      "geolocation",
+      "Syrian Salvation Government",
+      "human rights",
+      "Suwayda",
+      "Alawite killings"
+    ],
+    "articleSection": "Investigations",
+    "inLanguage": "en-US",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.octoprobe.ai/blog/julani-rebrand-terrorist-to-politician-dia-tow-idlib-geolocation/"
+    },
+    "url": "https://www.octoprobe.ai/blog/julani-rebrand-terrorist-to-politician-dia-tow-idlib-geolocation/",
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "OctoProbe News",
+      "url": "https://www.octoprobe.ai/blog/"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        ".answer-first",
+        ".key-takeaways",
+        ".prose h2"
+      ]
+    },
+    "about": [
+      {
+        "@type": "Person",
+        "name": "Ahmed al-Sharaa",
+        "alternateName": [
+          "Abu Muhammad al-Jawlani",
+          "Abu Mohammad al-Jolani",
+          "Abu Muhammad al-Julani"
+        ]
+      },
+      {
+        "@type": "Organization",
+        "name": "Hayat Tahrir al-Sham",
+        "alternateName": [
+          "al-Nusrah Front",
+          "Jabhat Fath al-Sham"
+        ]
+      }
+    ],
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Defense Intelligence Agency",
+        "sameAs": "https://www.dia.mil/"
+      },
+      {
+        "@type": "Organization",
+        "name": "U.S. Department of State",
+        "sameAs": "https://www.state.gov/"
+      },
+      {
+        "@type": "Organization",
+        "name": "Office of Foreign Assets Control",
+        "sameAs": "https://ofac.treasury.gov/"
+      },
+      {
+        "@type": "Organization",
+        "name": "United Nations Security Council"
+      },
+      {
+        "@type": "Organization",
+        "name": "Syrian Network for Human Rights",
+        "sameAs": "https://snhr.org/"
+      },
+      {
+        "@type": "Organization",
+        "name": "Amnesty International"
+      },
+      {
+        "@type": "Organization",
+        "name": "Harakat Hazm"
+      },
+      {
+        "@type": "Place",
+        "name": "Idlib Governorate"
+      },
+      {
+        "@type": "Place",
+        "name": "Bab al-Hawa"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.octoprobe.ai/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://www.octoprobe.ai/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "From $10 Million Bounty to the Oval Office: The Record Behind Julani’s Rebrand",
+        "item": "https://www.octoprobe.ai/blog/julani-rebrand-terrorist-to-politician-dia-tow-idlib-geolocation/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Who is Abu Muhammad al-Julani?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "He is the founder of Syria’s Nusra Front, which later became Hayat Tahrir al-Sham (HTS). He now uses his birth name, Ahmed al-Sharaa, and was named Syria’s transitional president on January 29, 2025. The State Department named him a Specially Designated Global Terrorist on May 16, 2013, and offered up to $10 million for information on him on May 10, 2017."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When did the United States drop the terrorist designations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The $10 million reward offer was dropped on December 20, 2024. The State Department revoked HTS’s Foreign Terrorist Organization designation effective July 8, 2025. The UN Security Council delisted al-Sharaa on November 6, 2025, and the United States removed his Specially Designated Global Terrorist listing on November 7, 2025."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Did the CIA arm the Nusra Front or HTS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No record reviewed here says so. The Defense Intelligence Agency documented U.S.-made TOW missiles becoming the most used anti-tank missile among Syrian non-state groups and logged a Nusra Front claim to have captured TOW 2A missiles. News reports tied the TOWs to a covert CIA program for vetted rebel groups, including Harakat Hazm, and reported that Nusra seized weapons when it routed those groups. The United States did not officially acknowledge the program."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does the DIA FOIA release show?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It holds a May 28, 2015, DIA assessment titled “Syria/Iraq: Emerging Anti Tank Guided Missile (ATGM) Threat” and a September 22, 2015, follow-up. The assessment counted more than 900 videos of non-state missile firings. The follow-up found the U.S. TOW 2A made up 72% of the firings it reviewed. The records were released to OctoProbe under FOIA in DIA case FOIA-00321-2023."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where did al-Julani appear in Idlib?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OctoProbe geolocated his public appearances from September 2023 to May 2024 to sites including the Bab al-Hawa border crossing, the Idlib University Hospital amphitheater, the Dar al-Wahi al-Sharif Quranic school, and the Zayd bin Haritha Mosque in Idlib city."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What abuses do human rights reports attribute to HTS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "State Department reports cite the Syrian Network for Human Rights and the UN Commission of Inquiry on killings, arbitrary detention, torture deaths, and summary executions by HTS. The network counted at least 505 civilians killed by HTS from 2012 to December 2021. For 2025, Amnesty International said government and government-affiliated forces executed dozens of Druze in Suwayda, and Reuters reported a chain of command reaching Damascus in the March killings of Alawites."
+        }
+      }
+    ]
+  }
+]
