@@ -1,0 +1,307 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "The Tech-Support Scam Infoblox Exposed Is Still Running, From a Server Not on Its List",
+    "description": "After Infoblox exposed Help TDS and its Russian-language operator Hotejka on October 15, 2026, the scam’s redirect domain was found on a new Frankfurt server behind a decoy page shared with other scam domains.",
+    "datePublished": "2026-10-22T06:49:00-04:00",
+    "dateModified": "2026-10-22T06:49:00-04:00",
+    "author": {
+      "@type": "Person",
+      "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#person",
+      "name": "Colin Aamot",
+      "url": "https://www.octoprobe.ai/blog/authors/colin-aamot/"
+    },
+    "publisher": {
+      "@type": "NewsMediaOrganization",
+      "@id": "https://www.octoprobe.ai/blog/#newsroom",
+      "name": "OctoProbe News",
+      "url": "https://www.octoprobe.ai/blog/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.octoprobe.ai/icon-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Redwing Technologies LLC",
+        "url": "https://rook-intel.com/"
+      }
+    },
+    "image": [
+      "https://www.octoprobe.ai/blog/help-tds-hotejka-tech-support-scam-new-server/assets/cover-16x9.webp",
+      "https://www.octoprobe.ai/blog/help-tds-hotejka-tech-support-scam-new-server/assets/cover-4x3.webp",
+      "https://www.octoprobe.ai/blog/help-tds-hotejka-tech-support-scam-new-server/assets/cover-1x1.webp"
+    ],
+    "keywords": "Help TDS, Hotejka, ROI777, Operation Prowli, Guardicore, Keitaro, tech support scam, Microsoft support scam, Cloudflare Pages, traffic distribution system, hotcname.help, Infoblox, UltraViewer, OSINT",
+    "articleSection": "Investigations",
+    "inLanguage": "en-US",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.octoprobe.ai/blog/help-tds-hotejka-tech-support-scam-new-server/"
+    },
+    "url": "https://www.octoprobe.ai/blog/help-tds-hotejka-tech-support-scam-new-server/",
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "OctoProbe News",
+      "url": "https://www.octoprobe.ai/blog/"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        ".answer-first",
+        ".key-takeaways",
+        ".prose h2"
+      ]
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Help TDS tech-support scam network"
+      },
+      {
+        "@type": "Organization",
+        "name": "Hotejka"
+      },
+      {
+        "@type": "Organization",
+        "name": "ROI777"
+      },
+      {
+        "@type": "Thing",
+        "name": "Operation Prowli"
+      }
+    ],
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Infoblox",
+        "url": "https://www.infoblox.com/"
+      },
+      {
+        "@type": "Organization",
+        "name": "Akamai",
+        "url": "https://www.akamai.com/"
+      },
+      {
+        "@type": "Organization",
+        "name": "Guardicore Labs"
+      },
+      {
+        "@type": "Organization",
+        "name": "GoDaddy",
+        "url": "https://www.godaddy.com/"
+      },
+      {
+        "@type": "Organization",
+        "name": "Cloudflare",
+        "url": "https://www.cloudflare.com/"
+      },
+      {
+        "@type": "Organization",
+        "name": "The Hacker News",
+        "url": "https://thehackernews.com/"
+      }
+    ],
+    "citation": [
+      {
+        "@type": "CreativeWork",
+        "name": "Inside Help TDS: Hotejka and Cloudflare Abuse",
+        "url": "https://www.infoblox.com/blog/threat-intelligence/inside-help-tds-hotejka-cloudflare-pages-and-predictive-detection/",
+        "datePublished": "2026-10-15",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Infoblox"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Help TDS Linked to Hotejka as 20,000+ Cloudflare Pages Domains Host Tech Support Scams",
+        "url": "https://thehackernews.com/2026/10/help-tds-linked-to-hotejka-as-20000.html",
+        "datePublished": "2026-10-15",
+        "publisher": {
+          "@type": "Organization",
+          "name": "The Hacker News"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Help TDS and its Malicious Plugins Redirect Thousands of Sites to Tech Support Scams",
+        "url": "https://www.godaddy.com/resources/news/help-tds-malicious-plugins-redirect-tech-support-scams",
+        "datePublished": "2025-08-20",
+        "publisher": {
+          "@type": "Organization",
+          "name": "GoDaddy"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Operation Prowli: Monetizing 40,000 Victim Machines",
+        "url": "https://www.akamai.com/blog/security/operation-prowli-traffic-manipulation-cryptocurrency-mining",
+        "datePublished": "2018-06-06",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Akamai (Guardicore Labs)"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Roi777 table #2",
+        "url": "https://pastebin.com/96N1bg72",
+        "datePublished": "2018-03-13",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Pastebin"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Roi777 table #5",
+        "url": "https://pastebin.com/SZ3VXJ7W",
+        "datePublished": "2018-03-13",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Pastebin"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Roi777 table #3",
+        "url": "https://pastebin.com/tni7FZJ3",
+        "datePublished": "2018-03-13",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Pastebin"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Roi777 table #4",
+        "url": "https://pastebin.com/Y8eyA4Mq",
+        "datePublished": "2018-03-13",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Pastebin"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "keitaro_campaigns (untitled paste)",
+        "url": "https://pastebin.com/hkhRi8GB",
+        "datePublished": "2018-03-13",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Pastebin"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "HOT: Belgium, Tech Support Browser Locker (post 387)",
+        "url": "https://t.me/hotejka_HOT/387",
+        "datePublished": "2026-04-06",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Telegram"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "roi777.com/login, captured March 15, 2017",
+        "url": "https://web.archive.org/web/20170315034431/http://roi777.com/login",
+        "datePublished": "2017-03-15",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Internet Archive Wayback Machine"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Tokopedia data breach",
+        "url": "https://haveibeenpwned.com/Breach/Tokopedia",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Have I Been Pwned"
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.octoprobe.ai/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://www.octoprobe.ai/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "The Tech-Support Scam Infoblox Exposed Is Still Running, From a Server Not on Its List",
+        "item": "https://www.octoprobe.ai/blog/help-tds-hotejka-tech-support-scam-new-server/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Help TDS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A traffic distribution system that sorts web visitors from hacked sites, spam, and parked domains and sends qualifying U.S. users to fake Microsoft lock screens with toll-free numbers for call centers. Infoblox says it has been active since at least April 2017."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who runs Help TDS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Infoblox assesses that Hotejka, a small Russian-language affiliate program, operates it. No individual has been publicly identified."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Hotejka the same as ROI777?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Infoblox assesses that it is. It says historical DNS records, long use of the same advertising platforms, and consistent command-and-control mechanisms give it a high degree of confidence that the two are one and the same. Its clearest example is 162.244.35.33, an address that hosted roi777[.]com until mid-March 2022 and, from early 2020, carried hotejka[.]com as its reverse-DNS name. ROI777 was named in Guardicore Labs’ June 2018 report on Operation Prowli as a buyer of hijacked web traffic."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What was in the 2018 ROI777 leak?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "On March 13, 2018, an anonymous Pastebin user posted tables purportedly taken from ROI777 servers: eleven Telegram accounts, eleven logins for a Keitaro traffic-routing server, 333 campaign records, most labeled with email addresses, and two database account lists. Five campaigns carried call-center numbers for five countries, and four were set to a “tech_support” action. The records have not been authenticated."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Help TDS still active after the Infoblox report?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. On October 21, 2026, its Telegram channel was still announcing new Cloudflare Pages addresses, and its redirect domain, hotcname[.]help, resolved to a Frankfurt server that was not on Infoblox’s October 15 indicator list."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if you call the number on the pop-up?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In Infoblox’s test call, a man claiming to be Microsoft Technical Support removed the lock and told the caller to download the UltraViewer remote-access tool, which would give him full control of the computer."
+        }
+      }
+    ]
+  }
+]
