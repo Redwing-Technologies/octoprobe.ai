@@ -28,6 +28,10 @@ jobs:
         run: |
           python3 scripts/build-author-page.py --check
           python3 scripts/refresh-author-markup.py --check
+      - name: Check homepage and post latest-link blocks match the blog index
+        run: |
+          python3 scripts/refresh-home-latest.py --check
+          python3 scripts/refresh-latest-links.py --check
       - name: Check every post carries the current share bar
         run: python3 scripts/build-blog.py --share-only --check
       - name: Validate sitemap XML and robots.txt reference
