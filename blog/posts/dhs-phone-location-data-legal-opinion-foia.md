@@ -4,6 +4,7 @@ seo_title: "DHS Withheld Its Legal Case for Buying Location Data"
 dek: "A 2020 Homeland Security legal opinion weighed whether CBP and ICE could use advertising-ID location data without a warrant. Released under the Freedom of Information Act, it comes back as a cover page and 23 pages stamped “(b)(5).”"
 description: "A DHS legal opinion on buying phone ad-ID location data came back under FOIA as one page and 23 withheld pages. How the trade works and what is still secret."
 date: 2026-10-20T10:25:04-04:00
+date_modified: 2026-10-22T08:09:04-04:00
 slug: dhs-phone-location-data-legal-opinion-foia
 canonical: https://www.octoprobe.ai/blog/dhs-phone-location-data-legal-opinion-foia/
 tags: [Investigation, FOIA, Surveillance, Privacy, Adtech]
@@ -200,7 +201,7 @@ By 2026 that warning had come true. In a May 28, 2026 letter, Wyden, Rep. Pat Ha
 
 Europe is exposed too. In November 2024, Wired and its reporting partners analyzed location data obtained from one U.S. broker and found "granular location data from up to [12,313 devices](https://www.wired.com/story/phone-data-us-soldiers-spies-nuclear-germany/) that appeared to spend time at or near at least 11 military and intelligence sites" in Germany.
 
-NOTE: OctoProbe excluded intelligence-community operational details it could not source to public records, and does not publish methods for re-identifying individuals from location data.
+NOTE: This report excludes intelligence-community operational details that are not sourced to public records, and does not publish methods for re-identifying individuals from location data.
 
 ## What happens next?
 
