@@ -1,0 +1,186 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Inside Samolet, the Russian Homebuilder the EU Says Used North Korean Workers",
+    "description": "OSINT on Samolet Group under EU North Korea sanctions: the Official Journal entries, Samolet’s network, the Vladivostok site in city video, its sitemap, CEO Anna Akinshina, and the filings after October 12, 2026.",
+    "datePublished": "2026-10-22T10:45:00-04:00",
+    "dateModified": "2026-10-22T10:45:00-04:00",
+    "author": {
+      "@type": "Person",
+      "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#person",
+      "name": "Colin Aamot",
+      "url": "https://www.octoprobe.ai/blog/authors/colin-aamot/"
+    },
+    "publisher": {
+      "@type": "NewsMediaOrganization",
+      "@id": "https://www.octoprobe.ai/blog/#newsroom",
+      "name": "OctoProbe News",
+      "url": "https://www.octoprobe.ai/blog/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.octoprobe.ai/icon-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Redwing Technologies LLC",
+        "url": "https://rook-intel.com/"
+      }
+    },
+    "image": [
+      "https://www.octoprobe.ai/blog/eu-sanctions-samolet-black-horse-north-korea-russia/assets/cover.png"
+    ],
+    "keywords": "Samolet Group, Anna Akinshina, Black Horse, Blackhos, Vladimir Sokolov, Golden Autumn Agroholding, Bashurov and Partners, Paekyangsan Shipping, Paek Yang San 1, EU sanctions, North Korea, DPRK, Russia, Vladivostok, Primorsky Krai, EGRUL, INN, OGRN, IMO, UNSCR 2397, UNSCR 2375, arms-for-oil, OSINT",
+    "articleSection": "Investigations",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.octoprobe.ai/blog/eu-sanctions-samolet-black-horse-north-korea-russia/"
+    },
+    "url": "https://www.octoprobe.ai/blog/eu-sanctions-samolet-black-horse-north-korea-russia/",
+    "inLanguage": "en",
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "OctoProbe News",
+      "url": "https://www.octoprobe.ai/blog/"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        ".answer-first",
+        ".key-takeaways",
+        ".prose h2"
+      ]
+    },
+    "about": [
+      {
+        "@type": "Organization",
+        "name": "Samolet Group of Companies PJSC"
+      },
+      {
+        "@type": "Organization",
+        "name": "LLC PCC Black Horse"
+      },
+      {
+        "@type": "Organization",
+        "name": "LLC Golden Autumn Agroholding"
+      },
+      {
+        "@type": "Organization",
+        "name": "Paekyangsan Shipping Co Ltd"
+      },
+      {
+        "@type": "Thing",
+        "name": "EU sanctions on North Korea"
+      }
+    ],
+    "mentions": [
+      {
+        "@type": "GovernmentOrganization",
+        "name": "Council of the European Union",
+        "url": "https://www.consilium.europa.eu/"
+      },
+      {
+        "@type": "GovernmentOrganization",
+        "name": "Federal Tax Service of Russia",
+        "url": "https://egrul.nalog.ru/"
+      },
+      {
+        "@type": "Person",
+        "name": "Anna Nikolaevna Akinshina"
+      },
+      {
+        "@type": "Person",
+        "name": "Vladimir Aleksandrovich Sokolov"
+      },
+      {
+        "@type": "Vehicle",
+        "name": "Paek Yang San 1"
+      },
+      {
+        "@type": "NewsMediaOrganization",
+        "name": "NK News",
+        "url": "https://www.nknews.org/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.octoprobe.ai/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://www.octoprobe.ai/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Inside Samolet, the Russian Homebuilder the EU Says Used North Korean Workers",
+        "item": "https://www.octoprobe.ai/blog/eu-sanctions-samolet-black-horse-north-korea-russia/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why did the EU sanction Samolet Group?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The EU says Samolet used North Korean workers on construction projects in Vladivostok, in breach of UN Security Council Resolution 2397. It listed the company and its chief executive, Anna Akinshina, on October 12, 2026, in Council Decision (CFSP) 2026/2283 and Implementing Regulation (EU) 2026/2278."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does the Vladivostok video show?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A 55-second video posted on April 3, 2025, by the Municipal Management Center of Vladivostok shows workers and dogs at a construction site. The post’s text does not mention North Korea. NK News reported that the footage shows likely North Korean workers at Samolet’s site."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is the site?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Local reports place it on Sabaneeva Street in Vladivostok’s Pervorechensky district, where Samolet builds its Sabaneeva 125 complex. OpenStreetMap puts 125 Sabaneeva Street at 43.12938, 131.95400, about 132 km from the Khasan–Tumangang rail crossing into North Korea."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Samolet’s website mention North Korea?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not in its live sitemap. On October 22, 2026, none of the thousands of URLs OctoProbe read in it referred to North Korea, Korean workers, or North Korean partners."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Anna Akinshina still Samolet’s chief executive?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Samolet announced on October 16, 2026, that she would leave for personal reasons and that the board would be offered Ivan Ivanov. As of October 22, 2026, Russia’s registry still listed her as general director, and her name was on Samolet’s filings through October 16."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happened to Samolet’s bonds after the listing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Samolet disclosed on October 12, 2026, that the Moscow Exchange moved several bond series from Level 1 and Level 2 to Level 3, effective October 13. ACRA had cut its rating to BBB(RU) on October 8, and National Credit Ratings cut its rating to BBB(Ru) on October 15."
+        }
+      }
+    ]
+  }
+]
