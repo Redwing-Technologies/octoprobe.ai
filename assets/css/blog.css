@@ -756,3 +756,12 @@ nav.top .nav-investigations{white-space:nowrap}
   nav.top .brand .bn{display:inline-flex;font-size:.92rem}
   nav.top .nav-investigations{padding:0 8px}
 }
+
+/* Default: photos and embeds are centered on the page */
+.prose figure img,.prose figure video,.prose figure iframe{display:block;margin-left:auto;margin-right:auto}
+.prose figure > a,.prose figure .doc-page{margin-left:auto;margin-right:auto}
+.prose figure.doc-embed{justify-items:center}
+.prose figure.doc-embed > a{width:100%}
+.prose figure.doc-embed > figcaption{justify-self:stretch}
+.prose figure.doc-embed.doc-single{grid-template-columns:minmax(0,1fr)}
+.prose figure.doc-embed.doc-single > a{max-width:360px}
