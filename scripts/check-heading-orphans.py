@@ -231,24 +231,41 @@ def main() -> int:
     threading.Thread(target=httpd.serve_forever, daemon=True).start()
     dbg = _free_port()
     profile = Path(f"/tmp/chrome-orphan-{dbg}")
+    log_path = Path(f"/tmp/chrome-orphan-{dbg}.log")
+    # setup-python sets LD_LIBRARY_PATH to its own lib dir, which stops Chrome
+    # from opening the debugging port on GitHub-hosted runners.
+    env = os.environ.copy()
+    env.pop("LD_LIBRARY_PATH", None)
+    log_file = log_path.open("w")
     proc = subprocess.Popen(
         [
             CHROME, "--headless=new", "--disable-gpu", "--no-sandbox",
-            "--disable-dev-shm-usage", f"--remote-debugging-port={dbg}",
+            "--disable-dev-shm-usage", "--disable-extensions",
+            "--no-first-run", "--no-default-browser-check",
+            "--remote-debugging-address=127.0.0.1",
+            f"--remote-debugging-port={dbg}",
             f"--user-data-dir={profile}", "about:blank",
         ],
-        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+        stdout=subprocess.DEVNULL, stderr=log_file, env=env,
     )
     try:
         version = None
-        for _ in range(50):
+        for _ in range(100):
+            if proc.poll() is not None:
+                break
             try:
                 version = json.load(urlopen(f"http://127.0.0.1:{dbg}/json/version", timeout=1))
                 break
             except Exception:
-                time.sleep(0.1)
+                time.sleep(0.15)
         if not version:
+            log_file.flush()
+            err = log_path.read_text(encoding="utf-8", errors="replace")[-2000:]
             print("Chrome did not open a debugging port", file=sys.stderr)
+            if proc.poll() is not None:
+                print(f"Chrome exited {proc.returncode}", file=sys.stderr)
+            if err.strip():
+                print(err, file=sys.stderr)
             return 2
         targets = json.load(urlopen(f"http://127.0.0.1:{dbg}/json/list", timeout=5))
         page = next(t for t in targets if t.get("type") == "page")
@@ -296,6 +313,7 @@ def main() -> int:
         print(f"no single-word heading lines at {WIDTHS[0]}px or {WIDTHS[1]}px")
         return 0
     finally:
+        log_file.close()
         proc.terminate()
         try:
             proc.wait(timeout=5)
