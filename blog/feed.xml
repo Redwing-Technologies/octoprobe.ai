@@ -14,8 +14,8 @@
     <copyright>© 2026 Redwing Technologies LLC</copyright>
     <managingEditor>press@octoprobe.ai (OctoProbe News)</managingEditor>
     <webMaster>press@octoprobe.ai (OctoProbe News)</webMaster>
-    <pubDate>Thu, 22 Oct 2026 06:49:00 -0400</pubDate>
-    <lastBuildDate>Thu, 22 Oct 2026 07:46:00 -0400</lastBuildDate>
+    <pubDate>Thu, 22 Oct 2026 07:47:00 -0400</pubDate>
+    <lastBuildDate>Thu, 22 Oct 2026 07:47:00 -0400</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <ttl>60</ttl>
     <image>
@@ -28,6 +28,21 @@
     <webfeeds:icon>https://www.octoprobe.ai/icon-512.png</webfeeds:icon>
     <webfeeds:accentColor>0288D1</webfeeds:accentColor>
     <webfeeds:analytics id="G-6T6HW79ZP0" engine="GoogleAnalytics"/>
+    <item>
+      <title>An Iraqi Bank Sponsored Baghdad’s Anti-Money-Laundering Conference. Treasury Says It Sent Iran Dollars Every Month.</title>
+      <link>https://www.octoprobe.ai/blog/iraq-international-development-bank-ofac-iran-dollars-shadow-banking/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/iraq-international-development-bank-ofac-iran-dollars-shadow-banking/</guid>
+      <description>Iraq’s International Development Bank sponsored a 2025 anti-money-laundering conference in Baghdad. OFAC sanctioned it on October 15, 2026, in Operation Economic Outcast. What Treasury alleges, who owns the bank, and what its own filings show.</description>
+      <pubDate>Thu, 22 Oct 2026 07:47:00 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Investigations</category>
+      <category>Sanctions</category>
+      <category>Iran</category>
+      <enclosure url="https://www.octoprobe.ai/blog/iraq-international-development-bank-ofac-iran-dollars-shadow-banking/assets/og-cover-1200.jpg" length="154527" type="image/jpeg"/>
+      <media:content url="https://www.octoprobe.ai/blog/iraq-international-development-bank-ofac-iran-dollars-shadow-banking/assets/og-cover-1200.jpg" medium="image" type="image/jpeg" width="1200" height="630">
+        <media:description type="plain">Dark street map of Baghdad’s Karrada district with a red map pin and an illustration of a generic stone-and-glass bank building with columns, beside the words Dollars for Tehran, via Baghdad.</media:description>
+      </media:content>
+    </item>
     <item>
       <title>The Tech-Support Scam Infoblox Exposed Is Still Running, From a Server Not on Its List</title>
       <link>https://www.octoprobe.ai/blog/help-tds-hotejka-tech-support-scam-new-server/</link>

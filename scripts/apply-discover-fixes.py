@@ -65,6 +65,8 @@ REWRITES = {
         "Hexane’s AfD Dump: The Actor, the Scope, and the Access", True),
     "help-tds-hotejka-tech-support-scam-new-server": (
         "Help TDS Tech-Support Scam Still Running From a New Server", True),
+    "iraq-international-development-bank-ofac-iran-dollars-shadow-banking": (
+        "AML Conference Sponsor Sent Iran Dollars, Treasury Says", False),
     "karnakis-and-karnakis-panama-law-firm-iran-shadow-fleet-ofac": (
         "Karnakis Panama Firm Linked to Iran’s OFAC Shadow Fleet", True),
     "myrotvorets-informnapalm-ned-grant": (
