@@ -608,6 +608,8 @@ main{position:relative;z-index:1;min-height:50vh}
   font-size:1.05rem;line-height:1.55;font-weight:500;color:var(--heading,#0f172a);
   max-width:42em;
 }
+.prose .answer-first p{margin:0}
+.prose .answer-first p + p{margin-top:1.55em}
 .prose h2 + .answer-first,
 .prose h3 + .answer-first,
 .prose h2 + .primary-question,
