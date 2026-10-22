@@ -1,0 +1,185 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "SOCOM Promised ‘Close Coordination’ for Its Online Psyops Hub. Pentagon Watchdogs Found the Gaps.",
+    "description": "FOIA records and inspector general reports on SOCOM’s Joint MISO WebOps Center, CENTCOM’s earlier web operations, military deception planning, and the line between influence work and intelligence collection.",
+    "image": [
+      "https://www.octoprobe.ai/blog/jmwc-foia-socom-online-psyops-military-deception/assets/cover.png",
+      "https://www.octoprobe.ai/blog/jmwc-foia-socom-online-psyops-military-deception/assets/og-cover.png"
+    ],
+    "datePublished": "2026-10-22T09:00:00-04:00",
+    "dateModified": "2026-10-22T09:00:00-04:00",
+    "author": {
+      "@type": "Person",
+      "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#person",
+      "name": "Colin Aamot",
+      "url": "https://www.octoprobe.ai/blog/authors/colin-aamot/"
+    },
+    "publisher": {
+      "@type": "NewsMediaOrganization",
+      "@id": "https://www.octoprobe.ai/blog/#newsroom",
+      "name": "OctoProbe News",
+      "url": "https://www.octoprobe.ai/blog/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.octoprobe.ai/icon-512.png",
+        "width": 512,
+        "height": 512
+      }
+    },
+    "keywords": [
+      "Joint MISO WebOps Center",
+      "JMWC",
+      "USSOCOM",
+      "military information support operations",
+      "MISO",
+      "psychological operations",
+      "WebOps",
+      "CENTCOM",
+      "military deception",
+      "DODIG-2024-085",
+      "DODIG-2023-080",
+      "DODIG-2023-007",
+      "FOIA",
+      "Regional Web Interaction Program",
+      "Internet Interactive Activities",
+      "Executive Order 12333",
+      "Michael Furlong"
+    ],
+    "articleSection": "Investigations",
+    "inLanguage": "en-US",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.octoprobe.ai/blog/jmwc-foia-socom-online-psyops-military-deception/"
+    },
+    "url": "https://www.octoprobe.ai/blog/jmwc-foia-socom-online-psyops-military-deception/",
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "OctoProbe News",
+      "url": "https://www.octoprobe.ai/blog/"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        ".answer-first",
+        ".key-takeaways",
+        ".prose h2"
+      ]
+    },
+    "about": [
+      {
+        "@type": "Organization",
+        "name": "Joint Military Information Support Operations Web Operations Center"
+      },
+      {
+        "@type": "Organization",
+        "name": "United States Special Operations Command",
+        "sameAs": "https://www.socom.mil/"
+      },
+      {
+        "@type": "Thing",
+        "name": "Military information support operations"
+      }
+    ],
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "United States Central Command",
+        "sameAs": "https://www.centcom.mil/"
+      },
+      {
+        "@type": "Organization",
+        "name": "Department of Defense Office of Inspector General",
+        "sameAs": "https://www.dodig.mil/"
+      },
+      {
+        "@type": "Organization",
+        "name": "National Security Agency",
+        "sameAs": "https://www.nsa.gov/"
+      },
+      {
+        "@type": "Person",
+        "name": "Raymond A. Thomas III"
+      },
+      {
+        "@type": "Person",
+        "name": "Richard D. Clarke"
+      },
+      {
+        "@type": "Person",
+        "name": "Michael D. Furlong"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.octoprobe.ai/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://www.octoprobe.ai/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "SOCOM Promised ‘Close Coordination’ for Its Online Psyops Hub. Pentagon Watchdogs Found the Gaps.",
+        "item": "https://www.octoprobe.ai/blog/jmwc-foia-socom-online-psyops-military-deception/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the Joint MISO WebOps Center?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is a SOCOM-funded center, established in 2018, that hosts web operations teams from participating combatant commands and gives them facilities, technical support, and some additional capabilities for internet-based military information support operations, according to the Defense Department inspector general."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is it, and how is it paid for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The inspector general does not publish its location. A 2023 Air Force environmental assessment describes a planned permanent MISO building at MacDill Air Force Base in Tampa for about 850 people. Since fiscal 2023, SOCOM has funded the center from a single Pentagon MISO account managed by the assistant secretary for special operations and low-intensity conflict."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What did the inspector general find?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In June 2023 it found the center met combatant commanders’ basic needs but lacked capabilities tied to new technologies, cybersecurity, and round-the-clock operations; had no WebOps standards or enforcement mechanism; and had to compete for money with the teams it supports."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is DODIG-2024-085?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A May 21, 2024, inspector general evaluation of how combatant commands plan joint military deception. A redacted copy was released under the Freedom of Information Act in case DODOIG-2024-000660 and is hosted with this article."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who was Michael Furlong?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An Air Force senior executive at U.S. Strategic Command’s Joint Information Operations Warfare Command. A March 16, 2010, CENTCOM information paper says he was alleged to have used information operations contracts to direct intelligence activities. He resigned in 2011, writing that investigators found no criminal laws were broken, according to the Associated Press."
+        }
+      }
+    ]
+  }
+]
