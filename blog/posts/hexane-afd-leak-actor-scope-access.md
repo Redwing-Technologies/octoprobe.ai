@@ -1,5 +1,7 @@
 ---
 title: "Hexane’s AfD Dump: Assessing the Actor, the Scope, and the Access"
+seo_title: "Hexane’s AfD Dump: The Actor, the Scope, and the Access"
+og_title: "Hexane’s AfD Dump: The Actor, the Scope, and the Access"
 description: "Three-part assessment of Hexane’s AfD dump: a privacy-focused cyber actor, a 281 GB archive of ~421,000 emails, and how deep the system access went."
 date: 2026-10-21
 date_modified: 2026-10-21

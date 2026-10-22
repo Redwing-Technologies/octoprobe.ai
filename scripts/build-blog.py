@@ -17,6 +17,7 @@ Usage (from landing repo root):
   python3 scripts/build-blog.py --share-only --check  # exit 1 if any post's share bar is missing/stale
   python3 scripts/build-blog.py --lightbox-only        # screenshot lightbox on every post
   python3 scripts/build-blog.py --lightbox-only --check  # exit 1 if include/exclude/ratio markup is stale
+  python3 scripts/build-blog.py --check --strict         # validate built posts (no rewrite)
 
 No remote deploy — write local HTML only. Requires no third-party packages.
 """
@@ -40,8 +41,83 @@ LLMS_PATHS = [ROOT / "llms.txt", ROOT / ".well-known" / "llms.txt"]
 SITE = "https://www.octoprobe.ai"
 OG_DEFAULT = f"{SITE}/og-image.png"
 TITLE_SOFT_MAX = 60
+TITLE_FAIL_MIN = 30
+TITLE_FAIL_MAX = 65
+OG_TITLE_FAIL = 95
+H1_FAIL_MAX = 110
 DESC_SOFT_MIN = 120
 DESC_SOFT_MAX = 165
+BRAND_SUFFIX = " · OctoProbe News"
+DISCOVER_WIDTHS = (800, 1200, 1600)
+
+
+def compose_page_title(text: str) -> str:
+    """Browser <title>. Append the brand only when the total stays at 60 or under."""
+    text = (text or "").strip()
+    branded = f"{text}{BRAND_SUFFIX}"
+    if text and len(branded) <= TITLE_SOFT_MAX:
+        return branded
+    return text
+
+
+def social_title(meta: dict) -> str:
+    """og:title / twitter:title. Keep an explicit or headline title at or under 95 characters."""
+    explicit = (meta.get("og_title") or "").strip()
+    if explicit and len(explicit) <= OG_TITLE_FAIL:
+        return explicit
+    headline = (meta.get("title") or "").strip()
+    seo = (meta.get("seo_title") or "").strip()
+    if headline and len(headline) <= OG_TITLE_FAIL:
+        return headline
+    return seo or explicit or headline
+
+
+def discover_image_urls(slug: str) -> list[str]:
+    """16:9, then 4:3, then 1:1. Files are padded (not cropped) by scripts/apply-discover-fixes.py."""
+    base = f"{SITE}/blog/{slug}/assets"
+    return [
+        f"{base}/cover-16x9.webp",
+        f"{base}/cover-4x3.webp",
+        f"{base}/cover-1x1.webp",
+    ]
+
+
+def light_og_url(slug: str) -> str:
+    return f"{SITE}/blog/{slug}/assets/og-cover-1200.jpg"
+
+
+def _webp_srcset(src: str) -> str:
+    bare = src.split("?", 1)[0]
+    name = bare.rsplit("/", 1)[-1]
+    if "." not in name:
+        return ""
+    stem = bare.rsplit(".", 1)[0]
+    return ", ".join(f"{stem}-{w}.webp {w}w" for w in DISCOVER_WIDTHS)
+
+
+def responsive_img(src: str, alt: str, width: int, height: int, *, hero: bool) -> str:
+    """WebP srcset with the original as the <img> fallback. Heroes are eager and high priority."""
+    srcset = _webp_srcset(src)
+    sizes = "(min-width: 900px) 760px, 100vw"
+    attrs = [
+        f'src="{escape(src)}"',
+        f'alt="{escape(alt)}"',
+        f'width="{width}"',
+        f'height="{height}"',
+    ]
+    if hero:
+        attrs.append('fetchpriority="high"')
+    else:
+        attrs.append('loading="lazy"')
+    attrs.append('decoding="async"')
+    img = "<img " + " ".join(attrs) + ">"
+    if not srcset:
+        return img
+    return (
+        '<picture style="display:contents">'
+        f'<source type="image/webp" srcset="{escape(srcset)}" sizes="{sizes}">'
+        f"{img}</picture>"
+    )
 
 
 # ── Front matter ─────────────────────────────────────────────────────────────
@@ -360,16 +436,33 @@ def validate_meta(meta: dict, md_path: Path, *, strict: bool = True) -> list[str
         )
 
     title = meta.get("title") or ""
-    # Title tag will be "{title} · OctoProbe News" — warn on long primary title
-    full_title = f"{title} · OctoProbe News"
-    if len(full_title) > TITLE_SOFT_MAX + 20:
-        warnings_out.append(
-            f"{md_path.name}: title tag ~{len(full_title)} chars (aim ≤~{TITLE_SOFT_MAX} for primary title alone; full tag includes brand)"
+    seo = (meta.get("seo_title") or title).strip()
+    page_title = compose_page_title(seo)
+    if page_title and (len(page_title) > TITLE_FAIL_MAX or len(page_title) < TITLE_FAIL_MIN):
+        msg = (
+            f"{md_path.name}: <title> is {len(page_title)} chars "
+            f"(fail outside {TITLE_FAIL_MIN}–{TITLE_FAIL_MAX}; target 50–60)"
         )
-    elif len(title) > TITLE_SOFT_MAX:
+        if strict:
+            raise BuildError(msg)
+        warnings_out.append(msg)
+    elif page_title and not (TITLE_SOFT_MAX - 10 <= len(page_title) <= TITLE_SOFT_MAX):
         warnings_out.append(
-            f"{md_path.name}: title {len(title)} chars (soft max ~{TITLE_SOFT_MAX})"
+            f"{md_path.name}: <title> is {len(page_title)} chars (target 50–60)"
         )
+    if len(title) > H1_FAIL_MAX:
+        msg = f"{md_path.name}: H1 is {len(title)} chars (fail above {H1_FAIL_MAX})"
+        if strict:
+            raise BuildError(msg)
+        warnings_out.append(msg)
+    social = social_title(meta)
+    if len(social) > OG_TITLE_FAIL:
+        msg = f"{md_path.name}: og:title is {len(social)} chars (fail above {OG_TITLE_FAIL})"
+        if strict:
+            raise BuildError(msg)
+        warnings_out.append(msg)
+    elif len(social) > 70:
+        warnings_out.append(f"{md_path.name}: og:title is {len(social)} chars (warn above 70)")
 
     if desc:
         if len(desc) < DESC_SOFT_MIN:
@@ -454,7 +547,7 @@ def build_json_ld(meta: dict, slug: str, description: str) -> list[dict]:
         "author": (AU.person_ld(_person) if (_person := AU.resolve_author(meta))
                    else {"@type": "Organization", "name": author_name, "url": f"{SITE}/blog/"}),
         "publisher": {"@type": "NewsMediaOrganization", "@id": f"{SITE}/blog/#newsroom", "name": "OctoProbe News", "url": f"{SITE}/blog/", "logo": org["logo"], "parentOrganization": org["parentOrganization"]},
-        "image": [og_image],
+        "image": discover_image_urls(slug),
         "keywords": ", ".join(keywords) if isinstance(keywords, list) else str(keywords),
         "mainEntityOfPage": {
             "@type": "WebPage",
@@ -542,7 +635,7 @@ def build_one(md_path: Path, *, strict: bool = True) -> dict:
     description = meta.get("description") or meta.get("excerpt") or title
     excerpt = meta.get("excerpt") or description
     canonical = meta.get("canonical") or f"{SITE}/blog/{slug}/"
-    og_image = meta.get("og_image") or OG_DEFAULT
+    og_image = light_og_url(slug)
     keywords = meta.get("keywords") or tags
     if isinstance(keywords, list):
         keywords_str = ", ".join(keywords)
@@ -588,14 +681,15 @@ def build_one(md_path: Path, *, strict: bool = True) -> dict:
         hero_src = "/" + og_image.split(".ai/", 1)[-1] if ".ai/" in og_image else og_image
         if hero_src.startswith("https://"):
             hero_src = ""
-    hero_alt = meta.get("hero_alt") or title
+    hero_alt = meta.get("hero_alt") or meta.get("image_alt") or title
     if hero_src:
+        hero_w = int(meta.get("hero_width") or 2400)
+        hero_h = int(meta.get("hero_height") or 1260)
         hero_html = (
-            f'<figure class="post-featured">'
-            f'<img src="{escape(hero_src)}" alt="{escape(hero_alt)}" '
-            f'width="1280" height="720" loading="eager" decoding="async">'
-            f'<figcaption class="sr-only">{escape(hero_alt)}</figcaption>'
-            f'</figure>'
+            '<figure class="post-featured">'
+            + responsive_img(hero_src, hero_alt, hero_w, hero_h, hero=True)
+            + f'<figcaption class="sr-only">{escape(hero_alt)}</figcaption>'
+            + "</figure>"
         )
     else:
         hero_html = ""
@@ -612,9 +706,9 @@ def build_one(md_path: Path, *, strict: bool = True) -> dict:
         for block in ld_blocks
     )
 
-    # Prefer a short browser title; keep brand
-    browser_title = title if len(title) <= TITLE_SOFT_MAX else title[: TITLE_SOFT_MAX - 1].rstrip() + "…"
-    page_title = f"{browser_title} · OctoProbe News"
+    page_title = compose_page_title(meta.get("seo_title") or title)
+    social = social_title(meta)
+    image_alt = meta.get("image_alt") or hero_alt
 
     head_meta = f"""<title>{escape(page_title)}</title>
 <meta name="description" content="{escape(description)}">
@@ -628,17 +722,20 @@ def build_one(md_path: Path, *, strict: bool = True) -> dict:
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="OctoProbe News">
 <meta property="og:url" content="{escape(canonical)}">
-<meta property="og:title" content="{escape(title)}">
+<meta property="og:title" content="{escape(social)}">
 <meta property="og:description" content="{escape(description)}">
 <meta property="og:image" content="{escape(og_image)}">
-<meta property="og:image:alt" content="{escape(title)}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{escape(image_alt)}">
 <meta property="article:published_time" content="{escape(date)}">
 <meta property="article:modified_time" content="{escape(date_mod)}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@octoprobeai">
-<meta name="twitter:title" content="{escape(title)}">
+<meta name="twitter:title" content="{escape(social)}">
 <meta name="twitter:description" content="{escape(description)}">
 <meta name="twitter:image" content="{escape(og_image)}">
+<meta name="twitter:image:alt" content="{escape(image_alt)}">
 {ld_scripts}"""
 
     # Visible byline: the resolved author (with headshot); for Organization authors the
@@ -870,10 +967,16 @@ LIGHTBOX_EXCLUDE = {
 }
 LIGHTBOX_CSS_TAG = '<link rel="stylesheet" href="/assets/css/blog-lightbox.css?v=lb1">'
 LIGHTBOX_JS_TAG = '<script src="/assets/js/blog-lightbox.js?v=lb1" defer></script>'
-_SHOT_WRAPPED_RE = re.compile(r'<figure class="shot-mobile"><a class="shot-open" href="[^"]*" aria-haspopup="dialog">(<img\b[^>]*>)</a>')
-# Plain figure: direct <img>, or <a href="THE IMAGE"><img></a>. No other figure class.
+# Optional <picture> (WebP srcset) around the <img>. The lightbox keeps that wrapper and still
+# reads the <img> for alt and dimensions; the anchor href stays the full-size original.
+_IMG_OR_PICTURE = r'(?:<picture\b[^>]*>\s*(?:<source\b[^>]*>\s*)*)?<img\b[^>]*>(?:\s*</picture>)?'
+_SHOT_WRAPPED_RE = re.compile(
+    r'<figure class="shot-mobile"><a class="shot-open" href="[^"]*" aria-haspopup="dialog">('
+    + _IMG_OR_PICTURE + r')</a>'
+)
+# Plain figure: direct <img>/picture, or <a href="THE IMAGE"><img></a>. No other figure class.
 _PLAIN_FIG_RE = re.compile(
-    r'<figure>(?:\s*<a href="([^"]*)">\s*(<img\b[^>]*>)\s*</a>|\s*(<img\b[^>]*>))'
+    r'<figure>(?:\s*<a href="([^"]*)">\s*(' + _IMG_OR_PICTURE + r')\s*</a>|\s*(' + _IMG_OR_PICTURE + r'))'
 )
 
 
@@ -894,7 +997,9 @@ def apply_lightbox(html: str, label: str = "", slug: str = "") -> str:
     html = html.replace(LIGHTBOX_CSS_TAG + "\n", "").replace(LIGHTBOX_JS_TAG + "\n", "")
 
     def wrap(m: re.Match) -> str:
-        href, img = (m.group(1), m.group(2)) if m.group(2) else (None, m.group(3))
+        href, frag = (m.group(1), m.group(2)) if m.group(2) else (None, m.group(3))
+        img_m = re.search(r"<img\b[^>]*>", frag)
+        img = img_m.group(0) if img_m else frag
         src = _attr(img, "src") or ""
         name = _src_name(src)
         if href and _src_name(href) != name:
@@ -907,7 +1012,7 @@ def apply_lightbox(html: str, label: str = "", slug: str = "") -> str:
             return m.group(0)
         if not (_attr(img, "alt") or "").strip():
             raise BuildError(f"{label}: lightbox: figure image {src!r} has no alt text")
-        return f'<figure class="shot-mobile"><a class="shot-open" href="{src}" aria-haspopup="dialog">{img}</a>'
+        return f'<figure class="shot-mobile"><a class="shot-open" href="{src}" aria-haspopup="dialog">{frag}</a>'
 
     html, n = _PLAIN_FIG_RE.subn(wrap, html)
     for name in sorted(include):
@@ -1076,10 +1181,221 @@ def load_all_post_metas() -> list[dict]:
     return posts
 
 
+_ORPHAN_WORDS = {
+    "a", "an", "the", "of", "and", "or", "to", "for", "in", "on", "at", "by",
+    "with", "from", "into", "over", "its", "their", "was", "as",
+}
+_ARTICLE_TYPES = {
+    "NewsArticle", "AnalysisNewsArticle", "OpinionNewsArticle", "ReportageNewsArticle",
+    "Article", "BlogPosting", "TechArticle", "Report",
+}
+_WIDTH_HEIGHT_SLUGS = {
+    "archive-today-donate-link-takion-api-developer",
+    "heather-zhang-prc-agent-case-reddit-allegation",
+    "christopher-burns-fbi-fugitive-google-maps-wayne-pa",
+}
+
+
+def _meta_content(html: str, prop: str) -> str:
+    m = re.search(
+        r'<meta\s+(?:property|name)="%s"\s+content="([^"]*)"' % re.escape(prop),
+        html,
+    )
+    return "" if not m else __import__("html").unescape(m.group(1))
+
+
+def _local_url(url: str, html_path: Path) -> Path | None:
+    from html import unescape as _un
+    url = _un(url).split("#", 1)[0].split("?", 1)[0].strip()
+    if not url or url.startswith(("mailto:", "tel:", "javascript:", "data:")):
+        return None
+    if url.startswith("https://www.octoprobe.ai/"):
+        url = url[len("https://www.octoprobe.ai"):]
+    elif url.startswith("http://") or url.startswith("https://"):
+        return None
+    if url.startswith("/"):
+        return ROOT / url.lstrip("/")
+    return (html_path.parent / url).resolve()
+
+
+def discover_check(strict: bool = True) -> int:
+    """Validate built posts for the Discover image, title, alt, and hero rules. Does not write."""
+    from html import unescape
+    from PIL import Image
+
+    errors: list[str] = []
+    warnings: list[str] = []
+    posts = share_bar_targets()
+
+    def fail(msg: str) -> None:
+        if strict:
+            errors.append(msg)
+        else:
+            warnings.append(msg)
+
+    for path in posts:
+        slug = path.parent.name
+        html = path.read_text(encoding="utf-8")
+        rel = str(path.relative_to(ROOT))
+        title_m = re.search(r"<title>(.*?)</title>", html, re.S)
+        h1_m = re.search(r"<h1[^>]*>(.*?)</h1>", html, re.S)
+        if not title_m or not h1_m:
+            fail(f"{rel}: missing <title> or <h1>")
+            continue
+        title = unescape(re.sub(r"<[^>]+>", "", title_m.group(1)))
+        title = re.sub(r"\s+", " ", title).strip()
+        h1 = unescape(re.sub(r"<[^>]+>", "", h1_m.group(1)))
+        h1 = re.sub(r"\s+", " ", h1).strip()
+        if len(title) > TITLE_FAIL_MAX or len(title) < TITLE_FAIL_MIN:
+            fail(f"{rel}: <title> is {len(title)} chars")
+        elif not (50 <= len(title) <= 60):
+            fail(f"{rel}: <title> is {len(title)} chars (target 50–60)")
+        last = re.sub(r"[^\w’']+$", "", title.split()[-1]).lower().replace("’", "'")
+        if last in _ORPHAN_WORDS:
+            fail(f"{rel}: <title> ends with orphan word {last!r}")
+        if len(h1) > H1_FAIL_MAX:
+            fail(f"{rel}: H1 is {len(h1)} chars")
+        og = _meta_content(html, "og:title")
+        tw = _meta_content(html, "twitter:title")
+        if og != tw:
+            fail(f"{rel}: og:title and twitter:title differ")
+        if len(og) > OG_TITLE_FAIL:
+            fail(f"{rel}: og:title is {len(og)} chars")
+        elif len(og) > 70:
+            warnings.append(f"{rel}: og:title is {len(og)} chars (warn above 70)")
+        tw_alt = _meta_content(html, "twitter:image:alt")
+        og_alt = _meta_content(html, "og:image:alt")
+        if not (1 <= len(tw_alt) <= 420):
+            fail(f"{rel}: twitter:image:alt missing or out of range ({len(tw_alt)} chars)")
+        if not (1 <= len(og_alt) <= 420):
+            fail(f"{rel}: og:image:alt missing or out of range ({len(og_alt)} chars)")
+
+        blocks = re.findall(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', html, re.S)
+        if not blocks:
+            fail(f"{rel}: no JSON-LD")
+        headline = ""
+        images = None
+        for raw in blocks:
+            try:
+                data = json.loads(raw)
+            except json.JSONDecodeError as e:
+                fail(f"{rel}: JSON-LD does not parse ({e})")
+                continue
+            nodes = data if isinstance(data, list) else [data]
+            if isinstance(data, dict) and isinstance(data.get("@graph"), list):
+                nodes = data["@graph"]
+            for node in nodes:
+                if not isinstance(node, dict):
+                    continue
+                types = node.get("@type")
+                types = types if isinstance(types, list) else [types]
+                if not any(t in _ARTICLE_TYPES for t in types):
+                    continue
+                headline = node.get("headline") or headline
+                images = node.get("image")
+        if headline != h1:
+            fail(f"{rel}: schema headline does not match the H1")
+        if not isinstance(images, list) or len(images) != 3 or not all(isinstance(u, str) for u in images):
+            fail(f"{rel}: JSON-LD image is not an array of three URLs")
+            images = []
+        expect = ((16 / 9, 1200, 675), (4 / 3, 1200, 900), (1, 1200, 1200))
+        for url, (ratio, min_w, min_h) in zip(images, expect):
+            f = _local_url(url, path)
+            if f is None or not f.is_file():
+                fail(f"{rel}: JSON-LD image missing on disk: {url}")
+                continue
+            with Image.open(f) as im:
+                w, h = im.size
+            if w < min_w or h < min_h or abs((w / h) - ratio) > 0.02:
+                fail(f"{rel}: {f.name} is {w}x{h}, expected ratio {ratio:.3f} and at least {min_w}x{min_h}")
+
+        og_img = _meta_content(html, "og:image")
+        og_file = _local_url(og_img, path) if og_img else None
+        if og_file is None or not og_file.is_file():
+            fail(f"{rel}: og:image file missing")
+        else:
+            if og_file.stat().st_size > 300 * 1024:
+                fail(f"{rel}: og:image is {og_file.stat().st_size} bytes")
+            with Image.open(og_file) as im:
+                w, h = im.size
+            if abs(w - 1200) > 2 or abs(h - 630) > 2:
+                fail(f"{rel}: og:image is {w}x{h}, expected 1200x630")
+
+        content = []
+        for im in re.finditer(r"<img\b[^>]*>", html):
+            tag = im.group(0)
+            src = _attr(tag, "src") or ""
+            if "/assets/authors/" in src or not src:
+                continue
+            content.append((im.start(), tag, src))
+        if not content:
+            fail(f"{rel}: no hero image")
+            continue
+        start, hero, hero_src = content[0]
+        pre = html[max(0, start - 2500):start]
+        if _attr(hero, "fetchpriority") != "high" or (_attr(hero, "loading") or "") == "lazy":
+            fail(f"{rel}: hero is missing fetchpriority=high or is lazy-loaded")
+        if not (_attr(hero, "width") and _attr(hero, "height")):
+            fail(f"{rel}: hero is missing width or height")
+        if "<picture" not in pre or "image/webp" not in pre:
+            fail(f"{rel}: hero is not in a WebP <picture>")
+        hero_file = _local_url(hero_src, path)
+        if hero_file is None or not hero_file.is_file():
+            fail(f"{rel}: hero file missing")
+        else:
+            srcset_m = re.search(r'srcset="([^"]+)"', pre)
+            if not srcset_m:
+                fail(f"{rel}: hero srcset missing")
+            else:
+                largest = 0
+                for part in srcset_m.group(1).split(","):
+                    u = part.strip().split(" ")[0]
+                    f = _local_url(unescape(u), path)
+                    if f is None or not f.is_file():
+                        fail(f"{rel}: srcset file missing: {u}")
+                    elif f.stat().st_size > largest:
+                        largest = f.stat().st_size
+                if largest > 300 * 1024:
+                    fail(f"{rel}: largest hero WebP is {largest} bytes")
+        for start_i, tag, src in content:
+            if slug in _WIDTH_HEIGHT_SLUGS and not (_attr(tag, "width") and _attr(tag, "height")):
+                fail(f"{rel}: image missing width/height: {src}")
+            if slug == "cefc-china-energy-pla-base-311-public-record" and tag is not hero:
+                if _attr(tag, "loading") != "lazy":
+                    fail(f"{rel}: below-the-fold image is not lazy: {src}")
+            f = _local_url(src, path)
+            if f is None or not f.is_file():
+                fail(f"{rel}: image missing: {src}")
+        for href in re.findall(r'\b(?:href|src)="([^"]+)"', html):
+            raw = unescape(href).strip()
+            if not (raw.startswith(("/", ".", "http://", "https://")) or "/" in raw):
+                continue  # code samples such as href="bid", not site links
+            f = _local_url(href, path)
+            if f is None:
+                continue
+            if not f.exists():
+                fail(f"{rel}: broken internal link {href}")
+
+    for msg in warnings:
+        print(f"WARNING: {msg}", file=sys.stderr)
+    if errors:
+        for msg in errors:
+            print(f"ERROR: {msg}", file=sys.stderr)
+        print(f"{len(errors)} discover check(s) failed", file=sys.stderr)
+        return 1
+    print(f"discover checks passed for {len(posts)} posts")
+    return 0
+
+
 def main():
     flags = {"--no-strict", "--share-only", "--lightbox-only", "--check"}
     strict = "--no-strict" not in sys.argv
     args = [Path(a) for a in sys.argv[1:] if a not in flags]
+
+    # --check without a rewrite mode validates the built HTML. It does not rebuild posts:
+    # the published pages were hand-edited after generation.
+    if "--check" in sys.argv and "--share-only" not in sys.argv and "--lightbox-only" not in sys.argv:
+        sys.exit(discover_check(strict=strict))
 
     # --share-only: refresh just the share bar in every built post (no markdown rebuild; the
     # markdown builders' output has been hand-edited since, so a full rebuild is not byte-safe).

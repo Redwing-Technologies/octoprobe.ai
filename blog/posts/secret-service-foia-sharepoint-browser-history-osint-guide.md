@@ -1,7 +1,7 @@
 ---
 title: "How to FOIA an Official's Browser History, SharePoint Files and Teams Messages"
 og_title: "Map the Tenant, Name the Custodian: How OSINT Unlocks Agency SharePoint, Teams and Browser Logs"
-seo_title: "How to FOIA Browser History, SharePoint and Teams"
+seo_title: "How to FOIA Browser History, SharePoint, and Teams"
 dek: "A seven-step guide to finding an agency's SharePoint, naming a custodian and requesting web logs, documents and Teams messages under the Freedom of Information Act, with Secret Service records as the worked example."
 description: "A seven-step FOIA guide: find an agency's SharePoint with public DNS, name a custodian, and request browser logs, documents and Teams chats."
 date: 2026-10-20T12:39:43-04:00

@@ -119,8 +119,8 @@ def build(md_path: Path, out_root: Path):
         ld.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": no_em(f["q"]), "acceptedAnswer": {"@type": "Answer", "text": no_em(f["a"])}} for f in faq]})
     ld_scripts = "\n".join(f'<script type="application/ld+json">\n{json.dumps(b, indent=2, ensure_ascii=False)}\n</script>' for b in ld)
-    canonical = meta["canonical"]; og = meta["og_image"]; kw = ", ".join(meta.get("keywords") or meta["tags"])
-    head = f"""<title>{escape(meta.get("seo_title") or title)} · OctoProbe News</title>
+    canonical = meta["canonical"]; og = bb.light_og_url(slug); kw = ", ".join(meta.get("keywords") or meta["tags"])
+    head = f"""<title>{escape(bb.compose_page_title(meta.get("seo_title") or title))}</title>
 <meta name="description" content="{escape(description)}">
 <meta name="keywords" content="{escape(kw)}">
 <meta name="author" content="{escape(person['name'] if person else 'OctoProbe Staff')}">
@@ -132,7 +132,7 @@ def build(md_path: Path, out_root: Path):
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="OctoProbe News">
 <meta property="og:url" content="{escape(canonical)}">
-<meta property="og:title" content="{escape(title)}">
+<meta property="og:title" content="{escape(bb.social_title(meta))}">
 <meta property="og:description" content="{escape(description)}">
 <meta property="og:image" content="{escape(og)}">
 <meta property="og:image:width" content="1200">
@@ -142,9 +142,10 @@ def build(md_path: Path, out_root: Path):
 <meta property="article:modified_time" content="{escape(meta.get('date_modified') or date)}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@octoprobeai">
-<meta name="twitter:title" content="{escape(title)}">
+<meta name="twitter:title" content="{escape(bb.social_title(meta))}">
 <meta name="twitter:description" content="{escape(description)}">
 <meta name="twitter:image" content="{escape(og)}">
+<meta name="twitter:image:alt" content="{escape(meta.get('hero_alt') or meta.get('image_alt') or title)}">
 {ld_scripts}"""
     byline_html = bb.AU.byline_html(person, meta.get("byline") or "OctoProbe Staff")
     tpl = bb.TEMPLATE.read_text(encoding="utf-8")

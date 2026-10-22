@@ -1,7 +1,7 @@
 ---
 title: "Subpoena, Order, Warrant: How the Government Gets Your Data"
 og_title: "Congress, the Pentagon’s Watchdog and a Judge: Three Ways the Government Compels Your Records"
-seo_title: "Subpoena vs. Warrant: What Each Branch Can Get"
+seo_title: "Subpoena vs. Warrant: What Each Branch of Government Gets"
 dek: "Two FOIA releases, one from House committees and one from the Navy’s criminal investigators, show what a subpoena can demand, what it can’t, and where a judge has to step in."
 description: "Two FOIA releases show how Congress, an inspector general and the courts compel records, and why a subpoena gets your subscriber data but not your messages."
 date: 2026-10-20T19:16:57-04:00
