@@ -57,6 +57,8 @@ REWRITES = {
         "Christopher W. Burns: Google Maps After His Last Sighting", True),
     "dhs-phone-location-data-legal-opinion-foia": (
         "DHS Withheld Its Legal Case for Buying Location Data", True),
+    "eu-sanctions-samolet-black-horse-north-korea-russia": (
+        "Samolet: The Homebuilder the EU Ties to North Korean Workers", False),
     "foia-assessments-redacted-logs-osint-pivots": (
         "Redacted, Not Useless: FOIA Logs Used as OSINT Pivots", False),
     "heather-zhang-prc-agent-case-reddit-allegation": (

@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.octoprobe.ai/blog/eu-sanctions-samolet-black-horse-north-korea-russia/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>OctoProbe News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-22T10:45:00-04:00</news:publication_date>
+      <news:title>Inside Samolet, the Russian Homebuilder the EU Says Used North Korean Workers</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.octoprobe.ai/blog/oncd-foia-cyber-director-supply-chain-nspm-13/</loc>
     <news:news>
       <news:publication>
@@ -219,17 +230,6 @@
       </news:publication>
       <news:publication_date>2026-10-20T12:39:43-04:00</news:publication_date>
       <news:title>How to FOIA an Official's Browser History, SharePoint Files and Teams Messages</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.octoprobe.ai/blog/dhs-phone-location-data-legal-opinion-foia/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>OctoProbe News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-10-20T10:25:04-04:00</news:publication_date>
-      <news:title>DHS Lawyers Wrote 24 Pages on Buying Your Phone’s Location Data. They Withheld Every Page of the Analysis.</news:title>
     </news:news>
   </url>
 </urlset>
