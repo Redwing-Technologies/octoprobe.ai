@@ -148,25 +148,28 @@ def _post_block(items: list[dict]) -> str:
     )
 
 
+_ARTICLE_END_RE = re.compile(r"</article>")
+# Drop an existing block, including the blank lines around it, so a second run is stable.
+_POST_STRIP_RE = re.compile(r"\n*" + re.escape(POST_START) + r".*?" + re.escape(POST_END) + r"\n*", re.S)
+
+
 def render_post(html: str, slug: str, items: list[dict] | None = None) -> str:
+    """Place More from OctoProbe News immediately after </article>.
+
+    Article checkers count copy inside <article>. The five links stay in the
+    same aside, between the latest markers, outside that element.
+    """
     picked = [c for c in (items if items is not None else cards()) if c["slug"] != slug][:POST_COUNT]
     if len(picked) < POST_COUNT:
         raise SystemExit(f"ERROR: {slug} needs {POST_COUNT} newer-or-other posts, found {len(picked)}")
+    if html.count(POST_START) > 1 or html.count(POST_END) > 1:
+        raise SystemExit(f"ERROR: {slug} latest markers are duplicated")
     wrapped = f"{POST_START}\n{_post_block(picked)}\n{POST_END}"
-    if POST_START in html:
-        new, n = _POST_MARK_RE.subn(wrapped, html, count=1)
-        if n != 1:
-            raise SystemExit(f"ERROR: {slug} latest markers are missing or duplicated")
-        return new
-    aside = _ASIDE_RE.search(html)
-    if aside:
-        return html[:aside.end()] + "\n" + wrapped + html[aside.end():]
-    note = None
-    for match in _NOTE_RE.finditer(html):
-        note = match
-    if note:
-        return html[:note.end()] + "\n" + wrapped + html[note.end():]
-    raise SystemExit(f"ERROR: {slug} has no Related Reading block or author note to attach the latest list to")
+    html = _POST_STRIP_RE.sub("\n", html, count=1)
+    art = _ARTICLE_END_RE.search(html)
+    if not art:
+        raise SystemExit(f"ERROR: {slug} has no </article> to place the latest list after")
+    return html[:art.end()] + "\n" + wrapped + "\n" + html[art.end():]
 
 
 def refresh_home(check: bool = False) -> bool:
