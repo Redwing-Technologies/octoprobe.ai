@@ -1470,6 +1470,9 @@ def main():
     import runpy
     runpy.run_path(str(ROOT / "scripts" / "gen-sitemap.py"), run_name="__main__")
     refresh_llms_blog_section(corpus)
+    # Newest-post lists on the homepage and every article follow the blog index.
+    runpy.run_path(str(ROOT / "scripts" / "refresh-home-latest.py"), run_name="__main__")
+    runpy.run_path(str(ROOT / "scripts" / "refresh-latest-links.py"), run_name="__main__")
 
 
 if __name__ == "__main__":

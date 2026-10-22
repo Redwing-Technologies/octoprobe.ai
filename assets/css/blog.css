@@ -598,6 +598,16 @@ main{position:relative;z-index:1;min-height:50vh}
 .prose h2 + .primary-question,
 .prose h3 + .primary-question{margin-top:calc(.65em + 10px)}
 
+/* Generated "More from OctoProbe News" list (scripts/refresh-latest-links.py). */
+.prose .more-from{margin:2.4em 0 0;padding-top:1.15rem;border-top:1px solid var(--line)}
+.prose .more-from h2{margin-top:0;font-size:1.2rem;text-wrap:pretty;text-wrap:balance}
+.prose .more-from ul{margin:.7em 0 0;padding-left:1.2em}
+.prose .more-from li{margin:.55em 0}
+.prose .more-from time{display:block;margin-top:.15em;font-family:var(--fm);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft-2)}
+.prose .related-reading{border-top:1px solid var(--line);margin-top:2rem;padding-top:.5rem}
+.prose .related-reading > h2{margin-top:1rem}
+.prose .related-reading li{margin:.4rem 0}
+
 /* ── Table of contents (blog-toc.js) ─────────────────────────── */
 .prose h2[id],.prose h3[id]{scroll-margin-top:96px}
 .toc-rail[hidden],.toc-mobile[hidden]{display:none!important}

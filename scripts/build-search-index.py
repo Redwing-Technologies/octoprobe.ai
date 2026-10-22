@@ -92,7 +92,7 @@ class ProseText(HTMLParser):
         if self.prose_depth is None and self.in_article and tag == "div" and "prose" in cls:
             self.prose_depth = len(self.stack) + 1
         elif self.prose_depth is not None and (
-                tag in SKIP or "author-note" in cls or "related-reading" in cls
+                tag in SKIP or "author-note" in cls or "related-reading" in cls or "more-from" in cls
                 or "toc" in cls or a.get("aria-hidden") == "true"):
             opens_skip = True
             self.skip += 1

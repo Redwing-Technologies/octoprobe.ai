@@ -131,8 +131,8 @@ def build():
            .replace("{{BYLINE_HTML}}", byline_html)
            .replace("\n      {{HERO_HTML}}", "").replace("{{HERO_HTML}}", "").replace("{{BODY}}", html))
     out = out.replace("</h1>", "</h1>\n      <p class=\"post-dek\">" + escape(U.smart(meta["dek"]), quote=False) + "</p>", 1)
-    out = out.replace('<link rel="stylesheet" href="/assets/css/blog.css?v=news10">',
-        '<link rel="stylesheet" href="/assets/css/blog.css?v=news10">\n' + U.NEWS_FRAME +
+    out = out.replace('<link rel="stylesheet" href="/assets/css/blog.css?v=news11">',
+        '<link rel="stylesheet" href="/assets/css/blog.css?v=news11">\n' + U.NEWS_FRAME +
         f'\n<link rel="stylesheet" href="/blog/{slug}/assets/afghan.css?v=1">', 1)
     out = re.sub(r'\s*<p class="post-disclaimer">.*?</p>', "", out, count=1, flags=re.S)
     dest = REPO / "blog" / slug / "index.html"; dest.write_text(out, encoding="utf-8"); print("built", dest.relative_to(REPO))
@@ -140,3 +140,8 @@ def build():
 
 if __name__ == "__main__":
     build()
+    import runpy
+    from pathlib import Path
+    _root = Path(__file__).resolve().parents[1]
+    runpy.run_path(str(_root / "scripts" / "refresh-home-latest.py"), run_name="__main__")
+    runpy.run_path(str(_root / "scripts" / "refresh-latest-links.py"), run_name="__main__")
