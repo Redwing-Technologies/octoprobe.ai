@@ -221,15 +221,4 @@
       <news:title>DHS Lawyers Wrote 24 Pages on Buying Your Phone’s Location Data. They Withheld Every Page of the Analysis.</news:title>
     </news:news>
   </url>
-  <url>
-    <loc>https://www.octoprobe.ai/blog/isis-media-survives-takedowns/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>OctoProbe News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-10-20T08:18:36-04:00</news:publication_date>
-      <news:title>Jailed, Purged, Still Shipping: How ISIS Media Survives the Takedowns</news:title>
-    </news:news>
-  </url>
 </urlset>
