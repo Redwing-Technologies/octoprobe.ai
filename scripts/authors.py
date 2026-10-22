@@ -38,6 +38,14 @@ CANONICAL_BIO = (
 
 AUTHOR_PAGE = SITE + "/blog/authors/colin-aamot/"
 
+# Abbreviated bio for the bio box on standard blog posts (Colin, 2026-10-22). The full
+# CANONICAL_BIO stays on the author page and in the Person node; the post box links to it.
+SHORT_BIO = (
+    "Colin Aamot is an investigative journalist and OSINT domain expert specializing in FOIA and "
+    "public records. A technologist, U.S. Army veteran, and former Capitol Hill staffer, he has held "
+    "director roles across the private and public sectors."
+)
+
 DEFAULT_AUTHOR = {
     "name": "Colin Aamot",
     # Stable entity id: the full Person node lives on the author page; posts reference it by @id.
@@ -45,6 +53,7 @@ DEFAULT_AUTHOR = {
     "url": AUTHOR_PAGE,
     "image": "/assets/authors/colin-aamot-192.jpg",
     "bio": CANONICAL_BIO,
+    "short_bio": SHORT_BIO,
     "links": [
         ("LinkedIn", "https://www.linkedin.com/in/colinaamot/"),
         ("X", "https://x.com/ColinAamot"),
@@ -109,11 +118,15 @@ def byline_html(a: dict | None, staff_name: str = "OctoProbe Staff") -> str:
 def author_note_html(a: dict | None) -> str:
     if a is None or not a.get("bio"):
         return ""
-    bio = a["bio"]
+    bio = a.get("short_bio") or a["bio"]
     rest = bio[len(a["name"]):] if bio.startswith(a["name"]) else " " + bio
     name = f'<a href="{escape(a["url"])}" rel="author">{escape(a["name"])}</a>' if a.get("url") else escape(a["name"])
-    links = ('<span class="author-links">' + "".join(f'<a href="{escape(u)}">{escape(l)}</a>' for l, u in a["links"])
-             + "</span>") if a.get("links") else ""
+    if a.get("short_bio") and a.get("url"):
+        # Abbreviated box: one link to the full bio on the author page.
+        links = f'<span class="author-links"><a href="{escape(a["url"])}">Full bio</a></span>'
+    else:
+        links = ('<span class="author-links">' + "".join(f'<a href="{escape(u)}">{escape(l)}</a>' for l, u in a["links"])
+                 + "</span>") if a.get("links") else ""
     # Same headshot as the top byline, larger, to the left of the bio text (blog.css .author-note.has-avatar).
     pic = avatar_html(a, size=96, alt="", lazy=True, pic_class="author-note-avatar")
     if pic:
