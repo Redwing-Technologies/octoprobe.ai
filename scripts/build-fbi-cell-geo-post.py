@@ -187,8 +187,8 @@ def build(md_path: Path, out_root: Path):
            .replace("\n      {{HERO_HTML}}", "").replace("{{HERO_HTML}}", "").replace("{{BODY}}", html))
     out = out.replace('<span class="eyebrow">Investigations</span>', f'<span class="eyebrow">{escape(section)}</span>', 1)
     out = out.replace("</h1>", "</h1>\n      <p class=\"post-dek\">" + escape(meta["dek"]) + "</p>", 1)
-    out = out.replace('<link rel="stylesheet" href="/assets/css/blog.css?v=news8">',
-        '<link rel="stylesheet" href="/assets/css/blog.css?v=news8">\n' + NEWS_FRAME, 1)
+    out = out.replace('<link rel="stylesheet" href="/assets/css/blog.css?v=news10">',
+        '<link rel="stylesheet" href="/assets/css/blog.css?v=news10">\n' + NEWS_FRAME, 1)
     out = re.sub(r'\s*<p class="post-disclaimer">.*?</p>', "", out, count=1, flags=re.S)
     # <title> uses seo_title when set
     dest = REPO / "blog" / slug / "index.html"; dest.write_text(out, encoding="utf-8"); print("built", dest.relative_to(REPO))
