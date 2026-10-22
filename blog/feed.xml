@@ -14,8 +14,8 @@
     <copyright>© 2026 Redwing Technologies LLC</copyright>
     <managingEditor>press@octoprobe.ai (OctoProbe News)</managingEditor>
     <webMaster>press@octoprobe.ai (OctoProbe News)</webMaster>
-    <pubDate>Thu, 22 Oct 2026 07:47:00 -0400</pubDate>
-    <lastBuildDate>Thu, 22 Oct 2026 08:40:00 -0400</lastBuildDate>
+    <pubDate>Thu, 22 Oct 2026 08:50:00 -0400</pubDate>
+    <lastBuildDate>Thu, 22 Oct 2026 08:50:00 -0400</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <ttl>60</ttl>
     <image>
@@ -28,6 +28,21 @@
     <webfeeds:icon>https://www.octoprobe.ai/icon-512.png</webfeeds:icon>
     <webfeeds:accentColor>0288D1</webfeeds:accentColor>
     <webfeeds:analytics id="G-6T6HW79ZP0" engine="GoogleAnalytics"/>
+    <item>
+      <title>The White House Cyber Office Blacked Out Its Huawei, TikTok, and Kaspersky Slides. The Laws Behind Them Are Public.</title>
+      <link>https://www.octoprobe.ai/blog/oncd-foia-cyber-director-supply-chain-nspm-13/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/oncd-foia-cyber-director-supply-chain-nspm-13/</guid>
+      <description>Two Office of the National Cyber Director FOIA releases withhold its Huawei, TikTok, and Kaspersky slides under (b)(5). Here are the public authorities behind them, NSPM-13, and Biden’s counterterrorism memo, NSM-13.</description>
+      <pubDate>Thu, 22 Oct 2026 08:50:00 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Investigations</category>
+      <category>FOIA</category>
+      <category>Cybersecurity</category>
+      <enclosure url="https://www.octoprobe.ai/blog/oncd-foia-cyber-director-supply-chain-nspm-13/assets/og-cover-1200.jpg" length="160355" type="image/jpeg"/>
+      <media:content url="https://www.octoprobe.ai/blog/oncd-foia-cyber-director-supply-chain-nspm-13/assets/og-cover-1200.jpg" medium="image" type="image/jpeg" width="1200" height="630">
+        <media:description type="plain">Dark street map of Washington with the Office of the National Cyber Director seal and a slide titled Ex 1, Huawei and 5G Radio Access Network Kits, its body covered by a (b)(5) redaction box, beside the words What the Cyber Office Kept Back.</media:description>
+      </media:content>
+    </item>
     <item>
       <title>An Iraqi Bank Sponsored Baghdad’s Anti-Money-Laundering Conference. Treasury Says It Sent Iran Dollars Every Month.</title>
       <link>https://www.octoprobe.ai/blog/iraq-international-development-bank-ofac-iran-dollars-shadow-banking/</link>

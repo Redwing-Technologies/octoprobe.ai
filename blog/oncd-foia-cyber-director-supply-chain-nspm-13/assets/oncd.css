@@ -1,0 +1,32 @@
+/* Post-local styles: ONCD FOIA post (doc-pair figures, tables). Adapted from the Afghanistan FOIA post. */
+.post-meta .date-label{font-weight:600;margin-right:.25em}
+.prose .doc-fig{margin:1.8em 0}
+.prose .doc-pair{display:block}
+.prose .doc-pair .doc-img,.prose .doc-compare .doc-img{display:block;border:1px solid #cbd5e1;background:#fff;box-shadow:0 2px 10px rgba(15,23,42,.06)}
+.prose .doc-pair .doc-img img,.prose .doc-compare .doc-img img{width:100%;height:auto}
+.prose .doc-transcript{margin-top:.9em;padding:.8em 1em;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;font-size:.88rem;line-height:1.55}
+.prose .doc-transcript .doc-id{margin:0 0 .45em;font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.76rem;color:#334155;overflow-wrap:anywhere}
+.prose .doc-transcript .doc-id-label{display:inline-block;margin-right:.4em;padding:0 .4em;border-radius:4px;background:#e2e8f0;color:#0f172a;font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:.68rem}
+.prose .doc-quote{margin:0;padding:0 0 0 .8em;border-left:3px solid #94a3b8;background:none;font-style:normal;color:#0f172a}
+.prose .doc-quote p{margin:.35em 0}
+.prose .redaction-note{display:block;margin-top:.35em;font-style:normal;font-weight:600;color:#334155}
+@media(min-width:900px){
+  .prose .doc-pair:not(.doc-pair-wide){display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:0 18px;align-items:start}
+  .prose .doc-pair:not(.doc-pair-wide) .doc-transcript{margin-top:0}
+  .prose .doc-pair:not(.doc-pair-wide) figcaption{grid-column:1/-1}
+}
+.prose .ab-grid{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:700px){.prose .ab-grid{grid-template-columns:1fr 1fr}}
+.prose .ab-col{display:flex;flex-direction:column;gap:8px;min-width:0}
+.prose .ab-label{margin:0;font-weight:600;font-size:.85rem;color:#334155}
+.prose .table-note{margin:-.4em 0 1.4em;font-size:.82rem;color:var(--soft-2)}
+.prose .tl-table td:first-child{white-space:nowrap}
+.prose .tl-table,.prose .sum-table{font-size:.86rem}
+.prose .sum-table{min-width:640px}
+.prose .howto-steps li{margin:.5em 0}
+.prose .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:520px){.prose .tl-table td:first-child{white-space:normal;min-width:6.5em}}
+@media print{.prose .doc-fig{break-inside:avoid}}
+.prose .doc-full{margin:.5rem 0 0;font-size:.85rem}
+.prose .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+.prose .table-key{font-size:.85em;color:#475569;margin:.35em 0 1.5em}
