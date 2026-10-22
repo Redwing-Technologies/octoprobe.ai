@@ -73,6 +73,8 @@ REWRITES = {
         "NED Grants to Myrotvorets and InformNapalm Projects", True),
     "north-korean-laptop-farm-texas-gmail-accounts": (
         "North Korea’s Texas Laptop Farms and Tied Gmail Accounts", True),
+    "oncd-foia-cyber-director-supply-chain-nspm-13": (
+        "Cyber Office Blacked Out Huawei, TikTok, Kaspersky Slides", False),
     "saudi-intelligence-spy-list-leak-houthi": (
         "Alleged Saudi Spy List Leaked by Houthi-Tied Group", True),
     "secret-service-foia-sharepoint-browser-history-osint-guide": (

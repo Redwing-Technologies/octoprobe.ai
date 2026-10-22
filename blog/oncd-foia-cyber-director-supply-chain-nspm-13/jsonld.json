@@ -1,0 +1,339 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "The White House Cyber Office Blacked Out Its Huawei, TikTok, and Kaspersky Slides. The Laws Behind Them Are Public.",
+    "description": "Two Office of the National Cyber Director FOIA releases withhold its Huawei, TikTok, and Kaspersky slides under (b)(5). Here are the public authorities behind them, NSPM-13, and Biden’s counterterrorism memo, NSM-13.",
+    "datePublished": "2026-10-22T08:50:00-04:00",
+    "dateModified": "2026-10-22T08:50:00-04:00",
+    "author": {
+      "@type": "Person",
+      "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#person",
+      "name": "Colin Aamot",
+      "url": "https://www.octoprobe.ai/blog/authors/colin-aamot/"
+    },
+    "publisher": {
+      "@type": "NewsMediaOrganization",
+      "@id": "https://www.octoprobe.ai/blog/#newsroom",
+      "name": "OctoProbe News",
+      "url": "https://www.octoprobe.ai/blog/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.octoprobe.ai/icon-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Redwing Technologies LLC",
+        "url": "https://rook-intel.com/"
+      }
+    },
+    "image": [
+      "https://www.octoprobe.ai/blog/oncd-foia-cyber-director-supply-chain-nspm-13/assets/og-cover.png",
+      "https://www.octoprobe.ai/blog/oncd-foia-cyber-director-supply-chain-nspm-13/assets/cover.png"
+    ],
+    "keywords": "Office of the National Cyber Director, ONCD, FOIA, (b)(5), deliberative process, Huawei, TikTok, Kaspersky, BOD 17-01, Section 889, Section 1634, Secure and Trusted Communications Networks Act, FCC Covered List, Executive Order 13873, ICTS, No TikTok on Government Devices Act, Section 524B, NSPM-13, NSM-13, Counterterrorism Security Group, defend forward, persistent engagement, CFAA, hack back, Active Cyber Defense Certainty Act, traditional military activities",
+    "articleSection": "Investigations",
+    "inLanguage": "en-US",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.octoprobe.ai/blog/oncd-foia-cyber-director-supply-chain-nspm-13/"
+    },
+    "url": "https://www.octoprobe.ai/blog/oncd-foia-cyber-director-supply-chain-nspm-13/",
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "OctoProbe News",
+      "url": "https://www.octoprobe.ai/blog/"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        ".answer-first",
+        ".key-takeaways",
+        ".prose h2"
+      ]
+    },
+    "about": [
+      {
+        "@type": "GovernmentOrganization",
+        "name": "Office of the National Cyber Director"
+      },
+      {
+        "@type": "Legislation",
+        "name": "National Security Presidential Memorandum-13, United States Cyber Operations Policy"
+      },
+      {
+        "@type": "Legislation",
+        "name": "National Security Memorandum/NSM-13, Memorandum on U.S. International Counterterrorism Policy"
+      },
+      {
+        "@type": "Thing",
+        "name": "Information and communications technology supply chain security"
+      }
+    ],
+    "mentions": [
+      {
+        "@type": "Person",
+        "name": "Chris Inglis"
+      },
+      {
+        "@type": "Person",
+        "name": "Lee Licata"
+      },
+      {
+        "@type": "Person",
+        "name": "Paul C. Ney Jr."
+      },
+      {
+        "@type": "GovernmentOrganization",
+        "name": "U.S. Cyber Command"
+      },
+      {
+        "@type": "GovernmentOrganization",
+        "name": "Cybersecurity and Infrastructure Security Agency"
+      },
+      {
+        "@type": "GovernmentOrganization",
+        "name": "Federal Communications Commission"
+      },
+      {
+        "@type": "GovernmentOrganization",
+        "name": "Office of Management and Budget"
+      },
+      {
+        "@type": "Organization",
+        "name": "Huawei Technologies"
+      },
+      {
+        "@type": "Organization",
+        "name": "TikTok"
+      },
+      {
+        "@type": "Organization",
+        "name": "Kaspersky Lab"
+      },
+      {
+        "@type": "Organization",
+        "name": "The New York Times",
+        "url": "https://www.nytimes.com/"
+      }
+    ],
+    "citation": [
+      {
+        "@type": "CreativeWork",
+        "name": "ONCD FOIA release A (briefing books, Legislative Affairs, 2022–2023)",
+        "url": "https://www.octoprobe.ai/blog/oncd-foia-cyber-director-supply-chain-nspm-13/assets/docs/oncd-foia-release-a-briefing-books-legislative-affairs-2022-2023.pdf",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Office of the National Cyber Director"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "ONCD FOIA release B (ICTS supply chain policy seminar, 2022)",
+        "url": "https://www.octoprobe.ai/blog/oncd-foia-cyber-director-supply-chain-nspm-13/assets/docs/oncd-foia-release-b-icts-supply-chain-seminar-2022.pdf",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Office of the National Cyber Director"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "National Security Memorandum/NSM-13: Memorandum on U.S. International Counterterrorism Policy",
+        "url": "https://int.nyt.com/data/documenttools/savage-nyt-foia-biden-national-security-memorandum-13-us-international-counterterrorism-policy/d82a1b4e20bd4222/full.pdf",
+        "datePublished": "2022-10-06",
+        "publisher": {
+          "@type": "Organization",
+          "name": "The New York Times"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "DOD General Counsel Remarks at U.S. Cyber Command Legal Conference",
+        "url": "https://www.defense.gov/News/Speeches/Speech/Article/2099378/dod-general-counsel-remarks-at-us-cyber-command-legal-conference/",
+        "datePublished": "2020-03-02",
+        "publisher": {
+          "@type": "Organization",
+          "name": "U.S. Department of Defense"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "The Value of 1,000 Papercuts: A Paradigm Shift in the Strategic Environment",
+        "url": "https://www.army.mil/article/286212/the_value_of_1000_papercuts_a_paradigm_shift_in_the_strategic_environment",
+        "datePublished": "2025-06-10",
+        "publisher": {
+          "@type": "Organization",
+          "name": "U.S. Army"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "President Biden’s Policy Changes for Offensive Cyber Operations",
+        "url": "https://www.lawfaremedia.org/article/president-bidens-policy-changes-offensive-cyber-operations",
+        "datePublished": "2022-05-17",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Lawfare"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "The Biden administration is refining a Trump-era cyber order",
+        "url": "https://www.washingtonpost.com/politics/2022/05/13/biden-administration-is-refining-trump-era-cyber-order/",
+        "datePublished": "2022-05-13",
+        "publisher": {
+          "@type": "Organization",
+          "name": "The Washington Post"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Biden administration is studying whether to scale back Trump-era cyber authorities at DOD",
+        "url": "https://cyberscoop.com/biden-trump-nspm-13-presidential-memo-cyber-command-white-house/",
+        "datePublished": "2022-03-31",
+        "publisher": {
+          "@type": "Organization",
+          "name": "CyberScoop"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Biden set to approve expansive authorities for Pentagon to carry out cyber operations",
+        "url": "https://cyberscoop.com/biden-nspm-13-pentagon-cyber-operations/",
+        "datePublished": "2022-11-17",
+        "publisher": {
+          "@type": "Organization",
+          "name": "CyberScoop"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "USCYBERCOM After Action Assessments of Operation GLOWING SYMPHONY",
+        "url": "https://nsarchive.gwu.edu/briefing-book/cyber-vault/2020-01-21/uscybercom-after-action-assessments-operation-glowing-symphony",
+        "datePublished": "2020-01-21",
+        "publisher": {
+          "@type": "Organization",
+          "name": "National Security Archive"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Consolidated Appropriations Act, 2023 (P.L. 117-328)",
+        "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ328/html/PLAW-117publ328.htm",
+        "datePublished": "2022-12-29",
+        "publisher": {
+          "@type": "Organization",
+          "name": "U.S. Government Publishing Office"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "BOD 17-01: Removal of Kaspersky-branded Products",
+        "url": "https://www.cisa.gov/news-events/directives/bod-17-01-removal-kaspersky-branded-products",
+        "datePublished": "2017-09-13",
+        "publisher": {
+          "@type": "Organization",
+          "name": "CISA"
+        }
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Final Determination: Case No. ICTS-2021-002, Kaspersky Lab, Inc.",
+        "url": "https://www.federalregister.gov/documents/2024/06/24/2024-13532/final-determination-case-no-icts-2021-002-kaspersky-lab-inc",
+        "datePublished": "2024-06-24",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Federal Register"
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.octoprobe.ai/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://www.octoprobe.ai/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "The White House Cyber Office Blacked Out Its Huawei, TikTok, and Kaspersky Slides. The Laws Behind Them Are Public.",
+        "item": "https://www.octoprobe.ai/blog/oncd-foia-cyber-director-supply-chain-nspm-13/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the Office of the National Cyber Director?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A White House office in the Executive Office of the President, created by Section 1752 of the fiscal 2021 defense authorization act (6 U.S.C. 1500). Its Senate-confirmed director coordinates national cyber policy, including supply-chain security. Chris Inglis was confirmed as the first director in June 2021."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why did ONCD withhold the Huawei, TikTok, and Kaspersky slides?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It marked them (b)(5), the FOIA exemption for inter-agency and intra-agency memorandums that would be privileged in litigation, which includes deliberative material. The slide titles were released; the bodies were not."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is NSPM-13 the same as NSM-13?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. NSPM-13 is Trump’s 2018 “United States Cyber Operations Policy,” which remains classified. NSM-13 is Biden’s October 6, 2022, “Memorandum on U.S. International Counterterrorism Policy,” released in part to The New York Times in June 2023. The numbering overlaps because each administration names its directives differently."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What did the Biden administration change in NSPM-13?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "According to CyberScoop and The Washington Post, the 2022 revision kept most of the Pentagon’s delegated authority but required the Defense Department to keep the White House and State Department informed, gave State more say over notifying third countries, and added a documented dispute resolution process. The revised text has not been released."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the Counterterrorism Security Group?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The NSC-led interagency group that NSM-13 uses to set and update counterterrorism priorities. The memo calls for quarterly CSG meetings on prioritization, semi-annual meetings to measure progress, and bi-monthly sub-group meetings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a company legally hack back against an attacker?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The Computer Fraud and Abuse Act has no exception for private self-defense. The Active Cyber Defense Certainty Act would have created one, but it was not enacted."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When did TikTok get banned on federal devices?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The No TikTok on Government Devices Act became law on December 29, 2022, in the fiscal 2023 omnibus. OMB’s implementing memo, M-23-13, issued February 27, 2023, gave agencies 30 days to remove the app."
+        }
+      }
+    ]
+  }
+]
