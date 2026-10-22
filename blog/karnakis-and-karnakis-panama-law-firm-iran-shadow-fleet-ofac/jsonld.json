@@ -5,7 +5,7 @@
     "headline": "Panama Law Firm Was Tied to Iran’s Shadow Fleet Three Years Before Treasury Sanctioned It",
     "description": "Karnakis and Karnakis, sanctioned October 21, 2026: the earliest public report, the seven linked companies sanctioned first, where the allegations came from, and how openly the firm operated.",
     "datePublished": "2026-10-21T21:45:00-04:00",
-    "dateModified": "2026-10-21T21:45:00-04:00",
+    "dateModified": "2026-10-21T21:59:00-04:00",
     "author": {
       "@type": "Person",
       "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#person",
@@ -168,7 +168,7 @@
         "name": "Was the firm in the Panama Papers?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. OctoProbe searched the full Offshore Leaks data from the International Consortium of Investigative Journalists, which includes the Panama Papers, and found no record of the firm, its designated people, or its companies. The connection first surfaced in a November 2023 Lloyd’s List investigation that drew on public records and documents leaked from a sanctioned Iranian petrochemical broker."
+          "text": "No. OctoProbe found no record of the firm, its designated people, or its companies in the Panama Papers or the International Consortium of Investigative Journalists’ other Offshore Leaks data. The connection first surfaced in a November 2023 Lloyd’s List investigation that drew on public records and documents leaked from a sanctioned Iranian petrochemical broker."
         }
       },
       {
@@ -176,7 +176,7 @@
         "name": "Has the firm faced other criminal allegations?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "OctoProbe found none. It searched U.S. sanctions programs for narcotics, organized crime, and corruption, U.S. court and Justice Department records, and Greek-, Spanish-, and Italian-language press, and found no allegation that could be tied to the firm or its people by identifying details."
+          "text": "OctoProbe found no earlier allegation of organized crime, money laundering, or smuggling that could be tied to the firm or its people."
         }
       },
       {
