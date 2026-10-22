@@ -22,7 +22,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Illustration: three cell towers on a stylized street grid, each casting a 120-degree sector and a range band that overlap around a red phone dot">
 <meta property="article:published_time" content="2026-10-20T17:55:59-04:00">
-<meta property="article:modified_time" content="2026-10-20T17:55:59-04:00">
+<meta property="article:modified_time" content="2026-10-22T08:09:04-04:00">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@octoprobeai">
 <meta name="twitter:title" content="Silent Texts, No-Ring Calls and Tower Math: How the FBI Finds a Phone">
@@ -36,7 +36,7 @@
   "headline": "Inside the FBI's CAST Guide: How Carriers and Agents Pin Down a Cell Phone",
   "description": "An FBI field guide shows how police make a phone reveal its location with silent texts, pings and tower timing, how precise it gets, and what the law requires.",
   "datePublished": "2026-10-20T17:55:59-04:00",
-  "dateModified": "2026-10-20T17:55:59-04:00",
+  "dateModified": "2026-10-22T08:09:04-04:00",
   "author": {
     "@type": "Person",
     "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#person",
@@ -306,6 +306,8 @@
       <div class="post-meta">
         <time datetime="2026-10-20">Oct 20, 2026</time>
         <span class="sep" aria-hidden="true"></span>
+        <time class="updated" datetime="2026-10-22T08:09:04-04:00">Updated Oct 22, 2026</time>
+        <span class="sep" aria-hidden="true"></span>
         <div class="tags"><span class="tag">Investigations</span><span class="tag">Surveillance</span><span class="tag">Cell Phones</span><span class="tag">FBI</span><span class="tag">Privacy Law</span></div>
       </div>
       <p class="byline has-avatar"><picture><source type="image/webp" srcset="/assets/authors/colin-aamot-96.webp 1x, /assets/authors/colin-aamot-192.webp 2x"><img class="author-avatar" src="/assets/authors/colin-aamot-96.jpg" srcset="/assets/authors/colin-aamot-96.jpg 1x, /assets/authors/colin-aamot-192.jpg 2x" width="44" height="44" alt="Colin Aamot" decoding="async"></picture><span>By <a href="https://www.octoprobe.ai/blog/authors/colin-aamot/" rel="author">Colin Aamot</a></span></p>
@@ -358,7 +360,7 @@
 <p>A phone that sits idle produces few records. One that’s told to answer produces them on command.</p>
 <p>The best-known trigger is the “silent SMS.” The 3GPP standard for text messaging, <a href="https://www.3gpp.org/DynaReport/23040.htm">TS 23.040</a>, defines a “Short Message Type 0” in its protocol-identifier field. The standard’s conformance requirement, as quoted in a <a href="https://www.3gpp.org/ftp/tsg_t/TSG_T/TSGT_16/Docs/PDFs/TP-020164.pdf">3GPP test specification change</a>, reads: “When a mobile terminated message is type 0, the UE shall acknowledge receipt of the short message to the SC but shall discard its contents.” The phone “shall not indicate the receipt of the type 0 short message to the user,” and “the short message shall neither be stored in the (U)SIM nor ME.”</p>
 <p>In other words, the phone must answer but must not tell its owner. To deliver the message, the network first has to find the handset; the 3GPP test sequence for a Type 0 message begins with the phone’s “PAGING RESPONSE.” That round trip happens over a specific cell, and it leaves the same kind of network record a real text would.</p>
-<p class="editor-note">Editor’s note: 3GPP specifications are revised by release; the Type 0 language quoted here is from the conformance test text, which cites “3GPP TS 23.040, 9.2.3.9” as its reference. OctoProbe did not test how any particular carrier logs Type 0 deliveries.</p>
+<p class="editor-note">Editor’s note: 3GPP specifications are revised by release; the Type 0 language quoted here is from the conformance test text, which cites “3GPP TS 23.040, 9.2.3.9” as its reference. Logging of Type 0 deliveries by any particular carrier was not tested.</p>
 <p>The FBI guide doesn’t use the term “Type 0,” but it describes the same idea in carrier products. On Sprint’s GPS “Ping,” the guide says: “A Ping is conducted with the assistance of the cellular provider. A silent message is sent to the phone requesting a location update. The phone uses its own GPS receiver and reports its location.”</p>
 <figure class="doc-fig" id="fig-silent-message"><picture style="display:contents"><source type="image/webp" srcset="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s1-p100-detail-silent-message-705.webp 705w" sizes="(min-width: 900px) 760px, 100vw"><img loading="lazy" decoding="async" src="/blog/fbi-cell-phone-location-silent-sms-cast-guide/assets/figs/s1-p100-detail-silent-message.jpg" width="705" height="326" alt="Slide text: A Ping is conducted with the assistance of the cellular provider. A silent message is sent to the phone requesting a location update."></picture><figcaption>From the guide’s slide on Sprint’s GPS “Ping.” <a href="/blog/fbi-cell-phone-location-silent-sms-cast-guide/docs/fbi-cast-cellular-analysis-geolocation-field-resource-guide-2019-redacted.pdf#page=100">FBI CAST field guide, p. 100</a>.</figcaption></figure>
 <p>For a carrier without that service, the guide offers a cruder trigger. Its provider table says of U.S. Cellular: “No. However, you can force a call without a ring to the target device to determine tower/sector.” The retention chart repeats it under real-time (“Prospective”) tools: “No, but force ‘no ring’ call.”</p>

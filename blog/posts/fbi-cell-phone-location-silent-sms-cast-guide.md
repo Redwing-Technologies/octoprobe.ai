@@ -5,6 +5,7 @@ seo_title: "How Police Find a Phone: Silent SMS and the FBI Guide"
 dek: "A 2019 FBI field guide, a public NDCAC briefing and an FCC order show how a phone can be made to reveal where it is, how precise the answer is, and where the law steps in."
 description: "An FBI field guide shows how police make a phone reveal its location with silent texts, pings and tower timing, how precise it gets, and what the law requires."
 date: 2026-10-20T17:55:59-04:00
+date_modified: 2026-10-22T08:09:04-04:00
 slug: fbi-cell-phone-location-silent-sms-cast-guide
 canonical: https://www.octoprobe.ai/blog/fbi-cell-phone-location-silent-sms-cast-guide/
 section: Investigations
@@ -78,7 +79,7 @@ The best-known trigger is the "silent SMS." The 3GPP standard for text messaging
 
 In other words, the phone must answer but must not tell its owner. To deliver the message, the network first has to find the handset; the 3GPP test sequence for a Type 0 message begins with the phone's "PAGING RESPONSE." That round trip happens over a specific cell, and it leaves the same kind of network record a real text would.
 
-NOTE: 3GPP specifications are revised by release; the Type 0 language quoted here is from the conformance test text, which cites "3GPP TS 23.040, 9.2.3.9" as its reference. OctoProbe did not test how any particular carrier logs Type 0 deliveries.
+NOTE: 3GPP specifications are revised by release; the Type 0 language quoted here is from the conformance test text, which cites "3GPP TS 23.040, 9.2.3.9" as its reference. Logging of Type 0 deliveries by any particular carrier was not tested.
 
 The FBI guide doesn't use the term "Type 0," but it describes the same idea in carrier products. On Sprint's GPS "Ping," the guide says: "A Ping is conducted with the assistance of the cellular provider. A silent message is sent to the phone requesting a location update. The phone uses its own GPS receiver and reports its location."
 
