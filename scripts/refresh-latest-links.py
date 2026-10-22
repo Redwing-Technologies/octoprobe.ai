@@ -3,8 +3,8 @@
 
 Five newest posts, excluding the current one, in blog/index.html card order.
 Hand-edited articles are patched in place between <!-- latest:start --> and
-<!-- latest:end -->. The block sits after Related Reading (or after the author
-note when a post has no Related Reading).
+<!-- latest:end -->. The block is placed immediately after </article>, still
+inside <main>, so article checkers do not count it as body copy.
 
   python3 scripts/refresh-latest-links.py
   python3 scripts/refresh-latest-links.py --check

@@ -30,6 +30,7 @@ import warnings
 from datetime import datetime
 from html import escape
 from pathlib import Path
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
 POSTS_DIR = ROOT / "blog" / "posts"
@@ -749,7 +750,7 @@ def build_one(md_path: Path, *, strict: bool = True) -> dict:
         .replace("{{DATE_DISPLAY}}", escape(date_display))
         .replace("{{TAGS_HTML}}", tags_html)
         .replace("{{BYLINE_HTML}}", byline_html)
-        .replace("{{SHARE_HTML}}", "\n      ".join(share_bar_html().split("\n")))
+        .replace("{{SHARE_HTML}}", "\n      ".join(share_bar_html(canonical).split("\n")))
         .replace("{{HERO_HTML}}", hero_html)
         .replace("{{BODY}}", body_html)
     )
@@ -777,8 +778,9 @@ def build_one(md_path: Path, *, strict: bool = True) -> dict:
 
 # ── Share bar ────────────────────────────────────────────────────────────────
 # Default social share bar, injected directly under the top byline of EVERY post at build time.
-# The build emits only the static container: inline SVG icons, aria labels, target/rel. It
-# carries no per-post URLs or text. /assets/js/blog-share.js reads the page's own
+# The build emits the static container: inline SVG icons, aria labels, target/rel.
+# Facebook's href includes the encoded canonical. The other hrefs are bare endpoints.
+# /assets/js/blog-share.js reads the page's own
 # <link rel="canonical"> and <h1> (fallback og:title) at runtime, URL-encodes them and assembles
 # every share href, the mailto, the copy-link value, the utm params and the GA4 `share` event,
 # so each article is correct automatically. No third-party share scripts or trackers.
@@ -811,13 +813,14 @@ SHARE_LINE_ICONS = {
     "check": '<path d="m5 12.5 4.5 4.5L19 7.5"/>',
 }
 
-# (key, aria label, bare endpoint). Display order. The static href is only the network's bare
-# share endpoint (identical on every post, keeps the markup valid); blog-share.js replaces it
-# with the full URL built from the page's canonical + headline.
+# (key, aria label, bare endpoint). Display order. Static hrefs are the network's bare
+# share endpoint, except Facebook, which includes the encoded canonical so a checker
+# that does not run JavaScript still has a page URL. blog-share.js replaces every href
+# at runtime from the canonical + headline.
 # Not included by design: any upgrade/support button, Truth Social, Gettr.
 SHARE_NETWORKS = [
     ("x", "Share on X", "https://x.com/intent/post"),
-    ("facebook", "Share on Facebook", "https://facebook.com/sharer/sharer.php"),
+    ("facebook", "Share on Facebook", "https://www.facebook.com/sharer/sharer.php"),
     ("linkedin", "Share on LinkedIn", "https://www.linkedin.com/sharing/share-offsite/"),
     ("reddit", "Share on Reddit", "https://www.reddit.com/submit"),
     ("whatsapp", "Share on WhatsApp", "https://api.whatsapp.com/send"),
@@ -835,12 +838,21 @@ def _svg(key: str) -> str:
             f'focusable="false">{SHARE_LINE_ICONS[key]}</svg>')
 
 
-def share_bar_html() -> str:
-    """The static share bar block (between SHARE_START / SHARE_END). Same for every post."""
+def share_bar_html(canonical: str | None = None) -> str:
+    """The static share bar block (between SHARE_START / SHARE_END).
+
+    Facebook's href carries the encoded canonical. Other networks stay on the
+    bare endpoint; blog-share.js fills those at runtime.
+    """
     items = []
     for key, label, endpoint in SHARE_NETWORKS:
+        href = endpoint
+        if key == "facebook":
+            if not canonical:
+                raise BuildError("share bar: Facebook href needs the canonical URL")
+            href = endpoint + "?u=" + quote(canonical, safe="")
         ext = "" if key == "email" else ' target="_blank" rel="noopener noreferrer"'
-        items.append(f'<li><a class="share-link" href="{endpoint}" data-share="{key}"{ext} aria-label="{label}">'
+        items.append(f'<li><a class="share-link" href="{href}" data-share="{key}"{ext} aria-label="{label}">'
                      f'{_svg(key)}</a></li>')
     items.append(f'<li class="share-copy-item"><button type="button" class="share-link share-copy" '
                  f'data-share="copy" aria-label="Copy link">{_svg("copy")}{_svg("check")}</button></li>')
@@ -876,7 +888,7 @@ def inject_share_bar(html: str, label: str = "") -> str:
     if not canon.group(1).startswith(SITE + "/"):
         raise BuildError(f"{label}: share bar: canonical {canon.group(1)!r} is not on {SITE}")
     _page_title(html)  # blog-share.js reads the headline from the <h1>; fail the build if absent
-    block = share_bar_html()
+    block = share_bar_html(canon.group(1))
     html = _SHARE_BLOCK_RE.sub("", html)
     bylines = list(_BYLINE_RE.finditer(html))
     if len(bylines) != 1:

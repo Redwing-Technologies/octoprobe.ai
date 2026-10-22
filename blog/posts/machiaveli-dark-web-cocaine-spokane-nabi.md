@@ -132,7 +132,7 @@ Nabi is 24, [The Spokesman-Review reported](https://www.spokesman.com/stories/20
 
 ## What the Open Record Adds
 
-OctoProbe started from a handful of identifiers: Nabi’s name, three email addresses, the phone number listed in the affidavit, and his LinkedIn and X handles. From those seeds, its searches built a graph of 104 identifiers and 175 links in under ten minutes of run time.
+OctoProbe started from a handful of identifiers: Nabi’s name, three email addresses, the phone number listed in the affidavit, and his LinkedIn and X handles. From those seeds, its searches built [a graph of 104 identifiers](/blog/identifier-graph-osint-methodology/) and 175 links in under ten minutes of run time.
 
 ![Full OctoProbe investigation network graph rooted at Salim Ghulam Nabi, fanning out from a few starting identifiers to more than a hundred connected accounts, addresses, emails and case records.](https://www.octoprobe.ai/blog/machiaveli-dark-web-cocaine-spokane-nabi/assets/graph-octoprobe.png)
 
@@ -172,7 +172,7 @@ His LinkedIn profile calls him an “Instagram Agent and E-commerce Business Own
 
 ### How did investigators connect the persona to Nabi?
 
-Through email. The persona’s accounts traced to an iCloud address on four USPS accounts in Nabi’s name, and Apple records tied the vendor’s Proton Mail address to him. A test parcel was scanned near an apartment he allegedly rents.
+Through email. The persona’s accounts traced to an iCloud address on four USPS accounts in Nabi’s name, and [Apple records](/blog/subpoena-warrant-online-accounts-three-branches/) tied the vendor’s Proton Mail address to him. A test parcel was scanned near an apartment he allegedly rents.
 
 ![](/assets/authors/colin-aamot-96.jpg)[Colin Aamot](https://www.octoprobe.ai/blog/authors/colin-aamot/) is an Investigative Journalist & OSINT Domain Expert and Founder of Redwing Technologies, which publishes OctoProbe News, runs a portfolio of other SaaS products, and operates Rook Intelligence, a licensed Washington, DC private detective agency. A U.S. Army veteran, he began in the 173rd Airborne Brigade and was selected for the Special Operations psychological operations regiment, then served as a counterterrorism information operations planner with USASOC and SOCCENT supporting Operation Inherent Resolve and Operation Spartan Shield. He was a TechCongress Congressional Innovation Fellow in the office of Rep. Darrell Issa and later an investigator for The Heritage Foundation's Oversight Project and an investigative columnist for The Daily Signal. He holds an MA in Global Security Studies from Johns Hopkins University and an MBA from UNC Kenan-Flagler Business School.[LinkedIn](https://www.linkedin.com/in/colinaamot/)[X](https://x.com/ColinAamot)[TechCongress](https://techcongress.io/colin-aamot)[Rook Intelligence](https://rook-intel.com/)[Daily Signal (previous bylines)](https://www.dailysignal.com/author/colin-aamot/)
 

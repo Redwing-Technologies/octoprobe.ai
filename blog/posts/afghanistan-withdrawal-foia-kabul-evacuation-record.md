@@ -173,7 +173,7 @@ The annex makes the point starkly. ISP-S-23-05A, the November 2022 classified an
 
 ## How Do You Reconstruct Military Events From FOIA Documents?
 
-Start with the record's ID, request it under FOIA, and read the redacted release against its public companion. Pin every fact to a date, a document, and a page. Treat email headers as data, compare duplicate releases, and report only what the pages show. Redaction boxes mark what exists; they do not say what it is.
+Start with the record's ID, [request it under FOIA](/blog/foia-how-to-obama-situation-room-photos-presidential-records/), and read the redacted release against its public companion. Pin every fact to a date, a document, and a page. Treat email headers as data, compare duplicate releases, and report only what the pages show. [Redaction boxes mark what exists](/blog/foia-assessments-redacted-logs-osint-pivots/); they do not say what it is.
 
 {{MODULE:howto}}
 
