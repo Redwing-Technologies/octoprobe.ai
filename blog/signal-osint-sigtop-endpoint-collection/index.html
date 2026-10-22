@@ -17,7 +17,7 @@
 <meta property="og:url" content="https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/">
 <meta property="og:title" content="Signal Encryption Stops at the Endpoint">
 <meta property="og:description" content="sigtop unlocks Signal Desktop’s local store. E2EE is not endpoint security. Messages, media, group membership and UUIDv4 ACIs are the collection surface.">
-<meta property="og:image" content="https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/assets/og-cover.png">
+<meta property="og:image" content="https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/assets/og-cover-1200.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Light OctoProbe cover over a grey North America map on a white field with the blue Signal logo at right and a Signal-blue accent rule beside the black headline Signal Encryption Stops at the Endpoint">
@@ -27,7 +27,8 @@
 <meta name="twitter:site" content="@octoprobeai">
 <meta name="twitter:title" content="Signal Encryption Stops at the Endpoint">
 <meta name="twitter:description" content="sigtop unlocks Signal Desktop’s local store. E2EE is not endpoint security. Messages, media, group membership and UUIDv4 ACIs are the collection surface.">
-<meta name="twitter:image" content="https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/assets/og-cover.png">
+<meta name="twitter:image" content="https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/assets/og-cover-1200.jpg">
+<meta name="twitter:image:alt" content="Light OctoProbe cover over a grey North America map on a white field with the blue Signal logo at right and a Signal-blue accent rule beside the black headline Signal Encryption Stops at the Endpoint">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -60,8 +61,9 @@
     }
   },
   "image": [
-    "https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/assets/og-cover.png",
-    "https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/assets/cover.png"
+    "https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/assets/cover-16x9.webp",
+    "https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/assets/cover-4x3.webp",
+    "https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/assets/cover-1x1.webp"
   ],
   "keywords": "Signal, Signal Desktop, sigtop, end-to-end encryption, E2EE, endpoint security, ACI, UUIDv4, service ID, group master key, signal.group, invite link, Always relay calls, TURN, P2P call geolocation, OSINT, metadata, membership snapshot, cross-group membership, Tim van der Molen",
   "mainEntityOfPage": {
@@ -314,7 +316,7 @@
 <li><a href="#how-do-investigators-collect-without-cryptanalysis">You don’t break Signal. You observe membership, revocable invite links and the identifiers that leak across platforms.</a></li>
 <li><a href="#why-cant-you-brute-force-signal-groups">Signal group master keys are thirty-two random bytes. Invite links can be reset or turned off, so open-web scraping is time-sensitive and sustained observation matters more.</a></li>
 </ul></div>
-<figure><img fetchpriority="high" decoding="async" src="/blog/signal-osint-sigtop-endpoint-collection/assets/cover.png" width="2400" height="1260" alt="Light OctoProbe cover over a grey North America map on a white field with the blue Signal logo at right and a Signal-blue accent rule beside the black headline Signal Encryption Stops at the Endpoint" title="Signal Encryption Stops at the Endpoint"><figcaption>The Signal logo over a grey map on a white field. Illustration: OctoProbe News; logo: Signal Technology Foundation brand assets; map © OpenStreetMap contributors.</figcaption></figure>
+<figure><picture style="display:contents"><source type="image/webp" srcset="/blog/signal-osint-sigtop-endpoint-collection/assets/cover-800.webp 800w, /blog/signal-osint-sigtop-endpoint-collection/assets/cover-1200.webp 1200w, /blog/signal-osint-sigtop-endpoint-collection/assets/cover-1600.webp 1600w" sizes="(min-width: 900px) 760px, 100vw"><img fetchpriority="high" decoding="async" src="/blog/signal-osint-sigtop-endpoint-collection/assets/cover.png" width="2400" height="1260" alt="Light OctoProbe cover over a grey North America map on a white field with the blue Signal logo at right and a Signal-blue accent rule beside the black headline Signal Encryption Stops at the Endpoint" title="Signal Encryption Stops at the Endpoint"></picture><figcaption>The Signal logo over a grey map on a white field. Illustration: OctoProbe News; logo: Signal Technology Foundation brand assets; map © OpenStreetMap contributors.</figcaption></figure>
 <p class="primary-question"><strong>Does Signal’s end-to-end encryption stop law enforcement or OSINT collectors from reading messages and mapping groups?</strong></p>
 <p class="answer-first">No. End-to-end encryption protects messages in transit between devices. It does nothing once an investigator has the Signal Desktop endpoint—or its on-disk database and keychain secret. Tools such as sigtop export that local store. One user-level export can place a person in 100-plus groups at once; one group export hands over every member’s stable UUIDv4 service ID. Messages, media and cross-group membership, not cryptanalysis, are the collection surface.</p>
 <p>Signal sells privacy on the wire. The product does what it claims: messages between devices are end-to-end encrypted, so Signal’s servers cannot read them. That fact is not in dispute. The collection problem for investigators and OSINT analysts sits one layer down.</p>
