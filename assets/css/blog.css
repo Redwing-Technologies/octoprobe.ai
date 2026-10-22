@@ -608,6 +608,8 @@ main{position:relative;z-index:1;min-height:50vh}
   font-size:1.05rem;line-height:1.55;font-weight:500;color:var(--heading,#0f172a);
   max-width:42em;
 }
+.prose .answer-first p{margin:0}
+.prose .answer-first p + p{margin-top:1.55em}
 .prose h2 + .answer-first,
 .prose h3 + .answer-first,
 .prose h2 + .primary-question,
@@ -754,3 +756,12 @@ nav.top .nav-investigations{white-space:nowrap}
   nav.top .brand .bn{display:inline-flex;font-size:.92rem}
   nav.top .nav-investigations{padding:0 8px}
 }
+
+/* Default: photos and embeds are centered on the page */
+.prose figure img,.prose figure video,.prose figure iframe{display:block;margin-left:auto;margin-right:auto}
+.prose figure > a,.prose figure .doc-page{margin-left:auto;margin-right:auto}
+.prose figure.doc-embed{justify-items:center}
+.prose figure.doc-embed > a{width:100%}
+.prose figure.doc-embed > figcaption{justify-self:stretch}
+.prose figure.doc-embed.doc-single{grid-template-columns:minmax(0,1fr)}
+.prose figure.doc-embed.doc-single > a{max-width:360px}

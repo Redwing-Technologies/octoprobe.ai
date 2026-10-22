@@ -154,8 +154,8 @@ def build(md_path: Path, out_root: Path):
            .replace("{{BYLINE_HTML}}", byline_html)
            .replace("\n      {{HERO_HTML}}", "").replace("{{HERO_HTML}}", "").replace("{{BODY}}", html))
     out = out.replace("</h1>", "</h1>\n      <p class=\"post-dek\">" + escape(meta["dek"]) + "</p>", 1)
-    out = out.replace('<link rel="stylesheet" href="/assets/css/blog.css?v=news12">',
-        '<link rel="stylesheet" href="/assets/css/blog.css?v=news12">\n' + NEWS_FRAME +
+    out = out.replace('<link rel="stylesheet" href="/assets/css/blog.css?v=news13">',
+        '<link rel="stylesheet" href="/assets/css/blog.css?v=news13">\n' + NEWS_FRAME +
         f'\n<link rel="stylesheet" href="/blog/{slug}/assets/adtech.css?v=1">', 1)
     out = re.sub(r'\s*<p class="post-disclaimer">.*?</p>', "", out, count=1, flags=re.S)
     out = out.replace('<script src="/assets/js/blog-toc.js?v=toc7" defer></script>',
