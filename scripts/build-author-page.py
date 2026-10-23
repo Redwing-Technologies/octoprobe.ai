@@ -128,6 +128,9 @@ STYLE = """<style>
 /* In the Press and Articles share one row: outlet, date, title, then the dek. */
 .page-body .prose h2 + ul.author-entries{margin-top:10px}
 .page-body .prose ul.author-entries{text-wrap:pretty}
+/* The Fox title's last two words are long. Balance the row so that pair stays
+   with the line above it instead of dropping onto a short line by itself. */
+.page-body .prose ul.author-entries li.entry-balance{text-wrap:balance}
 .page-body .prose ul.author-entries .author-dek{display:block}
 @media(max-width:640px){
   .author-hero .wrap{flex-direction:column;align-items:flex-start;gap:1.25rem}
@@ -289,9 +292,13 @@ def build() -> str:
     li_bg = "\n".join(f"<li>{escape(x, quote=False)}</li>" for x in BACKGROUND)
     li_prof = "\n".join(f'<li><a{" rel=\"me\"" if me else ""} href="{escape(u)}">{escape(l)}</a></li>'
                         for l, u, me in PROFILES)
-    li_press = "\n".join(
-        f'<li><a href="{escape(u)}" rel="noopener">{escape(o)}</a>, {escape(d)}: <cite>{escape(t, quote=False)}</cite></li>'
-        for u, o, d, t in PRESS)
+    def press_li(u, o, d, t):
+        # Only the last two words are joined. Balance this row when that pair is long
+        # enough to wrap early on its own.
+        cls = " class=\"entry-balance\"" if "\u00a0" in t and t.endswith("terminology'") else ""
+        return (f'<li{cls}><a href="{escape(u)}" rel="noopener">{escape(o)}</a>, {escape(d)}: '
+                f'<cite>{escape(t, quote=False)}</cite></li>')
+    li_press = "\n".join(press_li(u, o, d, t) for u, o, d, t in PRESS)
     main = f"""<main id="main">
   <header class="post-hero author-hero">
     <div class="wrap">
