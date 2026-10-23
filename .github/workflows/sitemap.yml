@@ -34,6 +34,8 @@ jobs:
           python3 scripts/refresh-latest-links.py --check
       - name: Check every post carries the current share bar
         run: python3 scripts/build-blog.py --share-only --check
+      - name: Check titles, descriptions, share tags, hero weight, and in-body links
+        run: python3 scripts/check_article.py
       - name: Validate sitemap XML and robots.txt reference
         run: |
           python3 -c "import xml.dom.minidom as m; m.parse('sitemap.xml'); print('sitemap.xml well-formed')"
