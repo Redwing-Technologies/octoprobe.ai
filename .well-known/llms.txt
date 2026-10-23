@@ -68,6 +68,7 @@ OctoProbe News (https://www.octoprobe.ai/blog/) is the investigative desk publis
 - Editorial standards and ethics: https://www.octoprobe.ai/blog/standards/ — independence from the commercial business, sourcing, verbatim quotes, attribution, privacy and redaction, OSINT methods, AI-tool use, bylines
 - Corrections policy: https://www.octoprobe.ai/blog/corrections/ — how to request a correction; how corrections, clarifications and updates are disclosed
 - Contact: https://www.octoprobe.ai/blog/contact/ — press inquiries, tips and corrections at press@octoprobe.ai
+- Author: https://www.octoprobe.ai/blog/authors/colin-aamot/ — Colin Aamot, investigations
 
 - News index: https://www.octoprobe.ai/blog/ — OctoProbe News investigations on national security, intelligence, digital targeting, influence operations, and news verification
 - [Handala’s Livni Phone “Leak” and the Signature Reduction Requirements of War](https://www.octoprobe.ai/blog/handala-tzipi-livni-phone-leak-signature-reduction/): Investigation (Oct. 23, 2026). Handala, an Iran-linked persona, leaked Tzipi Livni’s texts and contacts. What the hack proved, what was psyop, and what officials must cut from their signature.
