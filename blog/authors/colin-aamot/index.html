@@ -422,6 +422,9 @@
 /* In the Press and Articles share one row: outlet, date, title, then the dek. */
 .page-body .prose h2 + ul.author-entries{margin-top:10px}
 .page-body .prose ul.author-entries{text-wrap:pretty}
+/* The Fox title's last two words are long. Balance the row so that pair stays
+   with the line above it instead of dropping onto a short line by itself. */
+.page-body .prose ul.author-entries li.entry-balance{text-wrap:balance}
 .page-body .prose ul.author-entries .author-dek{display:block}
 @media(max-width:640px){
   .author-hero .wrap{flex-direction:column;align-items:flex-start;gap:1.25rem}
@@ -549,7 +552,7 @@
 <li><a href="https://www.propublica.org/article/have-government-employees-mentioned-climate-change-voting-or-gender-identity-the-heritage-foundation-wants-to-know" rel="noopener">ProPublica</a>, Oct. 1, 2024: <cite>Heritage Foundation Staffers Flood Federal Agencies With Thousands of Information Requests</cite></li>
 <li><a href="https://www.archives.gov/ogis/foia-advisory-committee/2022-2024-term/foiaac-mtg-transcript-2024-04-04" rel="noopener">National Archives</a>, April 4, 2024: <cite>FOIA Advisory Committee Meeting (Virtual Event)</cite></li>
 <li><a href="https://edworkforce.house.gov/uploadedfiles/final_03.06.24_letter_to_dol.pdf" rel="noopener">Committee on Education and the Workforce</a>, March 6, 2024: <cite>Letter to Acting Secretary Julie A. Su on the Department of Labor’s plans for returning to regular, in-person work</cite></li>
-<li><a href="https://www.foxnews.com/politics/intel-agency-internal-docs-call-dei-training-features-the-gender-unicorn-and-transgender-terminology" rel="noopener">Fox News</a>, Feb. 29, 2024: <cite>Intel agency DEI training features the 'gender unicorn' and 'transgender terminology'</cite></li>
+<li class="entry-balance"><a href="https://www.foxnews.com/politics/intel-agency-internal-docs-call-dei-training-features-the-gender-unicorn-and-transgender-terminology" rel="noopener">Fox News</a>, Feb. 29, 2024: <cite>Intel agency DEI training features the 'gender unicorn' and 'transgender terminology'</cite></li>
 <li><a href="https://techcongress.io/blog/meet-colin-aamot" rel="noopener">TechCongress</a>, July 27, 2022: <cite>Meet the June 2022 Fellows: Colin Aamot</cite></li>
 </ul>
 <h2 id="articles">Articles at OctoProbe News</h2>
