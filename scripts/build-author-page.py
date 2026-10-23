@@ -9,8 +9,11 @@ Inputs:
     scripts/authors.py CANONICAL_BIO (the same text as every post's bio box).
   * blog/_template.html  nav, footer, head boilerplate (blog.css ?v= stays the template's).
   * built posts (blog/<slug>/index.html with <meta name="author" content="Colin Aamot">)
-    -> the "Articles at OctoProbe News" list in blog/index.html card order (newest first;
-    headline = the post's <h1>).
+    -> the "Articles at OctoProbe News" list, in blog/index.html card order (newest first).
+    Each row uses the In the Press format: outlet "OctoProbe News", the publish date,
+    the post's <h1> as the title link, and that post's meta description as the one-line
+    dek (post-dek text only if the meta description is missing). Nothing is written
+    that the post does not already say.
   * blog/authors/colin-aamot/assets/  headshot: colin-aamot.webp (1000) / -800 / -400 / -192 WebP
     srcset + colin-aamot.jpg (1000px, also og:image and Person.image). Committed as-is.
 
@@ -122,9 +125,10 @@ STYLE = """<style>
 .page-body .prose ul.author-profiles li::before{content:none}
 .page-body .prose ul.author-profiles a{display:inline-block;font-family:var(--fm);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;color:var(--soft);background:var(--panel-2);border:1px solid var(--line-2);padding:7px 12px;border-radius:999px;text-decoration:none;white-space:nowrap}
 .page-body .prose ul.author-profiles a:hover,.page-body .prose ul.author-profiles a:focus-visible{color:var(--blue);border-color:rgba(2,136,209,.35);background:rgba(2,136,209,.06)}
-.page-body .prose ol.author-posts{padding-left:1.4em}
-.page-body .prose ol.author-posts li + li{margin-top:.55em}
-.page-body .prose ol.author-posts time{display:block;font-family:var(--fm);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--soft-2);margin-top:.15em}
+/* In the Press and Articles share one row: outlet, date, title, then the dek. */
+.page-body .prose h2 + ul.author-entries{margin-top:10px}
+.page-body .prose ul.author-entries{text-wrap:pretty}
+.page-body .prose ul.author-entries .author-dek{display:block}
 @media(max-width:640px){
   .author-hero .wrap{flex-direction:column;align-items:flex-start;gap:1.25rem}
   .author-hero .author-photo{width:152px;height:152px}
@@ -133,7 +137,38 @@ STYLE = """<style>
 
 
 def fmt_date(d: str) -> str:
-    return date.fromisoformat(d[:10]).strftime("%b %-d, %Y")
+    """Press-style date: 'Oct. 23, 2026'. May is already a full word, so it takes no period."""
+    dt = date.fromisoformat(d[:10])
+    mon = dt.strftime("%b")
+    if mon != "May":
+        mon += "."
+    return f"{mon} {dt.day}, {dt.year}"
+
+
+def nobreak_tail(text: str) -> str:
+    """Keep the last two words on one line so a wrapped row does not end on a single word."""
+    words = text.split(" ")
+    if len(words) < 2:
+        return text
+    words[-2] = words[-2] + "\u00a0" + words[-1]
+    del words[-1]
+    return " ".join(words)
+
+
+def post_dek(html: str, path: Path) -> str:
+    """The short line already written for the post. Never composed here."""
+    meta = re.search(r'<meta name="description" content="([^"]*)"', html)
+    if meta:
+        text = unescape(meta.group(1))
+    else:
+        dek = re.search(r'<p class="post-dek">(.*?)</p>', html, re.S)
+        if not dek:
+            raise SystemExit(f"ERROR: {path.relative_to(ROOT)} has no meta description or dek")
+        text = unescape(re.sub(r"<[^>]+>", "", dek.group(1)))
+    text = re.sub(r"\s+", " ", text).strip()
+    if not text:
+        raise SystemExit(f"ERROR: {path.relative_to(ROOT)} has an empty description")
+    return text
 
 
 def parse_dt(d: str) -> datetime:
@@ -158,9 +193,16 @@ def posts() -> list[dict]:
         canon = re.search(r'<link rel="canonical" href="([^"]+)"', html).group(1)
         h1 = re.search(r"<h1[^>]*>(.*?)</h1>", html, re.S).group(1)
         h1 = unescape(re.sub(r"<[^>]+>", "", h1)).strip()
+        h1 = re.sub(r"\s+", " ", h1)
         pub = re.search(r'"datePublished"\s*:\s*"(\d{4}-\d{2}-\d{2})', html).group(1)
         mod = (re.search(r'"dateModified"\s*:\s*"(\d{4}-\d{2}-\d{2})', html) or [None, pub])[1]
-        res.append({"url": canon.replace("https://www.octoprobe.ai", ""), "title": h1, "pub": pub, "mod": mod})
+        res.append({
+            "url": canon.replace("https://www.octoprobe.ai", ""),
+            "title": h1,
+            "pub": pub,
+            "mod": mod,
+            "dek": post_dek(html, p),
+        })
     # Order = the blog index's card order (newest first, the editors' order for same-day posts);
     # any bylined post not carded on /blog/ goes last, newest first.
     cards = []
@@ -239,8 +281,11 @@ def build() -> str:
     ])
 
     li_posts = "\n".join(
-        f'<li><a href="{escape(d["url"])}">{escape(d["title"], quote=False)}</a>'
-        f'<time datetime="{d["pub"]}">{fmt_date(d["pub"])}</time></li>' for d in items)
+        f'<li><a href="{escape(d["url"])}">OctoProbe News</a>, '
+        f'<time datetime="{d["pub"]}">{escape(fmt_date(d["pub"]))}</time>: '
+        f'<a href="{escape(d["url"])}"><cite>{escape(nobreak_tail(d["title"]), quote=False)}</cite></a>'
+        f'<span class="author-dek">{escape(nobreak_tail(d["dek"]), quote=False)}</span></li>'
+        for d in items)
     li_bg = "\n".join(f"<li>{escape(x, quote=False)}</li>" for x in BACKGROUND)
     li_prof = "\n".join(f'<li><a{" rel=\"me\"" if me else ""} href="{escape(u)}">{escape(l)}</a></li>'
                         for l, u, me in PROFILES)
@@ -282,13 +327,13 @@ def build() -> str:
 {li_prof}
 </ul>
 <h2 id="press">In the Press</h2>
-<ul>
+<ul class="author-entries">
 {li_press}
 </ul>
 <h2 id="articles">Articles at OctoProbe News</h2>
-<ol class="author-posts">
+<ul class="author-entries">
 {li_posts}
-</ol>
+</ul>
       </div>
     </div>
   </article>
