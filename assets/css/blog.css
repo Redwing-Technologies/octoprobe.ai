@@ -411,6 +411,18 @@ footer .legal strong{color:var(--soft)}
 .prose > figure + *{margin-top:0}
 .prose h2 + p:has(> img:only-child),.prose h2 + figure,
 .prose h3 + p:has(> img:only-child),.prose h3 + figure{margin-top:1.25em}
+/* The line above a table was 28–37px: a sibling margin plus the table's own
+   top margin, or a figure's bottom margin. Hold that gap at 10px site-wide.
+   Post-level styles such as `.prose .tbl{margin:1.2rem 0}` sit later in the
+   page, so these selectors are one class deeper. */
+.prose *:has(+ .table-wrap),
+.prose *:has(+ .tbl),
+.prose *:has(+ table){margin-bottom:0}
+.post-body .prose .table-wrap,
+.post-body .prose .tbl,
+.post-body .prose table{margin-top:10px}
+.post-body .prose .table-wrap > table,
+.post-body .prose .tbl > table{margin-top:0}
 /* lead cover image (first block in the post): extra room before the summary */
 .prose > p:first-child:has(> img:only-child),
 .prose > figure:first-child{margin-top:0;margin-bottom:2.75em}
