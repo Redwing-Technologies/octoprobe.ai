@@ -139,7 +139,7 @@ The Small Business Administration released five pages: the invitation, its forwa
 
 {{MODULE:fig-dl-invite}}
 
-Its attendee list opens with four distribution lists: "DL OPSO Department," "IGADepartment," "DL WHO OPEAllStaff," and "DL WHO Schedvance." One address is printed in full: DLOPSODepartment@WHO.eop.gov. ([record](/blog/useful-foia-request-types/assets/sba-white-house-distribution-list-release.pdf#page=4)) The record does not spell out the lists' abbreviations or say who belongs to them.
+Its attendee list opens with four distribution lists: "DL OPSO Department," "IGADepartment," "DL WHO OPEAllStaff," and "DL WHO Schedvance." One address is printed in full: DLOPSODepartment@WHO.eop.gov. ([record](/blog/useful-foia-request-types/assets/sba-white-house-distribution-list-release.pdf#page=4)) The record does not spell out the lists' abbreviations, but the root domain identifies them: who.eop.gov is the domain of the White House Office, part of the Executive Office of the President, which places these lists among the president's core staff.
 
 {{MODULE:fig-dl-header}}
 
