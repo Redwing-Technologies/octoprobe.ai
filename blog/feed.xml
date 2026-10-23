@@ -14,8 +14,8 @@
     <copyright>© 2026 Redwing Technologies LLC</copyright>
     <managingEditor>press@octoprobe.ai (OctoProbe News)</managingEditor>
     <webMaster>press@octoprobe.ai (OctoProbe News)</webMaster>
-    <pubDate>Fri, 23 Oct 2026 09:00:00 -0400</pubDate>
-    <lastBuildDate>Fri, 23 Oct 2026 09:00:00 -0400</lastBuildDate>
+    <pubDate>Fri, 23 Oct 2026 18:30:00 -0400</pubDate>
+    <lastBuildDate>Fri, 23 Oct 2026 18:30:00 -0400</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <ttl>60</ttl>
     <image>
@@ -28,6 +28,21 @@
     <webfeeds:icon>https://www.octoprobe.ai/icon-512.png</webfeeds:icon>
     <webfeeds:accentColor>0288D1</webfeeds:accentColor>
     <webfeeds:analytics id="G-6T6HW79ZP0" engine="GoogleAnalytics"/>
+    <item>
+      <title>FOIA Request Guide: Records That Show How Federal Agencies Work</title>
+      <link>https://www.octoprobe.ai/blog/useful-foia-request-types/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/useful-foia-request-types/</guid>
+      <description>Four FOIA request types that show how federal agencies work: inspector general weekly reports, agency-held White House email, distribution lists, and intranets.</description>
+      <pubDate>Fri, 23 Oct 2026 18:30:00 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Public Journalism Guide</category>
+      <category>FOIA</category>
+      <category>Inspector General</category>
+      <enclosure url="https://www.octoprobe.ai/blog/useful-foia-request-types/assets/og-cover-1200.jpg" length="167602" type="image/jpeg"/>
+      <media:content url="https://www.octoprobe.ai/blog/useful-foia-request-types/assets/og-cover-1200.jpg" medium="image" type="image/jpeg" width="1200" height="630">
+        <media:description type="plain">Dark street map of downtown Washington centered on the White House, with three agency seals ringed in blue: the Department of War, the Office of the Director of National Intelligence, and the U.S. Trade Representative</media:description>
+      </media:content>
+    </item>
     <item>
       <title>ISIS’s al-Naba Claims an Iraqi General and a Nigerian Camp Commander in Issue 570</title>
       <link>https://www.octoprobe.ai/blog/isis-al-naba-570-claims-kirkuk-brigadier-nigeria-ambush/</link>
