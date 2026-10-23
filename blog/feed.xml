@@ -14,8 +14,8 @@
     <copyright>© 2026 Redwing Technologies LLC</copyright>
     <managingEditor>press@octoprobe.ai (OctoProbe News)</managingEditor>
     <webMaster>press@octoprobe.ai (OctoProbe News)</webMaster>
-    <pubDate>Fri, 23 Oct 2026 08:16:00 -0400</pubDate>
-    <lastBuildDate>Fri, 23 Oct 2026 08:16:00 -0400</lastBuildDate>
+    <pubDate>Fri, 23 Oct 2026 09:00:00 -0400</pubDate>
+    <lastBuildDate>Fri, 23 Oct 2026 09:00:00 -0400</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <ttl>60</ttl>
     <image>
@@ -28,6 +28,21 @@
     <webfeeds:icon>https://www.octoprobe.ai/icon-512.png</webfeeds:icon>
     <webfeeds:accentColor>0288D1</webfeeds:accentColor>
     <webfeeds:analytics id="G-6T6HW79ZP0" engine="GoogleAnalytics"/>
+    <item>
+      <title>ISIS’s al-Naba Claims an Iraqi General and a Nigerian Camp Commander in Issue 570</title>
+      <link>https://www.octoprobe.ai/blog/isis-al-naba-570-claims-kirkuk-brigadier-nigeria-ambush/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/isis-al-naba-570-claims-kirkuk-brigadier-nigeria-ambush/</guid>
+      <description>ISIS’s al-Naba issue 570 claims a Kirkuk blast that killed an Iraqi brigadier general and a Yobe ambush on a Nigerian convoy. What officials and press confirm.</description>
+      <pubDate>Fri, 23 Oct 2026 09:00:00 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Investigation</category>
+      <category>OSINT</category>
+      <category>Counterterrorism</category>
+      <enclosure url="https://www.octoprobe.ai/blog/isis-al-naba-570-claims-kirkuk-brigadier-nigeria-ambush/assets/og-cover-1200.jpg" length="121291" type="image/jpeg"/>
+      <media:content url="https://www.octoprobe.ai/blog/isis-al-naba-570-claims-kirkuk-brigadier-nigeria-ambush/assets/og-cover-1200.jpg" medium="image" type="image/jpeg" width="1200" height="630">
+        <media:description type="plain">Dark OctoProbe cover over a map of Iraq’s Kirkuk province; at right, the Islamic State weekly al-Naba masthead for issue 570 in white Arabic lettering with red diamonds, beside the headline Claims Desk: al-Naba No. 570.</media:description>
+      </media:content>
+    </item>
     <item>
       <title>Handala’s Livni Phone “Leak” and the Signature Reduction Requirements of War</title>
       <link>https://www.octoprobe.ai/blog/handala-tzipi-livni-phone-leak-signature-reduction/</link>
