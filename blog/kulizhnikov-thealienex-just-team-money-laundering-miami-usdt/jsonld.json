@@ -1,0 +1,206 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "‘$50 Million Per Day’: Feds Say the Miami Broker Behind ‘TheAlienEx’ Worked for a Russian Laundering Network",
+    "description": "A DEA affidavit ties Miami broker Pavel Kulizhnikov to @TheAlienEx_manager and the JUST Team, a network a source estimated launders $50 million a day.",
+    "image": [
+      "https://www.octoprobe.ai/blog/kulizhnikov-thealienex-just-team-money-laundering-miami-usdt/assets/cover.png",
+      "https://www.octoprobe.ai/blog/kulizhnikov-thealienex-just-team-money-laundering-miami-usdt/assets/og-cover.png"
+    ],
+    "datePublished": "2026-10-23T06:45:00-04:00",
+    "dateModified": "2026-10-23T06:45:00-04:00",
+    "author": {
+      "@type": "Person",
+      "@id": "https://www.octoprobe.ai/blog/authors/colin-aamot/#person",
+      "name": "Colin Aamot",
+      "url": "https://www.octoprobe.ai/blog/authors/colin-aamot/"
+    },
+    "publisher": {
+      "@type": "NewsMediaOrganization",
+      "@id": "https://www.octoprobe.ai/blog/#newsroom",
+      "name": "OctoProbe News",
+      "url": "https://www.octoprobe.ai/blog/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.octoprobe.ai/icon-512.png",
+        "width": 512,
+        "height": 512
+      }
+    },
+    "keywords": [
+      "Pavel Alekseyevich Kulizhnikov",
+      "Pavel Kulizhnikov",
+      "Panprezident1",
+      "TheAlienEx",
+      "TheAlienEx_manager",
+      "The Alien Ex",
+      "JUST Team",
+      "JUST WORLD PRO CRYPTO TEAM",
+      "JUST HOLLYWOOD STARS",
+      "Russian money laundering organization",
+      "U.S. MTEX GROUP LLC",
+      "USDT",
+      "Tether",
+      "TRON",
+      "bulk cash",
+      "money laundering conspiracy",
+      "18 U.S.C. 1956(h)",
+      "DEA",
+      "Eastern District of Virginia",
+      "Southern District of Florida",
+      "0:26-mj-06603",
+      "1:26-MJ-407",
+      "Miami",
+      "Moscow",
+      "Telegram"
+    ],
+    "articleSection": "Investigations",
+    "inLanguage": "en-US",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.octoprobe.ai/blog/kulizhnikov-thealienex-just-team-money-laundering-miami-usdt/"
+    },
+    "url": "https://www.octoprobe.ai/blog/kulizhnikov-thealienex-just-team-money-laundering-miami-usdt/",
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "OctoProbe News",
+      "url": "https://www.octoprobe.ai/blog/"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        ".answer-first",
+        ".key-takeaways",
+        ".prose h2"
+      ]
+    },
+    "about": [
+      {
+        "@type": "Person",
+        "name": "Pavel Alekseyevich Kulizhnikov",
+        "alternateName": [
+          "Pavel Alekseevich Kulizhnikov",
+          "Pasha",
+          "Panprezident1"
+        ]
+      },
+      {
+        "@type": "Organization",
+        "name": "TheAlienEx",
+        "sameAs": "https://t.me/TheAlienEx"
+      },
+      {
+        "@type": "Organization",
+        "name": "JUST Team",
+        "alternateName": [
+          "JUST WORLD PRO CRYPTO TEAM",
+          "JUST HOLLYWOOD STARS"
+        ]
+      }
+    ],
+    "mentions": [
+      {
+        "@type": "Organization",
+        "name": "Drug Enforcement Administration",
+        "sameAs": "https://www.dea.gov/"
+      },
+      {
+        "@type": "Organization",
+        "name": "U.S. District Court for the Southern District of Florida",
+        "sameAs": "https://www.flsd.uscourts.gov/"
+      },
+      {
+        "@type": "Organization",
+        "name": "U.S. District Court for the Eastern District of Virginia",
+        "sameAs": "https://www.vaed.uscourts.gov/"
+      },
+      {
+        "@type": "Organization",
+        "name": "U.S. MTEX GROUP LLC"
+      },
+      {
+        "@type": "Organization",
+        "name": "MyTeaSupply LLC"
+      },
+      {
+        "@type": "Organization",
+        "name": "Royal Commerce Empire LLC"
+      },
+      {
+        "@type": "Place",
+        "name": "Miami, Florida"
+      },
+      {
+        "@type": "Place",
+        "name": "Moscow, Russia"
+      },
+      {
+        "@type": "Place",
+        "name": "Alexandria, Virginia"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.octoprobe.ai/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://www.octoprobe.ai/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "‘$50 Million Per Day’: Feds Say the Miami Broker Behind ‘TheAlienEx’ Worked for a Russian Laundering Network",
+        "item": "https://www.octoprobe.ai/blog/kulizhnikov-thealienex-just-team-money-laundering-miami-usdt/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Who is Pavel Alekseyevich Kulizhnikov?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "He is the lead defendant in a federal criminal complaint filed in the Eastern District of Virginia (case 1:26-MJ-407) and unsealed on October 21, 2026, in the Southern District of Florida (case 0:26-mj-06603-PAB). A DEA affidavit describes him as a Miami-area cryptocurrency reseller and broker affiliated with the “JUST Team” of a Russian money laundering organization. As of October 23, 2026, he has not been convicted."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is he charged with?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The complaint charges him and a redacted co-defendant with money laundering conspiracy under 18 U.S.C. § 1956(h), with concealment and sting objects. A second redacted defendant is charged with conspiracy to conduct an unlicensed money transmitting business under 18 U.S.C. §§ 371 and 1960."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is TheAlienEx?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TheAlienEx is a public Telegram channel, t.me/TheAlienEx, that advertises USDT-to-dollar exchange, ruble-to-dollar cash exchange in Moscow and Miami, and invoice payments. It directs customers to the manager account @TheAlienEx_manager. The DEA affidavit says @TheAlienEx_manager is one of Kulizhnikov’s Telegram usernames. The affidavit does not name the channel itself."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where does the $50 million-a-day figure come from?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is a confidential source’s estimate. According to the affidavit, a source identified as CS7 estimated that the JUST Team launders approximately $50 million per day. The figure has not been tested in court."
+        }
+      }
+    ]
+  }
+]

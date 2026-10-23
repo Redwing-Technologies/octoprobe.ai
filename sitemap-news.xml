@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.octoprobe.ai/blog/kulizhnikov-thealienex-just-team-money-laundering-miami-usdt/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>OctoProbe News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-23T06:45:00-04:00</news:publication_date>
+      <news:title>‘$50 Million Per Day’: Feds Say the Miami Broker Behind ‘TheAlienEx’ Worked for a Russian Laundering Network</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.octoprobe.ai/blog/eu-sanctions-samolet-black-horse-north-korea-russia/</loc>
     <news:news>
       <news:publication>
@@ -175,61 +186,6 @@
       </news:publication>
       <news:publication_date>2026-10-21T08:10:00-04:00</news:publication_date>
       <news:title>Sanctioned Over Hamas Fundraising, Gaza Now Is Still Collecting on Telegram</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.octoprobe.ai/blog/afghanistan-withdrawal-foia-kabul-evacuation-record/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>OctoProbe News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-10-21T05:46:30-04:00</news:publication_date>
-      <news:title>‘Did Not Wish to Create Panic’: FOIA Records Rebuild the Official Story of the Kabul Evacuation</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.octoprobe.ai/blog/foia-how-to-obama-situation-room-photos-presidential-records/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>OctoProbe News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-10-20T21:26:24-04:00</news:publication_date>
-      <news:title>How to FOIA the Situation Room: One Request Pried Loose Thousands of Obama-Era Photos</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.octoprobe.ai/blog/crowdfunding-hamas-chuffed-gofundme-gaza/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>OctoProbe News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-10-20T19:58:22-04:00</news:publication_date>
-      <news:title>Crowdfunding’s Hamas Problem: A Gaza Fundraiser’s Telegram Badge Leads to an Al-Qassam Chat</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.octoprobe.ai/blog/subpoena-warrant-online-accounts-three-branches/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>OctoProbe News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-10-20T19:16:57-04:00</news:publication_date>
-      <news:title>Subpoena, Order, Warrant: How the Government Gets Your Data</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.octoprobe.ai/blog/fbi-cell-phone-location-silent-sms-cast-guide/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>OctoProbe News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-10-20T17:55:59-04:00</news:publication_date>
-      <news:title>Inside the FBI's CAST Guide: How Carriers and Agents Pin Down a Cell Phone</news:title>
     </news:news>
   </url>
 </urlset>
