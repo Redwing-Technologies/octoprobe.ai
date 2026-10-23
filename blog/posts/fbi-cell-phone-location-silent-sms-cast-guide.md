@@ -145,9 +145,9 @@ Two kinds of court paper come up again and again in the FBI guide: a court order
 
 ### A 2703(d) order vs. a search warrant
 
-The Stored Communications Act lets the government require a carrier to hand over customer records "(not including the contents of communications)" when it "obtains a warrant issued using the procedures described in the Federal Rules of Criminal Procedure" or "obtains a court order for such disclosure under subsection (d) of this section," [according to § 2703(c)](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title18-section2703&num=0&edition=prelim).
+The Stored Communications Act lets the government require a carrier to hand over customer records "(not including the contents of communications)" when it "obtains a warrant issued using the procedures described in the Federal Rules of Criminal Procedure" or "obtains a court order for such disclosure under subsection (d) of this section," [according to § 2703(c)](https://www.law.cornell.edu/uscode/text/18/2703).
 
-The two routes have different bars. A [§ 2703(d) order](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title18-section2703&num=0&edition=prelim) "shall issue only if the governmental entity offers specific and articulable facts showing that there are reasonable grounds to believe that the contents of a wire or electronic communication, or the records or other information sought, are relevant and material to an ongoing criminal investigation." A federal warrant under [Rule 41(d)(1)](https://www.uscourts.gov/sites/default/files/2025-02/federal-rules-of-criminal-procedure-dec-1-2024_0.pdf#page=75) is different: a judge "must issue the warrant if there is probable cause to search for and seize a person or property or to install and use a tracking device."
+The two routes have different bars. A [§ 2703(d) order](https://www.law.cornell.edu/uscode/text/18/2703) "shall issue only if the governmental entity offers specific and articulable facts showing that there are reasonable grounds to believe that the contents of a wire or electronic communication, or the records or other information sought, are relevant and material to an ongoing criminal investigation." A federal warrant under [Rule 41(d)(1)](https://www.uscourts.gov/sites/default/files/2025-02/federal-rules-of-criminal-procedure-dec-1-2024_0.pdf#page=75) is different: a judge "must issue the warrant if there is probable cause to search for and seize a person or property or to install and use a tracking device."
 
 | | § 2703(d) court order | Rule 41 search warrant |
 |---|---|---|
@@ -182,7 +182,7 @@ There is also an emergency route. Under 18 U.S.C. § 2702(c)(4), a carrier "may 
 
 {{MODULE:fig-exigent}}
 
-One more limit is written into CALEA itself. For information acquired "solely pursuant to the authority for pen registers and trap and trace devices," call-identifying information "shall not include any information that may disclose the physical location of the subscriber (except to the extent that the location may be determined from the telephone number)," [under 47 U.S.C. § 1002](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title47-section1002&num=0&edition=prelim). A pen-register order alone is not supposed to deliver location.
+One more limit is written into CALEA itself. For information acquired "solely pursuant to the authority for pen registers and trap and trace devices," call-identifying information "shall not include any information that may disclose the physical location of the subscriber (except to the extent that the location may be determined from the telephone number)," [under 47 U.S.C. § 1002](https://www.law.cornell.edu/uscode/text/47/1002). A pen-register order alone is not supposed to deliver location.
 
 ## Why a tower hit isn't proof
 
