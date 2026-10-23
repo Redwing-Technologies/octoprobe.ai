@@ -78,10 +78,31 @@ BACKGROUND = [
     "MA, Global Security Studies, Johns Hopkins University · MBA, UNC Kenan-Flagler · Levantine Arabic, "
     "Defense Language Institute",
 ]
-PRESS = [
+PRESS = [  # newest first. Dates and titles are taken from each source page.
+    ("https://www.aspendigital.org/report/defining-technologies-of-our-time-ai/",
+     "Aspen Digital", "Feb. 8, 2026",
+     "Defining Technologies of Our Time"),
+    ("https://gazette.com/2025/01/22/trump-scraps-bidenbucks-voter-turnout-order-the-gop-still-wants-documents/",
+     "The Gazette", "Jan. 22, 2025",
+     "Trump scraps ‘Bidenbucks’ voter turnout order. The GOP still wants documents"),
+    ("https://www.washingtonexaminer.com/news/white-house/3295185/trump-scraps-bidenbucks-voter-turnout-order-gop-wants-documents/",
+     "Washington Examiner", "Jan. 22, 2025",
+     "Trump scraps ‘Bidenbucks’ voter turnout order. The GOP still wants\u00a0documents"),
+    ("https://thepostmillennial.com/breaking-isis-flag-found-in-truck-of-nola-massacre-suspect-fbi",
+     "The Post Millennial", "Jan. 1, 2025",
+     "BREAKING: ISIS flag found in truck of NOLA massacre suspect: FBI"),
     ("https://www.propublica.org/article/have-government-employees-mentioned-climate-change-voting-or-gender-identity-the-heritage-foundation-wants-to-know",
      "ProPublica", "Oct. 1, 2024",
      "Heritage Foundation Staffers Flood Federal Agencies With Thousands of Information Requests"),
+    ("https://www.archives.gov/ogis/foia-advisory-committee/2022-2024-term/foiaac-mtg-transcript-2024-04-04",
+     "National Archives", "April 4, 2024",
+     "FOIA Advisory Committee Meeting (Virtual\u00a0Event)"),
+    ("https://edworkforce.house.gov/uploadedfiles/final_03.06.24_letter_to_dol.pdf",
+     "Committee on Education and the Workforce", "March 6, 2024",
+     "Letter to Acting Secretary Julie A. Su on the Department of Labor’s plans for returning to regular, in-person work"),
+    ("https://www.foxnews.com/politics/intel-agency-internal-docs-call-dei-training-features-the-gender-unicorn-and-transgender-terminology",
+     "Fox News", "Feb. 29, 2024",
+     "Intel agency DEI training features the 'gender unicorn' and 'transgender\u00a0terminology'"),
     ("https://techcongress.io/blog/meet-colin-aamot", "TechCongress", "July 27, 2022",
      "Meet the June 2022 Fellows: Colin Aamot"),
 ]
@@ -223,8 +244,9 @@ def build() -> str:
     li_bg = "\n".join(f"<li>{escape(x, quote=False)}</li>" for x in BACKGROUND)
     li_prof = "\n".join(f'<li><a{" rel=\"me\"" if me else ""} href="{escape(u)}">{escape(l)}</a></li>'
                         for l, u, me in PROFILES)
-    li_press = "\n".join(f'<li><a href="{escape(u)}">{escape(o)}</a>, {escape(d)}: <cite>{escape(t, quote=False)}</cite></li>'
-                         for u, o, d, t in PRESS)
+    li_press = "\n".join(
+        f'<li><a href="{escape(u)}" rel="noopener">{escape(o)}</a>, {escape(d)}: <cite>{escape(t, quote=False)}</cite></li>'
+        for u, o, d, t in PRESS)
     main = f"""<main id="main">
   <header class="post-hero author-hero">
     <div class="wrap">
