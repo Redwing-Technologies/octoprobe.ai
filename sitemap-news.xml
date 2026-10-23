@@ -122,37 +122,4 @@
       <news:title>Treasury Sanctioned Whales Shipping Line. Its Company Profile Still Names Its Staff.</news:title>
     </news:news>
   </url>
-  <url>
-    <loc>https://www.octoprobe.ai/blog/pegasus-nso-capabilities-historical-data-attribution/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>OctoProbe News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-10-21T16:49:00-04:00</news:publication_date>
-      <news:title>Pegasus Took a Phone’s Past. AI Makes It Attributable</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.octoprobe.ai/blog/signal-osint-sigtop-endpoint-collection/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>OctoProbe News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-10-21T16:01:22-04:00</news:publication_date>
-      <news:title>Signal Encryption Stops at the Endpoint</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.octoprobe.ai/blog/foia-assessments-redacted-logs-osint-pivots/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>OctoProbe News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-10-21T15:09:00-04:00</news:publication_date>
-      <news:title>Redacted, Not Useless: FOIA Logs as OSINT Pivots</news:title>
-    </news:news>
-  </url>
 </urlset>
