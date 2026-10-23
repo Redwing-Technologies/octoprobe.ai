@@ -177,15 +177,4 @@
       <news:title>Hexane’s AfD Dump: Assessing the Actor, the Scope, and the Access</news:title>
     </news:news>
   </url>
-  <url>
-    <loc>https://www.octoprobe.ai/blog/north-korean-laptop-farm-texas-gmail-accounts/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>OctoProbe News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-10-21T09:45:00-04:00</news:publication_date>
-      <news:title>Operation Lonestar Roundup: Tracing the Gmail Accounts DOJ Tied to North Korea’s Texas Laptop Farms</news:title>
-    </news:news>
-  </url>
 </urlset>
