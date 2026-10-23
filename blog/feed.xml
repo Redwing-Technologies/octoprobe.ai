@@ -14,8 +14,8 @@
     <copyright>© 2026 Redwing Technologies LLC</copyright>
     <managingEditor>press@octoprobe.ai (OctoProbe News)</managingEditor>
     <webMaster>press@octoprobe.ai (OctoProbe News)</webMaster>
-    <pubDate>Fri, 23 Oct 2026 06:45:00 -0400</pubDate>
-    <lastBuildDate>Fri, 23 Oct 2026 06:57:00 -0400</lastBuildDate>
+    <pubDate>Fri, 23 Oct 2026 08:16:00 -0400</pubDate>
+    <lastBuildDate>Fri, 23 Oct 2026 08:16:00 -0400</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <ttl>60</ttl>
     <image>
@@ -28,6 +28,22 @@
     <webfeeds:icon>https://www.octoprobe.ai/icon-512.png</webfeeds:icon>
     <webfeeds:accentColor>0288D1</webfeeds:accentColor>
     <webfeeds:analytics id="G-6T6HW79ZP0" engine="GoogleAnalytics"/>
+    <item>
+      <title>Handala’s Livni Phone “Leak” and the Signature Reduction Requirements of War</title>
+      <link>https://www.octoprobe.ai/blog/handala-tzipi-livni-phone-leak-signature-reduction/</link>
+      <guid isPermaLink="true">https://www.octoprobe.ai/blog/handala-tzipi-livni-phone-leak-signature-reduction/</guid>
+      <description>Handala, an Iran-linked persona, leaked Tzipi Livni’s texts and contacts. What the hack proved, what was psyop, and what officials must cut from their signature.</description>
+      <pubDate>Fri, 23 Oct 2026 08:16:00 -0400</pubDate>
+      <dc:creator>Colin Aamot</dc:creator>
+      <category>Investigation</category>
+      <category>Iran</category>
+      <category>OSINT</category>
+      <category>Cyber</category>
+      <enclosure url="https://www.octoprobe.ai/blog/handala-tzipi-livni-phone-leak-signature-reduction/assets/og-cover-1200.jpg" length="140174" type="image/jpeg"/>
+      <media:content url="https://www.octoprobe.ai/blog/handala-tzipi-livni-phone-leak-signature-reduction/assets/og-cover-1200.jpg" medium="image" type="image/jpeg" width="1200" height="630">
+        <media:description type="plain">OctoProbe cover over a dark street map of Tel Aviv with a red pin: a cutout portrait of former Israeli Foreign Minister Tzipi Livni beside the headline The Livni Phone “Leak,” Signature Reduction in War.</media:description>
+      </media:content>
+    </item>
     <item>
       <title>‘$50 Million Per Day’: Feds Say the Miami Broker Behind ‘TheAlienEx’ Worked for a Russian Laundering Network</title>
       <link>https://www.octoprobe.ai/blog/kulizhnikov-thealienex-just-team-money-laundering-miami-usdt/</link>
