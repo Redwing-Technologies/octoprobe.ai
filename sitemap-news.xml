@@ -24,24 +24,13 @@
     </news:news>
   </url>
   <url>
-    <loc>https://www.octoprobe.ai/blog/eu-sanctions-samolet-black-horse-north-korea-russia/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>OctoProbe News</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-10-22T10:45:00-04:00</news:publication_date>
-      <news:title>Inside Samolet, the Russian Homebuilder the EU Says Used North Korean Workers</news:title>
-    </news:news>
-  </url>
-  <url>
     <loc>https://www.octoprobe.ai/blog/julani-rebrand-terrorist-to-politician-dia-tow-idlib-geolocation/</loc>
     <news:news>
       <news:publication>
         <news:name>OctoProbe News</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-10-22T09:00:00-04:00</news:publication_date>
+      <news:publication_date>2026-10-22T16:12:07-04:00</news:publication_date>
       <news:title>From $10 Million Bounty to the Oval Office: The Record Behind Julani’s Rebrand</news:title>
     </news:news>
   </url>
@@ -52,8 +41,19 @@
         <news:name>OctoProbe News</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-10-22T09:00:00-04:00</news:publication_date>
+      <news:publication_date>2026-10-22T12:39:00-04:00</news:publication_date>
       <news:title>SOCOM Promised ‘Close Coordination’ for Its Online Psyops Hub. Pentagon Watchdogs Found the Gaps.</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.octoprobe.ai/blog/eu-sanctions-samolet-black-horse-north-korea-russia/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>OctoProbe News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-22T10:45:00-04:00</news:publication_date>
+      <news:title>Inside Samolet, the Russian Homebuilder the EU Says Used North Korean Workers</news:title>
     </news:news>
   </url>
   <url>
