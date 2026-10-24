@@ -38,7 +38,7 @@ def build():
     dpub, dmod = datetime.fromisoformat(pub), datetime.fromisoformat(mod)
     assert dpub <= dmod <= datetime.now().astimezone(), "published <= modified <= now"
     assert meta["date"] == pub[:10], "front matter date must equal the calendar date of published_iso"
-    date_display = f"{dpub.strftime('%b')} {dpub.day}, {dpub.year}"
+    date_display = bb.header_date_display(pub)
     tags_html = '<div class="tags">' + "".join(f'<span class="{bb.tag_class(t)}">{escape(t)}</span>' for t in meta["tags"]) + "</div>"
     for f in meta.get("faq") or []:
         f["q"], f["a"] = U.smart(f["q"]), U.smart(f["a"])

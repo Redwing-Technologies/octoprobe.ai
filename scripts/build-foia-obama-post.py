@@ -36,7 +36,7 @@ def build():
     for wmsg in bb.validate_meta(meta, SRC, strict=True):
         print("WARNING:", wmsg, file=sys.stderr)
     slug = meta["slug"]; title = meta["title"]; date = meta["date"]; description = meta["description"]
-    dt = bb.datetime.strptime(date[:10], "%Y-%m-%d"); date_display = f"{dt.strftime('%b')} {dt.day}, {dt.year}"
+    date_display = bb.header_date_display(date)
     tags_html = '<div class="tags">' + "".join(f'<span class="{bb.tag_class(t)}">{escape(t)}</span>' for t in meta["tags"]) + "</div>"
     for f in meta.get("faq") or []:
         f["q"], f["a"] = U.smart(f["q"]), U.smart(f["a"])
