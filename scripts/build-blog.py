@@ -389,6 +389,34 @@ def md_to_html(md: str) -> str:
     return html
 
 
+def header_date_display(value) -> str:
+    """Visible article-header publish stamp: 'Oct 23, 2026, 6:30 p.m. ET'.
+
+    `value` is the post's own datePublished (ISO 8601 string or datetime). A full timestamp
+    is shown in America/New_York with AP-style a.m./p.m. and minutes kept ('9:00 a.m. ET').
+    A bare YYYY-MM-DD stays date-only ('Oct 23, 2026'); a time is never invented.
+    """
+    from zoneinfo import ZoneInfo
+    if isinstance(value, datetime):
+        dt, has_time = value, True
+    else:
+        s = str(value).strip()
+        has_time = len(s) > 10 and "T" in s
+        try:
+            dt = datetime.fromisoformat(s.replace("Z", "+00:00")) if has_time else datetime.strptime(s[:10], "%Y-%m-%d")
+        except ValueError:
+            return s
+    if has_time and dt.tzinfo is None:
+        has_time = False  # no zone: cannot state ET honestly, keep the date only
+    if has_time:
+        dt = dt.astimezone(ZoneInfo("America/New_York"))
+    day = f"{dt.strftime('%b')} {dt.day}, {dt.year}"
+    if not has_time:
+        return day
+    h12 = dt.hour % 12 or 12
+    return f"{day}, {h12}:{dt.minute:02d} {'a.m.' if dt.hour < 12 else 'p.m.'} ET"
+
+
 def tag_class(tag: str) -> str:
     t = tag.lower()
     if "osint" in t:
@@ -643,11 +671,7 @@ def build_one(md_path: Path, *, strict: bool = True) -> dict:
     else:
         keywords_str = str(keywords)
 
-    try:
-        dt = datetime.strptime(date[:10], "%Y-%m-%d")
-        date_display = f"{dt.strftime('%b')} {dt.day}, {dt.year}"
-    except ValueError:
-        date_display = date
+    date_display = header_date_display(date)
 
     tags_html = (
         '<div class="tags">'
